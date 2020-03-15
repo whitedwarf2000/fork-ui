@@ -1,0 +1,96 @@
+@import '../../scss/vars.scss';
+@import '../../scss/animation.scss';
+
+.rc-select {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  position: relative;
+  border-radius: $border-radius;
+  padding: 0.5em 1em;
+  transition: all 0.25s;
+  user-select: none;
+  background-color: $root-bg-color;
+  box-shadow: $neumorphism;
+
+  &:hover,
+  &.rc-select--drop {
+    box-shadow: $neumorphism-inset;
+  }
+}
+
+.rc-select--drop {
+  .rc-select-icon {
+    transform: rotate(-180deg);
+  }
+}
+
+.rc-select-icon {
+  cursor: pointer;
+  transition: transform 0.5s;
+  position: absolute;
+  right: 0;
+}
+
+.rc-select-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $basic-height;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.rc-select-input-placeholder {
+  color: #a0aebf;
+}
+
+.rc-select-label {
+  height: $basic-height;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.rc-select-error {
+  font-size: 0.85em;
+  font-style: italic;
+  color: $error-color;
+}
+
+// DROP DOWN
+.rc-select-dropdown {
+  position: absolute;
+  background-color: $root-bg-color;
+  box-shadow: $neumorphism;
+  max-height: 20em;
+  overflow: scroll;
+  border-radius: $border-radius;
+  animation: zoomIn 0.125s;
+  z-index: 1050;
+}
+
+.rc-select-dropdown--close-animation {
+  animation: zoomOut 0.25s;
+}
+
+// DARK MODE SUPPORT
+.dark-mode {
+  .rc-select {
+    background-color: $root-darkmode-bg-color;
+    box-shadow: $neumorphism-darkmode;
+
+    &:hover,
+    &.rc-select--drop {
+      background-color: $root-darkmode-bg-color;
+      box-shadow: $neumorphism-darkmode-inset;
+    }
+  }
+
+  .rc-select-dropdown {
+    background-color: $root-darkmode-bg-color;
+    box-shadow: $neumorphism-darkmode;
+  }
+}

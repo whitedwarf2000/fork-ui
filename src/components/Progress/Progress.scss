@@ -1,0 +1,65 @@
+@import '../../scss/vars.scss';
+
+.rc-progress {
+  position: relative;
+  border-radius: 100em;
+  user-select: none;
+  transition: all 0.25s;
+  background-color: $root-bg-color;
+  box-shadow: $neumorphism-inset;
+}
+
+.rc-progress-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $root-bg-color;
+  box-shadow: $neumorphism;
+  border-radius: 100em;
+}
+
+svg.rc-progress-svg {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+circle.rc-progress-percent {
+  height: 100%;
+  width: 100%;
+  fill: none;
+  stroke-width: 7px;
+  transition: stroke-dashoffset 0.5s;
+  transform: translate(10px, 10px);
+  stroke-linecap: round;
+  stroke: $primary-color;
+}
+
+.rc-progress-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $primary-color;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+// DARK MODE SUPPORT
+.dark-mode {
+  .rc-progress {
+    background-color: $root-darkmode-bg-color;
+    box-shadow: $neumorphism-darkmode-inset;
+  }
+
+  .rc-progress-inner {
+    background-color: $root-darkmode-bg-color;
+    box-shadow: $neumorphism-darkmode;
+  }
+
+  .rc-progress-number {
+    color: $primary-color;
+  }
+}

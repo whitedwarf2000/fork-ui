@@ -1,0 +1,62 @@
+@import '../../scss/vars.scss';
+
+.rc-textbox {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  position: relative;
+  border-radius: $border-radius;
+  padding: 0.5em 1em;
+  transition: all 0.25s;
+  background-color: $root-bg-color;
+  box-shadow: $neumorphism;
+
+  &:hover,
+  &.rc-textbox--focus {
+    box-shadow: $neumorphism-inset;
+  }
+}
+
+.rc-textbox-label {
+  height: 2.5em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.rc-textbox-error {
+  font-size: 0.85em;
+  font-style: italic;
+  color: $error-color;
+}
+
+.rc-textbox > input {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $basic-height;
+  outline: 0 !important;
+  border: none;
+  touch-action: manipulation;
+  background-color: transparent;
+}
+
+.rc-textbox > input:disabled {
+  cursor: not-allowed;
+}
+
+// DARK MODE SUPPORT
+.dark-mode {
+  .rc-textbox {
+    background-color: $root-darkmode-bg-color;
+    box-shadow: $neumorphism-darkmode;
+
+    &:hover,
+    &.rc-textbox--focus {
+      background-color: $root-darkmode-bg-color;
+      box-shadow: $neumorphism-darkmode-inset;
+    }
+  }
+}

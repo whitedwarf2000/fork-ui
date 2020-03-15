@@ -1,0 +1,22 @@
+@import '../../scss/vars.scss';
+@import '../../scss/animation.scss';
+
+.rc-alert {
+  position: fixed;
+  bottom: 6em;
+  left: 0;
+  height: 0;
+  z-index: 1000;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+
+  .rc-pure-alert {
+    animation: zoomIn 0.25s;
+  }
+}
+
+.rc-alert--close-animation {
+  .rc-pure-alert {
+    animation: zoomOut 0.25s;
+  }
+}

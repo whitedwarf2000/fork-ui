@@ -1,0 +1,31 @@
+@import '../../scss/vars.scss';
+
+.rc-pure-notification {
+  display: block;
+  position: relative;
+  min-height: 2em;
+  width: 30em;
+  max-width: 100%;
+  border-radius: $border-radius-medium;
+  background-color: $secondary-color;
+  color: #fff;
+  user-select: none;
+  transition: all 0.25s;
+}
+
+.rc-pure-notification-bell {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 1.25em;
+}
+
+.rc-pure-notification-inside-wraper {
+  padding: 1.5em;
+  overflow: hidden;
+}
+
+.rc-pure-notification-content {
+  font-weight: 500;
+  margin-right: 2em;
+}

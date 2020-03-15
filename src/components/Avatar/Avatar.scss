@@ -1,0 +1,36 @@
+@import '../../scss/vars.scss';
+@import '../../scss/animation.scss';
+
+.rc-avatar {
+  height: 3.5em;
+  width: 3.5em;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rc-avatar--neumorphism {
+  box-shadow: $neumorphism;
+}
+
+.rc-avatar-name {
+  font-size: 1.5em;
+}
+
+.rc-avatar--square {
+  border-radius: $border-radius;
+}
+
+.rc-avatar--circle {
+  border-radius: 100em;
+}
+
+// DARK MODE SUPPORT
+.dark-mode {
+  .rc-avatar--neumorphism {
+    box-shadow: $neumorphism-darkmode;
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../scss/vars.scss';
+
+.rc-pure-alert {
+  display: block;
+  position: relative;
+  min-height: 2em;
+  width: 30em;
+  max-width: 100%;
+  border-radius: $border-radius-medium;
+  background-color: $secondary-color;
+  color: #fff;
+  user-select: none;
+  transition: all 0.25s;
+}
+
+.rc-pure-alert--success {
+  background-color: $success-color;
+}
+
+.rc-pure-alert--warning {
+  background-color: $warning-color;
+}
+
+.rc-pure-alert--error {
+  background-color: $error-color;
+}
+
+.rc-pure-alert-close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 1.25em;
+}
+
+.rc-pure-alert-inside-wraper {
+  padding: 1.5em;
+}
+
+.rc-pure-alert-content {
+  font-weight: 500;
+  padding-right: 1.25em;
+}

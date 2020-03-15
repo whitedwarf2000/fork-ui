@@ -1,0 +1,58 @@
+@import '../../scss/vars.scss';
+
+.rc-textarea {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  position: relative;
+  border-radius: $border-radius;
+  padding: 0.5em 1em;
+  background-color: $root-bg-color;
+  transition: all 0.25s;
+  box-shadow: $neumorphism;
+
+  &:hover,
+  &.rc-textarea--focus {
+    box-shadow: $neumorphism-inset;
+  }
+}
+
+.rc-textarea-label {
+  height: $basic-height;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.rc-textarea-error {
+  font-size: 0.85em;
+  font-style: italic;
+  color: $error-color;
+}
+
+.rc-textarea > textarea {
+  width: 100%;
+  min-height: 7em;
+  outline: 0 !important;
+  touch-action: manipulation;
+  background-color: transparent;
+}
+
+.rc-textarea > textarea:disabled {
+  cursor: not-allowed;
+}
+
+// DARK MODE SUPPORT
+.dark-mode {
+  .rc-textarea {
+    background-color: $root-darkmode-bg-color;
+    box-shadow: $neumorphism-darkmode;
+
+    &:hover,
+    &.rc-textarea--focus {
+      background-color: $root-darkmode-bg-color;
+      box-shadow: $neumorphism-darkmode-inset;
+    }
+  }
+}

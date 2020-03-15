@@ -1,0 +1,47 @@
+@import '../../scss/vars.scss';
+
+.rc-pure-confirm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  min-height: 12em;
+  width: 30em;
+  max-width: 100%;
+  border-radius: $border-radius-medium;
+  background-color: $secondary-color;
+  color: #fff;
+  user-select: none;
+  transition: all 0.25s;
+}
+
+.rc-pure-confirm-inside-wraper {
+  padding: 1.5em;
+}
+
+.rc-pure-confirm-header {
+  font-weight: 600;
+  font-size: 1.125em;
+  margin-bottom: 1em;
+}
+
+.rc-pure-confirm-content {
+  font-weight: 500;
+}
+
+.rc-pure-confirm-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.5em;
+}
+
+.rc-pure-confirm-ok,
+.rc-pure-confirm-cancel {
+  padding-right: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 1em;
+}

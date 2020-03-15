@@ -1,0 +1,27 @@
+@import '../../scss/vars.scss';
+
+.rc-rating {
+  display: flex;
+  align-items: center;
+}
+
+.rc-rating-item {
+  color: $form-input-bg-color;
+  transition: all 0.25s;
+  padding: 0.25em;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+.rc-rating-item--light {
+  color: #ffc107;
+}
+
+// DARK MODE SUPPORT
+.dark-mode {
+  .rc-rating-item:not(.rc-rating-item--light) {
+    color: rgba(255, 255, 255, 0.2);
+  }
+}
