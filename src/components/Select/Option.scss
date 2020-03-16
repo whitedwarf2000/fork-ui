@@ -1,5 +1,4 @@
 @import '../../scss/vars.scss';
-@import '../../scss/animation.scss';
 
 // SELECT OPTION
 .rc-select-option {
@@ -9,15 +8,11 @@
   height: 3.5em;
   cursor: pointer;
 
-  &:hover {
-    background-color: $primary-color;
+  &:hover,
+  &.--selected {
+    background-color: $select-option-bg-color;
     color: #fff;
   }
-}
-
-.rc-select-option--selected {
-  background-color: $primary-color;
-  color: #fff;
 }
 
 .rc-select-dropdown ul > .rc-select-option:nth-child(1) {

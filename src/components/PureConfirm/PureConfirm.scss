@@ -9,13 +9,13 @@
   width: 30em;
   max-width: 100%;
   border-radius: $border-radius-medium;
-  background-color: $secondary-color;
+  background-color: $overlay-bg-color;
   color: #fff;
   user-select: none;
   transition: all 0.25s;
 }
 
-.rc-pure-confirm-inside-wraper {
+.rc-pure-confirm-inside-wrapper {
   padding: 1.5em;
 }
 

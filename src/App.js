@@ -4,28 +4,21 @@ import loadable from './utils/loadable';
 
 import Layout from './layout/Layout';
 
-require('./scss/utils.scss');
+require('./scss/begin.scss');
 
 const HomePage = loadable(() => import('./pages/HomePage'));
-const FormDocumentPage = loadable(() => import('./pages/FormDocumentPage'));
-const CommonDocumentPage = loadable(() => import('./pages/CommonDocumentPage'));
-const DisplayDocumentPage = loadable(() => import('./pages/DisplayDocumentPage'));
-const OverlayDocumentPage = loadable(() => import('./pages/OverlayDocumentPage'));
-const SystemDesign = loadable(() => import('./pages/SystemDesign'));
 const MusicComponentPage = loadable(() => import('./pages/MusicComponentPage'));
+const HoangLap = loadable(() => import('./pages/HoangLap'));
 
 const App = () => {
   return (
     <BrowserRouter>
       <Layout>
         <Switch>
-          <Route exact path="/" component={MusicComponentPage} />
-          <Route exact path="/lap-music" component={MusicComponentPage} />
-          <Route exact path="/ui-system" component={SystemDesign} />
-          <Route exact path="/document/form" component={FormDocumentPage} />
-          <Route exact path="/document/common" component={CommonDocumentPage} />
-          <Route exact path="/document/display" component={DisplayDocumentPage} />
-          <Route exact path="/document/overlay" component={OverlayDocumentPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/lap-music-components" component={MusicComponentPage} />
+          <Route exact path="/hoang-lap" component={HoangLap} />
+          <Route exact path="/lap-2" component={MusicComponentPage} />
           <Route path="" component={HomePage} />
         </Switch>
       </Layout>

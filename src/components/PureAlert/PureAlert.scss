@@ -7,21 +7,21 @@
   width: 30em;
   max-width: 100%;
   border-radius: $border-radius-medium;
-  background-color: $secondary-color;
+  background-color: $overlay-bg-color;
   color: #fff;
   user-select: none;
   transition: all 0.25s;
 }
 
-.rc-pure-alert--success {
+.rc-pure-alert.--success {
   background-color: $success-color;
 }
 
-.rc-pure-alert--warning {
+.rc-pure-alert.--warning {
   background-color: $warning-color;
 }
 
-.rc-pure-alert--error {
+.rc-pure-alert.--error {
   background-color: $error-color;
 }
 
@@ -32,7 +32,7 @@
   font-size: 1.25em;
 }
 
-.rc-pure-alert-inside-wraper {
+.rc-pure-alert-inside-wrapper {
   padding: 1.5em;
 }
 
