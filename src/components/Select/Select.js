@@ -9,6 +9,7 @@ import Option from './Option';
 import usePosition from '../../hooks/usePosition';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 import useSupportCloseAnimation from '../../hooks/useSupportCloseAnimation';
+import useFlexibleRef from '../../hooks/useFlexibleRef';
 
 require('./Select.scss');
 
@@ -17,27 +18,42 @@ const mapToObject = arr => arr.reduce((rs, item) => {
   return rs;
 }, {});
 
-const Select = ({ className, label, children, defaultValue, error, placeholder, onChange, ...otherProps }) => {
-  const [value, setValue] = useState(defaultValue);
+const Select = ({ className, label, selectRef, children, name, defaultValue, error, placeholder, onChange, ...otherProps }) => {
+  const isControlled = useMemo(() => otherProps.hasOwnProperty('value'), []);
+
+  const [_value, setValue] = useState(isControlled ? otherProps.value : defaultValue);
   const [isDrop, setIsDrop] = useState(false);
-  const ref = useRef();
+
+  const ref = useFlexibleRef(selectRef);
   const dropdownRef = useRef();
 
-  const toggleIsDrop = useCallback(() => setIsDrop(prev => !prev), [setIsDrop]);
+  const toggleIsDrop = useCallback(() => setIsDrop(prev => !prev), []);
   const handleOptionSelected = useCallback(val => {
-    setValue(val);
+    if (isControlled) {
+      onChange(val);
+    } else {
+      setValue(val);
+    }
     setIsDrop(false);
-  }, [setValue, setIsDrop]);
+  }, []);
 
+  // CLOSE DROPDOWN WHEN CLICK OUTSIDE
   const handleClickOutside = useCallback(e => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
       setIsDrop(false);
     }
-  }, [ref, setIsDrop]);
+  }, [dropdownRef]);
 
+  // SUPPORT CONTROLED COMPONENT
   useEffect(() => {
-    onChange(value);
-  }, [value]);
+    onChange(_value);
+  }, [_value]);
+
+  useMemo(() => {
+    if (isControlled) {
+      setValue(otherProps.value);
+    }
+  }, [otherProps.value]);
 
   useOnClickOutside(ref, handleClickOutside);
   const delayIsDrop = useSupportCloseAnimation(isDrop);
@@ -48,13 +64,15 @@ const Select = ({ className, label, children, defaultValue, error, placeholder, 
   return (
     <React.Fragment>
       <div
-        ref={ref}
-        className={cn('rc-select', { '--drop': isDrop, '--close-animation': !isDrop }, className)}
         {...otherProps}
+        ref={ref}
+        name={name}
+        className={cn('rc-select', { '--drop': isDrop, '--close-animation': !isDrop }, className)}
+        value={_value}
       >
         {error && (<div className="rc-select-error">{error}</div>)}
         <div className="rc-select-input" onClick={toggleIsDrop}>
-          {options[value] || (<span className="rc-select-input-placeholder">{placeholder}</span>)}
+          {options[_value] || (<span className="rc-select-input-placeholder">{placeholder}</span>)}
           <Icon name="chevron-down" className="rc-select-icon" />
         </div>
         {label && (<label className="rc-select-label">{label}</label>)}
@@ -67,15 +85,10 @@ const Select = ({ className, label, children, defaultValue, error, placeholder, 
             style={{ left: pageX, top: pageY, width: clientWidth }}
           >
             <ul>
-              {React.Children.map(children, elm => {
-                if (!React.isValidElement(elm)) {
-                  return null;
-                }
-                return React.cloneElement(elm, {
-                  selected: value === elm.props.value,
-                  onClick: () => handleOptionSelected(elm.props.value),
-                });
-              })}
+              {React.Children.map(children, elm => React.cloneElement(elm, {
+                selected: _value === elm.props.value,
+                onClick: () => handleOptionSelected(elm.props.value),
+              }))}
             </ul>
           </div>
         </Portal>
@@ -93,6 +106,7 @@ Select.propTypes = {
   error: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
+  name: PropTypes.string,
 };
 Select.defaultProps = {
   onChange: f => f,
