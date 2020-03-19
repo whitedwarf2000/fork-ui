@@ -8,7 +8,6 @@
 
 .rc-timestone-stone-icon.rc-timestone-stone-icon {
   z-index: 2;
-  color: $primary-color;
   background-color: $root-bg-color;
   border-radius: 100em;
   overflow: visible;
@@ -25,7 +24,7 @@
   height: 100%;
   left: 0.6em;
   top: 0.5em;
-  background-color: $primary-color;
+  background-color: $root-text-color;
 }
 
 .rc-timeline > .rc-timestone {
@@ -91,5 +90,9 @@
     &.--reverse > .rc-timestone:nth-child(1) .rc-timestone-stone-icon{
       background-color: $root-darkmode-bg-color;
     }
+  }
+
+  .rc-timestone-rail {
+    background-color: #fff;
   }
 }
