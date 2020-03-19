@@ -33,9 +33,7 @@ const Panel = ({ className, header, children, defaultActive, onChange, ...otherP
     >
       <div className="rc-collapse-panel-header" onClick={handleToggle}>
         <span>{header}</span>
-        <Button className="rc-collapse-panel-icon" circle transparent>
-          <Icon name="chevron-down" />
-        </Button>
+        <Button className="rc-collapse-panel-icon" icon="chevron-down" circle transparent />
       </div>
       <div
         ref={contentRef}
@@ -77,7 +75,7 @@ function useCollapseStyle(active) {
 
   useEffect(() => {
     setContentHeight(contentRef.current.clientHeight);
-  }, []);
+  }, [contentHeight]);
 
   useEffect(() => {
     let begin;
@@ -118,7 +116,7 @@ function useCollapseStyle(active) {
       clearTimeout(end);
     }
   }
-  , [active]);
+  , [active, contentHeight]);
 
   return [style, contentRef];
 }
