@@ -6,12 +6,12 @@ import Icon from '../Icon';
 
 require('./Chip.scss');
 
-const Chip = ({ className, label, avatar, color, style, closable, ...otherProps }) => {
+const Chip = ({ className, label, avatar, color, style, closable, onClose, ...otherProps }) => {
   return (
-    <div className={cn('rc-chip', className)} {...otherProps} style={{ backgroundColor: color, ...style }}>
+    <div className={cn('rc-chip', className)} style={{ backgroundColor: color, ...style }} {...otherProps}>
       {avatar}
       <span className="rc-chip-label">{label}</span>
-      {closable && <div className="rc-chip-close"><Icon name="times" /></div>}
+      {closable && <div className="rc-chip-close" onClick={onClose}><Icon name="times" /></div>}
     </div>
   );
 };
@@ -24,7 +24,10 @@ Chip.propTypes = {
   avatar: PropTypes.any,
   color: PropTypes.string,
   style: PropTypes.object,
+  onClose: PropTypes.func,
 };
-Chip.defaultProps = {};
+Chip.defaultProps = {
+  onClose: f => f,
+};
 
 export default Chip;
