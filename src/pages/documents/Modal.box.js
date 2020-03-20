@@ -24,7 +24,7 @@ export default ({ className }) => {
                 <Select.Option value="female">Femal Two</Select.Option>
               </Select>
               <div className="flex justify-end">
-                <Button>Submit</Button>
+                <Button onClick={() => setIsOpen(false)}>Submit</Button>
               </div>
             </form>
           </div>
