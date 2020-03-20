@@ -1,17 +1,16 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useCallback, useRef, useEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Portal from '../Portal';
-import PureDrawer from '../PureDrawer';
 
 import useSupportCloseAnimation from '../../hooks/useSupportCloseAnimation';
 import useClickOutsideOverlay from '../../hooks/useClickOutsideOverlay';
 import useStopBodyScroll from '../../hooks/useStopBodyScroll';
 
-require('./Drawer.scss');
+require('./Modal.scss');
 
-const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps }) => {
+const Modal = ({ className, containerClass, open, onClose, canOutsideClickClose, ...otherProps }) => {
   const ref = useRef();
 
   const delayOpen = useSupportCloseAnimation(open);
@@ -20,7 +19,7 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps 
     if (canOutsideClickClose) {
       onClose();
     }
-  }, []);
+  }, [canOutsideClickClose]);
 
   useStopBodyScroll(delayOpen);
   const wrapperRef = useClickOutsideOverlay({ overlayRef: ref, open: delayOpen, handleClickOutside });
@@ -29,11 +28,10 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps 
     <React.Fragment>
       {delayOpen && (
         <Portal>
-          <div className={cn('rc-drawer', { '--close-animation': !open })} ref={wrapperRef}>
-            <PureDrawer
-              className={className}
-              drawerRef={ref}
-              onCloseClick={onClose}
+          <div className={cn('rc-modal-container', containerClass)} ref={wrapperRef}>
+            <div
+              ref={ref}
+              className={cn('rc-modal', { '--close-animation': !open }, className)}
               {...otherProps}
             />
           </div>
@@ -43,15 +41,15 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps 
   );
 };
 
-Drawer.displayName = 'Drawer';
-Drawer.propTypes = {
+Modal.displayName = 'Modal';
+Modal.propTypes = {
   className: PropTypes.string,
+  containerClass: PropTypes.string,
   onClose: PropTypes.func,
-  open: PropTypes.bool,
   canOutsideClickClose: PropTypes.bool,
 };
-Drawer.defaultProps = {
+Modal.defaultProps = {
   onClose: f => f,
 };
 
-export default Drawer;
+export default Modal;
