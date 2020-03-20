@@ -3,12 +3,13 @@
 .rc-chip {
   font-size: 0.9rem;
   height: 2.125em;
-  background-color: $primary-color;
+  background-color: $secondary-bg-color;
   color: #fff;
   display: flex;
   align-items: center;
   border-radius: 100em;
   white-space: nowrap;
+  cursor: pointer;
 
   .rc-avatar {
     height: 1.65em;
@@ -34,4 +35,11 @@
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 100em;
+}
+
+// DARK MODE SUPPORT
+.dark-mode {
+  .rc-chip {
+    background-color: $secondary-darkmode-bg-color;
+  }
 }
