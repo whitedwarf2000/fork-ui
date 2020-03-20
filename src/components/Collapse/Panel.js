@@ -33,7 +33,7 @@ const Panel = ({ className, header, children, defaultActive, onChange, ...otherP
     >
       <div className="rc-collapse-panel-header" onClick={handleToggle}>
         <span>{header}</span>
-        <Button className="rc-collapse-panel-icon" icon="chevron-down" circle transparent />
+        <Button className="rc-collapse-panel-icon" icon="caret-down" circle transparent />
       </div>
       <div
         ref={contentRef}

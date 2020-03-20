@@ -28,6 +28,8 @@ const icons = {
   'desktop': require('./desktop').default,
   'comment-alt-music': require('./comment-alt-music').default,
   'clock': require('./clock').default,
+  'angle-down': require('./angle-down').default,
+  'caret-down': require('./caret-down').default,
 };
 
 export default icons;
