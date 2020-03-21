@@ -5,6 +5,7 @@ export { default as Collapse } from './Collapse';
 export { default as Chip } from './Chip';
 export { default as Carousel } from './Carousel';
 export { default as Dropdown } from './Dropdown';
+export { default as DropdownButton } from './DropdownButton';
 export { default as Icon } from './Icon';
 export { default as Menu } from './Menu';
 export { default as Textbox } from './Textbox';

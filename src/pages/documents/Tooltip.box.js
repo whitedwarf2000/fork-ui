@@ -14,7 +14,7 @@ export default ({ className }) => {
           <Tooltip placement="top-left" label="Top-Left tooltip">
             <Button className="m-2" style={{ width: '7em' }}>TL</Button>
           </Tooltip>
-          <Tooltip placement="top" label="Top tooltip" defaultVisible>
+          <Tooltip placement="top" label="Top tooltip">
             <Button className="m-2" style={{ width: '7em' }}>Top</Button>
           </Tooltip>
           <Tooltip placement="top-right" label="Top-Right tooltip">
@@ -36,13 +36,13 @@ export default ({ className }) => {
         </div>
 
         <div className="flex">
-          <Tooltip placement="left" label="Left tooltip" defaultVisible>
+          <Tooltip placement="left" label="Left tooltip">
             <Button className="m-2" style={{ width: '7em' }}>Left</Button>
           </Tooltip>
           <Button transparent disabled className="m-2" style={{ width: '7em' }}></Button>
           <Button transparent disabled className="m-2" style={{ width: '7em' }}></Button>
           <Button transparent disabled className="m-2" style={{ width: '7em' }}></Button>
-          <Tooltip placement="right" label="Right tooltip" defaultVisible>
+          <Tooltip placement="right" label="Right tooltip">
             <Button className="m-2" style={{ width: '7em' }}>Right</Button>
           </Tooltip>
         </div>
@@ -64,7 +64,7 @@ export default ({ className }) => {
           <Tooltip placement="bottom-left" label="Bottom-Left tooltip">
             <Button className="m-2" style={{ width: '7em' }}>BL</Button>
           </Tooltip>
-          <Tooltip placement="bottom" label="Bottom tooltip" defaultVisible>
+          <Tooltip placement="bottom" label="Bottom tooltip">
             <Button className="m-2" style={{ width: '7em' }}>Bottom</Button>
           </Tooltip>
           <Tooltip placement="bottom-right" label="Bottom-Right tooltip">
