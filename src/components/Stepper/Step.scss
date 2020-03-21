@@ -59,7 +59,7 @@ $rail-size: 0.15em;
   .rc-step-avatar {
     background-color: $primary-color;
     background: $gradient-primary-color;
-    color: #fff;
+    color: $root-text-inverted-color;
   }
 
   .rc-step-label {
@@ -81,7 +81,7 @@ $rail-size: 0.15em;
   .rc-step-avatar {
     background-color: $primary-color;
     background: $gradient-primary-color;
-    color: #fff;
+    color: $root-text-inverted-color;
   }
 
   .rc-step-note {
@@ -99,7 +99,7 @@ $rail-size: 0.15em;
   .rc-step-avatar {
     background-color: $error-color;
     background: $gradient-error-color;
-    color: #fff;
+    color: $root-text-inverted-color;
   }
 
   .rc-step-label {
@@ -132,6 +132,15 @@ $rail-size: 0.15em;
         .rc-step-rail {
           background-color: $primary-color;
           background: $gradient-primary-color;
+        }
+      }
+    }
+
+    &.--canceled {
+      + .rc-step {
+        .rc-step-rail {
+          background-color: $error-color;
+          background: $gradient-error-color;
         }
       }
     }

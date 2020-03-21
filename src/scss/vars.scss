@@ -21,6 +21,8 @@ $zindex-overlay: 1010;
 $root-bg-color: #f0f2f5;
 $root-darkmode-bg-color: #17181a;
 $root-text-color: #2f2f2f;
+$root-text-inverted-color: rgb(228, 230, 235);
+$root-darkmode-text-color: rgb(228, 230, 235);
 $placeholder-text-color: #a0aebf;
 
 $secondary-bg-color: #a1a5ab;
@@ -50,6 +52,12 @@ $overlay-bg-color: #0099ff; // Tooltip | Confirm | Alert
 $gradient-overlay-bg-color: linear-gradient(145deg, #008ae6, #00a4ff);
 $select-option-bg-color: #0099ff;
 $overlay-wrapper-bg-color: rgba(0, 0, 0, 0.5);
+
+/**
+* MENU
+*/
+
+$menu-item-bg-color: #0099ff;
 
 /**
 * Rating color
