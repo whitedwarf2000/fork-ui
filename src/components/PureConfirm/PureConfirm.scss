@@ -38,11 +38,26 @@
   padding: 1.5em;
 }
 
-.rc-pure-confirm-ok,
-.rc-pure-confirm-cancel {
-  padding-right: 0;
-  text-transform: uppercase;
-  font-weight: 600;
-  cursor: pointer;
-  margin-left: 1em;
+.rc-pure-confirm-ok.rc-pure-confirm-ok,
+.rc-pure-confirm-cancel.rc-pure-confirm-cancel {
+  margin-right: 0.5em;
+  box-shadow: $neumorphism-primary-flat;
+
+  &:hover,
+  &:focus {
+    box-shadow: $neumorphism-primary-pressed;
+  }
+}
+
+// ANTI DARK MODE
+.dark-mode {
+  .rc-pure-confirm-ok.rc-pure-confirm-ok,
+  .rc-pure-confirm-cancel.rc-pure-confirm-cancel {
+    box-shadow: $neumorphism-primary-flat;
+
+    &:hover,
+    &:focus {
+      box-shadow: $neumorphism-primary-pressed;
+    }
+  }
 }
