@@ -8,9 +8,8 @@ export default ({ className }) => {
       <div className="flex mb-5">
         <Button className="mr-2">Basic</Button>
         <Button className="mr-2" rounded>Rounded</Button>
-        <Button disabled className="mr-2">Disabled</Button>
         <Button className="mr-2" circle icon="comments" />
-          <Button className="mr-2" circle icon="comments" pressed />
+          <Button className="mr-2" icon="comments" pressed />
         <Button className="mr-2" transparent circle icon="power-off" />
       </div>
       <div className="flex">
