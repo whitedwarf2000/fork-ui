@@ -27,7 +27,7 @@
 
 .rc-textarea > textarea {
   width: 100%;
-  min-height: 5em;
+  min-height: $basic-height;
   outline: 0 !important;
   touch-action: manipulation;
   background-color: transparent;

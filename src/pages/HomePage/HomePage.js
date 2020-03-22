@@ -27,46 +27,48 @@ import DropdownAndMenuBox from '../documents/DropdownAndMenu.box';
 export default () => {
   return (
     <div className="container mx-auto flex flex-col">
-      <div className="flex">
-        <div className="w-1/3 px-5">
-          <ButtonBox className="mb-20" />
-          <TextboxBox className="mb-20" />
-          <TextareaBox className="mb-20" />
-          <SelectBox className="mb-20" />
-          <ConfirmBox className="mb-20" />
-          <NotificationBox className="mb-20" />
-          <AlertBox className="mb-20" />
-          <ModalBox className="mb-5" />
-          <DrawerBox className="mb-20" />
-          <TimelineBox className="mb-20" />
-          <ChipBox className="mb-20" />
-        </div>
-        <div className="w-2/3 px-5">
-          <TableBox className="w-full mb-20" />
-          <div className="flex w-full mb-20">
-            <div className="w-1/2">
-              <CheckboxBox className="mb-10" />
-              <AvatarBox />
-            </div>
-            <div className="w-1/2">
-              <PaginationBox className="mb-10"/>
-              <RatingBox />
-            </div>
-          </div>
-
-          <ProgressBox className="mb-20" />
-          <TabsBox className="mb-20" />
-          <CollapseBox className="mb-20" />
-          <TooltipBox className="mb-20" />
-          <DropdownAndMenuBox className="mb-20" />
-          <CarouselBox className="mb-20" />
-          <StepperSimpleBox className="mb-20" />
-          <StepperBox className="mb-20" />
-        </div>
+      <div className="flex mb-20">
+        <ButtonBox className="w-1/3" />
+        <PaginationBox className="w-1/3" />
+        <RatingBox className="w-1/3" />
       </div>
-      {/* <div className="flex flex-col px-5">
-        <StepperBox className="mb-20" />
-      </div> */}
+
+      <div className="flex mb-20">
+        <TextboxBox className="w-1/3" />
+        <SelectBox className="w-1/3" />
+        <TextareaBox className="w-1/3" />
+      </div>
+      <div className="flex mb-20">
+        <CheckboxBox className="w-1/3" />
+        <TabsBox className="w-2/3" />
+      </div>
+      <div className="flex mb-20">
+        <TimelineBox className="w-1/3" />
+        <TableBox className="w-2/3" />
+      </div>
+      <div className="flex mb-20">
+        <ProgressBox className="w-1/3" />
+        <StepperBox className="w-2/3" />
+      </div>
+      <div className="flex mb-20">
+        <DrawerBox className="w-1/3" />
+        <CollapseBox className="w-2/3" />
+      </div>
+      <div className="flex mb-20">
+        <CarouselBox className="w-1/3" />
+        <TooltipBox className="w-2/3" />
+      </div>
+      <div className="flex mb-20">
+        <ConfirmBox className="w-1/3" />
+        <AlertBox className="w-1/3" />
+        <NotificationBox className="w-1/3" />
+      </div>
+      <div className="flex mb-20">
+        <ModalBox className="w-1/3" />
+        <AvatarBox className="w-1/3" />
+        <ChipBox className="w-1/3" />
+      </div>
+
     </div>
   );
-};
+}

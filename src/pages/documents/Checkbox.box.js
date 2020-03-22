@@ -13,14 +13,6 @@ export default ({ className }) => {
         <Radio name="same" className="mr-2" />
         <Switch defaultChecked />
       </PracticeBox>
-      <PracticeBox className="flex flex-col" wrapperClassName="mb-2" className="flex items-center">
-        <Checkbox defaultChecked disabled className="mr-2" />
-        <Checkbox disabled className="mr-2" />
-        <Radio defaultChecked disabled className="mr-2" />
-        <Radio disabled className="mr-2" />
-        <Switch defaultChecked disabled className="mr-2" />
-        <Switch disabled />
-      </PracticeBox>
     </div>
   );
 };

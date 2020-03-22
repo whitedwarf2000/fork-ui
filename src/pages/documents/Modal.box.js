@@ -5,7 +5,7 @@ import PracticeBox from '../../components/PracticeBox';
 
 export default ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [canOutsideClickClose, setCanOutsideClickClose] = useState(true);
+  const [canOutsideClickClose] = useState(true);
 
   return (
     <div className={cn('flex flex-col', className)}>
@@ -31,10 +31,6 @@ export default ({ className }) => {
         </Modal>
         <div className="flex items-center">
           <Button onClick={() => setIsOpen(true)} className="mr-2">Show Modal</Button>
-          <span className="flex items-center">
-            <Switch defaultChecked={canOutsideClickClose} onChange={e => setCanOutsideClickClose(e.target.checked)} />
-            <span className="ml-2">Click Outside Close</span>
-          </span>
         </div>
       </PracticeBox>
     </div>
