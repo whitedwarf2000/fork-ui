@@ -42,7 +42,6 @@ $rail-size: 0.15em;
 
 .rc-step-label {
   font-weight: 600;
-  margin-bottom: 1em;
 }
 
 .rc-step-note {
@@ -123,7 +122,7 @@ $rail-size: 0.15em;
 
   .rc-step {
     flex-direction: row;
-    min-height: 5em;
+    min-height: 8em;
     align-items: flex-start;
 
     &.--processing,

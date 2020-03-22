@@ -3,6 +3,8 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
+import Button from '../Button';
+import ButtonGroup from '../ButtonGroup';
 
 require('./Pagination.scss');
 
@@ -59,29 +61,27 @@ const Pagination = ({ className, total, pageSize, max, defaultPage, onPageChange
   }, [otherProps.page]);
 
   return (
-    <ul className={cn('rc-pagination', className )}>
-      <li
+    <ButtonGroup className={cn('rc-pagination', className )}>
+      <Button
         className={cn('rc-pagination-prev', { '--hidden': currentFlag <= 1 })}
         onClick={onPrevItems}
-      >
-        <a><Icon name="chevron-left" /></a>
-      </li>
+        icon="chevron-left"
+      />
         {loop(startIndex, endIndex, pageNumber => (
-          <li
+          <Button
             key={pageNumber}
             className={cn('rc-pagination-item', { '--active': pageNumber === currentPage })}
             onClick={() => handlePageSelected(pageNumber)}
           >
             <a>{pageNumber}</a>
-          </li>
+          </Button>
         ))}
-      <li
+      <Button
         className={cn('rc-pagination-next', { '--hidden': currentFlag >= maxCurrentFlag })}
         onClick={onNextItems}
-      >
-        <a><Icon name="chevron-right" /></a>
-      </li>
-    </ul>
+        icon="chevron-right"
+      />
+    </ButtonGroup>
   );
 };
 

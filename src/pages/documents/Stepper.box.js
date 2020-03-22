@@ -1,21 +1,25 @@
 import React, { useMemo, useState } from 'react';
-import { Stepper, Button, Switch, Tooltip } from '../../components/core';
+import { Stepper, Button, Switch, Tooltip, Progress } from '../../components/core';
 import PracticeBox from '../../components/PracticeBox';
 
 const _steps = {
   'step-1': {
     label: 'Step One',
+    describe: 'Describe One',
   },
   'step-2': {
     label: 'Optional Step',
+    describe: 'Describe Optional',
   },
   'step-3': {
     label: 'Optional Step',
     icon : 'bell',
+    describe: 'Describe Optional',
   },
   'step-4': {
     label: 'Shutdown',
     icon : 'power-off',
+    describe: 'Describe Shutdown',
   },
 };
 
@@ -43,7 +47,9 @@ export default ({ className, hiddenHeader }) => {
             label={_steps[key].label}
             icon={_steps[key].icon}
             status={getStatus(idx)}
-          />
+          >
+            {_steps[key].describe}
+          </Stepper.Step>
         ))}
       </Stepper>
       <div className="flex items-center">
