@@ -64,7 +64,8 @@
       box-shadow: $neumorphism-darkmode-flat;
     }
 
-    &:hover {
+    &:hover,
+    &.--active {
       box-shadow: $neumorphism-darkmode-pressed;
   
       &:after {
