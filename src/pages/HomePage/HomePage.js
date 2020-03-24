@@ -27,49 +27,49 @@ import BreadcrumbBox from '../documents/Breadcrumb.box';
 export default () => {
   return (
     <div className="container mx-auto flex flex-col relative">
-      <div className="flex mb-20">
-        <ButtonBox className="w-1/3" />
-        <PaginationBox className="w-1/3" />
-        <RatingBox className="w-1/3" />
+      <div className="flex mb-20 flex-wrap">
+        <ButtonBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <PaginationBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <RatingBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
       </div>
 
-      <div className="flex mb-20">
-        <TextboxBox className="w-1/3" />
-        <SelectBox className="w-1/3" />
-        <TextareaBox className="w-1/3" />
+      <div className="flex mb-20 flex-wrap">
+        <TextboxBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <SelectBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <TextareaBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
       </div>
-      <div className="flex mb-20">
-        <CheckboxBox className="w-1/3" />
-        <TabsBox className="w-2/3" />
+      <div className="flex mb-20 flex-wrap">
+        <CheckboxBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <TabsBox className="w-full sm:w-full md:w-:full lg:w-2/3 xl:w-2/3 mb-10" />
       </div>
-      <div className="flex mb-20">
-        <TimelineBox className="w-1/3" />
-        <TableBox className="w-2/3" />
+      <div className="flex mb-20 flex-wrap">
+        <TimelineBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <TableBox className="w-full sm:w-full md:w-:full lg:w-2/3 xl:w-2/3 mb-10" />
       </div>
-      <div className="flex mb-20">
-        <ProgressBox className="w-1/3" />
-        <StepperBox className="w-2/3" />
+      <div className="flex mb-20 flex-wrap">
+        <ProgressBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <StepperBox className="w-full sm:w-full md:w-:full lg:w-2/3 xl:w-2/3 mb-10" />
       </div>
-      <div className="flex mb-20">
-        <DrawerBox className="w-1/3" />
-        <CollapseBox className="w-2/3" />
+      <div className="flex mb-20 flex-wrap">
+        <DrawerBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <CollapseBox className="w-full sm:w-full md:w-:full lg:w-2/3 xl:w-2/3 mb-10" />
       </div>
-      <div className="flex mb-20">
-        <BreadcrumbBox className="w-1/3" />
-        <TooltipBox className="w-2/3" />
+      <div className="flex mb-20 flex-wrap">
+        <BreadcrumbBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <TooltipBox className="w-full sm:w-full md:w-:full lg:w-2/3 xl:w-2/3 mb-10" />
       </div>
-      <div className="flex mb-20">
-        <ConfirmBox className="w-1/3" />
-        <AlertBox className="w-1/3" />
-        <NotificationBox className="w-1/3" />
+      <div className="flex mb-20 flex-wrap">
+        <ConfirmBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <AlertBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <NotificationBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
       </div>
-      <div className="flex mb-20">
-        <ModalBox className="w-1/3" />
-        <AvatarBox className="w-1/3" />
-        <ChipBox className="w-1/3" />
+      <div className="flex mb-20 flex-wrap">
+        <ModalBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <AvatarBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
+        <ChipBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
       </div>
-      <div className="flex mb-20">
-        <CarouselBox className="w-2/3" />
+      <div className="flex mb-20 flex-wrap">
+        <CarouselBox className="w-full sm:w-full md:w-:full lg:w-2/3 xl:w-2/3 mb-10" />
       </div>
     </div>
   );
