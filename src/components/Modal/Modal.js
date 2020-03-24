@@ -6,7 +6,7 @@ import Portal from '../Portal';
 
 import useSupportCloseAnimation from '../../hooks/useSupportCloseAnimation';
 import useClickOutsideOverlay from '../../hooks/useClickOutsideOverlay';
-import useStopBodyScroll from '../../hooks/useStopBodyScroll';
+import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 
 require('./Modal.scss');
 
@@ -21,7 +21,7 @@ const Modal = ({ className, containerClass, open, onClose, canOutsideClickClose,
     }
   }, [canOutsideClickClose]);
 
-  useStopBodyScroll(delayOpen);
+  useLockBodyScroll(delayOpen);
   const wrapperRef = useClickOutsideOverlay({ overlayRef: ref, open: delayOpen, handleClickOutside });
 
   return (

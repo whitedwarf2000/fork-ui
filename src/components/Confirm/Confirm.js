@@ -7,6 +7,7 @@ import PureConfirm from '../PureConfirm';
 
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 import useSupportCloseAnimation from '../../hooks/useSupportCloseAnimation';
+import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 
 require('./Confirm.scss');
 
@@ -30,6 +31,7 @@ const Confirm = ({ children, onClose, open, canOutsideClickClose, onOk, onCancel
 
   useOnClickOutside(confirmRef, handleClickOutside);
   const delayOpen = useSupportCloseAnimation(open);
+  useLockBodyScroll(delayOpen);
 
   return (
     <React.Fragment>
