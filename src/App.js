@@ -13,15 +13,12 @@ const Dashboard = loadable(() => import('./pages/Dashboard'));
 const App = () => {
   return (
     <BrowserRouter>
-      <Layout>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/lap-music-components" component={MusicComponentPage} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/lap-2" component={MusicComponentPage} />
-          <Route path="" component={HomePage} />
-        </Switch>
-      </Layout>
+      <Switch>
+        <Route exact path="/ui" component={HomePage} />
+        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/document/*" component={Dashboard} />
+        <Route path="" component={HomePage} />
+      </Switch>
     </BrowserRouter>
   );
 };
