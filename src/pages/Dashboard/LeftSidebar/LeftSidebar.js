@@ -7,13 +7,34 @@ require('./LeftSidebar.scss');
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
   return (
     <div className={cn('left-sidebar-container', { '--expanded': isExpanded })}>
-      <div className="left-sidebar">
+      <div className={cn('left-sidebar', { '--expanded': isExpanded } )}>
+        <div className="__logo">
+          <Icon name="home" style={{ fontSize: '1.75rem' }} />
+        </div>
         <Menu className="__menu" iconOnly={!isExpanded}>
-          <Menu.Sub title="General" icon="comments">
-            <Menu.Item icon="power-off">Color</Menu.Item>
-            <Menu.Item icon="table">Icon</Menu.Item>
-            <Menu.Item icon="heart">Button</Menu.Item>
-          </Menu.Sub>
+          <Menu.ItemGroup title="COMMON">
+            <Menu.Item icon="clock">Color</Menu.Item>
+            <Menu.Item icon="copy">Icon</Menu.Item>
+            <Menu.Item icon="cog">Button</Menu.Item>
+          </Menu.ItemGroup>
+          <Menu.ItemGroup title="Form">
+            <Menu.Item icon="copy">Textbox</Menu.Item>
+            <Menu.Item icon="cog">Password</Menu.Item>
+            <Menu.Item icon="clock">Textarea</Menu.Item>
+            <Menu.Item icon="keyboard">Select</Menu.Item>
+          </Menu.ItemGroup>
+          <Menu.ItemGroup title="Overlay">
+            <Menu.Item icon="copy">Confirm</Menu.Item>
+            <Menu.Item icon="cog">Tooltip</Menu.Item>
+            <Menu.Item icon="clock">Drawer</Menu.Item>
+            <Menu.Item icon="keyboard">Alert</Menu.Item>
+            <Menu.Item icon="bell">Notification</Menu.Item>
+            <Menu.Item icon="desktop">Modal</Menu.Item>
+          </Menu.ItemGroup>
+          <Menu.ItemGroup title="DATA DISPLAY">
+            <Menu.Item icon="table">Table</Menu.Item>
+            <Menu.Item icon="clock">Timeline</Menu.Item>
+          </Menu.ItemGroup>
         </Menu>
       </div>
     </div>

@@ -3,6 +3,12 @@
 .rc-menu-item-group {
   margin-top: 2rem;
   margin-bottom: 2rem;
+
+  &.--icon-only {
+    .rc-menu-item-group-title {
+      display: none;
+    }
+  }
 }
 
 .rc-menu-item-group-title {

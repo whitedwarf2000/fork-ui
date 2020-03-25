@@ -8,7 +8,7 @@ import TopNavigation from './TopNavigation';
 require('./Dashboard.scss');
 
 const Dashboard = ({}) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   return (
     <div id="main-admin" className="flex">

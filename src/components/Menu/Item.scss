@@ -14,8 +14,8 @@
   }
 
   &.--icon-only {
-    height: 4.5rem;
-    width: 4.5rem;
+    display: flex;
+    justify-content: center;
 
     .rc-menu-item-title-icon {
       margin-right: 0;
