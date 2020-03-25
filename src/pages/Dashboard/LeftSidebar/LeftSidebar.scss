@@ -1,0 +1,38 @@
+@import '../../../scss/vars.scss';
+
+.left-sidebar-container {
+  width: 4.5rem;
+  transition: all 0.5s;
+
+  &.--expanded {
+    width: 20rem;
+  }
+}
+
+.left-sidebar {
+  position: fixed;
+  width: inherit;
+  min-height: calc(100vh - 1rem);
+  background-color: #191e3a;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  overflow: hidden;
+}
+
+.left-sidebar {
+  > .__menu {
+    background-color: #191e3a;
+    color: #ffffff;
+    border-radius: 0;
+  
+    &.--expanded {
+      .rc-menu-item-content {
+        display: none;
+      }
+    }
+  
+    .rc-menu-sub-list {
+      background-color: #13182d;
+    }
+  }
+}

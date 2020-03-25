@@ -6,7 +6,7 @@ import Icon from '../Icon';
 
 require('./Item.scss');
 
-const Item = ({ className, selected, disabled, children, icon, ...otherProps }) => {
+const Item = ({ className, selected, disabled, children, icon, iconOnly, ...otherProps }) => {
   return (
     <li
       className={cn(
@@ -14,13 +14,14 @@ const Item = ({ className, selected, disabled, children, icon, ...otherProps }) 
         {
           '--selected': selected,
           '--disabled': disabled,
+          '--icon-only': iconOnly,
         },
         className,
       )}
       {...otherProps}
     >
-      {icon && <Icon name={icon} className="rc-menu-item-icon" />}
-      <span>{children}</span>
+      {icon && <Icon name={icon} className="rc-menu-item-title-icon" />}
+      <span className="rc-menu-item-content">{children}</span>
     </li>
   );
 };

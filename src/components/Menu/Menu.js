@@ -8,10 +8,13 @@ import Sub from './Sub';
 
 require('./Menu.scss');
 
-const Menu = ({ className, children }) => {
+const Menu = ({ className, children, iconOnly }) => {
   return (
-    <ul className={cn('rc-menu', className)}>
-      {children}
+    <ul className={cn('rc-menu',{ '--icon-only': iconOnly }, className)}>
+      {React.Children.map(children, elm => React.cloneElement(elm, {
+        iconOnly,
+        ...elm.props
+      }))}
     </ul>
   );
 };

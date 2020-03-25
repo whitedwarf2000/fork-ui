@@ -4,12 +4,15 @@ import PropTypes from 'prop-types';
 
 require('./ItemGroup.scss');
 
-const ItemGroup = ({ className, children, title, ...otherProps }) => {
+const ItemGroup = ({ className, children, title, iconOnly, ...otherProps }) => {
   return (
-    <li className={cn('rc-menu-item-group')}>
+    <li className={cn('rc-menu-item-group', { '--icon-only': iconOnly })}>
       <div className="rc-menu-item-group-title">{title}</div>
       <ul className="rc-menu-item-group-list">
-        {children}
+        {React.Children.map(children, elm => React.cloneElement(elm, {
+          iconOnly,
+          ...elm.props
+        }))}
       </ul>
     </li>
   );

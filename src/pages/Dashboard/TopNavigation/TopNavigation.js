@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { Button, Icon, Avatar } from '../core';
+import { Button, Icon, Avatar } from '../../../components/core';
 
 require('./TopNavigation.scss');
 
