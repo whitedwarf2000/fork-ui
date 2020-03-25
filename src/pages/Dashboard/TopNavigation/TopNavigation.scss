@@ -1,27 +1,35 @@
 @import '../../../scss/vars.scss';
 
-#top-navigation-container {
-  height: 5rem;
-  padding: 0.5rem;
+.top-navigation-container {
+  height: 6rem;
   width: 100%;
 }
 
+.top-navigation-wrapper {
+  position: fixed;
+  height: 6rem;
+  width: calc(100vw - 6rem);
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  transition: all 0.25s;
+
+  &.--expanded {
+    width: calc(100vw - 20rem);
+  }
+}
+
 .top-navigation {
-  width: 100%;
-  transition: all 0.5s;
-  background-color: $root-bg-color;
-  border-radius: 1rem;
   height: 100%;
+  width: 100%;
+  border-radius: $border-radius;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 0 1.5rem;
 }
 
 // DARK MODE SUPPORT
 .dark-mode {
   .top-navigation {
-    background-color: #191e3a;
+    background-color: $dark-bg-color--400;
   }
 }

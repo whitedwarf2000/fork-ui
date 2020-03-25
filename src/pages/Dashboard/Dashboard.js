@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -8,13 +8,14 @@ import TopNavigation from './TopNavigation';
 require('./Dashboard.scss');
 
 const Dashboard = ({}) => {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const toggleExpand = useCallback(() => setIsExpanded(prev => !prev), []);
 
   return (
     <div id="main-admin" className="flex">
       <LeftSidebar isExpanded={isExpanded} />
       <div className="flex-1 flex flex-col">
-        <TopNavigation onExpanding={setIsExpanded}/>
+        <TopNavigation toggleExpand={toggleExpand} isExpanded={isExpanded} />
         <div className="">
           
         </div>

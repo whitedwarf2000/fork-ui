@@ -24,9 +24,11 @@ import ModalBox from '../documents/Modal.box';
 import MenuBox from '../documents/Menu.box';
 import BreadcrumbBox from '../documents/Breadcrumb.box';
 
+require('./HomePage.scss');
+
 export default () => {
   return (
-    <div className="container mx-auto flex flex-col relative">
+    <div className="container mx-auto flex flex-col relative" id="homepage">
       <div className="flex mb-20 flex-wrap">
         <ButtonBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
         <PaginationBox className="w-full sm:w-full md:w-:full lg:w-1/3 xl:w-1/3 mb-10" />
