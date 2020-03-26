@@ -7,6 +7,7 @@
 
 .top-navigation-wrapper {
   position: fixed;
+  z-index: 10;
   height: 6rem;
   width: calc(100vw - 7rem);
   padding: 0.5rem 0.5rem 0.5rem 0;

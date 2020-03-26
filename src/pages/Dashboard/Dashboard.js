@@ -7,12 +7,13 @@ import LeftSidebar from './LeftSidebar';
 import TopNavigation from './TopNavigation';
 import loadable from '../../utils/loadable';
 
-const CheckboxDocument = loadable(() => import('../documents-2/CheckboxDocument'));
-const RadioDocument = loadable(() => import('../documents-2/RadioDocument'));
-const SwitchDocument = loadable(() => import('../documents-2/SwitchDocument'));
-const IconDocument = loadable(() => import('../documents-2/IconDocument'));
-const ButtonDocument = loadable(() => import('../documents-2/ButtonDocument'));
-const TooltipDocument = loadable(() => import('../documents-2/TooltipDocument'));
+const CheckboxDocument = loadable(() => import('../documents/CheckboxDocument'));
+const RadioDocument = loadable(() => import('../documents/RadioDocument'));
+const SwitchDocument = loadable(() => import('../documents/SwitchDocument'));
+const IconDocument = loadable(() => import('../documents/IconDocument'));
+const ButtonDocument = loadable(() => import('../documents/ButtonDocument'));
+const TooltipDocument = loadable(() => import('../documents/TooltipDocument'));
+const UISystem = loadable(() => import('../UISystem'));
 
 require('./Dashboard.scss');
 
@@ -21,20 +22,23 @@ const Dashboard = ({}) => {
   const toggleExpand = useCallback(() => setIsExpanded(prev => !prev), []);
 
   return (
-    <div id="main-admin" className="flex">
+    <div id="main-admin" className="flex pr-2">
       <LeftSidebar isExpanded={isExpanded} />
       <div className="flex-1 flex flex-col">
         <TopNavigation toggleExpand={toggleExpand} isExpanded={isExpanded} />
         <div className="flex">
           <div className="flex-1">
             <Switch>
-              <Route exact path="/document/checkbox">
+              <Route exact path="/">
+                <UISystem />
+              </Route>
+              <Route path="/document/checkbox">
                 <CheckboxDocument />
               </Route>
-              <Route exact path="/document/switch">
+              <Route path="/document/switch">
                 <SwitchDocument />
               </Route>
-              <Route exact path="/document/radio">
+              <Route path="/document/radio">
                 <RadioDocument />
               </Route>
               <Route path="/document/icon">
@@ -48,7 +52,6 @@ const Dashboard = ({}) => {
               </Route>
             </Switch>
           </div>
-          <div style={{ width: '20rem' }}></div>
         </div>
       </div>
     </div>

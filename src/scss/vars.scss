@@ -25,7 +25,7 @@ $dark-bg-color--400: #2c2d31;
 $body-dark-bg-color: #17181a;
 
 $root-bg-color: #f0f2f5;
-$root-darkmode-bg-color: #1a1b1d;
+$root-darkmode-bg-color: $dark-bg-color--500;
 $root-text-color: #2f2f2f;
 $root-text-inverted-color: rgb(228, 230, 235);
 $root-darkmode-text-color: rgb(228, 230, 235);
