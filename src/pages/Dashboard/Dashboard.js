@@ -30,7 +30,7 @@ const Dashboard = ({}) => {
           <div className="flex-1">
             <Switch>
               <Route exact path="/">
-                <UISystem />
+                {/* <UISystem /> */}
               </Route>
               <Route path="/document/checkbox">
                 <CheckboxDocument />

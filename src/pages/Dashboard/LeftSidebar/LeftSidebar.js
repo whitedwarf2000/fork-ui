@@ -69,8 +69,8 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item icon="globe" key="register-page">Register Page</Menu.Item>
             </Menu.ItemGroup>
             <Menu.Item icon="table" key="calendar">Calendar</Menu.Item>
-            <Menu.Item icon="clock" key="calendar">Date Picker</Menu.Item>
-            <Menu.Item icon="keyboard" key="calendar">Editer</Menu.Item>
+            <Menu.Item icon="clock" key="date-licker">Date Picker</Menu.Item>
+            <Menu.Item icon="keyboard" key="editer">Editer</Menu.Item>
           </Menu>
         </div>
       </div>
