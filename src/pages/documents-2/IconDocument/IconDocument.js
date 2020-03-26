@@ -1,28 +1,32 @@
 import React from 'react';
 import { Icon } from '../../../components/core';
+import Codebox from '../../../components/Codebox';
 
-import icons from '../../../components/Icon/svg';
+import Basic from './demo/Basic';
+import Color from './demo/Color';
+import Size from './demo/Size';
+import Collection from './demo/Collection';
 
-require('./IconDocument.scss');
-
-const IconCard = ({ icon }) => {
+export default () => {
   return (
-    <div className="icon-card">
-      <Icon name={icon} />
-    </div>
-  )
-};
-
-const IconDocument = () => {
-  return (
-    <div className="flex flex-col">
-      <div className="icon-list flex flex-wrap">
-        {Object.keys(icons).map(key => (
-          <IconCard icon={key} />
-        ))}
+    <div className="flex">
+      <div className="w-1/2 pr-2">
+        <Codebox className="mb-5" header="BASIC" href="icon-basic" code={Basic.code}>
+          <Basic />
+        </Codebox>
+        <Codebox className="mb-5" header="COLOR" href="icon-color" code={Color.code}>
+          <Color />
+        </Codebox>
+        <Codebox className="mb-5" header="SIZE" href="icon-size" code={Size.code}>
+          <Size />
+        </Codebox>
+      </div>
+      <div className="w-1/2 pl-2">
+        <Codebox className="mb-5" header="COLLECTION" href="icon-collection">
+          <Collection />
+        </Codebox>
       </div>
     </div>
   );
 };
 
-export default IconDocument;

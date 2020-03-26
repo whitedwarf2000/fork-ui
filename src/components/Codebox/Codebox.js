@@ -15,7 +15,7 @@ const Codebox = ({ children, header, href, code, className }) => {
       <div className="code-box-demo">
         {children}
       </div>
-      <div className={cn('code-box-guide', { '--expanded': expanded })}>
+      <div className={cn('code-box-guide', { '--expanded': expanded, '--hidden': !code })}>
         <div className="code-box-collapse-code-header" onClick={toggleExpanded}>
           <span className="mr-2">Code</span>
           <Icon name="caret-down" />

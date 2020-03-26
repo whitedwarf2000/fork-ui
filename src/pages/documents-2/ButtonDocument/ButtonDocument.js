@@ -10,7 +10,7 @@ import WithIcon from './demo/WithIcon';
 
 require('./ButtonDocument.scss');
 
-const ButtonDocument = () => {
+export default () => {
   return (
     <div className="flex">
       <div className="w-1/2 pr-2">
@@ -36,4 +36,3 @@ const ButtonDocument = () => {
   );
 };
 
-export default ButtonDocument;

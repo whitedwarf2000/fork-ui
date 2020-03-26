@@ -20,6 +20,10 @@
   display: flex;
   flex-direction: column;
 
+  &.--hidden {
+    display: none;
+  }
+
   &.--expanded {
     .code-box-code {
       display: block;
