@@ -6,6 +6,7 @@ import Portal from '../Portal';
 import PureDrawer from '../PureDrawer';
 
 import useSupportCloseAnimation from '../../hooks/useSupportCloseAnimation';
+import useDebounce from '../../hooks/useDebounce';
 import useClickOutsideOverlay from '../../hooks/useClickOutsideOverlay';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 
@@ -13,8 +14,7 @@ require('./Drawer.scss');
 
 const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps }) => {
   const ref = useRef();
-
-  const delayOpen = useSupportCloseAnimation(open);
+  const delayOpen = useDebounce(open, 100);
 
   const handleClickOutside = useCallback(() => {
     if (canOutsideClickClose) {
