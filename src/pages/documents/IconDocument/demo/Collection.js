@@ -6,7 +6,7 @@ require('./Collection.scss');
 
 const IconBox = ({ name }) => {
   return (
-    <Tooltip label={name}>
+    <Tooltip title={name}>
       <div className="icon-box">
         <Icon name={name} />
       </div>
