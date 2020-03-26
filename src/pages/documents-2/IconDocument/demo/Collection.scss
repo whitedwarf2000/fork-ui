@@ -10,6 +10,15 @@
   border-radius: $border-radius;
 
   &:hover {
-    background-color: $primary-color;
+    box-shadow: $neumorphism-pressed
+  }
+}
+
+// DARK MODE SUPPORT
+.dark-mode {
+  .icon-box {
+    &:hover {
+      box-shadow: $neumorphism-darkmode-pressed
+    }
   }
 }

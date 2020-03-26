@@ -1,14 +1,16 @@
 import React from 'react';
-import { Icon } from '../../../../components/core';
+import { Icon, Tooltip } from '../../../../components/core';
 import list from '../../../../components/Icon/svg';
 
 require('./Collection.scss');
 
 const IconBox = ({ name }) => {
   return (
-    <div className="icon-box">
-      <Icon name={name} />
-    </div>
+    <Tooltip label={name}>
+      <div className="icon-box">
+        <Icon name={name} />
+      </div>
+    </Tooltip>
   );
 };
 
