@@ -3,8 +3,6 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import Icon from '../Icon';
-import Divider from '../Divider';
 
 require('./PureDrawer.scss');
 
@@ -13,7 +11,7 @@ const PureDrawer = ({ drawerRef, children, title, onCloseClick, className, closa
     <div className={cn('rc-pure-drawer', className)} ref={drawerRef} {...otherProps}>
       <div className="rc-pure-drawer-title">
         <span>{title}</span>
-        {closable && <Button icon="times" circle className="rc-pure-drawer-toggle" fontSize="0.75em" onClick={onCloseClick} />}
+        {closable && <Button icon="times" circle className="rc-pure-drawer-close" fontSize="0.75em" onClick={onCloseClick} />}
       </div>
       <div className="rc-pure-drawer-content">
         {children}

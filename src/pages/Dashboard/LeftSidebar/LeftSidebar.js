@@ -13,6 +13,8 @@ const mapRouter = Object.freeze({
   '/document/checkbox': 'checkbox',
   '/document/radio': 'radio',
   '/document/switch': 'switch',
+  '/document/drawer': 'drawer',
+  '/document/modal': 'modal',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {

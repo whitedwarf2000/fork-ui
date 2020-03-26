@@ -14,6 +14,7 @@ const IconDocument = loadable(() => import('../documents/IconDocument'));
 const ButtonDocument = loadable(() => import('../documents/ButtonDocument'));
 const TooltipDocument = loadable(() => import('../documents/TooltipDocument'));
 const DrawerDocument = loadable(() => import('../documents/DrawerDocument'));
+const ModalDocument = loadable(() => import('../documents/ModalDocument'));
 
 const UISystem = loadable(() => import('../UISystem'));
 
@@ -41,6 +42,7 @@ const Dashboard = ({}) => {
               <Route path="/document/button" component={ButtonDocument} />
               <Route path="/document/tooltip" component={TooltipDocument} />
               <Route path="/document/drawer" component={DrawerDocument} />
+              <Route path="/document/modal" component={ModalDocument} />
             </Switch>
           </div>
         </div>

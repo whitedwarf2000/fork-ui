@@ -1,0 +1,33 @@
+@import '../../scss/vars.scss';
+
+.rc-pure-modal {
+  position: relative;
+  min-width: 24em;
+  background-color: $root-bg-color;
+  border-radius: $border-radius;
+}
+
+.rc-pure-modal-title {
+  padding: 1em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.rc-pure-modal-content {
+  padding: 1.5em 1em;
+  overflow: scroll;
+}
+
+// DARK MODE SUPPORT
+.dark-mode {
+  .rc-pure-modal {
+    background-color: $dark-bg-color--500;
+  }
+
+  .rc-pure-modal-title {
+    border-bottom: 1px dashed $dark-bg-color--300;
+  }
+}
