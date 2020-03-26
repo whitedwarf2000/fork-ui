@@ -1,18 +1,18 @@
 @import '../../../scss/vars.scss';
 
 .left-sidebar-container {
-  width: 6rem;
+  width: 7rem;
   height: 100vh;
   transition: all 0.25s;
 
   &.--expanded {
-    width: 20rem;
+    width: 21rem;
   }
 }
 
 .left-sidebar-wrapper {
   position: fixed;
-  width: inherit;
+  width: 6rem;
   height: inherit;
   padding: 0.5rem;
 

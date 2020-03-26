@@ -8,12 +8,14 @@ import Sub from './Sub';
 
 require('./Menu.scss');
 
-const Menu = ({ className, children, iconOnly }) => {
+const Menu = ({ className, children, selectedKeys, iconOnly }) => {
   return (
     <ul className={cn('rc-menu',{ '--icon-only': iconOnly }, className)}>
       {React.Children.map(children, elm => React.cloneElement(elm, {
+        ...elm.props,
         iconOnly,
-        ...elm.props
+        selected: selectedKeys.indexOf(elm.key) >= 0,
+        selectedKeys,
       }))}
     </ul>
   );
@@ -27,7 +29,10 @@ Menu.displayName = 'Menu';
 Menu.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
+  selectedKeys: PropTypes.array,
 };
-Menu.defaultProps = {};
+Menu.defaultProps = {
+  selectedKeys: [],
+};
 
 export default Menu;

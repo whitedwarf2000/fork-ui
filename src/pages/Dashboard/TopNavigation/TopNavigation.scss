@@ -8,12 +8,12 @@
 .top-navigation-wrapper {
   position: fixed;
   height: 6rem;
-  width: calc(100vw - 6rem);
+  width: calc(100vw - 7rem);
   padding: 0.5rem 0.5rem 0.5rem 0;
   transition: all 0.25s;
 
   &.--expanded {
-    width: calc(100vw - 20rem);
+    width: calc(100vw - 21rem);
   }
 }
 

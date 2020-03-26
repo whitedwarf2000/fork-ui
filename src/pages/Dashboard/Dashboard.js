@@ -9,6 +9,7 @@ import loadable from '../../utils/loadable';
 
 const ColorDocument = loadable(() => import('../documents-2/ColorDocument'));
 const IconDocument = loadable(() => import('../documents-2/IconDocument'));
+const ButtonDocument = loadable(() => import('../documents-2/ButtonDocument'));
 
 require('./Dashboard.scss');
 
@@ -21,15 +22,21 @@ const Dashboard = ({}) => {
       <LeftSidebar isExpanded={isExpanded} />
       <div className="flex-1 flex flex-col">
         <TopNavigation toggleExpand={toggleExpand} isExpanded={isExpanded} />
-        <div style={{ marginRight: '0.5rem' }}>
-          <Switch>
-            <Route exact path="/document/colors">
-              <ColorDocument />
-            </Route>
-            <Route exact path="/document/icon">
-              <IconDocument />
-            </Route>
-          </Switch>
+        <div className="flex">
+          <div className="flex-1">
+            <Switch>
+              <Route exact path="/document/colors">
+                <ColorDocument />
+              </Route>
+              <Route exact path="/document/icon">
+                <IconDocument />
+              </Route>
+              <Route exact path="/document/button">
+                <ButtonDocument />
+              </Route>
+            </Switch>
+          </div>
+          <div style={{ width: '20rem' }}></div>
         </div>
       </div>
     </div>

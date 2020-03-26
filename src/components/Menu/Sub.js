@@ -6,7 +6,7 @@ import Icon from '../Icon';
 
 require('./Sub.scss');
 
-const Sub = ({ className, children, title, icon, iconOnly, ...otherProps }) => {
+const Sub = ({ className, children, title, icon, iconOnly, selectedKeys }) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const toggleExpanded = useCallback(() => setIsExpanded(prev => !prev), []);
 
@@ -21,8 +21,10 @@ const Sub = ({ className, children, title, icon, iconOnly, ...otherProps }) => {
       </div>
       <ul className="rc-menu-sub-list">
         {React.Children.map(children, elm => React.cloneElement(elm, {
+          ...elm.props,
           iconOnly,
-          ...elm.props
+          selected: selectedKeys.indexOf(elm.key) >= 0,
+          selectedKeys,
         }))}
       </ul>
     </li>
@@ -33,7 +35,10 @@ Sub.displayName = 'Menu.Sub';
 Sub.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
+  selectedKeys: PropTypes.array,
 };
-Sub.defaultProps = {};
+Sub.defaultProps = {
+  selectedKeys: [],
+};
 
 export default Sub;
