@@ -7,11 +7,21 @@ import PureConfirm from '../PureConfirm';
 
 import useDebounce from '../../hooks/useDebounce';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
+import push from './push';
 
 require('./Confirm.scss');
 
-const Confirm = ({ className, open, ...otherProps }) => {
+const Confirm = ({ className, open, onClose, onOk, onCancel, ...otherProps }) => {
   const delayOpen = useDebounce(open, 100);
+  const _onOk = useCallback(() => {
+    onClose();
+    onOk();
+  }, []);
+
+  const _onCancel = useCallback(() => {
+    onClose();
+    onCancel();
+  }, []);
 
   useLockBodyScroll(delayOpen);
 
@@ -22,6 +32,8 @@ const Confirm = ({ className, open, ...otherProps }) => {
           <div className={cn('rc-confirm', { '--close-animation': !open })}>
             <PureConfirm
               className={className}
+              onOk={_onOk}
+              onCancel={_onCancel}
               {...otherProps}
             />
           </div>
@@ -31,11 +43,18 @@ const Confirm = ({ className, open, ...otherProps }) => {
   );
 };
 
+Confirm.push = push;
 Confirm.displayName = 'Confirm';
 Confirm.propTypes = {
   className: PropTypes.string,
   open: PropTypes.bool,
+  onClose: PropTypes.func.isRequired,
+  onCancel: PropTypes.func,
+  onOk: PropTypes.func,
 };
-Confirm.defaultProps = {};
+Confirm.defaultProps = {
+  onCancel: f => f,
+  onOk: f => f,
+};
 
 export default Confirm;

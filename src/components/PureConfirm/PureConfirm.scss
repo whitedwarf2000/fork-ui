@@ -33,6 +33,7 @@
 .dark-mode {
   .rc-pure-confirm {
     background-color: $dark-bg-color--500;
+    box-shadow: $neumorphism-darkmode-flat;
   }
 
   .rc-pure-confirm-title {

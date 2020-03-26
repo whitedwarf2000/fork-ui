@@ -25,6 +25,7 @@
 .dark-mode {
   .rc-pure-modal {
     background-color: $dark-bg-color--500;
+    box-shadow: $neumorphism-darkmode-flat;
   }
 
   .rc-pure-modal-title {

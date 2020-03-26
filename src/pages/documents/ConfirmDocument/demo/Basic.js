@@ -4,14 +4,16 @@ import { Button, Confirm } from '../../../../components/core';
 const Demo = () => {
   const [open, setOpen] = useState();
 
-  const onCancel = useCallback(() => setOpen(false), []);
-  const onOk = useCallback(() => setOpen(false), []);
+  const onCancel = useCallback(() => console.log('CANCEL'), []);
+  const onClose = useCallback(() => setOpen(false), []);
+  const onOk = useCallback(() => console.log('OK'), []);
   const onOpen = useCallback(() => setOpen(true), []);
 
   return (
     <div className="flex">
       <Confirm
         open={open}
+        onClose={onClose}
         onCancel={onCancel}
         onOk={onOk}
         title="Confirm Title"
@@ -26,21 +28,29 @@ const Demo = () => {
 
 Demo.code = `
 import React, { useState, useCallback } from 'react';
-import { Button, Modal } from '@/components/core';
+import { Button, Confirm } from '@/components/core';
 
 export default () => {
   const [open, setOpen] = useState();
 
+  const onCancel = useCallback(() => console.log('CANCEL'), []);
   const onClose = useCallback(() => setOpen(false), []);
+  const onOk = useCallback(() => console.log('OK'), []);
   const onOpen = useCallback(() => setOpen(true), []);
 
   return (
     <div className="flex">
-      <Modal open={open} onClose={onClose} title="Modal Title">
+      <Confirm
+        open={open}
+        onClose={onClose}
+        onCancel={onCancel}
+        onOk={onOk}
+        title="Confirm Title"
+      >
         What is Lorem Ipsum?
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      </Modal>
-      <Button onClick={onOpen}>Open Modal</Button>
+      </Confirm>
+      <Button onClick={onOpen}>Open Confirm</Button>
     </div>
   );
 };

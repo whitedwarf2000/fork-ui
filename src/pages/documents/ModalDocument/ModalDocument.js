@@ -5,11 +5,15 @@ import Basic from './demo/Basic';
 import ClickOutside from './demo/ClickOutside';
 import Width from './demo/Width';
 import Closable from './demo/Closable';
+import Pure from './demo/Pure';
 
 export default () => {
   return (
     <div className="flex">
       <div className="w-1/2 pr-2">
+        <Codebox className="mb-5" header="PURE MODAL" href="modal-pure" code={Pure.code}>
+          <Pure />
+        </Codebox>
         <Codebox className="mb-5" header="BASIC" href="modal-basic" code={Basic.code}>
           <Basic />
         </Codebox>
