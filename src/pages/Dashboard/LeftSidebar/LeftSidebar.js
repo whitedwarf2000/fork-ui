@@ -28,9 +28,13 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
             <Icon name="home" style={{ fontSize: '1.75rem' }} onClick={() => history.push('/')} />
           </div>
           <Menu className="__menu" iconOnly={!isExpanded} selectedKeys={selectedKeys}>
-            <Menu.Item icon="icons" key="icon" onClick={() => history.push('/document/icon')}>Icon</Menu.Item>
-            <Menu.Item icon="mouse" key="button" onClick={() => history.push('/document/button')}>Button</Menu.Item>
-            <Menu.Item icon="table" key="table">Table</Menu.Item>
+            <Menu.ItemGroup title="POPULAR" key="group-popular">
+              <Menu.Item icon="icons" key="icon" onClick={() => history.push('/document/icon')}>Icon</Menu.Item>
+              <Menu.Item icon="mouse" key="button" onClick={() => history.push('/document/button')}>Button</Menu.Item>
+              <Menu.Item icon="table" key="table">Table</Menu.Item>
+              <Menu.Item icon="scroll" key="drawer" onClick={() => history.push('/document/drawer')}>Drawer</Menu.Item>
+              <Menu.Item icon="browser" key="modal" onClick={() => history.push('/document/modal')}>Modal</Menu.Item>
+            </Menu.ItemGroup>
             <Menu.Sub key="sub-components" title="Components" icon="desktop">
               <Menu.Item key="checkbox" icon="angle-right" onClick={() => history.push('/document/checkbox')}>Checkbox</Menu.Item>
               <Menu.Item key="radio" icon="angle-right" onClick={() => history.push('/document/radio')}>Radio</Menu.Item>
@@ -58,10 +62,8 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
             <Menu.Sub title="Overlay" key="sub-overlay" icon="bell">
               <Menu.Item icon="angle-right" key="confirm">Confirm</Menu.Item>
               <Menu.Item icon="angle-right" key="tooltip" onClick={() => history.push('/document/tooltip')}>Tooltip</Menu.Item>
-              <Menu.Item icon="angle-right" key="drawer">Drawer</Menu.Item>
               <Menu.Item icon="angle-right" key="alert">Alert</Menu.Item>
               <Menu.Item icon="angle-right" key="notification">Notification</Menu.Item>
-              <Menu.Item icon="angle-right" key="modal">Modal</Menu.Item>
             </Menu.Sub>
             <Menu.ItemGroup key="group-page" title="PAGES">
               <Menu.Item icon="power-off" key="login-page">Login Page</Menu.Item>

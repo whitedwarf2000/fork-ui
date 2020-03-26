@@ -33,6 +33,8 @@ const icons = {
   'caret-down': require('./caret-down').default,
   'table': require('./table').default,
   'icons': require('./icons').default,
+  'scroll': require('./scroll').default,
+  'browser': require('./browser').default,
 };
 
 export default icons;
