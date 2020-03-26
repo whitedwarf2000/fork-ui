@@ -10,6 +10,7 @@ import loadable from '../../utils/loadable';
 const ColorDocument = loadable(() => import('../documents-2/ColorDocument'));
 const IconDocument = loadable(() => import('../documents-2/IconDocument'));
 const ButtonDocument = loadable(() => import('../documents-2/ButtonDocument'));
+const TooltipDocument = loadable(() => import('../documents-2/TooltipDocument'));
 
 require('./Dashboard.scss');
 
@@ -28,11 +29,14 @@ const Dashboard = ({}) => {
               <Route exact path="/document/colors">
                 <ColorDocument />
               </Route>
-              <Route exact path="/document/icon">
+              <Route path="/document/icon">
                 <IconDocument />
               </Route>
-              <Route exact path="/document/button">
+              <Route path="/document/button">
                 <ButtonDocument />
+              </Route>
+              <Route path="/document/tooltip">
+                <TooltipDocument />
               </Route>
             </Switch>
           </div>

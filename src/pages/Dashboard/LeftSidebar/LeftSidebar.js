@@ -36,7 +36,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
             </Menu.ItemGroup>
             <Menu.ItemGroup title="Overlay" key="group-overlay">
               <Menu.Item icon="copy" key="confirm">Confirm</Menu.Item>
-              <Menu.Item icon="cog" key="tooltip">Tooltip</Menu.Item>
+              <Menu.Item icon="cog" key="tooltip" onClick={() => history.push('/document/tooltip')}>Tooltip</Menu.Item>
               <Menu.Item icon="clock" key="drawer">Drawer</Menu.Item>
               <Menu.Item icon="keyboard" key="alert">Alert</Menu.Item>
               <Menu.Item icon="bell" key="notification">Notification</Menu.Item>
