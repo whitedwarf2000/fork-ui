@@ -7,7 +7,9 @@ import LeftSidebar from './LeftSidebar';
 import TopNavigation from './TopNavigation';
 import loadable from '../../utils/loadable';
 
-const ColorDocument = loadable(() => import('../documents-2/ColorDocument'));
+const CheckboxDocument = loadable(() => import('../documents-2/CheckboxDocument'));
+const RadioDocument = loadable(() => import('../documents-2/RadioDocument'));
+const SwitchDocument = loadable(() => import('../documents-2/SwitchDocument'));
 const IconDocument = loadable(() => import('../documents-2/IconDocument'));
 const ButtonDocument = loadable(() => import('../documents-2/ButtonDocument'));
 const TooltipDocument = loadable(() => import('../documents-2/TooltipDocument'));
@@ -26,8 +28,14 @@ const Dashboard = ({}) => {
         <div className="flex">
           <div className="flex-1">
             <Switch>
-              <Route exact path="/document/colors">
-                <ColorDocument />
+              <Route exact path="/document/checkbox">
+                <CheckboxDocument />
+              </Route>
+              <Route exact path="/document/switch">
+                <SwitchDocument />
+              </Route>
+              <Route exact path="/document/radio">
+                <RadioDocument />
               </Route>
               <Route path="/document/icon">
                 <IconDocument />

@@ -12,6 +12,10 @@
   }
 
   &.--icon-only {
+    .rc-menu-sub-title {
+      justify-content: center;
+    }
+
     .rc-menu-sub-title-icon {
       margin-right: 0;
     }

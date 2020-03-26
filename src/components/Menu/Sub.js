@@ -7,7 +7,7 @@ import Icon from '../Icon';
 require('./Sub.scss');
 
 const Sub = ({ className, children, title, icon, iconOnly, selectedKeys }) => {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const toggleExpanded = useCallback(() => setIsExpanded(prev => !prev), []);
 
   return (
