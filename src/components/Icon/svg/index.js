@@ -31,6 +31,7 @@ const icons = {
   'angle-down': require('./angle-down').default,
   'caret-down': require('./caret-down').default,
   'table': require('./table').default,
+  'icons': require('./icons').default,
 };
 
 export default icons;

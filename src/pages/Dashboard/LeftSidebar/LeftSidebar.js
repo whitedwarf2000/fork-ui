@@ -25,8 +25,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
           </div>
           <Menu className="__menu" iconOnly={!isExpanded} selectedKeys={selectedKeys}>
             <Menu.ItemGroup title="COMMON" key="group-common">
-              <Menu.Item icon="clock" key="color">Color</Menu.Item>
-              <Menu.Item icon="caret-down" key="icon" onClick={() => history.push('/document/icon')}>Icon</Menu.Item>
+              <Menu.Item icon="icons" key="icon" onClick={() => history.push('/document/icon')}>Icon</Menu.Item>
               <Menu.Item icon="mouse" key="button" onClick={() => history.push('/document/button')}>Button</Menu.Item>
             </Menu.ItemGroup>
             <Menu.ItemGroup title="Form" key="group-fom">

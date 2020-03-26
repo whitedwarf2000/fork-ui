@@ -6,7 +6,7 @@ import Icon from '../Icon';
 
 require('./Button.scss');
 
-const Button = ({ className, circle, rounded, buttonRef, icon, pressed, children, ...otherProps }) => (
+const Button = ({ className, circle, rounded, buttonRef, icon, pressed, color, fontSize, style, children, ...otherProps }) => (
   <button
     className={cn(
       'rc-button',
@@ -19,6 +19,11 @@ const Button = ({ className, circle, rounded, buttonRef, icon, pressed, children
       className,
     )}
     ref={buttonRef}
+    style={{
+      color: color || null,
+      fontSize: fontSize || null,
+      ...style
+    }}
     {...otherProps}
   >
     {icon ? <Icon name={icon} /> : children}
@@ -28,10 +33,13 @@ const Button = ({ className, circle, rounded, buttonRef, icon, pressed, children
 Button.displayName = 'Button';
 Button.propTypes = {
   className: PropTypes.string,
+  color: PropTypes.string,
+  fontSize: PropTypes.string,
   circle: PropTypes.bool,
   rounded: PropTypes.bool,
   pressed: PropTypes.bool,
   buttonRef: PropTypes.any,
+  style: PropTypes.object,
 };
 Button.defaultProps = {};
 
