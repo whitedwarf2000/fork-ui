@@ -16,8 +16,6 @@ const TooltipDocument = loadable(() => import('../documents/TooltipDocument'));
 const DrawerDocument = loadable(() => import('../documents/DrawerDocument'));
 const ModalDocument = loadable(() => import('../documents/ModalDocument'));
 
-const UISystem = loadable(() => import('../UISystem'));
-
 require('./Dashboard.scss');
 
 const Dashboard = ({}) => {
@@ -32,9 +30,6 @@ const Dashboard = ({}) => {
         <div className="flex">
           <div className="flex-1">
             <Switch>
-              <Route exact path="/">
-                {/* <UISystem /> */}
-              </Route>
               <Route path="/document/checkbox" component={CheckboxDocument} />
               <Route path="/document/switch" component={SwitchDocument} />
               <Route path="/document/radio" component={RadioDocument} />
