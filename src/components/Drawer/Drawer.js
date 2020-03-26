@@ -12,7 +12,12 @@ import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 
 require('./Drawer.scss');
 
-const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps }) => {
+const mPlacements = Object.freeze({
+  left: '--left',
+  right: '--right',
+});
+
+const Drawer = ({ className, onClose, open, canOutsideClickClose, placement, ...otherProps }) => {
   const ref = useRef();
   const delayOpen = useDebounce(open, 100);
 
@@ -29,7 +34,16 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps 
     <React.Fragment>
       {delayOpen && (
         <Portal>
-          <div className={cn('rc-drawer', { '--close-animation': !open })} ref={wrapperRef}>
+          <div
+            className={cn(
+              'rc-drawer',
+              mPlacements[placement],
+              {
+                '--close-animation': !open,
+              }
+            )}
+              ref={wrapperRef}
+            >
             <PureDrawer
               className={className}
               drawerRef={ref}
@@ -49,9 +63,11 @@ Drawer.propTypes = {
   onClose: PropTypes.func,
   open: PropTypes.bool,
   canOutsideClickClose: PropTypes.bool,
+  placement: PropTypes.oneOf(Object.keys(mPlacements))
 };
 Drawer.defaultProps = {
   onClose: f => f,
+  placement: 'right',
 };
 
 export default Drawer;

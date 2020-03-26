@@ -9,7 +9,7 @@ const Demo = () => {
 
   return (
     <div className="flex">
-      <Drawer open={open} onClose={onClose} title="Drawer Title" className="w-1/3">
+      <Drawer open={open} onClose={onClose} title="Drawer Title" className="w-1/2">
         What is Lorem Ipsum?
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       </Drawer>
@@ -30,7 +30,7 @@ export default () => {
 
   return (
     <div className="flex">
-      <Drawer open={open} onClose={onClose} title="Drawer Title" className="w-1/3">
+      <Drawer open={open} onClose={onClose} title="Drawer Title" className="w-1/2">
         What is Lorem Ipsum?
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       </Drawer>
