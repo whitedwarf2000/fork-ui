@@ -15,6 +15,7 @@ const ButtonDocument = loadable(() => import('../documents/ButtonDocument'));
 const TooltipDocument = loadable(() => import('../documents/TooltipDocument'));
 const DrawerDocument = loadable(() => import('../documents/DrawerDocument'));
 const ModalDocument = loadable(() => import('../documents/ModalDocument'));
+const ConfirmDocument = loadable(() => import('../documents/ConfirmDocument'));
 
 require('./Dashboard.scss');
 
@@ -38,6 +39,7 @@ const Dashboard = ({}) => {
               <Route path="/document/tooltip" component={TooltipDocument} />
               <Route path="/document/drawer" component={DrawerDocument} />
               <Route path="/document/modal" component={ModalDocument} />
+              <Route path="/document/confirm" component={ConfirmDocument} />
             </Switch>
           </div>
         </div>
