@@ -14,8 +14,10 @@ const Switch = ({ switchRef, defaultChecked, onChange, className, ...otherProps 
     setChecked(e.target.checked);
   }, []);
 
-  useEffect(() => {
-    setChecked(otherProps.checked);
+  useMemo(() => {
+    if (isControlled) {
+      setChecked(otherProps.checked);
+    }
   } ,[otherProps.checked]);
 
   return (
