@@ -18,6 +18,7 @@ const mapRouter = Object.freeze({
   '/document/confirm': 'confirm',
   '/document/alert': 'alert',
   '/document/notification': 'notification',
+  '/document/timeline': 'timeline',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
@@ -39,6 +40,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item icon="table" key="table">Table</Menu.Item>
               <Menu.Item icon="scroll" key="drawer" onClick={() => history.push('/document/drawer')}>Drawer</Menu.Item>
               <Menu.Item icon="browser" key="modal" onClick={() => history.push('/document/modal')}>Modal</Menu.Item>
+              <Menu.Item icon="list-ul" key="menu">Menu</Menu.Item>
             </Menu.ItemGroup>
             <Menu.Sub key="sub-components" title="Components" icon="desktop">
               <Menu.Item key="checkbox" icon="angle-right" onClick={() => history.push('/document/checkbox')}>Checkbox</Menu.Item>
@@ -47,13 +49,12 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item key="breadcrumb" icon="angle-right">Breadcrumb</Menu.Item>
               <Menu.Item key="avatar" icon="angle-right">Avatar</Menu.Item>
               <Menu.Item key="carousel" icon="angle-right">Carousel</Menu.Item>
-              <Menu.Item key="timeline" icon="angle-right">Timeline</Menu.Item>
+              <Menu.Item key="timeline" icon="angle-right" onClick={() => history.push('/document/timeline')}>Timeline</Menu.Item>
               <Menu.Item key="stepper" icon="angle-right">Stepper</Menu.Item>
               <Menu.Item key="tabs" icon="angle-right">Tabs</Menu.Item>
               <Menu.Item key="chip" icon="angle-right">Chip</Menu.Item>
               <Menu.Item key="divider" icon="angle-right">Divider</Menu.Item>
               <Menu.Item key="collapse" icon="angle-right">Collapse</Menu.Item>
-              <Menu.Item key="menu" icon="angle-right">Menu</Menu.Item>
               <Menu.Item key="pagination" icon="angle-right">Pagination</Menu.Item>
               <Menu.Item key="progress" icon="angle-right">Progress</Menu.Item>
               <Menu.Item key="rating" icon="angle-right">Rating</Menu.Item>
