@@ -20,11 +20,11 @@ const Demo = () => {
   return (
     <div className="flex flex-col w-full">
       <Timeline className="mb-5" reverse>
-        <Timeline.Item><NotificationBox requester="Hoàng Nguyễn" time="1 day ago" /></Timeline.Item>
-        <Timeline.Item><NotificationBox requester="Alan Walker" time="2 day ago" /></Timeline.Item>
-        <Timeline.Item><NotificationBox requester="Seventeen" time="3 day ago" /></Timeline.Item>
-        <Timeline.Item><NotificationBox requester="Hoàng Nguyễn" time="4 day ago" /></Timeline.Item>
         <Timeline.Item><NotificationBox requester="Sơn Lê" time="5 day ago" /></Timeline.Item>
+        <Timeline.Item><NotificationBox requester="Hoàng Nguyễn" time="4 day ago" /></Timeline.Item>
+        <Timeline.Item><NotificationBox requester="Seventeen" time="3 day ago" /></Timeline.Item>
+        <Timeline.Item><NotificationBox requester="Alan Walker" time="2 day ago" /></Timeline.Item>
+        <Timeline.Item><NotificationBox requester="Hoàng Nguyễn" time="1 day ago" /></Timeline.Item>
       </Timeline>
     </div>
   );
@@ -53,11 +53,11 @@ export default () => {
   return (
     <div className="flex flex-col w-full">
       <Timeline className="mb-5" reverse>
-        <Timeline.Item><NotificationBox requester="Hoàng Nguyễn" time="1 day ago" /></Timeline.Item>
-        <Timeline.Item><NotificationBox requester="Alan Walker" time="2 day ago" /></Timeline.Item>
-        <Timeline.Item><NotificationBox requester="Seventeen" time="3 day ago" /></Timeline.Item>
-        <Timeline.Item><NotificationBox requester="Hoàng Nguyễn" time="4 day ago" /></Timeline.Item>
         <Timeline.Item><NotificationBox requester="Sơn Lê" time="5 day ago" /></Timeline.Item>
+        <Timeline.Item><NotificationBox requester="Hoàng Nguyễn" time="4 day ago" /></Timeline.Item>
+        <Timeline.Item><NotificationBox requester="Seventeen" time="3 day ago" /></Timeline.Item>
+        <Timeline.Item><NotificationBox requester="Alan Walker" time="2 day ago" /></Timeline.Item>
+        <Timeline.Item><NotificationBox requester="Hoàng Nguyễn" time="1 day ago" /></Timeline.Item>
       </Timeline>
     </div>
   );
