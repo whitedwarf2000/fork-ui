@@ -40,11 +40,11 @@ $rail-size: 0.15em;
   align-items: center;
 }
 
-.rc-step-label {
+.rc-step-title {
   font-weight: 600;
 }
 
-.rc-step-note {
+.rc-step-description {
   display: none;
 }
 
@@ -61,11 +61,11 @@ $rail-size: 0.15em;
     color: $root-text-inverted-color;
   }
 
-  .rc-step-label {
+  .rc-step-title {
     color: $primary-color;
   }
 
-  .rc-step-note {
+  .rc-step-description {
     display: none;
   }
 }
@@ -83,7 +83,7 @@ $rail-size: 0.15em;
     color: $root-text-inverted-color;
   }
 
-  .rc-step-note {
+  .rc-step-description {
     display: block;
   }
 }
@@ -101,12 +101,12 @@ $rail-size: 0.15em;
     color: $root-text-inverted-color;
   }
 
-  .rc-step-label {
+  .rc-step-title {
     color: $error-color;
   }
 
-  .rc-step-note {
-    display: block;
+  .rc-step-description {
+    display: none;
   }
 }
 
@@ -161,7 +161,7 @@ $rail-size: 0.15em;
     margin-top: 0;
   }
 
-  .rc-step-label {
+  .rc-step-title {
     margin-top: 1em;
   }
 }

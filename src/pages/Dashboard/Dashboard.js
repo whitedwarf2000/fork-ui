@@ -19,6 +19,7 @@ const ConfirmDocument = loadable(() => import('../documents/ConfirmDocument'));
 const AlertDocument = loadable(() => import('../documents/AlertDocument'));
 const NotificationDocument = loadable(() => import('../documents/NotificationDocument'));
 const TimelineDocument = loadable(() => import('../documents/TimelineDocument'));
+const StepperDocument = loadable(() => import('../documents/StepperDocument'));
 
 require('./Dashboard.scss');
 
@@ -46,6 +47,7 @@ const Dashboard = ({}) => {
               <Route path="/document/alert" component={AlertDocument} />
               <Route path="/document/notification" component={NotificationDocument} />
               <Route path="/document/timeline" component={TimelineDocument} />
+              <Route path="/document/stepper" component={StepperDocument} />
             </Switch>
           </div>
         </div>

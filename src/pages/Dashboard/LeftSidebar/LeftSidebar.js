@@ -19,6 +19,7 @@ const mapRouter = Object.freeze({
   '/document/alert': 'alert',
   '/document/notification': 'notification',
   '/document/timeline': 'timeline',
+  '/document/stepper': 'stepper',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
@@ -50,7 +51,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item key="avatar" icon="angle-right">Avatar</Menu.Item>
               <Menu.Item key="carousel" icon="angle-right">Carousel</Menu.Item>
               <Menu.Item key="timeline" icon="angle-right" onClick={() => history.push('/document/timeline')}>Timeline</Menu.Item>
-              <Menu.Item key="stepper" icon="angle-right">Stepper</Menu.Item>
+              <Menu.Item key="stepper" icon="angle-right" onClick={() => history.push('/document/stepper')}>Stepper</Menu.Item>
               <Menu.Item key="tabs" icon="angle-right">Tabs</Menu.Item>
               <Menu.Item key="chip" icon="angle-right">Chip</Menu.Item>
               <Menu.Item key="divider" icon="angle-right">Divider</Menu.Item>
