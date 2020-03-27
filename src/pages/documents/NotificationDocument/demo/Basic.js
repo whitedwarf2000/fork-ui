@@ -15,7 +15,7 @@ const Demo = () => {
         onClose={onClose}
         title="Warning Title"
       />
-      <Button onClick={onOpen}>Open Alert</Button>
+      <Button onClick={onOpen}>Open Confirm</Button>
     </div>
   );
 };
@@ -38,7 +38,7 @@ const Demo = () => {
         onClose={onClose}
         title="Warning Title"
       />
-      <Button onClick={onOpen}>Open Alert</Button>
+      <Button onClick={onOpen}>Open Confirm</Button>
     </div>
   );
 };

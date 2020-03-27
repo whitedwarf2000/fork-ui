@@ -17,6 +17,7 @@ const DrawerDocument = loadable(() => import('../documents/DrawerDocument'));
 const ModalDocument = loadable(() => import('../documents/ModalDocument'));
 const ConfirmDocument = loadable(() => import('../documents/ConfirmDocument'));
 const AlertDocument = loadable(() => import('../documents/AlertDocument'));
+const NotificationDocument = loadable(() => import('../documents/NotificationDocument'));
 
 require('./Dashboard.scss');
 
@@ -42,6 +43,7 @@ const Dashboard = ({}) => {
               <Route path="/document/modal" component={ModalDocument} />
               <Route path="/document/confirm" component={ConfirmDocument} />
               <Route path="/document/alert" component={AlertDocument} />
+              <Route path="/document/notification" component={NotificationDocument} />
             </Switch>
           </div>
         </div>

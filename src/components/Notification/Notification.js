@@ -25,7 +25,7 @@ const Notification = ({ onClose, open, duration, ...otherProps }) => {
       {delayOpen && (
         <Portal node={rootNotification}>
           <PureNotification
-            onBellClick={onClose}
+            onCloseClick={onClose}
             className={cn('rc-notification', { '--close-animation': !open })}
             {...otherProps}
           />

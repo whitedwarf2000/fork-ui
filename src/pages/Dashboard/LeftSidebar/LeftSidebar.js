@@ -17,6 +17,7 @@ const mapRouter = Object.freeze({
   '/document/modal': 'modal',
   '/document/confirm': 'confirm',
   '/document/alert': 'alert',
+  '/document/notification': 'notification',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
@@ -67,7 +68,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item icon="angle-right" key="confirm" onClick={() => history.push('/document/confirm')}>Confirm</Menu.Item>
               <Menu.Item icon="angle-right" key="tooltip" onClick={() => history.push('/document/tooltip')}>Tooltip</Menu.Item>
               <Menu.Item icon="angle-right" key="alert" onClick={() => history.push('/document/alert')}>Alert</Menu.Item>
-              <Menu.Item icon="angle-right" key="notification">Notification</Menu.Item>
+              <Menu.Item icon="angle-right" key="notification" onClick={() => history.push('/document/notification')}>Notification</Menu.Item>
             </Menu.Sub>
             <Menu.ItemGroup key="group-page" title="PAGES">
               <Menu.Item icon="power-off" key="login-page">Login Page</Menu.Item>
