@@ -22,9 +22,9 @@ const Demo = () => {
 
 Demo.code = `
 import React, { useState, useCallback } from 'react';
-import { Button, Alert } from '../../../../components/core';
+import { Button, Alert } from '@/components/core';
 
-const Demo = () => {
+export default () => {
   const [open, setOpen] = useState();
 
   const onClose = useCallback(() => setOpen(false), []);

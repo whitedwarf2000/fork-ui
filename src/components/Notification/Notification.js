@@ -40,10 +40,12 @@ Notification.propTypes = {
   onClose: PropTypes.func,
   open: PropTypes.bool,
   duration: PropTypes.number,
+  title: PropTypes.any,
+  onContentClick: PropTypes.func,
 };
 Notification.defaultProps = {
   onClose: f => f,
-  duration: 3000,
+  duration: 10000,
 };
 
 export default Notification;

@@ -8,6 +8,7 @@ import Content from './demo/Content';
 import Semantic from './demo/Semantic';
 import Closable from './demo/Closable';
 import Duration from './demo/Duration';
+import Custom from './demo/Custom';
 
 export default () => {
   return (
@@ -19,7 +20,10 @@ export default () => {
         <Codebox className="mb-5" header="BASIC" href="confirm-basic" code={Basic.code}>
           <Basic />
         </Codebox>
-        <Codebox className="mb-5" header="AUTO CLOSE" href="confirm-Duration" code={Duration.code}>
+        <Codebox className="mb-5" header="CUSTOM" href="confirm-custom" code={Custom.code}>
+          <Custom />
+        </Codebox>
+        <Codebox className="mb-5" header="AUTO CLOSE" href="confirm-duration" code={Duration.code}>
           <Duration />
         </Codebox>
         <Codebox className="mb-5" header="SEMANTIC" href="confirm-semantic" code={Semantic.code}>
