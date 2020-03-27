@@ -1,9 +1,9 @@
-import React, { useState, useCallback } from 'react';
-import { Button, Confirm } from '../../../../components/core';
+import React, { useCallback } from 'react';
+import { Button, helper } from '../../../../components/core';
 
 const Demo = () => {
   const onOpen = useCallback(() => {
-    Confirm.push({
+    helper.pushConfirm({
       title: 'Confirm Title',
       onOk: () => console.log('OK'),
       onCancel: () => console.log('CANCEL'),
@@ -19,12 +19,12 @@ const Demo = () => {
 };
 
 Demo.code = `
-import React, { useState, useCallback } from 'react';
-import { Button, Confirm } from '@/components/core';
+import React, { useCallback } from 'react';
+import { Button, helper } from '@/components/core';
 
 export default () => {
   const onOpen = useCallback(() => {
-    Confirm.push({
+    helper.pushConfirm({
       title: 'Confirm Title',
       onOk: () => console.log('OK'),
       onCancel: () => console.log('CANCEL'),

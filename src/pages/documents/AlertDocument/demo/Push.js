@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
-import { Button, Alert } from '../../../../components/core';
+import { Button, helper } from '../../../../components/core';
 
 const Demo = () => {
   const onOpen = useCallback(() => {
-    Alert.push({
+    helper.pushAlert({
       success: true,
       title: 'Success Title',
     })
@@ -11,18 +11,18 @@ const Demo = () => {
 
   return (
     <div className="flex">
-      <Button onClick={onOpen}>Open Alert</Button>
+      <Button onClick={onOpen}>Push Alert</Button>
     </div>
   );
 };
 
 Demo.code = `
 import React, { useCallback } from 'react';
-import { Button, Alert } from '@/components/core';
+import { Button, helper } from '@/components/core';
 
-const Demo = () => {
+export default () => {
   const onOpen = useCallback(() => {
-    Alert.push({
+    helper.pushAlert({
       success: true,
       title: 'Success Title',
     })
@@ -30,7 +30,7 @@ const Demo = () => {
 
   return (
     <div className="flex">
-      <Button onClick={onOpen}>Open Alert</Button>
+      <Button onClick={onOpen}>Push Alert</Button>
     </div>
   );
 };

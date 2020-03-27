@@ -7,7 +7,6 @@ import PureAlert from '../PureAlert';
 import { rootAlert } from '../Portal/portalNode';
 
 import useDebounce from '../../hooks/useDebounce';
-import push from './push';
 
 require('./Alert.scss');
 
@@ -35,8 +34,6 @@ const Alert = ({ onClose, open, duration, ...otherProps }) => {
     </React.Fragment>
   );
 };
-
-Alert.push = push;
 
 Alert.displayName = 'Alert';
 Alert.propTypes = {

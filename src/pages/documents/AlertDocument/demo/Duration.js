@@ -1,17 +1,18 @@
 import React, { useCallback } from 'react';
-import { Button, Alert } from '../../../../components/core';
+import { Button, helper } from '../../../../components/core';
 
 const Demo = () => {
   const onOpen5 = useCallback(() => {
-    Alert.push({
+    helper.pushAlert({
       success: true,
       title: 'Close after 5 second',
       duration: 5000,
+      children: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     });
   }, []);
 
   const onOpen = useCallback(() => {
-    Alert.push({
+    helper.pushAlert({
       success: true,
       title: 'You must close manual',
       duration: 0,
@@ -28,19 +29,20 @@ const Demo = () => {
 
 Demo.code = `
 import React, { useCallback } from 'react';
-import { Button, Alert } from '@/components/core';
+import { Button, helper } from '@/components/core';
 
 export default () => {
   const onOpen5 = useCallback(() => {
-    Alert.push({
+    helper.pushAlert({
       success: true,
       title: 'Close after 5 second',
       duration: 5000,
+      children: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     });
   }, []);
 
   const onOpen = useCallback(() => {
-    Alert.push({
+    helper.pushAlert({
       success: true,
       title: 'You must close manual',
       duration: 0,

@@ -4,7 +4,6 @@
   position: relative;
   min-width: 30rem;
   width: 100%;
-  background-color: $root-bg-color;
   border-radius: $border-radius;
 }
 
@@ -48,17 +47,9 @@
 // DARK MODE SUPPORT
 .dark-mode {
   .rc-pure-alert {
-    background-color: $dark-bg-color--300;
+    background-color: $dark-bg-color--500;
+    box-shadow: $neumorphism-darkmode-flat;
   }
-
-  .rc-pure-alert-close {
-    background-color: $dark-bg-color--300;
-    box-shadow: $neumorphism-darkmode-flat--300;
-
-    &:focus {
-      box-shadow: $neumorphism-darkmode-pressed--300;
-    }
-  }  
 
   .rc-pure-alert-content {
     border-top: 1px dashed $dark-bg-color--400;

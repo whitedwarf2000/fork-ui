@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
-import { Button, Alert } from '../../../../components/core';
+import { Button, helper } from '../../../../components/core';
 
 const Demo = () => {
   const onOpen5 = useCallback(() => {
-    Alert.push({
+    helper.pushAlert({
       success: true,
       title: 'Close after 5 second',
       duration: 5000,
@@ -11,7 +11,7 @@ const Demo = () => {
   }, []);
 
   const onOpen = useCallback(() => {
-    Alert.push({
+    helper.pushAlert({
       success: true,
       title: 'You must close manual',
       duration: 0,
