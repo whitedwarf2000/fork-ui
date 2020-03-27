@@ -17,7 +17,7 @@ export default () => {
         <Codebox className="mb-5" header="BASIC" href="notification-basic" code={Basic.code}>
           <Basic />
         </Codebox>
-        <Codebox className="mb-5" header="AUTO CLOSE" href="notification-Duration" code={Duration.code}>
+        <Codebox className="mb-5" header="AUTO CLOSE" href="notification-duration" code={Duration.code}>
           <Duration />
         </Codebox>
       </div>
@@ -25,7 +25,7 @@ export default () => {
         <Codebox className="mb-5" header="PUSH" href="notification-push" code={Push.code}>
           <Push />
         </Codebox>
-        <Codebox className="mb-5" header="CUSTOM CLOSE BEHAVIOR" href="notification-push" code={Custom.code}>
+        <Codebox className="mb-5" header="CUSTOM CLOSE BEHAVIOR" href="notification-custom" code={Custom.code}>
           <Custom />
         </Codebox>
       </div>
