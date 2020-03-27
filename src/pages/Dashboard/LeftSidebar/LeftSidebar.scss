@@ -49,10 +49,10 @@
 // DARK MODE SUPPORT
 .dark-mode {
   .left-sidebar {
-    background-color: $dark-bg-color--400;
+    background-color: $dark-left-sidebar-bg-color;
 
     > .__menu {
-      background-color: $dark-bg-color--400;
+      background-color: inherit;
 
       .rc-menu-sub-list {
         background-color: $dark-bg-color--500;

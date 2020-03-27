@@ -106,3 +106,10 @@ $neumorphism-pressed: inset 2px 2px 1px #d6d7da, inset -2px -2px 1px #ffffff;
 $neumorphism-darkmode-pressed: inset 2px 2px 1px $neumorphism-dark-from-color, inset -2px -2px 1px $neumorphism-dark-to-color;
 $neumorphism-primary-pressed: inset 1.5px 1.5px 1.5px #0084db, inset -1px -1px 1px #00aeff;
 
+/**************************************/
+$dark-left-sidebar-bg-color: $dark-bg-color--400;
+
+$neumorphism-dark-from-color--300: #333439;
+$neumorphism-dark-to-color--300: #51545b;
+$neumorphism-darkmode-flat--300: 1.5px 1.5px 1.5px $neumorphism-dark-from-color--300, -1px -1px 1px $neumorphism-dark-to-color--300;
+$neumorphism-darkmode-pressed--300: inset 2px 2px 1px $neumorphism-dark-from-color--300, inset -2px -2px 1px $neumorphism-dark-to-color--300;

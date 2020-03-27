@@ -20,7 +20,9 @@
 
 #root-alert {
   .rc-alert {
-    margin-bottom: 1em;
-    margin-left: 1em;
+    margin-bottom: 0.125em;
+    margin-left: 0.5em;
+    box-shadow: none;
+    width: 35rem;
   }
 }

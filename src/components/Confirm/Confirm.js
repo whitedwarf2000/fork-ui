@@ -51,6 +51,9 @@ Confirm.propTypes = {
   onClose: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
   onOk: PropTypes.func,
+  confirmRef: PropTypes.any,
+  children: PropTypes.any,
+  title: PropTypes.any,
 };
 Confirm.defaultProps = {
   onCancel: f => f,
