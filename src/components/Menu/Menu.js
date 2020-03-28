@@ -10,9 +10,17 @@ require('./Menu.scss');
 
 const Menu = ({ className, children, selectedKeys, setSelectedKeys, iconOnly, multiple }) => {
   const onItemClick = useCallback((key) => {
-    setSelectedKeys(() => {
+    setSelectedKeys((prev) => {
       if (multiple) {
-        return [key];
+        const next = new Set(prev);
+
+         // toggle selectedKeys with key
+        if (next.has(key)) {
+          next.delete(key);
+        } else {
+          next.add(key);
+        }
+        return [...next];
       }
 
       return [key];

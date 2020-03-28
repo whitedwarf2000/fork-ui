@@ -8,6 +8,7 @@ import Sub from './demo/Sub';
 import IconOnly from './demo/IconOnly';
 import Disabled from './demo/Disabled';
 import TitleWithIconOnly from './demo/TitleWithIconOnly';
+import Multiple from './demo/Multiple';
 
 export default () => {
   return (
@@ -32,6 +33,9 @@ export default () => {
         </Codebox>
         <Codebox className="mb-5" header="WITH ICON" href="menu-with-icon" code={IconDemo.code}>
           <IconDemo />
+        </Codebox>
+        <Codebox className="mb-5" header="MULTIPLE" href="menu-multiple" code={Multiple.code}>
+          <Multiple />
         </Codebox>
         <Codebox className="mb-5" header="GROUP MENU" href="menu-group" code={Group.code}>
           <Group />
