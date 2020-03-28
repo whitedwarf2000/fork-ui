@@ -1,7 +1,7 @@
 @import '../../scss/vars.scss';
 
-$avatar-size: 3.5em;
-$rail-size: 0.15em;
+$avatar-size: 2.5em;
+$rail-size: 1px;
 
 .rc-step {
   flex: 1;
@@ -12,12 +12,12 @@ $rail-size: 0.15em;
 }
 
 .rc-step-rail {
-  box-shadow: $neumorphism-flat;
   position: absolute;
-  top: $avatar-size / 2 - $rail-size;
+  top: $avatar-size / 2;
   left: -50%;
   height: $rail-size;
   width: 100%;
+  border-bottom: 1px dashed currentColor;
 }
 
 .rc-step-avatar {
@@ -51,14 +51,13 @@ $rail-size: 0.15em;
 // COMPLETED
 .rc-step.--completed {
   .rc-step-rail {
-    background-color: $primary-color;
-    background: $gradient-primary-color;
+    color: $primary-color;
   }
 
   .rc-step-avatar {
     background-color: $primary-color;
-    background: $gradient-primary-color;
     color: $root-text-inverted-color;
+    box-shadow: none;
   }
 
   .rc-step-title {
@@ -73,14 +72,13 @@ $rail-size: 0.15em;
 // PROCESSING
 .rc-step.--processing {
   .rc-step-rail {
-    background-color: $primary-color;
-    background: $gradient-primary-color;
+    color: $primary-color;
   }
 
   .rc-step-avatar {
     background-color: $primary-color;
-    background: $gradient-primary-color;
     color: $root-text-inverted-color;
+    box-shadow: none;
   }
 
   .rc-step-description {
@@ -91,14 +89,13 @@ $rail-size: 0.15em;
 // CANCELED
 .rc-step.--canceled {
   .rc-step-rail {
-    background-color: $error-color;
-    background: $gradient-error-color;
+    color: $error-color;
   }
 
   .rc-step-avatar {
     background-color: $error-color;
-    background: $gradient-error-color;
     color: $root-text-inverted-color;
+    box-shadow: none;
   }
 
   .rc-step-title {
@@ -120,6 +117,11 @@ $rail-size: 0.15em;
     min-height: 0;
   }
 
+  .rc-step-rail {
+    border-bottom: none;
+    border-left: 1px dashed $root-darkmode-text-color;
+  }
+
   .rc-step {
     flex-direction: row;
     min-height: 8em;
@@ -129,8 +131,8 @@ $rail-size: 0.15em;
     &.--completed {
       + .rc-step {
         .rc-step-rail {
-          background-color: $primary-color;
-          background: $gradient-primary-color;
+          color: $primary-color;
+          border-left: 1px dashed currentColor;
         }
       }
     }
@@ -138,8 +140,8 @@ $rail-size: 0.15em;
     &.--canceled {
       + .rc-step {
         .rc-step-rail {
-          background-color: $error-color;
-          background: $gradient-error-color;
+          color: $error-color;
+          border-left: 1px dashed currentColor;
         }
       }
     }
@@ -150,7 +152,7 @@ $rail-size: 0.15em;
     background: transparent;
     height: 100%;
     width: $rail-size;
-    left: $avatar-size / 2 - $rail-size;
+    left: $avatar-size / 2;
     top: calc(0 + 1.75em);
   }
 
@@ -162,16 +164,12 @@ $rail-size: 0.15em;
   }
 
   .rc-step-title {
-    margin-top: 1em;
+    margin-top: 0.5em;
   }
 }
 
 // DARK MODE SUPPORT
 .dark-mode {
-  .rc-step-rail {
-    box-shadow: $neumorphism-darkmode-flat;
-  }
-
   .rc-step-avatar {
     box-shadow: $neumorphism-darkmode-flat;
     background-color: $root-darkmode-bg-color;
