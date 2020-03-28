@@ -1,12 +1,9 @@
 import React from 'react';
-import { Icon } from '../../../components/core';
 import Codebox from '../../../components/Codebox';
 
 import Basic from './demo/Basic';
 import Placement from './demo/Placement';
 import DefaultVisible from './demo/DefaultVisible';
-
-require('./TooltipDocument.scss');
 
 export default () => {
   return (

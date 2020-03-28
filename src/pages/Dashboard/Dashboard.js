@@ -7,19 +7,19 @@ import LeftSidebar from './LeftSidebar';
 import TopNavigation from './TopNavigation';
 import loadable from '../../utils/loadable';
 
-const CheckboxDocument = loadable(() => import('../documents/CheckboxDocument'));
-const RadioDocument = loadable(() => import('../documents/RadioDocument'));
-const SwitchDocument = loadable(() => import('../documents/SwitchDocument'));
-const IconDocument = loadable(() => import('../documents/IconDocument'));
-const ButtonDocument = loadable(() => import('../documents/ButtonDocument'));
-const TooltipDocument = loadable(() => import('../documents/TooltipDocument'));
-const DrawerDocument = loadable(() => import('../documents/DrawerDocument'));
-const ModalDocument = loadable(() => import('../documents/ModalDocument'));
-const ConfirmDocument = loadable(() => import('../documents/ConfirmDocument'));
-const AlertDocument = loadable(() => import('../documents/AlertDocument'));
-const NotificationDocument = loadable(() => import('../documents/NotificationDocument'));
-const TimelineDocument = loadable(() => import('../documents/TimelineDocument'));
-const StepperDocument = loadable(() => import('../documents/StepperDocument'));
+const CheckboxDocument = loadable(() => import('../documents/Checkbox'));
+const RadioDocument = loadable(() => import('../documents/Radio'));
+const SwitchDocument = loadable(() => import('../documents/Switch'));
+const IconDocument = loadable(() => import('../documents/Icon'));
+const ButtonDocument = loadable(() => import('../documents/Button'));
+const TooltipDocument = loadable(() => import('../documents/Tooltip'));
+const DrawerDocument = loadable(() => import('../documents/Drawer'));
+const ModalDocument = loadable(() => import('../documents/Modal'));
+const ConfirmDocument = loadable(() => import('../documents/Confirm'));
+const AlertDocument = loadable(() => import('../documents/Alert'));
+const NotificationDocument = loadable(() => import('../documents/Notification'));
+const TimelineDocument = loadable(() => import('../documents/Timeline'));
+const StepperDocument = loadable(() => import('../documents/Stepper'));
 
 require('./Dashboard.scss');
 

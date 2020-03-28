@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from '../../../components/core';
 import Codebox from '../../../components/Codebox';
 
 import Basic from './demo/Basic';

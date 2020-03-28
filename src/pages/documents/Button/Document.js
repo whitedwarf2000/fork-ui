@@ -8,8 +8,6 @@ import Color from './demo/Color';
 import Size from './demo/Size';
 import WithIcon from './demo/WithIcon';
 
-require('./ButtonDocument.scss');
-
 export default () => {
   return (
     <div className="flex">
