@@ -27,6 +27,7 @@ const mapRouter = Object.freeze({
   '/document/avatar': 'avatar',
   '/document/chip': 'chip',
   '/document/divider': 'divider',
+  '/document/breadcrumb': 'breadcrumb',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
@@ -56,7 +57,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item key="checkbox" icon="angle-right" onClick={() => history.push('/document/checkbox')}>Checkbox</Menu.Item>
               <Menu.Item key="radio" icon="angle-right" onClick={() => history.push('/document/radio')}>Radio</Menu.Item>
               <Menu.Item key="swicth" icon="angle-right" onClick={() => history.push('/document/switch')}>Swicth</Menu.Item>
-              <Menu.Item key="breadcrumb" icon="angle-right">Breadcrumb</Menu.Item>
+              <Menu.Item key="breadcrumb" icon="angle-right" onClick={() => history.push('/document/breadcrumb')}>Breadcrumb</Menu.Item>
               <Menu.Item key="avatar" icon="angle-right" onClick={() => history.push('/document/avatar')}>Avatar</Menu.Item>
               <Menu.Item key="carousel" icon="angle-right">Carousel</Menu.Item>
               <Menu.Item key="timeline" icon="angle-right" onClick={() => history.push('/document/timeline')}>Timeline</Menu.Item>

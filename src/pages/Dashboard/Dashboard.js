@@ -25,6 +25,7 @@ const RaterDocument = loadable(() => import('../documents/Rater'));
 const AvatarDocument = loadable(() => import('../documents/Avatar'));
 const ChipDocument = loadable(() => import('../documents/Chip'));
 const DividerDocument = loadable(() => import('../documents/Divider'));
+const BreadcrumbDocument = loadable(() => import('../documents/Breadcrumb'));
 
 require('./Dashboard.scss');
 
@@ -60,6 +61,7 @@ const Dashboard = ({}) => {
               <Route path="/document/avatar" component={AvatarDocument} />
               <Route path="/document/chip" component={ChipDocument} />
               <Route path="/document/divider" component={DividerDocument} />
+              <Route path="/document/breadcrumb" component={BreadcrumbDocument} />
             </Switch>
           </div>
         </div>
