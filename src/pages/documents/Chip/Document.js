@@ -22,7 +22,7 @@ export default () => {
         </Codebox>
       </div>
       <div className="w-1/2 pl-2">
-        <Codebox className="mb-5" header="CLOSABLE" href="chip-max" code={Closable.code}>
+        <Codebox className="mb-5" header="CLOSABLE" href="chip-closable" code={Closable.code}>
           <Closable />
         </Codebox>
         <Codebox className="mb-5" header="SIZE" href="chip-size" code={Size.code}>

@@ -24,6 +24,7 @@ const PaginationDocument = loadable(() => import('../documents/Pagination'));
 const RaterDocument = loadable(() => import('../documents/Rater'));
 const AvatarDocument = loadable(() => import('../documents/Avatar'));
 const ChipDocument = loadable(() => import('../documents/Chip'));
+const DividerDocument = loadable(() => import('../documents/Divider'));
 
 require('./Dashboard.scss');
 
@@ -58,6 +59,7 @@ const Dashboard = ({}) => {
               <Route path="/document/rater" component={RaterDocument} />
               <Route path="/document/avatar" component={AvatarDocument} />
               <Route path="/document/chip" component={ChipDocument} />
+              <Route path="/document/divider" component={DividerDocument} />
             </Switch>
           </div>
         </div>

@@ -26,6 +26,7 @@ const mapRouter = Object.freeze({
   '/document/rater': 'rater',
   '/document/avatar': 'avatar',
   '/document/chip': 'chip',
+  '/document/divider': 'divider',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
@@ -61,7 +62,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item key="timeline" icon="angle-right" onClick={() => history.push('/document/timeline')}>Timeline</Menu.Item>
               <Menu.Item key="stepper" icon="angle-right" onClick={() => history.push('/document/stepper')}>Stepper</Menu.Item>
               <Menu.Item key="chip" icon="angle-right" onClick={() => history.push('/document/chip')}>Chip</Menu.Item>
-              <Menu.Item key="divider" icon="angle-right">Divider</Menu.Item>
+              <Menu.Item key="divider" icon="angle-right" onClick={() => history.push('/document/divider')}>Divider</Menu.Item>
               <Menu.Item key="pagination" icon="angle-right" onClick={() => history.push('/document/pagination')}>Pagination</Menu.Item>
               <Menu.Item key="progress" icon="angle-right">Progress</Menu.Item>
               <Menu.Item key="rating" icon="angle-right" onClick={() => history.push('/document/rater')}>Rater</Menu.Item>

@@ -28,14 +28,12 @@
   &.--expanded {
     .code-box-code {
       display: block;
-      border-top: 1px dashed $dark-bg-color--400;
     }
   }
 }
 
 .code-box-collapse-code-header {
   cursor: pointer;
-  align-self: flex-end;
   user-select: none;
 }
 
