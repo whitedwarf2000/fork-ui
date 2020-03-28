@@ -23,9 +23,9 @@ $rail-size: 1px;
 .rc-step-avatar {
   height: $avatar-size;
   width: $avatar-size;
-  box-shadow: $neumorphism-flat;
   border-radius: 100em;
   background-color: $root-bg-color;
+  border: 1px dashed currentColor;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,6 +58,7 @@ $rail-size: 1px;
     background-color: $primary-color;
     color: $root-text-inverted-color;
     box-shadow: none;
+    border: none;
   }
 
   .rc-step-title {
@@ -96,6 +97,7 @@ $rail-size: 1px;
     background-color: $error-color;
     color: $root-text-inverted-color;
     box-shadow: none;
+    border: none;
   }
 
   .rc-step-title {
