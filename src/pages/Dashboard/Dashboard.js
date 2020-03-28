@@ -175,7 +175,7 @@ const Dashboard = ({}) => {
   const location = useLocation();
 
   const breadcrumb = useMemo(() => {
-    return mapRouter[location.pathname];
+    return mapRouter[location.pathname] || [];
   }, [location.pathname]);
 
   return (
