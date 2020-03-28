@@ -1,7 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import cn from 'classnames';
-import PropTypes from 'prop-types';
 
 import LeftSidebar from './LeftSidebar';
 import TopNavigation from './TopNavigation';
@@ -22,6 +20,7 @@ const TimelineDocument = loadable(() => import('../documents/Timeline'));
 const StepperDocument = loadable(() => import('../documents/Stepper'));
 const TabsDocument = loadable(() => import('../documents/Tabs'));
 const CollapseDocument = loadable(() => import('../documents/Collapse'));
+const PaginationDocument = loadable(() => import('../documents/Pagination'));
 
 require('./Dashboard.scss');
 
@@ -52,6 +51,7 @@ const Dashboard = ({}) => {
               <Route path="/document/stepper" component={StepperDocument} />
               <Route path="/document/tabs" component={TabsDocument} />
               <Route path="/document/collapse" component={CollapseDocument} />
+              <Route path="/document/pagination" component={PaginationDocument} />
             </Switch>
           </div>
         </div>

@@ -22,6 +22,7 @@ const mapRouter = Object.freeze({
   '/document/stepper': 'stepper',
   '/document/tabs': 'tabs',
   '/document/collapse': 'collapse',
+  '/document/pagination': 'pagination',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
@@ -58,7 +59,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item key="stepper" icon="angle-right" onClick={() => history.push('/document/stepper')}>Stepper</Menu.Item>
               <Menu.Item key="chip" icon="angle-right">Chip</Menu.Item>
               <Menu.Item key="divider" icon="angle-right">Divider</Menu.Item>
-              <Menu.Item key="pagination" icon="angle-right">Pagination</Menu.Item>
+              <Menu.Item key="pagination" icon="angle-right" onClick={() => history.push('/document/pagination')}>Pagination</Menu.Item>
               <Menu.Item key="progress" icon="angle-right">Progress</Menu.Item>
               <Menu.Item key="rating" icon="angle-right">Rating</Menu.Item>
             </Menu.Sub>
