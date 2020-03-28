@@ -30,6 +30,7 @@ const mapRouter = Object.freeze({
   '/document/breadcrumb': 'breadcrumb',
   '/document/carousel': 'carousel',
   '/document/menu': 'menu',
+  '/document/progress': 'progress',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
@@ -67,8 +68,8 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item key="chip" icon="angle-right" titleOnly="Chip" onClick={() => history.push('/document/chip')}>Chip</Menu.Item>
               <Menu.Item key="divider" icon="angle-right" titleOnly="Divider" onClick={() => history.push('/document/divider')}>Divider</Menu.Item>
               <Menu.Item key="pagination" icon="angle-right" titleOnly="Pagination" onClick={() => history.push('/document/pagination')}>Pagination</Menu.Item>
-              <Menu.Item key="progress" icon="angle-right" titleOnly="Progress">Progress</Menu.Item>
-              <Menu.Item key="rating" icon="angle-right" onClick={() => history.push('/document/rater')}>Rater</Menu.Item>
+              <Menu.Item key="progress" icon="angle-right" titleOnly="Progress" onClick={() => history.push('/document/progress')}>Progress</Menu.Item>
+              <Menu.Item key="rating" icon="angle-right" titleOnly="Rater" onClick={() => history.push('/document/rater')}>Rater</Menu.Item>
             </Menu.Sub>
             <Menu.Sub title="Form" key="sub-fom" icon="keyboard">
               <Menu.Item icon="angle-right" titleOnly="Textbox" key="textbox">Textbox</Menu.Item>

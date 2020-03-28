@@ -1,6 +1,6 @@
 @import '../../scss/vars.scss';
 
-.rc-progress {
+.rc-circle-progress {
   position: relative;
   border-radius: 100em;
   user-select: none;
@@ -8,7 +8,7 @@
   box-shadow: $neumorphism-pressed;
 }
 
-.rc-progress-inner {
+.rc-circle-progress-inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -17,24 +17,23 @@
   border-radius: 100em;
 }
 
-svg.rc-progress-svg {
+svg.rc-circle-progress-svg {
   position: relative;
   height: 100%;
   width: 100%;
 }
 
-circle.rc-progress-percent {
+circle.rc-circle-progress-percent {
   height: 100%;
   width: 100%;
   fill: none;
-  stroke-width: 7px;
   transition: stroke-dashoffset 0.5s;
   transform: translate(10px, 10px);
   stroke-linecap: round;
   stroke: $progress-circle-stroke-color;
 }
 
-.rc-progress-number {
+.rc-circle-progress-number {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -46,11 +45,11 @@ circle.rc-progress-percent {
 
 // DARK MODE SUPPORT
 .dark-mode {
-  .rc-progress {
+  .rc-circle-progress {
     box-shadow: $neumorphism-darkmode-pressed;
   }
 
-  .rc-progress-inner {
+  .rc-circle-progress-inner {
     box-shadow: $neumorphism-darkmode-flat;
   }
 }

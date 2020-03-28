@@ -29,6 +29,7 @@ const DividerDocument = loadable(() => import('../documents/Divider'));
 const BreadcrumbDocument = loadable(() => import('../documents/Breadcrumb'));
 const CarouselDocument = loadable(() => import('../documents/Carousel'));
 const MenuDocument = loadable(() => import('../documents/Menu'));
+const ProgressDocument = loadable(() => import('../documents/Progress'));
 
 const _home = {
   key: 'home',
@@ -164,6 +165,11 @@ const mapRouter = Object.freeze({
     title: 'Menu',
     _href: '/document/menu',
   }],
+  '/document/progress': [_home, _components, {
+    key: 'progress',
+    title: 'Progress',
+    _href: '/document/progress',
+  }],
 });
 
 require('./Dashboard.scss');
@@ -214,6 +220,7 @@ const Dashboard = ({}) => {
               <Route path="/document/breadcrumb" component={BreadcrumbDocument} />
               <Route path="/document/carousel" component={CarouselDocument} />
               <Route path="/document/menu" component={MenuDocument} />
+              <Route path="/document/progress" component={ProgressDocument} />
             </Switch>
           </div>
         </div>
