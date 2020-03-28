@@ -1,0 +1,2 @@
+export { defautl } from './Memo';
+

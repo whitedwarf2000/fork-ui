@@ -6,6 +6,12 @@
   flex-wrap: nowrap;
 }
 
+.rc-tabs.--fluid {
+  .rc-tabs-nav-item {
+    flex-grow: 1;
+  }
+}
+
 .rc-tabs-nav {
   display: flex;
 }

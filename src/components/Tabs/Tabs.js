@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Tab from './Tab';
+import Item from './Item';
 
 require('./Tabs.scss');
 
@@ -16,67 +16,55 @@ const injectDataToChildren = (children, injection) => {
 class Tabs extends React.Component {
   static getDerivedStateFromProps(props, state) {
     return {
-      tabs: React.Children.map(props.children, i => ({
-        value: i.props.value,
-        label: i.props.label,
-        disabled: i.props.disabled,
+      tabs: React.Children.map(props.children, tab => ({
+        key: tab.key,
+        title: tab.props.title,
+        disabled: tab.props.disabled,
       })),
     };
   }
 
   constructor(props) {
     super(props);
-    this.state = {
-      currentTab: props.defaultTab,
-    };
-
-    this.setCurrentTab = this.setCurrentTab.bind(this);
-
     this.memo = {};
   }
 
   componentDidMount() {
-    this.memo[this.state.currentTab] = true;
+    this.memo[this.props.activeTab] = true;
   }
 
   componentDidUpdate() {
-    this.memo[this.state.currentTab] = true;
-  }
-
-  setCurrentTab(val) {
-    this.setState({
-      currentTab: val,
-    });
+    this.memo[this.props.activeTab] = true;
   }
 
   render() {
-    const { className, children } = this.props;
-    const { tabs, currentTab } = this.state;
+    const { className, children, activeTab, onChange, fluid } = this.props;
+    const { tabs } = this.state;
 
     return (
-      <div className={cn('rc-tabs', className)}>
+      <div className={cn('rc-tabs', { '--fluid': fluid }, className)}>
         <div className="rc-tabs-nav">
           {tabs.map(tab => (
             <button
-              className={cn('rc-tabs-nav-item', { '--active': currentTab === tab.value })}
+              className={cn('rc-tabs-nav-item', { '--active': activeTab === tab.key })}
               disabled={tab.disabled}
-              onClick={() => this.setCurrentTab(tab.value)}
+              onClick={() => onChange(tab.key)}
             >
-              {tab.label}
+              {tab.title}
             </button>
           ))}
         </div>
        <div className="rc-tabs-contents">
-         {React.Children.map(children, chl => {
-           if (this.memo[chl.props.value]) {
-            return injectDataToChildren(chl, {
-              className: cn({ '--active': currentTab === chl.props.value }, chl.props.className),
+         {React.Children.map(children, elm => {
+           if (this.memo[elm.key]) {
+            return injectDataToChildren(elm, {
+              active: activeTab === elm.key,
             });
            }
 
-           if (currentTab === chl.props.value) {
-            return injectDataToChildren(chl, {
-              className: cn({ '--active': currentTab === chl.props.value }, chl.props.className),
+           if (activeTab === elm.key) {
+            return injectDataToChildren(elm, {
+              active: activeTab === elm.key,
             });
            }
            return null;
@@ -87,12 +75,17 @@ class Tabs extends React.Component {
   }
 }
 
-Tabs.Tab = Tab;
+Tabs.Item = Item;
+
 Tabs.displayName = 'Tabs';
 Tabs.propTypes = {
   className: PropTypes.string,
-  defaultTab: PropTypes.string,
+  activeTab: PropTypes.string,
+  onChange: PropTypes.func,
+  fluid: PropTypes.bool,
 };
-Tabs.defaultProps = {};
+Tabs.defaultProps = {
+  onChange: f => f,
+};
 
 export default Tabs;
