@@ -21,6 +21,7 @@ const StepperDocument = loadable(() => import('../documents/Stepper'));
 const TabsDocument = loadable(() => import('../documents/Tabs'));
 const CollapseDocument = loadable(() => import('../documents/Collapse'));
 const PaginationDocument = loadable(() => import('../documents/Pagination'));
+const RaterDocument = loadable(() => import('../documents/Rater'));
 
 require('./Dashboard.scss');
 
@@ -52,6 +53,7 @@ const Dashboard = ({}) => {
               <Route path="/document/tabs" component={TabsDocument} />
               <Route path="/document/collapse" component={CollapseDocument} />
               <Route path="/document/pagination" component={PaginationDocument} />
+              <Route path="/document/rater" component={RaterDocument} />
             </Switch>
           </div>
         </div>
