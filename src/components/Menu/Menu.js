@@ -8,9 +8,13 @@ import Sub from './Sub';
 
 require('./Menu.scss');
 
-const Menu = ({ className, children, selectedKeys, setSelectedKeys, iconOnly }) => {
+const Menu = ({ className, children, selectedKeys, setSelectedKeys, iconOnly, multiple }) => {
   const onItemClick = useCallback((key) => {
     setSelectedKeys(() => {
+      if (multiple) {
+        return [key];
+      }
+
       return [key];
     });
   }, []);
@@ -39,6 +43,7 @@ Menu.propTypes = {
   children: PropTypes.any,
   selectedKeys: PropTypes.array,
   setSelectedKeys: PropTypes.func,
+  multiple: PropTypes.bool,
 };
 Menu.defaultProps = {
   selectedKeys: [],
