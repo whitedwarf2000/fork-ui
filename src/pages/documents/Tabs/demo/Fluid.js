@@ -18,7 +18,7 @@ const Demo = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <Tabs activeTab={activeTab} onChange={onChange}>
+      <Tabs activeTab={activeTab} onChange={onChange} fluid>
         <Tabs.Item title="Tab One" key="tab-1">
           <Description content="Description One" />
         </Tabs.Item>
@@ -57,7 +57,7 @@ export default () => {
 
   return (
     <div className="flex flex-col w-full">
-      <Tabs activeTab={activeTab} onChange={onChange}>
+      <Tabs activeTab={activeTab} onChange={onChange} fluid>
         <Tabs.Item title="Tab One" key="tab-1">
           <Description content="Description One" />
         </Tabs.Item>

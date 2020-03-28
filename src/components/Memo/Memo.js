@@ -1,12 +1,8 @@
 import React from 'react';
-import cn from 'classnames';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import Item from './Item';
-
-require('./Tabs.scss');
-
-class Tabs extends React.Component {
+export default class Memo extends React.Component {
   componentDidMount() {
     if (this.props.for) {
       this.memo = true;
@@ -19,15 +15,12 @@ class Tabs extends React.Component {
   }
 
   componentDidUpdate() {
-    this.childrenNode = this.childrenNode ||  ReactDOM.findDOMNode(this);
-
     if (this.props.for) {
       this.memo = true;
       this.childrenNode = this.childrenNode ||  ReactDOM.findDOMNode(this);
 
       this.childrenNode.style.display = null;
-    } else {
-      this.childrenNode = this.childrenNode ||  ReactDOM.findDOMNode(this);
+    } else if (this.childrenNode) {
       this.childrenNode.style.display = 'none';
     }
   }
@@ -41,12 +34,8 @@ class Tabs extends React.Component {
   }
 }
 
-Tabs.Item = Item;
-
-Tabs.displayName = 'Tabs';
-Tabs.propTypes = {
+Memo.displayName = 'Memo';
+Memo.propTypes = {
   for: PropTypes.bool,
 };
-Tabs.defaultProps = {};
-
-export default Tabs;
+Memo.defaultProps = {};

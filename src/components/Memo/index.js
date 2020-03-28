@@ -1,2 +1,1 @@
-export { defautl } from './Memo';
-
+export { default } from './Memo';

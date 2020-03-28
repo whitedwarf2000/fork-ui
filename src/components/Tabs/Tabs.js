@@ -1,78 +1,43 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+
+import Button from '../Button';
+import ButtonGroup from '../ButtonGroup';
+import Icon from '../Icon';
 
 import Item from './Item';
 
 require('./Tabs.scss');
 
-const injectDataToChildren = (children, injection) => {
-  return React.cloneElement(children, {
-    ...children.props,
-    ...injection
-  });
-};
+const Tabs = ({ className, children, activeTab, onChange, fluid }) => {
+  const tabs = useMemo(() => React.Children.map(children, tab => ({
+    key: tab.key,
+    title: tab.props.title,
+    disabled: tab.props.disabled,
+    icon: tab.props.icon,
+  })), [children]);
 
-class Tabs extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    return {
-      tabs: React.Children.map(props.children, tab => ({
-        key: tab.key,
-        title: tab.props.title,
-        disabled: tab.props.disabled,
-      })),
-    };
-  }
-
-  constructor(props) {
-    super(props);
-    this.memo = {};
-  }
-
-  componentDidMount() {
-    this.memo[this.props.activeTab] = true;
-  }
-
-  componentDidUpdate() {
-    this.memo[this.props.activeTab] = true;
-  }
-
-  render() {
-    const { className, children, activeTab, onChange, fluid } = this.props;
-    const { tabs } = this.state;
-
-    return (
-      <div className={cn('rc-tabs', { '--fluid': fluid }, className)}>
-        <div className="rc-tabs-nav">
-          {tabs.map(tab => (
-            <button
-              className={cn('rc-tabs-nav-item', { '--active': activeTab === tab.key })}
-              disabled={tab.disabled}
-              onClick={() => onChange(tab.key)}
-            >
-              {tab.title}
-            </button>
-          ))}
-        </div>
-       <div className="rc-tabs-contents">
-         {React.Children.map(children, elm => {
-           if (this.memo[elm.key]) {
-            return injectDataToChildren(elm, {
-              active: activeTab === elm.key,
-            });
-           }
-
-           if (activeTab === elm.key) {
-            return injectDataToChildren(elm, {
-              active: activeTab === elm.key,
-            });
-           }
-           return null;
-         })}
-       </div>
+  return (
+    <div className={cn('rc-tabs', { '--fluid': fluid }, className)}>
+      <ButtonGroup className="rc-tabs-nav" fluid={fluid}>
+        {tabs.map(tab => (
+          <Button
+            className={cn('rc-tabs-nav-item', { '--active': activeTab === tab.key })}
+            pressed={activeTab !== tab.key}
+            disabled={tab.disabled}
+            onClick={() => onChange(tab.key)}
+          >
+            {tab.icon && <Icon name={tab.icon} style={{ marginRight: '0.5em' }} />}
+            {tab.title}
+          </Button>
+        ))}
+      </ButtonGroup>
+      <div className="rc-tabs-contents">
+        {React.Children.map(children, elm => React.cloneElement(elm, { active: activeTab === elm.key }))}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 Tabs.Item = Item;

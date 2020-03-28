@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from '../../../components/core';
 import Codebox from '../../../components/Codebox';
 
 import Basic from './demo/Basic';
@@ -7,6 +6,7 @@ import GroupButton from './demo/GroupButton';
 import Color from './demo/Color';
 import Size from './demo/Size';
 import WithIcon from './demo/WithIcon';
+import FluidGroupButton from './demo/FluidGroupButton';
 
 export default () => {
   return (
@@ -28,6 +28,9 @@ export default () => {
         </Codebox>
         <Codebox className="mb-5" header="COLOR" href="button-color" code={Color.code}>
           <Color />
+        </Codebox>
+        <Codebox className="mb-5" header="FLUID GROUP BUTTON" href="button-group-fluid" code={FluidGroupButton.code}>
+          <FluidGroupButton />
         </Codebox>
       </div>
     </div>
