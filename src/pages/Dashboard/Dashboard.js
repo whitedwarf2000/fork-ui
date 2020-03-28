@@ -23,6 +23,7 @@ const CollapseDocument = loadable(() => import('../documents/Collapse'));
 const PaginationDocument = loadable(() => import('../documents/Pagination'));
 const RaterDocument = loadable(() => import('../documents/Rater'));
 const AvatarDocument = loadable(() => import('../documents/Avatar'));
+const ChipDocument = loadable(() => import('../documents/Chip'));
 
 require('./Dashboard.scss');
 
@@ -56,6 +57,7 @@ const Dashboard = ({}) => {
               <Route path="/document/pagination" component={PaginationDocument} />
               <Route path="/document/rater" component={RaterDocument} />
               <Route path="/document/avatar" component={AvatarDocument} />
+              <Route path="/document/chip" component={ChipDocument} />
             </Switch>
           </div>
         </div>

@@ -19,17 +19,10 @@ import { Avatar } from '@/components/core';
 export default () => {
   return (
     <div className="flex">
-      <Avatar
-        src={avatarLink}
-        className="mr-3"
-        name="Hoàng Nguyễn"
-      />
-      <Avatar
-        src={avatarLink}
-        className="mr-3"
-        square
-        name="Hoàng Nguyễn"
-      />
+      <Avatar name="Hoàng Nguyễn" className="mr-3" />
+      <Avatar name="Hoàng Nguyễn" className="mr-3" color="orange" />
+      <Avatar name="Hoàng Nguyễn" className="mr-3" color="#19b39d" />
+      <Avatar name="Hoàng Nguyễn" square />
     </div>
   );
 };
