@@ -1,46 +1,38 @@
-import React, { useCallback, useState, useEffect, useRef, useMemo } from 'react';
+import React, { useCallback, useState, useRef, useLayoutEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
-import Button from '../Button';
 
-require('./Panel.scss');
+require('./Item.scss');
 
-const Panel = ({ className, header, children, defaultActive, onChange, ...otherProps }) => {
-  const isControlled = useMemo(() => otherProps.hasOwnProperty('active'), []);
-
-  const [active, setActive] = useState(isControlled ? otherProps.active : defaultActive);
-  const handleToggle = useCallback(() => setActive(prev => !prev));
-
-  const [contentStyle, contentRef] = useCollapseStyle(active);
-
-  // SUPPORT CONTROLED COMPONENT
-  useEffect(() => {
-    onChange(active);
-  }, [active]);
-
-  useMemo(() => {
-    if (isControlled) {
-      setActive(otherProps.active);
+const Item = ({ className, title, children, active, toggleActive, disabled, icon, ...otherProps }) => {
+  const [contentStyle, contentRef] = useCollapseStyle(active, disabled);
+  const _toggleActive = useCallback((e) => {
+    if (disabled) {
+      return;
     }
-  }, [otherProps.active]);
+    return toggleActive(e);
+  }, [disabled]);
 
   return (
     <div
       {...otherProps}
-      className={cn('rc-collapse-panel', { '--active': active, '--inactive': !active }, className)}
+      className={cn('rc-panel', { '--active': active, '--inactive': !active, '--disabled': disabled }, className)}
     >
-      <div className="rc-collapse-panel-header" onClick={handleToggle}>
-        <span>{header}</span>
-        <Button className="rc-collapse-panel-icon" icon="caret-down" circle transparent />
+      <div className="rc-panel-title" onClick={_toggleActive}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          {icon && <Icon name={icon} style={{ marginRight: '1rem' }} />}
+          {title}
+        </div>
+        <Icon className="rc-panel-icon" name="caret-down" />
       </div>
       <div
         ref={contentRef}
-        className="rc-collapse-panel-content"
+        className="rc-panel-content"
         style={contentStyle}
       >
-        <div className="rc-collapse-panel-box">
+        <div className="rc-panel-box">
           {children}
         </div>
       </div>
@@ -48,19 +40,20 @@ const Panel = ({ className, header, children, defaultActive, onChange, ...otherP
   );
 };
 
-Panel.displayName = 'Panel';
-Panel.propTypes = {
-  header: PropTypes.any.isRequired,
+Item.displayName = 'Collapse.Item';
+Item.propTypes = {
+  title: PropTypes.any.isRequired,
   className: PropTypes.string,
   defaultActive: PropTypes.bool,
-  onChange: PropTypes.func,
+  toggleActive: PropTypes.func,
   children: PropTypes.any,
+  icon: PropTypes.string,
 };
-Panel.defaultProps = {
-  onChange: f => f,
+Item.defaultProps = {
+  toggleActive: f => f,
 };
 
-export default Panel;
+export default Item;
 
 /**
  * 
@@ -68,16 +61,23 @@ export default Panel;
  * When inactive style = { height: contentHeight, opacity: 1 } => {  height: 0, opacity: 0 } => { display: 'none' }
  * 
  */
-function useCollapseStyle(active) {
+function useCollapseStyle(active, disabled) {
   const [style, setStyle] = useState({});
   const [contentHeight, setContentHeight] = useState(0);
   const contentRef = useRef();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setContentHeight(contentRef.current.clientHeight);
   }, [contentHeight]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (disabled) {
+      return setStyle({
+        opacity: 0,
+        height: 0,
+      });
+    }
+
     let begin;
     let next;
     let end;
@@ -116,7 +116,7 @@ function useCollapseStyle(active) {
       clearTimeout(end);
     }
   }
-  , [active, contentHeight]);
+  , [active, contentHeight, disabled]);
 
   return [style, contentRef];
 }

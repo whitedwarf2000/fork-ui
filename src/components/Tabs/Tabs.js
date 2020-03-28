@@ -28,7 +28,7 @@ const Tabs = ({ className, children, activeTab, onChange, fluid }) => {
             disabled={tab.disabled}
             onClick={() => onChange(tab.key)}
           >
-            {tab.icon && <Icon name={tab.icon} style={{ marginRight: '0.5em' }} />}
+            {tab.icon && <Icon name={tab.icon} style={{ marginRight: '1em' }} />}
             {tab.title}
           </Button>
         ))}

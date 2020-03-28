@@ -36,6 +36,7 @@ const icons = {
   'scroll': require('./scroll').default,
   'browser': require('./browser').default,
   'list-ul': require('./list-ul').default,
+  'pager': require('./pager').default,
 };
 
 export default icons;
