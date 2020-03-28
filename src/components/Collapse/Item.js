@@ -7,7 +7,7 @@ import Icon from '../Icon';
 require('./Item.scss');
 
 const Item = ({ className, title, children, active, toggleActive, disabled, icon, ...otherProps }) => {
-  const [contentStyle, contentRef] = useCollapseStyle(active, disabled);
+  const [contentStyle, contentRef] = useCollapseStyle(active);
   const _toggleActive = useCallback((e) => {
     if (disabled) {
       return;
@@ -61,23 +61,18 @@ export default Item;
  * When inactive style = { height: contentHeight, opacity: 1 } => {  height: 0, opacity: 0 } => { display: 'none' }
  * 
  */
-function useCollapseStyle(active, disabled) {
+function useCollapseStyle(active) {
   const [style, setStyle] = useState({});
   const [contentHeight, setContentHeight] = useState(0);
   const contentRef = useRef();
 
   useLayoutEffect(() => {
-    setContentHeight(contentRef.current.clientHeight);
+    if (contentRef.current) {
+      setContentHeight(contentRef.current.clientHeight);
+    }
   }, [contentHeight]);
 
   useLayoutEffect(() => {
-    if (disabled) {
-      return setStyle({
-        opacity: 0,
-        height: 0,
-      });
-    }
-
     let begin;
     let next;
     let end;
@@ -116,7 +111,7 @@ function useCollapseStyle(active, disabled) {
       clearTimeout(end);
     }
   }
-  , [active, contentHeight, disabled]);
+  , [active, contentHeight]);
 
   return [style, contentRef];
 }
