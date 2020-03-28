@@ -7,6 +7,7 @@ import Vertical from './demo/Vertical';
 import Static from './demo/Static';
 import Semantic from './demo/Semantic';
 import Complex from './demo/Complex';
+import IconDemo from './demo/Icon';
 
 export default () => {
   return (
@@ -17,6 +18,9 @@ export default () => {
         </Codebox>
         <Codebox className="mb-5" header="VERTICAL" href="stepper-vertical" code={Vertical.code}>
           <Vertical />
+        </Codebox>
+        <Codebox className="mb-5" header="WITH ICON" href="stepper-icon" code={IconDemo.code}>
+          <IconDemo />
         </Codebox>
       </div>
       <div className="w-1/2 pl-2">
