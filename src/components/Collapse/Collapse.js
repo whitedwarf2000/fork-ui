@@ -3,6 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Item from './Item';
+import useUncontrolled from '../../hooks/useUncontrolled';
 
 require('./Collapse.scss');
 
@@ -11,10 +12,19 @@ const mapToObject = arr => arr.reduce((rs, key) => {
   return rs;
 }, {});
 
-const Collapse = ({ className, activePanels, children, accordion, setActivePanels, ...otherProps }) => {
+const Collapse = ({ className, defaultActivePanels, onActivePanelsChange, onPanelClick, children, accordion, ...otherProps }) => {
+  const [activePanels, setActivePanels, isControlled] = useUncontrolled('activePanels', otherProps, {
+    defaultState: defaultActivePanels,
+    onChangeState: onActivePanelsChange,
+  });
+
   const activePanelsAsObject = useMemo(() => mapToObject(activePanels), [activePanels]);
 
-  const onToggleActivePanels = useCallback((key) => {
+  const _onPanelClick = useCallback((key) => {
+    if (isControlled) {
+      return onPanelClick(key);
+    }
+
     if (accordion) {
       return setActivePanels(prev => {
         if (prev.indexOf(key) >= 0) {
@@ -30,14 +40,15 @@ const Collapse = ({ className, activePanels, children, accordion, setActivePanel
       }
       return [...prev, key];
     });
-  }, [accordion]);
+  }, [accordion, isControlled]);
 
   return (
     <div className={cn('rc-collapse', className)} {...otherProps}>
       {React.Children.map(children, elm => {
         return React.cloneElement(elm, {
           active: activePanelsAsObject[elm.key],
-          toggleActive: () => onToggleActivePanels(elm.key)
+          onClick: () => _onPanelClick(elm.key),
+          ...elm.props
         })
       })}
     </div>
@@ -49,13 +60,17 @@ Collapse.Item = Item;
 Collapse.displayName = 'Collapse';
 Collapse.propTypes = {
   className: PropTypes.string,
+  defaultActivePanels: PropTypes.array,
   activePanels: PropTypes.array,
   children: PropTypes.any,
-  setActivePanels: PropTypes.func.isRequired,
+  onActivePanelsChange: PropTypes.func,
+  onPanelClick: PropTypes.func,
   accordion: PropTypes.bool,
 };
 Collapse.defaultProps = {
-  activePanels: [],
+  defaultActivePanels: [],
+  onActivePanelsChange: f => f,
+  onPanelClick: f => f,
 };
 
 export default Collapse;

@@ -6,13 +6,13 @@ import Icon from '../Icon';
 
 require('./Item.scss');
 
-const Item = ({ className, title, children, active, toggleActive, disabled, icon, ...otherProps }) => {
+const Item = ({ className, title, children, active, onClick, disabled, icon, ...otherProps }) => {
   const [contentStyle, contentRef] = useCollapseStyle(active);
   const _toggleActive = useCallback((e) => {
     if (disabled) {
       return;
     }
-    return toggleActive(e);
+    return onClick(e);
   }, [disabled]);
 
   return (
@@ -45,13 +45,11 @@ Item.propTypes = {
   title: PropTypes.any.isRequired,
   className: PropTypes.string,
   defaultActive: PropTypes.bool,
-  toggleActive: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   children: PropTypes.any,
   icon: PropTypes.string,
 };
-Item.defaultProps = {
-  toggleActive: f => f,
-};
+Item.defaultProps = {};
 
 export default Item;
 
