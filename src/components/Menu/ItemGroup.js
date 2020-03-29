@@ -27,6 +27,8 @@ ItemGroup.propTypes = {
   children: PropTypes.any,
   selectedKeys: PropTypes.array,
   _onItemClick: PropTypes.func,
+  iconOnly: PropTypes.bool,
+  title: PropTypes.string,
 };
 ItemGroup.defaultProps = {
   selectedKeys: [],

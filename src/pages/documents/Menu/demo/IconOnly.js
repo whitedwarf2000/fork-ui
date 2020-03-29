@@ -1,15 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Menu } from '../../../../components/core';
 
 const Demo = () => {
-  const [selectedKeys, setSelectedKeys] = useState([]);
-  /**
-   * If you are using Class Component
-   * this.state = { selectedKeys: [] };
-   * setSelectedKeys = callback => this.setState(prev => callback(prev.selectedKeys));
-   * */
   return (
-    <Menu selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} iconOnly>
+    <Menu iconOnly>
       <Menu.ItemGroup key="group-action" title="Action">
         <Menu.Item key="copy" icon="copy">Copy</Menu.Item>
         <Menu.Item key="cog" icon="cog">Config</Menu.Item>
@@ -29,18 +23,12 @@ const Demo = () => {
 };
 
 Demo.code = `
-import React, { useState } from 'react';
+import React from 'react';
 import { Menu } from '@/components/core';
 
 export default = () => {
-  const [selectedKeys, setSelectedKeys] = useState([]);
-  /**
-   * If you are using Class Component
-   * this.state = { selectedKeys: [] };
-   * setSelectedKeys = callback => this.setState(prev => callback(prev.selectedKeys));
-   * */
   return (
-    <Menu selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} iconOnly>
+    <Menu iconOnly>
       <Menu.ItemGroup key="group-action" title="Action">
         <Menu.Item key="copy" icon="copy">Copy</Menu.Item>
         <Menu.Item key="cog" icon="cog">Config</Menu.Item>

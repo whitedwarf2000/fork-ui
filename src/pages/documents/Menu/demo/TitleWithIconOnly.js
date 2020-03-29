@@ -2,20 +2,14 @@ import React, { useState } from 'react';
 import { Menu, Switch } from '../../../../components/core';
 
 const Demo = () => {
-  const [selectedKeys, setSelectedKeys] = useState([]);
   const [isIconOnly, setIsIconOnly] = useState(true);
-  /**
-   * If you are using Class Component
-   * this.state = { selectedKeys: [] };
-   * setSelectedKeys = callback => this.setState(prev => callback(prev.selectedKeys));
-   * */
   return (
     <div className="flex flex-row items-end justify-start w-full" style={{ height: '40rem' }}>
       <div className="flex items-center mr-20">
         <Switch checked={isIconOnly} onChange={(e) => setIsIconOnly(e.target.checked)} />
         <span className="ml-3">Icon Only</span>
       </div>
-      <Menu selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} iconOnly={isIconOnly}>
+      <Menu iconOnly={isIconOnly}>
         <Menu.ItemGroup key="group-action" title="Action">
           <Menu.Item key="copy" icon="copy">Copy</Menu.Item>
           <Menu.Item key="cog" icon="cog">Config</Menu.Item>
@@ -40,13 +34,7 @@ import React, { useState } from 'react';
 import { Menu, Switch } from '@/components/core';
 
 export default () => {
-  const [selectedKeys, setSelectedKeys] = useState([]);
   const [isIconOnly, setIsIconOnly] = useState(true);
-  /**
-   * If you are using Class Component
-   * this.state = { selectedKeys: [] };
-   * setSelectedKeys = callback => this.setState(prev => callback(prev.selectedKeys));
-   * */
   return (
     <div className="flex flex-row items-end justify-start w-full" style={{ height: '40rem' }}>
       <div className="flex items-center mr-20">

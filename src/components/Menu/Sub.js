@@ -15,6 +15,7 @@ const Sub = ({ className, children, title, icon, iconOnly, selectedKeys, _onItem
       <div className="rc-menu-sub-title" onClick={toggleExpanded}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {icon && <Icon name={icon} className="rc-menu-sub-title-icon" />}
+          {(iconOnly && !icon && title) && <span style={{ textTransform: 'uppercase '}}>{title[0]}</span>}
           <span className="rc-menu-sub-content">{title}</span>
         </div>
         <Icon name="caret-down" className="rc-menu-sub-icon" />
@@ -37,6 +38,8 @@ Sub.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   selectedKeys: PropTypes.array,
+  title: PropTypes.string,
+  iconOnly: PropTypes.bool,
   _onItemClick: PropTypes.func,
 };
 Sub.defaultProps = {
