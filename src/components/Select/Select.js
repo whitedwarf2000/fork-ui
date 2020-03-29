@@ -38,6 +38,7 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
         <span className="rc-select-input-placeholder">{placeholder}</span>
       )
     }
+
     return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
         {_shape.icon && <Icon name={_shape.icon} style={{ marginRight: '1rem' }} />}
@@ -52,7 +53,7 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
       onVisibleChange={onVisibleChange}
       canOutsideClickClose
       placement={placement}
-      trigger={['click']}
+      trigger={[]}
       overlay={(
         <Menu
           className="rc-select-dropdown"
