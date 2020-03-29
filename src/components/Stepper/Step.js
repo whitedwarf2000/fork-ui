@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 import useSemanticProp from '../../hooks/useSemanticProp';
+import { omit } from '../../utils/helpers';
 
 require('./Step.scss');
 
@@ -21,8 +22,15 @@ const Step = ({ className, title, children, icon, stepNumber, ...otherProps }) =
     otherProps.status,
   ]);
 
+  const passedProps = useMemo=(() => omit(otherProps, [
+    'processing',
+    'completed',
+    'canceled',
+    'status',
+  ]), [otherProps]);
+
   return (
-    <div className={cn('rc-step', mStatus[status], className)}>
+    <div className={cn('rc-step', mStatus[status], className)} {...passedProps}>
       <div className="rc-step-rail" />
       <div className="rc-step-avatar">
         {status === 'completed' && (<Icon name="check" />)}
@@ -43,7 +51,7 @@ Step.propTypes = {
   title: PropTypes.any,
   children: PropTypes.any,
   stepNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  status: PropTypes.oneOf(Object.keys(mStatus)),
+  status: PropTypes.string,
   processing: PropTypes.bool,
   completed: PropTypes.bool,
   canceled: PropTypes.bool,

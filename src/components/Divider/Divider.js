@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import useSemanticProp from '../../hooks/useSemanticProp';
+import { omit } from '../../utils/helpers';
 
 require('./Divider.scss');
 
@@ -31,8 +32,18 @@ const Divider = ({ className, title, ...otherProps }) => {
     otherProps.direction,
   ]);
 
+  const passedProps = useMemo(() => omit(otherProps, [
+    'solid',
+    'dashed',
+    'dotted',
+    'type',
+    'left',
+    'right',
+    'direction',
+  ]), [otherProps]);
+
   return (
-    <div className={cn('rc-divider', mTypes[type], mDirections[direction],className)}>
+    <div className={cn('rc-divider', mTypes[type], mDirections[direction],className)} {...passedProps}>
       {title && <div className="rc-divider-title">{title}</div>}
     </div>
   );
@@ -41,12 +52,12 @@ const Divider = ({ className, title, ...otherProps }) => {
 Divider.displayName = 'Divider';
 Divider.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.oneOf(Object.keys(mTypes)),
+  type: PropTypes.string,
   title: PropTypes.any,
   solid: PropTypes.bool,
   dashed: PropTypes.bool,
   dotted: PropTypes.bool,
-  direction: PropTypes.oneOf(Object.keys(mDirections)),
+  direction: PropTypes.string,
 };
 Divider.defaultProps = {};
 

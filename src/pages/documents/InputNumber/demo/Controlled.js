@@ -3,7 +3,7 @@ import { InputNumber } from '../../../../components/core';
 
 const Demo = () => {
   const [value, setValue] = useState();
-  const onChange = useCallback(e => setValue(e.target.value), []);
+  const onChange = useCallback(e => setValue(+e.target.value), []);
 
   return (
     <InputNumber

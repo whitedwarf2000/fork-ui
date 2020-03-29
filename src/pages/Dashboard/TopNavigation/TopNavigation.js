@@ -6,7 +6,7 @@ require('./TopNavigation.scss');
 
 const TopNavigation = ({ toggleExpand, isExpanded }) => {
   return (
-    <div class={cn('top-navigation-container', { '--expanded': isExpanded })}>
+    <div className={cn('top-navigation-container', { '--expanded': isExpanded })}>
       <div className={cn('top-navigation-wrapper', { '--expanded': isExpanded })}>
         <div className={cn('top-navigation', { '--expanded': isExpanded })}>
           <div className="__left">

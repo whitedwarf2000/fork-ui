@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import useSemanticProp from '../../hooks/useSemanticProp';
+import { omit } from '../../utils/helpers';
 
 require('./Avatar.scss');
 
@@ -18,6 +19,12 @@ const Avatar = ({ className, src, style, name, fontSize, color, ...otherProps })
     otherProps.shape,
   ]);
 
+  const passedProps = useMemo(() => omit(otherProps, [
+    'shape',
+    'square',
+    'circle',
+  ]), [otherProps]);
+
   return (
     <div
       className={cn('rc-avatar', { '--neumorphism': !src }, mShape[shape], className)}
@@ -27,7 +34,7 @@ const Avatar = ({ className, src, style, name, fontSize, color, ...otherProps })
         color,
         backgroundImage: `url(${src})`,
       }}
-      {...otherProps}
+      {...passedProps}
     >
       {(!src && name) && <span className="rc-avatar-name">{name[0].toUpperCase()}</span>}
     </div>

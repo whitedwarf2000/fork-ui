@@ -38,13 +38,13 @@ const Demo = () => {
           <Menu.Item
             key="rating"
             icon="star"
-            titleOnly="Rating"
+            titleOnly
             title="Rating"
           />
           <Menu.Item
             key="follow"
             icon="bell"
-            titleOnly="Follow"
+            titleOnly
             title="Follow"
           />
         </Menu.ItemGroup>
@@ -110,13 +110,13 @@ export default () => {
           <Menu.Item
             key="rating"
             icon="star"
-            titleOnly="Rating"
+            titleOnly
             title="Rating"
           />
           <Menu.Item
             key="follow"
             icon="bell"
-            titleOnly="Follow"
+            titleOnly
             title="Follow"
           />
         </Menu.ItemGroup>
