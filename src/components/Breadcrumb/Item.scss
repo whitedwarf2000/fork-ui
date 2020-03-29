@@ -33,22 +33,13 @@
     position: absolute;
     right: 0;
     transform: translateX(50%) rotate(45deg);
-    border: 1px dashed $dark-bg-color--200;
+    border-top: 1px dashed $dark-bg-color--200;
+    border-right: 1px dashed $dark-bg-color--200;
     height: 1.75em;
     width: 1.75em;
     background-color: inherit;
     border-top-right-radius: 0.25em;
     z-index: 1;
-  }
-
-  &:before {
-    content: " ";
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 1.5em;
-    background-color: inherit;
-    z-index: 2;
   }
 }
 
