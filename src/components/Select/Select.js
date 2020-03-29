@@ -56,6 +56,7 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
       trigger={[]}
       overlay={(
         <Menu
+          selectedKeys={[value]}
           className="rc-select-dropdown"
           style={{
             width: selectWidth,
