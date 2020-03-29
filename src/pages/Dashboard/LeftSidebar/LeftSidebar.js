@@ -33,6 +33,9 @@ const mapRouter = Object.freeze({
   '/document/progress': 'progress',
   '/document/affix': 'affix',
   '/document/textbox': 'textbox',
+  '/document/password': 'password',
+  '/document/textarea': 'textarea',
+  '/document/input-number': 'input-number',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
@@ -82,6 +85,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item icon="angle-right" key="textbox" titleOnly title="Textbox" />
               <Menu.Item icon="angle-right" key="password" titleOnly title="Password" />
               <Menu.Item icon="angle-right" key="textarea" titleOnly title="Textarea" />
+              <Menu.Item icon="angle-right" key="input-number" titleOnly title="Input Number" />
               <Menu.Item icon="angle-right" key="select" titleOnly title="Select" />
             </Menu.Sub>
             <Menu.Sub title="Overlay" key="sub-overlay" icon="bell">

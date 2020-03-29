@@ -4,15 +4,16 @@ import PropTypes from 'prop-types';
 
 require('./BaseInput.scss');
 
-const BaseInput = ({ className, htmlType, ...otherProps }) => {
+const BaseInput = React.forwardRef(({ className, htmlType, ...otherProps }, ref) => {
   return (
     <input
       {...otherProps}
+      ref={ref}
       className={cn('rc-input', className)}
       type={htmlType}
     />
   );
-};
+});
 
 BaseInput.displayName = 'BaseInput';
 BaseInput.propTypes = {

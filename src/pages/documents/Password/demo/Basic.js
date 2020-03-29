@@ -1,9 +1,9 @@
 import React from 'react';
-import { Textbox } from '../../../../components/core';
+import { Password } from '../../../../components/core';
 
 const Demo = () => {
   return (
-    <Textbox
+    <Password
       placeholder="The placeholder"
       onChange={e => console.log(e.target.value)}
     />
@@ -12,11 +12,11 @@ const Demo = () => {
 
 Demo.code = `
 import React from 'react';
-import { Textbox } from '@/components/core';
+import { Password } from '@/components/core';
 
 export default () => {
   return (
-    <Textbox
+    <Password
       placeholder="The placeholder"
       onChange={e => console.log(e.target.value)}
     />

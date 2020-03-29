@@ -7,14 +7,12 @@ import Icon from '../Icon';
 
 require('./InputNumber.scss');
 
-const InputNumber = ({ className, style, ...otherProps }) => {
+const InputNumber = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
-    <div
-      style={style}
-      className={cn('rc-input-number', className)}
-    >
+    <div className={cn('rc-input-number', className)}>
       <BaseInput
         {...otherProps}
+        ref={ref}
         htmlType="number"
         className="rc-input-number-input"
       />
@@ -30,7 +28,7 @@ const InputNumber = ({ className, style, ...otherProps }) => {
       </div>
     </div>
   );
-};
+});
 
 InputNumber.displayName = 'InputNumber';
 InputNumber.propTypes = {

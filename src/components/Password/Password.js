@@ -7,7 +7,7 @@ import Icon from '../Icon';
 
 require('./Password.scss');
 
-const Password = ({ className, noEye, ...otherProps }) => {
+const Password = React.forwardRef(({ className, noEye, ...otherProps }, ref) => {
   const [isShowPassword, setIsShowPassword] = useState(false);
   const toggleShowPassword = useCallback(() => {
     if (noEye) {
@@ -20,6 +20,7 @@ const Password = ({ className, noEye, ...otherProps }) => {
     <div className={cn('rc-password', className)}>
       <BaseInput
         {...otherProps}
+        ref={ref}
         htmlType={isShowPassword ? 'text' : 'password'}
       />
       {!noEye && (
@@ -31,7 +32,7 @@ const Password = ({ className, noEye, ...otherProps }) => {
       )}
     </div>
   );
-};
+});
 
 Password.displayName = 'Password';
 Password.propTypes = {

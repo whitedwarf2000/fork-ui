@@ -6,16 +6,16 @@ import BaseInput from '../BaseInput';
 
 require('./Textbox.scss');
 
-const Textbox = ({ className, ...otherProps }) => {
+const Textbox = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
     <BaseInput
       {...otherProps}
+      ref={ref}
       className={cn('rc-textbox', className)}
       htmlType="text"
     />
   );
-}
-
+});
 
 Textbox.displayName = 'Textbox';
 Textbox.propTypes = {

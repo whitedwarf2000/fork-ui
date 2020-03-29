@@ -4,8 +4,8 @@ import { Textbox } from '../../../../components/core';
 const Demo = () => {
   return (
     <Textbox
+      disabled
       placeholder="The placeholder"
-      onChange={e => console.log(e.target.value)}
     />
   );
 };
@@ -17,8 +17,8 @@ import { Textbox } from '@/components/core';
 export default () => {
   return (
     <Textbox
+      disabled
       placeholder="The placeholder"
-      onChange={e => console.log(e.target.value)}
     />
   );
 };

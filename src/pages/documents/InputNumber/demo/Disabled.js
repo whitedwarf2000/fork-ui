@@ -1,24 +1,24 @@
 import React from 'react';
-import { Textbox } from '../../../../components/core';
+import { InputNumber } from '../../../../components/core';
 
 const Demo = () => {
   return (
-    <Textbox
+    <InputNumber
+      disabled
       placeholder="The placeholder"
-      onChange={e => console.log(e.target.value)}
     />
   );
 };
 
 Demo.code = `
 import React from 'react';
-import { Textbox } from '@/components/core';
+import { InputNumber } from '@/components/core';
 
 export default () => {
   return (
-    <Textbox
+    <InputNumber
+      disabled
       placeholder="The placeholder"
-      onChange={e => console.log(e.target.value)}
     />
   );
 };

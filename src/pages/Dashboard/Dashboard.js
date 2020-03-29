@@ -31,7 +31,10 @@ const CarouselDocument = loadable(() => import('../documents/Carousel'));
 const MenuDocument = loadable(() => import('../documents/Menu'));
 const ProgressDocument = loadable(() => import('../documents/Progress'));
 const AffixDocument = loadable(() => import('../documents/Affix'));
-const TextboxDocument = loadable(() => import('../documents//Textbox'));
+const TextboxDocument = loadable(() => import('../documents/Textbox'));
+const PasswordDocument = loadable(() => import('../documents/Password'));
+const TextareaDocument = loadable(() => import('../documents/Textarea'));
+const InputNumberDocument = loadable(() => import('../documents/InputNumber'));
 
 const _home = {
   key: 'home',
@@ -188,6 +191,21 @@ const mapRouter = Object.freeze({
     title: 'Textbox',
     _href: '/document/textbox',
   }],
+  '/document/password': [_home, _forms, {
+    key: 'password',
+    title: 'Password',
+    _href: '/document/password',
+  }],
+  '/document/textarea': [_home, _forms, {
+    key: 'textarea',
+    title: 'Textarea',
+    _href: '/document/textarea',
+  }],
+  '/document/textarea': [_home, _forms, {
+    key: 'input-number',
+    title: 'Input Number',
+    _href: '/document/input-number',
+  }],
 });
 
 require('./Dashboard.scss');
@@ -241,6 +259,9 @@ const Dashboard = ({}) => {
               <Route path="/document/progress" component={ProgressDocument} />
               <Route path="/document/affix" component={AffixDocument} />
               <Route path="/document/textbox" component={TextboxDocument} />
+              <Route path="/document/password" component={PasswordDocument} />
+              <Route path="/document/textarea" component={TextareaDocument} />
+              <Route path="/document/input-number" component={InputNumberDocument} />
             </Switch>
           </div>
         </div>
