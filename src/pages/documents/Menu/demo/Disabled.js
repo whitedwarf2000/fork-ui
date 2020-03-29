@@ -4,10 +4,10 @@ import { Menu } from '../../../../components/core';
 const Demo = () => {
   return (
     <Menu>
-      <Menu.Item key="option-1">Option One</Menu.Item>
-      <Menu.Item key="option-2" disabled>Option Two</Menu.Item>
-      <Menu.Item key="option-3">Option Three</Menu.Item>
-      <Menu.Item key="option-4">Option Four</Menu.Item>
+      <Menu.Item key="option-1" title="Option One" />
+      <Menu.Item key="option-2" disabled title="Option Two" />
+      <Menu.Item key="option-3" title="Option Three" />
+      <Menu.Item key="option-4" title="Option Four" />
     </Menu>
   );
 };
@@ -19,10 +19,10 @@ import { Menu } from '@/components/core';
 export default () => {
   return (
     <Menu>
-      <Menu.Item key="option-1">Option One</Menu.Item>
-      <Menu.Item key="option-2">Option Two</Menu.Item>
-      <Menu.Item key="option-3">Option Three</Menu.Item>
-      <Menu.Item key="option-4">Option Four</Menu.Item>
+      <Menu.Item key="option-1" title="Option One" />
+      <Menu.Item key="option-2" disabled title="Option Two" />
+      <Menu.Item key="option-3" title="Option Three" />
+      <Menu.Item key="option-4" title="Option Four" />
     </Menu>
   );
 };

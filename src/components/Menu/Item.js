@@ -6,7 +6,7 @@ import Icon from '../Icon';
 
 require('./Item.scss');
 
-const Item = ({ className, selected, disabled, children, icon, iconOnly, _key, _onItemClick, onItemClick, titleOnly }) => {
+const Item = ({ className, selected, disabled, title, icon, iconOnly, titleOnly, _key, _onItemClick, onItemClick }) => {
   const _onClick = useCallback(() => {
     if (disabled) {
       return;
@@ -34,8 +34,8 @@ const Item = ({ className, selected, disabled, children, icon, iconOnly, _key, _
       onClick={_onClick}
     >
       {icon && <Icon name={icon} className="rc-menu-item-title-icon" />}
-      {(iconOnly && titleOnly) && <span style={{ textTransform: 'uppercase '}}>{titleOnly[0]}</span>}
-      <span className="rc-menu-item-content">{children}</span>
+      {((iconOnly && titleOnly) || (iconOnly && !icon)) && <span style={{ textTransform: 'uppercase '}}>{title[0]}</span>}
+      <span className="rc-menu-item-content">{title}</span>
     </li>
   );
 };
@@ -47,10 +47,11 @@ Item.propTypes = {
   onItemClick: PropTypes.func, // not set default
   selected: PropTypes.bool,
   disabled: PropTypes.bool,
+  titleOnly: PropTypes.bool,
   iconOnly: PropTypes.bool,
   children: PropTypes.any,
   icon: PropTypes.string,
-  titleOnly: PropTypes.string, // when Item in iconOnly mode, titleOnly will overide icon by first lettter of this value
+  title: PropTypes.string.isRequired, // when Item in iconOnly mode, titleOnly will overide icon by first lettter of this value
   _key: PropTypes.string.isRequired,
 };
 Item.defaultProps = {};

@@ -53,51 +53,51 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
             onItemClick={key => history.push(`/document/${key}`)}
           >
             <Menu.ItemGroup title="POPULAR" key="group-popular">
-              <Menu.Item icon="icons" key="icon">Icon</Menu.Item>
-              <Menu.Item icon="mouse" key="button">Button</Menu.Item>
-              <Menu.Item icon="table" key="table">Table</Menu.Item>
-              <Menu.Item icon="scroll" key="drawer">Drawer</Menu.Item>
-              <Menu.Item icon="browser" key="modal">Modal</Menu.Item>
-              <Menu.Item icon="list-ul" key="menu">Menu</Menu.Item>
-              <Menu.Item icon="pager"key="tabs">Tabs</Menu.Item>
-              <Menu.Item icon="caret-down" key="collapse">Collapse</Menu.Item>
+              <Menu.Item icon="icons" key="icon" title="Icon" />
+              <Menu.Item icon="mouse" key="button" title="Button" />
+              <Menu.Item icon="table" key="table" title="Table" />
+              <Menu.Item icon="scroll" key="drawer" title="Drawer" />
+              <Menu.Item icon="browser" key="modal" title="Modal" />
+              <Menu.Item icon="list-ul" key="menu" title="Menu" />
+              <Menu.Item icon="pager"key="tabs" title="Tabs" />
+              <Menu.Item icon="caret-down" key="collapse" title="Collapse" />
             </Menu.ItemGroup>
             <Menu.Sub key="sub-components" title="Components" icon="desktop">
-              <Menu.Item key="checkbox" icon="angle-right" titleOnly="Checkbox">Checkbox</Menu.Item>
-              <Menu.Item key="radio" icon="angle-right" titleOnly="Radio">Radio</Menu.Item>
-              <Menu.Item key="swicth" icon="angle-right" titleOnly="Swicth">Swicth</Menu.Item>
-              <Menu.Item key="breadcrumb" icon="angle-right" titleOnly="Breadcrumb">Breadcrumb</Menu.Item>
-              <Menu.Item key="avatar" icon="angle-right" titleOnly="Avatar">Avatar</Menu.Item>
-              <Menu.Item key="carousel" icon="angle-right" titleOnly="Carousel">Carousel</Menu.Item>
-              <Menu.Item key="timeline" icon="angle-right" titleOnly="Timeline">Timeline</Menu.Item>
-              <Menu.Item key="stepper" icon="angle-right" titleOnly="Stepper">Stepper</Menu.Item>
-              <Menu.Item key="chip" icon="angle-right" titleOnly="Chip">Chip</Menu.Item>
-              <Menu.Item key="divider" icon="angle-right" titleOnly="Divider">Divider</Menu.Item>
-              <Menu.Item key="pagination" icon="angle-right" titleOnly="Pagination">Pagination</Menu.Item>
-              <Menu.Item key="progress" icon="angle-right" titleOnly="Progress">Progress</Menu.Item>
-              <Menu.Item key="rater" icon="angle-right" titleOnly="Rater">Rater</Menu.Item>
+              <Menu.Item key="checkbox" icon="angle-right" titleOnly title="Checkbox" />
+              <Menu.Item key="radio" icon="angle-right" titleOnly title="Radio" />
+              <Menu.Item key="swicth" icon="angle-right" titleOnly title="Swicth" />
+              <Menu.Item key="breadcrumb" icon="angle-right" titleOnly title="Breadcrumb" />
+              <Menu.Item key="avatar" icon="angle-right" titleOnly title="Avatar" />
+              <Menu.Item key="carousel" icon="angle-right" titleOnly title="Carousel" />
+              <Menu.Item key="timeline" icon="angle-right" titleOnly title="Timeline" />
+              <Menu.Item key="stepper" icon="angle-right" titleOnly title="Stepper" />
+              <Menu.Item key="chip" icon="angle-right" titleOnly title="Chip" />
+              <Menu.Item key="divider" icon="angle-right" titleOnly title="Divider" />
+              <Menu.Item key="pagination" icon="angle-right" titleOnly title="Pagination" />
+              <Menu.Item key="progress" icon="angle-right" titleOnly title="Progress" />
+              <Menu.Item key="rater" icon="angle-right" titleOnly title="Rater" />
             </Menu.Sub>
             <Menu.Sub title="Form" key="sub-fom" icon="keyboard">
-              <Menu.Item icon="angle-right" titleOnly="Textbox" key="textbox">Textbox</Menu.Item>
-              <Menu.Item icon="angle-right" titleOnly="Password" key="password">Password</Menu.Item>
-              <Menu.Item icon="angle-right" titleOnly="Textarea" key="textarea">Textarea</Menu.Item>
-              <Menu.Item icon="angle-right" titleOnly="Select" key="select">Select</Menu.Item>
+              <Menu.Item icon="angle-right" key="textbox" titleOnly title="Textbox" />
+              <Menu.Item icon="angle-right" key="password" titleOnly title="Password" />
+              <Menu.Item icon="angle-right" key="textarea" titleOnly title="Textarea" />
+              <Menu.Item icon="angle-right" key="select" titleOnly title="Select" />
             </Menu.Sub>
             <Menu.Sub title="Overlay" key="sub-overlay" icon="bell">
-              <Menu.Item icon="angle-right" titleOnly="Affix" key="affix">Affix</Menu.Item>
-              <Menu.Item icon="angle-right" titleOnly="Confirm" key="confirm">Confirm</Menu.Item>
-              <Menu.Item icon="angle-right" titleOnly="Tooltip" key="tooltip">Tooltip</Menu.Item>
-              <Menu.Item icon="angle-right" titleOnly="Alert" key="alert">Alert</Menu.Item>
-              <Menu.Item icon="angle-right" titleOnly="Notification">Notification</Menu.Item>
+              <Menu.Item icon="angle-right" key="affix" titleOnly title="Affix" />
+              <Menu.Item icon="angle-right" key="confirm" titleOnly title="Confirm" />
+              <Menu.Item icon="angle-right" key="tooltip" titleOnly title="Tooltip" />
+              <Menu.Item icon="angle-right" key="alert" titleOnly title="Alert" />
+              <Menu.Item icon="angle-right" titleOnly title="Notification" />
             </Menu.Sub>
             <Menu.ItemGroup key="group-page" title="PAGES">
-              <Menu.Item icon="power-off" key="login-page">Login Page</Menu.Item>
-              <Menu.Item icon="comments" key="error-page">Error Page</Menu.Item>
-              <Menu.Item icon="globe" key="register-page">Register Page</Menu.Item>
+              <Menu.Item icon="power-off" key="login-page" titleOnly title="Login Page" />
+              <Menu.Item icon="comments" key="error-page" titleOnly title="Error Page" />
+              <Menu.Item icon="globe" key="register-page" titleOnly title="Register Page" />
             </Menu.ItemGroup>
-            <Menu.Item icon="table" key="calendar">Calendar</Menu.Item>
-            <Menu.Item icon="clock" key="date-licker">Date Picker</Menu.Item>
-            <Menu.Item icon="keyboard" key="editer">Editer</Menu.Item>
+            <Menu.Item icon="table" key="calendar" titleOnly title="Calendar" />
+            <Menu.Item icon="clock" key="date-licker" titleOnly title="Date Picker" />
+            <Menu.Item icon="keyboard" key="editer" titleOnly title="Editer" />
           </Menu>
         </div>
       </div>
