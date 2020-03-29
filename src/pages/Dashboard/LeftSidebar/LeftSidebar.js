@@ -31,6 +31,7 @@ const mapRouter = Object.freeze({
   '/document/carousel': 'carousel',
   '/document/menu': 'menu',
   '/document/progress': 'progress',
+  '/document/affix': 'affix',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
@@ -83,6 +84,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item icon="angle-right" titleOnly="Select" key="select">Select</Menu.Item>
             </Menu.Sub>
             <Menu.Sub title="Overlay" key="sub-overlay" icon="bell">
+              <Menu.Item icon="angle-right" titleOnly="Affix" key="affix">Affix</Menu.Item>
               <Menu.Item icon="angle-right" titleOnly="Confirm" key="confirm">Confirm</Menu.Item>
               <Menu.Item icon="angle-right" titleOnly="Tooltip" key="tooltip">Tooltip</Menu.Item>
               <Menu.Item icon="angle-right" titleOnly="Alert" key="alert">Alert</Menu.Item>

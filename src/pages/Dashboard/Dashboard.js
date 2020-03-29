@@ -30,6 +30,7 @@ const BreadcrumbDocument = loadable(() => import('../documents/Breadcrumb'));
 const CarouselDocument = loadable(() => import('../documents/Carousel'));
 const MenuDocument = loadable(() => import('../documents/Menu'));
 const ProgressDocument = loadable(() => import('../documents/Progress'));
+const AffixDocument = loadable(() => import('../documents/Affix'));
 
 const _home = {
   key: 'home',
@@ -97,7 +98,7 @@ const mapRouter = Object.freeze({
   }],
   '/document/alert': [_home, _overlay, {
     key: 'alert',
-    title: 'alert',
+    title: 'Alert',
     _href: '/document/alert',
   }],
   '/document/notification': [_home, _overlay, {
@@ -142,7 +143,7 @@ const mapRouter = Object.freeze({
   }],
   '/document/chip': [_home, _components, {
     key: 'chip',
-    title: 'chip',
+    title: 'Chip',
     _href: '/document/chip',
   }],
   '/document/divider': [_home, _components, {
@@ -169,6 +170,11 @@ const mapRouter = Object.freeze({
     key: 'progress',
     title: 'Progress',
     _href: '/document/progress',
+  }],
+  '/document/affix': [_home, _overlay, {
+    key: 'affix',
+    title: 'Affix',
+    _href: '/document/affix',
   }],
 });
 
@@ -221,6 +227,7 @@ const Dashboard = ({}) => {
               <Route path="/document/carousel" component={CarouselDocument} />
               <Route path="/document/menu" component={MenuDocument} />
               <Route path="/document/progress" component={ProgressDocument} />
+              <Route path="/document/affix" component={AffixDocument} />
             </Switch>
           </div>
         </div>
