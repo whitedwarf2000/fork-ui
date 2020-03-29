@@ -16,8 +16,15 @@ const Item = ({ className, selected, disabled, title, icon, iconOnly, titleOnly,
       return onItemClick();
     }
 
-    return _onItemClick(_key);
-  }, [_key, disabled, onItemClick]);
+    return _onItemClick(_key, { selected, title, disabled, icon });
+  }, [
+    _key,
+    disabled,
+    title,
+    onItemClick,
+    selected,
+    icon,
+  ]);
 
   return (
     <li

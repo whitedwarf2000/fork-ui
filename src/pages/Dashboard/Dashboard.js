@@ -35,6 +35,7 @@ const TextboxDocument = loadable(() => import('../documents/Textbox'));
 const PasswordDocument = loadable(() => import('../documents/Password'));
 const TextareaDocument = loadable(() => import('../documents/Textarea'));
 const InputNumberDocument = loadable(() => import('../documents/InputNumber'));
+const SelectDocument = loadable(() => import('../documents/Select'));
 
 const _home = {
   key: 'home',
@@ -201,10 +202,15 @@ const mapRouter = Object.freeze({
     title: 'Textarea',
     _href: '/document/textarea',
   }],
-  '/document/textarea': [_home, _forms, {
+  '/document/input-number': [_home, _forms, {
     key: 'input-number',
     title: 'Input Number',
     _href: '/document/input-number',
+  }],
+  '/document/select': [_home, _forms, {
+    key: 'select',
+    title: 'Select',
+    _href: '/document/select',
   }],
 });
 
@@ -262,6 +268,7 @@ const Dashboard = ({}) => {
               <Route path="/document/password" component={PasswordDocument} />
               <Route path="/document/textarea" component={TextareaDocument} />
               <Route path="/document/input-number" component={InputNumberDocument} />
+              <Route path="/document/select" component={SelectDocument} />
             </Switch>
           </div>
         </div>
