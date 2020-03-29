@@ -71,7 +71,7 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
 };
 
 Select.Option = Menu.Item;
-Select.OptionGroup = Menu.ItemGroup;
+Select.Group = Menu.ItemGroup;
 
 Select.displayName = 'Select';
 Select.propTypes = {

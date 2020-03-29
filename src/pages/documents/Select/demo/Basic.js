@@ -12,15 +12,15 @@ const Demo = () => {
         icon="comments"
         title="Comments"
       />
-      <Select.OptionGroup key="group-action" title="Action">
+      <Select.Group key="group-action" title="Action">
         <Select.Option key="copy" icon="copy" title="Copy" />
         <Select.Option key="cog" icon="cog" title="Config" />
         <Select.Option key="heart" icon="heart" title="Love" />
-      </Select.OptionGroup>
-      <Select.OptionGroup key="group-other" title="Other">
+      </Select.Group>
+      <Select.Group key="group-other" title="Other">
         <Select.Option key="rating" icon="star" title="Rating" />
         <Select.Option key="follow" icon="bell" title="Follow" />
-      </Select.OptionGroup>
+      </Select.Group>
     </Select>
   );
 };
