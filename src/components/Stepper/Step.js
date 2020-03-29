@@ -22,7 +22,7 @@ const Step = ({ className, title, children, icon, stepNumber, ...otherProps }) =
     otherProps.status,
   ]);
 
-  const passedProps = useMemo=(() => omit(otherProps, [
+  const passedProps = useMemo(() => omit(otherProps, [
     'processing',
     'completed',
     'canceled',

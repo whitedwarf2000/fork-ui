@@ -29,14 +29,9 @@
 
 // DARK MODE SUPPORT
 .dark-mode .rc-alert {
-  background-color: $dark-bg-color--300;
+  background-color: rgba(0, 0, 0, 0.65);
 
   .rc-pure-alert-close {
-    background-color: $dark-bg-color--300;
-    box-shadow: $neumorphism-darkmode-flat--300;
-
-    &:focus {
-      box-shadow: $neumorphism-darkmode-pressed--300;
-    }
+    box-shadow: none;
   }
 }
