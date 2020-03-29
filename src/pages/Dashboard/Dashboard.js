@@ -31,6 +31,7 @@ const CarouselDocument = loadable(() => import('../documents/Carousel'));
 const MenuDocument = loadable(() => import('../documents/Menu'));
 const ProgressDocument = loadable(() => import('../documents/Progress'));
 const AffixDocument = loadable(() => import('../documents/Affix'));
+const TextboxDocument = loadable(() => import('../documents//Textbox'));
 
 const _home = {
   key: 'home',
@@ -47,6 +48,12 @@ const _components = {
 const _overlay = {
   key: 'overlay',
   title: <Icon name="desktop" />,
+  _href: '/',
+};
+
+const _forms = {
+  key: 'forms',
+  title: <Icon name="keyboard" />,
   _href: '/',
 };
 
@@ -176,6 +183,11 @@ const mapRouter = Object.freeze({
     title: 'Affix',
     _href: '/document/affix',
   }],
+  '/document/textbox': [_home, _forms, {
+    key: 'textbox',
+    title: 'Textbox',
+    _href: '/document/textbox',
+  }],
 });
 
 require('./Dashboard.scss');
@@ -228,6 +240,7 @@ const Dashboard = ({}) => {
               <Route path="/document/menu" component={MenuDocument} />
               <Route path="/document/progress" component={ProgressDocument} />
               <Route path="/document/affix" component={AffixDocument} />
+              <Route path="/document/textbox" component={TextboxDocument} />
             </Switch>
           </div>
         </div>

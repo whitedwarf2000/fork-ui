@@ -32,6 +32,7 @@ const mapRouter = Object.freeze({
   '/document/menu': 'menu',
   '/document/progress': 'progress',
   '/document/affix': 'affix',
+  '/document/textbox': 'textbox',
 });
 
 const LeftSidebar = ({ isExpanded, ...otherProps }) => {
@@ -65,7 +66,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
             <Menu.Sub key="sub-components" title="Components" icon="desktop">
               <Menu.Item key="checkbox" icon="angle-right" titleOnly title="Checkbox" />
               <Menu.Item key="radio" icon="angle-right" titleOnly title="Radio" />
-              <Menu.Item key="swicth" icon="angle-right" titleOnly title="Swicth" />
+              <Menu.Item key="switch" icon="angle-right" titleOnly title="Switch" />
               <Menu.Item key="breadcrumb" icon="angle-right" titleOnly title="Breadcrumb" />
               <Menu.Item key="avatar" icon="angle-right" titleOnly title="Avatar" />
               <Menu.Item key="carousel" icon="angle-right" titleOnly title="Carousel" />
@@ -88,7 +89,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item icon="angle-right" key="confirm" titleOnly title="Confirm" />
               <Menu.Item icon="angle-right" key="tooltip" titleOnly title="Tooltip" />
               <Menu.Item icon="angle-right" key="alert" titleOnly title="Alert" />
-              <Menu.Item icon="angle-right" titleOnly title="Notification" />
+              <Menu.Item icon="angle-right" key="notification" titleOnly title="Notification" />
             </Menu.Sub>
             <Menu.ItemGroup key="group-page" title="PAGES">
               <Menu.Item icon="power-off" key="login-page" titleOnly title="Login Page" />

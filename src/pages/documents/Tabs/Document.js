@@ -9,7 +9,7 @@ import IconDemo from './demo/Icon';
 export default () => {
   return (
     <div className="flex">
-      <div className="w-1/2 pr-2">
+      <div className="w-1/3 pr-2">
         <Codebox className="mb-5" header="BASIC" href="stepper-basic" code={Basic.code}>
           <Basic />
         </Codebox>
@@ -17,10 +17,12 @@ export default () => {
           <IconDemo />
         </Codebox>
       </div>
-      <div className="w-1/2 pl-2">
+      <div className="w-1/3 pl-2">
         <Codebox className="mb-5" header="FLUID" href="stepper-fluid" code={Fluid.code}>
           <Fluid />
         </Codebox>
+      </div>
+      <div className="w-1/3 pl-2">
         <Codebox className="mb-5" header="DISABLED" href="stepper-disabled" code={Disabled.code}>
           <Disabled />
         </Codebox>
