@@ -23,6 +23,13 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
   const onItemClick = useCallback((key, itemProps) => {
     setValue(key);
     _setShape(itemProps);
+    setIsDrop(false);
+  }, []);
+
+  const onVisibleChange = useCallback(visible => {
+    if (!visible) {
+      setIsDrop(false);
+    }
   }, []);
 
   const renderValue = useCallback(() => {
@@ -41,6 +48,9 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
 
   return (
     <Overlay
+      visible={isDrop}
+      onVisibleChange={onVisibleChange}
+      canOutsideClickClose
       placement={placement}
       trigger={['click']}
       overlay={(

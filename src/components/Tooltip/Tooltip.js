@@ -15,6 +15,7 @@ const Tooltip = ({ className, children, title, ...otherProps }) => {
 
   return (
     <Overlay
+      canOutsideClickClose
       arrow
       trigger={['hover']}
       overlay={title}
