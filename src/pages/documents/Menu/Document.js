@@ -9,6 +9,7 @@ import IconOnly from './demo/IconOnly';
 import Disabled from './demo/Disabled';
 import TitleWithIconOnly from './demo/TitleWithIconOnly';
 import Multiple from './demo/Multiple';
+import Controlled from './demo/Controlled';
 
 export default () => {
   return (
@@ -17,29 +18,33 @@ export default () => {
         <Codebox className="mb-5" header="BASIC" href="menu-basic" code={Basic.code}>
           <Basic />
         </Codebox>
-        <Codebox className="mb-5" header="SUB MENU" href="menu-sub" code={Sub.code}>
+        <Codebox className="mb-5" header="CONTROLLED MENU" href="menu-controlled" code={Controlled.code}>
+          <Controlled />
+        </Codebox>
+        {/* <Codebox className="mb-5" header="SUB MENU" href="menu-sub" code={Sub.code}>
           <Sub />
-        </Codebox>
-        <Codebox className="mb-5" header="ICON ONLY" href="menu-only" code={IconOnly.code}>
+        </Codebox> */}
+        {/* <Codebox className="mb-5" header="ICON ONLY" href="menu-only" code={IconOnly.code}>
           <IconOnly />
-        </Codebox>
-        <Codebox className="mb-5" header="ICON ONLY BUT NOT SET ICON" href="menu-only-icon-no-icon" code={TitleWithIconOnly.code}>
+        </Codebox> */}
+        {/* <Codebox className="mb-5" header="ICON ONLY BUT NOT SET ICON" href="menu-only-icon-no-icon" code={TitleWithIconOnly.code}>
           <TitleWithIconOnly />
-        </Codebox>
+        </Codebox> */}
       </div>
       <div className="w-1/2 pl-2">
-        <Codebox className="mb-5" header="DISABLED" href="menu-disabled" code={Disabled.code}>
-          <Disabled />
-        </Codebox>
-        <Codebox className="mb-5" header="WITH ICON" href="menu-with-icon" code={IconDemo.code}>
-          <IconDemo />
-        </Codebox>
         <Codebox className="mb-5" header="MULTIPLE" href="menu-multiple" code={Multiple.code}>
           <Multiple />
         </Codebox>
-        <Codebox className="mb-5" header="GROUP MENU" href="menu-group" code={Group.code}>
+        {/* <Codebox className="mb-5" header="DISABLED" href="menu-disabled" code={Disabled.code}>
+          <Disabled />
+        </Codebox> */}
+        {/* <Codebox className="mb-5" header="WITH ICON" href="menu-with-icon" code={IconDemo.code}>
+          <IconDemo />
+        </Codebox> */}
+
+        {/* <Codebox className="mb-5" header="GROUP MENU" href="menu-group" code={Group.code}>
           <Group />
-        </Codebox>
+        </Codebox> */}
       </div>
     </div>
   );

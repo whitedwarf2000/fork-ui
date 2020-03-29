@@ -6,7 +6,7 @@ import Icon from '../Icon';
 
 require('./Sub.scss');
 
-const Sub = ({ className, children, title, icon, iconOnly, selectedKeys, setSelectedKeys, onItemClick }) => {
+const Sub = ({ className, children, title, icon, iconOnly, selectedKeys, _onItemClick }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggleExpanded = useCallback(() => setIsExpanded(prev => !prev), []);
 
@@ -23,10 +23,9 @@ const Sub = ({ className, children, title, icon, iconOnly, selectedKeys, setSele
         {React.Children.map(children, elm => React.cloneElement(elm, {
           iconOnly,
           selected: selectedKeys.indexOf(elm.key) >= 0,
-          _key: elm.key,
           selectedKeys,
-          setSelectedKeys,
-          onItemClick,
+          _key: elm.key,
+          _onItemClick,
         }))}
       </ul>
     </li>
@@ -38,11 +37,10 @@ Sub.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   selectedKeys: PropTypes.array,
-  setSelectedKeys: PropTypes.setSelectedKeys,
+  _onItemClick: PropTypes.func,
 };
 Sub.defaultProps = {
   selectedKeys: [],
-  setSelectedKeys: f => f,
 };
 
 export default Sub;

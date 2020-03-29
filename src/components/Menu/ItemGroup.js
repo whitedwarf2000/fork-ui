@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 require('./ItemGroup.scss');
 
-const ItemGroup = ({ className, children, title, iconOnly, selectedKeys, setSelectedKeys, onItemClick }) => {
+const ItemGroup = ({ className, children, title, iconOnly, selectedKeys, _onItemClick }) => {
   return (
     <li className={cn('rc-menu-item-group', { '--icon-only': iconOnly }, className)}>
       <div className="rc-menu-item-group-title"><span>{title}</span></div>
@@ -12,10 +12,9 @@ const ItemGroup = ({ className, children, title, iconOnly, selectedKeys, setSele
         {React.Children.map(children, elm => React.cloneElement(elm, {
           iconOnly,
           selected: selectedKeys.indexOf(elm.key) >= 0,
-          _key: elm.key,
           selectedKeys,
-          setSelectedKeys,
-          onItemClick,
+          _key: elm.key,
+          _onItemClick,
         }))}
       </ul>
     </li>
@@ -27,11 +26,10 @@ ItemGroup.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   selectedKeys: PropTypes.array,
-  setSelectedKeys: PropTypes.func,
+  _onItemClick: PropTypes.func,
 };
 ItemGroup.defaultProps = {
   selectedKeys: [],
-  setSelectedKeys: f => f,
 };
 
 export default ItemGroup;

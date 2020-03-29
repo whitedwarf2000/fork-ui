@@ -45,31 +45,36 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
           <div className="__logo">
             <Icon name="home" style={{ fontSize: '1.75rem' }} onClick={() => history.push('/')} />
           </div>
-          <Menu className="__menu" iconOnly={!isExpanded} selectedKeys={selectedKeys}>
+          <Menu
+            className="__menu"
+            iconOnly={!isExpanded}
+            selectedKeys={selectedKeys}
+            onItemClick={key => history.push(`/document/${key}`)}
+          >
             <Menu.ItemGroup title="POPULAR" key="group-popular">
-              <Menu.Item icon="icons" key="icon" onClick={() => history.push('/document/icon')}>Icon</Menu.Item>
-              <Menu.Item icon="mouse" key="button" onClick={() => history.push('/document/button')}>Button</Menu.Item>
+              <Menu.Item icon="icons" key="icon">Icon</Menu.Item>
+              <Menu.Item icon="mouse" key="button">Button</Menu.Item>
               <Menu.Item icon="table" key="table">Table</Menu.Item>
-              <Menu.Item icon="scroll" key="drawer" onClick={() => history.push('/document/drawer')}>Drawer</Menu.Item>
-              <Menu.Item icon="browser" key="modal" onClick={() => history.push('/document/modal')}>Modal</Menu.Item>
-              <Menu.Item icon="list-ul" key="menu" onClick={() => history.push('/document/menu')}>Menu</Menu.Item>
-              <Menu.Item icon="pager"key="tabs" onClick={() => history.push('/document/tabs')}>Tabs</Menu.Item>
-              <Menu.Item icon="caret-down" key="collapse" onClick={() => history.push('/document/collapse')}>Collapse</Menu.Item>
+              <Menu.Item icon="scroll" key="drawer">Drawer</Menu.Item>
+              <Menu.Item icon="browser" key="modal">Modal</Menu.Item>
+              <Menu.Item icon="list-ul" key="menu">Menu</Menu.Item>
+              <Menu.Item icon="pager"key="tabs">Tabs</Menu.Item>
+              <Menu.Item icon="caret-down" key="collapse">Collapse</Menu.Item>
             </Menu.ItemGroup>
             <Menu.Sub key="sub-components" title="Components" icon="desktop">
-              <Menu.Item key="checkbox" icon="angle-right" titleOnly="Checkbox" onClick={() => history.push('/document/checkbox')}>Checkbox</Menu.Item>
-              <Menu.Item key="radio" icon="angle-right" titleOnly="Radio" onClick={() => history.push('/document/radio')}>Radio</Menu.Item>
-              <Menu.Item key="swicth" icon="angle-right" titleOnly="Swicth" onClick={() => history.push('/document/switch')}>Swicth</Menu.Item>
-              <Menu.Item key="breadcrumb" icon="angle-right" titleOnly="Breadcrumb" onClick={() => history.push('/document/breadcrumb')}>Breadcrumb</Menu.Item>
-              <Menu.Item key="avatar" icon="angle-right" titleOnly="Avatar" onClick={() => history.push('/document/avatar')}>Avatar</Menu.Item>
-              <Menu.Item key="carousel" icon="angle-right" titleOnly="Carousel" onClick={() => history.push('/document/carousel')}>Carousel</Menu.Item>
-              <Menu.Item key="timeline" icon="angle-right" titleOnly="Timeline" onClick={() => history.push('/document/timeline')}>Timeline</Menu.Item>
-              <Menu.Item key="stepper" icon="angle-right" titleOnly="Stepper" onClick={() => history.push('/document/stepper')}>Stepper</Menu.Item>
-              <Menu.Item key="chip" icon="angle-right" titleOnly="Chip" onClick={() => history.push('/document/chip')}>Chip</Menu.Item>
-              <Menu.Item key="divider" icon="angle-right" titleOnly="Divider" onClick={() => history.push('/document/divider')}>Divider</Menu.Item>
-              <Menu.Item key="pagination" icon="angle-right" titleOnly="Pagination" onClick={() => history.push('/document/pagination')}>Pagination</Menu.Item>
-              <Menu.Item key="progress" icon="angle-right" titleOnly="Progress" onClick={() => history.push('/document/progress')}>Progress</Menu.Item>
-              <Menu.Item key="rating" icon="angle-right" titleOnly="Rater" onClick={() => history.push('/document/rater')}>Rater</Menu.Item>
+              <Menu.Item key="checkbox" icon="angle-right" titleOnly="Checkbox">Checkbox</Menu.Item>
+              <Menu.Item key="radio" icon="angle-right" titleOnly="Radio">Radio</Menu.Item>
+              <Menu.Item key="swicth" icon="angle-right" titleOnly="Swicth">Swicth</Menu.Item>
+              <Menu.Item key="breadcrumb" icon="angle-right" titleOnly="Breadcrumb">Breadcrumb</Menu.Item>
+              <Menu.Item key="avatar" icon="angle-right" titleOnly="Avatar">Avatar</Menu.Item>
+              <Menu.Item key="carousel" icon="angle-right" titleOnly="Carousel">Carousel</Menu.Item>
+              <Menu.Item key="timeline" icon="angle-right" titleOnly="Timeline">Timeline</Menu.Item>
+              <Menu.Item key="stepper" icon="angle-right" titleOnly="Stepper">Stepper</Menu.Item>
+              <Menu.Item key="chip" icon="angle-right" titleOnly="Chip">Chip</Menu.Item>
+              <Menu.Item key="divider" icon="angle-right" titleOnly="Divider">Divider</Menu.Item>
+              <Menu.Item key="pagination" icon="angle-right" titleOnly="Pagination">Pagination</Menu.Item>
+              <Menu.Item key="progress" icon="angle-right" titleOnly="Progress">Progress</Menu.Item>
+              <Menu.Item key="rating" icon="angle-right" titleOnly="Rater">Rater</Menu.Item>
             </Menu.Sub>
             <Menu.Sub title="Form" key="sub-fom" icon="keyboard">
               <Menu.Item icon="angle-right" titleOnly="Textbox" key="textbox">Textbox</Menu.Item>
@@ -78,10 +83,10 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item icon="angle-right" titleOnly="Select" key="select">Select</Menu.Item>
             </Menu.Sub>
             <Menu.Sub title="Overlay" key="sub-overlay" icon="bell">
-              <Menu.Item icon="angle-right" titleOnly="Confirm" key="confirm" onClick={() => history.push('/document/confirm')}>Confirm</Menu.Item>
-              <Menu.Item icon="angle-right" titleOnly="Tooltip" key="tooltip" onClick={() => history.push('/document/tooltip')}>Tooltip</Menu.Item>
-              <Menu.Item icon="angle-right" titleOnly="Alert" key="alert" onClick={() => history.push('/document/alert')}>Alert</Menu.Item>
-              <Menu.Item icon="angle-right" titleOnly="Notification" key="notification" onClick={() => history.push('/document/notification')}>Notification</Menu.Item>
+              <Menu.Item icon="angle-right" titleOnly="Confirm" key="confirm">Confirm</Menu.Item>
+              <Menu.Item icon="angle-right" titleOnly="Tooltip" key="tooltip">Tooltip</Menu.Item>
+              <Menu.Item icon="angle-right" titleOnly="Alert" key="alert">Alert</Menu.Item>
+              <Menu.Item icon="angle-right" titleOnly="Notification">Notification</Menu.Item>
             </Menu.Sub>
             <Menu.ItemGroup key="group-page" title="PAGES">
               <Menu.Item icon="power-off" key="login-page">Login Page</Menu.Item>

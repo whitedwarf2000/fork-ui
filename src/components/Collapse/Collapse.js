@@ -25,6 +25,7 @@ const Collapse = ({ className, defaultActivePanels, onActivePanelsChange, onPane
       return onPanelClick(key);
     }
 
+    onPanelClick(key);
     if (accordion) {
       return setActivePanels(prev => {
         if (prev.indexOf(key) >= 0) {
@@ -49,7 +50,7 @@ const Collapse = ({ className, defaultActivePanels, onActivePanelsChange, onPane
           active: activePanelsAsObject[elm.key],
           onClick: () => _onPanelClick(elm.key),
           ...elm.props
-        })
+        });
       })}
     </div>
   );

@@ -6,10 +6,22 @@ import Item from './Item';
 import ItemGroup from './ItemGroup';
 import Sub from './Sub';
 
+import useUncontrolled from '../../hooks/useUncontrolled';
+
 require('./Menu.scss');
 
-const Menu = ({ className, children, selectedKeys, setSelectedKeys, iconOnly, multiple }) => {
-  const onItemClick = useCallback((key) => {
+const Menu = ({ className, children, defaultSelectedKeys, onSelectedKeysChange, onItemClick, iconOnly, multiple, ...otherProps }) => {
+  const [selectedKeys, setSelectedKeys, isControlled] = useUncontrolled('selectedKeys', otherProps, {
+    defaultState: defaultSelectedKeys,
+    onChangeState: onSelectedKeysChange,
+  });
+
+  const _onItemClick = useCallback((key) => {
+    if (isControlled) {
+      return onItemClick(key);
+    }
+
+    onItemClick(key);
     setSelectedKeys((prev) => {
       if (multiple) {
         const next = new Set(prev);
@@ -30,10 +42,9 @@ const Menu = ({ className, children, selectedKeys, setSelectedKeys, iconOnly, mu
   return (
     <ul className={cn('rc-menu',{ '--icon-only': iconOnly }, className)}>
       {React.Children.map(children, elm => React.cloneElement(elm, {
-        onItemClick,
+        _onItemClick,
         iconOnly,
         selectedKeys,
-        setSelectedKeys,
         selected: selectedKeys.indexOf(elm.key) >= 0,
         _key: elm.key,
       }))}
@@ -50,12 +61,15 @@ Menu.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   selectedKeys: PropTypes.array,
-  setSelectedKeys: PropTypes.func,
+  defaultSelectedKeys: PropTypes.array,
+  onSelectedKeysChange: PropTypes.func,
+  onItemClick: PropTypes.func,
   multiple: PropTypes.bool,
 };
 Menu.defaultProps = {
-  selectedKeys: [],
-  setSelectedKeys: f => f,
+  defaultSelectedKeys: [],
+  onSelectedKeysChange: f => f,
+  onItemClick: f => f,
 };
 
 export default Menu;
