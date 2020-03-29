@@ -2,7 +2,6 @@ import React from 'react';
 import Codebox from '../../../components/Codebox';
 
 import Basic from './demo/Basic';
-import Controlled from './demo/Controlled';
 import WithRef from './demo/WithRef';
 import Disabled from './demo/Disabled';
 import MinAndMax from './demo/MinAndMax';
@@ -20,19 +19,16 @@ export default () => {
         </Codebox>
       </div>
       <div className="w-1/3 pl-2">
-        <Codebox className="mb-5" header="CONTROLLED" href="input-number-controlled" code={Controlled.code}>
-          <Controlled />
-        </Codebox>
         <Codebox className="mb-5" header="MIN AND MAX" href="input-number-min-max" code={MinAndMax.code}>
           <MinAndMax />
+        </Codebox>
+        <Codebox className="mb-5" header="STEP" href="input-number-step" code={Step.code}>
+          <Step />
         </Codebox>
       </div>
       <div className="w-1/3 pl-2">
         <Codebox className="mb-5" header="DISABLED" href="input-number-disabled" code={Disabled.code}>
           <Disabled />
-        </Codebox>
-        <Codebox className="mb-5" header="STEP" href="input-number-step" code={Step.code}>
-          <Step />
         </Codebox>
       </div>
     </div>
