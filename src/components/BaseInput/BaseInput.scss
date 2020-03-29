@@ -1,16 +1,21 @@
 @import '../../scss/vars.scss';
 
-.rc-textarea {
-  min-height: $input-height;
+.rc-input {
+  height: $input-height;
   outline: 0 !important;
   border: 0;
   width: 100%;
   background-color: transparent;
   border-radius: $border-radius;
-  padding: $input-spacing;
+  padding: 0 $input-spacing;
   box-shadow: $neu-dark-pressed--500;
+
 
   &:disabled {
     cursor: not-allowed;
   }
+}
+
+.rc-input.--rounded {
+  border-radius: 100em;
 }

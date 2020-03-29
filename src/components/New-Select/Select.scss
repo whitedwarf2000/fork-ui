@@ -1,0 +1,29 @@
+@import '../../scss/vars.scss';
+
+.rc-select {
+  position: relative;
+}
+
+.rc-select-input {
+  height: $input-height;
+  outline: 0 !important;
+  border: 0;
+  width: 100%;
+  background-color: transparent;
+  border-radius: $border-radius;
+  padding: 0 3em 0 $input-spacing;
+  box-shadow: $neu-dark-pressed--500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.rc-select-icon {
+  position: absolute;
+  right: 0.75em;
+  top: 0.75em;
+}
+
+.rc-select.--disabled {
+  cursor: not-allowed;
+}

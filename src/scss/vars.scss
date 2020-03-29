@@ -107,10 +107,32 @@ $neumorphism-pressed: inset 2px 2px 1px #d6d7da, inset -2px -2px 1px #ffffff;
 $neumorphism-darkmode-pressed: inset 2px 2px 1px $neumorphism-dark-from-color, inset -2px -2px 1px $neumorphism-dark-to-color;
 $neumorphism-primary-pressed: inset 1.5px 1.5px 1.5px #0084db, inset -1px -1px 1px #00aeff;
 
-/**************************************/
-$dark-left-sidebar-bg-color: $dark-bg-color--400;
-
 $neumorphism-dark-from-color--300: #333439;
 $neumorphism-dark-to-color--300: #51545b;
 $neumorphism-darkmode-flat--300: 1.5px 1.5px 1.5px $neumorphism-dark-from-color--300, -1px -1px 1px $neumorphism-dark-to-color--300;
 $neumorphism-darkmode-pressed--300: inset 2px 2px 1px $neumorphism-dark-from-color--300, inset -2px -2px 1px $neumorphism-dark-to-color--300;
+
+
+$dark-left-sidebar-bg-color: $dark-bg-color--400;
+/***********************************************************************************************************************/
+$input-height: 3rem;
+$input-spacing: 1.25em;
+
+$dark--700: #252629;
+$dark--600: #2b2c30;
+$dark--500: #313236; // MAIN COLOR
+$dark--400: #38393e;
+$dark--300: #42444a;
+$dark--200: #5f5f5f;
+
+$light-from--500: #d6d7da;
+$light-to--500: #ffffff;
+
+$dark-from--500: #1f2023;
+$dark-to--500: #434449;
+
+
+$neu-light-flat--500: 1.5px 1.5px 1.5px $light-from--500, -1px -1px 1px $light-to--500;
+$neu-light-pressed--500: 1.5px 1.5px 1.5px $light-from--500, -1px -1px 1px $light-to--500;
+$neu-dark-flat--500: 1.5px 1.5px 1.5px $dark-from--500, -1px -1px 1px $dark-to--500;
+$neu-dark-pressed--500: inset 2px 2px 1px $dark-from--500, inset -2px -2px 1px $dark-to--500;

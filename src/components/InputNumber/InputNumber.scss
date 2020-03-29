@@ -1,0 +1,46 @@
+@import '../../scss/vars.scss';
+
+.rc-input-number {
+  position: relative;
+}
+
+.rc-input-number-input {
+  -moz-appearance:textfield;
+  padding-right: 3em;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.rc-input-number-handler {
+  position: absolute;
+  right: 4px;
+  border-radius: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  box-shadow: $neu-dark-flat--500;
+  overflow: hidden;
+}
+
+.rc-select-up,
+.rc-select-down {
+  height: $input-height / 2 - 0.25rem;
+
+  &:hover {
+    background-color: $primary-color;
+    box-shadow: none;
+  }
+}
+.rc-select-up {
+  border-top-right-radius: $border-radius;
+}
+
+.rc-select-down {
+  border-bottom-right-radius: $border-radius;
+}

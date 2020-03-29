@@ -1,10 +1,14 @@
 import React from 'react';
-import { Textbox } from '../../../../components/core';
+import { Textbox, Password, Textarea, Select, InputNumber } from '../../../../components/core';
 
 const Demo = () => {
   return (
     <div className="w-full">
-      <Textbox />
+      <Textbox className="mb-5" />
+      <Password className="mb-5" />
+      <Textarea className="mb-5" />
+      <Select className="mb-5" />
+      <InputNumber className="mb-5" />
     </div>
   );
 };
