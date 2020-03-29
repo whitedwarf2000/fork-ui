@@ -5,7 +5,7 @@ import { Icon, Divider } from '../core';
 require('./Codebox.scss');
 
 const Codebox = ({ children, header, defaultExpanded, href, code, className }) => {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(defaultExpanded);
   const toggleExpanded = useCallback(() => setExpanded(prev => !prev), []);
 
   return (
