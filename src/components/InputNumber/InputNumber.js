@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import BaseInput from '../BaseInput';
 import Icon from '../Icon';
 import { omit } from '../../utils/helpers';
+import useFlexibleRef from '../../hooks/useFlexibleRef';
 
 require('./InputNumber.scss');
 
@@ -18,21 +19,20 @@ const InputNumber = React.forwardRef(({
   onChange,
   ...otherProps
 }, ref) => {
-  const wrapperRef = useRef();
+  const wrapperRef = useFlexibleRef(ref);
   const stepUpRef = useRef();
   const stepDownRef = useRef();
 
   const passedProps = useMemo(() => omit(otherProps, ['value']), [otherProps]);
 
   useEffect(() => {
-    const inputNode = wrapperRef.current.getElementsByClassName('rc-input-number-input')[0];
     const stepUp = () => {
-      inputNode.stepUp();
-      onChange({ target: inputNode });
+      wrapperRef.current.stepUp();
+      onChange({ target: wrapperRef.current });
     };
     const stepDown = () => {
-      inputNode.stepDown();
-      onChange({ target: inputNode });
+      wrapperRef.current.stepDown();
+      onChange({ target: wrapperRef.current });
     };
 
     stepUpRef.current.addEventListener('click', stepUp);
@@ -45,10 +45,10 @@ const InputNumber = React.forwardRef(({
   }, []);
 
   return (
-    <div className={cn('rc-input-number', className)} ref={wrapperRef}>
+    <div className={cn('rc-input-number', className)}>
       <BaseInput
         {...passedProps}
-        ref={ref}
+        ref={wrapperRef}
         disabled={disabled}
         onChange={onChange}
         htmlType="number"
