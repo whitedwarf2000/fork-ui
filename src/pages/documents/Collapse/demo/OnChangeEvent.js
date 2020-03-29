@@ -15,7 +15,7 @@ const Description = () => {
 const Demo = () => {
   return (
     <div className="flex flex-col w-full">
-      <Collapse defaultActivePanels={['panel-2']}>
+      <Collapse onActivePanelsChange={panels => console.log(panels)}>
         <Collapse.Item title="Collapse One" key="panel-1">
           <Description />
         </Collapse.Item>
@@ -48,7 +48,7 @@ export default = () => {
 const Demo = () => {
   return (
     <div className="flex flex-col w-full">
-      <Collapse defaultActivePanels={['panel-2']}>
+      <Collapse onActivePanelsChange={panels => console.log(panels)}>
         <Collapse.Item title="Collapse One" key="panel-1">
           <Description />
         </Collapse.Item>

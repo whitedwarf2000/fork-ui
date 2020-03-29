@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Collapse } from '../../../../components/core';
 
 const Description = () => {
@@ -13,16 +13,9 @@ const Description = () => {
 };
 
 const Demo = () => {
-  const [activePanels, setActivePanels] = useState([]);
-  /**
-   * If you are using Class Component
-   * this.state = { activePanels: [] };
-   * setActivePanels = callback => this.setState(prev => callback(prev.activePanels));
-   * */
-
   return (
     <div className="flex flex-col w-full">
-      <Collapse activePanels={activePanels} setActivePanels={setActivePanels}>
+      <Collapse>
         <Collapse.Item title="Collapse One" key="panel-1">
           <Description />
         </Collapse.Item>
@@ -38,8 +31,8 @@ const Demo = () => {
 };
 
 Demo.code = `
-import React, { useState } from 'react';
-import { Collapse } from '../../../../components/core';
+import React from 'react';
+import { Collapse } from '@/components/core';
 
 const Description = () => {
   return (
@@ -52,17 +45,10 @@ const Description = () => {
   );
 };
 
-const Demo = () => {
-  const [activePanels, setActivePanels] = useState([]);
-  /**
-   * If you are using Class Component
-   * this.state = { activePanels: [] };
-   * setActivePanels = callback => this.setState(prev => callback(prev.activePanels));
-   * */
-
+export default () => {
   return (
     <div className="flex flex-col w-full">
-      <Collapse activePanels={activePanels} setActivePanels={setActivePanels}>
+      <Collapse>
         <Collapse.Item title="Collapse One" key="panel-1">
           <Description />
         </Collapse.Item>

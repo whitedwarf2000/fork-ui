@@ -45,7 +45,7 @@ Item.propTypes = {
   title: PropTypes.any.isRequired,
   className: PropTypes.string,
   defaultActive: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func, // do not set default, onClick will be passed by Collapse so it away exsits
   children: PropTypes.any,
   icon: PropTypes.string,
 };

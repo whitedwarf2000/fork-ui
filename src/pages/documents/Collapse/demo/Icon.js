@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Collapse } from '../../../../components/core';
 
 const Description = () => {
@@ -13,16 +13,9 @@ const Description = () => {
 };
 
 const Demo = () => {
-  const [activePanels, setActivePanels] = useState(['panel-1']);
-  /**
-   * If you are using Class Component
-   * this.state = { activePanels: [] };
-   * setActivePanels = callback => this.setState(prev => callback(prev.activePanels));
-   * */
-
   return (
     <div className="flex flex-col w-full">
-      <Collapse activePanels={activePanels} setActivePanels={setActivePanels}>
+      <Collapse>
         <Collapse.Item title="Collapse One" key="panel-1" icon="comments">
           <Description />
         </Collapse.Item>
@@ -38,7 +31,7 @@ const Demo = () => {
 };
 
 Demo.code = `
-import React, { useState } from 'react';
+import React from 'react';
 import { Collapse } from '../../../../components/core';
 
 const Description = () => {
@@ -52,24 +45,17 @@ const Description = () => {
   );
 };
 
-const Demo = () => {
-  const [activePanels, setActivePanels] = useState(['panel-1']);
-  /**
-   * If you are using Class Component
-   * this.state = { activePanels: [] };
-   * setActivePanels = callback => this.setState(prev => callback(prev.activePanels));
-   * */
-
+export default => {
   return (
     <div className="flex flex-col w-full">
-      <Collapse activePanels={activePanels} setActivePanels={setActivePanels}>
-        <Collapse.Item title="Collapse One" key="panel-1">
+      <Collapse>
+        <Collapse.Item title="Collapse One" key="panel-1" icon="comments">
           <Description />
         </Collapse.Item>
-        <Collapse.Item title="Collapse Two" key="panel-2">
+        <Collapse.Item title="Collapse Two" key="panel-2" icon="desktop">
           <Description />
         </Collapse.Item>
-        <Collapse.Item title="Collapse Three" key="panel-3">
+        <Collapse.Item title="Collapse Three" key="panel-3" icon="power-off">
           <Description />
         </Collapse.Item>
       </Collapse>
