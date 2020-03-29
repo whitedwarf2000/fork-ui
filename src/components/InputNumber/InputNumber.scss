@@ -32,10 +32,17 @@
 .rc-select-up,
 .rc-select-down {
   height: $input-height / 2 - 0.25rem;
+  outline: 0 !important;
+  background-color: transparent;
+  border: none;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: $primary-color;
     box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 }
 .rc-select-up {

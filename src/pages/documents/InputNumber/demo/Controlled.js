@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { InputNumber } from '../../../../components/core';
 
 const Demo = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState();
   const onChange = useCallback(e => setValue(e.target.value), []);
 
   return (
@@ -19,7 +19,7 @@ import React from 'react';
 import { InputNumber } from '@/components/core';
 
 export default () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState();
   const onChange = useCallback(e => setValue(e.target.value), []);
 
   return (
