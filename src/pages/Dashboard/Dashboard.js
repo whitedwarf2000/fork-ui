@@ -223,7 +223,7 @@ const mapRouter = Object.freeze({
 require('./Dashboard.scss');
 
 const Dashboard = ({}) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const toggleExpand = useCallback(() => setIsExpanded(prev => !prev), []);
 
   const location = useLocation();

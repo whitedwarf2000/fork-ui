@@ -23,6 +23,7 @@ const Codebox = ({ children, header, defaultExpanded, href, code, description, c
       <div className={cn('code-box-guide', { '--expanded': expanded, '--hidden': !code })}>
         <Divider
           dashed
+          transparent={!expanded}
           right
           title={(
             <span onClick={toggleExpanded} className="code-box-collapse-code-header">

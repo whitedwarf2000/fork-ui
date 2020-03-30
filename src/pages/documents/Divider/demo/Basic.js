@@ -8,6 +8,7 @@ const Demo = () => {
       <Divider dashed />
       <Divider type="dashed" />
       <Divider dotted />
+      <Divider transparent />
     </div>
   );
 };
@@ -36,6 +37,7 @@ export default () => {
       <Divider dashed />
       <Divider type="dashed" />
       <Divider dotted />
+      <Divider transparent />
     </div>
   );
 };
