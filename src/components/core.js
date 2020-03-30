@@ -5,6 +5,7 @@ export { default as Affix } from './Affix';
 export { default as Avatar } from './Avatar';
 export { default as BaseInput } from './BaseInput';
 export { default as Button } from './Button';
+export { default as Badge } from './Badge';
 export { default as ButtonGroup } from './ButtonGroup';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as Collapse } from './Collapse';

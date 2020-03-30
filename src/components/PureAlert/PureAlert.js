@@ -16,13 +16,7 @@ const mTypes = Object.freeze({
 });
 
 const PureAlert = ({ alertRef, children, title, onCloseClick, className, closable, ...otherProps }) => {
-  const type = useSemanticProp('type', otherProps, Object.keys(mTypes), [
-    otherProps.info,
-    otherProps.success,
-    otherProps.error,
-    otherProps.warning,
-    otherProps.type,
-  ]);
+  const type = useSemanticProp('type', otherProps, Object.keys(mTypes));
 
   const passedProps = useMemo(() => omit(otherProps, [
     'info',

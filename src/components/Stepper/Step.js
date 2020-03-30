@@ -15,12 +15,7 @@ const mStatus = Object.freeze({
 });
 
 const Step = ({ className, title, children, icon, stepNumber, ...otherProps }) => {
-  const status = useSemanticProp('status', otherProps, Object.keys(mStatus), [
-    otherProps.processing,
-    otherProps.completed,
-    otherProps.canceled,
-    otherProps.status,
-  ]);
+  const status = useSemanticProp('status', otherProps, Object.keys(mStatus));
 
   const passedProps = useMemo(() => omit(otherProps, [
     'processing',

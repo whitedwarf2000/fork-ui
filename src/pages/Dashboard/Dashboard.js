@@ -36,6 +36,7 @@ const PasswordDocument = loadable(() => import('../documents/Password'));
 const TextareaDocument = loadable(() => import('../documents/Textarea'));
 const InputNumberDocument = loadable(() => import('../documents/InputNumber'));
 const SelectDocument = loadable(() => import('../documents/Select'));
+const BadgeDocument = loadable(() => import('../documents/Badge'));
 
 const _home = {
   key: 'home',
@@ -62,6 +63,11 @@ const _forms = {
 };
 
 const mapRouter = Object.freeze({
+  '/document/badge': [_home, {
+    key: 'badge',
+    title: 'Badge',
+    _href: '/document/badge',
+  }],
   '/document/button': [_home, {
     key: 'button',
     title: 'Button',
@@ -269,6 +275,7 @@ const Dashboard = ({}) => {
               <Route path="/document/textarea" component={TextareaDocument} />
               <Route path="/document/input-number" component={InputNumberDocument} />
               <Route path="/document/select" component={SelectDocument} />
+              <Route path="/document/badge" component={BadgeDocument} />
             </Switch>
           </div>
         </div>

@@ -28,9 +28,15 @@
   padding: 0 1.5rem;
 }
 
+.top-navigation > .__right {
+  display: flex;
+  align-items: center;
+}
+
 // DARK MODE SUPPORT
 .dark-mode {
   .top-navigation {
     background-color: $dark-bg-color--400;
   }
 }
+

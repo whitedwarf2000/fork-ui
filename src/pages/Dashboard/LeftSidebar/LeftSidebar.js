@@ -7,6 +7,7 @@ import { Icon, Menu } from '../../../components/core';
 require('./LeftSidebar.scss');
 
 const mapRouter = Object.freeze({
+  '/document/badge': 'badge',
   '/document/button': 'button',
   '/document/icon': 'icon',
   '/document/tooltip': 'tooltip',
@@ -67,6 +68,7 @@ const LeftSidebar = ({ isExpanded, ...otherProps }) => {
               <Menu.Item icon="caret-down" key="collapse" title="Collapse" />
             </Menu.ItemGroup>
             <Menu.Sub key="sub-components" title="Components" icon="desktop">
+              <Menu.Item key="badge" icon="angle-right" titleOnly title="Badge" />
               <Menu.Item key="checkbox" icon="angle-right" titleOnly title="Checkbox" />
               <Menu.Item key="radio" icon="angle-right" titleOnly title="Radio" />
               <Menu.Item key="switch" icon="angle-right" titleOnly title="Switch" />

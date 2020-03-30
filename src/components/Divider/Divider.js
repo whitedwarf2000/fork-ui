@@ -19,12 +19,7 @@ const mDirections = Object.freeze({
 });
 
 const Divider = ({ className, title, ...otherProps }) => {
-  const type = useSemanticProp('type', otherProps, Object.keys(mTypes), [
-    otherProps.solid,
-    otherProps.dashed,
-    otherProps.dotted,
-    otherProps.type,
-  ]);
+  const type = useSemanticProp('type', otherProps, Object.keys(mTypes));
 
   const direction = useSemanticProp('direction', otherProps, Object.keys(mDirections), [
     otherProps.left,
