@@ -9,6 +9,7 @@ import CountUpAnimation from './demo/CountUpAnimation';
 import CustomColor from './demo/CustomColor';
 import OverflowCount from './demo/OverflowCount';
 import Invisible from './demo/Invisible';
+import SemanticProps from './demo/SemanticProps';
 
 export default () => {
   return (
@@ -39,6 +40,9 @@ export default () => {
         </Codebox>
         <Codebox className="mb-5" header="OVERLAP" href="badge-overlap" code={Overlap.code}>
           <Overlap />
+        </Codebox>
+        <Codebox className="mb-5" header="SEMANTIC PLACEMENT" href="badge-semantic" code={SemanticProps.code} description={SemanticProps.description}>
+          <SemanticProps />
         </Codebox>
       </div>
     </div>
