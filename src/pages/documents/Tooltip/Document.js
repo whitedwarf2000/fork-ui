@@ -4,6 +4,7 @@ import Codebox from '../../../components/Codebox';
 import Basic from './demo/Basic';
 import Placement from './demo/Placement';
 import DefaultVisible from './demo/DefaultVisible';
+import SemanticPlacement from './demo/SemanticPlacement';
 
 export default () => {
   return (
@@ -12,6 +13,9 @@ export default () => {
         <Codebox className="mb-5" header="BASIC" href="tooltip-basic" code={Basic.code}>
           <Basic />
         </Codebox>
+        <Codebox className="mb-5" header="DEFAULT VISIBLE" href="tooltip-default-visible" code={DefaultVisible.code}>
+          <DefaultVisible />
+        </Codebox>
       </div>
       <div className="w-1/3 pl-2">
         <Codebox className="mb-5" header="PLACEMENT" href="tooltip-basic" code={Placement.code}>
@@ -19,8 +23,8 @@ export default () => {
         </Codebox>
       </div>
       <div className="w-1/3 pl-2">
-        <Codebox className="mb-5" header="DEFAULT VISIBLE" href="tooltip-default-visible" code={DefaultVisible.code}>
-          <DefaultVisible />
+        <Codebox className="mb-5" header="SEMANTIC PLACEMENT" href="tooltip-semantic-placement" code={SemanticPlacement.code} description={SemanticPlacement.description}>
+          <SemanticPlacement />
         </Codebox>
       </div>
     </div>
