@@ -36,7 +36,7 @@ export default () => {
         </Codebox>
       </div>
       <div className="w-1/3 pl-2">
-        <Codebox className="mb-5" header="SEMANTIC" href="alert-semantic" code={Semantic.code}>
+        <Codebox className="mb-5" header="SEMANTIC" href="alert-semantic" code={Semantic.code} description={Semantic.description}>
           <Semantic />
         </Codebox>
         <Codebox className="mb-5" header="AUTO CLOSE" href="alert-duration" code={Duration.code}>

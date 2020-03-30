@@ -29,7 +29,7 @@ export default () => {
         <Codebox className="mb-5" header="STATIC" href="stepper-static" code={Static.code}>
           <Static />
         </Codebox>
-        <Codebox className="mb-5" header="SEMANTIC PROPS" href="stepper-semantic-props" code={Semantic.code}>
+        <Codebox className="mb-5" header="SEMANTIC PROPS" href="stepper-semantic-props" code={Semantic.code} description={Semantic.description}>
           <Semantic />
         </Codebox>
       </div>
