@@ -6,6 +6,7 @@ import GroupButton from './demo/GroupButton';
 import Color from './demo/Color';
 import Size from './demo/Size';
 import WithIcon from './demo/WithIcon';
+import ColorButton from './demo/ColorButton';
 import FluidGroupButton from './demo/FluidGroupButton';
 
 export default () => {
@@ -14,6 +15,9 @@ export default () => {
       <div className="w-1/3 pr-2">
         <Codebox className="mb-2" header="BASIC" href="button-basic" code={Basic.code}>
           <Basic />
+        </Codebox>
+        <Codebox className="mb-2" header="COLOR BUTTON" href="button-bg-color" code={ColorButton.code}>
+          <ColorButton />
         </Codebox>
         <Codebox className="mb-2" header="GROUP BUTTON" href="button-group-button" code={GroupButton.code}>
           <GroupButton />
