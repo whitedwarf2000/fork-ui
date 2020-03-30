@@ -17,19 +17,19 @@
 
 .rc-pure-alert.--success {
   .rc-pure-alert-title {
-    color: $success-color--500;
+    color: $green-color--500;
   }
 }
 
 .rc-pure-alert.--warning {
   .rc-pure-alert-title {
-    color: $warning-color--500;
+    color: $orange-color--500;
   }
 }
 
 .rc-pure-alert.--error {
   .rc-pure-alert-title {
-    color: $error-color--500;
+    color: $red-color--500;
   }
 }
 

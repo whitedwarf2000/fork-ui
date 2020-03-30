@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { Button, Icon, Avatar } from '../../../components/core';
+import { Button, Icon, Avatar, Badge } from '../../../components/core';
 import DarkModeToggle from '../../../components/DarkModeToggle';
 
 require('./TopNavigation.scss');
@@ -15,8 +15,13 @@ const TopNavigation = ({ toggleExpand, isExpanded }) => {
             <Icon name="search" className="ml-8" />
           </div>
           <div className="__right">
-            <DarkModeToggle className="mr-5" />
-            <Icon name="bell" />
+            <Badge count={14} className="mr-8">
+              <Icon name="comments" fontSize="1.28rem"/>
+            </Badge>
+            <Badge count={5} className="mr-8">
+              <Icon name="bell" fontSize="1.25rem"/>
+            </Badge>
+            <DarkModeToggle className="mx-5" />
           </div>
         </div>
       </div>

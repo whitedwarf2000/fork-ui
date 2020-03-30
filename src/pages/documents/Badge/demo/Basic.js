@@ -3,7 +3,7 @@ import { Badge } from '../../../../components/core';
 
 const FancyBox = ({ size }) => (
   <div
-    className="neumorphism"
+    className="neumorphism--500"
     style={{ height: size, width: size }}
   />
 );
