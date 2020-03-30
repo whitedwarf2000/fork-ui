@@ -27,7 +27,7 @@ circle.rc-circle-progress-percent {
   height: 100%;
   width: 100%;
   fill: none;
-  transition: stroke-dashoffset 0.25s;
+  transition: stroke-dashoffset 0.5s;
   transform: translate(10px, 10px);
   stroke-linecap: round;
   stroke: $primary-color--500;
