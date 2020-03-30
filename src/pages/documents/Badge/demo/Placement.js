@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { Badge } from '../../../../components/core';
 
 const FancyBox = ({
-  size = '80px',
+  size = '50px',
   style,
   children,
   hidden,
@@ -103,7 +103,7 @@ import cn from 'classnames';
 import { Badge } from '@/components/core';
 
 const FancyBox = ({
-  size = '80px',
+  size = '50px',
   style,
   children,
   hidden,
