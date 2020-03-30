@@ -121,7 +121,7 @@ $rail-size: 1px;
 
   .rc-step-rail {
     border-bottom: none;
-    border-left: 1px dashed rgb(228, 230, 235);
+    border-left: 1px dashed var(--rc-text-color);
   }
 
   .rc-step {
