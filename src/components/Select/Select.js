@@ -41,7 +41,7 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
 
     return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        {_shape.icon && <Icon name={_shape.icon} style={{ marginRight: '1rem' }} />}
+        {_shape.icon && <Icon name={_shape.icon} style={{ marginRight: '0.75rem' }} />}
         <span>{_shape.title}</span>
       </div>
     )
@@ -67,16 +67,18 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
         </Menu>
       )}
     >
-      <div
-        {...otherProps}
-        ref={ref}
-        className={cn('rc-select', { '--is-drop': isDrop }, className)}
-        onClick={onToggleDrop}
-      >
-        <div className="rc-select-input">
-          {renderValue()}
+      <div className="rc-select-container">
+        <div
+          {...otherProps}
+          ref={ref}
+          className={cn('rc-select', { '--is-drop': isDrop }, className)}
+          onClick={onToggleDrop}
+        >
+          <div className="rc-select-input">
+            {renderValue()}
+          </div>
+          <Icon name="caret-down" className="rc-select-icon" />
         </div>
-        <Icon name="caret-down" className="rc-select-icon" />
       </div>
     </Overlay>
   );
