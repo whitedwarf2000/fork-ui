@@ -1,5 +1,5 @@
 {
-  "name": "www.rc-components.now.sh",
+  "name": "rc-neumorphism",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nguyenvanhoang26041994/react-components.git"
+    "url": "git+https://github.com/nguyenvanhoang26041994/rc-neumorphism.git"
   },
   "author": "Hoang Nguyen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nguyenvanhoang26041994/react-components/issues"
+    "url": "https://github.com/nguyenvanhoang26041994/rc-neumorphism/issues"
   },
-  "homepage": "https://github.com/nguyenvanhoang26041994/react-components#readme",
+  "homepage": "https://github.com/nguyenvanhoang26041994/rc-neumorphism#readme",
   "dependencies": {
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
