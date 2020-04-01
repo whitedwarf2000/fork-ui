@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
-require('./Sub.scss');
-
 const Sub = ({ className, children, title, icon, iconOnly, selectedKeys, _onItemClick }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggleExpanded = useCallback(() => setIsExpanded(prev => !prev), []);

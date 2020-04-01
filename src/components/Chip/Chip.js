@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
-require('./Chip.scss');
-
 const Chip = ({
     className,
     label,

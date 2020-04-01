@@ -3,8 +3,6 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
-require('./Checkbox.scss');
-
 const Checkbox = ({ checkboxRef, className, ...otherProps }) => {
   return (
     <span className={cn('rc-checkbox', className)}>

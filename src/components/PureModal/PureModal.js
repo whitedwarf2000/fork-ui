@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button';
 
-require('./PureModal.scss');
-
 const PureModal = ({ modalRef, children, title, onCloseClick, className, closable, ...otherProps }) => {
   return (
     <div className={cn('rc-pure-modal', className)} ref={modalRef} {...otherProps}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { Button, Icon, Avatar, Badge } from '../../../components/core';
-import DarkModeToggle from '../../../components/DarkModeToggle';
+import DarkModeToggle from '../../../others-component/DarkModeToggle';
 
 require('./TopNavigation.scss');
 

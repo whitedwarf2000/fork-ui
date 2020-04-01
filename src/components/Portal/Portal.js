@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import { root } from './portalNode';
 
-require('./Portal.scss');
-
 class Portal extends React.Component {
   render() {
     return ReactDOM.createPortal(

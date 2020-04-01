@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
-
-require('./TR.scss');
 
 const defaultExpander = f => f;
 

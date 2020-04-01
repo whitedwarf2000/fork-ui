@@ -8,8 +8,6 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 import mPlacements from '../placements';
 
-require('./Badge.scss');
-
 const renderCount = (icon, displayCount) =>{
   if (!icon) {
     return displayCount;

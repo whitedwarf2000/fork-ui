@@ -1,5 +1,5 @@
 import React from 'react';
-import Codebox from '../../../components/Codebox';
+import Codebox from '../../../others-component/Codebox';
 
 import Top from './demo/Top';
 import Bottom from './demo/Bottom';

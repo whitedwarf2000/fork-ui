@@ -2,8 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-require('./PracticeBox.scss');
-
 const PracticeBox = ({ wrapperClassName, className, header, note, children, ...otherProps }) => {
   return (
     <div className={cn('flex flex-col p-2', wrapperClassName)} {...otherProps}>

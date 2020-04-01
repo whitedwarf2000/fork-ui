@@ -8,8 +8,6 @@ import { rootNotification } from '../Portal/portalNode';
 
 import useDebounce from '../../hooks/useDebounce';
 
-require('./Notification.scss');
-
 const Notification = ({ onClose, open, duration, ...otherProps }) => {
   const delayOpen = useDebounce(open);
 

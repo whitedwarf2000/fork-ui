@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
-require('./Rater.scss');
-
 const isLighted = (currentStarHover, idx, star) => (currentStarHover >= idx + 1) || (currentStarHover === 'outside' && star >= idx + 1);
 
 const Rater = ({ className, max, starRef, icon, star, onChange, fontSize, style, ...otherProps }) => {

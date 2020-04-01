@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
-require('./Item.scss');
-
 const Item = ({ className, title, children, active, onClick, disabled, icon, ...otherProps }) => {
   const [contentStyle, contentRef] = useCollapseStyle(active);
   const _toggleActive = useCallback((e) => {

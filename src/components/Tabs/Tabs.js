@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import Item from './Item';
 
-require('./Tabs.scss');
-
 const renderIcon = (icon, right) => {
   if (!icon) {
     return null;

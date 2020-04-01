@@ -2,8 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-require('./Radio.scss');
-
 const Radio = ({ className, radioRef, ...otherProps }) => {
   return (
     <span className={cn('rc-radio', className)}>

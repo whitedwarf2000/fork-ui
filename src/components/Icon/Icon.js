@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import svgs from './svg';
 
-require('./Icon.scss');
-
 const Fallback = () => null;
 
 const Icon = ({ name, className, style, color, fontSize, ...otherProps }) => {

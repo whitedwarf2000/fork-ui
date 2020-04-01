@@ -9,8 +9,6 @@ import Sub from './Sub';
 import useUncontrolled from '../../hooks/useUncontrolled';
 import { omit } from '../../utils/helpers';
 
-require('./Menu.scss');
-
 const Menu = ({ className, children, defaultSelectedKeys, onSelectedKeysChange, onItemClick, iconOnly, multiple, ...otherProps }) => {
   const [selectedKeys, setSelectedKeys, isControlled] = useUncontrolled('selectedKeys', otherProps, {
     defaultState: defaultSelectedKeys,

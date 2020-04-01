@@ -6,8 +6,6 @@ import Icon from '../Icon';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
-require('./Step.scss');
-
 const mStatus = Object.freeze({
   processing: '--processing',
   completed: '--completed',

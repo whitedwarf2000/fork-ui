@@ -1,6 +1,6 @@
 {
   "name": "rc-neumorphism",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "main": "src/index.js",
   "engines": {
@@ -11,7 +11,7 @@
     "lint": "eslint ./src --",
     "clean-dist": "rimraf \"dist\"",
     "build": "yarn clean-dist && cross-env NODE_ENV=production webpack --config webpack/prod.config.js",
-    "build-core": "yarn clean-dist && cross-env NODE_ENV=production webpack --config webpack/core.config.js",
+    "build-core": "babel --config-file ./babel.config.js --out-dir src/commonjs ./src/components",
     "dev": "cross-env NODE_ENV=development node dev-server",
     "deploy": "yarn build && now --prod"
   },

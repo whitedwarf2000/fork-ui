@@ -8,8 +8,6 @@ import PureConfirm from '../PureConfirm';
 import useDebounce from '../../hooks/useDebounce';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 
-require('./Confirm.scss');
-
 const Confirm = ({ className, open, onClose, onOk, onCancel, ...otherProps }) => {
   const delayOpen = useDebounce(open, 100);
   const _onOk = useCallback(() => {

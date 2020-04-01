@@ -9,8 +9,6 @@ import useDebounce from '../../hooks/useDebounce';
 import useClickOutsideOverlay from '../../hooks/useClickOutsideOverlay';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 
-require('./Drawer.scss');
-
 const mPlacements = Object.freeze({
   left: '--left',
   right: '--right',

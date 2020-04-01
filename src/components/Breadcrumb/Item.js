@@ -2,8 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-require('./Item.scss');
-
 const Item = ({ className, active, title, href, ...otherProps }) => (
   <div
     className={cn(

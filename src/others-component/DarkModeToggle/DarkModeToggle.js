@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-import Switch from '../Switch';
+import Switch from '../../components/Switch';
 
 require('./DarkModeToggle.scss');
 

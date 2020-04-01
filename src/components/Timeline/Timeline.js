@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Item from './Item';
 
-require('./Timeline.scss');
-
 const Timeline = ({ className, children, right, reverse, ...otherProps }) => {
   return (
     <div className={cn('rc-timeline', { '--right': right, '--reverse': reverse }, className)} {...otherProps}>

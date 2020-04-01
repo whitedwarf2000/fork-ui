@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import cn from 'classnames';
-import { Icon, Divider } from '../core';
+import { Icon, Divider } from '../../components/core';
 
 require('./Codebox.scss');
 

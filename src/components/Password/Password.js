@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import BaseInput from '../BaseInput';
 import Icon from '../Icon';
 
-require('./Password.scss');
-
 const Password = React.forwardRef(({ className, noEye, ...otherProps }, ref) => {
   const [isShowPassword, setIsShowPassword] = useState(false);
   const toggleShowPassword = useCallback(() => {

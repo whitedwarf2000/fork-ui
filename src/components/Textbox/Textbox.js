@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import BaseInput from '../BaseInput';
 
-require('./Textbox.scss');
-
 const Textbox = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
     <BaseInput

@@ -8,8 +8,6 @@ import THead from './THead';
 import TBody from './TBody';
 import TFoot from './TFoot';
 
-require('./Table.scss');
-
 const Table = ({ className, ...otherProps}) => {
   return (
     <table className={cn('rc-table', className)} {...otherProps} />

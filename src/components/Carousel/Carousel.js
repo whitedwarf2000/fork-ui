@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import Item from './Item';
 
-require('./Carousel.scss');
-
 const Carousel = ({ className, children, slideWidth, auto, loop }) => {
   const [page, setPage] = useState(1);
   const [body, setBody] = useState({ height: 0, width: 0 });

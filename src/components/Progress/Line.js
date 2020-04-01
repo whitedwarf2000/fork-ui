@@ -2,8 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-require('./Line.scss');
-
 const LineProgress = ({ className, percent, noText, bottom }) => {
   const [textVisible, setTextVisible] = useState(true);
 

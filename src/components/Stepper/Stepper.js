@@ -6,8 +6,6 @@ import Step from './Step';
 import useSteps from './useSteps';
 import withSteps from './withSteps';
 
-require('./Stepper.scss');
-
 const getStatus = (activeStep, idx) => {
   if (activeStep === idx) {
     return 'processing';

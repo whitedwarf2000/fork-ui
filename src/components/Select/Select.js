@@ -6,8 +6,6 @@ import Icon from '../Icon';
 import Menu from '../Menu';
 import Overlay from '../Overlay';
 
-require('./Select.scss');
-
 const Select = ({ className, children, placement, placeholder, ...otherProps }) => {
   const [selectWidth, sestSelectWidth] = useState();
   const [isDrop, setIsDrop] = useState(false);

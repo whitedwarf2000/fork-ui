@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
-require('./Item.scss');
-
 const Item = ({ className, children, icon, ...otherProps }) => {
   return (
     <div className={cn('rc-timeline-item', className)} {...otherProps}>

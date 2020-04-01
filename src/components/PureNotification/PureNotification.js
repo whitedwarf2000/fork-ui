@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
-require('./PureNotification.scss');
-
 const PureNotification = ({ notificationRef, children, title, className, onCloseClick, onContentClick, ...otherProps }) => {
   return (
     <div className={cn('rc-pure-notification', className)} ref={notificationRef} {...otherProps}>

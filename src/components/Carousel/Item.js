@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-require('./Item.scss');
-
 const Item = ({ className, children }) => {
   const ref = useRef();
 

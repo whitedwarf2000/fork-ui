@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import Badge from '../Badge';
 import { pick } from '../../utils/helpers';
 
-require('./Form.scss');
-
 const renderPropsBadge = ({
   error,
   success,

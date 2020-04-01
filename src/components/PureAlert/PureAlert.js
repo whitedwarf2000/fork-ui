@@ -6,8 +6,6 @@ import Button from '../Button';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
-require('./PureAlert.scss');
-
 const mTypes = Object.freeze({
   info: '--info',
   success: '--success',

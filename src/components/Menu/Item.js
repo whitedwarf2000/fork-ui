@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
-require('./Item.scss');
-
 const Item = ({ className, selected, disabled, title, icon, iconOnly, titleOnly, _key, _onItemClick, onItemClick }) => {
   const _onClick = useCallback(() => {
     if (disabled) {

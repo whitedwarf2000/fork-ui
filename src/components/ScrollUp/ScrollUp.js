@@ -2,8 +2,6 @@ import React, { useCallback } from 'react';
 
 import Button from '../Button';
 
-require('./ScrollUp.scss');
-
 const ScrollUp = () => {
   const scrollToTop = useCallback(() => window.scrollTo({ top: 0, behavior: 'smooth'}), []);
 

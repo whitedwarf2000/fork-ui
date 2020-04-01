@@ -7,8 +7,6 @@ import Icon from '../Icon';
 import { omit } from '../../utils/helpers';
 import useFlexibleRef from '../../hooks/useFlexibleRef';
 
-require('./InputNumber.scss');
-
 /**
  * Input Number just only support UNCONTROLLED COMPONENT
  * 

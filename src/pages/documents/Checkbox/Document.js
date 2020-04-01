@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '../../../components/core';
-import Codebox from '../../../components/Codebox';
+import Codebox from '../../../others-component/Codebox';
 
 import UnControlled from './demo/UnControlled';
 import Controlled from './demo/Controlled';

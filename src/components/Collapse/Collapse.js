@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import Item from './Item';
 import useUncontrolled from '../../hooks/useUncontrolled';
 
-require('./Collapse.scss');
-
 const mapToObject = arr => arr.reduce((rs, key) => {
   rs[key] = true;
   return rs;

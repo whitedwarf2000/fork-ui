@@ -2,8 +2,6 @@ import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react'
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-require('./Switch.scss');
-
 const Switch = ({ switchRef, defaultChecked, onChange, className, ...otherProps }) => {
   const isControlled = useMemo(() => otherProps.hasOwnProperty('checked'), []);
 

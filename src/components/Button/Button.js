@@ -6,8 +6,6 @@ import Icon from '../Icon';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
-require('./Button.scss');
-
 const mTypes = Object.freeze({
   primary: '--primary',
   danger: '--danger',

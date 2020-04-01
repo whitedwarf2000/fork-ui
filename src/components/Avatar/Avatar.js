@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
-require('./Avatar.scss');
-
 const mShape = Object.freeze({
   square: '--square',
   circle: '--circle',

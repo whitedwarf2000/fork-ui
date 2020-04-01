@@ -11,8 +11,6 @@ import PropTypes from 'prop-types';
 
 import getLatestProp from '../../utils/getLatestProp';
 
-require('./Affix.scss');
-
 const mDirections = Object.freeze({
   top: 'top',
   bottom: 'bottom',

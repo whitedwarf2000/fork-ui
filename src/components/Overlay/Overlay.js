@@ -10,8 +10,6 @@ import mPlacements from '../placements';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
-require('./Overlay.scss');
-
 class Overlay extends React.Component {
   static getDerivedStateFromProps(props, state) {
     return {

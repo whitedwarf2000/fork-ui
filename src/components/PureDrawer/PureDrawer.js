@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button';
 
-require('./PureDrawer.scss');
-
 const PureDrawer = ({ drawerRef, children, title, onCloseClick, className, closable, ...otherProps }) => {
   return (
     <div className={cn('rc-pure-drawer', className)} ref={drawerRef} {...otherProps}>

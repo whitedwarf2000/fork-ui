@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
-require('./Divider.scss');
-
 const mTypes = Object.freeze({
   dashed: '--dashed',
   solid: '--solid',

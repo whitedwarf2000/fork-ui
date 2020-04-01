@@ -2,8 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-require('./Textarea.scss');
-
 const Textarea = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
     <div className="rc-textarea-container">

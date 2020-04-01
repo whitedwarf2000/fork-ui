@@ -5,8 +5,6 @@ import cn from 'classnames';
 import Overlay from '../Overlay';
 import { omit } from '../../utils/helpers';
 
-require('./Tooltip.scss');
-
 const Tooltip = ({ className, children, title, ...otherProps }) => {
   const passedProps = useMemo(() => omit(otherProps, [
     'overlay',

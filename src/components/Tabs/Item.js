@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Memo from '../Memo';
 
-require('./Item.scss');
-
 const Item = ({ className, active, ...otherProps }) => {
   return (
     <Memo for={active}>

@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button';
 
-require('./PureConfirm.scss');
-
 const PureConfirm = ({ confirmRef, children, title, onCancel, onOk, className, ...otherProps }) => {
   return (
     <div className={cn('rc-pure-confirm', className)} ref={confirmRef} {...otherProps}>

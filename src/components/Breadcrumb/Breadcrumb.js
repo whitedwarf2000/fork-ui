@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Item from './Item';
 
-require('./Breadcrumb.scss');
-
 const Breadcrumb = ({ className, children, ...otherProps }) => (
   <div
     className={cn(

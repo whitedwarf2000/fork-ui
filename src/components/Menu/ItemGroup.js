@@ -2,8 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-require('./ItemGroup.scss');
-
 const ItemGroup = ({ className, children, title, iconOnly, selectedKeys, _onItemClick }) => {
   return (
     <li className={cn('rc-menu-item-group', { '--icon-only': iconOnly }, className)}>

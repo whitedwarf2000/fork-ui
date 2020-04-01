@@ -2,8 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-require('./BaseInput.scss');
-
 const BaseInput = React.forwardRef(({ className, htmlType, ...otherProps }, ref) => {
   return (
     <div className="rc-input-container">

@@ -9,8 +9,6 @@ import useDebounce from '../../hooks/useDebounce';
 import useClickOutsideOverlay from '../../hooks/useClickOutsideOverlay';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 
-require('./Modal.scss');
-
 const Modal = ({ className, onClose, open, canOutsideClickClose, ...otherProps }) => {
   const ref = useRef();
   const delayOpen = useDebounce(open, 100);

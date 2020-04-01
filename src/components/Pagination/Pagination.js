@@ -6,8 +6,6 @@ import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import usePagination from './usePagination';
 
-require('./Pagination.scss');
-
 const loop = (start, end, cb) => {
   const rs = [];
   for (let i = start; i <= end; i++) {

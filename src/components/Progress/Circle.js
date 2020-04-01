@@ -2,8 +2,6 @@ import React, { useMemo, useEffect, useState } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-require('./Circle.scss');
-
 const useSupportAnimation = time => {
   const [waiting, setWaiting] = useState(true);
 

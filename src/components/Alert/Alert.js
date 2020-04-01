@@ -8,8 +8,6 @@ import { rootAlert } from '../Portal/portalNode';
 
 import useDebounce from '../../hooks/useDebounce';
 
-require('./Alert.scss');
-
 const Alert = ({ onClose, open, duration, ...otherProps }) => {
   const delayOpen = useDebounce(open, 100);
 
