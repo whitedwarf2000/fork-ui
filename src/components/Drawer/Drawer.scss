@@ -14,6 +14,10 @@
     height: 100vh;
     max-width: 100vw;
     overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &.--close-animation {
