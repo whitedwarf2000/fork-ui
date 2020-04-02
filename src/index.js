@@ -1,1 +1,1 @@
-exports.default = require('./commonjs');
+exports.default = require('./core');

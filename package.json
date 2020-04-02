@@ -1,6 +1,6 @@
 {
   "name": "rc-neumorphism",
-  "version": "1.1.0",
+  "version": "1.7.0",
   "description": "",
   "main": "index.js",
   "engines": {
@@ -9,20 +9,24 @@
   },
   "scripts": {
     "lint": "eslint ./src --",
-    "build": "babel --config-file ./babel.config.js --out-dir src/commonjs ./src/components"
+    "clean-lib": "rimraf \"lib\"",
+    "build-scss": "node-sass src/scss/begin.scss lib/rc-neumorphism.css",
+    "build-js": "babel --config-file ./babel.config.js --out-dir lib ./src",
+    "build": "yarn clean-lib && yarn build-js && yarn build-scss"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nguyenvanhoang26041994/rc-neumorphism.git"
   },
   "author": "Hoang Nguyen",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nguyenvanhoang26041994/rc-neumorphism/issues"
   },
   "homepage": "https://github.com/nguyenvanhoang26041994/rc-neumorphism#readme",
   "dependencies": {
     "classnames": "^2.2.6",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
@@ -33,11 +37,6 @@
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "eslint": "^6.5.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-react": "^7.15.1",
-    "eslint-plugin-react-hooks": "^2.1.1"
+    "rimraf": "^3.0.2"
   }
 }

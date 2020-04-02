@@ -1,1 +1,1 @@
-module.exports = require('./src/commonjs/core');
+module.exports = require('./lib');
