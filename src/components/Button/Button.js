@@ -9,11 +9,11 @@ import { omit } from '../../utils/helpers';
 const mTypes = Object.freeze({
   primary: '--primary',
   danger: '--danger',
+  green: '--green',
 });
 
 const Button = ({ className, circle, rounded, buttonRef, icon, pressed, color, fontSize, style, children, ...otherProps }) => {
   const type = useSemanticProp('type', otherProps, Object.keys(mTypes));
-
   const passedProps = useMemo(() => omit(otherProps, [
     ...Object.keys(mTypes),
     'type',
@@ -59,6 +59,7 @@ Button.propTypes = {
   type: PropTypes.string,
   primary: PropTypes.bool,
   danger: PropTypes.bool,
+  green: PropTypes.bool,
 };
 Button.defaultProps = {};
 
