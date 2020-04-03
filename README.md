@@ -1,3 +1,6 @@
+Follow to neumorphism design trending
+Document: https://neumorphism-pro.now.sh
+
 `npm i rc-neumorphism`
 
 ```javascript
@@ -9,7 +12,7 @@ import {
   Tooltip,
 } from 'rc-neumorphism';
 
-require('rc-neumophism/lib/rc-neumorphism.css');
+require('rc-neumorphism/lib/rc-neumorphism.css');
 
 const App = () => (
   <div>
