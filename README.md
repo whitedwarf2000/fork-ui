@@ -1,4 +1,4 @@
-`npm i rc-neumophism`
+`npm i rc-neumorphism`
 
 ```javascript
 import React from 'react';
@@ -7,9 +7,9 @@ import ReactDOM from 'react-dom';
 import {
   Button,
   Tooltip,
-} from 'rc-neumophism';
+} from 'rc-neumorphism';
 
-require('rc-neumophism/lib/rc-neumophism.css');
+require('rc-neumophism/lib/rc-neumorphism.css');
 
 const App = () => (
   <div>
