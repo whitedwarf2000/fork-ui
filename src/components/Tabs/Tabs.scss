@@ -6,16 +6,9 @@
   flex-wrap: nowrap;
 }
 
-.rc-tabs-nav-container {
-  box-shadow: var(--rc-neu-pressed--500);
-  padding: 4px;
-  border-radius: $border-radius;
-}
-
 .rc-tabs-nav {
   display: flex;
   align-items: center;
-  box-shadow: var(--rc-neu-flat--500);
   border-radius: $border-radius;
 }
 
@@ -32,12 +25,8 @@
   touch-action: manipulation;
   cursor: pointer;
   background-color: var(--rc-color--500);
-  border-bottom: 0.25rem solid transparent;
+  border-bottom: 1px solid currentColor;
   transition: border-color 0.25s;
-
-  &:hover:not(:disabled) {
-    background-color: var(--rc-color--300);
-  }
 
   &:disabled {
     cursor: not-allowed;
@@ -48,11 +37,19 @@
   .rc-tabs-nav-item {
     flex-grow: 1;
   }
+
+  .rc-tabs-nav-item.--rest {
+    display: none;
+  }
 }
 
 .rc-tabs-nav-item.--active {
   border-color: $primary-color--500;
   color: $primary-color--500;
+}
+
+.rc-tabs-nav-item.--rest {
+  flex-grow: 1;
 }
 
 .rc-tabs-contents {

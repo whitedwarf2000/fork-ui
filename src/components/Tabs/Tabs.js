@@ -37,21 +37,20 @@ const Tabs = ({ className, children, activeTab, onChange, fluid }) => {
 
   return (
     <div className={cn('rc-tabs', { '--fluid': fluid }, className)}>
-      <div className="rc-tabs-nav-container">
-        <div className="rc-tabs-nav">
-          {tabs.map(tab => (
-            <button
-              key={tab.key}
-              className={cn('rc-tabs-nav-item', { '--active': activeTab === tab.key })}
-              disabled={tab.disabled}
-              onClick={() => onChange(tab.key)}
-            >
-              {renderIcon(tab.icon)}
-              {tab.title}
-              {renderIcon(tab.iconRight, true)}
-            </button>
-          ))}
-        </div>
+      <div className="rc-tabs-nav">
+        {tabs.map(tab => (
+          <button
+            key={tab.key}
+            className={cn('rc-tabs-nav-item', { '--active': activeTab === tab.key })}
+            disabled={tab.disabled}
+            onClick={() => onChange(tab.key)}
+          >
+            {renderIcon(tab.icon)}
+            {tab.title}
+            {renderIcon(tab.iconRight, true)}
+          </button>
+        ))}
+        <button className="rc-tabs-nav-item --rest " />
       </div>
       <div className="rc-tabs-contents">
         {React.Children.map(children, elm => React.cloneElement(elm, { active: activeTab === elm.key }))}
