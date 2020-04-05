@@ -36,6 +36,7 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
           <Button
             key={pageNumber}
             className={cn('rc-pagination-item', { '--active': pageNumber === activePage })}
+            primary={pageNumber === activePage}
             onClick={() => onChange(pageNumber)}
           >
             <a>{pageNumber}</a>
