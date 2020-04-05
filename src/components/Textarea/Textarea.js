@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 
 const Textarea = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
-    <div className="rc-textarea-container">
-      <textarea
-        {...otherProps}
-        ref={ref}
-        className={cn('rc-textarea', className)}
-      />
-    </div>
+    <textarea
+      {...otherProps}
+      ref={ref}
+      className={cn('rc-textarea', className)}
+    />
   );
 });
 

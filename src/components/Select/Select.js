@@ -65,18 +65,16 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
         </Menu>
       )}
     >
-      <div className="rc-select-container">
-        <div
-          {...otherProps}
-          ref={ref}
-          className={cn('rc-select', { '--is-drop': isDrop }, className)}
-          onClick={onToggleDrop}
-        >
-          <div className="rc-select-input">
-            {renderValue()}
-          </div>
-          <Icon name="caret-down" className="rc-select-icon" />
+      <div
+        {...otherProps}
+        ref={ref}
+        className={cn('rc-select', { '--is-drop': isDrop }, className)}
+        onClick={onToggleDrop}
+      >
+        <div className="rc-select-input">
+          {renderValue()}
         </div>
+        <Icon name="caret-down" className="rc-select-icon" />
       </div>
     </Overlay>
   );

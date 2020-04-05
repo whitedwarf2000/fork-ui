@@ -1,13 +1,5 @@
 @import '../../scss/vars.scss';
 
-.rc-select-container {
-  width: 100%;
-  padding: 2px;
-  border-radius: $border-radius;
-  box-shadow: var(--rc-neu-pressed--450);
-  background-color: var(--rc-color--450);
-}
-
 .rc-select {
   position: relative;
   width: 100%;
@@ -21,8 +13,8 @@
   width: 100%;
   border-radius: $border-radius;
   padding: 0 3em 0 $input-spacing;
-  box-shadow: var(--rc-neu-flat--450);
   background-color: var(--rc-color--450);
+  box-shadow: var(--rc-neu-pressed--450);
   cursor: pointer;
   display: flex;
   align-items: center;
