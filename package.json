@@ -10,8 +10,8 @@
   "scripts": {
     "lint": "eslint ./src --",
     "clean-lib": "rimraf \"lib\"",
-    "build-scss": "node-sass src --output lib --output-style compressed",
-    "build-js": "babel --config-file ./babel.config.js --out-dir lib ./src --minified --verbose",
+    "build-scss": "node-sass src --output lib --output-style",
+    "build-js": "babel --config-file ./babel.config.js --out-dir lib ./src --verbose",
     "build": "yarn clean-lib && yarn build-js && yarn build-scss"
   },
   "repository": {
