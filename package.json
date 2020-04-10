@@ -10,8 +10,8 @@
   "scripts": {
     "lint": "eslint ./src --",
     "clean-lib": "rimraf \"lib\"",
-    "build-scss": "node-sass src/scss/begin.scss lib/rc-neumorphism.css",
-    "build-js": "babel --config-file ./babel.config.js --out-dir lib ./src",
+    "build-scss": "node-sass src --output lib --output-style compressed",
+    "build-js": "babel --config-file ./babel.config.js --out-dir lib ./src --minified --verbose",
     "build": "yarn clean-lib && yarn build-js && yarn build-scss"
   },
   "repository": {

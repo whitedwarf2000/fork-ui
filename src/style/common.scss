@@ -1,11 +1,14 @@
 @import './vars.scss';
-@import './animation/index.scss';
-@import './utils.scss';
-@import './neumorphism.scss';
 
 html {
   font-size: 13px;
   font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  background-color: var(--rc-color--700);
+  color: var(--rc-text-color);
 }
 
 body {
@@ -62,10 +65,4 @@ body.dark-mode {
   --rc-neu-pressed--400: #{$neu-dark-pressed--400};
   --rc-neu-pressed--300: #{$neu-dark-pressed--300};
   --rc-neu-pressed--200: #{$neu-dark-pressed--200};
-}
-
-body {
-  display: flex;
-  background-color: var(--rc-color--700);
-  color: var(--rc-text-color);
 }
