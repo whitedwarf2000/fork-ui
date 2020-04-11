@@ -51,9 +51,9 @@ const Button = React.forwardRef(({
         className,
       )}
       style={{
-        color: textColor || null,
+        color: textColor,
         backgroundColor: color,
-        fontSize: size || null,
+        fontSize: size,
         ...style
       }}
       {...passedProps}
@@ -75,9 +75,7 @@ Button.propTypes = {
   style: PropTypes.object,
   primary: PropTypes.bool,
   type: PropTypes.string,
-  primary: PropTypes.bool,
   danger: PropTypes.bool,
-  green: PropTypes.bool,
 };
 Button.defaultProps = {};
 
