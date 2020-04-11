@@ -1,8 +1,7 @@
 ## DESCRIPTION 
+The native button with css
 
-The native button with some css
-
-## API
+## API 
 
 | Property            | Description                          | Type         | Default             | Semantic Property |
 |---------------------|--------------------------------------|--------------|---------------------|-------------------|
@@ -13,3 +12,12 @@ The native button with some css
 | **glassed** | Transparent Button | `boolean` |||
 | **primary** | PRIMARY Button | `boolean` || `type="primary"` |
 | **danger** | DANGER Button | `boolean` || `type="danger"` |
+
+## NOTE
+  * **primary**, **danger** are most popular
+
+  * Similar as native button, your **onClick**, **disabled**, **style**, **className**, **ref** ... will passed throught
+
+  * **color** will set inline style as `background-color`
+
+  * **size** will set inline style as `font-size`
