@@ -46,7 +46,7 @@ const Typography = ({ children, className, ...otherProps }) => {
   ]), [otherProps]);
 
   return (
-    <Component className={cn('rc-typography', mTags[tag], mStyles[styles], mTypes[type], className )} {...passedProps}>
+    <Component className={cn('rc-typo', mTags[tag], mStyles[styles], mTypes[type], className )} {...passedProps}>
       {children}
     </Component>
   );

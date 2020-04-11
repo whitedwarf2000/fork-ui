@@ -1,4 +1,1 @@
-import Dot from './Dot';
-import Linear from './Linear';
-
-export default { Dot, Linear };
+export { default } from './Loader';

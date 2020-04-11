@@ -20,7 +20,9 @@ export const omit = (object, paths) => {
 
 export const pick = (object, paths) => {
   return paths.reduce((rs, prop) => {
-    rs[prop] = object[prop];
+    if (object.hasOwnProperty(prop)) {
+      rs[prop] = object[prop];
+    }
     return rs;
   }, {});
 }
