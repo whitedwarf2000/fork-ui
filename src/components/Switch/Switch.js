@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react'
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const Switch = ({ switchRef, defaultChecked, onChange, className, ...otherProps }) => {
+const Switch = React.forwardRef(({ defaultChecked, onChange, className, ...otherProps }, ref) => {
   const isControlled = useMemo(() => otherProps.hasOwnProperty('checked'), []);
 
   const [checked, setChecked] = useState(isControlled ? otherProps.checked : defaultChecked);
@@ -23,7 +23,7 @@ const Switch = ({ switchRef, defaultChecked, onChange, className, ...otherProps 
       <input
         type="checkbox"
         className="rc-switch-input"
-        ref={switchRef}
+        ref={ref}
         defaultChecked={defaultChecked}
         onChange={_onChange}
         {...otherProps}
@@ -31,11 +31,10 @@ const Switch = ({ switchRef, defaultChecked, onChange, className, ...otherProps 
       <span className="rc-switch-inner" />
     </span>
   );
-};
+})
 
 Switch.displayName = 'Switch';
 Switch.propTypes = {
-  switchRef: PropTypes.any,
   className: PropTypes.string,
   onChange: PropTypes.func,
   defaultChecked: PropTypes.bool,

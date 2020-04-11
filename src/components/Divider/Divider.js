@@ -11,28 +11,23 @@ const mTypes = Object.freeze({
   dotted: '--dotted'
 });
 
-const mDirections = Object.freeze({
+const mPlacements = Object.freeze({
   left: '--left',
   right: '--right',
 });
 
-const Divider = ({ className, title, transparent,  ...otherProps }) => {
-  const type = useSemanticProp('type', otherProps, Object.keys(mTypes));
+const lTypes = Object.keys(mTypes);
+const lPlacements = Object.keys(mPlacements);
 
-  const direction = useSemanticProp('direction', otherProps, Object.keys(mDirections), [
-    otherProps.left,
-    otherProps.right,
-    otherProps.direction,
-  ]);
+const Divider = ({ className, title, transparent,  ...otherProps }) => {
+  const type = useSemanticProp('type', otherProps, lTypes);
+  const placement = useSemanticProp('placement', otherProps, lPlacements);
 
   const passedProps = useMemo(() => omit(otherProps, [
-    'solid',
-    'dashed',
-    'dotted',
+    ...lTypes,
+    ...lPlacements,
     'type',
-    'left',
-    'right',
-    'direction',
+    'placement',
   ]), [otherProps]);
 
   return (
@@ -41,9 +36,10 @@ const Divider = ({ className, title, transparent,  ...otherProps }) => {
         'rc-divider',
         {
           '--transparent': transparent,
+          '--title': title,
         },
         mTypes[type],
-        mDirections[direction],
+        mPlacements[placement],
         className
       )}
       {...passedProps}
@@ -62,7 +58,7 @@ Divider.propTypes = {
   dashed: PropTypes.bool,
   dotted: PropTypes.bool,
   transparent: PropTypes.bool,
-  direction: PropTypes.string,
+  placement: PropTypes.string,
 };
 Divider.defaultProps = {};
 

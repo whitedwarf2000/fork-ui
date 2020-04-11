@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import Memo from '../Memo';
 
-const Item = ({ className, active, ...otherProps }) => {
+const Item = ({ className, active, fresh, ...otherProps }) => {
   return (
-    <Memo for={active}>
+    <Memo for={active} fresh={fresh}>
       <div className={cn('rc-tab', { '--active': active }, className)} {...otherProps} />
     </Memo>
   );

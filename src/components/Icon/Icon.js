@@ -6,7 +6,7 @@ import svgs from './svg';
 
 const Fallback = () => null;
 
-const Icon = ({ name, className, style, color, fontSize, ...otherProps }) => {
+const Icon = ({ name, className, style, color, size, ...otherProps }) => {
   const I = useMemo(() => svgs[name] || Fallback, [name]);
 
   return (
@@ -14,7 +14,7 @@ const Icon = ({ name, className, style, color, fontSize, ...otherProps }) => {
       className={cn('rc-icon', `rc-icon-${name}`, className)}
       style={{
         color: color || null,
-        fontSize: fontSize || null,
+        fontSize: size || null,
         ...style
       }}
       {...otherProps}
@@ -28,7 +28,7 @@ Icon.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   color: PropTypes.string,
-  fontSize: PropTypes.string,
+  size: PropTypes.string,
 };
 Icon.defaultProps = {};
 

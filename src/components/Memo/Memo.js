@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 
 export default class Memo extends React.Component {
   componentDidMount() {
+    if (this.props.fresh) {
+      return;
+    }
+
     if (this.props.for) {
       this.memo = true;
       this.childrenNode = ReactDOM.findDOMNode(this);
@@ -15,6 +19,10 @@ export default class Memo extends React.Component {
   }
 
   componentDidUpdate() {
+    if (this.props.fresh) {
+      return;
+    }
+
     if (this.props.for) {
       this.memo = true;
       this.childrenNode = this.childrenNode ||  ReactDOM.findDOMNode(this);
@@ -26,8 +34,17 @@ export default class Memo extends React.Component {
   }
 
   render() {
+    const { fresh, children } = this.props;
+  
+    if (fresh) {
+      if (this.props.for) {
+        return children;
+      }
+      return null;
+    }
+
     if (this.props.for || this.memo) {
-      return this.props.children;
+      return children;
     }
 
     return null;
@@ -37,5 +54,6 @@ export default class Memo extends React.Component {
 Memo.displayName = 'Memo';
 Memo.propTypes = {
   for: PropTypes.bool,
+  fresh: PropTypes.bool,
 };
 Memo.defaultProps = {};

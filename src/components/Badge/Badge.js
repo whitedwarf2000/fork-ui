@@ -8,6 +8,8 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 import mPlacements from '../placements';
 
+const lPlacements = Object.keys(mPlacements);
+
 const renderCount = (icon, displayCount) =>{
   if (!icon) {
     return displayCount;
@@ -36,10 +38,10 @@ const Badge = ({
 }) => {
   const countRef = useRef();
 
-  const placement = useSemanticProp('placement', otherProps, Object.keys(mPlacements));
+  const placement = useSemanticProp('placement', otherProps, lPlacements);
   const passedProps = useMemo(() => omit(otherProps, [
+    ...lPlacements,
     'placement',
-    ...Object.keys(mPlacements),
   ]), [otherProps]);
 
   useLayoutEffect(() => {

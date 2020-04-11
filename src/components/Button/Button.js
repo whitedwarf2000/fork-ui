@@ -7,20 +7,36 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const mTypes = Object.freeze({
-  primary: '--primary',
+  primary: '--primary', // good for submit button
   danger: '--danger',
-  green: '--green',
 });
 
-const Button = ({ className, circle, rounded, buttonRef, icon, pressed, color, fontSize, style, children, ...otherProps }) => {
-  const type = useSemanticProp('type', otherProps, Object.keys(mTypes));
+const lTypes = Object.keys(mTypes);
+
+const Button = React.forwardRef(({
+  className,
+  circle,
+  rounded,
+  icon,
+  pressed,
+  color,
+  textColor,
+  size,
+  style,
+  glassed,
+  children,
+  ...otherProps
+}, ref) => {
+  const type = useSemanticProp('type', otherProps, lTypes);
+
   const passedProps = useMemo(() => omit(otherProps, [
-    ...Object.keys(mTypes),
+    ...lTypes,
     'type',
   ]), [otherProps]);
 
   return (
     <button
+      ref={ref}
       className={cn(
         'rc-button',
         {
@@ -28,14 +44,16 @@ const Button = ({ className, circle, rounded, buttonRef, icon, pressed, color, f
           '--icon-button': icon,
           '--rounded': rounded,
           '--pressed': pressed,
+          '--glassed': glassed,
+          '--colored': color,
         },
         mTypes[type],
         className,
       )}
-      ref={buttonRef}
       style={{
-        color: color || null,
-        fontSize: fontSize || null,
+        color: textColor || null,
+        backgroundColor: color,
+        fontSize: size || null,
         ...style
       }}
       {...passedProps}
@@ -43,17 +61,17 @@ const Button = ({ className, circle, rounded, buttonRef, icon, pressed, color, f
       {icon ? <Icon name={icon} /> : children}
     </button>
   );
-};
+});
 
 Button.displayName = 'Button';
 Button.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
-  fontSize: PropTypes.string,
+  size: PropTypes.string,
   circle: PropTypes.bool,
   rounded: PropTypes.bool,
   pressed: PropTypes.bool,
-  buttonRef: PropTypes.any,
+  glassed: PropTypes.bool,
   style: PropTypes.object,
   primary: PropTypes.bool,
   type: PropTypes.string,

@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -8,13 +8,19 @@ import PureDrawer from '../PureDrawer';
 import useDebounce from '../../hooks/useDebounce';
 import useClickOutsideOverlay from '../../hooks/useClickOutsideOverlay';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
+import useSemanticProp from '../../hooks/useSemanticProp';
+import { omit } from '../../utils/helpers';
 
 const mPlacements = Object.freeze({
   left: '--left',
   right: '--right',
 });
 
-const Drawer = ({ className, onClose, open, canOutsideClickClose, placement, ...otherProps }) => {
+const lPlacements = Object.keys(mPlacements);
+
+const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps }) => {
+  const placement = useSemanticProp('placement', otherProps, lPlacements)  || 'right';
+
   const ref = useRef();
   const delayOpen = useDebounce(open, 100);
 
@@ -26,6 +32,11 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, placement, ...
 
   useLockBodyScroll(delayOpen);
   const wrapperRef = useClickOutsideOverlay({ overlayRef: ref, open: delayOpen, handleClickOutside });
+
+  const passedProps = useMemo(() => omit(otherProps, [
+    ...lPlacements,
+    'placement',
+  ]))
 
   return (
     <React.Fragment>
@@ -45,7 +56,7 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, placement, ...
               className={className}
               drawerRef={ref}
               onCloseClick={onClose}
-              {...otherProps}
+              {...passedProps}
             />
           </div>
         </Portal>
@@ -67,7 +78,6 @@ Drawer.propTypes = {
 };
 Drawer.defaultProps = {
   onClose: f => f,
-  placement: 'right',
 };
 
 export default Drawer;

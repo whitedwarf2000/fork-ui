@@ -12,13 +12,13 @@ const mStatus = Object.freeze({
   canceled: '--canceled',
 });
 
+const lStatus = Object.keys(mStatus);
+
 const Step = ({ className, title, children, icon, stepNumber, ...otherProps }) => {
-  const status = useSemanticProp('status', otherProps, Object.keys(mStatus));
+  const status = useSemanticProp('status', otherProps, lStatus);
 
   const passedProps = useMemo(() => omit(otherProps, [
-    'processing',
-    'completed',
-    'canceled',
+    ...lStatus,
     'status',
   ]), [otherProps]);
 

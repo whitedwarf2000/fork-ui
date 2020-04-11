@@ -12,9 +12,19 @@
 
   &:after,
   &:before {
-    flex-grow: 1;
     content: " ";
     border-bottom: 1px solid var(--rc-text-color);
+  }
+
+  &:before {
+    flex-grow: 1;
+  }
+}
+
+.rc-divider.--title {
+  &:after,
+  &:before {
+    flex-grow: 1;
   }
 }
 

@@ -1,7 +1,12 @@
 import Circle from './Circle';
-import Line from './Line';
+import Linear from './Linear';
 
 export default {
   Circle,
-  Line,
+  Linear,
 };
+
+export {
+  Circle,
+  Linear,
+}

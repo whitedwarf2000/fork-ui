@@ -4,6 +4,18 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button';
 
+const _text = {
+  ok: 'OK',
+  cancel: 'Cancel',
+};
+
+const config = Object.freeze({
+  setText: ({ ok, cancel }) => {
+    _text.ok = ok;
+    _text.cancel = cancel;
+  }
+});
+
 const PureConfirm = ({ confirmRef, children, title, onCancel, onOk, className, ...otherProps }) => {
   return (
     <div className={cn('rc-pure-confirm', className)} ref={confirmRef} {...otherProps}>
@@ -14,8 +26,8 @@ const PureConfirm = ({ confirmRef, children, title, onCancel, onOk, className, .
         {children}
       </div>
       <div className="rc-pure-confirm-handler">
-        <Button className="mr-2" onClick={onCancel}>Cancel</Button>
-        <Button className="mr-2" onClick={onOk}>OK</Button>
+        <Button className="mr-2" onClick={onCancel}>{_text.cancel}</Button>
+        <Button className="mr-2" onClick={onOk}>{_text.ok}</Button>
       </div>
     </div>
   );
@@ -36,3 +48,7 @@ PureConfirm.defaultProps = {
 };
 
 export default PureConfirm;
+
+export {
+  config,
+}

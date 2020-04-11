@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const LineProgress = ({ className, percent, noText, bottom }) => {
+const LinearProgress = ({ className, percent, noText, bottom }) => {
   const [textVisible, setTextVisible] = useState(true);
 
   useEffect(() => {
@@ -22,16 +22,16 @@ const LineProgress = ({ className, percent, noText, bottom }) => {
   const onMouseEnter = useCallback(() => setTextVisible(true), []);
 
   return (
-    <div className={cn('rc-line-progress', { '--bottom': bottom }, className)} onMouseEnter={onMouseEnter}>
-      <div className="rc-line-progress-rail">
+    <div className={cn('rc-linear-progress', { '--bottom': bottom }, className)} onMouseEnter={onMouseEnter}>
+      <div className="rc-linear-progress-rail">
         <div
-          className="rc-line-progress-rail-percent"
+          className="rc-linear-progress-rail-percent"
           style={{
             width: `${percent * 100}%`
           }}
         >
           {!noText && (
-            <div className={cn('rc-line-progress-percent-text', { '--hidden': !textVisible } )}>
+            <div className={cn('rc-linear-progress-percent-text', { '--hidden': !textVisible } )}>
               {Math.floor((percent + Number.EPSILON) * 100 )}
               <span>%</span>
             </div>
@@ -42,15 +42,15 @@ const LineProgress = ({ className, percent, noText, bottom }) => {
   );
 };
 
-LineProgress.displayName = 'Progress.Line';
-LineProgress.propTypes = {
+LinearProgress.displayName = 'Progress.Linear';
+LinearProgress.propTypes = {
   className: PropTypes.string,
   percent: PropTypes.number,
   noText: PropTypes.bool,
   bottom: PropTypes.bool,
 };
-LineProgress.defaultProps = {
+LinearProgress.defaultProps = {
   percent: 0,
 };
 
-export default LineProgress;
+export default LinearProgress;

@@ -3,25 +3,24 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
-const Checkbox = ({ checkboxRef, className, ...otherProps }) => {
+const Checkbox = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
     <span className={cn('rc-checkbox', className)}>
       <input
         type="checkbox"
         className="rc-checkbox-input"
-        ref={checkboxRef}
+        ref={ref}
         {...otherProps}
       />
       <span className="rc-checkbox-inner" />
       <Icon name="check" className="rc-checkbox-check" />
     </span>
   );
-};
+});
 
 Checkbox.displayName = 'Checkbox';
 Checkbox.propTypes = {
   className: PropTypes.string,
-  checkboxRef: PropTypes.any,
 };
 Checkbox.defaultProps = {};
 

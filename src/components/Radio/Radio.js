@@ -2,25 +2,24 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const Radio = ({ className, radioRef, ...otherProps }) => {
+const Radio = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
     <span className={cn('rc-radio', className)}>
       <input
         type="radio"
         className="rc-radio-input"
-        ref={radioRef}
+        ref={ref}
         {...otherProps}
       />
       <span className="rc-radio-inner" />
       <span className="rc-radio-second-inner" />
     </span>
   );
-};
+});
 
 Radio.displayName = 'Radio';
 Radio.propTypes = {
   className: PropTypes.string,
-  radioRef: PropTypes.any,
 };
 Radio.defaultProps = {};
 

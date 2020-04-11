@@ -31,6 +31,14 @@
   display: inline-block;
 }
 
+.rc-badge.--icon {
+  .rc-badge-count {
+    > b {
+      padding: 0;
+    }
+  }
+}
+
 .rc-badge-count {
   font-size: 0.75rem;
   position: absolute;
@@ -44,6 +52,10 @@
   color: #fff;
   border-radius: 100rem;
   font-family: sans-serif;
+
+  > b {
+    padding: 0 0.5em;
+  }
 }
 
 .rc-badge-count.--hidden {

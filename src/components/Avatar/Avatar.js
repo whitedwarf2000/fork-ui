@@ -10,13 +10,14 @@ const mShape = Object.freeze({
   circle: '--circle',
 });
 
+const lShape = Object.keys(mShape);
+
 const Avatar = ({ className, src, style, name, fontSize, color, ...otherProps }) => {
-  const shape = useSemanticProp('shape', otherProps, Object.keys(mShape));
+  const shape = useSemanticProp('shape', otherProps, lShape);
 
   const passedProps = useMemo(() => omit(otherProps, [
+    ...lShape,
     'shape',
-    'square',
-    'circle',
   ]), [otherProps]);
 
   return (
