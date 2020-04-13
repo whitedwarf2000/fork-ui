@@ -26,13 +26,13 @@ const Link = ({ className, active, _onTriggered, _key, _top, title, ...otherProp
     }
 
     const { pageY } = getPosition(target);
-    const { top } = ref.current.getBoundingClientRect();
+    const { top: topAnchorLink } = ref.current.getBoundingClientRect();
     const { top: topAnchor } = ref.current.parentElement.getBoundingClientRect();
 
-    let scrollTo = pageY - top;
+    let scrollTo = pageY - topAnchorLink;
   
     if (topAnchor > _top) {
-      scrollTo = pageY - _top - (top - topAnchor);
+      scrollTo = pageY - _top - (topAnchorLink - topAnchor);
     }
 
     return window.scrollTo({
