@@ -23,6 +23,7 @@ const Anchor = ({ className, affix, children, ...otherProps }) => {
         return React.cloneElement(elm, {
           _onTriggered: _onTriggered,
           _key: elm.key,
+          _top: otherProps.top,
           active: elm.key === activeKey,
         });
       })}
