@@ -80,7 +80,7 @@ const Link = ({
   );
 };
 
-Link.displayName = 'Link';
+Link.displayName = 'Anchor.Link';
 Link.propTypes = {
   className: PropTypes.string,
   active: PropTypes.bool,

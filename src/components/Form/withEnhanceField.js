@@ -13,7 +13,7 @@ const renderPropsBadge = ({
   let color = '';
 
   if (error) {
-    icon = 'exclamation';
+    icon = 'x';
     color = '#ce1a23'
   } else if (success) {
     icon = 'check';

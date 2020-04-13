@@ -47,6 +47,7 @@ Anchor.Link = Link;
 Anchor.displayName = 'Anchor';
 Anchor.propTypes = {
   affix: PropTypes.bool,
+  top: PropTypes.number,
   children: PropTypes.any,
   className: PropTypes.string,
 };

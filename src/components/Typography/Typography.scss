@@ -1,49 +1,43 @@
 @import '../../style/vars.scss';
 
-.rc-typo.--h1,
-.rc-typo.--h2,
-.rc-typo.--h3,
-.rc-typo.--h4 {
+h1.rc-typo,
+h2.rc-typo,
+h3.rc-typo,
+h4.rc-typo {
   font-weight: 600;
   margin-bottom: .5em;
 }
 
-.rc-typo.--h1 {
+h1.rc-typo {
   font-size: 3rem;
   line-height: 1.23;
 }
 
-.rc-typo.--h2 {
+h2.rc-typo {
   font-size: 2.5rem;
   line-height: 1.35;
 }
 
-.rc-typo.--h3 {
+h3.rc-typo {
   font-size: 2rem;
   line-height: 1.35;
 }
 
-.rc-typo.--h4 {
+h4.rc-typo {
   font-size: 1.5rem;
   line-height: 1.4;
-}
-
-.rc-typo.--p {
-  color: currentColor;
-  margin-bottom: 1em;
 }
 
 .rc-typo.--disabled {
   user-select: none;
   cursor: not-allowed;
-  color: rgba(0,0,0,.25);
 }
 
 .rc-typo.--underline {
   text-decoration: underline;
 }
 
-.rc-typo.--lineTrough {
+.rc-typo.--line-through {
   text-decoration: line-through;
 }
 

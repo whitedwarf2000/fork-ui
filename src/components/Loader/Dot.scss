@@ -3,7 +3,7 @@
 @keyframes flow {
   from {
     opacity: 1;
-    transform: scale(1.2);
+    transform: scale(1.25);
   }
   to {
     opacity: .20;
@@ -11,35 +11,20 @@
   }
 }
 
-@keyframes progress {
-  0% {
-    background-size: 200% 100%;
-    background-position: left -31.25% top 0%;
-  }
-  50% {
-    background-size: 800% 100%;
-    background-position: left -49% top 0%;
-  }
-  100% {
-    background-size: 400% 100%;
-    background-position: left -102% top 0%;
-  }
-}
-
 /* DOT */
-.rc-loader-container {
+.rc-loader-dots {
   display: flex;
   align-items: center;
-  font-size: 1.125rem;
+  color: $primary-color--500;
 }
 
 .rc-loader-dot {
-  margin: 0 0.2rem;
-  width: 0.8em;
-  height: 0.8em;
+  display: inline-block;
+  margin: 0 0.2em;
+  width: 1em;
+  height: 1em;
   background-color: currentColor;
-  border: 1px solid transparent;
-  border-radius: 50%;
+  border-radius: 100rem;
 }
 
 .rc-loader-dot.--dot-1 {

@@ -4,6 +4,8 @@ import { useMemo } from 'react';
 const makeDepsTracking = (props, deps) => deps.map(name => props[name]);
 
 export default (name, props, deps) => {
+  const tracking = useMemo(() => makeDepsTracking(props, deps), [props.deps]);
+
   return useMemo(() => {
     if (props.hasOwnProperty(`${name}`)) {
       return props[name];
@@ -11,7 +13,7 @@ export default (name, props, deps) => {
 
     return getLatestTruthyProp(props, deps);
   }, [
-    ...makeDepsTracking(props, deps),
+    ...tracking,
     props[name],
   ]);
 }
