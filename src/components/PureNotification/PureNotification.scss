@@ -4,6 +4,7 @@
   position: relative;
   min-width: 30em;
   border-radius: $border-radius;
+  overflow: hidden;
   background-color: var(--rc-color--500);
   box-shadow: var(--rc-neu-flat--500);
 }
@@ -15,7 +16,7 @@
   align-items: center;
   justify-content: space-between;
   text-transform: uppercase;
-  border-bottom: 1px dashed var(--rc-text-color);
+  background-color: var(--rc-color--450);
 }
 
 .rc-pure-notification-content {

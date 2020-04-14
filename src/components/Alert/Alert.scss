@@ -5,13 +5,8 @@
   background-color: rgba(0, 0, 0, 0.6);
 
   .rc-pure-alert-content {
-    border-color: #fff;
     color: #fff;
-  }
-
-  .rc-pure-alert-close {
-    box-shadow: none;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -30,6 +25,11 @@
 }
 
 #root-alert {
+  .rc-pure-alert-title,
+  .rc-pure-alert-content {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
   .rc-alert {
     margin-bottom: 0.5em;
     margin-right: 0.5em;

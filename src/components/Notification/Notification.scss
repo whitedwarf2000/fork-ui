@@ -2,13 +2,7 @@
 
 .rc-notification {
   animation: zoomIn 0.25s;
-  background-color: rgba(0, 0, 0, 0.65);
-
-  .rc-pure-notification-title {
-    border-bottom-color: var(--rc-color--500);
-    color: #fff;
-    border-color: #fff;
-  }
+  color: #fff;
 }
 
 
@@ -26,6 +20,11 @@
 }
 
 #root-notification {
+  .rc-pure-notification-content,
+  .rc-pure-notification-title  {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
   .rc-notification {
     margin-bottom: 0.5em;
     margin-left: 0.5em;

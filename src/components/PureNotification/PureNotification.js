@@ -3,6 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
+import Button from '../Button';
 
 const PureNotification = ({ notificationRef, children, title, className, onCloseClick, onContentClick, ...otherProps }) => {
   return (
@@ -14,7 +15,7 @@ const PureNotification = ({ notificationRef, children, title, className, onClose
             <Icon name="bell" style={{ marginRight: '0.5em' }} />
             {title}
           </span>
-          <Icon name="x" className="rc-pure-modnotificational-close" onClick={onCloseClick} />
+          <Button glassed circle icon="x" className="rc-pure-modnotificational-close" onClick={onCloseClick} />
         </div>
       )}
       <div className="rc-pure-notification-content" onClick={onContentClick}>
