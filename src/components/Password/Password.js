@@ -12,7 +12,7 @@ const Password = React.forwardRef(({ className, noEye, ...otherProps }, ref) => 
       return;
     }
     return setIsShowPassword(prev => !prev)
-  }, [noEye]);
+  }, [noEye, setIsShowPassword]);
 
   return (
     <div className={cn('rc-password', className)}>
@@ -23,7 +23,7 @@ const Password = React.forwardRef(({ className, noEye, ...otherProps }, ref) => 
       />
       {!noEye && (
         <Icon
-          name={isShowPassword ? 'eye-slash' : 'eye'}
+          name="eye"
           className="rc-password-eye"
           onClick={toggleShowPassword}
         />

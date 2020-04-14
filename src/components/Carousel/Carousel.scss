@@ -1,4 +1,5 @@
 @import '../../style/vars.scss';
+@import './Item.scss';
 
 .rc-carousel {
   width: 100%;
@@ -11,7 +12,7 @@
 .rc-carousel-box {
   display: flex;
   flex-wrap: nowrap;
-  transition: left 0.5s, right 0.5s;
+  transition: left 0.25s, right 0.25s;
   position: absolute;
 }
 
@@ -20,12 +21,8 @@
   position: absolute;
   top: 50%;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.2);
-  box-shadow: none;
-  color: rgb(228, 230, 235);
 
   &:hover {
-    box-shadow: none;
     background-color: $primary-color--500;
   }
 }
@@ -43,20 +40,4 @@
 .rc-carousel-next {
   left: 100%;
   transform: translate(-150%, -50%);
-}
-
-// DARK MODE SUPPORT
-.dark-mode {
-  // anti .darkmode .rc-button
-  .rc-carousel-prev.rc-carousel-prev,
-  .rc-carousel-next.rc-carousel-next {
-    background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: none;
-    color: rgb(228, 230, 235);
-
-    &:hover {
-      box-shadow: none;
-      background-color:  $primary-color--500;
-    }
-  }
 }

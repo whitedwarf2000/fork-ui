@@ -1,16 +1,31 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const Item = ({ className, children }) => {
+const Item = ({ wrapperClass, className, _width, fluid, gap, style, children }) => {
   const ref = useRef();
 
-  useEffect(() => {
-
-  }, []);
   return (
-    <div className={cn('rc-carousel-item', className)} ref={ref}>
-      {children}
+    <div
+      style={{
+        width: fluid ? _width : null,
+      }}
+      className={cn(
+        'rc-carousel-item-wrapper',
+        { '--fluid': fluid },
+        wrapperClass,
+      )}
+      ref={ref}
+    >
+      <div
+        style={{
+          margin: gap,
+          ...style,
+        }}
+        className={cn('rc-carousel-item', className)}
+      >
+        {children}
+      </div>
     </div>
   );
 };
@@ -18,7 +33,12 @@ const Item = ({ className, children }) => {
 Item.displayName = 'Carousel.Item';
 Item.propTypes = {
   className: PropTypes.string,
+  wrapperClass: PropTypes.string,
+  style: PropTypes.object,
+  gap: PropTypes.string,
 };
-Item.defaultProps = {};
+Item.defaultProps = {
+  gap: '0.25rem',
+};
 
 export default Item;

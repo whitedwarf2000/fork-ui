@@ -1,0 +1,9 @@
+.rc-carousel-item-wrapper.--fuild {
+  > .rc-carousel-item {
+    width: 100%;
+
+    > * {
+      width: 100%;
+    }
+  }
+}
