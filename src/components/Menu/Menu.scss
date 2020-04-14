@@ -1,4 +1,7 @@
 @import '../../style/vars.scss';
+@import './Item.scss';
+@import './ItemGroup.scss';
+@import './Sub.scss';
 
 .rc-menu {
   border-radius: $border-radius;

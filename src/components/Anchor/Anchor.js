@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Link from './Link';
 import Affix from '../Affix';
 
-import { pick } from '../../utils/helpers';
+import { pick, omit } from '../../utils/helpers';
 
 const Anchor = ({ className, affix, children, ...otherProps }) => {
   const [activeKey, setActiveKey] = useState(false);
@@ -15,10 +15,12 @@ const Anchor = ({ className, affix, children, ...otherProps }) => {
     'bottom',
   ]);
 
+  const passedProps = useMemo(() => omit(otherProps, ['top', 'bottom']), [otherProps]);
+
   const _onTriggered = useCallback(key => setActiveKey(key), [setActiveKey]);
 
   const customChildren = useMemo(() => (
-    <ul className={cn('rc-anchor', className)}>
+    <ul className={cn('rc-anchor', className)} {...passedProps}>
       {React.Children.map(children, (elm) => {
         return React.cloneElement(elm, {
           _onTriggered: _onTriggered,

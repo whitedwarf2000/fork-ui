@@ -3,12 +3,16 @@
 .rc-anchor-link {
   height: 2em;
   padding: 0 1rem;
-  border-left: 1px solid currentColor;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   cursor: pointer;
+  border-left: 1px solid transparent;
 }
 
 .rc-anchor-link.--active {
   color: $primary-color--500;
+  border-left-color: $primary-color--500;
 }
