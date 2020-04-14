@@ -19,9 +19,7 @@ const calc = (itemNodes, nextPage) => {
   return left;
 };
 
-const focusGap = 50;
-
-const Carousel = ({ className, children, auto, loop, single, focus }) => {
+const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => {
   const [page, setPage] = useState(1);
   const [body, setBody] = useState({ height: 0, width: 0 });
   const [boxBody, setBoxBody] = useState({ height: 0, width: 0 });
@@ -29,11 +27,11 @@ const Carousel = ({ className, children, auto, loop, single, focus }) => {
 
   // One page equal 75% carousel width
   const maxPage = useMemo(() => {
-    if (single) {
-      return itemCount;
+    if (multiple) {
+      return Math.ceil(boxBody.width / body.width);
     }
-    return Math.ceil(boxBody.width / body.width);
-  }, [body.width, boxBody.width, itemCount, single]);
+    return itemCount; 
+  }, [body.width, boxBody.width, itemCount, multiple]);
 
   const [left, setLeft] = useState(0);
   const carouselHeight = useMemo(() => boxBody.height + 5, [boxBody.height]);
@@ -51,52 +49,49 @@ const Carousel = ({ className, children, auto, loop, single, focus }) => {
     });
   }, []);
 
-  const handleNext = useCallback(() => setPage(prev => {
+  const handleNext = useCallback(() => setPage((prev) => {
     const _page = prev + 1;
+    if (loop && _page > maxPage) {
+      return 1;
+    }
     return _page > maxPage ? maxPage : _page;
-  }), [maxPage, setPage]);
+  }), [maxPage, setPage, loop]);
 
-  const handlePrev = useCallback(() => setPage(prev => {
+  const handlePrev = useCallback(() => setPage((prev) => {
     const _page = prev - 1;
+    if (loop && _page < 1) {
+      return maxPage;
+    }
     return _page < 1 ? 1 : _page;
-  }), [maxPage, setPage]);
+  }), [maxPage, setPage, loop]);
 
   useEffect(() => {
-    const itemNodes = getItemNodes(boxRef);
-    if (single && focus) {
-      if (page <= 1) {
-        setLeft(-calc(itemNodes, page));
-      } else {
-        setLeft(-calc(itemNodes, page) + focusGap);
+    (function() {
+      const itemNodes = getItemNodes(boxRef);
+      if (multiple) {
+        return setLeft(-(page - 1) * body.width);
       }
-    } else if (single) {
-      setLeft(-calc(itemNodes, page));
-    } else {
-      setLeft(-(page - 1) * body.width);
-    }
-  }, [page, setLeft, single, boxRef, body.width]);
+      if (focus) {
+        return setLeft(-calc(itemNodes, page) + (page <= 1 ? 0 : gap));
+      }
+
+      return setLeft(-calc(itemNodes, page));
+    })();
+  }, [page, setLeft, multiple, boxRef, body.width, gap]);
 
   useEffect(() => {
     if (auto) {
       const timer = setInterval(() => handleNext(), auto);
       return () => clearInterval(timer);
     }
-  }, [handleNext]);
-
-  useEffect(() => {
-    if (auto && loop && page >= maxPage) {
-      const timer = setTimeout(() => setPage(1), auto);
-
-      return () => clearTimeout(timer);
-    }
-  }, [auto, loop, page, maxPage]);
+  }, [handleNext, auto]);
 
   const _width = useMemo(() => {
     if (focus) {
-      return body.width - focusGap * 2;
+      return body.width - gap * 2;
     }
     return body.width;
-  }, [body.width, focus]);
+  }, [body.width, focus, gap]);
 
   return (
     <div ref={ref} className={cn('rc-carousel', className)} style={{ height: carouselHeight }}>
@@ -104,7 +99,7 @@ const Carousel = ({ className, children, auto, loop, single, focus }) => {
         {React.Children.map(children, (elm) => {
           return React.cloneElement(elm, {
             _width,
-            fluid: single,
+            fluid: !multiple,
           });
         })}
       </div>
@@ -112,7 +107,7 @@ const Carousel = ({ className, children, auto, loop, single, focus }) => {
         icon="chevron-left"
         className={cn('rc-carousel-prev')}
         glassed
-        disabled={page <= 1}
+        disabled={!loop && page <= 1}
         circle
         onClick={handlePrev}
       />
@@ -120,7 +115,7 @@ const Carousel = ({ className, children, auto, loop, single, focus }) => {
         icon="chevron-right"
         className={cn('rc-carousel-next')}
         glassed
-        disabled={page >= maxPage}
+        disabled={!loop && page >= maxPage}
         circle
         onClick={handleNext}
       />
@@ -136,9 +131,12 @@ Carousel.propTypes = {
   children: PropTypes.any,
   auto: PropTypes.number,
   loop: PropTypes.bool,
-  single: PropTypes.bool,
+  multiple: PropTypes.bool,
+  focus: PropTypes.bool,
+  gap: PropTypes.number,
 };
 Carousel.defaultProps = {
+  gap: 30,
 };
 
 export default Carousel;
