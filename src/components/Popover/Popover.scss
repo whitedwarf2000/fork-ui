@@ -1,12 +1,11 @@
 @import '../../style/vars.scss';
 
 .rc-popover {
-  background-color: var(--rc-color--600);
+  background-color: rgba($color: $dark--600, $alpha: 0.8);
   border-radius: $border-radius;
   padding: $content-spacing;
 
   &:after {
-    border-color: var(--rc-color--600);
+    border-color: rgba($color: $dark--600, $alpha: 0.8);
   }
 }
-
