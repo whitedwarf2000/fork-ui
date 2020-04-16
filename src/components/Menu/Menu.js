@@ -54,7 +54,7 @@ const Menu = ({ className, children, onSelectedKeysChange, onItemClick, iconOnly
     selectedSubKeys,
     selectedGroupKeys,
     onItemClick: _onItemClick,
-  }), [iconOnly, selectedKeys, _onItemClick]);
+  }), [iconOnly, selectedKeys, _onItemClick, selectedSubKeys, selectedGroupKeys]);
 
   return (
     <MenuContext.Provider value={menuValue}>
