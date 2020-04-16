@@ -1,13 +1,8 @@
 @import '../../style/vars.scss';
 
-.rc-alert {
+.rc-alert.rc-alert {
   animation: zoomIn 0.25s;
-  background-color: rgba(0, 0, 0, 0.6);
-
-  .rc-pure-alert-content {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .rc-alert.--close-animation {
@@ -27,7 +22,7 @@
 #root-alert {
   .rc-pure-alert-title,
   .rc-pure-alert-content {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: transparent;
   }
 
   .rc-alert {

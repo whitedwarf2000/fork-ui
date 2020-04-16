@@ -10,13 +10,13 @@ import ReactDOM from 'react-dom';
 import {
   Button,
   Tooltip,
-} from 'rc-neumorphism';
+} from 'rc-neumorphism/core';
 
 require('rc-neumorphism/lib/rc-neumorphism.css');
 
 const App = () => (
   <div>
-    <Button primary icon="home" >
+    <Button primary icon="home" />
     <Tooltip topRight title="title">
       <a>Hover</a>
     </Tooltip>

@@ -7,13 +7,7 @@
     "node": ">=10.15.3",
     "yarn": ">=1.16.0"
   },
-  "scripts": {
-    "lint": "eslint ./src --",
-    "clean-lib": "rimraf \"lib\"",
-    "build-scss": "node-sass src --output lib --output-style",
-    "build-js": "babel --config-file ./babel.config.js --out-dir lib ./src --verbose",
-    "build": "yarn clean-lib && yarn build-js && yarn build-scss"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nguyenvanhoang26041994/rc-neumorphism.git"
@@ -26,17 +20,9 @@
   "homepage": "https://github.com/nguyenvanhoang26041994/rc-neumorphism#readme",
   "dependencies": {
     "classnames": "^2.2.6",
-    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-transform-async-to-generator": "^7.5.0",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "rimraf": "^3.0.2"
-  }
+  "devDependencies": {}
 }

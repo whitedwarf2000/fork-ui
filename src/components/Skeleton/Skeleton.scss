@@ -18,12 +18,14 @@
   height: 2.5em !important;
   width: 2.5em !important;
   border-radius: 100rem;
+  margin-bottom: 0.5rem;
 }
 
 .rc-skeleton.--rect,
 .rc-skeleton.--paragraph {
   width: 100%;
   border-radius: 0.5em;
+  margin-bottom: 0.5rem;
 }
 
 .rc-skeleton.--rect {
@@ -32,5 +34,4 @@
 
 .rc-skeleton.--paragraph {
   height: 1.5rem !important;
-  margin-bottom: 0.5rem;
 }

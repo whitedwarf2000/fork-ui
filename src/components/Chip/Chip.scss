@@ -10,10 +10,11 @@
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
-  background-color: var(--rc-color--200);
+  background-color: $dark--200;
+  color: $dark-text-color;
 
   &:hover {
-    background-color: var(--rc-color--300);
+    background-color: $dark--300;
   }
 
   // anti dark-mode

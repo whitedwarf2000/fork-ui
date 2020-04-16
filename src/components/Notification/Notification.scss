@@ -1,8 +1,9 @@
 @import '../../style/vars.scss';
 
-.rc-notification {
+.rc-notification.rc-notification {
   animation: zoomIn 0.25s;
   color: #fff;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 
@@ -22,7 +23,7 @@
 #root-notification {
   .rc-pure-notification-content,
   .rc-pure-notification-title  {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: transparent;
   }
 
   .rc-notification {
