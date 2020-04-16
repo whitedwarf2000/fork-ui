@@ -2,7 +2,10 @@ import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
+import useFlexibleRef from '../../hooks/useFlexibleRef';
+
 const Switch = React.forwardRef(({ onChange, className, ...otherProps }, ref) => {
+  const _ref = useFlexibleRef(ref);
   const isControlled = useMemo(() => otherProps.hasOwnProperty('checked'), [otherProps]);
   const [checked, setChecked] = useState(isControlled ?  otherProps.checked : otherProps.defaultChecked);
 
@@ -22,16 +25,16 @@ const Switch = React.forwardRef(({ onChange, className, ...otherProps }, ref) =>
 
   useEffect(() => {
     if (!isControlled) {
-      onChange({ target: { checked }});
+      onChange({ target: _ref.current });
     }
-  } ,[checked, isControlled]);
+  } ,[checked, isControlled, _ref]);
 
   return (
     <span className={cn('rc-switch', { '--checked': checked }, className)}>
       <input
         type="checkbox"
         className="rc-switch-input"
-        ref={ref}
+        ref={_ref}
         onChange={_onChange}
         {...otherProps}
       />
