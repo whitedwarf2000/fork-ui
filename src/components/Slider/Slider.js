@@ -7,6 +7,13 @@ const Slider = ({ className, min, max, onChange, ...otherProps }) => {
   const isControlled = useMemo(() => otherProps.hasOwnProperty('value'), [otherProps]);
   const [value, setValue] = useState(isControlled ? otherProps.value : otherProps.defaultValue);
 
+  const _onChange = useCallback((val) => {
+    if (isControlled) {
+      return onChange(val);
+    }
+    return setValue(val);
+  }, [isControlled, setValue, onChange]);
+
   useMemo(() => {
     if (isControlled) {
       return setValue(otherProps.value);
@@ -15,17 +22,17 @@ const Slider = ({ className, min, max, onChange, ...otherProps }) => {
     return onChange(value);
   }, [isControlled, setValue, otherProps.value, value, onChange]);
 
+  useEffect(() => {
+    if (!isControlled) {
+      onChange(value);
+    }
+  }, [value]);
+
   const handlerRef = useRef();
   const ref = useRef();
   const railRef = useRef();
 
   const percent = useMemo(() => value / max, [value, max]);
-  const _onChange = useCallback((val) => {
-    if (isControlled) {
-      return onChange(val);
-    }
-    return setValue(val);
-  }, [isControlled, setValue, onChange]);
 
   useEffect(() => {
     let isDraging = false;

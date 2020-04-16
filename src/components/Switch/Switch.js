@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -18,9 +18,13 @@ const Switch = React.forwardRef(({ onChange, className, ...otherProps }, ref) =>
     if (isControlled) {
       return setChecked(otherProps.checked)
     }
+  }, [isControlled, otherProps.checked, setChecked]);
 
-    return onChange(checked);
-  }, [isControlled, otherProps.checked, setChecked, checked, onChange]);
+  useEffect(() => {
+    if (!isControlled) {
+      onChange({ target: { checked }});
+    }
+  } ,[checked, isControlled]);
 
   return (
     <span className={cn('rc-switch', { '--checked': checked }, className)}>
@@ -40,6 +44,8 @@ Switch.displayName = 'Switch';
 Switch.propTypes = {
   className: PropTypes.string,
   onChange: PropTypes.func,
+  checked: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
 };
 Switch.defaultProps = {
   onChange: f => f,
