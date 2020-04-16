@@ -1,22 +1,24 @@
-import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const Switch = React.forwardRef(({ defaultChecked, onChange, className, ...otherProps }, ref) => {
-  const isControlled = useMemo(() => otherProps.hasOwnProperty('checked'), []);
-
-  const [checked, setChecked] = useState(isControlled ? otherProps.checked : defaultChecked);
+const Switch = React.forwardRef(({ onChange, className, ...otherProps }, ref) => {
+  const isControlled = useMemo(() => otherProps.hasOwnProperty('checked'), [otherProps]);
+  const [checked, setChecked] = useState(isControlled ?  otherProps.checked : otherProps.defaultChecked);
 
   const _onChange = useCallback((e) => {
-    onChange(e);
-    setChecked(e.target.checked);
-  }, []);
+    if (isControlled) {
+      return onChange(e);
+    }
+
+    return setChecked(e.target.checked);
+  }, [isControlled, onChange, setChecked]);
 
   useMemo(() => {
     if (isControlled) {
-      setChecked(otherProps.checked);
+      return setChecked(otherProps.checked)
     }
-  } ,[otherProps.checked]);
+  }, [isControlled, otherProps.checked, setChecked]);
 
   return (
     <span className={cn('rc-switch', { '--checked': checked }, className)}>
@@ -24,7 +26,6 @@ const Switch = React.forwardRef(({ defaultChecked, onChange, className, ...other
         type="checkbox"
         className="rc-switch-input"
         ref={ref}
-        defaultChecked={defaultChecked}
         onChange={_onChange}
         {...otherProps}
       />
@@ -37,7 +38,6 @@ Switch.displayName = 'Switch';
 Switch.propTypes = {
   className: PropTypes.string,
   onChange: PropTypes.func,
-  defaultChecked: PropTypes.bool,
 };
 Switch.defaultProps = {
   onChange: f => f,

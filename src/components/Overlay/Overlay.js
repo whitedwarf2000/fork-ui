@@ -239,7 +239,7 @@ class Overlay extends React.Component {
 
 Overlay.displayName = 'Overlay';
 Overlay.propTypes = {
-  placement: PropTypes.oneOf(Object.keys(mPlacements)),
+  placement: PropTypes.string,
   gap: PropTypes.number,
   defaultVisible: PropTypes.bool,
   overlay: PropTypes.any,

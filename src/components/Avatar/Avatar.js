@@ -40,7 +40,7 @@ Avatar.displayName = 'Avatar';
 Avatar.propTypes = {
   className: PropTypes.string,
   src: PropTypes.string,
-  shape: PropTypes.oneOf(Object.keys(mShape)),
+  shape: PropTypes.string,
   circle: PropTypes.bool,
   square: PropTypes.bool,
   name: PropTypes.string,

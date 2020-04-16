@@ -86,7 +86,7 @@ export default () => FieldComponent => {
   FieldEnhance.displayName = `withEnhanceField(${FieldComponent.displayName || FieldComponent.name || 'Component'})`;
   FieldEnhance.propTypes = {
     error: PropTypes.string,
-    success: PropTypes.oneOf(PropTypes.bool, PropTypes.string),
+    success: PropTypes.oneOf([PropTypes.bool, PropTypes.string]),
     warning: PropTypes.string,
   };
   FieldEnhance.defaultProps = {
