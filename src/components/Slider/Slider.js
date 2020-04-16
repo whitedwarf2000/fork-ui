@@ -1,51 +1,50 @@
-import React, { useMemo, useEffect, useRef } from 'react';
+import React, { useMemo, useEffect, useRef, useState, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Handler from './Handler';
 
-import useUncontrolled from '../../hooks/useUncontrolled';
+const Slider = ({ className, min, max, onChange, ...otherProps }) => {
+  const isControlled = useMemo(() => otherProps.hasOwnProperty('value'), [otherProps]);
+  const [value, setValue] = useState(isControlled ? otherProps.value : otherProps.defaultValue);
 
-const Slider = ({ className, defaultValue, min, max, onChange, ...otherProps }) => {
+  useMemo(() => {
+    if (isControlled) {
+      return setValue(otherProps.value);
+    }
+
+    return onChange(value);
+  }, [isControlled, setValue, otherProps.value, value, onChange]);
+
   const handlerRef = useRef();
   const ref = useRef();
   const railRef = useRef();
 
-  const [value, setValue] = useUncontrolled('value', otherProps, {
-    defaultState: defaultValue,
-    onChangeState: onChange,
-  });
-
   const percent = useMemo(() => value / max, [value, max]);
+  const _onChange = useCallback((val) => {
+    if (isControlled) {
+      return onChange(val);
+    }
+    return setValue(val);
+  }, [isControlled, setValue, onChange]);
 
   useEffect(() => {
     let isDraging = false;
     const calcValue = (pageX) => {
       const { x, width } = ref.current.getBoundingClientRect();
-      if (pageX - x >= width) {
-        return max;
-      }
-
-      if (pageX - x < 0) {
-        return 0;
-      }
+      if (pageX - x >= width) { return max; }
+      if (pageX - x < 0) { return 0; }
 
       return Math.ceil(((pageX - x) / width) * max);
     };
 
-    const onDraging = (e) => {
-      isDraging = true;
-    };
-    const offDraging = (e) => {
-      isDraging = false;
-    };
-    const draging = (e) => {
-      if (!isDraging) {
-        return;
-      }
-      return setValue(calcValue(e.pageX));
-    };
+    const onDraging = () => { isDraging = true; };
+    const offDraging = () => { isDraging = false; };
+    const clickHandler = e => _onChange(calcValue(e.pageX));
 
-    const clickHandler = (e) => setValue(calcValue(e.pageX));
+    const draging = (e) => {
+      if (!isDraging) { return; }
+      return _onChange(calcValue(e.pageX));
+    };
   
     handlerRef.current.addEventListener('mousedown', onDraging);
     handlerRef.current.addEventListener('mouseup', offDraging);
@@ -61,8 +60,8 @@ const Slider = ({ className, defaultValue, min, max, onChange, ...otherProps }) 
       ref.current.removeEventListener('mouseup', offDraging);
       ref.current.removeEventListener('mouseleave', offDraging);
       ref.current.removeEventListener('click', clickHandler);
-    }
-  } ,[max]);
+    };
+  } ,[max, handlerRef, ref, _onChange]);
 
   return (
     <div
@@ -70,7 +69,7 @@ const Slider = ({ className, defaultValue, min, max, onChange, ...otherProps }) 
       className={cn('rc-slider', className)}
       {...otherProps}
     >
-      <did className="rc-slider-rail" ref={railRef}>
+      <div className="rc-slider-rail" ref={railRef}>
         <div
           className="rc-slider-rail-percent"
           style={{
@@ -79,7 +78,7 @@ const Slider = ({ className, defaultValue, min, max, onChange, ...otherProps }) 
         >
           <Handler ref={handlerRef} />
         </div>
-      </did>
+      </div>
     </div>
   );
 };

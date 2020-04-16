@@ -18,7 +18,9 @@ const Switch = React.forwardRef(({ onChange, className, ...otherProps }, ref) =>
     if (isControlled) {
       return setChecked(otherProps.checked)
     }
-  }, [isControlled, otherProps.checked, setChecked]);
+
+    return onChange(checked);
+  }, [isControlled, otherProps.checked, setChecked, checked, onChange]);
 
   return (
     <span className={cn('rc-switch', { '--checked': checked }, className)}>
