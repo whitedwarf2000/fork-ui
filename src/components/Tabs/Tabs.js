@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useState, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -26,7 +26,7 @@ const renderIcon = (icon, right) => {
   return icon;
 };
 
-const Tabs = ({ className, children, activeTab, onChange, fluid }) => {
+const Tabs = ({ className, children, onChange, fluid, ...otherProps }) => {
   const tabs = useMemo(() => React.Children.map(children, tab => ({
     key: tab.key,
     title: tab.props.title,
@@ -34,6 +34,35 @@ const Tabs = ({ className, children, activeTab, onChange, fluid }) => {
     icon: tab.props.icon,
     iconRight: tab.props.iconRight,
   })), [children]);
+
+  const isControlled = useMemo(() => otherProps.hasOwnProperty('activeTab'), [otherProps]);
+  const [activeTab, setActiveTab] = useState(isControlled ? otherProps.activeTab : otherProps.defaultActiveTab);
+
+  useMemo(() => {
+    if (!isControlled && !otherProps.defaultActiveTab && tabs.length ) {
+      setActiveTab(tabs[0].key);
+    }
+  } , []);
+
+  const _onChange = useCallback((tabKey) => {
+    if (isControlled) {
+      return onChange(tabKey);
+    }
+
+    return setActiveTab(tabKey);
+  }, [isControlled, onChange, setActiveTab]);
+
+  useMemo(() => {
+    if (isControlled) {
+      return setActiveTab(otherProps.activeTab)
+    }
+  }, [isControlled, otherProps.activeTab, setActiveTab]);
+
+  useEffect(() => {
+    if (!isControlled) {
+      onChange(activeTab);
+    }
+  } ,[activeTab, isControlled]);
 
   return (
     <div className={cn('rc-tabs', { '--fluid': fluid }, className)}>
@@ -43,7 +72,7 @@ const Tabs = ({ className, children, activeTab, onChange, fluid }) => {
             key={tab.key}
             className={cn('rc-tabs-nav-item', { '--active': activeTab === tab.key })}
             disabled={tab.disabled}
-            onClick={() => onChange(tab.key)}
+            onClick={() => _onChange(tab.key)}
           >
             {renderIcon(tab.icon)}
             {tab.title}

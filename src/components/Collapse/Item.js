@@ -4,6 +4,23 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
+const renderIcon = (icon) => {
+  if (!icon) {
+    return null;
+  }
+
+  if (typeof icon === 'string') {
+    return (
+      <Icon
+        name={icon}
+        style={{ marginRight: '1rem' }}
+      />
+    )
+  }
+
+  return icon;
+};
+
 const Item = ({ className, title, children, active, onClick, disabled, icon, ...otherProps }) => {
   const [contentStyle, contentRef] = useCollapseStyle(active);
   const _toggleActive = useCallback((e) => {
@@ -20,7 +37,7 @@ const Item = ({ className, title, children, active, onClick, disabled, icon, ...
     >
       <div className="rc-panel-title" onClick={_toggleActive}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          {icon && <Icon name={icon} style={{ marginRight: '1rem' }} />}
+          {renderIcon(icon)}
           {title}
         </div>
         <Icon className="rc-panel-icon" name="caret-down" />
