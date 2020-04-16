@@ -105,7 +105,7 @@ const Affix = ({ children, className, ...otherProps }) => {
 
 Affix.displayName = 'Affix';
 Affix.propTypes = {
-  top: PropTypes.number,
+  top: PropTypes.number, /*{{ description: `` }}*/
   bottom: PropTypes.number,
   children: PropTypes.object,
   className: PropTypes.string,
