@@ -1,45 +1,45 @@
-const topRight = (gap) => ({
+const topRight = (targetPosition, overlayPosition, gap) => ({
   bottom: `calc(100% + ${gap}px)`,
   right: 0,
 });
 
-const rightTop = (gap) => ({
+const rightTop = (targetPosition, overlayPosition, gap) => ({
   top: 0,
   left: `calc(100% + ${gap}px)`,
 });
 
-const rightBottom = (gap) => ({
+const rightBottom = (targetPosition, overlayPosition, gap) => ({
   left: `calc(100% + ${gap}px)`,
   bottom: 0,
 });
 
-const bottomRight = (gap) => ({
+const bottomRight = (targetPosition, overlayPosition, gap) => ({
   top: `calc(100% + ${gap}px)`,
   right: 0,
 });
 
-const bottomLeft = (gap) => ({
+const bottomLeft = (targetPosition, overlayPosition, gap) => ({
   top: `calc(100% + ${gap}px)`,
   left: 0,
 });
 
-const leftBottom = (gap) => ({
+const leftBottom = (targetPosition, overlayPosition, gap) => ({
   right: `calc(100% + ${gap}px)`,
   bottom: 0,
 });
 
-const leftTop = (gap) => ({
+const leftTop = (targetPosition, overlayPosition, gap) => ({
   right: `calc(100% + ${gap}px)`,
   top: 0,
 });
 
-const topLeft = (gap) => ({
+const topLeft = (targetPosition, overlayPosition, gap) => ({
   bottom: `calc(100% + ${gap}px)`,
   left: 0,
 });
 
 export default {
-  top: (gap) => ({
+  top: (targetPosition, overlayPosition, gap) => ({
     bottom: `calc(100% + ${gap}px)`,
     left: '50%',
     transform: `translateX(-50%)`,
@@ -52,7 +52,7 @@ export default {
   'right-bottom': rightBottom,
   bottomRight: bottomRight,
   'bottom-right': bottomRight,
-  bottom: (gap) => ({
+  bottom: (targetPosition, overlayPosition, gap) => ({
     top: `calc(100% + ${gap}px)`,
     left: '50%',
     transform: 'translateX(-50%)',
@@ -61,7 +61,7 @@ export default {
   'bottom-left': bottomLeft,
   leftBottom: leftBottom,
   'left-bottom': leftBottom,
-  left: (gap) => ({
+  left: (targetPosition, overlayPosition, gap) => ({
     right: `calc(100% + ${gap}px)`,
     top: '50%',
     transform: 'translateY(-50%)',
@@ -70,7 +70,7 @@ export default {
   'left-top': leftTop,
   topLeft: topLeft,
   'top-left': topLeft,
-  right: (gap) => ({
+  right: (targetPosition, overlayPosition, gap) => ({
     top: '50%',
     left: `calc(100% + ${gap}px)`,
     transform: 'translateY(-50%)',

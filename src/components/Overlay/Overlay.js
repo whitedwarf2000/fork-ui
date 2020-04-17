@@ -8,11 +8,23 @@ import { omit } from '../../utils/helpers';
 import PortalOverlay from './Overlay.Portal';
 import AbsoluteOverlay from './Overlay.Absolute';
 
+const lPlacements = Object.keys(mPlacements);
+
 const Overlay = ({ absolute, ...otherProps }) => {
+  const placement = useSemanticProp('placement', otherProps, lPlacements);
+  const passedProps = useMemo(() => omit(otherProps, [
+    ...lPlacements,
+    'placement',
+  ]), [otherProps]);
+
   return absolute ? (
-    <AbsoluteOverlay {...otherProps} />
+    <AbsoluteOverlay
+      absolute={absolute}
+      placement={placement || 'top'}
+      {...passedProps}
+    />
   ) : (
-    <PortalOverlay {...otherProps} />
+    <PortalOverlay absolute={absolute} {...passedProps} />
   );
 };
 
@@ -22,19 +34,4 @@ Overlay.propTypes = {
 };
 Overlay.defaultProps = {};
 
-const lPlacements = Object.keys(mPlacements);
-
-export default (props) => {
-  const placement = useSemanticProp('placement', props, lPlacements);
-  const passedProps = useMemo(() => omit(props, [
-    ...lPlacements,
-    'placement',
-  ]), [props]);
-
-  return (
-    <Overlay
-      {...passedProps}
-      placement={placement || 'top'}
-    />
-  );
-};
+export default Overlay;

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const withFindDOMNode = (WrappedComponent) => {
+const withCheatTargetNode = (WrappedComponent) => {
   class ReturnComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -11,7 +11,7 @@ const withFindDOMNode = (WrappedComponent) => {
     }
 
     findDOMNode() {
-      this.targetNode = this.targetNode || ReactDOM.findDOMNode(this);
+      this.targetNode = this.targetNode || ReactDOM.findDOMNode(this).firstElementChild;
     }
 
     componentDidMount() {
@@ -34,8 +34,8 @@ const withFindDOMNode = (WrappedComponent) => {
     }
   }
 
-  ReturnComponent.displayName = `withFindDOMNode(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;
+  ReturnComponent.displayName = `withCheatTargetNode(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;
   return ReturnComponent;
 };
 
-export default withFindDOMNode;
+export default withCheatTargetNode;
