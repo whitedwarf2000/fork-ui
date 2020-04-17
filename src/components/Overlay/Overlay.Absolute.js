@@ -70,7 +70,7 @@ const Overlay = ({
       }, 100);
     };
 
-    // cheat isTargetHover for life cycle performance by using setIsOverlayHover
+    // cheat isTargetHover for life cycle performance by using setIsTargetHover
     const _eventMouseLeaveOverlayHandler = () => {
       timer2 = setTimeout(() => {
         setIsTargetHover(prev => {
@@ -136,7 +136,7 @@ const Overlay = ({
         targetNode.removeEventListener('mouseenter', _eventClickHandler);
       };
     }
-  }, [applyClick, wrapperTargetRef, overlayRef, setVisible]);
+  }, [applyClick, wrapperTargetRef, setVisible]);
 
   const overlayStyle = useMemo(() => renderPlacement[placement](gap), [placement, gap]);
 

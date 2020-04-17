@@ -1,223 +1,231 @@
-import React, { createRef } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useMemo, useState, useEffect, useRef, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Portal from '../Portal';
-import getPosition from '../../utils/getPosition';
-import renderPlacement from './render-placement.portal';
+
 import mPlacements from '../placements';
+import renderPlacement from './render-placement.portal';
+import getPosition from '../../utils/getPosition';
+import withFindDOMNode from '../../HOCs/withFindDOMNode';
 
-class Overlay extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    return {
-      ...renderPlacement[props.placement](state.targetPosition, state.overlayPosition, props.gap),
-      applyHover: props.trigger.indexOf('hover') >= 0,
-      applyClick: props.trigger.indexOf('click') >= 0,
-    };
-  }
+const Overlay = ({
+  className,
+  overlayClass,
+  children,
+  placement,
+  trigger,
+  onVisibleChange,
+  arrow,
+  overlay,
+  gap,
+  canOutsideClickClose,
+  targetNode,
+  ...otherProps
+}) => {
+  const isControlled = useMemo(() => otherProps.hasOwnProperty('visible'), [otherProps]);
+  const [visible, setVisible] = useState(isControlled ? otherProps.visible : otherProps.defaultVisible);
+  const [isOverlayHover, setIsOverlayHover] = useState(false);
+  const [isTargetHover, setIsTargetHover] = useState(false);
 
-  constructor(props) {
-    super(props);
-    this.isControlled = props.hasOwnProperty('visible');
+  useMemo(() => {
+    if (isControlled) {
+      return setVisible(otherProps.visible);
+    }
+  }, [isControlled, otherProps.visible, setVisible]);
 
-    this.state = {
-      visible: props.defaultVisible,
-      targetPosition: {
-        pageX: 0,
-        pageY: 0,
-        clientHeight: 0,
-        clientWidth: 0,
-      },
-      overlayPosition: {
-        pageX: 0,
-        pageY: 0,
-        clientHeight: 0,
-        clientWidth: 0,
-      },
-      isOverlayHover: false,
-    };
+  useEffect(() => {
+    onVisibleChange(visible);
+  }, [visible]);
 
-    this.overlayRef = createRef();
+  const overlayRef = useRef();
 
-    this.setVisible = this.setVisible.bind(this);
-    this.toggleVisible = this.toggleVisible.bind(this);
+  const applyHover = useMemo(() => trigger.indexOf('hover') >= 0, [trigger]);
+  const applyClick = useMemo(() => trigger.indexOf('click') >= 0, [trigger]);
 
-    this.setPosition = this.setPosition.bind(this);
-    this.setOverlayHover = this.setOverlayHover.bind(this);
+  // When ever user click outside of overlay, close overlay
+  const clickOutsideHandler = useCallback(() => {
+    if (canOutsideClickClose) {
+      setVisible(false);
+    }
+  }, [setVisible, canOutsideClickClose]);
 
-    this.renderPositionOverlay = this.renderPositionOverlay.bind(this);
-    this.addTriggerListener = this.addTriggerListener.bind(this);
-    this.removeTriggerListener = this.removeTriggerListener.bind(this);
-    this.eventOverlayClickOutside = this.eventOverlayClickOutside.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.isControlled) {
-      this.setVisible(this.props.visible);
+  useEffect(() => {
+    if (!targetNode) {
+      return f => f;
     }
 
-    const _self = this;
-    this.renderPositionOverlay();
-
-    this._eventClickHandler = () => this.toggleVisible();
-    this._eventMouseEnterHandler = () => this.setVisible(true);
-    this._eventMouseLeaveHandler = () => {
-      const timer = setTimeout(() => this.setState(function(prevState) {
-        if (prevState.isOverlayHover) {
-          clearTimeout(timer);
-          return {};
-        }
-
-        return {
-          visible: false,
-        };
-      }), 100);
-    };
-
-    this._eventMouseEnterOverlayHandler = () => this.setOverlayHover(true);
-    this._eventMouseLeaveOverlayHandler = () => {
-      this.setOverlayHover(false);
-      this.setVisible(false);
-    };
-
-    this._events = {
-      overlayClickOutside: {
-        add: () => {
-          document.addEventListener('mousedown', _self.eventOverlayClickOutside);
-          document.addEventListener('touchstart', _self.eventOverlayClickOutside);
-        },
-        remove: () => {
-          document.removeEventListener('mousedown', _self.eventOverlayClickOutside);
-          document.removeEventListener('touchstart', _self.eventOverlayClickOutside);
-        },
-      },
-      targetClick: {
-        add: () => {
-          _self.targetNode.addEventListener('click', _self.toggleVisible);
-        },
-        remove: () => {
-          _self.targetNode.removeEventListener('click', _self.toggleVisible);
-        },
-      },
-      targetHover: {
-        add: () => {
-          _self.targetNode.addEventListener('mouseenter', _self._eventMouseEnterHandler);
-          _self.targetNode.addEventListener('mouseleave', _self._eventMouseLeaveHandler);
-        },
-        remove: () => {
-          _self.targetNode.removeEventListener('mouseenter', _self._eventMouseEnterHandler);
-          _self.targetNode.removeEventListener('mouseleave', _self._eventMouseLeaveHandler);
-        },
-      },
-      overlayHover: {
-        add: () => {
-          // overlay node exist when visible equal true
-          _self.overlayRef && _self.overlayRef.current && _self.overlayRef.current.addEventListener('mouseenter', _self._eventMouseEnterOverlayHandler);
-          _self.overlayRef && _self.overlayRef.current &&  _self.overlayRef.current.addEventListener('mouseleave', _self._eventMouseLeaveOverlayHandler);
-        },
-        remove: () => {
-          // overlay node exist when visible equal true
-          _self.overlayRef && _self.overlayRef.current && _self.overlayRef.current.removeEventListener('mouseenter', _self._eventMouseEnterOverlayHandler);
-          _self.overlayRef && _self.overlayRef.current &&  _self.overlayRef.current.removeEventListener('mouseleave', _self._eventMouseLeaveOverlayHandler);
-        },
-      },
-    };
-
-    this.addTriggerListener();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (this.isControlled && this.props.visible !== prevProps.visible) {
-      this.setVisible(this.props.visible);
-    }
-
-    if (this.state.visible !== prevState.visible) {
-      this.props.onVisibleChange(this.state.visible);
-    }
-
-    if (this.state.visible && this.state.visible !== prevState.visible) {
-      this.renderPositionOverlay();
-      this.removeTriggerListener();
-      this.addTriggerListener();
-    }
-  }
-
-  componentWillUnmount() { this.removeTriggerListener(); }
-
-  eventOverlayClickOutside(event) {
-    if (this.overlayRef && this.overlayRef.current) {
-      if (this.targetNode.contains(event.target) || this.overlayRef.current.contains(event.target)) {
+    const listener = (event) => {
+      if (targetNode.contains(event.target) || overlayRef.current.contains(event.target)) {
         return;
       }
-      this.setVisible(false);
-    }
-  }
+      return clickOutsideHandler();
+    };
 
-  setVisible(val) { this.setState({ visible: val }); }
-  toggleVisible() { this.setState(prev => ({ ...prev, visible: !prev.visible })); }
-  setPosition(position) { this.setState({ targetPosition: position }); }
-  setPositionOverlay(position) { this.setState({ overlayPosition: position }); }
-  setOverlayHover(val) { this.setState({ isOverlayHover: val }); }
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
 
-  renderPositionOverlay() {
-    this.targetNode = this.targetNode || ReactDOM.findDOMNode(this);
-    this.targetNode && this.setPosition(getPosition(this.targetNode));
-    this.overlayRef && this.overlayRef.current && this.setPositionOverlay(getPosition(this.overlayRef.current));
-  }
+    return () => {
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
+    };
+  }, [targetNode, overlayRef, clickOutsideHandler]);
 
-  addTriggerListener() {
-    if (this.state.applyHover) {
-      this._events.targetHover.add();
-      this._events.overlayHover.add();
+  // In 'hover' trigger mode, when ever user hover mouse outside of target and not hover on overlay, close overlay
+  useEffect(() => {
+    if (!targetNode) {
+      return f => f;
     }
 
-    if (this.state.applyClick) {
-      this._events.targetClick.add();
+    let timer = null;
+    let timer2 = null;
+
+    // cheat isOverlayHover for life cycle performance by using setIsOverlayHover
+    const _eventMouseLeaveHandler = () => {
+      timer = setTimeout(() => {
+        setIsOverlayHover(prev => {
+          // if user still hover overlay after leave target, do nothing
+          if (prev) {
+            return prev;
+          }
+
+          setVisible(false);
+          return prev;
+        });
+      }, 100);
+    };
+
+    // cheat isTargetHover for life cycle performance by using setIsOverlayHover
+    const _eventMouseLeaveOverlayHandler = () => {
+      timer2 = setTimeout(() => {
+        setIsTargetHover(prev => {
+          // if user still hover target after leave overlay, do nothing
+          if (prev) {
+            return prev;
+          }
+
+          setVisible(false);
+          return prev;
+        });
+      }, 100);
+    };
+  
+    const _eventMouseEnterHandler = () => setVisible(true);
+
+    if (applyHover) {
+      targetNode.addEventListener('mouseenter', _eventMouseEnterHandler);
+      targetNode.addEventListener('mouseleave', _eventMouseLeaveHandler);
+      overlayRef.current.addEventListener('mouseleave', _eventMouseLeaveOverlayHandler);
+
+      return () => {
+        clearTimeout(timer);
+        clearTimeout(timer2);
+        targetNode.removeEventListener('mouseenter', _eventMouseEnterHandler);
+        targetNode.removeEventListener('mouseleave', _eventMouseLeaveHandler);
+        overlayRef.current.removeEventListener('mouseleave', _eventMouseLeaveOverlayHandler);
+      };
+    }
+  }, [applyHover, overlayRef, setVisible, setIsOverlayHover, setIsTargetHover, targetNode]);
+
+  // trigger mouse
+  useEffect(() => {
+    if (!targetNode) {
+      return f => f;
     }
 
-    if (this.props.canOutsideClickClose) {
-      this._events.overlayClickOutside.add();
+    const _eventMouseEnterOverlayHandler = () => setIsOverlayHover(true);
+    const _eventMouseLeaveOverlayHandler = () => setIsOverlayHover(false);
+    const _eventMouseEnterHandler = () => setIsTargetHover(true);
+    const _eventMouseLeaveHandler = () => setIsTargetHover(false);
+
+    overlayRef.current.addEventListener('mouseenter', _eventMouseEnterOverlayHandler);
+    overlayRef.current.addEventListener('mouseleave', _eventMouseLeaveOverlayHandler);
+    targetNode.addEventListener('mouseenter', _eventMouseEnterHandler);
+    targetNode.addEventListener('mouseleave', _eventMouseLeaveHandler);
+
+    return () => {
+      overlayRef.current.removeEventListener('mouseenter', _eventMouseEnterOverlayHandler);
+      overlayRef.current.removeEventListener('mouseleave', _eventMouseLeaveOverlayHandler);
+      targetNode.removeEventListener('mouseenter', _eventMouseEnterHandler);
+      targetNode.removeEventListener('mouseleave', _eventMouseLeaveHandler);
     }
-  }
+  }, [overlayRef, setIsOverlayHover, setIsTargetHover, targetNode]);
 
-  removeTriggerListener() {
-    if (this.state.applyHover) {
-      this._events.targetHover.remove();
-      this._events.overlayHover.remove();
+  // In 'click' trigger mode, when ever user click on taget, toogle overlay
+  useEffect(() => {
+    if (!targetNode) {
+      return f => f;
     }
 
-    if (this.state.applyClick) {
-      this._events.targetClick.remove();
+    const _eventClickHandler = () => setVisible(prev => !prev);
+
+    if (applyClick) {
+      targetNode.addEventListener('click', _eventClickHandler);
+
+      return () => {
+        targetNode.removeEventListener('mouseenter', _eventClickHandler);
+      };
+    }
+  }, [applyClick, setVisible, targetNode]);
+
+  const [targetPosition, setTargetPosition] = useState({
+    pageX: 0,
+    pageY: 0,
+    clientHeight: 0,
+    clientWidth: 0,
+  });
+  const [overlayPosition, setOverlayPosition] = useState({
+    pageX: 0,
+    pageY: 0,
+    clientHeight: 0,
+    clientWidth: 0,
+  });
+
+  useEffect(() => {
+    if (!targetNode) {
+      return f => f;
+    }
+    setTargetPosition(getPosition(targetNode));
+  }, [targetNode]);
+
+  useEffect(() => {
+    if (!visible) {
+      return f => f;
     }
 
-    if (this.props.canOutsideClickClose) {
-      this._events.overlayClickOutside.remove();
-    }
-  }
+    setOverlayPosition(getPosition(overlayRef.current));
+  }, [overlayRef, visible]);
 
-  render() {
-    const { className, children, placement, arrow, overlay, overlayClass, ...otherProps } = this.props;
-    const { visible, overlayStyle } = this.state;
+  const overlayStyle = useMemo(() => renderPlacement[placement](targetPosition, overlayPosition, gap), [
+    placement,
+    gap,
+    targetPosition,
+    overlayPosition,
+  ]);
 
-    return (
-      <React.Fragment>
-        {children}
-        {visible && (
-          <Portal {...otherProps}>
-            <div
-              ref={this.overlayRef}
-              className={cn('rc-overlay rc-overlay-portal', mPlacements[placement], { '--hidden': !visible, '--arrow': arrow }, overlayClass)}
-              style={overlayStyle}
-            >
-              {overlay}
-            </div>
-          </Portal>
-        )}
-      </React.Fragment>
-    );
-  }
-}
+  return (
+    <React.Fragment>
+      {children}
+      <Portal>
+        <div
+          ref={overlayRef}
+          className={cn(
+            'rc-overlay rc-overlay-portal',
+            mPlacements[placement],
+            {
+              '--hidden': !visible,
+              '--arrow': arrow,
+            },
+            overlayClass
+          )}
+          style={overlayStyle}
+        >
+          {visible && overlay}
+        </div>
+      </Portal>
+    </React.Fragment>
+  );
+};
 
 Overlay.displayName = 'Overlay.Portal';
 Overlay.propTypes = {
@@ -238,5 +246,4 @@ Overlay.defaultProps = {
   onVisibleChange: f => f,
 };
 
-export default Overlay;
-
+export default withFindDOMNode(Overlay);
