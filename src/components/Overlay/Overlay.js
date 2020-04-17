@@ -24,7 +24,11 @@ const Overlay = ({ absolute, ...otherProps }) => {
       {...passedProps}
     />
   ) : (
-    <PortalOverlay absolute={absolute} {...passedProps} />
+    <PortalOverlay
+      absolute={absolute}
+      placement={placement || 'top'}
+      {...passedProps}
+    />
   );
 };
 
