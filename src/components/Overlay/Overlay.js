@@ -24,7 +24,7 @@ Overlay.defaultProps = {};
 
 const lPlacements = Object.keys(mPlacements);
 
-const SupportSemanticPlacement = (props) => {
+export default (props) => {
   const placement = useSemanticProp('placement', props, lPlacements);
   const passedProps = useMemo(() => omit(props, [
     ...lPlacements,
@@ -38,5 +38,3 @@ const SupportSemanticPlacement = (props) => {
     />
   );
 };
-
-export default SupportSemanticPlacement;

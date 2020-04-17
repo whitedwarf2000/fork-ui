@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import Portal from '../Portal';
 import getPosition from '../../utils/getPosition';
-import renderPlacement from './renderPlacement';
+import renderPlacement from './render-placement.portal';
 import mPlacements from '../placements';
 
 class Overlay extends React.Component {
@@ -197,7 +197,7 @@ class Overlay extends React.Component {
   }
 
   render() {
-    const { className, children, placement, arrow, overlay, ...otherProps } = this.props;
+    const { className, children, placement, arrow, overlay, overlayClass, ...otherProps } = this.props;
     const { visible, overlayStyle } = this.state;
 
     return (
@@ -207,7 +207,7 @@ class Overlay extends React.Component {
           <Portal {...otherProps}>
             <div
               ref={this.overlayRef}
-              className={cn('rc-overlay', mPlacements[placement], { '--hidden': !visible, '--arrow': arrow }, className)}
+              className={cn('rc-overlay rc-overlay-portal', mPlacements[placement], { '--hidden': !visible, '--arrow': arrow }, overlayClass)}
               style={overlayStyle}
             >
               {overlay}
