@@ -11,7 +11,16 @@ import { omit } from '../../utils/helpers';
 import getMenuInfo from './getMenuInfo';
 import displayName from './displayName';
 
-const Menu = ({ className, children, onSelectedKeysChange, onItemClick, iconOnly, multiple, ...otherProps }) => {
+const Menu = ({
+  className,
+  children,
+  hiddenKeys,
+  onSelectedKeysChange,
+  onItemClick,
+  iconOnly,
+  multiple,
+  ...otherProps
+}) => {
   const isControlled = useMemo(() => otherProps.hasOwnProperty('selectedKeys'), [otherProps]);
   const [selectedKeys, setSelectedKeys] = useState(isControlled ? otherProps.selectedKeys : otherProps.defaultSelectedKeys);
   const [selectedSubKeys, setSelectedSubKeys] = useState([]);
@@ -56,6 +65,7 @@ const Menu = ({ className, children, onSelectedKeysChange, onItemClick, iconOnly
   const menuValue = useMemo(() => ({
     iconOnly,
     selectedKeys,
+    hiddenKeys,
     selectedSubKeys,
     selectedGroupKeys,
     onItemClick: _onItemClick,
@@ -82,12 +92,14 @@ Menu.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   selectedKeys: PropTypes.array,
+  hiddenKeys: PropTypes.array,
   defaultSelectedKeys: PropTypes.array,
   onSelectedKeysChange: PropTypes.func,
   onItemClick: PropTypes.func,
   multiple: PropTypes.bool,
 };
 Menu.defaultProps = {
+  hiddenKeys: [],
   defaultSelectedKeys: [],
   onSelectedKeysChange: f => f,
   onItemClick: f => f,

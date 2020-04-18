@@ -2,6 +2,7 @@ import { createContext } from 'react';
 
 export default createContext({
   iconOnly: false,
+  hiddenKeys: [],
   selectedKeys: [],
   selectedSubKeys: [],
   selectedGroupKeys: [],

@@ -7,8 +7,15 @@ import MenuContext from './MenuContext';
 import displayName from './displayName';
 
 const Item = ({ className, disabled, title, icon, titleOnly, _key, onItemClick }) => {
-  const { iconOnly, selectedKeys, onItemClick: contextOnItemClick } = useContext(MenuContext);
+  const {
+    iconOnly,
+    selectedKeys,
+    hiddenKeys,
+    onItemClick: contextOnItemClick,
+  } = useContext(MenuContext);
+
   const selected = useMemo(() => selectedKeys.indexOf(_key) >= 0, [selectedKeys, _key]);
+  const hidden = useMemo(() => hiddenKeys.indexOf(_key) >= 0, [hiddenKeys, _key]);
 
   const _onClick = useCallback(() => {
     if (disabled) { return; }
@@ -23,6 +30,7 @@ const Item = ({ className, disabled, title, icon, titleOnly, _key, onItemClick }
         'rc-menu-item',
         {
           '--selected': selected,
+          '--hidden': hidden,
           '--disabled': disabled,
           '--icon-only': iconOnly,
           '--title-only': titleOnly,

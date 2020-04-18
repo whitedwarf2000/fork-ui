@@ -169,7 +169,7 @@ const useOverlay = ({
   });
 
   useEffect(() => {
-    if (!targetNode || absolute) {
+    if (!visible || absolute || !targetNode) {
       return f => f;
     }
     setTargetPosition(getPosition(targetNode));
