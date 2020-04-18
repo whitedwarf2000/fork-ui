@@ -2,6 +2,8 @@ import React, { useCallback, useMemo, useState, useEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
+import Loader from '../Loader';
+
 import Item from './Item';
 import ItemGroup from './ItemGroup';
 import Sub from './Sub';
@@ -13,6 +15,8 @@ import displayName from './displayName';
 
 const Menu = ({
   className,
+  wrapperClass,
+  loading,
   children,
   hiddenKeys,
   onSelectedKeysChange,
@@ -73,11 +77,16 @@ const Menu = ({
 
   return (
     <MenuContext.Provider value={menuValue}>
-      <ul className={cn('rc-menu',{ '--icon-only': iconOnly }, className)} {...passedProps}>
-        {React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
-          _key: elm.key || idx,
-        }))}
-      </ul>
+      <div className={cn('rc-menu-wrapper', { '--loading': loading }, wrapperClass)}>
+        <div className="rc-menu-loader">
+          {iconOnly ? <Loader.Spinner /> : <Loader.Dot />}
+        </div>
+        <ul className={cn('rc-menu', { '--icon-only': iconOnly }, className)} {...passedProps}>
+          {React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
+            _key: elm.key || idx,
+          }))}
+        </ul>
+      </div>
     </MenuContext.Provider>
   );
 };
@@ -90,6 +99,7 @@ Menu.getMenuInfo = getMenuInfo;
 Menu.displayName = displayName.menu;
 Menu.propTypes = {
   className: PropTypes.string,
+  wrapperClass: PropTypes.string,
   children: PropTypes.any,
   selectedKeys: PropTypes.array,
   hiddenKeys: PropTypes.array,
@@ -97,6 +107,7 @@ Menu.propTypes = {
   onSelectedKeysChange: PropTypes.func,
   onItemClick: PropTypes.func,
   multiple: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 Menu.defaultProps = {
   hiddenKeys: [],

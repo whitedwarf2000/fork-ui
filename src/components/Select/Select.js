@@ -17,6 +17,8 @@ const Select = ({
   multiple,
   absolute,
   hiddenSelected,
+  loading,
+  onFilter,
   ...otherProps
 }) => {
   const [selectWidth, setSelectWidth] = useState();
@@ -77,6 +79,7 @@ const Select = ({
       placement={placement}
       overlay={(
         <Menu
+          loading={loading}
           multiple={multiple}
           hiddenKeys={hiddenKeys}
           selectedKeys={value}
@@ -139,6 +142,8 @@ Select.propTypes = {
   placement: PropTypes.string,
   absolute: PropTypes.bool,
   hiddenSelected: PropTypes.bool,
+  loading: PropTypes.bool,
+  onFilter: PropTypes.func,
   multiple: PropTypes.bool,
   children: PropTypes.any,
   placeholder: PropTypes.string,
@@ -146,6 +151,7 @@ Select.propTypes = {
 Select.defaultProps = {
   hiddenSelected: true,
   placement: 'bottom-left',
+  onFilter: f => f,
 };
 
 export default Select;
