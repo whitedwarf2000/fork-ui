@@ -26,12 +26,16 @@
   touch-action: manipulation;
   cursor: pointer;
   background-color: var(--rc-color--500);
-  border-bottom: 1px solid currentColor;
+  border-bottom: 1px solid transparent;
   transition: border-color 0.25s;
 
   &:disabled {
     cursor: not-allowed;
   }
+}
+
+.rc-tabs.--underline > .rc-tabs-nav .rc-tabs-nav-item {
+  border-bottom-color: currentColor;
 }
 
 .rc-tabs.--fluid {

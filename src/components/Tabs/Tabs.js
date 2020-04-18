@@ -26,7 +26,7 @@ const renderIcon = (icon, right) => {
   return icon;
 };
 
-const Tabs = ({ className, children, onChange, fluid, ...otherProps }) => {
+const Tabs = ({ className, children, onChange, fluid, underline, ...otherProps }) => {
   const tabs = useMemo(() => React.Children.map(children, tab => ({
     key: tab.key,
     title: tab.props.title,
@@ -65,12 +65,17 @@ const Tabs = ({ className, children, onChange, fluid, ...otherProps }) => {
   } ,[activeTab, isControlled]);
 
   return (
-    <div className={cn('rc-tabs', { '--fluid': fluid }, className)}>
+    <div className={cn('rc-tabs', { '--fluid': fluid, '--underline': underline }, className)}>
       <div className="rc-tabs-nav">
         {tabs.map(tab => (
           <button
             key={tab.key}
-            className={cn('rc-tabs-nav-item', { '--active': activeTab === tab.key })}
+            className={cn(
+              'rc-tabs-nav-item',
+              {
+                '--active': activeTab === tab.key,
+              }
+            )}
             disabled={tab.disabled}
             onClick={() => _onChange(tab.key)}
           >
@@ -96,6 +101,7 @@ Tabs.propTypes = {
   activeTab: PropTypes.string,
   onChange: PropTypes.func,
   fluid: PropTypes.bool,
+  underline: PropTypes.bool,
 };
 Tabs.defaultProps = {
   onChange: f => f,
