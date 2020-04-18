@@ -3,13 +3,33 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import MenuContext from './MenuContext';
 import displayName from './displayName';
+import getMenuInfo from './getMenuInfo';
+import { difference } from '../../utils/helpers';
 
 const ItemGroup = ({ className, children, title, _key }) => {
-  const { iconOnly, selectedGroupKeys } = useContext(MenuContext);
+  const {
+    iconOnly,
+    selectedGroupKeys,
+    hiddenKeys,
+  } = useContext(MenuContext);
   const selected = useMemo(() => selectedGroupKeys.indexOf(_key) >= 0, [selectedGroupKeys, _key]);
+  const hidden = useMemo(() => {
+    const items = Object.keys(getMenuInfo(children).items);
+    return !difference(items, hiddenKeys).length;
+  }, [hiddenKeys, children]);
 
   return (
-    <li className={cn('rc-menu-item-group', { '--icon-only': iconOnly, '--selected': selected }, className)}>
+    <li
+      className={cn(
+        'rc-menu-item-group',
+        {
+          '--icon-only': iconOnly,
+          '--selected': selected,
+          '--hidden': hidden,
+        },
+        className
+      )
+    }>
       <div className="rc-menu-item-group-title"><span>{title}</span></div>
       <ul className="rc-menu-item-group-list">
         {React.Children.map(children, (elm, idx) => React.cloneElement(elm, {

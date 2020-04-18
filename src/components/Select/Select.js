@@ -9,7 +9,16 @@ import Chip from '../Chip';
 
 import SingleValue from './SingleValue';
 
-const Select = ({ className, children, placement, placeholder, multiple, absolute, ...otherProps }) => {
+const Select = ({
+  className,
+  children,
+  placement,
+  placeholder,
+  multiple,
+  absolute,
+  hiddenSelected,
+  ...otherProps
+}) => {
   const [selectWidth, setSelectWidth] = useState();
   const [isDrop, setIsDrop] = useState(false);
   const [value, setValue] = useState([]);
@@ -55,6 +64,8 @@ const Select = ({ className, children, placement, placeholder, multiple, absolut
     }
   }, [setValue]);
 
+  const hiddenKeys = useMemo(() => hiddenSelected ? value : [], [value, hiddenSelected]);
+
   return (
     <Overlay
       className="rc-select-absolute"
@@ -63,10 +74,11 @@ const Select = ({ className, children, placement, placeholder, multiple, absolut
       onVisibleChange={onVisibleChange}
       canOutsideClickClose
       trigger={[]}
-      bottomLeft
+      placement={placement}
       overlay={(
         <Menu
           multiple={multiple}
+          hiddenKeys={hiddenKeys}
           selectedKeys={value}
           className="rc-select-dropdown"
           style={{
@@ -126,8 +138,13 @@ Select.propTypes = {
   className: PropTypes.string,
   placement: PropTypes.string,
   absolute: PropTypes.bool,
+  hiddenSelected: PropTypes.bool,
+  multiple: PropTypes.bool,
+  children: PropTypes.any,
+  placeholder: PropTypes.string,
 };
 Select.defaultProps = {
+  hiddenSelected: true,
   placement: 'bottom-left',
 };
 

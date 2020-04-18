@@ -5,15 +5,33 @@ import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import MenuContext from './MenuContext';
 import displayName from './displayName';
+import getMenuInfo from './getMenuInfo';
+import { difference } from '../../utils/helpers';
 
 const Sub = ({ defaultExpanded, className, children, title, icon, _key }) => {
-  const { iconOnly, selectedSubKeys } = useContext(MenuContext);
+  const { iconOnly, selectedSubKeys, hiddenKeys } = useContext(MenuContext);
   const selected = useMemo(() => selectedSubKeys.indexOf(_key) >= 0, [selectedSubKeys, _key]);
+  const hidden = useMemo(() => {
+    const items = Object.keys(getMenuInfo(children).items);
+    return !difference(items, hiddenKeys).length;
+  }, [hiddenKeys, children]);
+
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const toggleExpanded = useCallback(() => setIsExpanded(prev => !prev), []);
 
   return (
-    <li className={cn('rc-menu-sub', { '--expanded': isExpanded, '--icon-only': iconOnly,'--selected': selected }, className)}>
+    <li
+      className={cn(
+        'rc-menu-sub',
+        {
+          '--expanded': isExpanded,
+          '--icon-only': iconOnly,
+          '--selected': selected,
+          '--hidden': hidden,
+        },
+        className
+      )}
+    >
       <div className="rc-menu-sub-title" onClick={toggleExpanded}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {icon && <Icon name={icon} className="rc-menu-sub-title-icon" />}

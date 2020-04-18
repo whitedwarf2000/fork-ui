@@ -4,6 +4,11 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 
+  // anti --icon-only
+  &.--hidden.--hidden {
+    display: none;
+  }
+
   &.--icon-only {
     .rc-menu-item-group-title {
       display: none;

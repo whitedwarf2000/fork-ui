@@ -11,6 +11,11 @@
     }
   }
 
+  // anti --icon-only
+  &.--hidden.--hidden {
+    display: none;
+  }
+
   &.--icon-only {
     .rc-menu-sub-title {
       justify-content: center;

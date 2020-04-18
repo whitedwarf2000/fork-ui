@@ -26,3 +26,14 @@ export const pick = (object, paths) => {
     return rs;
   }, {});
 }
+
+export const difference = (arr = [], values = []) => {
+  const rs = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (values.indexOf(arr[i]) === -1) {
+      rs.push(arr[i]);
+    }
+  }
+
+  return rs;
+};
