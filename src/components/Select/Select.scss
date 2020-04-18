@@ -7,9 +7,16 @@
 }
 
 .rc-select-input {
-  height: $input-height;
   outline: 0 !important;
   border: 0;
+  height: 100%;
+  background-color: transparent;
+  padding-left: 1em;
+  flex-grow: 1;
+}
+
+.rc-select-input-wrapper {
+  height: $input-height;
   width: 100%;
   border-radius: $border-radius;
   padding: 0 3em 0 $input-spacing;
@@ -20,8 +27,13 @@
   align-items: center;
 }
 
-.rc-select-input-placeholder {
-  color: $placeholder-text-color;
+.rc-select-input-values {
+  display: flex;
+  align-items: center;
+
+  > *:not(:last-child) {
+    margin-right: 0.5rem;
+  }
 }
 
 .rc-select-icon {

@@ -6,6 +6,7 @@ import Icon from '../Icon';
 
 const Chip = ({
     className,
+    rounded,
     label,
     avatar,
     fontSize,
@@ -27,10 +28,26 @@ const Chip = ({
   }, [closeRef, closable]);
 
   return (
-    <div className={cn('rc-chip', { '--custom': backgroundColor }, className)} style={{ ...style, backgroundColor, color, fontSize }} onClick={_onClick} {...otherProps}>
+    <div
+      className={cn(
+        'rc-chip',
+        {
+          '--custom': backgroundColor,
+          '--rounded': rounded,
+        },
+        className
+      )}
+      style={{ ...style, backgroundColor, color, fontSize }}
+      onClick={_onClick}
+      {...otherProps}
+    >
       {avatar}
       <span className="rc-chip-label">{label}</span>
-      {closable && <div ref={closeRef} className="rc-chip-close" onClick={onRemove}><Icon name="x" /></div>}
+      {closable && (
+        <div ref={closeRef} className="rc-chip-close" onClick={onRemove}>
+          <Icon name="x" />
+        </div>
+      )}
     </div>
   );
 };
@@ -47,6 +64,7 @@ Chip.propTypes = {
   style: PropTypes.object,
   onRemove: PropTypes.func,
   onClick: PropTypes.func,
+  rounded: PropTypes.bool,
 };
 Chip.defaultProps = {
   onRemove: f => f,

@@ -1,45 +1,47 @@
-import React, { useState, useLayoutEffect, useRef, useCallback } from 'react';
+import React, { useState, useLayoutEffect, useRef, useCallback, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 import Menu from '../Menu';
 import Overlay from '../Overlay';
+import Chip from '../Chip';
 
-const Select = ({ className, children, placement, placeholder, ...otherProps }) => {
-  const [selectWidth, sestSelectWidth] = useState();
+const Select = ({ className, children, placement, placeholder, multiple, ...otherProps }) => {
+  const [selectWidth, setSelectWidth] = useState();
   const [isDrop, setIsDrop] = useState(false);
-  const [value, setValue] = useState();
-  const [_shape, _setShape] = useState({});
+  const [value, setValue] = useState([]);
+
   const ref = useRef();
 
   useLayoutEffect(() => {
-    sestSelectWidth(ref.current.clientWidth);
+    setSelectWidth(ref.current.clientWidth);
   }, []);
 
   const onToggleDrop = useCallback(() => setIsDrop(prev => !prev), []);
-  const onItemClick = useCallback((key, itemProps) => {
-    setValue(key);
-    _setShape(itemProps);
-    setIsDrop(false);
-  }, []);
+  const onItemClick = useCallback((key) => {
+    if (!multiple) {
+      return setValue([key]);
+    }
+    return setValue((prev) => {
+      const _value = new Set(prev);
+      if (_value.has(key)) {
+        _value.delete(key);
+      } else {
+        _value.add(key);
+      }
+      return [..._value];
+    });
+  }, [multiple]);
 
   const onVisibleChange = useCallback(visible => setIsDrop(visible), []);
-
-  const renderValue = useCallback(() => {
-    if (!value) {
-      return (
-        <span className="rc-select-input-placeholder">{placeholder}</span>
-      )
-    }
-
-    return (
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        {_shape.icon && <Icon name={_shape.icon} style={{ marginRight: '0.75rem' }} />}
-        <span>{_shape.title}</span>
-      </div>
-    )
-  }, [value, _shape, placeholder]);
+  const onRemove = useCallback((keyVal) => {
+    setValue((prev) => {
+      const _value = new Set(prev);
+      _value.delete(keyVal);
+      return [..._value];
+    })
+  }, [setValue]);
 
   return (
     <Overlay
@@ -50,7 +52,8 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
       bottomLeft
       overlay={(
         <Menu
-          selectedKeys={[value]}
+          multiple={multiple}
+          selectedKeys={value}
           className="rc-select-dropdown"
           style={{
             width: selectWidth,
@@ -65,10 +68,20 @@ const Select = ({ className, children, placement, placeholder, ...otherProps }) 
         {...otherProps}
         ref={ref}
         className={cn('rc-select', { '--is-drop': isDrop }, className)}
-        onClick={onToggleDrop}
       >
-        <div className="rc-select-input">
-          {renderValue()}
+        <div className="rc-select-input-wrapper">
+          <div className="rc-select-input-values">
+            {multiple
+              ? value.map(keyVal => <Chip label={keyVal} closable onRemove={() => onRemove(keyVal)} />)
+              : value[0]
+            }
+          </div>
+          <input
+            placeholder={!value.length ? placeholder : ''}
+            value=""
+            className="rc-select-input"
+            onClick={onToggleDrop}
+          />
         </div>
         <Icon name="caret-down" className="rc-select-icon" />
       </div>

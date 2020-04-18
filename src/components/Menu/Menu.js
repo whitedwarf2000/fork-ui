@@ -15,6 +15,9 @@ const Menu = ({ className, children, onSelectedKeysChange, onItemClick, iconOnly
   const [selectedSubKeys, setSelectedSubKeys] = useState([]);
   const [selectedGroupKeys, setSelectedGroupKeys] = useState([]);
 
+  // cheat life cycle for performance
+  const __selectedKeys = useMemo(() => selectedKeys.join(','), [selectedKeys]);
+
   useMemo(() => {
     if (isControlled) {
       return setSelectedKeys(otherProps.selectedKeys);
@@ -23,7 +26,7 @@ const Menu = ({ className, children, onSelectedKeysChange, onItemClick, iconOnly
 
   useEffect(() => {
     onSelectedKeysChange(selectedKeys);
-  }, [selectedKeys]);
+  }, [__selectedKeys]);
 
   const _onItemClick = useCallback((key, itemProps) => {
     if (isControlled) {
