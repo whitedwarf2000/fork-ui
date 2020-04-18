@@ -8,6 +8,7 @@ import Sub from './Sub';
 
 import MenuContext from './MenuContext';
 import { omit } from '../../utils/helpers';
+import getMenuInfo from './getMenuInfo';
 
 const Menu = ({ className, children, onSelectedKeysChange, onItemClick, iconOnly, multiple, ...otherProps }) => {
   const isControlled = useMemo(() => otherProps.hasOwnProperty('selectedKeys'), [otherProps]);
@@ -28,9 +29,9 @@ const Menu = ({ className, children, onSelectedKeysChange, onItemClick, iconOnly
     onSelectedKeysChange(selectedKeys);
   }, [__selectedKeys]);
 
-  const _onItemClick = useCallback((key, itemProps) => {
+  const _onItemClick = useCallback((key) => {
     if (isControlled) {
-      return onItemClick(key, itemProps);
+      return onItemClick(key);
     }
 
     setSelectedKeys((prev) => {
@@ -73,6 +74,7 @@ const Menu = ({ className, children, onSelectedKeysChange, onItemClick, iconOnly
 Menu.Item = Item;
 Menu.ItemGroup = ItemGroup;
 Menu.Sub = Sub;
+Menu.getMenuInfo = getMenuInfo;
 
 Menu.displayName = 'Menu';
 Menu.propTypes = {

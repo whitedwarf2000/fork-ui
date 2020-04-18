@@ -7,6 +7,8 @@ import Menu from '../Menu';
 import Overlay from '../Overlay';
 import Chip from '../Chip';
 
+import SingleValue from './SingleValue';
+
 const Select = ({ className, children, placement, placeholder, multiple, ...otherProps }) => {
   const [selectWidth, setSelectWidth] = useState();
   const [isDrop, setIsDrop] = useState(false);
@@ -21,8 +23,10 @@ const Select = ({ className, children, placement, placeholder, multiple, ...othe
   const onToggleDrop = useCallback(() => setIsDrop(prev => !prev), []);
   const onItemClick = useCallback((key) => {
     if (!multiple) {
-      return setValue([key]);
+      setValue([key]);
+      return setIsDrop(false);
     }
+
     return setValue((prev) => {
       const _value = new Set(prev);
       if (_value.has(key)) {
@@ -32,7 +36,7 @@ const Select = ({ className, children, placement, placeholder, multiple, ...othe
       }
       return [..._value];
     });
-  }, [multiple]);
+  }, [multiple, setIsDrop, setValue]);
 
   const onVisibleChange = useCallback(visible => setIsDrop(visible), []);
   const onRemove = useCallback((keyVal) => {
@@ -41,6 +45,14 @@ const Select = ({ className, children, placement, placeholder, multiple, ...othe
       _value.delete(keyVal);
       return [..._value];
     })
+  }, [setValue]);
+
+  const items = useMemo(() => Menu.getMenuInfo(children).items, [children]);
+
+  const onInputRemove = useCallback(e => {
+    if (e.key === 'Backspace') {
+      setValue(prev => prev.filter((valKey, idx) => idx !== prev.length - 1));
+    }
   }, [setValue]);
 
   return (
@@ -72,8 +84,20 @@ const Select = ({ className, children, placement, placeholder, multiple, ...othe
         <div className="rc-select-input-wrapper">
           <div className="rc-select-input-values">
             {multiple
-              ? value.map(keyVal => <Chip label={keyVal} closable onRemove={() => onRemove(keyVal)} />)
-              : value[0]
+              ? value.map(keyVal => (
+                <Chip
+                  icon={items[keyVal].icon}
+                  label={items[keyVal].title}
+                  closable
+                  onRemove={() => onRemove(keyVal)}
+                />
+              ))
+              : (
+                <SingleValue
+                  items={items}
+                  value={value}
+                />
+              )
             }
           </div>
           <input
@@ -81,6 +105,7 @@ const Select = ({ className, children, placement, placeholder, multiple, ...othe
             value=""
             className="rc-select-input"
             onClick={onToggleDrop}
+            onKeyDown={onInputRemove}
           />
         </div>
         <Icon name="caret-down" className="rc-select-icon" />

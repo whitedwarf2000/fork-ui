@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -8,6 +8,7 @@ const Chip = ({
     className,
     rounded,
     label,
+    icon,
     avatar,
     fontSize,
     color,
@@ -27,6 +28,16 @@ const Chip = ({
     return onClick(e);
   }, [closeRef, closable]);
 
+  const renderedIcon = useMemo(() => {
+    if (!icon) {
+      return avatar;
+    }
+
+    return typeof icon === 'string'
+      ? <Icon name={icon} />
+      : icon;
+  }, [icon, avatar]);
+
   return (
     <div
       className={cn(
@@ -41,7 +52,7 @@ const Chip = ({
       onClick={_onClick}
       {...otherProps}
     >
-      {avatar}
+      {renderedIcon}
       <span className="rc-chip-label">{label}</span>
       {closable && (
         <div ref={closeRef} className="rc-chip-close" onClick={onRemove}>

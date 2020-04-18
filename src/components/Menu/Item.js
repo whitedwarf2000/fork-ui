@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import MenuContext from './MenuContext';
 
-const Item = ({ className, disabled, title, icon, titleOnly, _key, _groupKey, _subKey, onItemClick }) => {
+const Item = ({ className, disabled, title, icon, titleOnly, _key, onItemClick }) => {
   const { iconOnly, selectedKeys, onItemClick: contextOnItemClick } = useContext(MenuContext);
   const selected = useMemo(() => selectedKeys.indexOf(_key) >= 0, [selectedKeys, _key]);
 
@@ -13,8 +13,8 @@ const Item = ({ className, disabled, title, icon, titleOnly, _key, _groupKey, _s
     if (disabled) { return; }
     if (onItemClick) { return onItemClick(); }
 
-    return contextOnItemClick(_key, { selected, title, disabled, icon, title, titleOnly, _groupKey, _subKey });
-  }, [_key, disabled, title, onItemClick, selected, icon, titleOnly, _groupKey, _subKey]);
+    return contextOnItemClick(_key);
+  }, [_key, disabled, onItemClick]);
 
   return (
     <li
