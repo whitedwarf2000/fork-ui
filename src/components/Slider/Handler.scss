@@ -10,3 +10,17 @@
   top: -0.5em;
   cursor: pointer;
 }
+
+.rc-slider-handler-droplet {
+  position: absolute;
+  top: -4.5em;
+  right: -0.9em;
+  transition: opacity 0.25s;
+  opacity: 0;
+}
+
+.rc-slider-handler.--droplet {
+  .rc-slider-handler-droplet {
+    opacity: 1;
+  }
+}

@@ -83,7 +83,7 @@ const Slider = ({ className, min, max, onChange, ...otherProps }) => {
             width: `${percent * 100}%`
           }}
         >
-          <Handler ref={handlerRef} />
+          <Handler ref={handlerRef} value={value} />
         </div>
       </div>
     </div>
