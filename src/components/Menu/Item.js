@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 import MenuContext from './MenuContext';
+import displayName from './displayName';
 
 const Item = ({ className, disabled, title, icon, titleOnly, _key, onItemClick }) => {
   const { iconOnly, selectedKeys, onItemClick: contextOnItemClick } = useContext(MenuContext);
@@ -37,7 +38,7 @@ const Item = ({ className, disabled, title, icon, titleOnly, _key, onItemClick }
   );
 };
 
-Item.displayName = 'Menu.Item';
+Item.displayName = displayName.item;
 Item.propTypes = {
   className: PropTypes.string,
   onItemClick: PropTypes.func, // not set default

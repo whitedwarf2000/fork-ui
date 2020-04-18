@@ -2,6 +2,7 @@ import React, { useContext, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import MenuContext from './MenuContext';
+import displayName from './displayName';
 
 const ItemGroup = ({ className, children, title, _key }) => {
   const { iconOnly, selectedGroupKeys } = useContext(MenuContext);
@@ -20,7 +21,7 @@ const ItemGroup = ({ className, children, title, _key }) => {
   );
 };
 
-ItemGroup.displayName = 'Menu.ItemGroup';
+ItemGroup.displayName = displayName.group;
 ItemGroup.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 import MenuContext from './MenuContext';
+import displayName from './displayName';
 
 const Sub = ({ defaultExpanded, className, children, title, icon, _key }) => {
   const { iconOnly, selectedSubKeys } = useContext(MenuContext);
@@ -31,7 +32,7 @@ const Sub = ({ defaultExpanded, className, children, title, icon, _key }) => {
   );
 };
 
-Sub.displayName = 'Menu.Sub';
+Sub.displayName = displayName.sub;
 Sub.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,

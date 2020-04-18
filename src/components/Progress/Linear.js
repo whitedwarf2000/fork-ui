@@ -2,27 +2,29 @@ import React, { useState, useEffect, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const LinearProgress = ({ className, percent, noText, bottom }) => {
+import Droplet from '../Droplet';
+
+const LinearProgress = ({ className, percent, droplet }) => {
   const [textVisible, setTextVisible] = useState(true);
 
   useEffect(() => {
-    if (!noText && textVisible) {
+    if (droplet && textVisible) {
       setTextVisible(true);
       const timer = setTimeout(() => setTextVisible(false), 3000);
       return () => clearTimeout(timer);
     }
-  }, [noText, textVisible]);
+  }, [droplet, textVisible]);
 
   useEffect(() => {
-    if (!noText) {
+    if (droplet) {
       setTextVisible(true);
     }
-  }, [percent, noText]);
+  }, [percent, droplet]);
 
   const onMouseEnter = useCallback(() => setTextVisible(true), []);
 
   return (
-    <div className={cn('rc-linear-progress', { '--bottom': bottom }, className)} onMouseEnter={onMouseEnter}>
+    <div className={cn('rc-linear-progress', className)} onMouseEnter={onMouseEnter}>
       <div className="rc-linear-progress-rail">
         <div
           className="rc-linear-progress-rail-percent"
@@ -30,11 +32,11 @@ const LinearProgress = ({ className, percent, noText, bottom }) => {
             width: `${percent * 100}%`
           }}
         >
-          {!noText && (
-            <div className={cn('rc-linear-progress-percent-text', { '--hidden': !textVisible } )}>
+          {droplet && (
+            <Droplet className={cn('rc-linear-progress-droplet', { '--hidden': !textVisible })}>
               {Math.floor((percent + Number.EPSILON) * 100 )}
               <span>%</span>
-            </div>
+            </Droplet>
           )}
         </div>
       </div>
@@ -46,10 +48,10 @@ LinearProgress.displayName = 'Progress.Linear';
 LinearProgress.propTypes = {
   className: PropTypes.string,
   percent: PropTypes.number,
-  noText: PropTypes.bool,
-  bottom: PropTypes.bool,
+  droplet: PropTypes.bool,
 };
 LinearProgress.defaultProps = {
+  droplet: true,
   percent: 0,
 };
 

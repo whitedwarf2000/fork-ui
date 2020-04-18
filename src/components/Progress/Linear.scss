@@ -6,23 +6,6 @@
   padding: 2rem 0;
 }
 
-.rc-linear-progress.--bottom {
-  .rc-linear-progress-percent-text {
-    top: unset;
-    bottom: -4rem;
-
-    &:after {
-      bottom: unset;
-      top: 0;
-      transform: translate(-50%, -100%);
-      border-top-color: transparent;
-      border-bottom-color: var(--rc-color--200);
-      border-left-color: transparent;
-      border-right-color: transparent;
-    }
-  }
-}
-
 .rc-linear-progress-rail {
   height: 0.3rem;
   width: 100%;
@@ -41,36 +24,15 @@
   transition: width 0.25s;
 }
 
-.rc-linear-progress-percent-text {
+.rc-linear-progress-droplet {
   position: absolute;
-  top: -4rem;
+  top: -4.5rem;
   right: -1.5rem;
   width: 3rem;
   height: 3rem;
-  background-color: var(--rc-color--200);
-  border-radius: 0.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: opacity 0.25s;
-
-  &:after {
-    content: " ";
-    width: 1em;
-    height: 1em;
-    box-sizing: border-box;
-    overflow: hidden;
-    border: 0.5em solid var(--rc-color--200);
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 90%);
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-  }
 }
 
-.rc-linear-progress-percent-text.--hidden {
+.rc-linear-progress-droplet.--hidden {
   opacity: 0;
 }

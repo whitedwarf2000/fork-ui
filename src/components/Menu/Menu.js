@@ -9,6 +9,7 @@ import Sub from './Sub';
 import MenuContext from './MenuContext';
 import { omit } from '../../utils/helpers';
 import getMenuInfo from './getMenuInfo';
+import displayName from './displayName';
 
 const Menu = ({ className, children, onSelectedKeysChange, onItemClick, iconOnly, multiple, ...otherProps }) => {
   const isControlled = useMemo(() => otherProps.hasOwnProperty('selectedKeys'), [otherProps]);
@@ -76,7 +77,7 @@ Menu.ItemGroup = ItemGroup;
 Menu.Sub = Sub;
 Menu.getMenuInfo = getMenuInfo;
 
-Menu.displayName = 'Menu';
+Menu.displayName = displayName.menu;
 Menu.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,

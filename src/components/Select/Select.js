@@ -9,7 +9,7 @@ import Chip from '../Chip';
 
 import SingleValue from './SingleValue';
 
-const Select = ({ className, children, placement, placeholder, multiple, ...otherProps }) => {
+const Select = ({ className, children, placement, placeholder, multiple, absolute, ...otherProps }) => {
   const [selectWidth, setSelectWidth] = useState();
   const [isDrop, setIsDrop] = useState(false);
   const [value, setValue] = useState([]);
@@ -18,7 +18,7 @@ const Select = ({ className, children, placement, placeholder, multiple, ...othe
 
   useLayoutEffect(() => {
     setSelectWidth(ref.current.clientWidth);
-  }, []);
+  }, [isDrop]);
 
   const onToggleDrop = useCallback(() => setIsDrop(prev => !prev), []);
   const onItemClick = useCallback((key) => {
@@ -57,6 +57,8 @@ const Select = ({ className, children, placement, placeholder, multiple, ...othe
 
   return (
     <Overlay
+      className="rc-select-absolute"
+      absolute={absolute}
       visible={isDrop}
       onVisibleChange={onVisibleChange}
       canOutsideClickClose
@@ -121,6 +123,7 @@ Select.displayName = 'Select';
 Select.propTypes = {
   className: PropTypes.string,
   placement: PropTypes.string,
+  absolute: PropTypes.bool,
 };
 Select.defaultProps = {
   placement: 'bottom-left',

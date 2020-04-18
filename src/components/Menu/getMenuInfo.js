@@ -1,8 +1,6 @@
-export default function getMenuInfo(children) {
-  const itemDislayName = 'Menu.Item';
-  const groupDislayName = 'Menu.ItemGroup';
-  const subDislayName = 'Menu.Sub';
+import displayName from './displayName';
 
+export default function getMenuInfo(children) {
   const info = {
     items: {},
     groups: {},
@@ -11,19 +9,19 @@ export default function getMenuInfo(children) {
 
   function lookingItems(data) {
     for(let i = 0; i < data.length; i++) {
-      if (data[i].type.displayName === groupDislayName) {
+      if (data[i].type.displayName === displayName.group) {
         info.groups[data[i].key] = {
           key: data[i].key,
         };
       }
 
-      if (data[i].type.displayName === subDislayName) {
+      if (data[i].type.displayName === displayName.sub) {
         info.subs[data[i].key] = {
           key: data[i].key,
         };
       }
 
-      if (data[i].type.displayName === itemDislayName) {
+      if (data[i].type.displayName === displayName.item) {
         info.items[data[i].key] = {
           ...data[i].props,
           key: data[i].key,
