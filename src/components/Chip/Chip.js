@@ -56,7 +56,7 @@ const Chip = ({
       <span className="rc-chip-label">{label}</span>
       {closable && (
         <div ref={closeRef} className="rc-chip-close" onClick={onRemove}>
-          <Icon name="x" />
+          <Icon name="x" size="0.75em" />
         </div>
       )}
     </div>

@@ -173,7 +173,7 @@ const useOverlay = ({
       return f => f;
     }
     setTargetPosition(getPosition(targetNode));
-  }, [targetNode, absolute]);
+  }, [targetNode, absolute, visible]);
 
   useEffect(() => {
     if (!visible || absolute) {

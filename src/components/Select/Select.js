@@ -88,7 +88,9 @@ const Select = ({ className, children, placement, placeholder, multiple, absolut
             {multiple
               ? value.map(keyVal => (
                 <Chip
+                  key={keyVal}
                   icon={items[keyVal].icon}
+                  rounded
                   label={items[keyVal].title}
                   closable
                   onRemove={() => onRemove(keyVal)}

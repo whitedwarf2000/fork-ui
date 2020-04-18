@@ -13,16 +13,17 @@
 .rc-select-input {
   outline: 0 !important;
   border: 0;
-  height: 100%;
+  height: 3em;
   background-color: transparent;
   flex-grow: 1;
+  padding-left: 0.75em;
 }
 
 .rc-select-input-wrapper {
-  height: $input-height;
+  min-height: $input-height;
   width: 100%;
   border-radius: $border-radius;
-  padding: 0 3em 0 $input-spacing;
+  padding: 0 3em 0 0.5em;
   background-color: var(--rc-color--450);
   box-shadow: var(--rc-neu-pressed--450);
   cursor: pointer;
