@@ -7,10 +7,11 @@ const ScrollUp = () => {
 
   return (
     <Button
-      circle
+      glassed
+      size="1.5rem"
       className="rc-scroll-up"
       onClick={scrollToTop}
-      icon="home"
+      icon="arrow-narrow-up"
     />
   );
 };
