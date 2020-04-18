@@ -35,7 +35,7 @@ const Overlay = ({
         )}
         style={overlayStyle}
       >
-        {overlay}
+        {visible && overlay}
       </div>
     </div>
   );
