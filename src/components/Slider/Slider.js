@@ -54,18 +54,14 @@ const Slider = ({ className, min, max, onChange, ...otherProps }) => {
     };
   
     handlerRef.current.addEventListener('mousedown', onDraging);
-    handlerRef.current.addEventListener('mouseup', offDraging);
-    ref.current.addEventListener('mousemove', draging);
-    ref.current.addEventListener('mouseup', offDraging);
-    ref.current.addEventListener('mouseleave', offDraging);
+    document.body.addEventListener('mousemove', draging);
+    document.body.addEventListener('mouseup', offDraging);
     ref.current.addEventListener('click', clickHandler);
 
     return () => {
       handlerRef.current.removeEventListener('mousedown', onDraging);
-      handlerRef.current.removeEventListener('mouseup', offDraging);
-      ref.current.removeEventListener('mousemove', draging);
-      ref.current.removeEventListener('mouseup', offDraging);
-      ref.current.removeEventListener('mouseleave', offDraging);
+      document.body.removeEventListener('mousemove', draging);
+      document.body.removeEventListener('mouseup', offDraging);
       ref.current.removeEventListener('click', clickHandler);
     };
   } ,[max, handlerRef, ref, _onChange]);
