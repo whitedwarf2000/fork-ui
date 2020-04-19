@@ -2,40 +2,74 @@ import React, { useMemo, useEffect, useRef, useState, useCallback } from 'react'
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Handler from './Handler';
+import { isArray } from '../../utils/helpers';
 
-const Slider = ({ className, min, max, onChange, ...otherProps }) => {
+const Slider = ({
+  className,
+  range,
+  min,
+  max,
+  dots,
+  onChange,
+  ...otherProps
+}) => {
   const isControlled = useMemo(() => otherProps.hasOwnProperty('value'), [otherProps]);
-  const [value, setValue] = useState(isControlled ? otherProps.value : otherProps.defaultValue);
+  const isRange = useMemo(() => {
+    return isArray(otherProps.defaultValue);
+  }, [otherProps.defaultValue]);
 
-  const _onChange = useCallback((val) => {
-    if (isControlled) {
-      return onChange(val);
-    }
-    return setValue(val);
-  }, [isControlled, setValue, onChange]);
+  const defaultMainValue = useMemo(() => {
+    return isRange
+      ? otherProps.defaultValue[1]
+      : otherProps.defaultValue
+  }, []);
 
-  useMemo(() => {
-    if (isControlled) {
-      return setValue(otherProps.value);
-    }
+  const defaultSupportValue = useMemo(() => {
+    return isRange
+      ? otherProps.defaultValue[0]
+      : 0
+  }, []);
 
-    return onChange(value);
-  }, [isControlled, setValue, otherProps.value, value, onChange]);
+  const [mainValue, setMainValue] = useState(defaultMainValue); // MAIN
+  const [supportValue, setSupportValue] = useState(defaultSupportValue); // SUPPORT
+  const _dots = useMemo(() => [...new Set(dots)], [dots.join(',')]);
 
-  useEffect(() => {
-    if (!isControlled) {
-      onChange(value);
-    }
-  }, [value]);
+  const _onMainChange = useCallback((val) => {
+    setMainValue(val);
+  }, [setMainValue, _dots]);
+  const _onSupportChange = useCallback((val) => {
+    setSupportValue(val);
+  }, [setSupportValue]);
 
-  const handlerRef = useRef();
+  // useMemo(() => {
+  //   if (isControlled) {
+  //     return setValue(otherProps.value);
+  //   }
+
+  //   return onChange(value);
+  // }, [isControlled, setValue, otherProps.value, value, onChange]);
+
+  // useEffect(() => {
+  //   if (!isControlled) {
+  //     if (isRange) {
+  //       return onChange(value);
+  //     }
+  //     return onChange(value[0]);
+  //   }
+  // }, [value, isRange]);
+
+  const mainHandlerRef = useRef();
+  const supportHandlerRef = useRef();
   const ref = useRef();
   const railRef = useRef();
 
-  const percent = useMemo(() => value / max, [value, max]);
+  const _left = useMemo(() => supportValue / max, [supportValue, max]);
+  const _width = useMemo(() => (mainValue - supportValue) / max, [mainValue, supportValue, max]);
 
   useEffect(() => {
-    let isDraging = false;
+    let isMainDraging = false;
+    let isSupportDraging = false;
+
     const calcValue = (pageX) => {
       const { x, width } = ref.current.getBoundingClientRect();
       if (pageX - x >= width) { return max; }
@@ -44,42 +78,94 @@ const Slider = ({ className, min, max, onChange, ...otherProps }) => {
       return Math.ceil(((pageX - x) / width) * max);
     };
 
-    const onDraging = () => { isDraging = true; };
-    const offDraging = () => { isDraging = false; };
-    const clickHandler = e => _onChange(calcValue(e.pageX));
+    const onMainDraging = () => { isMainDraging = true; };
+    const onSupportDraging = () => { isSupportDraging = true; };
+
+    const offDraging = () => {
+      isMainDraging = false;
+      isSupportDraging = false;
+    };
+
+    const clickHandler = (e) => {
+      if (!isRange) {
+        return _onMainChange(calcValue(e.pageX));
+      }
+
+      const { x: xMain } = mainHandlerRef.current.getBoundingClientRect();
+      const { x: xSupport } = supportHandlerRef.current.getBoundingClientRect();
+      if (Math.abs(xMain - e.pageX) <= Math.abs(xSupport - e.pageX)) {
+        return _onMainChange(calcValue(e.pageX));
+      }
+      return _onSupportChange(calcValue(e.pageX));
+    };
 
     const draging = (e) => {
+      const isDraging = isMainDraging || isSupportDraging;
       if (!isDraging) { return; }
-      return _onChange(calcValue(e.pageX));
+      if (isMainDraging) {
+        return _onMainChange(calcValue(e.pageX));
+      }
+
+      return _onSupportChange(calcValue(e.pageX));
     };
   
-    handlerRef.current.addEventListener('mousedown', onDraging);
+    mainHandlerRef.current.addEventListener('mousedown', onMainDraging);
+    supportHandlerRef.current.addEventListener('mousedown', onSupportDraging);
     document.body.addEventListener('mousemove', draging);
     document.body.addEventListener('mouseup', offDraging);
     ref.current.addEventListener('click', clickHandler);
 
     return () => {
-      handlerRef.current.removeEventListener('mousedown', onDraging);
+      mainHandlerRef.current.removeEventListener('mousedown', onMainDraging);
+      supportHandlerRef.current.removeEventListener('mousedown', onSupportDraging);
       document.body.removeEventListener('mousemove', draging);
       document.body.removeEventListener('mouseup', offDraging);
       ref.current.removeEventListener('click', clickHandler);
     };
-  } ,[max, handlerRef, ref, _onChange]);
+  } ,[
+    max,
+    mainHandlerRef,
+    supportHandlerRef,
+    ref,
+    _onMainChange,
+    _onSupportChange,
+    isRange
+  ]);
 
   return (
     <div
       ref={ref}
-      className={cn('rc-slider', className)}
+      className={cn('rc-slider', { '--range': isRange }, className)}
       {...otherProps}
     >
       <div className="rc-slider-rail" ref={railRef}>
+        <ul className="rc-slider-rail-dots">
+          {_dots.map(val => (
+            <li
+              key={val}
+              style={{
+                left: `${(val / max) * 100}%`,
+              }}
+            />
+          ))}
+        </ul>
         <div
           className="rc-slider-rail-percent"
           style={{
-            width: `${percent * 100}%`
+            width: `${_width * 100}%`,
+            left: `${_left * 100}%`,
           }}
         >
-          <Handler ref={handlerRef} value={value} />
+          <Handler
+            className="rc-slider-handler-main"
+            ref={mainHandlerRef}
+            value={mainValue}
+          />
+          <Handler
+            className="rc-slider-handler-support"
+            ref={supportHandlerRef}
+            value={supportValue}
+          />
         </div>
       </div>
     </div>
@@ -95,12 +181,14 @@ Slider.propTypes = {
   onChange: PropTypes.func,
   defaultValue: PropTypes.number,
   value: PropTypes.number,
+  dots: PropTypes.array,
 };
 Slider.defaultProps = {
   min: 0,
   max: 100,
   defaultValue: 0,
   onChange: f => f,
+  dots: [],
 };
 
 export default Slider;
