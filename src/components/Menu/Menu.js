@@ -16,7 +16,6 @@ import displayName from './displayName';
 const Menu = ({
   className,
   wrapperClass,
-  loading,
   children,
   hiddenKeys,
   onSelectedKeysChange,
@@ -77,16 +76,11 @@ const Menu = ({
 
   return (
     <MenuContext.Provider value={menuValue}>
-      <div className={cn('rc-menu-wrapper', { '--loading': loading }, wrapperClass)}>
-        <div className="rc-menu-loader">
-          {iconOnly ? <Loader.Spinner /> : <Loader.Dot />}
-        </div>
-        <ul className={cn('rc-menu', { '--icon-only': iconOnly }, className)} {...passedProps}>
-          {React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
-            _key: elm.key || idx,
-          }))}
-        </ul>
-      </div>
+      <ul className={cn('rc-menu', { '--icon-only': iconOnly }, className)} {...passedProps}>
+        {React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
+          _key: elm.key || idx,
+        }))}
+      </ul>
     </MenuContext.Provider>
   );
 };
@@ -107,7 +101,6 @@ Menu.propTypes = {
   onSelectedKeysChange: PropTypes.func,
   onItemClick: PropTypes.func,
   multiple: PropTypes.bool,
-  loading: PropTypes.bool,
 };
 Menu.defaultProps = {
   hiddenKeys: [],

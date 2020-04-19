@@ -1,0 +1,12 @@
+.rc-upload-button {
+  position: relative;
+}
+.rc-upload-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1;
+  cursor: pointer;
+  pointer-events: none;
+}

@@ -6,6 +6,7 @@ import Icon from '../Icon';
 import Menu from '../Menu';
 import Overlay from '../Overlay';
 import Chip from '../Chip';
+import Box from '../Box';
 
 import SingleValue from './SingleValue';
 
@@ -78,19 +79,20 @@ const Select = ({
       trigger={[]}
       placement={placement}
       overlay={(
-        <Menu
-          loading={loading}
-          multiple={multiple}
-          hiddenKeys={hiddenKeys}
-          selectedKeys={value}
-          className="rc-select-dropdown"
-          style={{
-            width: selectWidth,
-          }}
-          onItemClick={onItemClick}
-        >
-          {children}
-        </Menu>
+        <Box loading={loading}>
+          <Menu
+            multiple={multiple}
+            hiddenKeys={hiddenKeys}
+            selectedKeys={value}
+            className="rc-select-dropdown"
+            style={{
+              width: selectWidth,
+            }}
+            onItemClick={onItemClick}
+          >
+            {children}
+          </Menu>
+        </Box>
       )}
     >
       <div
