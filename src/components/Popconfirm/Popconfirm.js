@@ -27,14 +27,13 @@ const Popconfirm = ({ className, onOk, onCancel, children, ...otherProps }) => {
       onVisibleChange={onVisibleChange}
       overlayClass="rc-pop-confirm"
       className={className}
+      {...otherProps}
       overlay={
         <PureConfirm
           onOk={handleOk}
           onCancel={handleCancel}
-          {...otherProps}
         />
       }
-      {...otherProps}
     >
       {children}
     </Popover>
