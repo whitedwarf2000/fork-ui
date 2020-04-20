@@ -5,8 +5,8 @@
   position: relative;
   box-sizing: border-box;
   outline: 0 !important;
-  width: 1.85em;
-  height: 1.85em;
+  width: 1.5em;
+  height: 1.5em;
   cursor: pointer;
 }
 
@@ -48,8 +48,9 @@
   background-color: var(--rc-color--450);
 }
 
-.rc-checkbox-check {
+.rc-checkbox-check.rc-checkbox-check {
   position: absolute;
+  stroke-width: 3;
   top: 50%;
   left: 50%;
   color: var(--rc-color--450);

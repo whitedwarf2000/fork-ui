@@ -4,7 +4,14 @@ import PropTypes from 'prop-types';
 import PureConfirm from '../PureConfirm';
 import Popover from '../Popover';
 
-const Popconfirm = ({ className, onOk, onCancel, children, ...otherProps }) => {
+const Popconfirm = ({
+  className,
+  onOk,
+  onCancel,
+  children,
+  title,
+  ...otherProps
+}) => {
   const [visible, seVisible] = useState(false);
 
   const close = () => seVisible(false);
@@ -25,13 +32,15 @@ const Popconfirm = ({ className, onOk, onCancel, children, ...otherProps }) => {
     <Popover
       visible={visible}
       onVisibleChange={onVisibleChange}
-      overlayClass="rc-pop-confirm"
+      overlayClass="rc-popconfirm"
       className={className}
       {...otherProps}
       overlay={
         <PureConfirm
+          className="pure-confirm--no-boxshadow"
           onOk={handleOk}
           onCancel={handleCancel}
+          title={title}
         />
       }
     >
