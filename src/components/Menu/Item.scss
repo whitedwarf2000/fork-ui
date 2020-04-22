@@ -8,7 +8,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: var(--rc-color--400);
+    color: $primary-color--500;
   }
 
   // anti --icon-only
@@ -16,9 +16,10 @@
     display: none;
   }
 
-  &.--selected {
+  &.--selected,
+  &.--selected:hover {
     background-color: $primary-color--500;
-    color: #f0f2f5;
+    color: #ffffff;
   }
 
   &.--icon-only {

@@ -6,36 +6,44 @@ import Icon from '../Icon';
 import Loader from '../Loader';
 
 import useSemanticProp from '../../hooks/useSemanticProp';
-import { omit } from '../../utils/helpers';
+import { omit, isString } from '../../utils/helpers';
 
-const mTypes = Object.freeze({
+const mColors = Object.freeze({
   primary: '--primary',
   danger: '--danger',
+  glassed: '--glassed',
 });
 
-const lTypes = Object.keys(mTypes);
+const mShapes = Object.freeze({
+  circle: '--circle',
+  rounded: '--rounded',
+});
+
+const lColors = Object.keys(mColors);
+const lShapes = Object.keys(mShapes);
 
 const Button = React.forwardRef(({
   className,
-  circle,
-  rounded,
   icon,
   pressed,
-  color,
   textColor,
   size,
   style,
-  glassed,
   children,
   loading,
   disabled,
   ...otherProps
 }, ref) => {
-  const type = useSemanticProp('type', otherProps, lTypes);
+  const shape = useSemanticProp('shape', otherProps, lShapes);
+  const color = useSemanticProp('color', otherProps, lColors);
+  const isSemanticColor = useMemo(() => !!mColors[color], [color]);
+  const isColored = useMemo(() => !isSemanticColor && color, [isSemanticColor, color]);
 
   const passedProps = useMemo(() => omit(otherProps, [
-    ...lTypes,
-    'type',
+    ...lColors,
+    ...lShapes,
+    'color',
+    'shape',
   ]), [otherProps]);
 
   return (
@@ -44,20 +52,18 @@ const Button = React.forwardRef(({
       className={cn(
         'rc-button',
         {
-          '--circle': circle,
           '--icon-button': icon,
-          '--rounded': rounded,
           '--pressed': pressed,
-          '--glassed': glassed,
-          '--colored': color,
+          '--colored': isColored,
           '--loading': loading,
         },
-        mTypes[type],
+        mShapes[shape],
+        mColors[color],
         className,
       )}
       style={{
         color: textColor,
-        backgroundColor: color,
+        backgroundColor: isColored ? color : null,
         fontSize: size,
         ...style
       }}
@@ -65,7 +71,19 @@ const Button = React.forwardRef(({
       {...passedProps}
     >
       {loading && <Loader.Spinner style={{ marginRight: '.5rem' }} />}
-      {icon ? <Icon name={icon} /> : children}
+      {(function() {
+        if (icon && isString(icon)) {
+          return (
+            <Icon name={icon} />
+          );
+        }
+
+        if (icon) {
+          return icon;
+        }
+
+        return children;
+      })()}
     </button>
   );
 });
@@ -83,7 +101,7 @@ Button.propTypes = {
   glassed: PropTypes.bool,
   style: PropTypes.object,
   primary: PropTypes.bool,
-  type: PropTypes.string,
+  shape: PropTypes.string,
   danger: PropTypes.bool,
   children: PropTypes.any,
   loading: PropTypes.bool,

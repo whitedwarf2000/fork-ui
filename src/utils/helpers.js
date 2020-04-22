@@ -3,6 +3,7 @@ export const isObject = object => typeof object === 'object' && object !== null;
 export const isUnDefined = val => typeof val === 'undefined';
 export const isNumber = number => typeof number === 'number';
 export const isNaN = number => Number.isNaN(number);
+export const isString = str => typeof str === 'string';
 
 export const omit = (object, paths) => {
   const _paths = paths.reduce((rs, prop) => {
