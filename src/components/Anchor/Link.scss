@@ -13,6 +13,6 @@
 }
 
 .rc-anchor-link.--active {
-  color: $primary-color--500;
-  border-left-color: $primary-color--500;
+  color: var(--rc-primary--500);
+  border-left-color: var(--rc-primary--500);
 }

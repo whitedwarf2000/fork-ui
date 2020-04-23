@@ -23,7 +23,7 @@
   z-index: 2;
 
   &:hover {
-    background-color: $primary-color--500;
+    background-color: var(--rc-primary--500);
   }
 }
 

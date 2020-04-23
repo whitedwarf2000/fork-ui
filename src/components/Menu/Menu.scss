@@ -3,6 +3,8 @@
 @import './ItemGroup.scss';
 @import './Sub.scss';
 
+$menu--background-color: var(--rc-color--300);
+
 .rc-menu-wrapper {
   position: relative;
 }
@@ -12,7 +14,7 @@
   overflow: hidden;
   user-select: none;
   min-width: 12em;
-  background-color: var(--rc-color--300);
+  background-color: $menu--background-color;
 }
 
 .rc-menu.--icon-only {

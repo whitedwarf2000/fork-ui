@@ -8,10 +8,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba($color: $dark--600, $alpha: 0.8);
+  background-color: rgba($color: $black--900, $alpha: 0.8);
   color: $dark-text-color;
 
   &.--arrow:after{
-    border-color: rgba($color: $dark--600, $alpha: 0.8);
+    border-color: rgba($color: $black--900, $alpha: 0.8);
   }
 }

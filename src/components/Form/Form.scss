@@ -19,7 +19,7 @@
 .rc-form-field-label.--required {
   &:after {
     content: "*";
-    color: $red-color--400;
+    color: $red--400;
     font-size: 1.25em;
     margin: 0 0.125em;
   }
@@ -33,5 +33,5 @@
 }
 
 .rc-form-field-message.--error {
-  color: $red-color--300;
+  color: $red--300;
 }

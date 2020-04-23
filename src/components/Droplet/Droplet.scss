@@ -1,7 +1,7 @@
 @import '../../style/vars.scss';
 
 .rc-droplet {
-  background-color: $primary-color--500;
+  background-color: var(--rc-primary--500);
   display: flex;
   justify-content: center;
   align-items: center;

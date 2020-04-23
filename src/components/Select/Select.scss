@@ -1,5 +1,8 @@
 @import '../../style/vars.scss';
 
+$select--background-color: var(--rc-background-color);
+$select--box-shadow: var(--rc-flat);
+
 .rc-select {
   position: relative;
   width: 100%;
@@ -24,8 +27,8 @@
   width: 100%;
   border-radius: $border-radius;
   padding: 0 3em 0 0.5em;
-  background-color: var(--rc-color--450);
-  box-shadow: var(--rc-neu-pressed--450);
+  background-color: $select--background-color;
+  box-shadow: $select--box-shadow;
   cursor: pointer;
   display: flex;
   align-items: center;

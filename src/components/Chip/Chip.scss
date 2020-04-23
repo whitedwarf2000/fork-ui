@@ -1,5 +1,9 @@
 @import '../../style/vars.scss';
 
+$chip--background-color: var(--rc-background-color);
+$chip--box-shadow: var(--rc-flat);
+$chip--hover--background-color: var(--rc-color--300);
+
 .rc-chip {
   height: 2.125em;
   padding-left: 0.35em;
@@ -10,11 +14,11 @@
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
-  background-color: var(--rc-color--400);
-  box-shadow: var(--rc-neu-flat--450);
+  background-color: $chip--background-color;
+  box-shadow: $chip--box-shadow;
 
   &:hover {
-    background-color: var(--rc-color--300);
+    background-color: $chip--hover--background-color;
   }
 
   // anti dark-mode

@@ -1,0 +1,39 @@
+@import '../vars.scss';
+
+.dark-mode {
+  color: var(--rc-text-color);
+}
+
+.dark-mode {
+  --rc-text-color: #{$dark-text-color};
+  --rc-body-background-color: #{$black--900};
+  --rc-background-color: #{$black--500};
+
+  --rc-color--900: #{$black--900};
+  --rc-color--800: #{$black--800};
+  --rc-color--700: #{$black--700};
+  --rc-color--600: #{$black--600};
+  --rc-color--500: #{$black--500};
+  --rc-color--400: #{$black--400};
+  --rc-color--300: #{$black--300};
+  --rc-color--200: #{$black--200};
+  --rc-color--100: #{$black--100};
+
+  --rc-primary--900: #{$orange--900};
+  --rc-primary--800: #{$orange--800};
+  --rc-primary--700: #{$orange--700};
+  --rc-primary--600: #{$orange--600};
+  --rc-primary--500: #{$orange--500};
+  --rc-primary--400: #{$orange--400};
+  --rc-primary--300: #{$orange--300};
+  --rc-primary--200: #{$orange--200};
+  --rc-primary--100: #{$orange--100};
+
+  --rc-flat: #{$flat-dark};
+
+  --rc-pressed: #{$pressed-dark};
+}
+
+.dark-mode {
+  --rc-button--background-color: #{$black--500};
+}

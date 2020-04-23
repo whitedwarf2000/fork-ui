@@ -1,5 +1,8 @@
 @import '../../style/vars.scss';
 
+$textarea--background-color: var(--rc-color--500);
+$textarea--box-shadow: var(--rc-pressed--500);
+
 .rc-textarea {
   min-height: $input-height;
   outline: 0 !important;
@@ -8,8 +11,8 @@
   border-radius: $border-radius;
   padding: $input-spacing;
   transition: box-shadow 0.25s;
-  background-color: var(--rc-color--450);
-  box-shadow: var(--rc-neu-pressed--450);
+  background-color: $textarea--background-color;
+  box-shadow: $textarea--box-shadow;
 
   &:disabled {
     cursor: not-allowed;

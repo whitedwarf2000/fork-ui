@@ -1,0 +1,37 @@
+@import '../vars.scss';
+
+// DEFAULT
+.light-mode {
+  color: var(--rc-text-color);
+}
+
+body,
+.light-mode {
+  --rc-text-color: #{$light-text-color};
+  --rc-body-background-color: #{$white--600};
+  --rc-background-color: #{$white--500};
+
+  --rc-color--900: #{$white--900};
+  --rc-color--800: #{$white--800};
+  --rc-color--700: #{$white--700};
+  --rc-color--600: #{$white--600};
+  --rc-color--500: #{$white--500};
+  --rc-color--400: #{$white--400};
+  --rc-color--300: #{$white--300};
+  --rc-color--200: #{$white--200};
+  --rc-color--100: #{$white--100};
+
+  --rc-primary--900: #{$blue--900};
+  --rc-primary--800: #{$blue--800};
+  --rc-primary--700: #{$blue--700};
+  --rc-primary--600: #{$blue--600};
+  --rc-primary--500: #{$blue--500};
+  --rc-primary--400: #{$blue--400};
+  --rc-primary--300: #{$blue--300};
+  --rc-primary--200: #{$blue--200};
+  --rc-primary--100: #{$blue--100};
+
+  --rc-flat: #{$flat-light};
+
+  --rc-pressed: #{$pressed-light};
+}

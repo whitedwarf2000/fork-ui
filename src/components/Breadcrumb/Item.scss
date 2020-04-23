@@ -1,8 +1,11 @@
 @import '../../style/vars.scss';
 
+$breadcrumb-item--background-color: var(--rc-background-color);
+$breadcrumb-item--hover--background-color: var(--rc-color--400);
+
 .rc-breadcrumb > .rc-breadcrumb-item:last-child {
-  color: $primary-color--500;
-  background-color: var(--rc-color--300);
+  color: var(--rc-primary--500);
+  background-color: $breadcrumb-item--hover--background-color;
 
   &:after {
     border: none;
@@ -17,10 +20,10 @@
   cursor: pointer;
   user-select: none;
   position: relative;
-  background-color: var(--rc-color--400);
+  background-color: $breadcrumb-item--background-color;
 
   &:hover {
-    background-color: var(--rc-color--300);
+    background-color: $breadcrumb-item--hover--background-color;
   }
 
   &:after {
@@ -28,8 +31,8 @@
     position: absolute;
     right: 0;
     transform: translateX(50%) rotate(45deg);
-    border-top: 1px dashed var(--rc-text-color);
-    border-right: 1px dashed var(--rc-text-color);
+    border-top: 1px dashed currentColor;
+    border-right: 1px dashed currentColor;
     height: 1.75em;
     width: 1.75em;
     background-color: inherit;

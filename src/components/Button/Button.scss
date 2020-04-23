@@ -1,5 +1,9 @@
 @import '../../style/vars.scss';
 
+$button--background-color: var(--rc-button--background-color);
+$button--box-shadow: var(--rc-flat);
+$button--pressed--box-shadow: var(--rc-pressed);
+
 .rc-button {
   display: flex;
   align-items: center;
@@ -14,12 +18,12 @@
   user-select: none;
   touch-action: manipulation;
   cursor: pointer;
-  background-color: var(--rc-color--450);
-  box-shadow: var(--rc-neu-flat--450);
+  background-color: $button--background-color;
+  box-shadow: $button--box-shadow;
 
   &:focus,
   &.--pressed {
-    box-shadow: var(--rc-neu-pressed--450);
+    box-shadow: $button--pressed--box-shadow;
   }
 
   &:disabled {
@@ -43,12 +47,12 @@
 }
 
 .rc-button.--primary {
-  background-color: $primary-color--500;
+  background-color: var(--rc-primary--500);
   color: $dark-text-color;
   box-shadow: none;
 
   &:hover {
-    background-color: $primary-color--600;
+    background-color: var(--rc-primary--600);
   }
 }
 
@@ -66,12 +70,12 @@
 }
 
 .rc-button.--danger {
-  background-color: $red-color--500;
+  background-color: $red--500;
   color: $dark-text-color;
   box-shadow: none;
 
   &:hover {
-    background-color: $red-color--600;
+    background-color: $red--600;
   }
 
   &:focus {
@@ -90,7 +94,7 @@
 
   &:hover {
     opacity: 0.9;
-    background-color: $primary-color--500;
+    background-color: var(--rc-primary--500);
   }
 }
 
