@@ -1,13 +1,9 @@
-@import '../../style/vars.scss';
-
-$pure-drawer--background-color: var(--rc-color--500);
-$pure-drawer-title--background-color: var(--rc-color--600);
-
 .rc-pure-drawer {
   position: relative;
   min-width: 30em;
-  background-color: $pure-drawer--background-color;
-  border-radius: $border-radius;
+  background-color: var(--bg);
+  box-shadow: var(--popup--shadow);
+  border-radius: var(--border-radius);
 }
 
 .rc-pure-drawer-title {
@@ -18,7 +14,9 @@ $pure-drawer-title--background-color: var(--rc-color--600);
   align-items: center;
   justify-content: space-between;
   text-transform: uppercase;
-  background-color: $pure-drawer-title--background-color;
+  background-color: var(--popup--title-bg);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 .rc-pure-drawer-content {

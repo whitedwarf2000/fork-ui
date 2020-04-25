@@ -14,13 +14,12 @@ const renderIcon = (icon, right) => {
     return (
       <Icon
         name={icon}
-        style={right ? {
-          marginLeft: '1em',
-        } : {
-          marginRight: '1em',
-        }}
+        className={cn({
+          '--icon-left': !right,
+          '--icon-right': right,
+        })}
       />
-    )
+    );
   }
 
   return icon;
@@ -101,7 +100,7 @@ const Tabs = ({ className, children, onChange, fluid, underline, uppercase, ...o
       </div>
     </div>
   );
-}
+};
 
 Tabs.Item = Item;
 

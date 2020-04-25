@@ -1,30 +1,26 @@
-@import '../../style/vars.scss';
-
-$input--background-color: var(--rc-secondary--200);
-$input--box-shadow: var(--rc-flat);
-$input--active--box-shadow: 1px 1px 1px var(--rc-primary--500), -1px -1px 1px var(--rc-primary--500);
-
 .rc-input {
-  height: $input-height;
+  height: var(--input-height);
   outline: 0 !important;
   border: 0;
   width: 100%;
-  border-radius: $border-radius;
-  padding: 0 $input-spacing;
-  // box-shadow: $input--box-shadow;
-  background-color: $input--background-color;
+  border-radius: var(--border-radius);
+  padding: 0 var(--input-spacing);
+  background-color: var(--input--bg);
   transition: box-shadow 0.25s, border-color 0.25s;
   border: 1px solid transparent;
 
-  &:disabled {
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
     cursor: not-allowed;
+    border-color: transparent;
+    background-color: var(--input--disabled-bg);
+    color: var(--input--disabled-color);
   }
 
   &:hover,
   &:focus {
-    box-shadow: none;
-    background-color: transparent;
-    border-color: var(--rc-primary--500);
+    border-color: var(--input--hover--border-color);
   }
 }
 

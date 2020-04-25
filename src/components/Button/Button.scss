@@ -1,13 +1,11 @@
-@import '../../style/vars.scss';
-
 .rc-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: $basic-height;
-  min-width: $basic-height;
-  border-radius: $border-radius;
-  background-color: var(--button--bg);
+  height: var(--basic-height);
+  min-width: var(--basic-height);
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-bg);
   padding-left: 1.25em;
   padding-right: 1.25em;
   outline: 0 !important;

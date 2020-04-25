@@ -1,11 +1,3 @@
-@import '../../style/vars.scss';
-
-$switch--background-color: var(--rc-color--400);
-$switch--checked--background-color: var(--rc-background-color);
-$switch--box-shadow: none;
-$switch--checked--box-shadow: var(--rc-pressed);
-$switch-inner--background-color: var(--rc-color--600);
-
 .rc-switch {
   display: block;
   position: relative;
@@ -14,8 +6,7 @@ $switch-inner--background-color: var(--rc-color--600);
   width: 3.75em;
   height: 2em;
   border-radius: 100em;
-  box-shadow: $switch--box-shadow;
-  background-color: $switch--background-color;
+  background-color: var(--input--bg);
   transition: background-color 0.25s, box-shadow 0.25s;
   cursor: pointer;
   display: flex;
@@ -23,11 +14,8 @@ $switch-inner--background-color: var(--rc-color--600);
 }
 
 .rc-switch.--checked {
-  box-shadow: $switch--checked--box-shadow;
-  background-color: $switch--checked--background-color;
-
   .rc-switch-inner {
-    background: var(--rc-primary--500);
+    background: var(--primary--500);
     transform: translateX(1.75em);
   }
 }
@@ -50,7 +38,7 @@ $switch-inner--background-color: var(--rc-color--600);
 }
 
 .rc-switch-inner {
-  background-color: $switch-inner--background-color;
+  background-color: #fff;
   height: 1.5em;
   width: 1.5em;
   margin: 0 0.25em;

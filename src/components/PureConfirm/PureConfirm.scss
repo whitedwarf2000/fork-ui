@@ -1,15 +1,12 @@
 @import '../../style/vars.scss';
 
-$pure-confirm--background-color: var(--rc-color--500);
-$pure-confirm-title--background-color: var(--rc-color--600);
-
 .rc-pure-confirm {
   position: relative;
   width: 33em;
   max-width: 100vw;
-  background-color: $pure-confirm--background-color;
-  border-radius: $border-radius;
-  overflow: hidden;
+  background-color: var(--bg);
+  box-shadow: var(--popup--shadow);
+  border-radius: var(--border-radius);
 }
 
 .rc-pure-confirm-title {
@@ -20,7 +17,9 @@ $pure-confirm-title--background-color: var(--rc-color--600);
   align-items: center;
   justify-content: space-between;
   text-transform: uppercase;
-  background-color: $pure-confirm-title--background-color;
+  background-color: var(--popup--title-bg);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 .rc-pure-confirm-content {
@@ -32,6 +31,10 @@ $pure-confirm-title--background-color: var(--rc-color--600);
   align-items: center;
   justify-content: flex-end;
   padding: 1em;
+
+  > .rc-button {
+    margin-left: 0.5em;
+  }
 }
 
 .pure-confirm--no-boxshadow {

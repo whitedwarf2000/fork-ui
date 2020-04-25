@@ -1,8 +1,3 @@
-@import '../../style/vars.scss';
-
-$linear-progress-rail--box-shadow: var(--rc-pressed);
-$linear-progress-rail--background-color: var(--rc-background-color);
-
 .rc-linear-progress {
   position: relative;
   width: 100%;
@@ -15,8 +10,8 @@ $linear-progress-rail--background-color: var(--rc-background-color);
   width: 100%;
   position: absolute;
   border-radius: 100em;
-  box-shadow: $linear-progress-rail--box-shadow;
-  background-color: $linear-progress-rail--background-color;
+  box-shadow: var(--pressed);
+  background-color: var(--bg);
 }
 
 .rc-linear-progress-rail-percent {
@@ -24,7 +19,7 @@ $linear-progress-rail--background-color: var(--rc-background-color);
   left: 0;
   height: 100%;
   border-radius: 100em;
-  background-color: var(--rc-primary--500);
+  background-color: var(--primary--500);
   transition: width 0.25s;
 }
 

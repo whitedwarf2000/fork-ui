@@ -1,0 +1,16 @@
+body {
+  --input-height: 3rem;
+  --input-spacing: 1.25em;
+  --content-spacing: 1em;
+  --basic-height: 2.5em;
+  --border-radius: 0.25em;
+  --border-radius-medium: 1em;
+
+  --zindex-notification: 1000;
+  --zindex-alert: 1000;
+  --zindex-modal: 1000;
+  --zindex-confirm: 1000;
+  --zindex-tooltip: 1001;
+  --zindex-drawer: 1000;
+  --zindex-overlay: 1010;
+}

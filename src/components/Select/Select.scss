@@ -1,8 +1,3 @@
-@import '../../style/vars.scss';
-
-$select--background-color: var(--rc-background-color);
-$select--box-shadow: var(--rc-flat);
-
 .rc-select {
   position: relative;
   width: 100%;
@@ -23,12 +18,13 @@ $select--box-shadow: var(--rc-flat);
 }
 
 .rc-select-input-wrapper {
-  min-height: $input-height;
+  min-height: var(--input-height);
   width: 100%;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   padding: 0 3em 0 0.5em;
-  background-color: $select--background-color;
-  box-shadow: $select--box-shadow;
+  background-color: var(--input--bg);
+  transition: box-shadow 0.25s, border-color 0.25s;
+  border: 1px solid transparent;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -57,4 +53,13 @@ $select--box-shadow: var(--rc-flat);
   .rc-select-icon {
     transform: rotate(180deg);
   }
+}
+
+.rc-select-input-wrapper:hover,
+.rc-select.--is-drop .rc-select-input-wrapper {
+  border-color: var(--input--hover--border-color);
+}
+
+.rc-select.--rounded .rc-select-input-wrapper {
+  border-radius: 100em;
 }

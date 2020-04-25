@@ -1,14 +1,7 @@
-@import '../../style/vars.scss';
-
-$panel--box-shadow: var(--rc-flat--500);
-$panel--background-color: var(--rc-color--500);
-
 .rc-panel {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2px;
-  box-shadow: $panel--box-shadow;
-  background-color: $panel--background-color;
+  background-color: var(--panel--bg);
 }
 
 .rc-panel.--disabled {
@@ -22,7 +15,7 @@ $panel--background-color: var(--rc-color--500);
   margin-bottom: 0.5rem;
 
   .rc-panel-title {
-    color: var(--rc-primary--500);
+    color: var(--primary--500);
   }
 
   .rc-panel-icon {
@@ -41,7 +34,7 @@ $panel--background-color: var(--rc-color--500);
   user-select: none;
 
   &:hover {
-    color: var(--rc-primary--500);
+    color: var(--primary--500);
   }
 }
 
@@ -56,6 +49,7 @@ $panel--background-color: var(--rc-color--500);
 .rc-panel-content {
   display: block;
   transition: height 0.25s, opacity 0.25s;
+  background-color: var(--bg);
   box-sizing: border-box;
   overflow: hidden;
 }
