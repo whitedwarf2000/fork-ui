@@ -5,7 +5,7 @@
   height: var(--basic-height);
   min-width: var(--basic-height);
   border-radius: var(--border-radius);
-  background-color: var(--secondary-bg);
+  background-color: var(--button--bg);
   padding-left: 1.25em;
   padding-right: 1.25em;
   outline: 0 !important;
@@ -58,6 +58,7 @@
 .rc-button.--primary {
   background-color: var(--primary--500);
   color: #fff;
+  box-shadow: none;
 
   &:hover,
   &:focus {
@@ -74,6 +75,7 @@
 .rc-button.--colored {
   color: #ffffff;
   opacity: 0.8;
+  box-shadow: none;
 
   &:hover,
   &:focus {
@@ -90,6 +92,7 @@
 .rc-button.--danger {
   background-color: var(--red--500);
   color: #fff;
+  box-shadow: none;
 
   &:hover,
   &:focus {
@@ -106,6 +109,7 @@
 .rc-button.--glassed {
   background-color: rgba(0, 0, 0, 0.2);
   color: #ffffff;
+  box-shadow: none;
 
   &:hover,
   &:focus {
@@ -121,6 +125,7 @@
 
 .rc-button.--transparent {
   background-color: transparent;
+  box-shadow: none;
 
   &:hover,
   &:focus {

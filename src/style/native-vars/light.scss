@@ -16,52 +16,13 @@ body {
   --primary--200: #99d3ff;
   --primary--100: #cce9ff;
 
-  --red--900: #290507;
-  --red--800: #520a0e;
-  --red--700: #7b0f15;
-  --red--600: #a4141c;
-  --red--500: #ce1a23;
-  --red--400: #d7474e;
-  --red--300: #e1757b;
-  --red--200: #eba3a7;
-  --red--100: #f5d1d3;
-
-  --green--900: #0e2204;
-  --green--800: #1d4409;
-  --green--700: #2b660e;
-  --green--600: #3a8813;
-  --green--500: #49aa18;
-  --green--400: #6dbb46;
-  --green--300: #91cc74;
-  --green--200: #b6dda2;
-  --green--100: #daeed0;
-
-  --blue--900: #001a33;
-  --blue--800: #003466;
-  --blue--700: #004e99;
-  --blue--600: #0068cc;
-  --blue--500: #0183ff;
-  --blue--400: #339bff;
-  --blue--300: #66b4ff;
-  --blue--200: #99cdff;
-  --blue--100: #cce6ff;
-
-  --orange--900: #2a1209;
-  --orange--800: #552413;
-  --orange--700: #80361d;
-  --orange--600: #ab4827;
-  --orange--500: #d65a31;
-  --orange--400: #de7a5a;
-  --orange--300: #e69c83;
-  --orange--200: #eebdac;
-  --orange--100: #f6ded5;
-
   --flat: 1px 1px 1px #bfc0c6, -1px -1px 1px #ffffff;
   --pressed: inset 1px 1px 1px #bfc0c6, inset -1px -1px 1px #ffffff;
 }
 
 /* BUTTON */
 body {
+  --button--bg: #f0f2f5;
   --button--hover-bg: rgba(0, 0, 0, 0.05);
   --button--disabled-bg: #f0f2f5;
   --button--disabled-color: #d3d6dc;
@@ -70,7 +31,6 @@ body {
 /* BASE INPUT */
 body {
   --input--bg: #f0f2f5;
-  --input--hover--border-color: #0293ff;
   --input--disabled-bg: #f0f2f5;
   --input--disabled-color: #d3d6dc;
 }
@@ -96,4 +56,15 @@ body {
 /* Avatar */
 body {
   --avatar--bg: #f0f2f5;
+}
+
+/* Slider */
+body {
+  --slider-handler--shadow: 5px 5px 20px var(--primary--100), -5px -5px 20px #fff;
+  --slider-rail--box-shadow: none;
+}
+
+/* Switch */
+body {
+  --switch-inner--bg: #fff;
 }
