@@ -1,7 +1,5 @@
 @import '../../style/vars.scss';
 
-$loader-spinner--border-color: var(--rc-color--500);
-
 @keyframes spin {
   0% {
     transform: rotate(0);
@@ -13,13 +11,13 @@ $loader-spinner--border-color: var(--rc-color--500);
 
 .rc-loader-spinner {
   display: inline-block;
-  color: var(--rc-primary--500);
+  color: var(--primary--500);
   border-radius: 100rem;
   width: 1.5em;
   height: 1.5em;
   border-width: 0.125em;
   border-style: solid;
-  border-color: $loader-spinner--border-color;
+  border-color: transparent;
   border-left-color: currentColor;
   animation: spin .5s linear infinite;
 }

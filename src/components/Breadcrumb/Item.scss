@@ -6,10 +6,6 @@ $breadcrumb-item--hover--background-color: var(--rc-color--400);
 .rc-breadcrumb > .rc-breadcrumb-item:last-child {
   color: var(--rc-primary--500);
   background-color: $breadcrumb-item--hover--background-color;
-
-  &:after {
-    border: none;
-  }
 }
 
 .rc-breadcrumb-item {
@@ -24,19 +20,6 @@ $breadcrumb-item--hover--background-color: var(--rc-color--400);
 
   &:hover {
     background-color: $breadcrumb-item--hover--background-color;
-  }
-
-  &:after {
-    content: " ";
-    position: absolute;
-    right: 0;
-    transform: translateX(50%) rotate(45deg);
-    border-top: 1px dashed currentColor;
-    border-right: 1px dashed currentColor;
-    height: 1.75em;
-    width: 1.75em;
-    background-color: inherit;
-    z-index: 1;
   }
 }
 

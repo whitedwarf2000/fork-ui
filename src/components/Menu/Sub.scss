@@ -1,7 +1,7 @@
 @import '../../style/vars.scss';
 
 $menu-sub-title--background-color: var(--rc-color--300);
-$menu-sub-list--background-color: var(--rc-color--600);
+$menu-sub-list--background-color: var(--primary--01);
 
 .rc-menu-sub {
   &.--expanded {
@@ -45,7 +45,7 @@ $menu-sub-list--background-color: var(--rc-color--600);
   background-color: $menu-sub-title--background-color;
 
   &:hover {
-    color: var(--rc-primary--500);
+    color: var(--primary--10);
   }
 }
 
