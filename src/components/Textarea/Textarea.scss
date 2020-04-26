@@ -5,7 +5,7 @@
   width: 100%;
   border-radius: var(--border-radius);
   padding: var(--input-spacing);
-  transition: box-shadow 0.25s, border-color 0.25s;
+  transition: box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
   background-color: var(--input--bg);
   border: 1px solid transparent;
 
@@ -21,6 +21,7 @@
   &:hover,
   &:focus {
     border-color: var(--primary--500);
+    background-color: var(--bg);
   }
 }
 
