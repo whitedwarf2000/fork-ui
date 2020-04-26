@@ -2,9 +2,15 @@
 
 .dark-mode {
   --text-color: #e4e6eb;
-  --body-bg: #14181d;
-  --bg: #222831;
-  --secondary-bg: #383d45;
+  --body-bg: #090e12;
+  --bg: #15202c;
+  --disabled-text-color: #171c22;
+
+  --secondary-bg--700: #090e12;
+  --secondary-bg--600: #111a24;
+  --secondary-bg: #192735;
+  --secondary-bg--400: #294158;
+  --secondary-bg--300: #324d69;
 
   --primary--900: #2a1209;
   --primary--800: #552413;
@@ -16,46 +22,49 @@
   --primary--200: #eebdac;
   --primary--100: #f6ded5;
 
-  --flat: 1px 1px 1px #0e1014, -1px -1px 1px #36404e;
-  --pressed: inset 1px 1px 1px #0e1014, inset -1px -1px 1px #36404e;
+  --flat: 1px 1px 1px #090d12, -1px -1px 1px #233546;
+  --pressed: inset 1px 1px 1px #090d12, inset -1px -1px 1px #233546;
+
+  --secondary-flat: 1px 1px 1px #0a1015, -1px -1px 1px #283e55;
+  --secondary-pressed: inset 1px 1px 1px #0a1015, inset -1px -1px 1px #283e55;
 }
 
 /* BUTTON */
 .dark-mode {
-  --button--bg: #383d45;
-  --button--hover-bg: #4e525a;
-  --button--disabled-bg: #7a7e83;
-  --button--disabled-color: #171c22;
+  --button-bg: var(--secondary-bg--400);
+  --button--hover-bg: var(--secondary-bg--300);
+  --button--disabled-bg: var(--secondary-bg--600);
+  --button--disabled-color: var(--disabled-text-color);
 }
 
 /* BASE INPUT */
 .dark-mode {
-  --input--bg: #383d45;
-  --input--disabled-bg: #222831;
-  --input--disabled-color: #d3d6dc;
+  --input--bg: var(--secondary-bg);
+  --input--disabled-bg: var(--secondary-bg--600);
+  --input--disabled-color: var(--disabled-text-color);
 }
 
 /* Popup */
 .dark-mode {
-  --popup--title-bg: #1e242c;
+  --popup--title-bg: var(--secondary-bg--600);
   --popup--shadow: none;
 }
 
 /* Collapse */
 .dark-mode {
-  --panel--bg: #1e242c;
+  --panel--bg: var(--secondary-bg);
 }
 
 /* Menu */
 .dark-mode {
-  --menu--bg: #383d45;
-  --sub-menu--bg: #4e525a;
+  --menu--bg: var(--secondary-bg);
+  --sub-menu--bg: var(--secondary-bg--600);
   --menu--shadow:  none;
 }
 
 /* Avatar */
 .dark-mode {
-  --avatar--bg: #1e242c;
+  --avatar--bg: var(--secondary-bg);
 }
 
 /* Slider */
@@ -66,5 +75,5 @@
 
 /* Switch */
 .dark-mode {
-  --switch-inner--bg: #383d45;
+  --switch-inner--bg: var(--secondary-bg--400);
 }

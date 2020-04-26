@@ -100,7 +100,12 @@ const Select = ({
         ref={ref}
         className={cn('rc-select', { '--is-drop': isDrop }, className)}
       >
-        <div className="rc-select-input-wrapper">
+        <div
+          className={cn(
+            'rc-select-input-wrapper',
+            { '--have-value': value.length}
+          )}
+        >
           <div className="rc-select-input-values">
             {multiple
               ? value.map(keyVal => (
