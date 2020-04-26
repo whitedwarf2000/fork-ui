@@ -32,7 +32,8 @@ body {
 /* BUTTON */
 body {
   --button-bg: var(--secondary-bg);
-  --button--hover-bg: rgba(0, 0, 0, 0.05);
+  --button--hover-bg: transparent;
+  --button--hover-border-color: var(--primary--500);
   --button--disabled-bg: var(--secondary-bg);
   --button--disabled-color: var(--disabled-text-color);
 }

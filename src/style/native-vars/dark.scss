@@ -33,6 +33,7 @@
 .dark-mode {
   --button-bg: var(--secondary-bg--400);
   --button--hover-bg: rgba(29, 161, 242, 0.1);
+  --button--hover-border-color: transparent;
   --button--disabled-bg: var(--secondary-bg--600);
   --button--disabled-color: var(--disabled-text-color);
 }
@@ -47,7 +48,7 @@
 /* Popup, Overlay */
 .dark-mode {
   --popup--title-bg: var(--secondary-bg--600);
-  --popup--shadow: none;
+  --popup--shadow: var(--overlay--shadow);
   --overlay--shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
 }
 
