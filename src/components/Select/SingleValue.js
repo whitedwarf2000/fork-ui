@@ -17,7 +17,7 @@ const SingleValue = ({ items, value }) => {
   }, [icon, title]);
 
   return (
-    <span>
+    <span style={{ display: 'flex', alignItems: 'center' }}>
       {renderedIcon}
       <span style={{ margin: '0 0.5em' }}>
         {title}
