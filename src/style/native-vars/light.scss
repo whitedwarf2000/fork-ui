@@ -49,7 +49,7 @@ body {
 body {
   --popup--title-bg: var(--secondary-bg);
   --popup--shadow:  none;
-  --overlay--shadow: none;
+  --overlay--shadow: 3px 3px 15px #f0f0f0, -3px -3px 15px #f0f0f0;
 }
 
 /* Collapse */

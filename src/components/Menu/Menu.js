@@ -2,8 +2,6 @@ import React, { useCallback, useMemo, useState, useEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Loader from '../Loader';
-
 import Item from './Item';
 import ItemGroup from './ItemGroup';
 import Sub from './Sub';
