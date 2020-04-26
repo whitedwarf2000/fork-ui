@@ -44,10 +44,11 @@ body {
   --input--disabled-color: var(--disabled-text-color);;
 }
 
-/* Popup */
+/* Popup, Overlay */
 body {
   --popup--title-bg: var(--secondary-bg);
   --popup--shadow:  none;
+  --overlay--shadow: none;
 }
 
 /* Collapse */

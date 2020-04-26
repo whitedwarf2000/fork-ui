@@ -64,3 +64,7 @@
 .rc-select.--rounded .rc-select-input-wrapper {
   border-radius: 100em;
 }
+
+.rc-select-dropdown {
+  box-shadow: var(--overlay--shadow);
+}
