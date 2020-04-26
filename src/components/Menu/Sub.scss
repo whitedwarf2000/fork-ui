@@ -3,10 +3,6 @@
     .rc-menu-sub-icon {
       transform: rotate(180deg);
     }
-  
-    .rc-menu-sub-list {
-      display: block;
-    }
   }
 
   // anti --icon-only
@@ -49,6 +45,6 @@
 }
 
 .rc-menu-sub-list {
-  display: none;
   background-color: var(--sub-menu--bg);
+  overflow: hidden;
 }

@@ -1,8 +1,11 @@
-import React, { useCallback, useState, useRef, useLayoutEffect } from 'react';
+import React, { useCallback, memo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import { useSpring, animated } from 'react-spring';
 
 import Icon from '../Icon';
+import useMeasure from '../../hooks/useMeasure';
+import usePrevious from '../../hooks/usePrevious';
 
 const renderIcon = (icon) => {
   if (!icon) {
@@ -21,8 +24,37 @@ const renderIcon = (icon) => {
   return icon;
 };
 
+const CollapseAnimated = memo(({ children, active }) => {
+  const previous = usePrevious(active);
+  const [bind, { height: viewHeight }] = useMeasure();
+
+  const { height, ...otherStyle } = useSpring({
+    from: {
+      height: 0,
+      opacity: 0,
+    },
+    to: {
+      height: active ? viewHeight : 0,
+      opacity: active ? 1 : 0,
+    },
+  });
+
+  return (
+    <animated.div
+      className="rc-panel-content"
+      style={{
+        ...otherStyle,
+        height: active && previous === active ? 'auto' : height,
+      }}
+    >
+      <div className="rc-panel-box" {...bind}>
+        {children}
+      </div>
+    </animated.div>
+  )
+});
+
 const Item = ({ className, title, children, active, onClick, disabled, icon, ...otherProps }) => {
-  const [contentStyle, contentRef] = useCollapseStyle(active);
   const _toggleActive = useCallback((e) => {
     if (disabled) {
       return;
@@ -42,15 +74,9 @@ const Item = ({ className, title, children, active, onClick, disabled, icon, ...
         </div>
         <Icon className="rc-panel-icon" name="caret-down" />
       </div>
-      <div
-        ref={contentRef}
-        className="rc-panel-content"
-        style={contentStyle}
-      >
-        <div className="rc-panel-box">
-          {children}
-        </div>
-      </div>
+      <CollapseAnimated active={active}>
+        {children}
+      </CollapseAnimated>
     </div>
   );
 };
@@ -67,64 +93,3 @@ Item.propTypes = {
 Item.defaultProps = {};
 
 export default Item;
-
-/**
- * 
- * When active style = { height: 0, opacity: 0 } => {height: contentHeight, opacity: 1 } => {}
- * When inactive style = { height: contentHeight, opacity: 1 } => {  height: 0, opacity: 0 } => { display: 'none' }
- * 
- */
-function useCollapseStyle(active) {
-  const [style, setStyle] = useState({});
-  const [contentHeight, setContentHeight] = useState(0);
-  const contentRef = useRef();
-
-  useLayoutEffect(() => {
-    if (contentRef.current) {
-      setContentHeight(contentRef.current.clientHeight);
-    }
-  }, [contentHeight]);
-
-  useLayoutEffect(() => {
-    let begin;
-    let next;
-    let end;
-
-    if (active) {
-      begin = setTimeout(() => setStyle({
-        opacity: 0,
-        height: 0,
-      }));
-
-      next = setTimeout(() => setStyle({
-        opacity: 1,
-        height: contentHeight,
-      }), 100);
-    
-      end = setTimeout(() => setStyle({}), 600);
-    } else {
-      begin = setTimeout(() => setStyle({
-        opacity: 1,
-        height: contentHeight,
-      }));
-    
-      next = setTimeout(() => setStyle({
-        opacity: 1,
-        height: 0,
-      }), 100);
-    
-      end = setTimeout(() => setStyle({
-        display: 'none',
-      }), 600);
-    }
-
-    return () => {
-      clearTimeout(begin);
-      clearTimeout(next);
-      clearTimeout(end);
-    }
-  }
-  , [active, contentHeight]);
-
-  return [style, contentRef];
-}

@@ -47,11 +47,10 @@
 }
 
 .rc-panel-content {
-  display: block;
-  transition: height 0.25s, opacity 0.25s;
   background-color: var(--bg);
   box-sizing: border-box;
   overflow: hidden;
+  display: block;
 }
 
 .rc-panel-box {
