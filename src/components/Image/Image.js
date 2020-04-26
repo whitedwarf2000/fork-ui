@@ -9,59 +9,136 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Skeleton from '../Skeleton';
+import NativeImage from './Native';
+import { omit } from '../../utils/helpers';
+import useSemanticProp from '../../hooks/useSemanticProp';
 
-const Image = ({ className, lazyLoad, w, h, src, clientElement, ...otherProps }) => {
+const mObjectFit = Object.freeze({
+  cover: '--cover',
+  contain: '--contain',
+  fill: '--fill',
+  none: '--none',
+  blur: '--blur',
+  scaleDown: '--scale-down',
+});
+
+const lObjectFit = Object.keys(mObjectFit);
+
+const Image = ({ className, lazyload, w, h, src, clientElement, ...otherProps }) => {
   const ref = useRef();
-  const [injectSrc, setInjectSrc] = useState(lazyLoad ? {} : { src });
+  const [natural, setNatural] = useState({ naturalWidth: 0, naturalHeight: 0 }); // real size of image
+  const [injectSrc, setInjectSrc] = useState(lazyload ? {} : { src });
 
   const isLoaded = useMemo(() => !!injectSrc.src, [injectSrc.src]);
 
-  const isInViewPort = useCallback(imgRect => {
-    const { top, left } = imgRect;
+  const isInViewPort = useCallback(() => {
+    const { top, left } = ref.current.getBoundingClientRect();
 
     return (
       top >= 0 &&
       top < (window.innerHeight || clientElement.clientHeight) &&
       left >= 0
     );
-  }, []);
+  }, [ref, clientElement]);
 
-  const handleScroll = useCallback(() => {
-    const imgRect = ref.current.getBoundingClientRect();
-    if (!isLoaded && isInViewPort(imgRect)) {
+  const displayImage = useCallback(() => {
+    if (!injectSrc.src && isInViewPort()) {
       setInjectSrc({ src });
     }
-  }, [ref]);
+  }, [injectSrc, isInViewPort, setInjectSrc, src]);
+
+  // Init
+  useEffect(() => {
+    displayImage();
+  } , []);
 
   useEffect(() => {
-    if (lazyLoad) {
+    if (isLoaded) {
+      setNatural({
+        naturalWidth: ref.current.naturalWidth,
+        naturalHeight: ref.current.naturalHeight,
+      });
+    }
+  }, [isLoaded, setNatural, ref]);
+
+  // Tracking scroll
+  useEffect(() => {
+    if (lazyload) {
+      const handleScroll = () => displayImage();
       window.addEventListener('scroll', handleScroll);
 
       return () => window.removeEventListener('scroll', handleScroll);
     }
-  }, [handleScroll, lazyLoad]);
+  }, [displayImage]);
+
+  const objectFit = useSemanticProp('objectFit', otherProps, [
+    'cover',
+    'contain',
+    'fill',
+    'none',
+    'scaleDown',
+    'blur',
+  ]);
+
+  const passedProps = useMemo(() => omit(otherProps, [
+    'width',
+    'height',
+    'objectFit',
+    ...lObjectFit,
+  ]), [otherProps]);
 
   return (
-    <div className={cn('rc-image', className)} style={{ width: w, height: h }}>
-      {!isLoaded && <Skeleton w={w || '100%'} h={h || '100%'} />}
-      <img
+    <div
+      className={cn('rc-image', className)}
+      style={{
+        width: w,
+        height: h,
+      }}
+    >
+      {objectFit === 'blur' && (
+        <div
+          className="rc-image-blur"
+          style={{
+            backgroundImage: isLoaded ? `url(${src})` : null,
+          }}
+        />
+      )}
+      {!isLoaded && (
+        <Skeleton className="rc-image-skeleton" />
+      )}
+      <NativeImage
         data-src={src}
-        className={cn({ '--loaded': isLoaded })}
+        className={cn(
+          'rc-image-native --main',
+          {
+            '--loaded': isLoaded,
+          },
+          mObjectFit[objectFit] || '--cover',
+        )}
         ref={ref}
+        onCompleted={f => f}
         {...injectSrc}
-        {...otherProps}
+        {...passedProps}
       />
     </div>
   );
 };
 
+Image.Native = NativeImage;
 Image.displayName = 'Image';
 Image.propTypes = {
   className: PropTypes.string,
-  lazyLoad: PropTypes.bool,
+  lazyload: PropTypes.bool,
   w: PropTypes.string,
   h: PropTypes.string,
   src: PropTypes.string,
+  objectFit: PropTypes.string,
+  cover: PropTypes.bool,
+  contain: PropTypes.bool,
+  none: PropTypes.bool,
+  scaleDown: PropTypes.bool,
+  none: PropTypes.bool,
+  blur: PropTypes.bool,
   clientElement: PropTypes.any,
 };
 Image.defaultProps = {
