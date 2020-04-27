@@ -1,48 +1,13 @@
-import React, { useState, useCallback, useContext, useMemo, memo } from 'react';
+import React, { useState, useCallback, useContext, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { useSpring, animated } from 'react-spring';
 
 import Icon from '../Icon';
 import MenuContext from './MenuContext';
 import displayName from './displayName';
 import getMenuInfo from './getMenuInfo';
 import { difference } from '../../utils/helpers';
-import useMeasure from '../../hooks/useMeasure';
-import usePrevious from '../../hooks/usePrevious';
-
-const List = memo(({ children, isExpanded, _key }) => {
-  const previous = usePrevious(isExpanded);
-  const [bind, { height: viewHeight }] = useMeasure();
-
-  const { height, ...otherStyle } = useSpring({
-    from: {
-      height: 0,
-      opacity: 0,
-    },
-    to: {
-      height: isExpanded ? viewHeight : 0,
-      opacity: isExpanded ? 1 : 0,
-    },
-  });
-
-  return (
-    <animated.div
-      className="rc-menu-sub-list"
-      style={{
-        ...otherStyle,
-        height: isExpanded && previous === isExpanded ? 'auto' : height,
-      }}
-    >
-      <ul {...bind}>
-        {React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
-          _subKey: _key,
-          _key: elm.hasOwnProperty('key') ? elm.key : idx,
-        }))}
-      </ul>
-    </animated.div>
-  );
-});
+import Animated from '../Animated';
 
 const Sub = ({ defaultExpanded, className, children, title, icon, _key }) => {
   const { iconOnly, selectedSubKeys, hiddenKeys } = useContext(MenuContext);
@@ -54,6 +19,13 @@ const Sub = ({ defaultExpanded, className, children, title, icon, _key }) => {
 
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const toggleExpanded = useCallback(() => setIsExpanded(prev => !prev), []);
+
+  const customChildren = useMemo(() => {
+    return React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
+      _subKey: _key,
+      _key: elm.hasOwnProperty('key') ? elm.key : idx,
+    }));
+  }, [children, _key]);
 
   return (
     <li
@@ -76,9 +48,11 @@ const Sub = ({ defaultExpanded, className, children, title, icon, _key }) => {
         </div>
         <Icon name="caret-down" className="rc-menu-sub-icon" />
       </div>
-      <List isExpanded={isExpanded} _key={_key}>
-        {children}
-      </List>
+      <Animated.Expand className="rc-menu-sub-list" isExpanded={isExpanded}>
+        <ul>
+          {customChildren}
+        </ul>
+      </Animated.Expand>
     </li>
   );
 };

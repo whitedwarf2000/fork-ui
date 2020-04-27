@@ -72,12 +72,16 @@ const Menu = ({
     onItemClick: _onItemClick,
   }), [iconOnly, selectedKeys, _onItemClick, selectedSubKeys, selectedGroupKeys]);
 
+  const customChildren = useMemo(() => {
+    return React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
+      _key: elm.key || idx,
+    }));
+  }, [children]);
+
   return (
     <MenuContext.Provider value={menuValue}>
       <ul className={cn('rc-menu', { '--icon-only': iconOnly }, className)} {...passedProps}>
-        {React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
-          _key: elm.key || idx,
-        }))}
+        {customChildren}
       </ul>
     </MenuContext.Provider>
   );

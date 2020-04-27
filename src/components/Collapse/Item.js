@@ -1,11 +1,9 @@
-import React, { useCallback, memo } from 'react';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { useSpring, animated } from 'react-spring';
 
 import Icon from '../Icon';
-import useMeasure from '../../hooks/useMeasure';
-import usePrevious from '../../hooks/usePrevious';
+import Animated from '../Animated';
 
 const renderIcon = (icon) => {
   if (!icon) {
@@ -23,36 +21,6 @@ const renderIcon = (icon) => {
 
   return icon;
 };
-
-const CollapseAnimated = memo(({ children, active }) => {
-  const previous = usePrevious(active);
-  const [bind, { height: viewHeight }] = useMeasure();
-
-  const { height, ...otherStyle } = useSpring({
-    from: {
-      height: 0,
-      opacity: 0,
-    },
-    to: {
-      height: active ? viewHeight : 0,
-      opacity: active ? 1 : 0,
-    },
-  });
-
-  return (
-    <animated.div
-      className="rc-panel-content"
-      style={{
-        ...otherStyle,
-        height: active && previous === active ? 'auto' : height,
-      }}
-    >
-      <div className="rc-panel-box" {...bind}>
-        {children}
-      </div>
-    </animated.div>
-  )
-});
 
 const Item = ({ className, title, children, active, onClick, disabled, icon, ...otherProps }) => {
   const _toggleActive = useCallback((e) => {
@@ -74,9 +42,11 @@ const Item = ({ className, title, children, active, onClick, disabled, icon, ...
         </div>
         <Icon className="rc-panel-icon" name="caret-down" />
       </div>
-      <CollapseAnimated active={active}>
-        {children}
-      </CollapseAnimated>
+      <Animated.Expand isExpanded={active} className="rc-panel-content">
+        <div className="rc-panel-box">
+          {children}
+        </div>
+      </Animated.Expand>
     </div>
   );
 };

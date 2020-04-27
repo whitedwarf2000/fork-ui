@@ -12,11 +12,19 @@ const ItemGroup = ({ className, children, title, _key }) => {
     selectedGroupKeys,
     hiddenKeys,
   } = useContext(MenuContext);
+
   const selected = useMemo(() => selectedGroupKeys.indexOf(_key) >= 0, [selectedGroupKeys, _key]);
   const hidden = useMemo(() => {
     const items = Object.keys(getMenuInfo(children).items);
     return !difference(items, hiddenKeys).length;
   }, [hiddenKeys, children]);
+
+  const customChildren = useMemo(() => {
+    return React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
+      _groupKey: _key,
+      _key: elm.hasOwnProperty('key') ? elm.key : idx,
+    }));
+  }, [children, _key]);
 
   return (
     <li
@@ -27,15 +35,12 @@ const ItemGroup = ({ className, children, title, _key }) => {
           '--selected': selected,
           '--hidden': hidden,
         },
-        className
+        className,
       )
     }>
       <div className="rc-menu-item-group-title"><span>{title}</span></div>
       <ul className="rc-menu-item-group-list">
-        {React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
-          _groupKey: _key,
-          _key: elm.hasOwnProperty('key') ? elm.key : idx,
-        }))}
+        {customChildren}
       </ul>
     </li>
   );

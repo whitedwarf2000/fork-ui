@@ -32,7 +32,7 @@ const Modal = ({ className, onClose, open, canOutsideClickClose, ...otherProps }
           >
             <PureModal
               className={className}
-              modalRef={ref}
+              ref={ref}
               onCloseClick={onClose}
               {...otherProps}
             />
