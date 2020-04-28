@@ -2,6 +2,7 @@ export { default as helper } from './helper';
 
 export { default as Alert } from './Alert';
 export { default as Affix } from './Affix';
+export { default as Animated } from './Animated';
 export { default as Anchor } from './Anchor';
 export { default as Avatar } from './Avatar';
 export { default as Box } from './Box';

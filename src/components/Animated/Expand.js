@@ -1,73 +1,80 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import cn from 'classnames';
-import ReactDOM from 'react-dom';
 import { useSpring, animated } from 'react-spring';
 
+import withMeansure from '../../HOCs/withMeansure';
 import usePrevious from '../../hooks/usePrevious';
-import ResizeObserver from 'resize-observer-polyfill';
 
-const withMeansure = (WrappedComponent) => {
-  class Meansure extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        meansure: {
-          left: 0,
-          top: 0,
-          width: 0,
-          height: 0,
-        },
+const mTransition = {
+  horizontal: {
+    from() {
+      return ({
+        width: 0,
+        opacity: 0.9,
+      });
+    },
+    to(isExpanded, width) {
+      return {
+        width: isExpanded ? width : 0,
+        opacity: 1,
       };
-    }
-  
-    componentDidMount() {
-      this.node = ReactDOM.findDOMNode(this).firstElementChild;
-      this.ro =  new ResizeObserver(([entry]) => this.setState({ meansure: entry.contentRect }));
-  
-      if (this.node) {
-        this.ro.observe(this.node);
-      }
-    }
-  
-    componentWillUnmount() {
-      this.ro.disconnect(this.node);
-    }
-  
-    render() {
-
-      return (
-        <WrappedComponent
-          {...this.props}
-          meansure={this.state.meansure}
-        />
-      );
-    }
+    },
+  },
+  vertical: {
+    from() {
+      return ({
+        height: 0,
+        opacity: 0.5,
+      });
+    },
+    to(isExpanded, height) {
+      return {
+        height: isExpanded ? height : 0,
+        opacity: 1,
+      };
+    },
   }
+};
 
-  return Meansure;
-}
-
-const Expand = memo(({ children, isExpanded, meansure, className }) => {
+const Expand = memo(({ children, isExpanded, meansure, horizontal, className, animatedRef }) => {
   const previous = usePrevious(isExpanded);
 
-  const { height, ...otherStyle } = useSpring({
-    from: {
-      height: 0,
-      opacity: 0,
-    },
-    to: {
-      height: isExpanded ? meansure.height : 0,
-      opacity: isExpanded ? 1 : 0,
-    },
-  });
+  const spring = useMemo(() => {
+    if (horizontal) {
+      return {
+        from: mTransition.horizontal.from(),
+        to: mTransition.horizontal.to(isExpanded, meansure.width),
+      };
+    }
+
+    return {
+      from: mTransition.vertical.from(),
+      to: mTransition.vertical.to(isExpanded, meansure.height),
+    };
+  }, [horizontal, isExpanded, meansure.width, meansure.height]);
+
+  const { height, ...otherStyle } = useSpring(spring);
+
+  const passedStyle = useMemo(() => {
+    if (horizontal) {
+      return {};
+    }
+
+    if (isExpanded && previous === isExpanded) {
+      return  { height: 'auto' };
+    }
+
+    return { height }
+  }, [isExpanded, previous, height]);
 
   return (
     <animated.div
       className={cn('rc-animated rc-animated-expand', className)}
       style={{
         ...otherStyle,
-        height: isExpanded && previous === isExpanded ? 'auto' : height,
+        ...passedStyle,
       }}
+      ref={animatedRef}
     >
       {children}
     </animated.div>

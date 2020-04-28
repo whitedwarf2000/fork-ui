@@ -36,7 +36,19 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps 
   const passedProps = useMemo(() => omit(otherProps, [
     ...lPlacements,
     'placement',
-  ]))
+  ]));
+
+  const animationClass = useMemo(() => {
+    if (placement === 'right') {
+      return open ? 'slideInRight animated faster' : 'slideOutRight animated faster';
+    }
+
+    if (placement === 'left') {
+      return open ? 'slideInLeft animated faster' : 'slideOutLeft animated faster';
+    }
+
+    return 'slideInRight animated faster';
+  }, [open, placement]);
 
   return (
     <React.Fragment>
@@ -46,14 +58,11 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps 
             className={cn(
               'rc-drawer',
               mPlacements[placement],
-              {
-                '--close-animation': !open,
-              }
             )}
               ref={wrapperRef}
             >
             <PureDrawer
-              className={className}
+              className={cn(animationClass, className)}
               drawerRef={ref}
               onCloseClick={onClose}
               {...passedProps}

@@ -29,13 +29,6 @@
 .rc-drawer.--left {
   .rc-pure-drawer {
     left: 0;
-    animation: slideInLeft 0.5s;
-  }
-
-  &.--close-animation {
-    .rc-pure-drawer {
-      animation: slideOutLeft 0.5s;
-    }
   }
 }
 
@@ -43,12 +36,5 @@
 .rc-drawer.--right {
   .rc-pure-drawer {
     right: 0;
-    animation: slideInRight 0.5s;
-  }
-
-  &.--close-animation {
-    .rc-pure-drawer {
-      animation: slideOutRight 0.5s;
-    }
   }
 }
