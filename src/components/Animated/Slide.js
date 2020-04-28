@@ -69,7 +69,6 @@ const lSlide = Object.keys(mSlide);
 
 const Slide = memo(({ children, meansure, className, animatedRef, ...otherProps }) => {
   const slide = useSemanticProp('slide', otherProps, lSlide);
-
   const spring = useSpring(mTransition[slide]);
 
   return (

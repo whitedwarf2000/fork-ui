@@ -1,5 +1,5 @@
 .rc-animated-expand {
   position: relative;
-  height: 100%;
   overflow: hidden;
+  transition: height 0.25s;
 }
