@@ -11,7 +11,16 @@
   }
 }
 
-/* DOT */
+@keyframes wave {
+  0%, 100% {
+    transform: initial;
+  }
+
+  45% {
+    transform: translateY(-20px);
+  }
+}
+
 .rc-loader-dots {
   display: flex;
   align-items: center;
@@ -25,16 +34,25 @@
   height: 1em;
   background-color: currentColor;
   border-radius: 100rem;
-}
-
-.rc-loader-dot.--dot-1 {
-  animation: flow .4s ease 0s infinite alternate;
+  animation: flow .4s ease infinite alternate;
 }
 
 .rc-loader-dot.--dot-2 {
-  animation: flow .4s ease .1s infinite alternate;
+  animation-delay: .1s;
 }
 
 .rc-loader-dot.--dot-3 {
-  animation: flow .4s ease .2s infinite alternate;
+  animation-delay: .2s;
+}
+
+.rc-loader-dot.--wave {
+  animation: wave 1s ease-out infinite;
+}
+
+.rc-loader-dot.--wave.--dot-2 {
+  animation-delay: -0.8s
+}
+
+.rc-loader-dot.--wave.--dot-3 {
+  animation-delay: -0.6s
 }
