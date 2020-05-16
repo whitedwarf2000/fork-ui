@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import Icon from '../Icon';
 
 const Radio = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
@@ -12,7 +13,7 @@ const Radio = React.forwardRef(({ className, ...otherProps }, ref) => {
         {...otherProps}
       />
       <span className="rc-radio-inner" />
-      <span className="rc-radio-second-inner" />
+      <Icon name="check" className="rc-radio-check" />
     </span>
   );
 });

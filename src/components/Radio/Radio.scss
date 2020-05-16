@@ -21,18 +21,19 @@
   opacity: 0;
 
   &:checked {
-    + * + .rc-radio-second-inner {
-      box-shadow: none;
-      background: var(--primary--400);
+    + * + .rc-radio-check {
+      color: #fff;
     }
 
     + .rc-radio-inner {
+      background-color: var(--primary--500);
       border-color: var(--primary--500);
     }
   }
 
   &:hover:not(:checked) {
     + .rc-radio-inner {
+      background-color: transparent;
       border-color: var(--primary--500);
     }
   }
@@ -47,19 +48,18 @@
   display: block;
   height: 100%;
   width: 100%;
-  transition: background-color 0.25s, box-shadow 0.25s;
-  border-radius: 100em;
-  background-color: transparent;
-  border: 1px solid var(--input--bg);
+  transition: background-color 0.25s;
+  border-radius: 100rem;
+  background-color: var(--input--bg);
+  border: 1px solid transparent;
 }
 
-.rc-radio-second-inner {
+.rc-radio-check.rc-radio-check {
   position: absolute;
+  stroke-width: 3;
   top: 50%;
   left: 50%;
+  color: transparent;
   transform: translate(-50%, -50%);
-  height: 50%;
-  width: 50%;
-  transition: background-color 0.25s, box-shadow 0.25s;
-  border-radius: 100em;
+  transition: color 0.25s;
 }
