@@ -1,3 +1,16 @@
+import { config } from '../../ConfigProvider';
+
+const icons = config.icons.reduce((_icons, icon) => {
+  try {
+    _icons[icon] = require(`./${icon}`).default;
+    return _icons;
+  } catch (e) {
+    console.error(`${icon} not exsist!`);
+  }
+}, {});
+
+export default icons;
+/*
 const icons = {
   'accessible': require('./accessible').default,
   'activity': require('./activity').default,
@@ -453,5 +466,4 @@ const icons = {
   'zoom-in': require('./zoom-in').default,
   'zoom-out': require('./zoom-out').default,
 };
-
-export default icons;
+*/

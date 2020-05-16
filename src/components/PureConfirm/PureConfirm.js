@@ -4,18 +4,7 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import Dialog from '../Dialog';
-
-const _text = {
-  ok: 'OK',
-  cancel: 'Cancel',
-};
-
-const config = Object.freeze({
-  setText: ({ ok, cancel }) => {
-    _text.ok = ok;
-    _text.cancel = cancel;
-  }
-});
+import { config } from '../ConfigProvider';
 
 const PureConfirm = React.forwardRef(({ children, title, onCancel, onOk, className, ...otherProps }, ref) => {
   return (
@@ -27,8 +16,8 @@ const PureConfirm = React.forwardRef(({ children, title, onCancel, onOk, classNa
       <Dialog.Header closable={false}>{title}</Dialog.Header>
       <Dialog.Body>{children}</Dialog.Body>
       <Dialog.Footer className="rc-confirm-footer">
-        <Button onClick={onCancel}>{_text.cancel}</Button>
-        <Button onClick={onOk} style={{ marginLeft: '0.5em' }}>{_text.ok}</Button>
+        <Button onClick={onCancel}>{config.lang.cancel}</Button>
+        <Button onClick={onOk} style={{ marginLeft: '0.5em' }}>{config.lang.ok}</Button>
       </Dialog.Footer>
     </Dialog>
   );
@@ -48,7 +37,3 @@ PureConfirm.defaultProps = {
 };
 
 export default PureConfirm;
-
-export {
-  config,
-}
