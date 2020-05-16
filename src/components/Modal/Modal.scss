@@ -1,24 +1,17 @@
-.rc-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: var(--zindex-drawer);
-  background-color: rgba(0, 0, 0, 0.8);
+.rc-modal-container {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  .rc-pure-modal {
-    position: absolute;
-    top: 15%;
-    animation: zoomIn 0.25s;
-    box-shadow: none;
-  }
 
   &.--close-animation {
     background-color: transparent;
     animation: zoomOut 0.25s;
   }
+}
+
+.rc-modal {
+  position: absolute;
+  top: 15%;
+  animation: zoomIn 0.25s;
+  box-shadow: none;
 }

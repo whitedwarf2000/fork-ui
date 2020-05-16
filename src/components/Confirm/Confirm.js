@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Portal from '../Portal';
 import PureConfirm from '../PureConfirm';
+import Dialog from '../Dialog';
 
 import useDebounce from '../../hooks/useDebounce';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
@@ -26,14 +27,14 @@ const Confirm = ({ className, open, onClose, onOk, onCancel, ...otherProps }) =>
     <React.Fragment>
       {delayOpen && (
         <Portal>
-          <div className={cn('rc-confirm', { '--close-animation': !open })}>
+          <Dialog.Container className={cn('rc-confirm-container', { '--close-animation': !open })}>
             <PureConfirm
-              className={className}
+              className={cn('rc-confirm', className)}
               onOk={_onOk}
               onCancel={_onCancel}
               {...otherProps}
             />
-          </div>
+          </Dialog.Container>
         </Portal>
       )}
     </React.Fragment>

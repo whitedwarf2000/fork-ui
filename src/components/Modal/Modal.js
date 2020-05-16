@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Portal from '../Portal';
-import PureModal from '../PureModal';
+import Dialog from '../Dialog';
 
 import useDebounce from '../../hooks/useDebounce';
 import useClickOutsideOverlay from '../../hooks/useClickOutsideOverlay';
@@ -26,22 +26,26 @@ const Modal = ({ className, onClose, open, canOutsideClickClose, ...otherProps }
     <React.Fragment>
       {delayOpen && (
         <Portal>
-          <div
-            className={cn('rc-modal', { '--close-animation': !open })}
+          <Dialog.Container
+            className={cn('rc-modal-container', { '--close-animation': !open })}
             ref={wrapperRef}
           >
-            <PureModal
-              className={className}
+            <Dialog
+              className={cn('rc-modal', className)}
               ref={ref}
-              onCloseClick={onClose}
+              onClose={onClose}
               {...otherProps}
             />
-          </div>
+          </Dialog.Container>
         </Portal>
       )}
     </React.Fragment>
   );
 };
+
+Modal.Header = Dialog.Header;
+Modal.Body = Dialog.Body;
+Modal.Footer = Dialog.Footer;
 
 Modal.displayName = 'Modal';
 Modal.propTypes = {

@@ -1,0 +1,12 @@
+@import './Container.scss';
+@import './Header.scss';
+@import './Body.scss';
+@import './Footer.scss';
+
+.rc-dialog {
+  position: relative;
+  min-width: 30em;
+  background-color: var(--bg);
+  box-shadow: var(--popup--shadow);
+  border-radius: var(--border-radius);
+}

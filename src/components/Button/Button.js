@@ -60,7 +60,7 @@ const Button = React.forwardRef(({
     }
 
     return textColor;
-  }, [textColor, isColored])
+  }, [textColor, isColored]);
 
   const passedProps = useMemo(() => omit(otherProps, [
     ...lColors,

@@ -1,12 +1,4 @@
-.rc-pure-drawer {
-  position: relative;
-  min-width: 30em;
-  background-color: var(--bg);
-  box-shadow: var(--popup--shadow);
-  border-radius: var(--border-radius);
-}
-
-.rc-pure-drawer-title {
+.rc-dialog-header {
   padding: 0 1em;
   height: 3.5em;
   font-weight: 500;
@@ -17,8 +9,4 @@
   background-color: var(--popup--title-bg);
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
-}
-
-.rc-pure-drawer-content {
-  padding: 1.5em 1em;
 }

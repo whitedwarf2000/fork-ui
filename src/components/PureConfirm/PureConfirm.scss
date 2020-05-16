@@ -1,42 +1,6 @@
 @import '../../style/vars.scss';
 
-.rc-pure-confirm {
-  position: relative;
-  width: 33em;
-  max-width: 100vw;
-  background-color: var(--bg);
-  box-shadow: var(--popup--shadow);
-  border-radius: var(--border-radius);
-}
-
-.rc-pure-confirm-title {
-  padding: 0 1em;
-  height: 3.5em;
-  font-weight: 500;
+.rc-confirm-footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-transform: uppercase;
-  background-color: var(--popup--title-bg);
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-}
-
-.rc-pure-confirm-content {
-  padding: 1.5em 1em;
-}
-
-.rc-pure-confirm-handler {
-  display: flex;
-  align-items: center;
   justify-content: flex-end;
-  padding: 1em;
-
-  > .rc-button {
-    margin-left: 0.5em;
-  }
-}
-
-.pure-confirm--no-boxshadow {
-  box-shadow: none;
 }

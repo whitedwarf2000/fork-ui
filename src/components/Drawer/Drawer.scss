@@ -1,40 +1,32 @@
 @import '../../style/vars.scss';
 
-.rc-drawer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: var(--zindex-drawer);
-  background-color: rgba(0, 0, 0, 0.8);
-
-  .rc-pure-drawer {
-    position: absolute;
-    height: 100vh;
-    max-width: 100vw;
-    overflow: scroll;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
+.rc-drawer-container {
   &.--close-animation {
     background-color: transparent;
   }
   
 }
 
-.rc-drawer.--left {
-  .rc-pure-drawer {
+.rc-drawer {
+  position: absolute;
+  height: 100vh;
+  max-width: 100vw;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.rc-drawer-container.--left {
+  .rc-drawer {
     left: 0;
   }
 }
 
 
-.rc-drawer.--right {
-  .rc-pure-drawer {
+.rc-drawer-container.--right {
+  .rc-drawer {
     right: 0;
   }
 }

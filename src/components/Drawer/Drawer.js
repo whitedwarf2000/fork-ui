@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Portal from '../Portal';
-import PureDrawer from '../PureDrawer';
+import Dialog from '../Dialog';
 
 import useDebounce from '../../hooks/useDebounce';
 import useClickOutsideOverlay from '../../hooks/useClickOutsideOverlay';
@@ -54,25 +54,29 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps 
     <React.Fragment>
       {delayOpen && (
         <Portal>
-          <div
+          <Dialog.Container
             className={cn(
-              'rc-drawer',
+              'rc-drawer-container',
               mPlacements[placement],
             )}
               ref={wrapperRef}
             >
-            <PureDrawer
-              className={cn(animationClass, className)}
-              drawerRef={ref}
-              onCloseClick={onClose}
+            <Dialog
+              className={cn('rc-drawer', animationClass, className)}
+              ref={ref}
+              onClose={onClose}
               {...passedProps}
             />
-          </div>
+          </Dialog.Container>
         </Portal>
       )}
     </React.Fragment>
   );
 };
+
+Drawer.Header = Dialog.Header;
+Drawer.Body = Dialog.Body;
+Drawer.Footer = Dialog.Footer;
 
 Drawer.displayName = 'Drawer';
 Drawer.propTypes = {

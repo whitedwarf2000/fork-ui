@@ -3,6 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
+import Dialog from '../Dialog';
 
 const _text = {
   ok: 'OK',
@@ -16,26 +17,25 @@ const config = Object.freeze({
   }
 });
 
-const PureConfirm = ({ confirmRef, children, title, onCancel, onOk, className, ...otherProps }) => {
+const PureConfirm = React.forwardRef(({ children, title, onCancel, onOk, className, ...otherProps }, ref) => {
   return (
-    <div className={cn('rc-pure-confirm', className)} ref={confirmRef} {...otherProps}>
-      <div className="rc-pure-confirm-title">
-        <span>{title}</span>
-      </div>
-      <div className="rc-pure-confirm-content">
-        {children}
-      </div>
-      <div className="rc-pure-confirm-handler">
+    <Dialog
+      ref={ref}
+      className={cn('rc-confirm', className)}
+      {...otherProps}
+    >
+      <Dialog.Header closable={false}>{title}</Dialog.Header>
+      <Dialog.Body>{children}</Dialog.Body>
+      <Dialog.Footer className="rc-confirm-footer">
         <Button onClick={onCancel}>{_text.cancel}</Button>
-        <Button onClick={onOk}>{_text.ok}</Button>
-      </div>
-    </div>
+        <Button onClick={onOk} style={{ marginLeft: '0.5em' }}>{_text.ok}</Button>
+      </Dialog.Footer>
+    </Dialog>
   );
-};
+});
 
 PureConfirm.displayName = 'PureConfirm';
 PureConfirm.propTypes = {
-  confirmRef: PropTypes.any,
   children: PropTypes.any,
   title: PropTypes.any,
   onOk: PropTypes.func,
