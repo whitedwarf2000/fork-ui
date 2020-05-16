@@ -14,9 +14,11 @@
 }
 
 .rc-switch.--checked {
+  background: var(--primary--500);
+
   .rc-switch-inner {
-    background: var(--primary--500);
     transform: translateX(1.75em);
+    background-color: #fff;
   }
 }
 
