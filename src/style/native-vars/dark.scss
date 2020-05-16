@@ -29,6 +29,11 @@
   --secondary-pressed: inset 1px 1px 1px #0a1015, inset -1px -1px 1px #283e55;
 }
 
+.dark-mode {
+  background-color: var(--body-bg);
+  color: var(--text-color);
+}
+
 /* BUTTON */
 .dark-mode {
   --button-bg: var(--secondary-bg--400);

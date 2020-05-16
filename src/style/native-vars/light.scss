@@ -1,6 +1,6 @@
 @import '../vars.scss';
 
-body {
+.light-mode {
   --text-color: #050505;
   --body-bg: #f0f2f5;
   --bg: #fff;
@@ -29,53 +29,58 @@ body {
   --secondary-pressed: inset 1px 1px 1px #c0c2c4, inset -1px -1px 1px #ffffff;
 }
 
+.light-mode {
+  background-color: var(--body-bg);
+  color: var(--text-color);
+}
+
 /* BUTTON */
-body {
+.light-mode {
   --button-bg: var(--secondary-bg);
-  --button--hover-bg: transparent;
-  --button--hover-border-color: var(--primary--500);
+  --button--hover-bg: var(--secondary-bg);
+  --button--hover-border-color: transparent;
   --button--disabled-bg: var(--secondary-bg);
   --button--disabled-color: var(--disabled-text-color);
 }
 
 /* BASE INPUT */
-body {
+.light-mode {
   --input--bg: var(--secondary-bg);;
   --input--disabled-bg: var(--secondary-bg);
   --input--disabled-color: var(--disabled-text-color);;
 }
 
 /* Popup, Overlay */
-body {
+.light-mode {
   --popup--title-bg: var(--secondary-bg);
   --popup--shadow:  none;
   --overlay--shadow: 3px 3px 15px #f0f0f0, -3px -3px 15px #f0f0f0;
 }
 
 /* Collapse */
-body {
+.light-mode {
   --panel--bg: var(--secondary-bg);
 }
 
 /* Menu */
-body {
+.light-mode {
   --menu--bg: var(--bg);
   --sub-menu--bg: #f0f2f5;
   --menu--shadow:  3px 3px 15px #f0f0f0, -3px -3px 15px #f0f0f0;
 }
 
 /* Avatar */
-body {
+.light-mode {
   --avatar--bg: var(--secondary-bg);
 }
 
 /* Slider */
-body {
+.light-mode {
   --slider-handler--shadow: 5px 5px 20px var(--primary--100), -5px -5px 20px #fff;
   --slider-rail--box-shadow: none;
 }
 
 /* Switch */
-body {
+.light-mode {
   --switch-inner--bg: var(--bg);
 }

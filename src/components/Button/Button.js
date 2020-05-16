@@ -26,7 +26,7 @@ const lShapes = Object.keys(mShapes);
 const Button = React.forwardRef(({
   className,
   icon,
-  pressed,
+  outlined,
   textColor,
   size,
   style,
@@ -39,6 +39,28 @@ const Button = React.forwardRef(({
   const color = useSemanticProp('color', otherProps, lColors);
   const isSemanticColor = useMemo(() => !!mColors[color], [color]);
   const isColored = useMemo(() => !isSemanticColor && color, [isSemanticColor, color]);
+
+  const _style = useMemo(() => {
+    if (isColored) {
+      return outlined ? {
+        color: color,
+        backgroundColor: 'transparent',
+        borderColor: 'currentColor',
+      } : {
+        backgroundColor: color,
+        borderColor: 'transparent',
+      };
+    }
+    return {};
+  }, [outlined, isColored, color, textColor]);
+
+  const _textColor = useMemo(() => {
+    if (isColored ) {
+      return textColor || '#fff';
+    }
+
+    return textColor;
+  }, [textColor, isColored])
 
   const passedProps = useMemo(() => omit(otherProps, [
     ...lColors,
@@ -54,37 +76,39 @@ const Button = React.forwardRef(({
         'rc-button',
         {
           '--icon-button': icon,
-          '--pressed': pressed,
           '--colored': isColored,
           '--loading': loading,
+          '--outlined': outlined,
         },
         mShapes[shape],
         mColors[color],
         className,
       )}
       style={{
-        color: textColor,
-        backgroundColor: isColored ? color : null,
         fontSize: size,
-        ...style
+        ..._style,
+        ...style,
+        '--var-text-color': _textColor,
       }}
       disabled={loading || disabled}
       {...passedProps}
     >
       {loading && <Loader.Spinner />}
-      {(function() {
-        if (icon && isString(icon)) {
-          return (
-            <Icon name={icon} />
-          );
-        }
+      <span className="rc-button-children">
+        {(function() {
+          if (icon && isString(icon)) {
+            return (
+              <Icon name={icon} />
+            );
+          }
 
-        if (icon) {
-          return icon;
-        }
+          if (icon) {
+            return icon;
+          }
 
-        return children;
-      })()}
+          return children;
+        })()}
+      </span>
     </button>
   );
 });
@@ -98,10 +122,10 @@ Button.propTypes = {
   rounded: PropTypes.bool,
   icon: PropTypes.any,
   textColor: PropTypes.string,
-  pressed: PropTypes.bool,
   glassed: PropTypes.bool,
   style: PropTypes.object,
   primary: PropTypes.bool,
+  outlined: PropTypes.bool,
   transparent: PropTypes.bool,
   shape: PropTypes.string,
   danger: PropTypes.bool,

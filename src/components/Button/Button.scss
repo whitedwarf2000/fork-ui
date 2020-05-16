@@ -7,7 +7,7 @@
   border-radius: var(--border-radius);
   border: 1px solid transparent;
   background-color: var(--button-bg);
-  transition: background-color color opacity border-color 0.25s;
+  transition: background-color 0.25s, color 0.25s, opacity 0.25s, border-color 0.25s;
   padding-left: 1.25em;
   padding-right: 1.25em;
   outline: 0 !important;
@@ -36,6 +36,12 @@
   }
 }
 
+.rc-button-children {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
 .rc-button.--circle {
   padding-left: 0;
   padding-right: 0;
@@ -47,11 +53,11 @@
   padding-right: 0;
 }
 
-.rc-button:not(.--icon-button) > .rc-icon:nth-child(1) {
+.rc-button:not(.--icon-button) .rc-icon:nth-child(1) {
   margin-right: 0.5em;
 }
 
-.rc-button:not(.--icon-button) > .rc-icon:last-child {
+.rc-button:not(.--icon-button) .rc-icon:last-child {
   margin-left: 0.5em;
 }
 
@@ -79,7 +85,7 @@
 }
 
 .rc-button.--colored {
-  color: #ffffff;
+  color: var(--var-text-color);;
   opacity: 0.8;
   box-shadow: none;
 
@@ -150,17 +156,72 @@
   }
 }
 
+.rc-button.--colored.--outlined:not(:disabled) {
+  &:hover,
+  &:focus {
+    background-color: currentColor !important;
+
+    .rc-button-children {
+      color: var(--var-text-color);
+    }
+  }
+}
+
+.rc-button.--primary.--outlined {
+  background-color: transparent;
+  color: var(--primary--600);
+  border-color: currentColor;
+
+  &:focus,
+  &:hover {
+    background-color: var(--primary--600);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    opacity: 0.8;
+    background-color: transparent;
+    color: var(--primary--200);
+    border-color: currentColor;
+  }
+}
+
+.rc-button.--danger.--outlined {
+  background-color: transparent;
+  color: var(--red--500);
+  border-color: currentColor;
+
+  &:focus,
+  &:hover {
+    background-color: var(--red--500);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    opacity: 0.8;
+    background-color: transparent;
+    color: var(--red--200);
+    border-color: currentColor;
+  }
+}
+
 .rc-button.--loading {
   &:disabled {
     color: var(--text-color);
   }
 
-  > .rc-loader-spinner {
+  .rc-loader-spinner {
     margin-right: 0.5em;
   }
 }
 
-.rc-button.--circle.--loading > .rc-loader-spinner {
+.rc-button.--circle.--loading .rc-loader-spinner {
   width: 2em;
   height: 2em;
   margin: 0;
