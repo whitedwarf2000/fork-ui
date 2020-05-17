@@ -49,7 +49,7 @@ Overlay.propTypes = {
   overlay: PropTypes.any,
   children: PropTypes.any,
   arrow: PropTypes.bool,
-  trigger: PropTypes.array,
+  trigger: PropTypes.string,
   onVisibleChange: PropTypes.func,
   canOutsideClickClose: PropTypes.bool,
   absolute: PropTypes.bool,
@@ -57,7 +57,7 @@ Overlay.propTypes = {
 Overlay.defaultProps = {
   placement: 'top',
   gap: 5,
-  trigger: ['click'],
+  trigger: 'click',
   onVisibleChange: f => f,
 };
 

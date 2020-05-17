@@ -26,7 +26,7 @@ const Step = ({ className, title, children, icon, stepNumber, ...otherProps }) =
     <div className={cn('rc-step', mStatus[status], className)} {...passedProps}>
       <div className="rc-step-rail" />
       <div className="rc-step-avatar">
-        {status === 'completed' && (<Icon name="check" />)}
+        {status === 'completed' && (<Icon name="check" style={{ strokeWidth: 3 }}/>)}
         {status !== 'completed' && (<span>{icon ? <Icon name={icon} /> : stepNumber}</span>)}
       </div>
       <div className="rc-step-content">

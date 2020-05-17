@@ -28,7 +28,7 @@ Popover.propTypes = {
   gap: PropTypes.number,
 };
 Popover.defaultProps = {
-  trigger: ['click'],
+  trigger: 'click',
   gap: 10,
 };
 

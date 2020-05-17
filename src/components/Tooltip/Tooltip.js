@@ -5,7 +5,7 @@ import cn from 'classnames';
 import Overlay from '../Overlay';
 import { omit } from '../../utils/helpers';
 
-const Tooltip = ({ className, overlayClass, children, title, ...otherProps }) => {
+const Tooltip = ({ className, overlayClass, children, title, trigger, ...otherProps }) => {
   const passedProps = useMemo(() => omit(otherProps, [
     'overlay',
     'className',
@@ -15,7 +15,7 @@ const Tooltip = ({ className, overlayClass, children, title, ...otherProps }) =>
     <Overlay
       canOutsideClickClose
       arrow
-      trigger={['hover']}
+      trigger={trigger}
       overlay={title}
       className={className}
       overlayClass={cn('rc-tooltip', overlayClass)}
@@ -33,9 +33,11 @@ Tooltip.propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
   overlayClass: PropTypes.string,
+  trigger: PropTypes.string,
 };
 Tooltip.defaultProps = {
   gap: 15,
+  trigger: 'hover',
 };
 
 export default Tooltip;

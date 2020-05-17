@@ -1,10 +1,12 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import Icon from '../Icon';
+import Loader from '../Loader';
 
 import useFlexibleRef from '../../hooks/useFlexibleRef';
 
-const Switch = React.forwardRef(({ onChange, className, ...otherProps }, ref) => {
+const Switch = React.forwardRef(({ onChange, className, disabled, loading, ...otherProps }, ref) => {
   const _ref = useFlexibleRef(ref);
   const isControlled = useMemo(() => otherProps.hasOwnProperty('checked'), [otherProps]);
   const [checked, setChecked] = useState(isControlled ?  otherProps.checked : otherProps.defaultChecked);
@@ -36,12 +38,15 @@ const Switch = React.forwardRef(({ onChange, className, ...otherProps }, ref) =>
         className="rc-switch-input"
         ref={_ref}
         onChange={_onChange}
+        disabled={disabled || loading}
         {...otherProps}
       />
-      <span className="rc-switch-inner" />
+      <span className="rc-switch-inner">
+        {loading && <Loader.Spinner />}
+      </span>
     </span>
   );
-})
+});
 
 Switch.displayName = 'Switch';
 Switch.propTypes = {

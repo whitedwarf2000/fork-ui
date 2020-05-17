@@ -76,7 +76,7 @@ const Select = ({
       visible={isDrop}
       onVisibleChange={onVisibleChange}
       canOutsideClickClose
-      trigger={[]}
+      trigger=""
       placement={placement}
       overlay={(
         <Box loading={loading}>

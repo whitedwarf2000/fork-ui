@@ -65,7 +65,7 @@ SpeedDial.propTypes = {
   direction: PropTypes.string,
 };
 SpeedDial.defaultProps = {
-  trigger: ['hover'],
+  trigger: 'hover',
   direction: 'vertical',
 };
 

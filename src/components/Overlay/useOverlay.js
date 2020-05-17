@@ -27,8 +27,8 @@ const useOverlay = ({
 
   const overlayRef = useRef();
 
-  const applyHover = useMemo(() => trigger.indexOf('hover') >= 0, [trigger]);
-  const applyClick = useMemo(() => trigger.indexOf('click') >= 0, [trigger]);
+  const applyHover = useMemo(() => trigger === 'hover', [trigger]);
+  const applyClick = useMemo(() => trigger === 'click', [trigger]);
 
   // When ever user click outside of overlay, close overlay
   const clickOutsideHandler = useCallback(() => {
@@ -64,42 +64,42 @@ const useOverlay = ({
       return f => f;
     }
 
-    let timer = null;
-    let timer2 = null;
-
-    // cheat isOverlayHover for life cycle performance by using setIsOverlayHover
-    const _eventMouseLeaveHandler = () => {
-      timer = setTimeout(() => {
-        setIsOverlayHover(prev => {
-          // if user still hover overlay after leave target, do nothing
-          if (prev) {
-            return prev;
-          }
-
-          setVisible(false);
-          return prev;
-        });
-      }, 100);
-    };
-
-    // cheat isTargetHover for life cycle performance by using setIsOverlayHover
-    const _eventMouseLeaveOverlayHandler = () => {
-      timer2 = setTimeout(() => {
-        setIsTargetHover(prev => {
-          // if user still hover target after leave overlay, do nothing
-          if (prev) {
-            return prev;
-          }
-
-          setVisible(false);
-          return prev;
-        });
-      }, 100);
-    };
-  
-    const _eventMouseEnterHandler = () => setVisible(true);
-
     if (applyHover) {
+      let timer = null;
+      let timer2 = null;
+
+      // cheat isOverlayHover for life cycle performance by using setIsOverlayHover
+      const _eventMouseLeaveHandler = () => {
+        timer = setTimeout(() => {
+          setIsOverlayHover(prev => {
+            // if user still hover overlay after leave target, do nothing
+            if (prev) {
+              return prev;
+            }
+
+            setVisible(false);
+            return prev;
+          });
+        }, 100);
+      };
+
+      // cheat isTargetHover for life cycle performance by using setIsOverlayHover
+      const _eventMouseLeaveOverlayHandler = () => {
+        timer2 = setTimeout(() => {
+          setIsTargetHover(prev => {
+            // if user still hover target after leave overlay, do nothing
+            if (prev) {
+              return prev;
+            }
+
+            setVisible(false);
+            return prev;
+          });
+        }, 100);
+      };
+    
+      const _eventMouseEnterHandler = () => setVisible(true);
+
       targetNode.addEventListener('mouseenter', _eventMouseEnterHandler);
       targetNode.addEventListener('mouseleave', _eventMouseLeaveHandler);
       overlayRef.current.addEventListener('mouseleave', _eventMouseLeaveOverlayHandler);
@@ -144,9 +144,8 @@ const useOverlay = ({
       return f => f;
     }
 
-    const _eventClickHandler = () => setVisible(prev => !prev);
-
     if (applyClick) {
+      const _eventClickHandler = () => setVisible(prev => !prev);
       targetNode.addEventListener('click', _eventClickHandler);
 
       return () => {

@@ -3,8 +3,8 @@
   position: relative;
   box-sizing: border-box;
   outline: 0 !important;
-  width: 3.75em;
-  height: 2em;
+  width: 3.25em;
+  height: 1.75em;
   border-radius: 100em;
   background-color: var(--input--bg);
   transition: background-color 0.25s, box-shadow 0.25s;
@@ -17,7 +17,7 @@
   background: var(--primary--500);
 
   .rc-switch-inner {
-    transform: translateX(1.75em);
+    transform: translateX(1.5em);
     background-color: #fff;
   }
 }
@@ -40,9 +40,13 @@
 }
 
 .rc-switch-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary--500);
   background-color: var(--switch-inner--bg);
-  height: 1.75em;
-  width: 1.75em;
+  height: 1.5em;
+  width: 1.5em;
   margin: 0 0.15em;
   border-radius: 100em;
   transition: box-shadow  0.25s, background-color 0.25s, transform 0.25s;
