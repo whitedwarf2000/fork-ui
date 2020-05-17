@@ -63,3 +63,9 @@
   transform: translate(-50%, -50%);
   transition: color 0.25s;
 }
+
+.rc-checkbox.--circle {
+  .rc-checkbox-inner {
+    border-radius: 100rem;
+  }
+}

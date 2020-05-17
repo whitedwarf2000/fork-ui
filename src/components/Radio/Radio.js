@@ -13,7 +13,7 @@ const Radio = React.forwardRef(({ className, ...otherProps }, ref) => {
         {...otherProps}
       />
       <span className="rc-radio-inner" />
-      <Icon name="check" className="rc-radio-check" />
+      <Icon name="check" className="rc-radio-check" size="0.8em" />
     </span>
   );
 });

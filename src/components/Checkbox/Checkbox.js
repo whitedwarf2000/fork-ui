@@ -3,9 +3,9 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
-const Checkbox = React.forwardRef(({ className, ...otherProps }, ref) => {
+const Checkbox = React.forwardRef(({ className, circle, ...otherProps }, ref) => {
   return (
-    <span className={cn('rc-checkbox', className)}>
+    <span className={cn('rc-checkbox', { '--circle': circle },className)}>
       <input
         type="checkbox"
         className="rc-checkbox-input"
@@ -13,7 +13,7 @@ const Checkbox = React.forwardRef(({ className, ...otherProps }, ref) => {
         {...otherProps}
       />
       <span className="rc-checkbox-inner" />
-      <Icon name="check" className="rc-checkbox-check" />
+      <Icon name="check" className="rc-checkbox-check" size="0.8em" />
     </span>
   );
 });
