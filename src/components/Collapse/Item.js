@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 import Animated from '../Animated';
+import Memo from '../Memo';
 
 const renderIcon = (icon) => {
   if (!icon) {
@@ -22,7 +23,7 @@ const renderIcon = (icon) => {
   return icon;
 };
 
-const Item = ({ className, title, children, active, onClick, disabled, icon, ...otherProps }) => {
+const Item = ({ className, title, children, active, fresh, onClick, disabled, icon, ...otherProps }) => {
   const _toggleActive = useCallback((e) => {
     if (disabled) {
       return;
@@ -44,7 +45,7 @@ const Item = ({ className, title, children, active, onClick, disabled, icon, ...
       </div>
       <Animated.Expand isExpanded={active} className="rc-panel-content">
         <div className="rc-panel-box">
-          {children}
+          <Memo for={active} fresh={fresh}>{children}</Memo>
         </div>
       </Animated.Expand>
     </div>

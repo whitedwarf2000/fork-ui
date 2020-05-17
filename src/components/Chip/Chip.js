@@ -10,9 +10,9 @@ const Chip = ({
     label,
     icon,
     avatar,
-    fontSize,
+    size,
+    textColor,
     color,
-    backgroundColor,
     style,
     closable,
     onRemove,
@@ -43,12 +43,12 @@ const Chip = ({
       className={cn(
         'rc-chip',
         {
-          '--custom': backgroundColor,
+          '--custom': color,
           '--rounded': rounded,
         },
         className
       )}
-      style={{ ...style, backgroundColor, color, fontSize }}
+      style={{ ...style, backgroundColor: color, color: textColor, fontSize: size }}
       onClick={_onClick}
       {...otherProps}
     >
@@ -69,9 +69,9 @@ Chip.propTypes = {
   label: PropTypes.any,
   closable: PropTypes.bool,
   avatar: PropTypes.any,
+  textColor: PropTypes.string,
   color: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  fontSize: PropTypes.string,
+  size: PropTypes.string,
   style: PropTypes.object,
   onRemove: PropTypes.func,
   onClick: PropTypes.func,
@@ -80,6 +80,7 @@ Chip.propTypes = {
 Chip.defaultProps = {
   onRemove: f => f,
   onClick: f => f,
+  closable: true,
 };
 
 export default Chip;
