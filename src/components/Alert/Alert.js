@@ -23,7 +23,7 @@ const Alert = ({ onClose, open, duration, ...otherProps }) => {
       {delayOpen && (
         <Portal node={rootAlert}>
           <PureAlert
-            onCloseClick={onClose}
+            onClose={onClose}
             className={cn('rc-alert', { '--close-animation': !open })}
             {...otherProps}
           />

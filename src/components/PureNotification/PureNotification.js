@@ -2,40 +2,29 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
-import Button from '../Button';
+import Dialog from '../Dialog';
 
-const PureNotification = ({ notificationRef, children, title, className, onCloseClick, onContentClick, ...otherProps }) => {
+const PureNotification = React.forwardRef(({ children, title, className, onContentClick, ...otherProps }, ref) => {
   return (
-    <div className={cn('rc-pure-notification', className)} ref={notificationRef} {...otherProps}>
-      
-      {title && (
-        <div className="rc-pure-notification-title">
-          <span style={{ display: 'flex', alignItems: 'center' }}>
-            <Icon name="bell" style={{ marginRight: '0.5em' }} />
-            {title}
-          </span>
-          <Button glassed circle icon="x" className="rc-pure-modnotificational-close" onClick={onCloseClick} />
-        </div>
-      )}
-      <div className="rc-pure-notification-content" onClick={onContentClick}>
-        {children}
-      </div>
-    </div>
+    <Dialog
+      ref={ref}
+      className={cn('rc-pure-notification', className)}
+      {...otherProps}
+    >
+      {title && <Dialog.Header>{title}</Dialog.Header>}
+      <Dialog.Body onClick={onContentClick}>{children}</Dialog.Body>
+    </Dialog>
   );
-};
+});
 
 PureNotification.displayName = 'PureNotification';
 PureNotification.propTypes = {
-  notificationRef: PropTypes.any,
   children: PropTypes.any,
   title: PropTypes.any,
   className: PropTypes.string,
-  onCloseClick: PropTypes.func,
   onContentClick: PropTypes.func,
 };
 PureNotification.defaultProps = {
-  onCloseClick: f => f,
   onContentClick: f => f,
 };
 

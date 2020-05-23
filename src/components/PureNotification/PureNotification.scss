@@ -1,23 +1,5 @@
 .rc-pure-notification {
   position: relative;
   min-width: 30em;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  background-color: var(--rc-black--500);
-  box-shadow: var(--rc-neu-flat--500);
-}
-
-.rc-pure-notification-title {
-  padding: 0.5rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-transform: uppercase;
-  background-color: var(--rc-black--500);
-}
-
-.rc-pure-notification-content {
-  padding: 1em;
-  cursor: pointer;
+  box-shadow: var(--overlay--shadow);
 }

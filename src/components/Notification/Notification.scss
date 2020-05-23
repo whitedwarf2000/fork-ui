@@ -19,15 +19,9 @@
 }
 
 #root-notification {
-  .rc-pure-notification-content,
-  .rc-pure-notification-title  {
-    background-color: transparent;
-  }
-
   .rc-notification {
     margin-bottom: 0.5em;
     margin-left: 0.5em;
-    box-shadow: none;
     width: 35rem;
   }
 }

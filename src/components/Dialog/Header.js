@@ -14,10 +14,10 @@ const Header = ({ className, closable, children, ...otherProps }) => {
       {closable && (
         <Button
           icon="x"
-          transparent
+          glassed
           circle
           className="rc-pure-modal-close"
-          fontSize="0.75em" onClick={onClose}
+          onClick={onClose}
         />
       )}
     </div>

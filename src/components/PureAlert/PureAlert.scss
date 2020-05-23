@@ -4,46 +4,30 @@
   position: relative;
   min-width: 30rem;
   width: 100%;
-  border-radius: var(--border-radius);
-  background-color: var(--bg);
-  box-shadow: var(--popup--shadow);
+  box-shadow: none;
   overflow: hidden;
 }
 
 .rc-pure-alert.--info {
-  .rc-pure-alert-title {
-    color: var(--primary--500);
+  .rc-dialog-header {
+    color: var(--blue--500);
   }
 }
 
 .rc-pure-alert.--success {
-  .rc-pure-alert-title {
+  .rc-dialog-header {
     color: var(--green--500);
   }
 }
 
 .rc-pure-alert.--warning {
-  .rc-pure-alert-title {
+  .rc-dialog-header {
     color: var(--orange--500);
   }
 }
 
 .rc-pure-alert.--error {
-  .rc-pure-alert-title {
+  .rc-dialog-header {
     color: var(--red--500);
   }
-}
-
-.rc-pure-alert-title {
-  padding: 1em;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-transform: uppercase;
-  background-color: var(--popup--title-bg);
-}
-
-.rc-pure-alert-content {
-  padding: 1.5em 1em;
 }
