@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import Item from './Item';
+import useMeasure from '../../hooks/useMeasure';
 
 const getItemNodes = boxRef => [...boxRef.current.children];
 const calc = (itemNodes, nextPage) => {
@@ -21,9 +22,10 @@ const calc = (itemNodes, nextPage) => {
 
 const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => {
   const [page, setPage] = useState(1);
-  const [body, setBody] = useState({ height: 0, width: 0 });
   const [boxBody, setBoxBody] = useState({ height: 0, width: 0 });
   const itemCount = useMemo(() => React.Children.count(children), [children]);
+  const [{ ref }, body] = useMeasure();
+  const boxRef = useRef();
 
   // One page equal 75% carousel width
   const maxPage = useMemo(() => {
@@ -36,16 +38,10 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
   const [left, setLeft] = useState(0);
   const carouselHeight = useMemo(() => boxBody.height + 5, [boxBody.height]);
 
-  const ref = useRef();
-  const boxRef = useRef();
-
   useEffect(() => {
     setBoxBody({
       height: boxRef.current.clientHeight,
       width: boxRef.current.clientWidth,
-    });
-    setBody({
-      width: ref.current.clientWidth,
     });
   }, []);
 
