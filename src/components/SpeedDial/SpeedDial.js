@@ -16,8 +16,8 @@ const mDirections = Object.freeze({
 
 const lDirections = Object.keys(mDirections);
 
-const SpeedDial = ({ className, overlayClass, children, trigger, overlay, ...otherProps }) => {
-  const [visible, setVisible] = useState(false);
+const SpeedDial = ({ className, overlayClass, children, trigger, overlay, defaultVisible, ...otherProps }) => {
+  const [visible, setVisible] = useState(!!defaultVisible);
   const onVisibleChange = useCallback(_visible => setVisible(_visible), []);
 
   const onClose = useCallback(() => setVisible(false), []);
