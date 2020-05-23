@@ -12,6 +12,7 @@ const ButtonGroup = ({ className, fluid, size, style, children, ...otherProps })
     'disabled',
     'color',
     'textColor',
+    'outlined'
   ]), [otherProps]);
 
   const passedProps = useMemo(() => omit(otherProps, [
@@ -23,6 +24,7 @@ const ButtonGroup = ({ className, fluid, size, style, children, ...otherProps })
     'size',
     'color',
     'textColor',
+    'outlined',
   ]), [otherProps]);
 
   return (

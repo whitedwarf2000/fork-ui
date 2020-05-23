@@ -31,7 +31,7 @@ const Tabs = ({ className, children, onChange, fluid, underline, uppercase, ...o
     title: tab.props.title,
     disabled: tab.props.disabled,
     icon: tab.props.icon,
-    iconRight: tab.props.iconRight,
+    rightIcon: tab.props.rightIcon,
   })), [children]);
 
   const isControlled = useMemo(() => otherProps.hasOwnProperty('activeTab'), [otherProps]);
@@ -90,7 +90,7 @@ const Tabs = ({ className, children, onChange, fluid, underline, uppercase, ...o
           >
             {renderIcon(tab.icon)}
             {tab.title}
-            {renderIcon(tab.iconRight, true)}
+            {renderIcon(tab.rightIcon, true)}
           </button>
         ))}
         <button className="rc-tabs-nav-item --rest " />

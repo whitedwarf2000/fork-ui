@@ -12,7 +12,7 @@ const mShape = Object.freeze({
 
 const lShape = Object.keys(mShape);
 
-const Avatar = ({ className, src, style, name, fontSize, color, ...otherProps }) => {
+const Avatar = ({ className, src, style, name, size, color, ...otherProps }) => {
   const shape = useSemanticProp('shape', otherProps, lShape);
 
   const passedProps = useMemo(() => omit(otherProps, [
@@ -25,7 +25,7 @@ const Avatar = ({ className, src, style, name, fontSize, color, ...otherProps })
       className={cn('rc-avatar', mShape[shape] || '--circle', className)}
       style={{
         ...style,
-        fontSize,
+        fontSize: size,
         color,
         backgroundImage: `url(${src})`,
       }}
@@ -44,7 +44,7 @@ Avatar.propTypes = {
   circle: PropTypes.bool,
   square: PropTypes.bool,
   name: PropTypes.string,
-  fontSize: PropTypes.string,
+  size: PropTypes.string,
   color: PropTypes.string,
 };
 Avatar.defaultProps = {};

@@ -25,6 +25,7 @@
   display: flex;
   align-items: center;
   color: var(--primary--500);
+  position: relative;
 }
 
 .rc-loader-dot {
@@ -34,25 +35,36 @@
   height: 1em;
   background-color: currentColor;
   border-radius: 100rem;
+}
+
+.rc-loader-dots.--buble .rc-loader-dot {
   animation: flow .4s ease infinite alternate;
 }
 
-.rc-loader-dot.--dot-2 {
+.rc-loader-dots.--buble > .rc-loader-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.rc-loader-dots.--buble > .rc-loader-dot:nth-child(2) {
   animation-delay: .1s;
 }
 
-.rc-loader-dot.--dot-3 {
+.rc-loader-dots.--buble > .rc-loader-dot:nth-child(3) {
   animation-delay: .2s;
 }
 
-.rc-loader-dot.--wave {
+.rc-loader-dots.--wave .rc-loader-dot {
   animation: wave 1s ease-out infinite;
 }
 
-.rc-loader-dot.--wave.--dot-2 {
-  animation-delay: -0.8s
+.rc-loader-dots.--wave > .rc-loader-dot:nth-child(1) {
+  animation-delay: 0s;
 }
 
-.rc-loader-dot.--wave.--dot-3 {
-  animation-delay: -0.6s
+.rc-loader-dots.--wave > .rc-loader-dot:nth-child(2) {
+  animation-delay: -0.8s;
+}
+
+.rc-loader-dots.--wave > .rc-loader-dot:nth-child(3) {
+  animation-delay: -0.6s;
 }

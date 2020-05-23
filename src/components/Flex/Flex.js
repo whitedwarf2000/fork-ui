@@ -186,6 +186,7 @@ const Flex = ({
   md,
   lg,
   xl,
+  space,
   ...otherProps
 }) => {
   const direction = useMemo(

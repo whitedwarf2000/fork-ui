@@ -15,4 +15,8 @@
 
 .rc-rater-item.--light {
   color: #ffc107;
+
+  .rc-icon-star > path:nth-child(2) {
+    fill: currentColor;
+  }
 }

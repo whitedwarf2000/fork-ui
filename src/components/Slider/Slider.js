@@ -6,14 +6,12 @@ import { isArray } from '../../utils/helpers';
 
 const Slider = ({
   className,
-  range,
   min,
   max,
   dots,
   onChange,
   ...otherProps
 }) => {
-  const isControlled = useMemo(() => otherProps.hasOwnProperty('value'), [otherProps]);
   const isRange = useMemo(() => {
     return isArray(otherProps.defaultValue);
   }, [otherProps.defaultValue]);

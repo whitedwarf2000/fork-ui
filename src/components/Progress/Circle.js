@@ -28,10 +28,6 @@ const CircleProgress = ({ className, percent, r }) => {
       className={cn('rc-circle-progress', className)}
       style={{ width: `${4 * r + 10}px`, height: `${4 * r + 10}px`}}
     >
-      <div
-        className="rc-circle-progress-inner"
-        style={{ width: `${4 * r}px`, height: `${4 * r}px`}}
-      />
       <svg className="rc-circle-progress-svg">
         <circle
           cx={2 * r - 5}
@@ -39,7 +35,7 @@ const CircleProgress = ({ className, percent, r }) => {
           r={2 * r - 5}
           className="rc-circle-progress-percent"
           style={{
-            strokeWidth: `${7 * ((2 * r) / 100)}px`,
+            strokeWidth: `${6 * ((2 * r) / 100)}px`,
             strokeDasharray,
             strokeDashoffset: delayAnimation ? strokeDasharray : strokeDashoffset,
           }}

@@ -25,7 +25,7 @@ export default class Memo extends React.Component {
 
     if (this.props.for) {
       this.memo = true;
-      this.childrenNode = this.childrenNode ||  ReactDOM.findDOMNode(this);
+      this.childrenNode = this.childrenNode || ReactDOM.findDOMNode(this);
 
       this.childrenNode.style.display = null;
     } else if (this.childrenNode) {
@@ -38,16 +38,16 @@ export default class Memo extends React.Component {
   
     if (fresh) {
       if (this.props.for) {
-        return children;
+        return children || <div />;
       }
-      return null;
+      return <div />;
     }
 
     if (this.props.for || this.memo) {
-      return children;
+      return children || <div />;
     }
 
-    return null;
+    return <div />;
   }
 }
 

@@ -1,17 +1,34 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import useSemanticProp from '../../hooks/useSemanticProp';
 
-const Dots = ({ color, size, className, wave, ...otherProps }) => {
+const mAnimations = Object.freeze({
+  wave: '--wave',
+  buble: '--buble',
+});
+
+const lAnimations = Object.keys(mAnimations);
+
+const Dots = ({ color, size, className, dot, ...otherProps }) => {
+  const dots = useMemo(() => {
+    var rs = [];
+    for (let i = 0; i < dot; i++) {
+      rs.push(<div className="rc-loader-dot" key={i} />);
+    }
+
+    return rs;
+  }, [dot]);
+
+  const animation = useSemanticProp('animation', otherProps, lAnimations);
+
   return (
     <div
       style={{ fontSize: size, color }}
-      className={cn('rc-loader-dots', className)}
+      className={cn('rc-loader-dots', mAnimations[animation] || '--buble', className)}
       {...otherProps}
     >
-      <div className={cn('rc-loader-dot --dot-1', { '--wave': wave })}/>
-      <div className={cn('rc-loader-dot --dot-2', { '--wave': wave })} />
-      <div className={cn('rc-loader-dot --dot-3', { '--wave': wave })} />
+      {dots}
     </div>
   );
 };
@@ -22,7 +39,10 @@ Dots.propTypes = {
   size: PropTypes.string,
   className: PropTypes.string,
   wave: PropTypes.bool,
+  dot: PropTypes.number,
 };
-Dots.defaultProps = {};
+Dots.defaultProps = {
+  dot: 3,
+};
 
 export default Dots;

@@ -69,6 +69,27 @@ const Button = React.forwardRef(({
     'shape',
   ]), [otherProps]);
 
+  const _children = useMemo(() => {
+    if (icon && isString(icon)) {
+      return (
+        <Icon name={icon} />
+      );
+    }
+
+    if (icon) {
+      return icon;
+    }
+
+    return React.Children.map(children, item => {
+      /* wrapper children by span tags for fix bugs css */
+      if (typeof item === 'string' || typeof item === 'number') {
+        return <span key={item.key}>{item}</span>;
+      }
+
+      return item;
+    });
+  }, [icon, children]);
+
   return (
     <button
       ref={ref}
@@ -95,19 +116,7 @@ const Button = React.forwardRef(({
     >
       {loading && <Loader.Spinner />}
       <span className="rc-button-children">
-        {(function() {
-          if (icon && isString(icon)) {
-            return (
-              <Icon name={icon} />
-            );
-          }
-
-          if (icon) {
-            return icon;
-          }
-
-          return children;
-        })()}
+        {_children}
       </span>
     </button>
   );

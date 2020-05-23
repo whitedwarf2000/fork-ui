@@ -10,22 +10,73 @@
 .rc-speed-dial.--left-bottom,
 .rc-speed-dial.--left-top,
 .rc-speed-dial.--top-left {
-  &.--horizontal > .rc-speed-dial-buttons {
-    flex-direction: column;
-
-    > .rc-button:not(:last-child) {
-      margin-bottom: 1em;
-    }
-  }
-  &.--vertical > .rc-speed-dial-buttons {
-    flex-direction: row;
-
-    > .rc-button:not(:last-child) {
-      margin-right: 1em;
-    }
+  .rc-button {
+    margin: 0.25em;
   }
 
   .rc-speed-dial-buttons {
     display: flex;
   }
+
+  &.--horizontal > .rc-speed-dial-buttons {
+    flex-direction: column;
+  }
+  &.--vertical > .rc-speed-dial-buttons {
+    flex-direction: row;
+  }
+}
+
+@keyframes scale {
+  from {
+    opacity: 0;
+    transform: scale(.25);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rc-speed-dial .rc-button {
+  animation: scale ease alternate;
+}
+
+.rc-speed-dial .rc-button:nth-child(1) {
+  animation-duration: 0.1s;
+}
+
+.rc-speed-dial .rc-button:nth-child(2) {
+  animation-duration: 0.2s;
+}
+
+.rc-speed-dial .rc-button:nth-child(3) {
+  animation-duration: 0.3s;
+}
+
+.rc-speed-dial .rc-button:nth-child(4) {
+  animation-duration: 0.4s;
+}
+
+.rc-speed-dial .rc-button:nth-child(5) {
+  animation-duration: 0.5s;
+}
+
+.rc-speed-dial .rc-button:nth-child(6) {
+  animation-duration: 0.6s;
+}
+
+.rc-speed-dial .rc-button:nth-child(7) {
+  animation-duration: 0.7s;
+}
+
+.rc-speed-dial .rc-button:nth-child(8) {
+  animation-duration: 0.8s;
+}
+
+.rc-speed-dial .rc-button:nth-child(9) {
+  animation-duration: 0.9s;
+}
+
+.rc-speed-dial .rc-button:nth-child(10) {
+  animation-duration: 1s;
 }
