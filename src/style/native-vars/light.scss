@@ -6,11 +6,11 @@
   --bg: #fff;
   --disabled-text-color: #f0f2f5;
 
-  --secondary-bg--700: #c0c1c4;
-  --secondary-bg--600: #d8d9dc;
-  --secondary-bg: #f0f2f5;
-  --secondary-bg--400: #fdfdfe;
-  --secondary-bg--300: #ffffff;
+  --secondary-bg--700: #a6aeb3;
+  --secondary-bg--600: #bbc4c9;
+  --secondary-bg: #d0dae0;
+  --secondary-bg--400: #d4dde3;
+  --secondary-bg--300: #d9e1e6;
 
   --primary--900: #001d33;
   --primary--800: #003a66;
@@ -36,10 +36,10 @@
 
 /* BUTTON */
 .light-mode {
-  --button-bg: var(--secondary-bg);
-  --button--hover-bg: var(--secondary-bg);
+  --button-bg: #d0dae0;
+  --button--hover-bg: #bbc4c9;
   --button--hover-border-color: transparent;
-  --button--disabled-bg: var(--secondary-bg);
+  --button--disabled-bg: #d9e1e6;
   --button--disabled-color: var(--disabled-text-color);
 }
 
