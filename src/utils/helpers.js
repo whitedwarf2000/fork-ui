@@ -38,3 +38,12 @@ export const difference = (arr = [], values = []) => {
 
   return rs;
 };
+
+export const loop = (count, cb) => {
+  const rs = [];
+  for (let i = 0; i < count; i++) {
+    rs.push(i);
+  }
+
+  return rs.map(cb);
+};

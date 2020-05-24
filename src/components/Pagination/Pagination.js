@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import ButtonGroup from '../ButtonGroup';
 import usePagination from './usePagination';
 
 const loop = (start, end, cb) => {
@@ -16,39 +15,48 @@ const loop = (start, end, cb) => {
 
 const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...otherProps }) => {
   const {
-    activeFlag,
+    itemCount,
     startIndex,
     endIndex,
-    maxActiveFlag,
-    onNextItems,
-    onPrevItems,
-  } = usePagination({ total, pageSize, max, activePage });
+    onNext,
+    onPrev,
+  } = usePagination({ total, pageSize, max, activePage, onChange });
+
+  const onItemClick = useCallback(value =>  onChange(value), [onChange]);
 
   return (
-    <ButtonGroup className={cn('rc-pagination', className )} {...otherProps}>
+    <div className={cn('rc-pagination', className )} {...otherProps}>
+      {loop(startIndex, endIndex, (pageNumber) => (
+        <Button
+          glassed
+          rounded
+          key={pageNumber}
+          className={cn('rc-pagination-item', { '--active': pageNumber === activePage })}
+          primary={pageNumber === activePage}
+          onClick={() => onItemClick(pageNumber)}
+        >
+          {pageNumber}
+        </Button>
+      ))}
       <Button
         className="rc-pagination-prev"
-        disabled={activeFlag <= 1}
-        onClick={onPrevItems}
+        disabled={activePage <= 1}
+        onClick={onPrev}
+        circle
         icon="chevron-left"
+        style={{
+          marginRight: '0.5rem',
+        }}
       />
-        {loop(startIndex, endIndex, pageNumber => (
-          <Button
-            key={pageNumber}
-            className={cn('rc-pagination-item', { '--active': pageNumber === activePage })}
-            primary={pageNumber === activePage}
-            onClick={() => onChange(pageNumber)}
-          >
-            <a>{pageNumber}</a>
-          </Button>
-        ))}
+
       <Button
         className="rc-pagination-next"
-        disabled={activeFlag >= maxActiveFlag}
-        onClick={onNextItems}
+        disabled={activePage >= itemCount}
+        onClick={onNext}
+        circle
         icon="chevron-right"
       />
-    </ButtonGroup>
+    </div>
   );
 };
 

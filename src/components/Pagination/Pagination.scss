@@ -1,4 +1,12 @@
 @import '../../style/vars.scss';
+.rc-pagination {
+  display: flex;
+  align-items: center;
+}
+
+.rc-pagination > .rc-pagination-item {
+  margin-right: 0.5rem;
+}
 
 .rc-pagination-item,
 .rc-pagination-prev,

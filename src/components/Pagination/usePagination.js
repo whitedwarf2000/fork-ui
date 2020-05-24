@@ -1,6 +1,6 @@
 import { useCallback, useState, useMemo } from 'react';
 
-export default ({ total, pageSize, max, activePage }) => {
+export default ({ total, pageSize, max, activePage, onChange }) => {
   const itemCount = useMemo(() => Math.ceil(total / pageSize), [total, pageSize]);
   const [activeFlag, setActiveFlag] = useState(Math.ceil(activePage / max));
   const maxActiveFlag = useMemo(() => Math.ceil(itemCount / max), [itemCount, max]);
@@ -22,13 +22,41 @@ export default ({ total, pageSize, max, activePage }) => {
     return nextState > 1 ? nextState : 1;
   }), []);
 
+  const onNext = useCallback(() => {
+    const next = activePage + 1;
+    if (next === itemCount) {
+      return onChange(itemCount);
+    }
+
+    if (next / max > activeFlag) {
+      onNextItems();
+    }
+
+    return onChange(next);
+  }, [onChange, activePage, itemCount]);
+
+  const onPrev = useCallback(() => {
+    const prev = activePage - 1;
+    if (prev <= 1) {
+      return onChange(1);
+    }
+
+    if (prev / max <= activeFlag - 1) {
+      onPrevItems();
+    }
+
+    return onChange(prev);
+  }, [onChange, activePage]);
+
   return {
     itemCount,
     activeFlag,
     startIndex,
     endIndex,
     maxActiveFlag,
+    onNext,
     onNextItems,
+    onPrev,
     onPrevItems,
   };
 };

@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import Item from './Item';
+import Dots from './Dots';
+import Context from './Context';
+
 import useMeasure from '../../hooks/useMeasure';
 
 const getItemNodes = boxRef => [...boxRef.current.children];
@@ -30,8 +33,11 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
   // One page equal 75% carousel width
   const maxPage = useMemo(() => {
     if (multiple) {
-      return Math.ceil(boxBody.width / body.width);
+      return body.width && boxBody.width
+        ? Math.ceil(boxBody.width / body.width)
+        : 0;
     }
+
     return itemCount; 
   }, [body.width, boxBody.width, itemCount, multiple]);
 
@@ -90,32 +96,45 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
   }, [body.width, focus, gap]);
 
   return (
-    <div ref={ref} className={cn('rc-carousel', className)} style={{ height: carouselHeight }}>
-      <div ref={boxRef} className="rc-carousel-box" style={{ left }} >
-        {React.Children.map(children, (elm) => {
-          return React.cloneElement(elm, {
-            _width,
-            fluid: !multiple,
-          });
-        })}
+    <Context.Provider
+      value={{
+        setPage,
+        page: page,
+        itemCount: itemCount,
+        maxPage: maxPage,
+      }}
+    >
+      <div ref={ref} className={cn('rc-carousel', className)} style={{ height: carouselHeight }}>
+        <div ref={boxRef} className="rc-carousel-box" style={{ left }} >
+          {React.Children.map(children, (elm) => {
+            return React.cloneElement(elm, {
+              _width,
+              fluid: !multiple,
+            });
+          })}
+        </div>
+        <div className="rc-carousel-handler">
+          <Dots />
+          <Button
+            icon="chevron-left"
+            className={cn('rc-carousel-prev')}
+            glassed
+            disabled={!loop && page <= 1}
+            circle
+            onClick={handlePrev}
+            style={{ marginRight: '0.5rem' }}
+          />
+          <Button
+            icon="chevron-right"
+            className={cn('rc-carousel-next')}
+            glassed
+            disabled={!loop && page >= maxPage}
+            circle
+            onClick={handleNext}
+          />
+        </div>
       </div>
-      <Button
-        icon="chevron-left"
-        className={cn('rc-carousel-prev')}
-        glassed
-        disabled={!loop && page <= 1}
-        circle
-        onClick={handlePrev}
-      />
-      <Button
-        icon="chevron-right"
-        className={cn('rc-carousel-next')}
-        glassed
-        disabled={!loop && page >= maxPage}
-        circle
-        onClick={handleNext}
-      />
-    </div>
+    </Context.Provider>
   );
 };
 
