@@ -7,4 +7,5 @@ export default React.createContext({
   selectedDate: [],
   onNextMonth: f => f,
   onPrevMonth: f => f,
+  onDateClick: f => f,
 });

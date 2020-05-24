@@ -1,13 +1,13 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Context from './Context';
 import DateCell from './DateCell';
 
 import { config } from '../ConfigProvider';
-import getBeginDateOfTheMonth from './utils/getBeginDateOfTheMonth';
-import getEndDateOfTheMonth from './utils/getEndDateOfTheMonth';
+
+import getBeginDateOfTheMonth from '../../utils/getBeginDateOfTheMonth';
+import getEndDateOfTheMonth from '../../utils/getEndDateOfTheMonth';
 
 const getDateCount = (beginDate, endDate) => {
   const distance = endDate - beginDate;
@@ -19,8 +19,7 @@ const getDateCount = (beginDate, endDate) => {
 };
 
 
-const Grid = ({ className, ...otherProps }) => {
-  const { displayDate, selectedDate } = useContext(Context);
+const Grid = ({ className, displayDate, onDateClick, selectedDate, ...otherProps }) => {
   const {
     firstWeek,
     secondWeek,
@@ -126,26 +125,89 @@ const Grid = ({ className, ...otherProps }) => {
         <DateCell header>{config.lang.sat}</DateCell>
       </div>
       <div className="rc-calendar-grid-row --first-week">
-        {firstWeek.map((number, index) => <DateCell key={number || `_${index}`} disabled={!number}>{number}</DateCell>)}
+        {firstWeek.map((number, index) => (
+          <DateCell
+            key={number || `_${index}`}
+            disabled={!number}
+            selectedDate={selectedDate}
+            displayDate={displayDate}
+            dateNumber={number}
+            onDateClick={onDateClick}
+          >
+            {number}
+          </DateCell>
+        ))}
       </div>
       <div className="rc-calendar-grid-row --second-week">
-        {secondWeek.map((number) => <DateCell key={number}>{number}</DateCell>)}
+        {secondWeek.map((number) => (
+          <DateCell
+            key={number}
+            selectedDate={selectedDate}
+            displayDate={displayDate}
+            dateNumber={number}
+            onDateClick={onDateClick}
+          >
+            {number}
+          </DateCell>
+        ))}
       </div>
       <div className="rc-calendar-grid-row --third-week">
-        {thirdWeek.map((number) => <DateCell key={number}>{number}</DateCell>)}
+        {thirdWeek.map((number) => (
+          <DateCell
+            key={number}
+            selectedDate={selectedDate}
+            displayDate={displayDate}
+            dateNumber={number}
+            onDateClick={onDateClick}
+          >
+            {number}
+          </DateCell>
+        ))}
       </div>
       <div className="rc-calendar-grid-row --fourth-week">
-        {fourthWeek.map((number) => <DateCell key={number}>{number}</DateCell>)}
+        {fourthWeek.map((number) => (
+          <DateCell
+            key={number}
+            selectedDate={selectedDate}
+            displayDate={displayDate}
+            dateNumber={number}
+            onDateClick={onDateClick}
+          >
+            {number}
+          </DateCell>
+        ))}
       </div>
       {!!fivethWeek.length && (
         <div className="rc-calendar-grid-row --fiveth-week">
-          {fivethWeek.map((number, index) => <DateCell key={number || `_${index}`} disabled={!number}>{number}</DateCell>)}
+          {fivethWeek.map((number, index) => (
+            <DateCell
+              key={number || `_${index}`}
+              disabled={!number}
+              selectedDate={selectedDate}
+              displayDate={displayDate}
+              dateNumber={number}
+              onDateClick={onDateClick}
+            >
+              {number}
+            </DateCell>
+          ))}
         </div>
       )}
 
       {!!sixthWeek.length && (
         <div className="rc-calendar-grid-row --sixth-week">
-          {sixthWeek.map((number, index) => <DateCell key={number || `_${index}`} disabled={!number}>{number}</DateCell>)}
+          {sixthWeek.map((number, index) => (
+            <DateCell
+              key={number || `_${index}`}
+              disabled={!number}
+              selectedDate={selectedDate}
+              displayDate={displayDate}
+              dateNumber={number}
+              onDateClick={onDateClick}
+            >
+              {number}
+            </DateCell>
+          ))}
         </div>
       )}
     </div>

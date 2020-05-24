@@ -4,15 +4,10 @@ import PropTypes from 'prop-types';
 
 import { config } from '../ConfigProvider';
 import { mMonth } from './map';
-import Context from './Context';
+
 import Button from '../Button';
 
-const Header = ({ className, ...otherProps }) => {
-  const {
-    displayDate,
-    onNextMonth,
-    onPrevMonth,
-  } = useContext(Context);
+const Header = ({ className, displayDate, onNextMonth, onPrevMonth, ...otherProps }) => {
   const displayYear = useMemo(() => displayDate.getFullYear(), [displayDate]);
   const displayMonth = useMemo(() => displayDate.getMonth(), [displayDate]);
 

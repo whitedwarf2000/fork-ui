@@ -18,6 +18,7 @@ export { default as Calendar } from './Calendar';
 export { default as Checkbox } from './Checkbox';
 export { default as Carousel } from './Carousel';
 export { default as Divider } from './Divider';
+export { default as DatePicker } from './DatePicker';
 export { default as Dialog } from './Dialog';
 export { default as Droplet } from './Droplet';
 export { default as Flex } from './Flex';

@@ -1,11 +1,15 @@
 .rc-calendar-date-cell {
-  min-width: 3.7em;
-  min-height: 3.7em;
+  min-width: 3.5em;
+  min-height: 3.5em;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+
+  > .rc-button {
+    transition: unset;
+  }
 }
 
 .rc-calendar-date-cell.--header > .rc-button {

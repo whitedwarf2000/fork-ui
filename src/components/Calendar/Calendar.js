@@ -5,16 +5,20 @@ import PropTypes from 'prop-types';
 import Header from './Header';
 import Grid from './Grid';
 
-import CalendarProvider from './CalendarProvider';
-
-const Calendar = ({ className, ...otherProps }) => {
+const Calendar = ({
+  className,
+  displayDate,
+  selectedDate,
+  onNextMonth,
+  onPrevMonth,
+  onDateClick,
+  ...otherProps
+}) => {
   return (
-    <CalendarProvider>
-      <div className={cn('rc-calendar', className)} {...otherProps}>
-        <Header />
-        <Grid />
-      </div>
-    </CalendarProvider>
+    <div className={cn('rc-calendar', className)} {...otherProps}>
+      <Header displayDate={displayDate} onNextMonth={onNextMonth} onPrevMonth={onPrevMonth} />
+      <Grid displayDate={displayDate} onDateClick={onDateClick} selectedDate={selectedDate} />
+    </div>
   );
 };
 
