@@ -1,18 +1,21 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const Item = ({ wrapperClass, className, _width, fluid, gap, style, children }) => {
+import Context from './Context';
+
+const Item = ({ wrapperClass, className, gap, style, children }) => {
+  const { multiple, itemWidth } = useContext(Context);
   const ref = useRef();
 
   return (
     <div
       style={{
-        width: fluid ? _width : null,
+        width: !multiple ? itemWidth : null,
       }}
       className={cn(
         'rc-carousel-item-wrapper',
-        { '--fluid': fluid },
+        { '--fluid': !multiple },
         wrapperClass,
       )}
       ref={ref}

@@ -42,7 +42,7 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
   }, [body.width, boxBody.width, itemCount, multiple]);
 
   const [left, setLeft] = useState(0);
-  const carouselHeight = useMemo(() => boxBody.height + 5, [boxBody.height]);
+  const boxHeight = useMemo(() => boxBody.height + 5, [boxBody.height]);
 
   useEffect(() => {
     setBoxBody({
@@ -88,7 +88,7 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
     }
   }, [handleNext, auto]);
 
-  const _width = useMemo(() => {
+  const itemWidth = useMemo(() => {
     if (focus) {
       return body.width - gap * 2;
     }
@@ -99,19 +99,18 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
     <Context.Provider
       value={{
         setPage,
-        page: page,
-        itemCount: itemCount,
-        maxPage: maxPage,
+        multiple,
+        page,
+        itemCount,
+        maxPage,
+        itemWidth,
       }}
     >
-      <div ref={ref} className={cn('rc-carousel', className)} style={{ height: carouselHeight }}>
-        <div ref={boxRef} className="rc-carousel-box" style={{ left }} >
-          {React.Children.map(children, (elm) => {
-            return React.cloneElement(elm, {
-              _width,
-              fluid: !multiple,
-            });
-          })}
+      <div ref={ref} className={cn('rc-carousel', className)}>
+        <div className="rc-carousel-container" style={{ height: boxHeight }}>
+          <div ref={boxRef} className="rc-carousel-box" style={{ left }} >
+            {children}
+          </div>
         </div>
         <div className="rc-carousel-handler">
           <Dots />

@@ -5,4 +5,6 @@ export default React.createContext({
   page: 0,
   maxPage: 9,
   itemCount: 0,
+  itemWidth: 0,
+  multiple: false,
 });
