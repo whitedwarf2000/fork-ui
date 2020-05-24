@@ -14,6 +14,7 @@ export { default as Breadcrumb } from './Breadcrumb';
 export { default as Collapse } from './Collapse';
 export { default as Confirm } from './Confirm';
 export { default as Chip } from './Chip';
+export { default as Calendar } from './Calendar';
 export { default as Checkbox } from './Checkbox';
 export { default as Carousel } from './Carousel';
 export { default as Divider } from './Divider';

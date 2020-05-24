@@ -1,0 +1,21 @@
+.rc-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 1em;
+}
+
+.rc-calendar-header-month {
+  text-transform: uppercase;
+  margin-right: 1em;
+}
+
+.rc-calendar-header-right {
+  display: flex;
+
+  > * {
+    margin-left: 0.5em;
+  }
+}

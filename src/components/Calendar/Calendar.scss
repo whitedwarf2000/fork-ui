@@ -1,0 +1,12 @@
+@import './Header.scss';
+@import './Grid.scss';
+@import './DateCell.scss';
+
+.rc-calendar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 0.75em;
+  box-shadow: var(--popup--shadow);
+  padding: 0.8em;
+}

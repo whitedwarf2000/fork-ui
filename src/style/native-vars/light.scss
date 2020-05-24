@@ -53,7 +53,7 @@
 /* Popup, Overlay */
 .light-mode {
   --popup--title-bg: var(--secondary-bg);
-  --popup--shadow:  none;
+  --popup--shadow: 3px 3px 15px #f0f0f0, -3px -3px 15px #f0f0f0;
   --overlay--shadow: 3px 3px 15px #f0f0f0, -3px -3px 15px #f0f0f0;
 }
 

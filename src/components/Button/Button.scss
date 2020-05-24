@@ -143,8 +143,9 @@
 
   &:hover,
   &:focus {
-    background-color: var(--button--bg);
+    background-color: rgba(0, 0, 0, 0.2);
     border-color: transparent;
+    color: #ffffff;
   }
 
   &:disabled,
