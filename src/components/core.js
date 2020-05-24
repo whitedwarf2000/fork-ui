@@ -22,6 +22,7 @@ export { default as DatePicker } from './DatePicker';
 export { default as Dialog } from './Dialog';
 export { default as Droplet } from './Droplet';
 export { default as Flex } from './Flex';
+export { default as Guides } from './Guides';
 export { default as Drawer } from './Drawer';
 export { default as Icon } from './Icon';
 export { default as InputNumber } from './InputNumber';
