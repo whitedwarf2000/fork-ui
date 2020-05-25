@@ -21,8 +21,22 @@ export default (
   } = useCommonCalendar(defaultDisplayDate, defaultStartDate, defaultEndDate, now);
 
   const onDateClick = useCallback((_val) => {
-    setStartDate(_val);
-    setEndDate(_val);
+    setStartDate(prevStartDate => {
+      if (!prevStartDate) {
+        setEndDate(_val);
+        return _val;
+      }
+
+      if (_val < prevStartDate) {
+        setEndDate(prevEndDate => {
+          return prevEndDate > prevStartDate ? prevEndDate : prevStartDate;
+        });
+        return _val;
+      }
+
+      setEndDate(_val);
+      return prevStartDate;
+    });
   }, [setStartDate, setEndDate]);
 
   return {

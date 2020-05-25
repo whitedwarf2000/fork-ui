@@ -21,6 +21,7 @@ const getDateCount = (beginDate, endDate) => {
 
 const Grid = ({
   className,
+  now,
   displayDate,
   startDate,
   endDate,
@@ -140,6 +141,7 @@ const Grid = ({
             onDateClick={onDateClick}
             startDate={startDate}
             endDate={endDate}
+            now={now}
           >
             {number}
           </DateCell>
@@ -154,6 +156,7 @@ const Grid = ({
             onDateClick={onDateClick}
             startDate={startDate}
             endDate={endDate}
+            now={now}
           >
             {number}
           </DateCell>
@@ -168,6 +171,7 @@ const Grid = ({
             onDateClick={onDateClick}
             startDate={startDate}
             endDate={endDate}
+            now={now}
           >
             {number}
           </DateCell>
@@ -182,6 +186,7 @@ const Grid = ({
             onDateClick={onDateClick}
             startDate={startDate}
             endDate={endDate}
+            now={now}
           >
             {number}
           </DateCell>
@@ -198,6 +203,7 @@ const Grid = ({
               onDateClick={onDateClick}
               startDate={startDate}
               endDate={endDate}
+              now={now}
             >
               {number}
             </DateCell>
@@ -216,6 +222,7 @@ const Grid = ({
               onDateClick={onDateClick}
               startDate={startDate}
               endDate={endDate}
+              now={now}
             >
               {number}
             </DateCell>

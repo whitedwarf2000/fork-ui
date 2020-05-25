@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import Calendar from './Calendar';
-import useSingleCalendar from './useSingleCalendar';
+import useRangeCalendar from './useRangeCalendar';
 
 const Provider = ({ children, defaultDisplayDate, defaultStartDate, defaultEndDate, now }) => {
   const {
@@ -13,7 +13,7 @@ const Provider = ({ children, defaultDisplayDate, defaultStartDate, defaultEndDa
     onReset,
     onClear,
     onGotoNow,
-  } = useSingleCalendar(defaultDisplayDate, defaultStartDate, defaultEndDate, now);
+  } = useRangeCalendar(defaultDisplayDate, defaultStartDate, defaultEndDate, now);
 
   return (
     <Calendar.Context.Provider

@@ -3,6 +3,18 @@ import cn from 'classnames';
 
 import Button from '../Button';
 
+const detectSameDate = (aDate, bDate) => {
+  if (!aDate || !bDate) {
+    return false;
+  }
+
+  if (aDate.getDate() !== bDate.getDate()) {
+    return false;
+  }
+
+  return Math.abs((aDate - bDate) / 1000) <= 24 * 60 * 60;
+};
+
 const detectInsideRange = (startDate, endDate, selfDate) => {
   if (!startDate || !endDate) {
     return false;
@@ -16,6 +28,7 @@ const getBeginOfTheDate = (dateNumber, month, year) => {
 };
 
 const DateCell = ({
+  now,
   className,
   header,
   disabled,
@@ -24,8 +37,7 @@ const DateCell = ({
   onDateClick,
   startDate,
   endDate,
-  range,
-  ...otherProps
+  children,
 }) => {
   const selfDate = useMemo(() => {
     if (dateNumber) {
@@ -42,12 +54,34 @@ const DateCell = ({
     return detectInsideRange(startDate, endDate, selfDate);
   }, [header, disabled, startDate, endDate, selfDate]);
 
-  const color = useMemo(() => isSelected ? 'primary' : 'transparent', [isSelected]);
+  const isNow = useMemo(() => {
+    if (header || disabled) {
+      return false;
+    }
+
+    return detectSameDate(now, selfDate);
+  }, [header, disabled, now, selfDate]);
+
+  const injectProps = useMemo(() => {
+    if (isSelected) {
+      return { color: 'primary' };
+    }
+
+    return isNow ? { color: 'primary', outlined: true } : { color: 'transparent' };
+  }, [isSelected, isNow]);
+
   const _onDateClick = useCallback(() => onDateClick(selfDate), [selfDate]);
 
   return (
     <div className={cn('rc-calendar-date-cell', { '--header': header, '--selected': isSelected }, className)}>
-      <Button color={color} circle {...otherProps} disabled={disabled || header} onClick={_onDateClick} />
+      <Button
+        {...injectProps}
+        circle
+        disabled={disabled || header}
+        onClick={_onDateClick}
+      >
+        {children}
+      </Button>
     </div>
   );
 };

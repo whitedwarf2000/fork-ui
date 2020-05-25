@@ -7,7 +7,7 @@ import { mMonth } from './map';
 
 import Button from '../Button';
 
-const Header = ({ className, displayDate, onNextMonth, onPrevMonth }) => {
+const Header = ({ className, displayDate, onNextMonth, onPrevMonth, onClear, onGotoNow }) => {
   const displayYear = useMemo(() => displayDate.getFullYear(), [displayDate]);
   const displayMonth = useMemo(() => displayDate.getMonth(), [displayDate]);
 
@@ -18,7 +18,9 @@ const Header = ({ className, displayDate, onNextMonth, onPrevMonth }) => {
         <span className="rc-calendar-header-year">{displayYear}</span>
       </div>
       <div className="rc-calendar-header-right">
+        <Button glassed circle icon="refresh" onClick={onClear} />
         <Button glassed circle icon="chevron-left" onClick={onPrevMonth} />
+        <Button glassed circle icon="point" onClick={onGotoNow} />
         <Button glassed circle icon="chevron-right" onClick={onNextMonth} />
       </div>
     </div>
