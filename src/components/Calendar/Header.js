@@ -7,7 +7,7 @@ import { mMonth } from './map';
 
 import Button from '../Button';
 
-const Header = ({ className, displayDate, onNextMonth, onPrevMonth, ...otherProps }) => {
+const Header = ({ className, displayDate, onNextMonth, onPrevMonth }) => {
   const displayYear = useMemo(() => displayDate.getFullYear(), [displayDate]);
   const displayMonth = useMemo(() => displayDate.getMonth(), [displayDate]);
 

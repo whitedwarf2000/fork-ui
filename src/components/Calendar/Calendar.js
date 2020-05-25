@@ -8,7 +8,8 @@ import Grid from './Grid';
 const Calendar = ({
   className,
   displayDate,
-  selectedDate,
+  startDate,
+  endDate,
   onNextMonth,
   onPrevMonth,
   onDateClick,
@@ -16,8 +17,17 @@ const Calendar = ({
 }) => {
   return (
     <div className={cn('rc-calendar', className)} {...otherProps}>
-      <Header displayDate={displayDate} onNextMonth={onNextMonth} onPrevMonth={onPrevMonth} />
-      <Grid displayDate={displayDate} onDateClick={onDateClick} selectedDate={selectedDate} />
+      <Header
+        displayDate={displayDate}
+        onNextMonth={onNextMonth}
+        onPrevMonth={onPrevMonth}
+      />
+      <Grid
+        displayDate={displayDate}
+        onDateClick={onDateClick}
+        startDate={startDate}
+        endDate={endDate}
+      />
     </div>
   );
 };

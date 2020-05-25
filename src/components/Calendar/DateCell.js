@@ -3,16 +3,12 @@ import cn from 'classnames';
 
 import Button from '../Button';
 
-const detectSameDate = (aDate, bDate) => {
-  if (!aDate || !bDate) {
+const detectInsideRange = (startDate, endDate, selfDate) => {
+  if (!startDate || !endDate) {
     return false;
   }
 
-  if (Math.abs((aDate - bDate) / 1000) > 24 * 60 * 60) {
-    return false;
-  }
-
-  return aDate.getDate() === bDate.getDate();
+  return selfDate >= startDate && selfDate <= endDate;
 };
 
 const getBeginOfTheDate = (dateNumber, month, year) => {
@@ -23,10 +19,12 @@ const DateCell = ({
   className,
   header,
   disabled,
-  selectedDate,
   displayDate,
   dateNumber,
   onDateClick,
+  startDate,
+  endDate,
+  range,
   ...otherProps
 }) => {
   const selfDate = useMemo(() => {
@@ -40,8 +38,9 @@ const DateCell = ({
     if (header || disabled) {
       return false;
     }
-    return detectSameDate(selectedDate[0], selfDate);
-  }, [header, disabled, selectedDate[0], selfDate]);
+
+    return detectInsideRange(startDate, endDate, selfDate);
+  }, [header, disabled, startDate, endDate, selfDate]);
 
   const color = useMemo(() => isSelected ? 'primary' : 'transparent', [isSelected]);
   const _onDateClick = useCallback(() => onDateClick(selfDate), [selfDate]);
@@ -54,7 +53,6 @@ const DateCell = ({
 };
 
 DateCell.defaultProps = {
-  selectedDate: [],
   onDateClick: f => f,
 };
 

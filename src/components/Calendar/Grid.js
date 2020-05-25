@@ -19,7 +19,13 @@ const getDateCount = (beginDate, endDate) => {
 };
 
 
-const Grid = ({ className, displayDate, onDateClick, selectedDate, ...otherProps }) => {
+const Grid = ({
+  className,
+  displayDate,
+  startDate,
+  endDate,
+  onDateClick,
+}) => {
   const {
     firstWeek,
     secondWeek,
@@ -35,11 +41,11 @@ const Grid = ({ className, displayDate, onDateClick, selectedDate, ...otherProps
     const fivethWeek = [];
     const sixthWeek = [];
 
-    const beginDate = getBeginDateOfTheMonth(displayDate);
-    const endDate = getEndDateOfTheMonth(displayDate);
+    const beginDateOfTheMonth = getBeginDateOfTheMonth(displayDate);
+    const endDateOfTheMonth = getEndDateOfTheMonth(displayDate);
 
-    const beginDay = beginDate.getDay();
-    const dateCount = getDateCount(beginDate, endDate);
+    const beginDay = beginDateOfTheMonth.getDay();
+    const dateCount = getDateCount(beginDateOfTheMonth, endDateOfTheMonth);
 
     let _number = 1;
     let _i = 0;
@@ -129,10 +135,11 @@ const Grid = ({ className, displayDate, onDateClick, selectedDate, ...otherProps
           <DateCell
             key={number || `_${index}`}
             disabled={!number}
-            selectedDate={selectedDate}
             displayDate={displayDate}
             dateNumber={number}
             onDateClick={onDateClick}
+            startDate={startDate}
+            endDate={endDate}
           >
             {number}
           </DateCell>
@@ -142,10 +149,11 @@ const Grid = ({ className, displayDate, onDateClick, selectedDate, ...otherProps
         {secondWeek.map((number) => (
           <DateCell
             key={number}
-            selectedDate={selectedDate}
             displayDate={displayDate}
             dateNumber={number}
             onDateClick={onDateClick}
+            startDate={startDate}
+            endDate={endDate}
           >
             {number}
           </DateCell>
@@ -155,10 +163,11 @@ const Grid = ({ className, displayDate, onDateClick, selectedDate, ...otherProps
         {thirdWeek.map((number) => (
           <DateCell
             key={number}
-            selectedDate={selectedDate}
             displayDate={displayDate}
             dateNumber={number}
             onDateClick={onDateClick}
+            startDate={startDate}
+            endDate={endDate}
           >
             {number}
           </DateCell>
@@ -168,10 +177,11 @@ const Grid = ({ className, displayDate, onDateClick, selectedDate, ...otherProps
         {fourthWeek.map((number) => (
           <DateCell
             key={number}
-            selectedDate={selectedDate}
             displayDate={displayDate}
             dateNumber={number}
             onDateClick={onDateClick}
+            startDate={startDate}
+            endDate={endDate}
           >
             {number}
           </DateCell>
@@ -183,10 +193,11 @@ const Grid = ({ className, displayDate, onDateClick, selectedDate, ...otherProps
             <DateCell
               key={number || `_${index}`}
               disabled={!number}
-              selectedDate={selectedDate}
               displayDate={displayDate}
               dateNumber={number}
               onDateClick={onDateClick}
+              startDate={startDate}
+              endDate={endDate}
             >
               {number}
             </DateCell>
@@ -200,10 +211,11 @@ const Grid = ({ className, displayDate, onDateClick, selectedDate, ...otherProps
             <DateCell
               key={number || `_${index}`}
               disabled={!number}
-              selectedDate={selectedDate}
               displayDate={displayDate}
               dateNumber={number}
               onDateClick={onDateClick}
+              startDate={startDate}
+              endDate={endDate}
             >
               {number}
             </DateCell>

@@ -2,17 +2,23 @@ import React, { useState, useCallback } from 'react';
 import Calendar from './Calendar';
 import useSingleCalendar from './useSingleCalendar';
 
-const Provider = ({ children, defaultDisplayDate, ...otherProps }) => {
+const Provider = ({ children, defaultDisplayDate, defaultStartDate, defaultEndDate, range, ...otherProps }) => {
   const [value, setValue] = useState(new Date(Date.now()));
-  const { displayDate, selectedDate, onNextMonth, onPrevMonth } = useSingleCalendar(defaultDisplayDate, value);
-
-  const onDateClick = useCallback(_val => setValue(_val), [setValue]);
+  const {
+    displayDate,
+    startDate,
+    endDate,
+    onNextMonth,
+    onPrevMonth,
+    onDateClick,
+  } = useSingleCalendar(defaultDisplayDate, defaultStartDate, defaultEndDate, range);
 
   return (
     <Calendar.Context.Provider
       value={{
         displayDate,
-        selectedDate,
+        startDate,
+        endDate,
         onNextMonth,
         onPrevMonth,
         onDateClick,
