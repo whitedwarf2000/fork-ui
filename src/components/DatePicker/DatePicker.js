@@ -6,6 +6,7 @@ import Calendar from './Calendar';
 import Provider from './Provider';
 import SingleCalendar from './Calendar.Single';
 import RangeCalendar from './Calendar.Range';
+import CoupleCalendar from './Calendar.Couple';
 
 const DatePicker = ({}) => {
   return (
@@ -18,5 +19,6 @@ const DatePicker = ({}) => {
 DatePicker.Calendar = Calendar;
 DatePicker.SingleCalendar = SingleCalendar;
 DatePicker.RangeCalendar = RangeCalendar;
+DatePicker.CoupleCalendar = CoupleCalendar;
 
 export default DatePicker;

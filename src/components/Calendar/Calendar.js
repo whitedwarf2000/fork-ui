@@ -18,6 +18,7 @@ const Calendar = ({
   onClear,
   onReset,
   onGotoNow,
+  hiddenRefresh,
   ...otherProps
 }) => {
   return (
@@ -29,6 +30,7 @@ const Calendar = ({
         onClear={onClear}
         onReset={onReset}
         onGotoNow={onGotoNow}
+        hiddenRefresh={hiddenRefresh}
       />
       <Grid
         displayDate={displayDate}
@@ -43,6 +45,12 @@ const Calendar = ({
 
 Calendar.defaultProps = {
   now: new Date(Date.now()),
+  onNextMonth: f => f,
+  onPrevMonth: f => f,
+  onDateClick: f => f,
+  onClear: f => f,
+  onReset: f => f,
+  onGotoNow: f => f,
 };
 
 export default Calendar;

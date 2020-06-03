@@ -12,12 +12,28 @@ const detectSameDate = (aDate, bDate) => {
     return false;
   }
 
-  return Math.abs((aDate - bDate) / 1000) <= 24 * 60 * 60;
+  if (aDate.getMonth() !== bDate.getMonth()) {
+    return false;
+  }
+
+  if (aDate.getFullYear() !== bDate.getFullYear()) {
+    return false;
+  }
+
+  return true;
 };
 
 const detectInsideRange = (startDate, endDate, selfDate) => {
-  if (!startDate || !endDate) {
+  if (!startDate && !endDate) {
     return false;
+  }
+
+  if (startDate && detectSameDate(startDate, selfDate)) {
+    return true;
+  }
+
+  if (endDate && detectSameDate(endDate, selfDate)) {
+    return true;
   }
 
   return selfDate >= startDate && selfDate <= endDate;
@@ -70,7 +86,7 @@ const DateCell = ({
     return isNow ? { color: 'primary', outlined: true } : { color: 'transparent' };
   }, [isSelected, isNow]);
 
-  const _onDateClick = useCallback(() => onDateClick(selfDate), [selfDate]);
+  const _onDateClick = useCallback(() => onDateClick(selfDate), [selfDate, onDateClick]);
 
   return (
     <div className={cn('rc-calendar-date-cell', { '--header': header, '--selected': isSelected }, className)}>

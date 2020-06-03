@@ -35,5 +35,7 @@ export default (
     onReset,
     onClear,
     onGotoNow,
+    setStartDate,
+    setEndDate,
   };
 };

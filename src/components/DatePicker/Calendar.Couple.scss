@@ -1,0 +1,26 @@
+.rc-couple-calendar {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75em;
+  overflow: hidden;
+  box-shadow: var(--popup--shadow);
+  background-color: var(--button-bg);
+}
+
+.rc-couple-calendar-body {
+  display: flex;
+
+  .rc-calendar {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.rc-couple-calendar-footer {
+  display: flex;
+  padding: 0.5em 1em;
+
+  > * {
+    margin-right: 0.5rem;
+  }
+}
