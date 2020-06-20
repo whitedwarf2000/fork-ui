@@ -1,8 +1,8 @@
-.rc-stepper {
+.fui-stepper {
   width: 100%;
   display: flex;
 }
 
-.rc-stepper.--vertical {
+.fui-stepper--vertical {
   flex-direction: column-reverse;
 }

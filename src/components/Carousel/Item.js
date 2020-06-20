@@ -14,8 +14,8 @@ const Item = ({ wrapperClass, className, gap, style, children }) => {
         width: !multiple ? itemWidth : null,
       }}
       className={cn(
-        'rc-carousel-item-wrapper',
-        { '--fluid': !multiple },
+        'fui-carousel-item-wrapper',
+        { 'fui-carousel-item-wrapper--fluid': !multiple },
         wrapperClass,
       )}
       ref={ref}
@@ -25,7 +25,7 @@ const Item = ({ wrapperClass, className, gap, style, children }) => {
           margin: gap,
           ...style,
         }}
-        className={cn('rc-carousel-item', className)}
+        className={cn('fui-carousel-item', className)}
       >
         {children}
       </div>

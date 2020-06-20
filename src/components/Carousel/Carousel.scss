@@ -1,7 +1,7 @@
 @import './Item.scss';
 @import './Dots.scss';
 
-.rc-carousel {
+.fui-carousel {
   width: 100%;
   position: relative;
   display: flex;
@@ -9,26 +9,21 @@
   overflow-x: hidden;
 }
 
-.rc-carousel-container {
+.fui-carousel-container {
   position: relative;
   width: 100%;
 }
 
-.rc-carousel-box {
+.fui-carousel-box {
   display: flex;
   flex-wrap: nowrap;
   transition: left 0.25s, right 0.25s;
   position: absolute;
 }
-.rc-carousel-handler {
+.fui-carousel-handler {
   display: flex;
   width: 100%;
   padding: 0.25rem;
   align-items: center;
   justify-content: flex-end;
-}
-
-.rc-carousel-prev.--hidden,
-.rc-carousel-next.--hidden {
-  visibility: hidden;
 }

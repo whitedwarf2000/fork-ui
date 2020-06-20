@@ -1,16 +1,16 @@
 @import '../../style/vars.scss';
-.rc-pagination {
+.fui-pagination {
   display: flex;
   align-items: center;
 }
 
-.rc-pagination > .rc-pagination-item {
+.fui-pagination > .fui-pagination-item {
   margin-right: 0.5rem;
 }
 
-.rc-pagination-item,
-.rc-pagination-prev,
-.rc-pagination-next {
+.fui-pagination-item,
+.fui-pagination-prev,
+.fui-pagination-next {
   padding-left: 0;
   padding-right: 0;
 }

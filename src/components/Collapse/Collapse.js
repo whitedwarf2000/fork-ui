@@ -47,7 +47,7 @@ const Collapse = ({ className, onActiveKeysChange, onPanelClick, children, accor
   }, [accordion, isControlled, setActiveKeys, onPanelClick]);
 
   return (
-    <div className={cn('rc-collapse', className)}>
+    <div className={cn('fui-collapse', className)}>
       {React.Children.map(children, elm => {
         return React.cloneElement(elm, {
           active: __activeKeys[elm.key],

@@ -71,7 +71,7 @@ const Select = ({
 
   return (
     <Overlay
-      className="rc-select-absolute"
+      className="fui-select-absolute"
       absolute={absolute}
       visible={isDrop}
       onVisibleChange={onVisibleChange}
@@ -84,7 +84,7 @@ const Select = ({
             multiple={multiple}
             hiddenKeys={hiddenKeys}
             selectedKeys={value}
-            className="rc-select-dropdown"
+            className="fui-select-dropdown"
             style={{
               width: selectWidth,
             }}
@@ -98,15 +98,15 @@ const Select = ({
       <div
         {...otherProps}
         ref={ref}
-        className={cn('rc-select', { '--is-drop': isDrop }, className)}
+        className={cn('fui-select', { 'fui-select--is-drop': isDrop }, className)}
       >
         <div
           className={cn(
-            'rc-select-input-wrapper',
-            { '--have-value': value.length}
+            'fui-select-input-wrapper',
+            { 'fui-select-input-wrapper--have-value': value.length}
           )}
         >
-          <div className="rc-select-input-values">
+          <div className="fui-select-input-values">
             {multiple
               ? value.map(keyVal => (
                 <Chip
@@ -129,12 +129,12 @@ const Select = ({
           <input
             placeholder={!value.length ? placeholder : ''}
             value=""
-            className="rc-select-input"
+            className="fui-select-input"
             onClick={onToggleDrop}
             onKeyDown={onInputRemove}
           />
         </div>
-        <Icon name="caret-down" className="rc-select-icon" />
+        <Icon name="caret-down" className="fui-select-icon" />
       </div>
     </Overlay>
   );

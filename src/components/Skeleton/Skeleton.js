@@ -5,9 +5,9 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const mShape = Object.freeze({
-  circle: '--circle',
-  rect: '--rect',
-  p: '--paragraph'
+  circle: 'fui-skeleton--circle',
+  rect: 'fui-skeleton--rect',
+  p: 'fui-skeleton--paragraph'
 });
 
 const lShape = Object.keys(mShape);
@@ -24,7 +24,7 @@ const Skeleton = ({ className, w, h, style, size, ...otherProps }) => {
         fontSize: size,
         ...style
       }}
-      className={cn('rc-skeleton', mShape[shape], className)}
+      className={cn('fui-skeleton', mShape[shape], className)}
       {...passedProps}
     />
   );

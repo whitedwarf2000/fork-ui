@@ -20,7 +20,7 @@ const Anchor = ({ className, affix, children, ...otherProps }) => {
   const _onTriggered = useCallback(key => setActiveKey(key), [setActiveKey]);
 
   const customChildren = useMemo(() => (
-    <ul className={cn('rc-anchor', className)} {...passedProps}>
+    <ul className={cn('fui-anchor', className)} {...passedProps}>
       {React.Children.map(children, (elm) => {
         return React.cloneElement(elm, {
           _onTriggered: _onTriggered,

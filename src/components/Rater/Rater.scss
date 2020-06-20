@@ -1,9 +1,9 @@
-.rc-rater {
+.fui-rater {
   display: flex;
   align-items: center;
 }
 
-.rc-rater-item {
+.fui-rater-item {
   color: var(--text-color);
   transition: color 0.25s;
   padding: 0.25em;
@@ -13,10 +13,10 @@
   }
 }
 
-.rc-rater-item.--light {
+.fui-rater-item--light {
   color: #ffc107;
 
-  .rc-icon-star > path:nth-child(2) {
+  .fui-icon-star > path:nth-child(2) {
     fill: currentColor;
   }
 }

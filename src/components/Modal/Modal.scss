@@ -1,15 +1,15 @@
-.rc-modal-container {
+.fui-modal-container {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &.--close-animation {
-    background-color: transparent;
-    animation: zoomOut 0.25s;
-  }
 }
 
-.rc-modal {
+.fui-modal-container--close-animation {
+  background-color: transparent;
+  animation: zoomOut 0.25s;
+}
+
+.fui-modal {
   position: absolute;
   top: 15%;
   animation: zoomIn 0.25s;

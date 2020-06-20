@@ -7,7 +7,7 @@ import Item from './Item';
 const Breadcrumb = ({ className, children, ...otherProps }) => (
   <div
     className={cn(
-      'rc-breadcrumb',
+      'fui-breadcrumb',
       className,
     )}
     {...otherProps}

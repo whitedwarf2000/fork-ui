@@ -24,16 +24,16 @@ const LinearProgress = ({ className, percent, droplet }) => {
   const onMouseEnter = useCallback(() => setTextVisible(true), []);
 
   return (
-    <div className={cn('rc-linear-progress', className)} onMouseEnter={onMouseEnter}>
-      <div className="rc-linear-progress-rail">
+    <div className={cn('fui-linear-progress', className)} onMouseEnter={onMouseEnter}>
+      <div className="fui-linear-progress-rail">
         <div
-          className="rc-linear-progress-rail-percent"
+          className="fui-linear-progress-rail-percent"
           style={{
             width: `${percent * 100}%`
           }}
         >
           {droplet && (
-            <Droplet className={cn('rc-linear-progress-droplet', { '--hidden': !textVisible })}>
+            <Droplet className={cn('fui-linear-progress-droplet', { 'fui-linear-progress-droplet--hidden': !textVisible })}>
               {Math.floor((percent + Number.EPSILON) * 100 )}
               <span>%</span>
             </Droplet>

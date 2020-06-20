@@ -30,9 +30,9 @@ const ButtonGroup = ({ className, fluid, size, style, children, ...otherProps })
   return (
     <div
       className={cn(
-        'rc-button-group',
+        'fui-button-group',
         {
-          '--fluid': fluid
+          'fui-button-group--fluid': fluid
         },
         className
       )}

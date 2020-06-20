@@ -16,7 +16,7 @@ const EnhanceButton = ({ className, onClick, ...otherProps }) => {
   return (
     <Button
       circle
-      className={cn('rc-speed-dial-button', className)}
+      className={cn('fui-speed-dial-button', className)}
       onClick={_onClick}
       {...otherProps}
     />

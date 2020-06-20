@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Body = ({ className, ...otherProps }) => {
   return (
-    <div className={cn('rc-dialog-body', className)} {...otherProps} />
+    <div className={cn('fui-dialog-body', className)} {...otherProps} />
   );
 };
 

@@ -11,7 +11,7 @@ const Icon = ({ name, className, style, color, size, ...otherProps }) => {
 
   return (
     <I
-      className={cn('rc-icon', `rc-icon-${name}`, className)}
+      className={cn('fui-icon', `fui-icon-${name}`, className)}
       style={{
         color: color || null,
         fontSize: size || null,

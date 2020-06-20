@@ -12,8 +12,8 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const mPlacements = Object.freeze({
-  left: '--left',
-  right: '--right',
+  left: 'fui-drawer-container--left',
+  right: 'fui-drawer-container--right',
 });
 
 const lPlacements = Object.keys(mPlacements);
@@ -56,13 +56,13 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps 
         <Portal>
           <Dialog.Container
             className={cn(
-              'rc-drawer-container',
+              'fui-drawer-container',
               mPlacements[placement],
             )}
               ref={wrapperRef}
             >
             <Dialog
-              className={cn('rc-drawer', animationClass, className)}
+              className={cn('fui-drawer', animationClass, className)}
               ref={ref}
               onClose={onClose}
               {...passedProps}

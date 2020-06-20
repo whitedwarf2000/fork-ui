@@ -15,8 +15,8 @@ const renderIcon = (icon, right) => {
       <Icon
         name={icon}
         className={cn({
-          '--icon-left': !right,
-          '--icon-right': right,
+          'fui-icon--icon-left': !right,
+          'fui-icon--icon-right': right,
         })}
       />
     );
@@ -66,23 +66,23 @@ const Tabs = ({ className, children, onChange, fluid, underline, uppercase, ...o
   return (
     <div
       className={cn(
-        'rc-tabs',
+        'fui-tabs',
         {
-          '--fluid': fluid,
-          '--underline': underline,
-          '--uppercase': uppercase
+          'fui-tabs--fluid': fluid,
+          'fui-tabs--underline': underline,
+          'fui-tabs--uppercase': uppercase
         },
         className
       )}
     >
-      <div className="rc-tabs-nav">
+      <div className="fui-tabs-nav">
         {tabs.map(tab => (
           <button
             key={tab.key}
             className={cn(
-              'rc-tabs-nav-item',
+              'fui-tabs-nav-item',
               {
-                '--active': activeTab === tab.key,
+                'fui-tabs-nav-item--active': activeTab === tab.key,
               }
             )}
             disabled={tab.disabled}
@@ -93,9 +93,9 @@ const Tabs = ({ className, children, onChange, fluid, underline, uppercase, ...o
             {renderIcon(tab.rightIcon, true)}
           </button>
         ))}
-        <button className="rc-tabs-nav-item --rest " />
+        <button className="fui-tabs-nav-item fui-tabs-nav-item--rest " />
       </div>
-      <div className="rc-tabs-contents">
+      <div className="fui-tabs-contents">
         {React.Children.map(children, elm => React.cloneElement(elm, { active: activeTab === elm.key }))}
       </div>
     </div>

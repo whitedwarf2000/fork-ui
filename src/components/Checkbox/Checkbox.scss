@@ -1,4 +1,4 @@
-.rc-checkbox {
+.fui-checkbox {
   display: block;
   position: relative;
   box-sizing: border-box;
@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.rc-checkbox-input {
+.fui-checkbox-input {
   position: absolute;
   top: 0;
   right: 0;
@@ -21,18 +21,18 @@
   opacity: 0;
 
   &:checked {
-    + * + .rc-checkbox-check {
+    + * + .fui-checkbox-check {
       color: #fff;
     }
 
-    + .rc-checkbox-inner {
+    + .fui-checkbox-inner {
       background-color: var(--primary--500);
       border-color: var(--primary--500);
     }
   }
 
   &:hover:not(:checked) {
-    + .rc-checkbox-inner {
+    + .fui-checkbox-inner {
       background-color: transparent;
       border-color: var(--primary--500);
     }
@@ -43,7 +43,7 @@
   }
 }
 
-.rc-checkbox-inner {
+.fui-checkbox-inner {
   position: relative;
   display: block;
   height: 100%;
@@ -54,7 +54,7 @@
   border: 1px solid transparent;
 }
 
-.rc-checkbox-check.rc-checkbox-check {
+.fui-checkbox-check.fui-checkbox-check {
   position: absolute;
   stroke-width: 3;
   top: 50%;
@@ -64,8 +64,8 @@
   transition: color 0.25s;
 }
 
-.rc-checkbox.--circle {
-  .rc-checkbox-inner {
+.fui-checkbox--circle {
+  .fui-checkbox-inner {
     border-radius: 100rem;
   }
 }

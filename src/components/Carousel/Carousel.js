@@ -106,17 +106,17 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
         itemWidth,
       }}
     >
-      <div ref={ref} className={cn('rc-carousel', className)}>
-        <div className="rc-carousel-container" style={{ height: boxHeight }}>
-          <div ref={boxRef} className="rc-carousel-box" style={{ left }} >
+      <div ref={ref} className={cn('fui-carousel', className)}>
+        <div className="fui-carousel-container" style={{ height: boxHeight }}>
+          <div ref={boxRef} className="fui-carousel-box" style={{ left }} >
             {children}
           </div>
         </div>
-        <div className="rc-carousel-handler">
+        <div className="fui-carousel-handler">
           <Dots />
           <Button
             icon="chevron-left"
-            className={cn('rc-carousel-prev')}
+            className={cn('fui-carousel-prev')}
             glassed
             disabled={!loop && page <= 1}
             circle
@@ -125,7 +125,7 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
           />
           <Button
             icon="chevron-right"
-            className={cn('rc-carousel-next')}
+            className={cn('fui-carousel-next')}
             glassed
             disabled={!loop && page >= maxPage}
             circle

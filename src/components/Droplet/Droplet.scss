@@ -1,4 +1,4 @@
-.rc-droplet {
+.fui-droplet {
   background-color: var(--primary--600);
   display: flex;
   justify-content: center;
@@ -20,6 +20,6 @@
   }
 }
 
-.rc-droplet > span {
+.fui-droplet > span {
   z-index: 1;
 }

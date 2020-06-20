@@ -2,11 +2,13 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import mPlacements from '../placements';
+import { makePlacements } from '../placements';
 import renderPlacement from './render-placement.absolute';
 import useOverlay from './useOverlay';
 
 import withCheatTargetNode from './withCheatTargetNode';
+
+const mPlacements = makePlacements('fui-overlay');
 
 const Overlay = ({
   className,
@@ -20,16 +22,16 @@ const Overlay = ({
   const { visible, overlayStyle, overlayRef } = useOverlay(otherProps, targetNode, renderPlacement);
 
   return (
-    <div className={cn('rc-absolute-overlay-container', className)}>
+    <div className={cn('fui-absolute-overlay-container', className)}>
       {children}
       <div
         ref={overlayRef}
         className={cn(
-          'rc-overlay rc-overlay-absolute',
+          'fui-overlay fui-overlay-absolute',
           mPlacements[otherProps.placement],
           {
-            '--hidden': !visible,
-            '--arrow': arrow,
+            'fui-overlay--hidden': !visible,
+            'fui-overlay--arrow': arrow,
           },
           overlayClass
         )}

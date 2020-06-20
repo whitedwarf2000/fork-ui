@@ -1,13 +1,10 @@
 @import '../../style/vars.scss';
 
-.rc-drawer-container {
-  &.--close-animation {
-    background-color: transparent;
-  }
-  
+.fui-drawer-container--close-animation {
+  background-color: transparent;
 }
 
-.rc-drawer {
+.fui-drawer {
   position: absolute;
   height: 100vh;
   max-width: 100vw;
@@ -18,15 +15,14 @@
   }
 }
 
-.rc-drawer-container.--left {
-  .rc-drawer {
+.fui-drawer-container--left {
+  .fui-drawer {
     left: 0;
   }
 }
 
-
-.rc-drawer-container.--right {
-  .rc-drawer {
+.fui-drawer-container--right {
+  .fui-drawer {
     right: 0;
   }
 }

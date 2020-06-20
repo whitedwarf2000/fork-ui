@@ -22,7 +22,7 @@ const Calendar = ({
   ...otherProps
 }) => {
   return (
-    <div className={cn('rc-calendar', className)} {...otherProps}>
+    <div className={cn('fui-calendar', className)} {...otherProps}>
       <Header
         displayDate={displayDate}
         onNextMonth={onNextMonth}

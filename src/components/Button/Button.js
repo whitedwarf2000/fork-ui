@@ -9,15 +9,15 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit, isString } from '../../utils/helpers';
 
 const mColors = Object.freeze({
-  primary: '--primary',
-  danger: '--danger',
-  glassed: '--glassed',
-  transparent: '--transparent',
+  primary: 'fui-button--primary',
+  danger: 'fui-button--danger',
+  glassed: 'fui-button--glassed',
+  transparent: 'fui-button--transparent',
 });
 
 const mShapes = Object.freeze({
-  circle: '--circle',
-  rounded: '--rounded',
+  circle: 'fui-button--circle',
+  rounded: 'fui-button--rounded',
 });
 
 const lColors = Object.keys(mColors);
@@ -94,12 +94,12 @@ const Button = React.forwardRef(({
     <button
       ref={ref}
       className={cn(
-        'rc-button',
+        'fui-button',
         {
-          '--icon-button': icon,
-          '--colored': isColored,
-          '--loading': loading,
-          '--outlined': outlined,
+          'fui-button--icon-button': icon,
+          'fui-button--colored': isColored,
+          'fui-button--loading': loading,
+          'fui-button--outlined': outlined,
         },
         mShapes[shape],
         mColors[color],
@@ -115,7 +115,7 @@ const Button = React.forwardRef(({
       {...passedProps}
     >
       {loading && <Loader.Spinner />}
-      <span className="rc-button-children">
+      <span className="fui-button-children">
         {_children}
       </span>
     </button>

@@ -29,17 +29,17 @@ const ItemGroup = ({ className, children, title, _key }) => {
   return (
     <li
       className={cn(
-        'rc-menu-item-group',
+        'fui-menu-item-group',
         {
-          '--icon-only': iconOnly,
-          '--selected': selected,
-          '--hidden': hidden,
+          'fui-menu-item-group--icon-only': iconOnly,
+          'fui-menu-item-group--selected': selected,
+          'fui-menu-item-group--hidden': hidden,
         },
         className,
       )
     }>
-      <div className="rc-menu-item-group-title"><span>{title}</span></div>
-      <ul className="rc-menu-item-group-list">
+      <div className="fui-menu-item-group-title"><span>{title}</span></div>
+      <ul className="fui-menu-item-group-list">
         {customChildren}
       </ul>
     </li>

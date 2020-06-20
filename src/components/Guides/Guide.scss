@@ -1,9 +1,9 @@
-.rc-guide-spotlight {
+.fui-guide-spotlight {
   position: absolute;
   background-color: gray;
 }
 
-.rc-guide {
+.fui-guide {
   top: 0;
   left: 0;
   min-width: 100vw;
@@ -15,6 +15,6 @@
   z-index: 999;
 }
 
-.rc-guide.--open {
+.fui-guide--open {
   display: block;
 }

@@ -1,25 +1,25 @@
-.rc-panel {
+.fui-panel {
   display: flex;
   flex-direction: column;
 }
 
-.rc-panel.--disabled {
-  .rc-panel-title {
+.fui-panel--disabled {
+  .fui-panel-title {
     cursor: not-allowed;
   }
 }
 
-.rc-panel.--active {
-  .rc-panel-title {
+.fui-panel--active {
+  .fui-panel-title {
     color: var(--primary--500);
   }
 
-  .rc-panel-icon {
+  .fui-panel-icon {
     transform: translateY(-50%) rotate(-180deg);
   }
 }
 
-.rc-panel-title {
+.fui-panel-title {
   position: relative;
   height: 3em;
   display: flex;
@@ -36,7 +36,7 @@
   }
 }
 
-.rc-panel-icon {
+.fui-panel-icon {
   position: absolute;
   right: 0;
   top: 50%;
@@ -44,13 +44,13 @@
   margin-right: 1em;
 }
 
-.rc-panel-content {
+.fui-panel-content {
   background-color: var(--bg);
   box-sizing: border-box;
   display: block;
 }
 
-.rc-panel-box {
+.fui-panel-box {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }

@@ -1,56 +1,56 @@
-h1.rc-typo,
-h2.rc-typo,
-h3.rc-typo,
-h4.rc-typo {
+h1.fui-typo,
+h2.fui-typo,
+h3.fui-typo,
+h4.fui-typo {
   font-weight: 600;
   margin-bottom: .5em;
 }
 
-h1.rc-typo {
+h1.fui-typo {
   font-size: 2em;
 }
 
-h2.rc-typo {
+h2.fui-typo {
   font-size: 1.5em;
 }
 
-h3.rc-typo {
+h3.fui-typo {
   font-size: 1.17em;
 }
 
-h4.rc-typo {
+h4.fui-typo {
   font-size: 1em;
 }
 
-h5.rc-typo {
+h5.fui-typo {
   font-size: .83em;
 }
 
-h6.rc-typo {
+h6.fui-typo {
   font-size: .67em;
 }
 
-.rc-typo.--disabled {
+.fui-typo--disabled {
   user-select: none;
   cursor: not-allowed;
 }
 
-.rc-typo.--underline {
+.fui-typo--underline {
   text-decoration: underline;
 }
 
-.rc-typo.--line-through {
+.fui-typo--line-through {
   text-decoration: line-through;
 }
 
-.rc-typo.--italic {
+.fui-typo--italic {
   font-style: italic;
 }
 
-.rc-typo.--oblique {
+.fui-typo--oblique {
   font-style: oblique;
 }
 
-.rc-typo.--strong {
+.fui-typo--strong {
   font-weight: 600;
 }

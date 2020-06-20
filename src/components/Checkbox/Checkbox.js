@@ -5,15 +5,15 @@ import Icon from '../Icon';
 
 const Checkbox = React.forwardRef(({ className, circle, ...otherProps }, ref) => {
   return (
-    <span className={cn('rc-checkbox', { '--circle': circle },className)}>
+    <span className={cn('fui-checkbox', { 'fui-checkbox--circle': circle },className)}>
       <input
         type="checkbox"
-        className="rc-checkbox-input"
+        className="fui-checkbox-input"
         ref={ref}
         {...otherProps}
       />
-      <span className="rc-checkbox-inner" />
-      <Icon name="check" className="rc-checkbox-check" size="0.8em" />
+      <span className="fui-checkbox-inner" />
+      <Icon name="check" className="fui-checkbox-check" size="0.8em" />
     </span>
   );
 });

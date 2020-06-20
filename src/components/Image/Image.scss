@@ -1,10 +1,10 @@
-.rc-image {
+.fui-image {
   display: block;
   position: relative;
   overflow: hidden;
 }
 
-.rc-image-blur {
+.fui-image-blur {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -17,14 +17,14 @@
   transform: scale(1.2);
 }
 
-.rc-image-skeleton {
+.fui-image-skeleton {
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 1;
 }
 
-img.rc-image-native.--main {
+img.fui-image-native--main {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -34,30 +34,30 @@ img.rc-image-native.--main {
   position: absolute;
 }
 
-img.rc-image-native.--main.--loaded {
+img.fui-image-native--main.fui-image-native--loaded {
   opacity: 1;
 }
 
-img.rc-image-native.--cover {
+img.fui-image-native--cover {
   object-fit: cover;
 }
 
-img.rc-image-native.--contain {
+img.fui-image-native--contain {
   object-fit: contain;
 }
 
-img.rc-image-native.--fill {
+img.fui-image-native--fill {
   object-fit: fill;
 }
 
-img.rc-image-native.--scale-down {
+img.fui-image-native--scale-down {
   object-fit: scale-down;
 }
 
-img.rc-image-native.--none {
+img.fui-image-native--none {
   object-fit: none;
 }
 
-img.rc-image-native.--blur {
+img.fui-image-native--blur {
   object-fit: contain;
 }

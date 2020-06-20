@@ -10,29 +10,29 @@ $skeleton-loading--100: rgba(0, 0, 0, 0.2);
   }
 }
 
-.rc-skeleton {
+.fui-skeleton {
   background-color: $skeleton-loading--0;
   animation: skeleton-loading .8s linear infinite alternate;
 }
 
-.rc-skeleton.--circle {
+.fui-skeleton--circle {
   height: 2.5em !important;
   width: 2.5em !important;
   border-radius: 100rem;
   margin-bottom: 0.5rem;
 }
 
-.rc-skeleton.--rect,
-.rc-skeleton.--paragraph {
+.fui-skeleton--rect,
+.fui-skeleton--paragraph {
   width: 100%;
   border-radius: 0.5em;
   margin-bottom: 0.5rem;
 }
 
-.rc-skeleton.--rect {
+.fui-skeleton--rect {
   height: 1.5em;
 }
 
-.rc-skeleton.--paragraph {
+.fui-skeleton--paragraph {
   height: 1.5rem !important;
 }

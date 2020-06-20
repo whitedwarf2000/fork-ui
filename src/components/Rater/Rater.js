@@ -15,7 +15,7 @@ const Rater = ({ className, max, starRef, icon, star, onChange, fontSize, style,
       rs.push(
         <div
           key={i}
-          className={cn('rc-rater-item', { '--light': isLighted(currentStarHover, i, star) })}
+          className={cn('fui-rater-item', { 'fui-rater-item--light': isLighted(currentStarHover, i, star) })}
           onMouseEnter={() => setCurrentStarHover(i + 1)}
           onClick={() => onChange(i + 1)}
         >
@@ -28,7 +28,7 @@ const Rater = ({ className, max, starRef, icon, star, onChange, fontSize, style,
 
   return (
     <div
-      className={cn('rc-rater', className)}
+      className={cn('fui-rater', className)}
       ref={starRef}
       onMouseLeave={() => setCurrentStarHover('outside')}
       style={{

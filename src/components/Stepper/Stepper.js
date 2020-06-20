@@ -36,7 +36,7 @@ const Stepper = ({ className, children, vertical, style, ...otherProps }) => {
   }));
 
   return (
-    <div className={cn('rc-stepper', { '--vertical': vertical }, className)} style={style}>
+    <div className={cn('fui-stepper', { 'fui-stepper--vertical': vertical }, className)} style={style}>
       {vertical ? _customChildren.reverse() : _customChildren}
     </div>
   );

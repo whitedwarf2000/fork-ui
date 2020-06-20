@@ -7,9 +7,9 @@ import Icon from '../Icon';
 
 const UploadButton = ({ className, ...otherProps }) => {
   return (
-    <Button className={cn('rc-upload-button', className)}>
+    <Button className={cn('fui-upload-button', className)}>
       <Icon name="cloud-upload" />
-      <input className="rc-upload-input" type="file" {...otherProps} />
+      <input className="fui-upload-input" type="file" {...otherProps} />
     </Button>
   );
 };

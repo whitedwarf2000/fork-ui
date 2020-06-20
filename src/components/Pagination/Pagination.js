@@ -25,13 +25,13 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
   const onItemClick = useCallback(value =>  onChange(value), [onChange]);
 
   return (
-    <div className={cn('rc-pagination', className )} {...otherProps}>
+    <div className={cn('fui-pagination', className )} {...otherProps}>
       {loop(startIndex, endIndex, (pageNumber) => (
         <Button
           glassed
           rounded
           key={pageNumber}
-          className={cn('rc-pagination-item', { '--active': pageNumber === activePage })}
+          className={cn('fui-pagination-item', { 'fui-pagination-item--active': pageNumber === activePage })}
           primary={pageNumber === activePage}
           onClick={() => onItemClick(pageNumber)}
         >
@@ -39,7 +39,7 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
         </Button>
       ))}
       <Button
-        className="rc-pagination-prev"
+        className="fui-pagination-prev"
         disabled={activePage <= 1}
         onClick={onPrev}
         circle
@@ -50,7 +50,7 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
       />
 
       <Button
-        className="rc-pagination-next"
+        className="fui-pagination-next"
         disabled={activePage >= itemCount}
         onClick={onNext}
         circle

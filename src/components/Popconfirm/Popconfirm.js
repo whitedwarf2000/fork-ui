@@ -33,7 +33,7 @@ const Popconfirm = ({
     <Popover
       visible={visible}
       onVisibleChange={onVisibleChange}
-      overlayClass="rc-popconfirm"
+      overlayClass="fui-popconfirm"
       className={className}
       {...otherProps}
       overlay={

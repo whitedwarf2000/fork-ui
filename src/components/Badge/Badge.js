@@ -6,7 +6,9 @@ import Icon from '../Icon';
 
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
-import mPlacements from '../placements';
+import { makePlacements } from '../placements';
+
+const mPlacements = makePlacements('fui-badge');
 
 const lPlacements = Object.keys(mPlacements);
 
@@ -46,9 +48,9 @@ const Badge = ({
 
   useLayoutEffect(() => {
     if (count && count > 0) {
-      countRef.current.classList.add('--badge-up-animation');
+      countRef.current.classList.add('fui-badge-count--badge-up-animation');
 
-      const timer = setTimeout(() => countRef.current.classList.remove('--badge-up-animation'), 500);
+      const timer = setTimeout(() => countRef.current.classList.remove('fui-badge-count--badge-up-animation'), 500);
 
       return () => clearTimeout(timer);
     }
@@ -81,13 +83,13 @@ const Badge = ({
   return (
     <span
       className={cn(
-        'rc-badge',
+        'fui-badge',
         {
-          '--dot': dot,
-          '--overlap': overlap,
-          '--icon': icon,
+          'fui-badge--dot': dot,
+          'fui-badge--overlap': overlap,
+          'fui-badge--icon': icon,
         },
-        mPlacements[placement] || '--top-right',
+        mPlacements[placement] || 'fui-badge--top-right',
         className
       )}
       {...passedProps}
@@ -98,7 +100,7 @@ const Badge = ({
         style={{
           backgroundColor: color,
         }}
-        className={cn('rc-badge-count', { '--hidden': isHidden })}
+        className={cn('fui-badge-count', { 'fui-badge-count--hidden': isHidden })}
       >
         <b>{renderCount(icon, displayCount)}</b>
       </sub>

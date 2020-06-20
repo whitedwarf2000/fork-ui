@@ -1,27 +1,27 @@
-.rc-speed-dial.--top,
-.rc-speed-dial.--top-right,
-.rc-speed-dial.--right-top,
-.rc-speed-dial.--right,
-.rc-speed-dial.--right-bottom,
-.rc-speed-dial.--bottom-right,
-.rc-speed-dial.--bottom,
-.rc-speed-dial.--bottom-left,
-.rc-speed-dial.--left,
-.rc-speed-dial.--left-bottom,
-.rc-speed-dial.--left-top,
-.rc-speed-dial.--top-left {
-  .rc-button {
+.fui-speed-dial.fui-overlay--top,
+.fui-speed-dial.fui-overlay--top-right,
+.fui-speed-dial.fui-overlay--right-top,
+.fui-speed-dial.fui-overlay--right,
+.fui-speed-dial.fui-overlay--right-bottom,
+.fui-speed-dial.fui-overlay--bottom-right,
+.fui-speed-dial.fui-overlay--bottom,
+.fui-speed-dial.fui-overlay--bottom-left,
+.fui-speed-dial.fui-overlay--left,
+.fui-speed-dial.fui-overlay--left-bottom,
+.fui-speed-dial.fui-overlay--left-top,
+.fui-speed-dial.fui-overlay--top-left {
+  .fui-button {
     margin: 0.25em;
   }
 
-  .rc-speed-dial-buttons {
+  .fui-speed-dial-buttons {
     display: flex;
   }
 
-  &.--horizontal > .rc-speed-dial-buttons {
+  &.fui-speed-dial--horizontal > .fui-speed-dial-buttons {
     flex-direction: column;
   }
-  &.--vertical > .rc-speed-dial-buttons {
+  &.fui-speed-dial--vertical > .fui-speed-dial-buttons {
     flex-direction: row;
   }
 }
@@ -37,46 +37,46 @@
   }
 }
 
-.rc-speed-dial .rc-button {
+.fui-speed-dial .fui-button {
   animation: scale ease alternate;
 }
 
-.rc-speed-dial .rc-button:nth-child(1) {
+.fui-speed-dial .fui-button:nth-child(1) {
   animation-duration: 0.1s;
 }
 
-.rc-speed-dial .rc-button:nth-child(2) {
+.fui-speed-dial .fui-button:nth-child(2) {
   animation-duration: 0.2s;
 }
 
-.rc-speed-dial .rc-button:nth-child(3) {
+.fui-speed-dial .fui-button:nth-child(3) {
   animation-duration: 0.3s;
 }
 
-.rc-speed-dial .rc-button:nth-child(4) {
+.fui-speed-dial .fui-button:nth-child(4) {
   animation-duration: 0.4s;
 }
 
-.rc-speed-dial .rc-button:nth-child(5) {
+.fui-speed-dial .fui-button:nth-child(5) {
   animation-duration: 0.5s;
 }
 
-.rc-speed-dial .rc-button:nth-child(6) {
+.fui-speed-dial .fui-button:nth-child(6) {
   animation-duration: 0.6s;
 }
 
-.rc-speed-dial .rc-button:nth-child(7) {
+.fui-speed-dial .fui-button:nth-child(7) {
   animation-duration: 0.7s;
 }
 
-.rc-speed-dial .rc-button:nth-child(8) {
+.fui-speed-dial .fui-button:nth-child(8) {
   animation-duration: 0.8s;
 }
 
-.rc-speed-dial .rc-button:nth-child(9) {
+.fui-speed-dial .fui-button:nth-child(9) {
   animation-duration: 0.9s;
 }
 
-.rc-speed-dial .rc-button:nth-child(10) {
+.fui-speed-dial .fui-button:nth-child(10) {
   animation-duration: 1s;
 }

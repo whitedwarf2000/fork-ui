@@ -7,9 +7,9 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const mStatus = Object.freeze({
-  processing: '--processing',
-  completed: '--completed',
-  canceled: '--canceled',
+  processing: 'fui-step--processing',
+  completed: 'fui-step--completed',
+  canceled: 'fui-step--canceled',
 });
 
 const lStatus = Object.keys(mStatus);
@@ -23,15 +23,15 @@ const Step = ({ className, title, children, icon, stepNumber, ...otherProps }) =
   ]), [otherProps]);
 
   return (
-    <div className={cn('rc-step', mStatus[status], className)} {...passedProps}>
-      <div className="rc-step-rail" />
-      <div className="rc-step-avatar">
+    <div className={cn('fui-step', mStatus[status], className)} {...passedProps}>
+      <div className="fui-step-rail" />
+      <div className="fui-step-avatar">
         {status === 'completed' && (<Icon name="check" style={{ strokeWidth: 3 }}/>)}
         {status !== 'completed' && (<span>{icon ? <Icon name={icon} /> : stepNumber}</span>)}
       </div>
-      <div className="rc-step-content">
-        <div className="rc-step-title">{title}</div>
-        <div className="rc-step-description">{children}</div>
+      <div className="fui-step-content">
+        <div className="fui-step-title">{title}</div>
+        <div className="fui-step-description">{children}</div>
       </div>
     </div>
   );

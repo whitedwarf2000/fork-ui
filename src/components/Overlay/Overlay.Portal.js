@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 
 import Portal from '../Portal';
 
-import mPlacements from '../placements';
+import { makePlacements } from '../placements';
 import renderPlacement from './render-placement.portal';
 import withFindDOMNode from '../../HOCs/withFindDOMNode';
 
 import useOverlay from './useOverlay';
+
+const mPlacements = makePlacements('fui-overlay');
 
 const Overlay = ({
   className,
@@ -28,11 +30,11 @@ const Overlay = ({
         <div
           ref={overlayRef}
           className={cn(
-            'rc-overlay rc-overlay-portal',
+            'fui-overlay fui-overlay-portal',
             mPlacements[otherProps.placement],
             {
-              '--hidden': !visible,
-              '--arrow': arrow,
+              'fui-overlay--hidden': !visible,
+              'fui-overlay--arrow': arrow,
             },
             overlayClass
           )}

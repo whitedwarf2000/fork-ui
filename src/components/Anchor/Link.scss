@@ -1,4 +1,4 @@
-.rc-anchor-link {
+.fui-anchor-link {
   height: 2em;
   padding: 0 1rem;
   display: flex;
@@ -10,7 +10,7 @@
   border-left: 1px solid transparent;
 }
 
-.rc-anchor-link.--active {
+.fui-anchor-link--active {
   color: var(--primary--500);
   border-left-color: var(--primary--500);
 }

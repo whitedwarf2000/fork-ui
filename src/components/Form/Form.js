@@ -14,7 +14,7 @@ const Form = React.forwardRef(({ className, children }, ref) => {
   const _ref = useFlexibleRef(ref);
 
   return (
-    <form ref={_ref} className={cn('rc-form', className)}>
+    <form ref={_ref} className={cn('fui-form', className)}>
       {children}
     </form>
   );

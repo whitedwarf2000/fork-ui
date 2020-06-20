@@ -5,15 +5,15 @@ import Icon from '../Icon';
 
 const Radio = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
-    <span className={cn('rc-radio', className)}>
+    <span className={cn('fui-radio', className)}>
       <input
         type="radio"
-        className="rc-radio-input"
+        className="fui-radio-input"
         ref={ref}
         {...otherProps}
       />
-      <span className="rc-radio-inner" />
-      <Icon name="check" className="rc-radio-check" size="0.8em" />
+      <span className="fui-radio-inner" />
+      <Icon name="check" className="fui-radio-check" size="0.8em" />
     </span>
   );
 });

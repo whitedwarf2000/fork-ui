@@ -13,7 +13,7 @@ const Dialog = React.forwardRef(({ className, closable, onClose, ...otherProps }
     <Context.Provider value={{  onClose }}>
       <div
         ref={ref}
-        className={cn('rc-dialog', className)}
+        className={cn('fui-dialog', className)}
         {...otherProps}
       />
     </Context.Provider>

@@ -10,8 +10,8 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const mDirections = Object.freeze({
-  vertical: '--vertical',
-  horizontal: '--horizontal',
+  vertical: 'fui-speed-dial--vertical',
+  horizontal: 'fui-speed-dial--horizontal',
 });
 
 const lDirections = Object.keys(mDirections);
@@ -40,12 +40,12 @@ const SpeedDial = ({ className, overlayClass, children, trigger, overlay, defaul
       className={className}
       overlay={
         <SpeedDialContext.Provider value={speedDialContext}>
-          <div className='rc-speed-dial-buttons'>
+          <div className='fui-speed-dial-buttons'>
             {overlay}
           </div>
         </SpeedDialContext.Provider>
       }
-      overlayClass={cn('rc-speed-dial', mDirections[direction], overlayClass)}
+      overlayClass={cn('fui-speed-dial', mDirections[direction], overlayClass)}
       {...passedProps}
     >
       {children}

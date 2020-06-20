@@ -8,20 +8,20 @@ const Box = ({ className, children, loading, skeleton, ...otherProps }) => {
   return (
     <div
       className={cn(
-        'rc-box',
+        'fui-box',
         {
-          '--loading': loading,
-          '--skeleton': skeleton,
-          '--dots': !skeleton
+          'fui-box--loading': loading,
+          'fui-box--skeleton': skeleton,
+          'fui-box--dots': !skeleton
         },
         className
       )}
     >
-      <div className='rc-box-content' {...otherProps}>
+      <div className='fui-box-content' {...otherProps}>
         {children}
       </div>
       {loading && (
-        <div className="rc-box-loader">
+        <div className="fui-box-loader">
           {skeleton ? skeleton : <Loader.Dots />}
         </div>
       )}

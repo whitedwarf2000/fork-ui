@@ -81,8 +81,8 @@ const CoupleCalendar = ({
   }, [setStartDate, setEndDate]);
 
   return (
-    <div className={cn('rc-couple-calendar')}>
-      <div className="rc-couple-calendar-body">
+    <div className={cn('fui-couple-calendar')}>
+      <div className="fui-couple-calendar-body">
         <Calendar
           hiddenRefresh
           now={now}
@@ -103,7 +103,7 @@ const CoupleCalendar = ({
           onDateClick={onRightDateItemClick}
         />
       </div>
-      <div className="rc-couple-calendar-footer">
+      <div className="fui-couple-calendar-footer">
         <Button
           glassed
           circle

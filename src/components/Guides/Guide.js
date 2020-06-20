@@ -67,7 +67,7 @@ const Guide = ({
       {children}
       <Portal>
         <div
-          className={cn('rc-guide', { '--open': isVisible })}
+          className={cn('fui-guide', { 'fui-guide--open': isVisible })}
           style={{ height }}
         >
           {isVisible && (
@@ -93,7 +93,7 @@ const Guide = ({
               }
               {...otherProps}
             >
-              <div className="rc-guide-spotlight" style={{ ...spotlightPos }} />
+              <div className="fui-guide-spotlight" style={{ ...spotlightPos }} />
             </Popover>
           )}
         </div>

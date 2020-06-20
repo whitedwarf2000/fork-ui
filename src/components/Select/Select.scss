@@ -1,14 +1,14 @@
-.rc-select {
+.fui-select {
   position: relative;
   width: 100%;
   user-select: none;
 }
 
-.rc-select-absolute {
+.fui-select-absolute {
   width: 100%;
 }
 
-.rc-select-input {
+.fui-select-input {
   outline: 0 !important;
   border: 0;
   height: 3em;
@@ -17,7 +17,7 @@
   padding-left: 0.75em;
 }
 
-.rc-select-input-wrapper {
+.fui-select-input-wrapper {
   min-height: var(--input-height);
   width: 100%;
   border-radius: var(--border-radius);
@@ -30,7 +30,7 @@
   align-items: center;
 }
 
-.rc-select-input-values {
+.fui-select-input-values {
   display: flex;
   align-items: center;
 
@@ -39,32 +39,32 @@
   }
 }
 
-.rc-select-icon {
+.fui-select-icon {
   position: absolute;
   right: 0.75em;
   top: 0.75em;
 }
 
-.rc-select.--disabled {
+.fui-select--disabled {
   cursor: not-allowed;
 }
 
-.rc-select.--is-drop {
-  .rc-select-icon {
+.fui-select--is-drop {
+  .fui-select-icon {
     transform: rotate(180deg);
   }
 }
 
-.rc-select-input-wrapper:hover,
-.rc-select.--is-drop .rc-select-input-wrapper {
+.fui-select-input-wrapper:hover,
+.fui-select--is-drop .fui-select-input-wrapper {
   border-color: var(--primary--500);
   background-color: var(--bg);
 }
 
-.rc-select.--rounded .rc-select-input-wrapper {
+.fui-select--rounded .fui-select-input-wrapper {
   border-radius: 100em;
 }
 
-.rc-select-dropdown {
+.fui-select-dropdown {
   box-shadow: var(--overlay--shadow);
 }

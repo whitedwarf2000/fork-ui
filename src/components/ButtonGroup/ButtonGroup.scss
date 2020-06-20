@@ -1,29 +1,29 @@
-.rc-button-group {
+.fui-button-group {
   display: flex;
 
-  > .rc-button {
+  > .fui-button {
     border-radius: 0;
   }
 
-  > .rc-button:not(:last-child) {
+  > .fui-button:not(:last-child) {
     margin-right: 1px;
   }
 
-  > .rc-button:nth-child(1) {
+  > .fui-button:nth-child(1) {
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
   }
 
-  > .rc-button:last-child {
+  > .fui-button:last-child {
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
   }
 }
 
-.rc-button-group.--fluid {
+.fui-button-group--fluid {
   width: 100%;
 
-  > .rc-button {
+  > .fui-button {
     flex-grow: 1;
   }
 }

@@ -1,7 +1,7 @@
 @import '../../style/vars.scss';
 @import './Overlay.Absolute.scss';
 
-.rc-overlay {
+.fui-overlay {
   position: absolute;
   z-index: var(--zindex-overlay);
   background-color: var(--bg);
@@ -20,18 +20,18 @@
   }
 }
 
-.rc-overlay.--arrow {
+.fui-overlay--arrow {
   &:after {
     display: block;
     border-color: var(--bg);
   }
 }
 
-.rc-overlay.--hidden {
+.fui-overlay--hidden.fui-overlay--hidden {
   display: none;
 }
 
-.rc-overlay.--arrow.--top {
+.fui-overlay--arrow.fui-overlay--top {
   &:after {
     bottom: 0;
     left: 50%;
@@ -42,7 +42,7 @@
   }
 }
 
-.rc-overlay.--arrow.--top-right {
+.fui-overlay--arrow.fui-overlay--top-right {
   &:after {
     bottom: 0;
     right: 0;
@@ -53,7 +53,7 @@
   }
 }
 
-.rc-overlay.--arrow.--right-top {
+.fui-overlay--arrow.fui-overlay--right-top {
   &:after {
     top: 0;
     left: 0;
@@ -64,7 +64,7 @@
   }
 }
 
-.rc-overlay.--arrow.--bottom-right {
+.fui-overlay--arrow.fui-overlay--bottom-right {
   &:after {
     top: 0;
     right: 0;
@@ -75,7 +75,7 @@
   }
 }
 
-.rc-overlay.--arrow.--bottom {
+.fui-overlay--arrow.fui-overlay--bottom {
   &:after {
     top: 0;
     left: 50%;
@@ -86,7 +86,7 @@
   }
 }
 
-.rc-overlay.--arrow.--bottom-left {
+.fui-overlay--arrow.fui-overlay--bottom-left {
   &:after {
     top: 0;
     left: 0;
@@ -97,7 +97,7 @@
   }
 }
 
-.rc-overlay.--arrow.--left-bottom {
+.fui-overlay--arrow.fui-overlay--left-bottom {
   &:after {
     bottom: 0;
     right: 0;
@@ -108,7 +108,7 @@
   }
 }
 
-.rc-overlay.--arrow.--left {
+.fui-overlay--arrow.fui-overlay--left {
   &:after {
     top: 50%;
     right: 0;
@@ -119,7 +119,7 @@
   }
 }
 
-.rc-overlay.--arrow.--left-top {
+.fui-overlay--arrow.fui-overlay--left-top {
   &:after {
     top: 0;
     right: 0;
@@ -130,7 +130,7 @@
   }
 }
 
-.rc-overlay.--arrow.--top-left {
+.fui-overlay--arrow.fui-overlay--top-left {
   &:after {
     bottom: 0;
     left: 0;
@@ -141,7 +141,7 @@
   }
 }
 
-.rc-overlay.--arrow.--right {
+.fui-overlay--arrow.fui-overlay--right {
   &:after {
     top: 50%;
     left: 0;
@@ -152,7 +152,7 @@
   }
 }
 
-.rc-overlay.--arrow.--right-bottom {
+.fui-overlay--arrow.fui-overlay--right-bottom {
   &:after {
     bottom: 0;
     left: 0;

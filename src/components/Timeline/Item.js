@@ -6,14 +6,14 @@ import Icon from '../Icon';
 
 const Item = ({ className, children, icon, ...otherProps }) => {
   return (
-    <div className={cn('rc-timeline-item', className)} {...otherProps}>
-      <div className="rc-timeline-item-rail" />
+    <div className={cn('fui-timeline-item', className)} {...otherProps}>
+      <div className="fui-timeline-item-rail" />
       <Icon
         name={icon}
-        className="rc-timeline-item-stone-icon"
+        className="fui-timeline-item-stone-icon"
         size="1.25em"
       />
-      <div className="rc-timeline-item-content">
+      <div className="fui-timeline-item-content">
         {children}
       </div>
     </div>

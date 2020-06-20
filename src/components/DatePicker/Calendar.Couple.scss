@@ -1,4 +1,4 @@
-.rc-couple-calendar {
+.fui-couple-calendar {
   display: flex;
   flex-direction: column;
   border-radius: 0.75em;
@@ -7,16 +7,16 @@
   background-color: var(--button-bg);
 }
 
-.rc-couple-calendar-body {
+.fui-couple-calendar-body {
   display: flex;
 
-  .rc-calendar {
+  .fui-calendar {
     border-radius: 0;
     box-shadow: none;
   }
 }
 
-.rc-couple-calendar-footer {
+.fui-couple-calendar-footer {
   display: flex;
   padding: 0.5em 1em;
 

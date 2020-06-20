@@ -1,4 +1,4 @@
-.rc-input {
+.fui-input {
   height: var(--input-height);
   outline: 0 !important;
   border: 0;
@@ -30,6 +30,6 @@
   }
 }
 
-.rc-input.--rounded {
+.fui-input--rounded {
   border-radius: 100em;
 }

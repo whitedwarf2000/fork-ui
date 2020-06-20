@@ -43,20 +43,20 @@ const InputNumber = React.forwardRef(({
   }, []);
 
   return (
-    <div className={cn('rc-input-number', className)}>
+    <div className={cn('fui-input-number', className)}>
       <BaseInput
         {...passedProps}
         ref={wrapperRef}
         disabled={disabled}
         onChange={onChange}
         htmlType="number"
-        className="rc-input-number-input"
+        className="fui-input-number-input"
       />
-      <div className="rc-input-number-handler">
-        <button className="rc-select-up" disabled={disabled} ref={stepUpRef}>
+      <div className="fui-input-number-handler">
+        <button className="fui-select-up" disabled={disabled} ref={stepUpRef}>
           <Icon name="caret-up" />
         </button>
-        <button className="rc-select-down" disabled={disabled} ref={stepDownRef}>
+        <button className="fui-select-down" disabled={disabled} ref={stepDownRef}>
           <Icon name="caret-down" />
         </button>
       </div>

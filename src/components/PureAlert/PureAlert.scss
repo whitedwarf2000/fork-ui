@@ -1,6 +1,6 @@
 @import '../../style/vars.scss';
 
-.rc-pure-alert {
+.fui-pure-alert {
   position: relative;
   min-width: 30rem;
   width: 100%;
@@ -8,26 +8,26 @@
   overflow: hidden;
 }
 
-.rc-pure-alert.--info {
-  .rc-dialog-header {
+.fui-pure-alert--info {
+  .fui-dialog-header {
     color: var(--blue--500);
   }
 }
 
-.rc-pure-alert.--success {
-  .rc-dialog-header {
+.fui-pure-alert--success {
+  .fui-dialog-header {
     color: var(--green--500);
   }
 }
 
-.rc-pure-alert.--warning {
-  .rc-dialog-header {
+.fui-pure-alert--warning {
+  .fui-dialog-header {
     color: var(--orange--500);
   }
 }
 
-.rc-pure-alert.--error {
-  .rc-dialog-header {
+.fui-pure-alert--error {
+  .fui-dialog-header {
     color: var(--red--500);
   }
 }

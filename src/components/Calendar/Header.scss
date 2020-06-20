@@ -1,4 +1,4 @@
-.rc-calendar-header {
+.fui-calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,12 +7,12 @@
   padding: 1em 0.7em;
 }
 
-.rc-calendar-header-month {
+.fui-calendar-header-month {
   text-transform: uppercase;
   margin-right: 1em;
 }
 
-.rc-calendar-header-right {
+.fui-calendar-header-right {
   display: flex;
 
   > * {

@@ -8,7 +8,7 @@ const Expand = memo(({ children, isExpanded, meansure, className, animatedRef })
 
   return (
     <div
-      className={cn('rc-animated rc-animated-expand', className)}
+      className={cn('fui-animated fui-animated-expand', className)}
       style={{ height }}
       ref={animatedRef}
     >

@@ -71,7 +71,7 @@ const Link = ({
 
   return (
     <li
-      className={cn('rc-anchor-link', { '--active': active }, className)}
+      className={cn('fui-anchor-link', { 'fui-anchor--active': active }, className)}
       ref={ref}
       {...otherProps}
     >

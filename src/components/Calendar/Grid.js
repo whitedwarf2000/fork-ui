@@ -121,8 +121,8 @@ const Grid = ({
   }, [displayDate]);
 
   return (
-    <div className={cn('rc-calendar-grid', className)}>
-      <div className="rc-calendar-grid-row">
+    <div className={cn('fui-calendar-grid', className)}>
+      <div className="fui-calendar-grid-row">
         <DateCell header>{config.lang.sun}</DateCell>
         <DateCell header>{config.lang.mon}</DateCell>
         <DateCell header>{config.lang.tue}</DateCell>
@@ -131,7 +131,7 @@ const Grid = ({
         <DateCell header>{config.lang.fri}</DateCell>
         <DateCell header>{config.lang.sat}</DateCell>
       </div>
-      <div className="rc-calendar-grid-row --first-week">
+      <div className="fui-calendar-grid-row fui-calendar-grid-row--first-week">
         {firstWeek.map((number, index) => (
           <DateCell
             key={number || `_${index}`}
@@ -147,7 +147,7 @@ const Grid = ({
           </DateCell>
         ))}
       </div>
-      <div className="rc-calendar-grid-row --second-week">
+      <div className="fui-calendar-grid-row fui-calendar-grid-row--second-week">
         {secondWeek.map((number) => (
           <DateCell
             key={number}
@@ -162,7 +162,7 @@ const Grid = ({
           </DateCell>
         ))}
       </div>
-      <div className="rc-calendar-grid-row --third-week">
+      <div className="fui-calendar-grid-row fui-calendar-grid-row--third-week">
         {thirdWeek.map((number) => (
           <DateCell
             key={number}
@@ -177,7 +177,7 @@ const Grid = ({
           </DateCell>
         ))}
       </div>
-      <div className="rc-calendar-grid-row --fourth-week">
+      <div className="fui-calendar-grid-row fui-calendar-grid-row--fourth-week">
         {fourthWeek.map((number) => (
           <DateCell
             key={number}
@@ -193,7 +193,7 @@ const Grid = ({
         ))}
       </div>
       {!!fivethWeek.length && (
-        <div className="rc-calendar-grid-row --fiveth-week">
+        <div className="fui-calendar-grid-row fui-calendar-grid-row--fiveth-week">
           {fivethWeek.map((number, index) => (
             <DateCell
               key={number || `_${index}`}
@@ -212,7 +212,7 @@ const Grid = ({
       )}
 
       {!!sixthWeek.length && (
-        <div className="rc-calendar-grid-row --sixth-week">
+        <div className="fui-calendar-grid-row fui-calendar-grid-row--sixth-week">
           {sixthWeek.map((number, index) => (
             <DateCell
               key={number || `_${index}`}

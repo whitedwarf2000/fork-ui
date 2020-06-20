@@ -1,4 +1,4 @@
-.rc-switch {
+.fui-switch {
   display: block;
   position: relative;
   box-sizing: border-box;
@@ -13,16 +13,16 @@
   align-items: center;
 }
 
-.rc-switch.--checked {
+.fui-switch--checked {
   background: var(--primary--500);
 
-  .rc-switch-inner {
+  .fui-switch-inner {
     transform: translateX(1.5em);
     background-color: #fff;
   }
 }
 
-.rc-switch-input {
+.fui-switch-input {
   position: absolute;
   top: 0;
   right: 0;
@@ -39,7 +39,7 @@
   }
 }
 
-.rc-switch-inner {
+.fui-switch-inner {
   display: flex;
   justify-content: center;
   align-items: center;

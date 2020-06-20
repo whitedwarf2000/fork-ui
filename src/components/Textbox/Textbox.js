@@ -9,7 +9,7 @@ const Textbox = React.forwardRef(({ className, ...otherProps }, ref) => {
     <BaseInput
       {...otherProps}
       ref={ref}
-      className={cn('rc-textbox', className)}
+      className={cn('fui-textbox', className)}
       htmlType="text"
     />
   );

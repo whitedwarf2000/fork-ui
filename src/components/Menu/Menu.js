@@ -80,7 +80,7 @@ const Menu = ({
 
   return (
     <MenuContext.Provider value={menuValue}>
-      <ul className={cn('rc-menu', { '--icon-only': iconOnly }, className)} {...passedProps}>
+      <ul className={cn('fui-menu', { 'fui-menu--icon-only': iconOnly }, className)} {...passedProps}>
         {customChildren}
       </ul>
     </MenuContext.Provider>

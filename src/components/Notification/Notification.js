@@ -24,7 +24,7 @@ const Notification = ({ onClose, open, duration, ...otherProps }) => {
         <Portal node={rootNotification}>
           <PureNotification
             onClose={onClose}
-            className={cn('rc-notification', { '--close-animation': !open })}
+            className={cn('fui-notification', { 'fui-notification--close-animation': !open })}
             {...otherProps}
           />
         </Portal>

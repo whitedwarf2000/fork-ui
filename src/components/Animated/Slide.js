@@ -55,14 +55,14 @@ const mTransition = {
 };
 
 const mSlide = Object.freeze({
-  inLeft: 'rc-animated-slide-in-left',
-  inRight: 'rc-animated-slide-in-right',
-  inUp: 'rc-animated-slide-in-up',
-  inDown: 'rc-animated-slide-in-down',
-  outLeft: 'rc-animated-slide-out-left',
-  outRight: 'rc-animated-slide-out-right',
-  outUp: 'rc-animated-slide-out-up',
-  outDown: 'rc-animated-slide-out-down',
+  inLeft: 'fui-animated-slide-in-left',
+  inRight: 'fui-animated-slide-in-right',
+  inUp: 'fui-animated-slide-in-up',
+  inDown: 'fui-animated-slide-in-down',
+  outLeft: 'fui-animated-slide-out-left',
+  outRight: 'fui-animated-slide-out-right',
+  outUp: 'fui-animated-slide-out-up',
+  outDown: 'fui-animated-slide-out-down',
 });
 
 const lSlide = Object.keys(mSlide);
@@ -73,7 +73,7 @@ const Slide = memo(({ children, meansure, className, animatedRef, ...otherProps 
 
   return (
     <animated.div
-      className={cn('rc-animated', mSlide[slide], className)}
+      className={cn('fui-animated', mSlide[slide], className)}
       style={spring}
       ref={animatedRef}
     >

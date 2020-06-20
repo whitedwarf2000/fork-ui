@@ -15,7 +15,7 @@ const Password = React.forwardRef(({ className, noEye, ...otherProps }, ref) => 
   }, [noEye, setIsShowPassword]);
 
   return (
-    <div className={cn('rc-password', className)}>
+    <div className={cn('fui-password', className)}>
       <BaseInput
         {...otherProps}
         ref={ref}
@@ -24,7 +24,7 @@ const Password = React.forwardRef(({ className, noEye, ...otherProps }, ref) => 
       {!noEye && (
         <Icon
           name="eye"
-          className="rc-password-eye"
+          className="fui-password-eye"
           onClick={toggleShowPassword}
         />
       )}

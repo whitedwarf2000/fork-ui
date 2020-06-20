@@ -1,11 +1,10 @@
-.rc-notification.rc-notification {
+.fui-notification {
   animation: zoomIn 0.25s;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-
-.rc-notification.--close-animation {
+.fui-notification--close-animation {
   animation: zoomOut 0.25s;
 }
 
@@ -19,7 +18,7 @@
 }
 
 #root-notification {
-  .rc-notification {
+  .fui-notification {
     margin-bottom: 0.5em;
     margin-left: 0.5em;
     width: 35rem;

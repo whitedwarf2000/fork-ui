@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 const Item = ({ className, active, title, href, ...otherProps }) => (
   <div
     className={cn(
-      'rc-breadcrumb-item',
-      { '--active': active },
+      'fui-breadcrumb-item',
+      { 'fui-breadcrumb-item--active': active },
       className,
     )}
     {...otherProps}
   >
-    <a href={href} className="rc-breadcrumb-item-title">{title}</a>
+    <a href={href} className="fui-breadcrumb-item-title">{title}</a>
   </div>
 );
 

@@ -9,14 +9,14 @@ const Header = ({ className, closable, children, ...otherProps }) => {
   const { onClose } = useContext(Context);
 
   return (
-    <div className={cn('rc-dialog-header', className)} {...otherProps}>
+    <div className={cn('fui-dialog-header', className)} {...otherProps}>
       {children}
       {closable && (
         <Button
           icon="x"
           glassed
           circle
-          className="rc-pure-modal-close"
+          className="fui-pure-modal-close"
           onClick={onClose}
         />
       )}

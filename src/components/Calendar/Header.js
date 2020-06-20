@@ -12,12 +12,12 @@ const Header = ({ className, displayDate, onNextMonth, onPrevMonth, onClear, hid
   const displayMonth = useMemo(() => displayDate.getMonth(), [displayDate]);
 
   return (
-    <div className={cn('rc-calendar-header', className)}>
+    <div className={cn('fui-calendar-header', className)}>
       <div>
-        <span className="rc-calendar-header-month">{config.lang[mMonth[displayMonth]]}</span>
-        <span className="rc-calendar-header-year">{displayYear}</span>
+        <span className="fui-calendar-header-month">{config.lang[mMonth[displayMonth]]}</span>
+        <span className="fui-calendar-header-year">{displayYear}</span>
       </div>
-      <div className="rc-calendar-header-right">
+      <div className="fui-calendar-header-right">
         {!hiddenRefresh && <Button glassed circle icon="refresh" onClick={onClear} />}
         <Button glassed circle icon="chevron-left" onClick={onPrevMonth} />
         <Button glassed circle icon="chevron-right" onClick={onNextMonth} />

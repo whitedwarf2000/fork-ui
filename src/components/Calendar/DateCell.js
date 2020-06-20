@@ -89,7 +89,7 @@ const DateCell = ({
   const _onDateClick = useCallback(() => onDateClick(selfDate), [selfDate, onDateClick]);
 
   return (
-    <div className={cn('rc-calendar-date-cell', { '--header': header, '--selected': isSelected }, className)}>
+    <div className={cn('fui-calendar-date-cell', { 'fui-calendar-date-cell--header': header, 'fui-calendar-date-cell--selected': isSelected }, className)}>
       <Button
         {...injectProps}
         circle

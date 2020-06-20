@@ -1,4 +1,4 @@
-.rc-textarea {
+.fui-textarea {
   min-height: var(--input-height);
   outline: 0 !important;
   border: 0;
@@ -25,6 +25,6 @@
   }
 }
 
-.rc-textarea.--rounded {
+.fui-textarea--rounded {
   border-radius: var(--input-height);
 }

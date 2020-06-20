@@ -7,7 +7,7 @@ import Memo from '../Memo';
 const Item = ({ className, active, fresh, ...otherProps }) => {
   return (
     <Memo for={active} fresh={fresh}>
-      <div className={cn('rc-tab', { '--active': active }, className)} {...otherProps} />
+      <div className={cn('fui-tab', { 'fui-tab--active': active }, className)} {...otherProps} />
     </Memo>
   );
 };

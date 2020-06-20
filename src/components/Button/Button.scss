@@ -1,4 +1,4 @@
-.rc-button {
+.fui-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,36 +36,36 @@
   }
 }
 
-.rc-button-children {
+.fui-button-children {
   display: flex;
   justify-content: center;
   align-self: center;
 }
 
-.rc-button.--circle {
+.fui-button--circle {
   padding-left: 0;
   padding-right: 0;
   border-radius: 100em;
 }
 
-.rc-button.--icon-button {
+.fui-button--icon-button {
   padding-left: 0;
   padding-right: 0;
 }
 
-.rc-button:not(.--icon-button) .rc-icon:nth-child(1) {
+.fui-button:not(.fui-button--icon-button) .fui-icon:nth-child(1) {
   margin-right: 0.5em;
 }
 
-.rc-button:not(.--icon-button) .rc-icon:last-child {
+.fui-button:not(.fui-button--icon-button) .fui-icon:last-child {
   margin-left: 0.5em;
 }
 
-.rc-button.--rounded {
+.fui-button--rounded {
   border-radius: 100em;
 }
 
-.rc-button.--primary {
+.fui-button--primary {
   background-color: var(--primary--500);
   color: #fff;
   box-shadow: none;
@@ -84,7 +84,7 @@
   }
 }
 
-.rc-button.--colored {
+.fui-button--colored {
   color: var(--var-text-color);;
   opacity: 0.8;
   box-shadow: none;
@@ -101,7 +101,7 @@
   }
 }
 
-.rc-button.--danger {
+.fui-button--danger {
   background-color: var(--red--500);
   color: #fff;
   box-shadow: none;
@@ -120,7 +120,7 @@
   }
 }
 
-.rc-button.--glassed {
+.fui-button--glassed {
   background-color: rgba(0, 0, 0, 0.2);
   color: #ffffff;
   box-shadow: none;
@@ -137,7 +137,7 @@
   }
 }
 
-.rc-button.--transparent {
+.fui-button--transparent {
   background-color: transparent;
   box-shadow: none;
 
@@ -157,18 +157,18 @@
   }
 }
 
-.rc-button.--colored.--outlined:not(:disabled) {
+.fui-button--colored.fui-button--outlined:not(:disabled) {
   &:hover,
   &:focus {
     background-color: currentColor !important;
 
-    .rc-button-children {
+    .fui-button-children {
       color: var(--var-text-color);
     }
   }
 }
 
-.rc-button.--primary.--outlined {
+.fui-button--primary.fui-button--outlined {
   background-color: transparent;
   color: var(--primary--500);
   border-color: currentColor;
@@ -191,7 +191,7 @@
   }
 }
 
-.rc-button.--danger.--outlined {
+.fui-button--danger.fui-button--outlined {
   background-color: transparent;
   color: var(--red--500);
   border-color: currentColor;
@@ -214,17 +214,17 @@
   }
 }
 
-.rc-button.--loading {
+.fui-button--loading {
   &:disabled {
     color: var(--text-color);
   }
 
-  .rc-loader-spinner {
+  .fui-loader-spinner {
     margin-right: 0.5em;
   }
 }
 
-.rc-button.--circle.--loading .rc-loader-spinner {
+.fui-button--circle.fui-button--loading .fui-loader-spinner {
   width: 2em;
   height: 2em;
   margin: 0;

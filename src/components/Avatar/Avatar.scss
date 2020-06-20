@@ -1,4 +1,4 @@
-.rc-avatar {
+.fui-avatar {
   height: 3.5em;
   width: 3.5em;
   background-repeat: no-repeat;
@@ -10,10 +10,10 @@
   background-color: var(--secondary-bg);
 }
 
-.rc-avatar.--square {
+.fui-avatar--square {
   border-radius: var(--border-radius);
 }
 
-.rc-avatar.--circle {
+.fui-avatar--circle {
   border-radius: 100em;
 }

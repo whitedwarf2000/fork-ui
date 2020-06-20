@@ -25,15 +25,15 @@ const CircleProgress = ({ className, percent, r }) => {
 
   return (
     <div
-      className={cn('rc-circle-progress', className)}
+      className={cn('fui-circle-progress', className)}
       style={{ width: `${4 * r + 10}px`, height: `${4 * r + 10}px`}}
     >
-      <svg className="rc-circle-progress-svg">
+      <svg className="fui-circle-progress-svg">
         <circle
           cx={2 * r - 5}
           cy={2 * r - 5}
           r={2 * r - 5}
-          className="rc-circle-progress-percent"
+          className="fui-circle-progress-percent"
           style={{
             strokeWidth: `${6 * ((2 * r) / 100)}px`,
             strokeDasharray,
@@ -41,7 +41,7 @@ const CircleProgress = ({ className, percent, r }) => {
           }}
         />
       </svg>
-      <label className="rc-circle-progress-number" style={{ fontSize: `${r * 0.8}px`}}>
+      <label className="fui-circle-progress-number" style={{ fontSize: `${r * 0.8}px`}}>
         {Math.floor((percent + Number.EPSILON) * 100 )}
         <span>%</span>
       </label>

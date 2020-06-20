@@ -90,11 +90,11 @@ const Affix = ({ children, className, ...otherProps }) => {
   ]);
 
   return (
-    <div className="rc-affix-container">
+    <div className="fui-affix-container">
       <div style={sticky ? stickyPlaceholderStyle : {}} ref={placeHolderRef} />
       <div
         ref={affixRef}
-        className={cn({ 'rc-affix': sticky }, className)}
+        className={cn({ 'fui-affix': sticky }, className)}
         style={sticky ? stickyStyle : {}}
       >
         {children}

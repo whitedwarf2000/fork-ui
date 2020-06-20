@@ -1,4 +1,4 @@
-.rc-chip {
+.fui-chip {
   height: var(--basic-height);
   padding-left: 0.35em;
   padding-right: 0.35em;
@@ -11,7 +11,7 @@
   background-color: var(--secondary-bg);
   box-shadow: var(--secondary-flat);
 
-  .rc-avatar {
+  .fui-avatar {
     height: 1.65em;
     width: 1.65em;
     box-shadow: none;
@@ -19,11 +19,11 @@
   }
 }
 
-.rc-chip.--rounded {
+.fui-chip--rounded {
   border-radius: 100em;
 }
 
-.rc-chip.--custom {
+.fui-chip--custom {
   box-shadow: none;
 
   &:hover {
@@ -31,12 +31,12 @@
   }
 }
 
-.rc-chip-label {
+.fui-chip-label {
   padding-left: 0.65em;
   padding-right: 0.65em;
 }
 
-.rc-chip-close {
+.fui-chip-close {
   height: 1.5em;
   width: 1.5em;
   display: flex;

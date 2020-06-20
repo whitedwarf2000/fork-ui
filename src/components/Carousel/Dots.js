@@ -9,10 +9,10 @@ const Dots = ({ className }) => {
   const onItemClick = useCallback(e => setPage(+e.target.attributes['data-page-number'].value), [setPage]);
 
   return (
-    <ul className={cn('rc-carousel-dots', className)}>
+    <ul className={cn('fui-carousel-dots', className)}>
       {loop(maxPage, (i) => (
         <li
-          className={cn('rc-carousel-dot', { '--active': page === i + 1 })}
+          className={cn('fui-carousel-dot', { 'fui-carousel-dot--active': page === i + 1 })}
           key={i}
           data-page-number={i + 1}
           onClick={onItemClick}

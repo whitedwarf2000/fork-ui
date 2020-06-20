@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Footer = ({ className, ...otherProps }) => {
   return (
-    <div className={cn('rc-dialog-footer', className)} {...otherProps} />
+    <div className={cn('fui-dialog-footer', className)} {...otherProps} />
   );
 };
 

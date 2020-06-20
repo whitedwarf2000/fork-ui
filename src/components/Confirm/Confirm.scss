@@ -1,19 +1,19 @@
 @import '../../style/vars.scss';
 
-.rc-confirm-container {
+.fui-confirm-container {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .rc-confirm {
+  .fui-confirm {
     position: absolute;
     top: 15%;
     animation: zoomIn 0.25s;
     box-shadow: none;
   }
+}
 
-  &.--close-animation {
-    background-color: transparent;
-    animation: zoomOut 0.25s;
-  }
+.fui-confirm-container--close-animation {
+  background-color: transparent;
+  animation: zoomOut 0.25s;
 }

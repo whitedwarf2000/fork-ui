@@ -39,23 +39,6 @@ const Slider = ({
     setSupportValue(val);
   }, [setSupportValue]);
 
-  // useMemo(() => {
-  //   if (isControlled) {
-  //     return setValue(otherProps.value);
-  //   }
-
-  //   return onChange(value);
-  // }, [isControlled, setValue, otherProps.value, value, onChange]);
-
-  // useEffect(() => {
-  //   if (!isControlled) {
-  //     if (isRange) {
-  //       return onChange(value);
-  //     }
-  //     return onChange(value[0]);
-  //   }
-  // }, [value, isRange]);
-
   const mainHandlerRef = useRef();
   const supportHandlerRef = useRef();
   const ref = useRef();
@@ -133,11 +116,11 @@ const Slider = ({
   return (
     <div
       ref={ref}
-      className={cn('rc-slider', { '--range': isRange }, className)}
+      className={cn('fui-slider', { 'fui-slider--range': isRange }, className)}
       {...otherProps}
     >
-      <div className="rc-slider-rail" ref={railRef}>
-        <ul className="rc-slider-rail-dots">
+      <div className="fui-slider-rail" ref={railRef}>
+        <ul className="fui-slider-rail-dots">
           {_dots.map(val => (
             <li
               key={val}
@@ -148,19 +131,19 @@ const Slider = ({
           ))}
         </ul>
         <div
-          className="rc-slider-rail-percent"
+          className="fui-slider-rail-percent"
           style={{
             width: `${_width * 100}%`,
             left: `${_left * 100}%`,
           }}
         >
           <Handler
-            className="rc-slider-handler-main"
+            className="fui-slider-handler-main"
             ref={mainHandlerRef}
             value={mainValue}
           />
           <Handler
-            className="rc-slider-handler-support"
+            className="fui-slider-handler-support"
             ref={supportHandlerRef}
             value={supportValue}
           />

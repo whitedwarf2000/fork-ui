@@ -9,7 +9,7 @@ const ScrollUp = () => {
     <Button
       glassed
       size="1.5rem"
-      className="rc-scroll-up"
+      className="fui-scroll-up"
       onClick={scrollToTop}
       icon="arrow-narrow-up"
     />

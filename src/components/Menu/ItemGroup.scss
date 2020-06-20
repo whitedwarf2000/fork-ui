@@ -1,19 +1,17 @@
 @import '../../style/vars.scss';
 
-.rc-menu-item-group {
-  // anti --icon-only
-  &.--hidden.--hidden {
-    display: none;
-  }
+// anti --icon-only
+.fui-menu-item-group--hidden.fui-menu-item-group--hidden {
+  display: none;
+}
 
-  &.--icon-only {
-    .rc-menu-item-group-title {
-      display: none;
-    }
+.fui-menu-item-group--icon-only {
+  .fui-menu-item-group-title {
+    display: none;
   }
 }
 
-.rc-menu-item-group-title {
+.fui-menu-item-group-title {
   width: 100%;
   display: flex;
   align-items: center;

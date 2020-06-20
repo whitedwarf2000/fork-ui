@@ -1,4 +1,4 @@
-.rc-radio {
+.fui-radio {
   display: block;
   position: relative;
   box-sizing: border-box;
@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.rc-radio-input {
+.fui-radio-input {
   position: absolute;
   top: 0;
   right: 0;
@@ -21,18 +21,18 @@
   opacity: 0;
 
   &:checked {
-    + * + .rc-radio-check {
+    + * + .fui-radio-check {
       color: #fff;
     }
 
-    + .rc-radio-inner {
+    + .fui-radio-inner {
       background-color: var(--primary--500);
       border-color: var(--primary--500);
     }
   }
 
   &:hover:not(:checked) {
-    + .rc-radio-inner {
+    + .fui-radio-inner {
       background-color: transparent;
       border-color: var(--primary--500);
     }
@@ -43,7 +43,7 @@
   }
 }
 
-.rc-radio-inner {
+.fui-radio-inner {
   position: relative;
   display: block;
   height: 100%;
@@ -54,7 +54,7 @@
   border: 1px solid transparent;
 }
 
-.rc-radio-check.rc-radio-check {
+.fui-radio-check.fui-radio-check {
   position: absolute;
   stroke-width: 3;
   top: 50%;

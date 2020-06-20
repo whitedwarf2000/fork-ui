@@ -1,11 +1,11 @@
 @import '../../style/vars.scss';
 
-.rc-input-number {
+.fui-input-number {
   position: relative;
   width: 100%;
 }
 
-.rc-input-number-input {
+.fui-input-number-input {
   -moz-appearance:textfield;
   padding-right: 3em;
 
@@ -16,7 +16,7 @@
   }
 }
 
-.rc-input-number-handler {
+.fui-input-number-handler {
   position: absolute;
   right: 4px;
   border-radius: 4px;
@@ -28,8 +28,8 @@
   overflow: hidden;
 }
 
-.rc-select-up,
-.rc-select-down {
+.fui-select-up,
+.fui-select-down {
   height: calc(var(--input-height) / 2);
   outline: 0 !important;
   background-color: transparent;

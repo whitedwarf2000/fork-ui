@@ -34,17 +34,17 @@ const Item = ({ className, title, children, active, fresh, onClick, disabled, ic
   return (
     <div
       {...otherProps}
-      className={cn('rc-panel', { '--active': active, '--inactive': !active, '--disabled': disabled }, className)}
+      className={cn('fui-panel', { 'fui-panel--active': active, 'fui-panel--inactive': !active, 'fui-panel--disabled': disabled }, className)}
     >
-      <div className="rc-panel-title" onClick={_toggleActive}>
+      <div className="fui-panel-title" onClick={_toggleActive}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {renderIcon(icon)}
           {title}
         </div>
-        <Icon className="rc-panel-icon" name="caret-down" />
+        <Icon className="fui-panel-icon" name="caret-down" />
       </div>
-      <Animated.Expand isExpanded={active} className="rc-panel-content">
-        <div className="rc-panel-box">
+      <Animated.Expand isExpanded={active} className="fui-panel-content">
+        <div className="fui-panel-box">
           <Memo for={active} fresh={fresh}>{children}</Memo>
         </div>
       </Animated.Expand>

@@ -18,7 +18,7 @@ const Tooltip = ({ className, overlayClass, children, title, trigger, ...otherPr
       trigger={trigger}
       overlay={title}
       className={className}
-      overlayClass={cn('rc-tooltip', overlayClass)}
+      overlayClass={cn('fui-tooltip', overlayClass)}
       gap={10}
       {...passedProps}
     >

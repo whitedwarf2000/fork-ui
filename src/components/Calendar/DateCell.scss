@@ -1,4 +1,4 @@
-.rc-calendar-date-cell {
+.fui-calendar-date-cell {
   width: 3.2em;
   height: 3.2em;
   flex: 1;
@@ -7,12 +7,12 @@
   justify-content: center;
   text-transform: uppercase;
 
-  > .rc-button {
+  > .fui-button {
     transition: unset;
   }
 }
 
-.rc-calendar-date-cell.--header > .rc-button {
+.fui-calendar-date-cell--header > .fui-button {
   &,
   &:disabled {
     text-transform: uppercase;

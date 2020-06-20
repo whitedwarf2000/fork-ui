@@ -7,7 +7,7 @@ const Textarea = React.forwardRef(({ className, rounded, ...otherProps }, ref) =
     <textarea
       {...otherProps}
       ref={ref}
-      className={cn('rc-textarea', { '--rounded': rounded }, className)}
+      className={cn('fui-textarea', { 'fui-textarea--rounded': rounded }, className)}
     />
   );
 });

@@ -6,8 +6,8 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const mShape = Object.freeze({
-  square: '--square',
-  circle: '--circle',
+  square: 'fui-avatar--square',
+  circle: 'fui-avatar--circle',
 });
 
 const lShape = Object.keys(mShape);
@@ -22,7 +22,7 @@ const Avatar = ({ className, src, style, name, size, color, ...otherProps }) => 
 
   return (
     <div
-      className={cn('rc-avatar', mShape[shape] || '--circle', className)}
+      className={cn('fui-avatar', mShape[shape] || 'fui-avatar--circle', className)}
       style={{
         ...style,
         fontSize: size,
@@ -31,7 +31,7 @@ const Avatar = ({ className, src, style, name, size, color, ...otherProps }) => 
       }}
       {...passedProps}
     >
-      {(!src && name) && <span className="rc-avatar-name">{name[0].toUpperCase()}</span>}
+      {(!src && name) && <span className="fui-avatar-name">{name[0].toUpperCase()}</span>}
     </div>
   );
 };

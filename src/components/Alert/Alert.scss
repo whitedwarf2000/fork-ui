@@ -1,9 +1,9 @@
-.rc-alert.rc-alert {
+.fui-alert {
   animation: zoomIn 0.25s;
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-.rc-alert.--close-animation {
+.fui-alert--close-animation {
   animation: zoomOut 0.25s;
 }
 
@@ -18,7 +18,7 @@
 }
 
 #root-alert {
-  .rc-alert {
+  .fui-alert {
     margin-bottom: 0.5em;
     margin-right: 0.5em;
     box-shadow: none;
