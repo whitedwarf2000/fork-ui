@@ -1,5 +1,5 @@
 {
-  "name": "rc-neumorphism",
+  "name": "fork-ui",
   "version": "1.7.3",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nguyenvanhoang26041994/rc-neumorphism.git"
+    "url": "git+https://github.com/nguyenvanhoang26041994/fork-ui.git"
   },
   "author": "Hoang Nguyen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nguyenvanhoang26041994/rc-neumorphism/issues"
+    "url": "https://github.com/nguyenvanhoang26041994/fork-ui/issues"
   },
-  "homepage": "https://github.com/nguyenvanhoang26041994/rc-neumorphism#readme",
+  "homepage": "https://github.com/nguyenvanhoang26041994/fork-ui#readme",
   "dependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
