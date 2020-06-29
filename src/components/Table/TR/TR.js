@@ -8,9 +8,9 @@ const TR = ({ className, isHeader, isFooter, expander, belongBody, ...otherProps
 
   return (
     <React.Fragment>
-       <tr className={cn('rc-table-tr', { '--header': isHeader, '--footer': isFooter }, className)} {...otherProps} />
+       <tr className={cn('fui-table-tr', { '--header': isHeader, '--footer': isFooter }, className)} {...otherProps} />
       {(expander || belongBody) && (
-        <tr className="rc-table-tr-expander" style={{ height: '0.15em' }}>
+        <tr className="fui-table-tr-expander" style={{ height: '0.15em' }}>
           <td colSpan={1000}>
             {_expander()}
           </td>

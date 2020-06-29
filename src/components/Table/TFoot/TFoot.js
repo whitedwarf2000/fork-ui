@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 const TFoot = ({ className, ...otherProps}) => {
   return (
-    <tfoot className={cn('rc-table-tfoot', className)} {...otherProps} />
+    <tfoot className={cn('fui-table-tfoot', className)} {...otherProps} />
   )
 };
 

@@ -10,7 +10,7 @@ import TFoot from './TFoot';
 
 const Table = ({ className, ...otherProps}) => {
   return (
-    <table className={cn('rc-table', className)} {...otherProps} />
+    <table className={cn('fui-table', className)} {...otherProps} />
   )
 };
 

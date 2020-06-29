@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 const TH = ({ className, ...otherProps}) => {
   return (
-    <th className={cn('rc-table-th', className)} {...otherProps} />
+    <th className={cn('fui-table-th', className)} {...otherProps} />
   )
 };
 

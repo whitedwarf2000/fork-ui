@@ -1,13 +1,13 @@
 @import '../../../style/vars.scss';
 
-.rc-table-tr {
-  box-shadow: var(--rc-neu-flat--500);
+.fui-table-tr {
+  box-shadow: var(--fui-neu-flat--500);
 
   &:hover {
     box-shadow: none;
   }
 }
 
-.rc-table-tr.--header {
-  box-shadow: var(--rc-neu-flat--500);
+.fui-table-tr.--header {
+  box-shadow: var(--fui-neu-flat--500);
 }

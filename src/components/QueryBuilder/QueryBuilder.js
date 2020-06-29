@@ -36,8 +36,8 @@ const QueryBuilder = ({ defaultFacets, onFacetsChange, onAddedFacet, onRemovedFa
         removeFacet,
       }}
     >
-      <div className="rc-query-builder-container">
-        <div className="rc-query-builder-inner">
+      <div className="fui-query-builder-container">
+        <div className="fui-query-builder-inner">
           {_facets.map(facet => {
             const C = mFacets[facet.type] || noop;
             return (

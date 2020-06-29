@@ -6,7 +6,7 @@ import Menu from '../../Menu';
 const Facet = ({}) => {
 
   return (
-    <div className="rc-facet --block">
+    <div className="fui-facet --block">
       <Popover bottom overlay={(
         <Menu>
           <Menu.Item title=")" />
