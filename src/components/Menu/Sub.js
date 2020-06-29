@@ -46,7 +46,7 @@ const Sub = ({ defaultExpanded, className, children, title, icon, _key }) => {
           {(iconOnly && !icon && title) && <span style={{ textTransform: 'uppercase '}}>{title[0]}</span>}
           <span className="fui-menu-sub-content">{title}</span>
         </div>
-        <Icon name="caret-down" className="rc-menu-sub-icon" />
+        <Icon name="caret-down" className="fui-menu-sub-icon" />
       </div>
       <Animated.Expand className="fui-menu-sub-list" isExpanded={isExpanded}>
         <ul>

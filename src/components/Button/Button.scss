@@ -76,6 +76,10 @@
     border-color: transparent;
   }
 
+  &:hover {
+    color: #ffffff;
+  }
+
   &:disabled,
   &:disabled:hover,
   &:disabled:focus {
@@ -92,6 +96,10 @@
   &:hover,
   &:focus {
     opacity: 1;
+  }
+
+  &:hover {
+    color: #ffffff;
   }
 
   &:disabled,
@@ -112,6 +120,10 @@
     border-color: transparent;
   }
 
+  &:hover {
+    color: #ffffff;
+  }
+
   &:disabled,
   &:disabled:hover,
   &:disabled:focus {
@@ -128,6 +140,10 @@
   &:hover,
   &:focus {
     background-color: var(--primary--500);
+  }
+
+  &:hover {
+    color: #ffffff;
   }
 
   &:disabled,
