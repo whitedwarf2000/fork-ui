@@ -42,13 +42,6 @@ const config = {
     dec: 'Dec',
     december: 'December',
   },
-  icons: [
-    'x',
-    'eye',
-    'caret-down',
-    'caret-up',
-    'arrow-narrow-up',
-  ],
   cssVars: {},
 };
 
@@ -61,19 +54,12 @@ const setLang = (lang) => {
   }
 };
 
-const setIcons = (icons) => {
-  if (icons) {
-    config.icons = [...new Set(config.icons.concat(icons))];
-  }
-};
 
-export default ({ lang, icons }) => {
+export default ({ lang }) => {
   setLang(lang);
-  setIcons(icons);
 
   return ({ children }) => {
     useMemo(() => lang, []);
-    useMemo(() => icons, []);
 
     return children;
   }

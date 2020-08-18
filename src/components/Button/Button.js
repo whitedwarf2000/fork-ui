@@ -2,11 +2,10 @@ import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
 import Loader from '../Loader';
 
 import useSemanticProp from '../../hooks/useSemanticProp';
-import { omit, isString } from '../../utils/helpers';
+import { omit, isString, isNumber } from '../../utils/helpers';
 
 const mColors = Object.freeze({
   primary: 'fui-button--primary',
@@ -69,27 +68,6 @@ const Button = React.forwardRef(({
     'shape',
   ]), [otherProps]);
 
-  const _children = useMemo(() => {
-    if (icon && isString(icon)) {
-      return (
-        <Icon name={icon} />
-      );
-    }
-
-    if (icon) {
-      return icon;
-    }
-
-    return React.Children.map(children, item => {
-      /* wrapper children by span tags for fix bugs css */
-      if (typeof item === 'string' || typeof item === 'number') {
-        return <span key={item.key}>{item}</span>;
-      }
-
-      return item;
-    });
-  }, [icon, children]);
-
   return (
     <button
       ref={ref}
@@ -116,7 +94,20 @@ const Button = React.forwardRef(({
     >
       {loading && <Loader.Spinner />}
       <span className="fui-button-children">
-        {_children}
+        {(() => {
+          if (icon) {
+            return icon;
+          }
+
+          return React.Children.map(children, item => {
+            /* wrapper children by span tags for fix bugs css */
+            if (isString(item) || isNumber(item)) {
+              return <span key={item.key}>{item}</span>;
+            }
+
+            return item;
+          });
+        })()}
       </span>
     </button>
   );

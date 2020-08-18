@@ -2,7 +2,6 @@ import React, { useCallback, useContext, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
 import MenuContext from './MenuContext';
 import displayName from './displayName';
 
@@ -39,7 +38,7 @@ const Item = ({ className, disabled, title, icon, titleOnly, _key, onItemClick }
       )}
       onClick={_onClick}
     >
-      {icon && <Icon name={icon} className="fui-menu-item-title-icon" />}
+      {icon && <div className="fui-menu-item-title-icon">{icon}</div>}
       {((iconOnly && titleOnly) || (iconOnly && !icon)) && <span style={{ textTransform: 'uppercase '}}>{title[0]}</span>}
       <span className="fui-menu-item-content">{title}</span>
     </li>

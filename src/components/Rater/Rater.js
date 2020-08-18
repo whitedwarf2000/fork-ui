@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
+import { Star } from '../Icon';
 
 const isLighted = (currentStarHover, idx, star) => (currentStarHover >= idx + 1) || (currentStarHover === 'outside' && star >= idx + 1);
 
@@ -19,7 +19,7 @@ const Rater = ({ className, max, starRef, icon, star, onChange, fontSize, style,
           onMouseEnter={() => setCurrentStarHover(i + 1)}
           onClick={() => onChange(i + 1)}
         >
-          <Icon name={icon} />
+          {icon}
         </div>
       );
     }
@@ -54,7 +54,7 @@ Rater.propTypes = {
   fontSize: PropTypes.string,
 };
 Rater.defaultProps = {
-  icon: 'star',
+  icon: <Star />,
   max: 5,
   onChange: f => f,
 };

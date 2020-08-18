@@ -3,6 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
+import { ChevronLeft, ChevronRight } from '../Icon';
 import usePagination from './usePagination';
 
 const loop = (start, end, cb) => {
@@ -43,7 +44,7 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
         disabled={activePage <= 1}
         onClick={onPrev}
         circle
-        icon="chevron-left"
+        icon={<ChevronLeft />}
         style={{
           marginRight: '0.5rem',
         }}
@@ -54,7 +55,7 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
         disabled={activePage >= itemCount}
         onClick={onNext}
         circle
-        icon="chevron-right"
+        icon={<ChevronRight />}
       />
     </div>
   );

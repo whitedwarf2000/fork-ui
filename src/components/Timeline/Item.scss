@@ -4,7 +4,7 @@
   position: relative;
 }
 
-.fui-timeline-item-stone-icon {
+.fui-timeline-item-stone-icon .fui-icon{
   background-color: var(--bg);
   border-radius: 100em;
   overflow: visible;
@@ -34,7 +34,7 @@
   &:last-child {
     min-height: 0;
 
-    .fui-timeline-item-stone-icon {
+    .fui-timeline-item-stone-icon .fui-icon{
       color: var(--primary--400);
     }
 

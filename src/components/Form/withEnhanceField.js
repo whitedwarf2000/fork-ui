@@ -3,20 +3,21 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Badge from '../Badge';
+import { X, Check } from '../Icon';
 import { pick } from '../../utils/helpers';
 
 const renderPropsBadge = ({
   error,
   success,
 }) => {
-  let icon = '';
+  let icon = null;
   let color = '';
 
   if (error) {
-    icon = 'x';
+    icon = <X />;
     color = '#ce1a23'
   } else if (success) {
-    icon = 'check';
+    icon = <Check />;
     color = '#49aa18';
   }
 

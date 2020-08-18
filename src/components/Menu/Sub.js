@@ -2,7 +2,7 @@ import React, { useState, useCallback, useContext, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
+import { CaretDown } from '../Icon';
 import MenuContext from './MenuContext';
 import displayName from './displayName';
 import getMenuInfo from './getMenuInfo';
@@ -42,11 +42,11 @@ const Sub = ({ defaultExpanded, className, children, title, icon, _key }) => {
     >
       <div className="fui-menu-sub-title" onClick={toggleExpanded}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          {icon && <Icon name={icon} className="fui-menu-sub-title-icon" />}
+          {icon && <div name={icon} className="fui-menu-sub-title-icon">{icon}</div>}
           {(iconOnly && !icon && title) && <span style={{ textTransform: 'uppercase '}}>{title[0]}</span>}
           <span className="fui-menu-sub-content">{title}</span>
         </div>
-        <Icon name="caret-down" className="fui-menu-sub-icon" />
+        <CaretDown className="fui-menu-sub-icon" />
       </div>
       <Animated.Expand className="fui-menu-sub-list" isExpanded={isExpanded}>
         <ul>

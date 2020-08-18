@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
 import Loader from '../Loader';
 
 import useFlexibleRef from '../../hooks/useFlexibleRef';

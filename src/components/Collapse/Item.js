@@ -2,26 +2,9 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
+import { CaretDown } from '../Icon';
 import Animated from '../Animated';
 import Memo from '../Memo';
-
-const renderIcon = (icon) => {
-  if (!icon) {
-    return null;
-  }
-
-  if (typeof icon === 'string') {
-    return (
-      <Icon
-        name={icon}
-        style={{ marginRight: '1rem' }}
-      />
-    )
-  }
-
-  return icon;
-};
 
 const Item = ({ className, title, children, active, fresh, onClick, disabled, icon, ...otherProps }) => {
   const _toggleActive = useCallback((e) => {
@@ -38,10 +21,10 @@ const Item = ({ className, title, children, active, fresh, onClick, disabled, ic
     >
       <div className="fui-panel-title" onClick={_toggleActive}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          {renderIcon(icon)}
+          {icon}
           {title}
         </div>
-        <Icon className="fui-panel-icon" name="caret-down" />
+        <CaretDown className="fui-panel-icon" name="caret-down" />
       </div>
       <Animated.Expand isExpanded={active} className="fui-panel-content">
         <div className="fui-panel-box">

@@ -2,8 +2,6 @@ import React, { useMemo, useRef, useLayoutEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
-
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 import { makePlacements } from '../placements';
@@ -11,20 +9,6 @@ import { makePlacements } from '../placements';
 const mPlacements = makePlacements('fui-badge');
 
 const lPlacements = Object.keys(mPlacements);
-
-const renderCount = (icon, displayCount) =>{
-  if (!icon) {
-    return displayCount;
-  }
-
-  if (typeof icon === 'string') {
-    return (
-      <Icon name={icon} />
-    )
-  }
-
-  return icon;
-};
 
 const Badge = ({
   className,
@@ -102,7 +86,7 @@ const Badge = ({
         }}
         className={cn('fui-badge-count', { 'fui-badge-count--hidden': isHidden })}
       >
-        <b>{renderCount(icon, displayCount)}</b>
+        <b>{icon || displayCount}</b>
       </sub>
     </span>
   );

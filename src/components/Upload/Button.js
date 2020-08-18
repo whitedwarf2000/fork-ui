@@ -3,12 +3,12 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import Icon from '../Icon';
+import { CloudUpload } from '../Icon';
 
 const UploadButton = ({ className, ...otherProps }) => {
   return (
     <Button className={cn('fui-upload-button', className)}>
-      <Icon name="cloud-upload" />
+      <CloudUpload />
       <input className="fui-upload-input" type="file" {...otherProps} />
     </Button>
   );

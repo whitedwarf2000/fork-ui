@@ -2,28 +2,7 @@ import React, { useMemo, useEffect, useState, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
 import Item from './Item';
-
-const renderIcon = (icon, right) => {
-  if (!icon) {
-    return null;
-  }
-
-  if (typeof icon === 'string') {
-    return (
-      <Icon
-        name={icon}
-        className={cn({
-          'fui-icon--icon-left': !right,
-          'fui-icon--icon-right': right,
-        })}
-      />
-    );
-  }
-
-  return icon;
-};
 
 const Tabs = ({ className, children, onChange, fluid, underline, uppercase, ...otherProps }) => {
   const tabs = useMemo(() => React.Children.map(children, tab => ({
@@ -88,9 +67,9 @@ const Tabs = ({ className, children, onChange, fluid, underline, uppercase, ...o
             disabled={tab.disabled}
             onClick={() => _onChange(tab.key)}
           >
-            {renderIcon(tab.icon)}
+            {icon}
             {tab.title}
-            {renderIcon(tab.rightIcon, true)}
+            {rightIcon}
           </button>
         ))}
         <button className="fui-tabs-nav-item fui-tabs-nav-item--rest " />

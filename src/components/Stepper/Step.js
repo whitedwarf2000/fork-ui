@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
+import { Check } from '../Icon';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
@@ -26,8 +26,8 @@ const Step = ({ className, title, children, icon, stepNumber, ...otherProps }) =
     <div className={cn('fui-step', mStatus[status], className)} {...passedProps}>
       <div className="fui-step-rail" />
       <div className="fui-step-avatar">
-        {status === 'completed' && (<Icon name="check" style={{ strokeWidth: 3 }}/>)}
-        {status !== 'completed' && (<span>{icon ? <Icon name={icon} /> : stepNumber}</span>)}
+        {status === 'completed' && (<Check style={{ strokeWidth: 3 }}/>)}
+        {status !== 'completed' && (<span>{icon || stepNumber}</span>)}
       </div>
       <div className="fui-step-content">
         <div className="fui-step-title">{title}</div>
@@ -40,7 +40,7 @@ const Step = ({ className, title, children, icon, stepNumber, ...otherProps }) =
 Step.displayName = 'Step';
 Step.propTypes = {
   className: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.any,
   title: PropTypes.any,
   children: PropTypes.any,
   stepNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

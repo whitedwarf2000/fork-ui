@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 
 import Button from '../Button';
+import { ArrowNarrowUp } from '../Icon';
 
 const ScrollUp = () => {
   const scrollToTop = useCallback(() => window.scrollTo({ top: 0, behavior: 'smooth'}), []);
@@ -11,7 +12,7 @@ const ScrollUp = () => {
       size="1.5rem"
       className="fui-scroll-up"
       onClick={scrollToTop}
-      icon="arrow-narrow-up"
+      icon={<ArrowNarrowUp />}
     />
   );
 };

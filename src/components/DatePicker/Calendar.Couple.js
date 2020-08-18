@@ -5,6 +5,7 @@ import getBeginDateOfTheNextMonth from '../../utils/getBeginDateOfTheNextMonth';
 import getBeginDateOfThePrevMonth from '../../utils/getBeginDateOfThePrevMonth';
 
 import Button from '../Button';
+import { Refresh } from '../Icon'
 import Calendar from '../Calendar';
 
 const noop = f => f;
@@ -107,7 +108,7 @@ const CoupleCalendar = ({
         <Button
           glassed
           circle
-          icon="refresh"
+          icon={<Refresh />}
           onClick={onClear}
         />
       </div>

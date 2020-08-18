@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
+import { Check } from '../Icon';
 
 const Checkbox = React.forwardRef(({ className, circle, ...otherProps }, ref) => {
   return (
@@ -13,7 +13,7 @@ const Checkbox = React.forwardRef(({ className, circle, ...otherProps }, ref) =>
         {...otherProps}
       />
       <span className="fui-checkbox-inner" />
-      <Icon name="check" className="fui-checkbox-check" size="0.8em" />
+      <Check className="fui-checkbox-check" size="0.8em" />
     </span>
   );
 });

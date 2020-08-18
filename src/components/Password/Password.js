@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import BaseInput from '../BaseInput';
-import Icon from '../Icon';
+import { Eye } from '../Icon';
 
 const Password = React.forwardRef(({ className, noEye, ...otherProps }, ref) => {
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -22,8 +22,7 @@ const Password = React.forwardRef(({ className, noEye, ...otherProps }, ref) => 
         htmlType={isShowPassword ? 'text' : 'password'}
       />
       {!noEye && (
-        <Icon
-          name="eye"
+        <Eye
           className="fui-password-eye"
           onClick={toggleShowPassword}
         />

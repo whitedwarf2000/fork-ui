@@ -1,8 +1,8 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
 
 import { config } from '../ConfigProvider';
+import { ChevronLeft, ChevronRight } from '../Icon';
 import { mMonth } from './map';
 
 import Button from '../Button';
@@ -19,8 +19,8 @@ const Header = ({ className, displayDate, onNextMonth, onPrevMonth, onClear, hid
       </div>
       <div className="fui-calendar-header-right">
         {!hiddenRefresh && <Button glassed circle icon="refresh" onClick={onClear} />}
-        <Button glassed circle icon="chevron-left" onClick={onPrevMonth} />
-        <Button glassed circle icon="chevron-right" onClick={onNextMonth} />
+        <Button glassed circle icon={<ChevronLeft />} onClick={onPrevMonth} />
+        <Button glassed circle icon={<ChevronRight />} onClick={onNextMonth} />
       </div>
     </div>
   )

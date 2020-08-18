@@ -35,7 +35,7 @@
   display: flex;
   justify-content: center;
 
-  .fui-menu-item-title-icon {
+  .fui-menu-item-title-icon .fui-icon {
     margin-right: 0;
   }
 
@@ -45,11 +45,11 @@
 }
 
 .fui-menu-item--icon-only.fui-menu-item--title-only {
-  .fui-menu-item-title-icon {
+  .fui-menu-item-title-icon .fui-icon {
     display: none;
   }
 }
 
-.fui-menu-item-title-icon {
+.fui-menu-item-title-icon .fui-icon {
   margin-right: 1rem;
 }

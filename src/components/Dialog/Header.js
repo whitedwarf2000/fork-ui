@@ -3,6 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
+import { X } from '../Icon';
 import Context from './Context';
 
 const Header = ({ className, closable, children, ...otherProps }) => {
@@ -13,7 +14,7 @@ const Header = ({ className, closable, children, ...otherProps }) => {
       {children}
       {closable && (
         <Button
-          icon="x"
+          icon={<X />}
           glassed
           circle
           className="fui-pure-modal-close"

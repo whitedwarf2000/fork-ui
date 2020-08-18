@@ -3,6 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
+import { ChevronLeft, ChevronRight } from '../Icon';
 import Item from './Item';
 import Dots from './Dots';
 import Context from './Context';
@@ -115,7 +116,7 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
         <div className="fui-carousel-handler">
           <Dots />
           <Button
-            icon="chevron-left"
+            icon={<ChevronLeft />}
             className={cn('fui-carousel-prev')}
             glassed
             disabled={!loop && page <= 1}
@@ -124,7 +125,7 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
             style={{ marginRight: '0.5rem' }}
           />
           <Button
-            icon="chevron-right"
+            icon={<ChevronRight />}
             className={cn('fui-carousel-next')}
             glassed
             disabled={!loop && page >= maxPage}

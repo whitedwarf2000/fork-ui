@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import BaseInput from '../BaseInput';
-import Icon from '../Icon';
+import { CaretUp, CaretDown } from '../Icon';
 import { omit } from '../../utils/helpers';
 import useFlexibleRef from '../../hooks/useFlexibleRef';
 
@@ -54,10 +54,10 @@ const InputNumber = React.forwardRef(({
       />
       <div className="fui-input-number-handler">
         <button className="fui-select-up" disabled={disabled} ref={stepUpRef}>
-          <Icon name="caret-up" />
+          <CaretUp />
         </button>
         <button className="fui-select-down" disabled={disabled} ref={stepDownRef}>
-          <Icon name="caret-down" />
+          <CaretDown />
         </button>
       </div>
     </div>

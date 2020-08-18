@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect, useRef, useCallback, useMemo } from '
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icon';
+import { CaretDown } from '../Icon';
 import Menu from '../Menu';
 import Overlay from '../Overlay';
 import Chip from '../Chip';
@@ -111,7 +111,6 @@ const Select = ({
               ? value.map(keyVal => (
                 <Chip
                   key={keyVal}
-                  icon={items[keyVal].icon}
                   rounded
                   label={items[keyVal].title}
                   closable
@@ -134,7 +133,7 @@ const Select = ({
             onKeyDown={onInputRemove}
           />
         </div>
-        <Icon name="caret-down" className="fui-select-icon" />
+        <CaretDown className="fui-select-icon" />
       </div>
     </Overlay>
   );
