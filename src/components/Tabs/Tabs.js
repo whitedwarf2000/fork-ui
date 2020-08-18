@@ -67,9 +67,7 @@ const Tabs = ({ className, children, onChange, fluid, underline, uppercase, ...o
             disabled={tab.disabled}
             onClick={() => _onChange(tab.key)}
           >
-            {icon}
             {tab.title}
-            {rightIcon}
           </button>
         ))}
         <button className="fui-tabs-nav-item fui-tabs-nav-item--rest " />

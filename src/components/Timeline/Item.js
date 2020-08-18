@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-
+import { Clock } from '../Icon';
 
 const Item = ({ className, children, icon, ...otherProps }) => {
   return (
@@ -21,10 +21,10 @@ Item.displayName = 'Timeline.Item';
 Item.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
-  icon: PropTypes.string,
+  icon: PropTypes.any,
 };
 Item.defaultProps = {
-  icon: 'clock',
+  icon: <Clock />,
 };
 
 export default Item;
