@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { Star } from '../Icon';
+import { Star } from '../icons';
 
 const isLighted = (currentStarHover, idx, star) => (currentStarHover >= idx + 1) || (currentStarHover === 'outside' && star >= idx + 1);
 

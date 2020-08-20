@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import BaseInput from '../BaseInput';
-import { CaretUp, CaretDown } from '../Icon';
+import { CaretUp, CaretDown } from '../icons';
 import { omit } from '../../utils/helpers';
 import useFlexibleRef from '../../hooks/useFlexibleRef';
 

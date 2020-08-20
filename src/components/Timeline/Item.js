@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { Clock } from '../Icon';
+import { Clock } from '../icons';
 
 const Item = ({ className, children, icon, ...otherProps }) => {
   return (

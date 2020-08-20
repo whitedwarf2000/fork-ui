@@ -2,7 +2,7 @@ import React, { useState, useCallback, useContext, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { CaretDown } from '../Icon';
+import { CaretDown } from '../icons';
 import MenuContext from './MenuContext';
 import displayName from './displayName';
 import getMenuInfo from './getMenuInfo';

@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import BaseInput from '../BaseInput';
-import { Eye } from '../Icon';
+import { Eye } from '../icons';
 
 const Password = React.forwardRef(({ className, noEye, ...otherProps }, ref) => {
   const [isShowPassword, setIsShowPassword] = useState(false);

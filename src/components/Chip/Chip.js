@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { X } from '../Icon';
+import { X } from '../icons';
 
 const Chip = ({
     className,

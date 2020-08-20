@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import { X } from '../Icon';
+import { X } from '../icons';
 import Context from './Context';
 
 const Header = ({ className, closable, children, ...otherProps }) => {

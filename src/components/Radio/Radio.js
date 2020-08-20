@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { Check } from '../Icon';
+import { Check } from '../icons';
 
 const Radio = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (

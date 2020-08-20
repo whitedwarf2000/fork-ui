@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { CaretDown } from '../Icon';
+import { CaretDown } from '../icons';
 import Animated from '../Animated';
 import Memo from '../Memo';
 

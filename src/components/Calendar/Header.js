@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import cn from 'classnames';
 
 import { config } from '../ConfigProvider';
-import { ChevronLeft, ChevronRight, Refresh } from '../Icon';
+import { ChevronLeft, ChevronRight, Refresh } from '../icons';
 import { mMonth } from './map';
 
 import Button from '../Button';

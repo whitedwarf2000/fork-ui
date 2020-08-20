@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import { CloudUpload } from '../Icon';
+import { CloudUpload } from '../icons';
 
 const UploadButton = ({ className, ...otherProps }) => {
   return (
