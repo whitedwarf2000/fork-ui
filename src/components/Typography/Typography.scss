@@ -32,7 +32,8 @@ h6.fui-typo {
 
 .fui-typo--disabled {
   user-select: none;
-  cursor: not-allowed;
+  cursor: not-allowed !important;
+  color: var(--disabled-text-color);
 }
 
 .fui-typo--underline {

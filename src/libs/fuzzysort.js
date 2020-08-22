@@ -9,13 +9,14 @@ USAGE:
   fuzzysort.highlight(fuzzysort.single('fs', 'Fuzzy Search'), '<b>', '</b>')
   // <b>F</b>uzzy <b>S</b>earch
 */
+var this_global = typeof window === 'object' ? window : global;
 
 // UMD (Universal Module Definition) for fuzzysort
 ;(function(root, UMD) {
   if(typeof define === 'function' && define.amd) define([], UMD)
   else if(typeof module === 'object' && module.exports) module.exports = UMD()
   else root.fuzzysort = UMD()
-})(this, function UMD() { function fuzzysortNew(instanceOptions) {
+})(this_global, function UMD() { function fuzzysortNew(instanceOptions) {
 
   var fuzzysort = {
 

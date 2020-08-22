@@ -8,11 +8,11 @@ const ScrollUp = () => {
 
   return (
     <Button
+      circle
       glassed
-      size="1.5rem"
       className="fui-scroll-up"
-      onClick={scrollToTop}
       icon={<ArrowNarrowUp />}
+      onClick={scrollToTop}
     />
   );
 };
