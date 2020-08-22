@@ -27,18 +27,6 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
 
   return (
     <div className={cn('fui-pagination', className )} {...otherProps}>
-      {loop(startIndex, endIndex, (pageNumber) => (
-        <Button
-          glassed
-          rounded
-          key={pageNumber}
-          className={cn('fui-pagination-item', { 'fui-pagination-item--active': pageNumber === activePage })}
-          primary={pageNumber === activePage}
-          onClick={() => onItemClick(pageNumber)}
-        >
-          {pageNumber}
-        </Button>
-      ))}
       <Button
         className="fui-pagination-prev"
         disabled={activePage <= 1}
@@ -49,7 +37,17 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
           marginRight: '0.5rem',
         }}
       />
-
+      {loop(startIndex, endIndex, (pageNumber) => (
+        <Button
+          rounded
+          key={pageNumber}
+          className={cn('fui-pagination-item', { 'fui-pagination-item--active': pageNumber === activePage })}
+          primary={pageNumber === activePage}
+          onClick={() => onItemClick(pageNumber)}
+        >
+          {pageNumber}
+        </Button>
+      ))}
       <Button
         className="fui-pagination-next"
         disabled={activePage >= itemCount}

@@ -5,6 +5,7 @@ export { default as Affix } from './Affix';
 export { default as Animated } from './Animated';
 export { default as Anchor } from './Anchor';
 export { default as Avatar } from './Avatar';
+export { default as AvatarGroup } from './AvatarGroup';
 export { default as Box } from './Box';
 export { default as BaseInput } from './BaseInput';
 export { default as Button } from './Button';

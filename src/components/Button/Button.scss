@@ -29,10 +29,14 @@
   &:disabled,
   &:disabled:hover,
   &:disabled:focus {
-    cursor: not-allowed;
+    cursor: not-allowed !important;
     background-color: var(--button--disabled-bg);
     color: #fff;
     border-color: transparent;
+
+    * {
+      cursor: not-allowed !important;
+    }
   }
 }
 

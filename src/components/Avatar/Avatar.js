@@ -31,7 +31,7 @@ const Avatar = ({ className, src, style, name, size, color, ...otherProps }) => 
       }}
       {...passedProps}
     >
-      {(!src && name) && <span className="fui-avatar-name">{name[0].toUpperCase()}</span>}
+      {(!src && name) && <span className="fui-avatar-name">{name}</span>}
     </div>
   );
 };

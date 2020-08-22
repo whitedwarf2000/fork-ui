@@ -13,7 +13,6 @@ const lPlacements = Object.keys(mPlacements);
 const Badge = ({
   className,
   children,
-  icon,
   dot,
   count,
   overflowCount,
@@ -41,22 +40,13 @@ const Badge = ({
   }, [count]);
 
   const isHidden = useMemo(() => {
-    if (invisible) {
-      return true;
-    }
-    if (dot || icon) {
+    if (dot && count > 0) {
       return false;
     }
-
-    if (!count || count < 1) {
-      return true;
-    }
-  }, [dot, invisible, count, icon]);
+    return invisible || count < 1 || !count;
+  }, [dot, invisible, count]);
 
   const displayCount = useMemo(() => {
-    if (!count) {
-      return null;
-    }
     if (count > overflowCount) {
       return `${overflowCount} +`;
     }
@@ -71,7 +61,6 @@ const Badge = ({
         {
           'fui-badge--dot': dot,
           'fui-badge--overlap': overlap,
-          'fui-badge--icon': icon,
         },
         mPlacements[placement] || 'fui-badge--top-right',
         className
@@ -86,7 +75,7 @@ const Badge = ({
         }}
         className={cn('fui-badge-count', { 'fui-badge-count--hidden': isHidden })}
       >
-        <b>{icon || displayCount}</b>
+        <b>{displayCount}</b>
       </sub>
     </span>
   );
