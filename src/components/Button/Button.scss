@@ -138,7 +138,7 @@
 
 .fui-button--glassed {
   background-color: var(--button--glassed-bg);
-  color: #ffffff;
+  color: var(--text-color);;
   box-shadow: none;
 
   &:hover,
@@ -153,7 +153,7 @@
   &:disabled,
   &:disabled:hover,
   &:disabled:focus {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--button--glassed-bg);
   }
 }
 
@@ -163,9 +163,8 @@
 
   &:hover,
   &:focus {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--button--glassed-bg);
     border-color: transparent;
-    color: #ffffff;
   }
 
   &:disabled,
