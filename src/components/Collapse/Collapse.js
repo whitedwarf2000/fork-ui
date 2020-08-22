@@ -15,7 +15,14 @@ const Collapse = ({ className, children, onActivePanelsChange, defaultActivePane
   const [activePanels, setActivePanels] = useState([...new Set(defaultActivePanels)]);
   const _onActivePanelsChange = useCallback(panelKey => {
     if (accordion) {
-      return setActivePanels([panelKey]);
+      return setActivePanels(prev => {
+        const _prev = new Set(prev);
+        if (_prev.has(panelKey)) {
+          return [];
+        }
+
+        return [panelKey];
+      });
     }
     return setActivePanels(prev => {
       const _prev = new Set(prev);

@@ -13,6 +13,7 @@
 .fui-panel--active {
   .fui-panel-title {
     color: var(--primary--500);
+    background-color: var(--panel-title--active);
   }
 
   .fui-panel-icon {
@@ -25,8 +26,8 @@
   height: 3em;
   display: flex;
   align-items: center;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   
   transition: color 0.25s;
   cursor: pointer;
@@ -52,6 +53,5 @@
 }
 
 .fui-panel-box {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding: 0 0.75em;
 }

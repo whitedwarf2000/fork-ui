@@ -137,7 +137,7 @@
 }
 
 .fui-button--glassed {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--button--glassed-bg);
   color: #ffffff;
   box-shadow: none;
 

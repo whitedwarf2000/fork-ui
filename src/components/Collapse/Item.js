@@ -27,7 +27,9 @@ const Item = ({ className, title, children, active, fresh, onClick, disabled, ..
       </div>
       <Animated.Expand isExpanded={active} className="fui-panel-content">
         <div className="fui-panel-box">
+          <div style={{ height: '0.75rem' }} />
           <Memo for={active} fresh={fresh}>{children}</Memo>
+          <div style={{ height: '0.75rem' }} />
         </div>
       </Animated.Expand>
     </div>

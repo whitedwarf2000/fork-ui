@@ -53,6 +53,11 @@
   --button--disabled-color: var(--disabled-text-color);
 }
 
+/* Tabs */
+.light-mode {
+  --tab-title--active: var(--primary--100);
+}
+
 /* BASE INPUT */
 .light-mode {
   --input--bg: var(--secondary-bg);;
@@ -70,6 +75,7 @@
 /* Collapse */
 .light-mode {
   --panel--bg: var(--secondary-bg);
+  --panel-title--active: var(--primary--100);
 }
 
 /* Menu */
