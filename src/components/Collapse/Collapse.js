@@ -3,56 +3,46 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Item from './Item';
+import useDetectRendered from '../../hooks/useDetectRendered';
 
 const mapToObject = arr => arr.reduce((rs, key) => {
   rs[key] = true;
   return rs;
 }, {});
 
-const Collapse = ({ className, onActiveKeysChange, onPanelClick, children, accordion, ...otherProps }) => {
-  const isControlled = useMemo(() => otherProps.hasOwnProperty('activeKeys'), [otherProps]);
-  const [activeKeys, setActiveKeys] = useState(isControlled ? otherProps.activeKeys : otherProps.defaultActiveKeys);
-  useMemo(() => {
-    if (isControlled) {
-      return setActiveKeys(otherProps.activeKeys);
+const Collapse = ({ className, children, onActivePanelsChange, defaultActivePanels, accordion, ...otherProps }) => {
+  const isRendered = useDetectRendered();
+  const [activePanels, setActivePanels] = useState([...new Set(defaultActivePanels)]);
+  const _onActivePanelsChange = useCallback(panelKey => {
+    if (accordion) {
+      return setActivePanels([panelKey]);
     }
-  }, [isControlled, otherProps.activeKeys, setActiveKeys]);
+    return setActivePanels(prev => {
+      const _prev = new Set(prev);
+      if (_prev.has(panelKey)) {
+        _prev.delete(panelKey)
+      } else {
+        _prev.add(panelKey)
+      }
+      return [..._prev];
+    });
+  }, [accordion, setActivePanels]);
 
   useEffect(() => {
-    onActiveKeysChange(activeKeys);
-  }, [activeKeys]);
-
-  const __activeKeys = useMemo(() => mapToObject(activeKeys), [activeKeys]);
-
-  const _onPanelClick = useCallback((key) => {
-    if (isControlled) {
-      return onPanelClick(key);
+    if (isRendered) {
+      onActivePanelsChange(activePanels);
     }
+  }, [isRendered, activePanels, onActivePanelsChange]);
 
-    if (accordion) {
-      return setActiveKeys(prev => {
-        if (prev.indexOf(key) >= 0) {
-          return [];
-        }
-        return [key];
-      });
-    }
-
-    return setActiveKeys(prev => {
-      if (prev.indexOf(key) >= 0) {
-        return prev.filter(_key => _key !== key)
-      }
-      return [...prev, key];
-    });
-  }, [accordion, isControlled, setActiveKeys, onPanelClick]);
+  const _activePanels = useMemo(() => mapToObject(activePanels), [activePanels]);
 
   return (
-    <div className={cn('fui-collapse', className)}>
-      {React.Children.map(children, elm => {
-        return React.cloneElement(elm, {
-          active: __activeKeys[elm.key],
-          onClick: () => _onPanelClick(elm.key),
-          ...elm.props
+    <div className={cn('fui-collapse', className)} {...otherProps}>
+      {React.Children.map(children, panel => {
+        return React.cloneElement(panel, {
+          active: !panel.props.disabled && _activePanels[panel.key],
+          onClick: () => _onActivePanelsChange(panel.key),
+          ...panel.props
         });
       })}
     </div>
@@ -64,17 +54,13 @@ Collapse.Item = Item;
 Collapse.displayName = 'Collapse';
 Collapse.propTypes = {
   className: PropTypes.string,
-  defaultActiveKeys: PropTypes.array,
-  activeKeys: PropTypes.array,
   children: PropTypes.any,
-  onActiveKeysChange: PropTypes.func,
-  onPanelClick: PropTypes.func,
-  accordion: PropTypes.bool,
+  defaultActivePanels: PropTypes.array,
+  onActivePanelsChange: PropTypes.func,
 };
 Collapse.defaultProps = {
-  defaultActiveKeys: [],
-  onActiveKeysChange: f => f,
-  onPanelClick: f => f,
+  defaultActivePanels: [],
+  onActivePanelsChange: f => f,
 };
 
 export default Collapse;

@@ -18,8 +18,8 @@
   align-items: center;
   justify-content: center;
   height: 2.5em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   outline: 0 !important;
   outline-style: none;
   user-select: none;
@@ -30,36 +30,13 @@
   font-weight: 600;
 
   &:disabled {
-    cursor: not-allowed;
-  }
-
-  .fui-icon--icon-left {
-    margin-right: 0.5em;
-  }
-
-  .fui-icon--icon-right {
-    margin-left: 0.5em;
-  }
-}
-
-.fui-tabs--uppercase {
-  > .fui-tabs-nav .fui-tabs-nav-item {
-    text-transform: uppercase;
+    cursor: not-allowed !important;
+    color: var(--disabled-text-color) !important;
   }
 }
 
 .fui-tabs--underline > .fui-tabs-nav .fui-tabs-nav-item {
   border-bottom-color: currentColor;
-}
-
-.fui-tabs--fluid {
-  .fui-tabs-nav-item {
-    flex-grow: 1;
-  }
-
-  .fui-tabs-nav-item--rest {
-    display: none;
-  }
 }
 
 .fui-tabs-nav-item--active {

@@ -5,7 +5,8 @@
 
 .fui-panel--disabled {
   .fui-panel-title {
-    cursor: not-allowed;
+    cursor: not-allowed !important;
+    color: var(--disabled-text-color) !important;
   }
 }
 

@@ -16,9 +16,9 @@ Item.displayName = 'Tabs.Item';
 Item.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  icon: PropTypes.any,
-  iconRight: PropTypes.any,
+  fresh: PropTypes.bool,
   title: PropTypes.any,
+  active: PropTypes.bool,
 };
 Item.defaultProps = {};
 

@@ -3,69 +3,34 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Item from './Item';
+import useDetectRendered from '../../hooks/useDetectRendered';
 
-const Tabs = ({ className, children, onChange, fluid, underline, uppercase, ...otherProps }) => {
+const Tabs = ({ className, children, onActiveTabChange, defaultActiveTab, underline, ...otherProps }) => {
+  const isRendered = useDetectRendered();
   const tabs = useMemo(() => React.Children.map(children, tab => ({
     key: tab.key,
     title: tab.props.title,
     disabled: tab.props.disabled,
-    icon: tab.props.icon,
-    rightIcon: tab.props.rightIcon,
   })), [children]);
 
-  const isControlled = useMemo(() => otherProps.hasOwnProperty('activeTab'), [otherProps]);
-  const [activeTab, setActiveTab] = useState(isControlled ? otherProps.activeTab : otherProps.defaultActiveTab);
-
-  useMemo(() => {
-    if (!isControlled && !otherProps.defaultActiveTab && tabs.length ) {
-      setActiveTab(tabs[0].key);
-    }
-  } , []);
-
-  const _onChange = useCallback((tabKey) => {
-    if (isControlled) {
-      return onChange(tabKey);
-    }
-
-    return setActiveTab(tabKey);
-  }, [isControlled, onChange, setActiveTab]);
-
-  useMemo(() => {
-    if (isControlled) {
-      return setActiveTab(otherProps.activeTab)
-    }
-  }, [isControlled, otherProps.activeTab, setActiveTab]);
+  const [activeTab, setActiveTab] = useState(defaultActiveTab);
+  const _onActiveTabChange = useCallback(tabKey => setActiveTab(tabKey), [setActiveTab]);
 
   useEffect(() => {
-    if (!isControlled) {
-      onChange(activeTab);
+    if (isRendered) {
+      onActiveTabChange(activeTab);
     }
-  } ,[activeTab, isControlled]);
+  }, [isRendered, activeTab, onActiveTabChange]);
 
   return (
-    <div
-      className={cn(
-        'fui-tabs',
-        {
-          'fui-tabs--fluid': fluid,
-          'fui-tabs--underline': underline,
-          'fui-tabs--uppercase': uppercase
-        },
-        className
-      )}
-    >
+    <div className={cn('fui-tabs', { 'fui-tabs--underline': underline }, className )}>
       <div className="fui-tabs-nav">
         {tabs.map(tab => (
           <button
             key={tab.key}
-            className={cn(
-              'fui-tabs-nav-item',
-              {
-                'fui-tabs-nav-item--active': activeTab === tab.key,
-              }
-            )}
+            className={cn('fui-tabs-nav-item', { 'fui-tabs-nav-item--active': activeTab === tab.key })}
             disabled={tab.disabled}
-            onClick={() => _onChange(tab.key)}
+            onClick={() => _onActiveTabChange(tab.key)}
           >
             {tab.title}
           </button>
@@ -73,7 +38,7 @@ const Tabs = ({ className, children, onChange, fluid, underline, uppercase, ...o
         <button className="fui-tabs-nav-item fui-tabs-nav-item--rest " />
       </div>
       <div className="fui-tabs-contents">
-        {React.Children.map(children, elm => React.cloneElement(elm, { active: activeTab === elm.key }))}
+        {React.Children.map(children, tab => React.cloneElement(tab, { active: !tab.props.disabled && activeTab === tab.key }))}
       </div>
     </div>
   );
@@ -84,15 +49,12 @@ Tabs.Item = Item;
 Tabs.displayName = 'Tabs';
 Tabs.propTypes = {
   className: PropTypes.string,
-  activeTab: PropTypes.string,
-  onChange: PropTypes.func,
-  fluid: PropTypes.bool,
+  defaultActiveTab: PropTypes.string,
+  onActiveTabChange: PropTypes.func,
   underline: PropTypes.bool,
-  uppercase: PropTypes.bool,
 };
 Tabs.defaultProps = {
-  onChange: f => f,
-  uppercase: true,
+  onActiveTabChange: f => f,
 };
 
 export default Tabs;

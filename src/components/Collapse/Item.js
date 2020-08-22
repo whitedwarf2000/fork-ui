@@ -6,8 +6,8 @@ import { CaretDown } from '../icons';
 import Animated from '../Animated';
 import Memo from '../Memo';
 
-const Item = ({ className, title, children, active, fresh, onClick, disabled, icon, ...otherProps }) => {
-  const _toggleActive = useCallback((e) => {
+const Item = ({ className, title, children, active, fresh, onClick, disabled, ...otherProps }) => {
+  const _onClick = useCallback((e) => {
     if (disabled) {
       return;
     }
@@ -19,9 +19,8 @@ const Item = ({ className, title, children, active, fresh, onClick, disabled, ic
       {...otherProps}
       className={cn('fui-panel', { 'fui-panel--active': active, 'fui-panel--inactive': !active, 'fui-panel--disabled': disabled }, className)}
     >
-      <div className="fui-panel-title" onClick={_toggleActive}>
+      <div className="fui-panel-title" onClick={_onClick}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          {icon}
           {title}
         </div>
         <CaretDown className="fui-panel-icon" name="caret-down" />
@@ -43,6 +42,8 @@ Item.propTypes = {
   onClick: PropTypes.func, // do not set default, onClick will be passed by Collapse so it away exsits
   children: PropTypes.any,
   icon: PropTypes.string,
+  fresh: PropTypes.bool,
+  active: PropTypes.bool,
 };
 Item.defaultProps = {};
 
