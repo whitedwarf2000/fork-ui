@@ -23,6 +23,9 @@ const Carousel = ({ className, children, auto, loop, value, onChange, onNext, on
   const [_containerShape, _setContainerShape] = useState({ width: 0, height: 0 });
   const [_left, _setLeft] = useState(0);
 
+  const _onNext = useCallback(() => onNext(itemCount-1), [itemCount]);
+  const _onPrev = useCallback(() => onPrev(itemCount-1), [itemCount]);
+
   useEffect(() => {
     _setLeft(-calc(_containerShape.width, value));
   }, [_setLeft, _containerShape.width, value]);
@@ -36,10 +39,10 @@ const Carousel = ({ className, children, auto, loop, value, onChange, onNext, on
 
   useEffect(() => {
     if (auto) {
-      const timer = setInterval(() => onNext(), auto);
+      const timer = setInterval(() => _onNext(), auto);
       return () => clearInterval(timer);
     }
-  }, [onNext, auto]);
+  }, [_onNext, auto]);
 
   return (
     <Context.Provider
@@ -63,7 +66,7 @@ const Carousel = ({ className, children, auto, loop, value, onChange, onNext, on
             className={cn('fui-carousel-prev')}
             disabled={!loop && value === 0}
             circle
-            onClick={onPrev}
+            onClick={_onPrev}
             style={{ marginRight: '0.5rem' }}
           />
           <Button
@@ -71,7 +74,7 @@ const Carousel = ({ className, children, auto, loop, value, onChange, onNext, on
             className={cn('fui-carousel-next')}
             disabled={!loop && value === itemCount - 1}
             circle
-            onClick={onNext}
+            onClick={_onNext}
           />
         </div>
       </div>
