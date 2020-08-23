@@ -7,6 +7,7 @@
   color: var(--text-color);
   transition: color 0.25s;
   padding: 0.25em;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.15);
@@ -16,7 +17,7 @@
 .fui-rater-item--light {
   color: #ffc107;
 
-  .fui-icon-star > path:nth-child(2) {
+  .fui-icon > path:nth-child(2) {
     fill: currentColor;
   }
 }

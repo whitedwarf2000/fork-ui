@@ -4,31 +4,12 @@ import cn from 'classnames';
 
 import Step from './Step';
 import useSteps from './useSteps';
-import withSteps from './withSteps';
 
-const getStatus = (activeStep, idx) => {
-  if (activeStep === idx) {
-    return 'processing';
-  }
-
-  if (activeStep > idx) {
-    return 'completed';
-  }
-
-  return '';
-};
-
-const Stepper = ({ className, children, vertical, style, ...otherProps }) => {
-  const injectProps = useCallback((idx) => {
-    const props = {
-      stepNumber: idx + 1,
-    };
-    if (otherProps.hasOwnProperty('activeStep')) {
-      props.status = getStatus(otherProps.activeStep, idx);
-    }
-
-    return props;
-  }, [otherProps.activeStep]);
+const Stepper = ({ className, children, vertical, activeStep, getStatus, ...otherProps }) => {
+  const injectProps = useCallback((idx) => ({
+    stepNumber: idx + 1,
+    status: getStatus(idx),
+  }), [activeStep, getStatus]);
 
   const _customChildren = React.Children.map(children, (elm, idx) => React.cloneElement(elm, {
     ...injectProps(idx),
@@ -36,7 +17,7 @@ const Stepper = ({ className, children, vertical, style, ...otherProps }) => {
   }));
 
   return (
-    <div className={cn('fui-stepper', { 'fui-stepper--vertical': vertical }, className)} style={style}>
+    <div className={cn('fui-stepper', { 'fui-stepper--vertical': vertical }, className)} {...otherProps}>
       {vertical ? _customChildren.reverse() : _customChildren}
     </div>
   );
@@ -44,7 +25,6 @@ const Stepper = ({ className, children, vertical, style, ...otherProps }) => {
 
 Stepper.Step = Step;
 Stepper.useSteps = useSteps;
-Stepper.withSteps = withSteps;
 
 Stepper.displayName = 'Stepper';
 Stepper.propTypes = {
@@ -52,8 +32,10 @@ Stepper.propTypes = {
   activeStep: PropTypes.number,
   children: PropTypes.any,
   vertical: PropTypes.bool,
-  style: PropTypes.object,
+  getStatus: PropTypes.func,
 };
-Stepper.defaultProps = {};
+Stepper.defaultProps = {
+  getStatus: f => f,
+};
 
 export default Stepper;

@@ -118,7 +118,6 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
           <Button
             icon={<ChevronLeft />}
             className={cn('fui-carousel-prev')}
-            glassed
             disabled={!loop && page <= 1}
             circle
             onClick={handlePrev}
@@ -127,7 +126,6 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
           <Button
             icon={<ChevronRight />}
             className={cn('fui-carousel-next')}
-            glassed
             disabled={!loop && page >= maxPage}
             circle
             onClick={handleNext}

@@ -6,6 +6,10 @@ import Overlay from '../Overlay';
 import { omit } from '../../utils/helpers';
 
 const Tooltip = ({ className, overlayClass, children, title, trigger, ...otherProps }) => {
+  if (!title) {
+    return children;
+  }
+
   const passedProps = useMemo(() => omit(otherProps, [
     'overlay',
     'className',

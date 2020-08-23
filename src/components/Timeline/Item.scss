@@ -4,14 +4,19 @@
   position: relative;
 }
 
-.fui-timeline-item-stone-icon .fui-icon{
-  background-color: var(--bg);
-  border-radius: 100em;
-  overflow: visible;
-  z-index: 1;
+.fui-timeline-item-stone-icon {
+  height: 2.5em;
 
-  &:hover {
-    transform: scale(1.1);
+  .fui-icon{
+    background-color: var(--bg);
+    border-radius: 100em;
+    overflow: visible;
+    font-size: 1.75em;
+    z-index: 1;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -23,9 +28,9 @@
 .fui-timeline-item-rail {
   position: absolute;
   width: 1px;
-  height: 100%;
-  left: 0.75em;
-  top: 0.75em;
+  height: calc(100% - 3em);
+  left: 1.15em;
+  top: 2.75em;
   box-sizing: border-box;
   border-left: 1px dashed var(--text-color);
 }
@@ -60,7 +65,7 @@
 
   .fui-timeline-item-rail {
     left: unset;
-    right: 0.6em;
+    right: 1.15em;
   }
 }
 

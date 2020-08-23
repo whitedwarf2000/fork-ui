@@ -1,24 +1,15 @@
 import { useCallback, useState, useMemo } from 'react';
 
-const toObject = (maxStepIdx) => {
-  const rs = {};
-  for (let i = 0; i <= maxStepIdx; i ++) {
-    rs[i] = '';
-  }
-
-  return rs;
-};
-
-export default ({ maxStepIdx, optional }) => {
+export default ({ maxStepIdx = 0, defaultActiveStep = 0, defaultStepInfo = {}, optional = [] }) => {
   const _optional = useMemo(() => new Set(optional), [optional]);
 
-  const [activeStep, setActiveStep] = useState(0);
-  const [steps, setSteps] = useState(toObject(maxStepIdx));
+  const [activeStep, setActiveStep] = useState(defaultActiveStep);
+  const [steps, setSteps] = useState(defaultStepInfo);
 
   const handleReset = useCallback(() => {
     setActiveStep(0);
-    setSteps(toObject(maxStepIdx));
-  }, [maxStepIdx]);
+    setSteps({});
+  }, [setActiveStep, setSteps]);
 
   const handleNext = useCallback(() => {
     if (activeStep === maxStepIdx) {
@@ -30,14 +21,14 @@ export default ({ maxStepIdx, optional }) => {
       [activeStep]: 'completed',
     }));
     setActiveStep(prev => prev + 1);
-  }, [maxStepIdx, activeStep]);
+  }, [activeStep, maxStepIdx, setSteps, setActiveStep]);
 
   const handleSkip = useCallback(() => {
     if (!_optional.has(activeStep) || activeStep === maxStepIdx) {
       return;
     }
     setActiveStep(prev => prev + 1);
-  }, [maxStepIdx, activeStep, _optional]);
+  }, [_optional, activeStep, maxStepIdx, setActiveStep]);
 
   const handleFinish = useCallback(() => {
     if (maxStepIdx !== activeStep) {
@@ -49,28 +40,23 @@ export default ({ maxStepIdx, optional }) => {
       [maxStepIdx]: 'completed',
     }));
     setActiveStep(maxStepIdx + 1);
-  }, [maxStepIdx, activeStep, steps]);
+  }, [maxStepIdx, activeStep, setSteps, activeStep, setActiveStep]);
 
   const handleCancel = useCallback(() => {
-    if (!_optional.has(activeStep) || activeStep > maxStepIdx || activeStep < 0) {
-      return;
-    }
-
     setSteps(prev => ({
       ...prev,
       [activeStep]: 'canceled',
     }));
-
     handleSkip();
-  }, [activeStep, maxStepIdx, handleSkip, _optional]);
+  }, [setSteps, activeStep, handleSkip]);
 
   const getStatus = useCallback((idx) => {
     if (idx === activeStep) {
-      return 'processing';
+      return steps[idx] || 'processing';
     }
 
     return steps[idx];
-  }, [activeStep]);
+  }, [activeStep, steps]);
 
   return {
     getStatus,
