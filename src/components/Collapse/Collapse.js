@@ -1,54 +1,24 @@
-import React, { useMemo, useCallback, useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Item from './Item';
-import useDetectRendered from '../../hooks/useDetectRendered';
+import useCollapse from './useCollapse';
 
 const mapToObject = arr => arr.reduce((rs, key) => {
   rs[key] = true;
   return rs;
 }, {});
 
-const Collapse = ({ className, children, onActivePanelsChange, defaultActivePanels, accordion, ...otherProps }) => {
-  const isRendered = useDetectRendered();
-  const [activePanels, setActivePanels] = useState([...new Set(defaultActivePanels)]);
-  const _onActivePanelsChange = useCallback(panelKey => {
-    if (accordion) {
-      return setActivePanels(prev => {
-        const _prev = new Set(prev);
-        if (_prev.has(panelKey)) {
-          return [];
-        }
-
-        return [panelKey];
-      });
-    }
-    return setActivePanels(prev => {
-      const _prev = new Set(prev);
-      if (_prev.has(panelKey)) {
-        _prev.delete(panelKey)
-      } else {
-        _prev.add(panelKey)
-      }
-      return [..._prev];
-    });
-  }, [accordion, setActivePanels]);
-
-  useEffect(() => {
-    if (isRendered) {
-      onActivePanelsChange(activePanels);
-    }
-  }, [isRendered, activePanels, onActivePanelsChange]);
-
-  const _activePanels = useMemo(() => mapToObject(activePanels), [activePanels]);
+const Collapse = ({ className, children, value, onChange, ...otherProps }) => {
+  const _activePanels = useMemo(() => mapToObject(value), [value]);
 
   return (
     <div className={cn('fui-collapse', className)} {...otherProps}>
       {React.Children.map(children, panel => {
         return React.cloneElement(panel, {
           active: !panel.props.disabled && _activePanels[panel.key],
-          onClick: () => _onActivePanelsChange(panel.key),
+          onClick: () => onChange(panel.key),
           ...panel.props
         });
       })}
@@ -57,17 +27,18 @@ const Collapse = ({ className, children, onActivePanelsChange, defaultActivePane
 };
 
 Collapse.Item = Item;
+Collapse.useCollapse = useCollapse;
 
 Collapse.displayName = 'Collapse';
 Collapse.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
-  defaultActivePanels: PropTypes.array,
-  onActivePanelsChange: PropTypes.func,
+  value: PropTypes.array,
+  onChange: PropTypes.func,
 };
 Collapse.defaultProps = {
-  defaultActivePanels: [],
-  onActivePanelsChange: f => f,
+  value: [],
+  onChange: f => f,
 };
 
 export default Collapse;
