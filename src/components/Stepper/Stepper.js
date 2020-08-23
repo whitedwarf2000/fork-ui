@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 
 import Step from './Step';
-import useSteps from './useSteps';
+import useStepper from './useStepper';
 
 const Stepper = ({ className, children, vertical, activeStep, getStatus, ...otherProps }) => {
   const injectProps = useCallback((idx) => ({
@@ -24,7 +24,7 @@ const Stepper = ({ className, children, vertical, activeStep, getStatus, ...othe
 };
 
 Stepper.Step = Step;
-Stepper.useSteps = useSteps;
+Stepper.useStepper = useStepper;
 
 Stepper.displayName = 'Stepper';
 Stepper.propTypes = {

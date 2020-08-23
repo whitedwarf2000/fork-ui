@@ -5,17 +5,15 @@ import Context from './Context';
 import { loop } from '../../utils/helpers';
 
 const Dots = ({ className }) => {
-  const { page, maxPage, setPage } = useContext(Context);
-  const onItemClick = useCallback(e => setPage(+e.target.attributes['data-page-number'].value), [setPage]);
+  const { value, itemCount, onChange } = useContext(Context);
 
   return (
     <ul className={cn('fui-carousel-dots', className)}>
-      {loop(maxPage, (i) => (
+      {loop(itemCount, (i) => (
         <li
-          className={cn('fui-carousel-dot', { 'fui-carousel-dot--active': page === i + 1 })}
+          className={cn('fui-carousel-dot', { 'fui-carousel-dot--active': value === i })}
           key={i}
-          data-page-number={i + 1}
-          onClick={onItemClick}
+          onClick={() => onChange(i)}
         />
       ))}
     </ul>

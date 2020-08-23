@@ -9,107 +9,50 @@ import Dots from './Dots';
 import Context from './Context';
 
 import useMeasure from '../../hooks/useMeasure';
+import useCarousel from './useCarousel';
 
-const getItemNodes = boxRef => [...boxRef.current.children];
-const calc = (itemNodes, nextPage) => {
-  const index = nextPage - 1;
-
-  let left = 0;
-  for (let i = 0; i < itemNodes.length; i++) {
-    if (i >= index) {
-      return left;
-    }
-    left+= itemNodes[i].clientWidth;
-  }
-  return left;
+const calc = (wrapperWidth, value) => {
+  return (wrapperWidth * value);
 };
 
-const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => {
-  const [page, setPage] = useState(1);
-  const [boxBody, setBoxBody] = useState({ height: 0, width: 0 });
+const Carousel = ({ className, children, auto, loop, value, onChange, onNext, onPrev }) => {
   const itemCount = useMemo(() => React.Children.count(children), [children]);
-  const [{ ref }, body] = useMeasure();
-  const boxRef = useRef();
+  const containerRef = useRef();
+  const [{ ref: boxRef }, boxShape] = useMeasure();
 
-  // One page equal 75% carousel width
-  const maxPage = useMemo(() => {
-    if (multiple) {
-      return body.width && boxBody.width
-        ? Math.ceil(boxBody.width / body.width)
-        : 0;
-    }
-
-    return itemCount; 
-  }, [body.width, boxBody.width, itemCount, multiple]);
-
-  const [left, setLeft] = useState(0);
-  const boxHeight = useMemo(() => boxBody.height + 5, [boxBody.height]);
+  const [_containerShape, _setContainerShape] = useState({ width: 0, height: 0 });
+  const [_left, _setLeft] = useState(0);
 
   useEffect(() => {
-    setBoxBody({
+    _setLeft(-calc(_containerShape.width, value));
+  }, [_setLeft, _containerShape.width, value]);
+
+  useEffect(() => {
+    _setContainerShape({
       height: boxRef.current.clientHeight,
-      width: boxRef.current.clientWidth,
+      width: containerRef.current.clientWidth,
     });
   }, []);
 
-  const handleNext = useCallback(() => setPage((prev) => {
-    const _page = prev + 1;
-    if (loop && _page > maxPage) {
-      return 1;
-    }
-    return _page > maxPage ? maxPage : _page;
-  }), [maxPage, setPage, loop]);
-
-  const handlePrev = useCallback(() => setPage((prev) => {
-    const _page = prev - 1;
-    if (loop && _page < 1) {
-      return maxPage;
-    }
-    return _page < 1 ? 1 : _page;
-  }), [maxPage, setPage, loop]);
-
-  useEffect(() => {
-    (function() {
-      const itemNodes = getItemNodes(boxRef);
-      if (multiple) {
-        return setLeft(-(page - 1) * body.width);
-      }
-      if (focus) {
-        return setLeft(-calc(itemNodes, page) + (page <= 1 ? 0 : gap));
-      }
-
-      return setLeft(-calc(itemNodes, page));
-    })();
-  }, [page, setLeft, multiple, boxRef, body.width, gap]);
-
   useEffect(() => {
     if (auto) {
-      const timer = setInterval(() => handleNext(), auto);
+      const timer = setInterval(() => onNext(), auto);
       return () => clearInterval(timer);
     }
-  }, [handleNext, auto]);
-
-  const itemWidth = useMemo(() => {
-    if (focus) {
-      return body.width - gap * 2;
-    }
-    return body.width;
-  }, [body.width, focus, gap]);
+  }, [onNext, auto]);
 
   return (
     <Context.Provider
       value={{
-        setPage,
-        multiple,
-        page,
+        value,
+        onChange,
         itemCount,
-        maxPage,
-        itemWidth,
+        itemWidth: _containerShape.width,
       }}
     >
-      <div ref={ref} className={cn('fui-carousel', className)}>
-        <div className="fui-carousel-container" style={{ height: boxHeight }}>
-          <div ref={boxRef} className="fui-carousel-box" style={{ left }} >
+      <div className={cn('fui-carousel', className)}>
+        <div ref={containerRef} className="fui-carousel-container" style={{ height: boxShape.height }}>
+          <div ref={boxRef} className="fui-carousel-box" style={{ left: _left }} >
             {children}
           </div>
         </div>
@@ -118,17 +61,17 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
           <Button
             icon={<ChevronLeft />}
             className={cn('fui-carousel-prev')}
-            disabled={!loop && page <= 1}
+            disabled={!loop && value === 0}
             circle
-            onClick={handlePrev}
+            onClick={onPrev}
             style={{ marginRight: '0.5rem' }}
           />
           <Button
             icon={<ChevronRight />}
             className={cn('fui-carousel-next')}
-            disabled={!loop && page >= maxPage}
+            disabled={!loop && value === itemCount - 1}
             circle
-            onClick={handleNext}
+            onClick={onNext}
           />
         </div>
       </div>
@@ -137,6 +80,7 @@ const Carousel = ({ className, children, auto, loop, multiple, focus, gap }) => 
 };
 
 Carousel.Item = Item;
+Carousel.useCarousel = useCarousel;
 
 Carousel.displayName = 'Carousel';
 Carousel.propTypes = {
@@ -144,12 +88,12 @@ Carousel.propTypes = {
   children: PropTypes.any,
   auto: PropTypes.number,
   loop: PropTypes.bool,
-  multiple: PropTypes.bool,
-  focus: PropTypes.bool,
-  gap: PropTypes.number,
+  onNext: PropTypes.func,
+  onPrev: PropTypes.func,
 };
 Carousel.defaultProps = {
-  gap: 30,
+  onNext: f => f,
+  onPrev: f => f,
 };
 
 export default Carousel;

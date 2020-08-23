@@ -1,10 +1,8 @@
 import React from 'react';
 
 export default React.createContext({
-  setPage: f => f,
-  page: 0,
-  maxPage: 9,
+  onChange: f => f,
+  value: 0,
   itemCount: 0,
   itemWidth: 0,
-  multiple: false,
 });

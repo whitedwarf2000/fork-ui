@@ -58,13 +58,22 @@ export default ({ maxStepIdx = 0, defaultActiveStep = 0, defaultStepInfo = {}, o
     return steps[idx];
   }, [activeStep, steps]);
 
-  return {
-    getStatus,
-    activeStep,
-    handleReset,
-    handleNext,
-    handleSkip,
-    handleCancel,
-    handleFinish,
-  };
+  return [
+    {
+      getStatus,
+      activeStep,
+    },
+    {
+      activeStep,
+      setActiveStep,
+      steps,
+      setSteps,
+      getStatus,
+      handleReset,
+      handleNext,
+      handleSkip,
+      handleCancel,
+      handleFinish,
+    }
+  ];
 };
