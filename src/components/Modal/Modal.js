@@ -26,8 +26,8 @@ const Modal = ({ className, onClose, open, canOutsideClickClose, ...otherProps }
     <React.Fragment>
       {delayOpen && (
         <Portal>
-          <Dialog.Container
-            className={cn('fui-modal-container', { 'fui-modal-container--close-animation': !open })}
+          <Dialog.Portal
+            className={cn('fui-modal-portal', { 'fui-modal-portal--close-animation': !open })}
             ref={wrapperRef}
           >
             <Dialog
@@ -36,7 +36,7 @@ const Modal = ({ className, onClose, open, canOutsideClickClose, ...otherProps }
               onClose={onClose}
               {...otherProps}
             />
-          </Dialog.Container>
+          </Dialog.Portal>
         </Portal>
       )}
     </React.Fragment>

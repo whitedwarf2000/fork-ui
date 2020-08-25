@@ -1,17 +1,16 @@
-.fui-modal-container {
+.fui-modal-portal {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.fui-modal-container--close-animation {
+.fui-modal-portal--close-animation {
   background-color: transparent;
   animation: zoomOut 0.25s;
 }
 
 .fui-modal {
   position: absolute;
-  top: 15%;
   animation: zoomIn 0.25s;
   box-shadow: none;
 }

@@ -1,3 +1,5 @@
 .fui-dialog-body {
   padding: 1.5em 1em;
+  flex-grow: 1;
+  overflow-y: auto;
 }

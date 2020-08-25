@@ -3,10 +3,25 @@
   height: 3.5em;
   font-weight: 500;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   text-transform: uppercase;
   background-color: var(--popup--title-bg);
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
+}
+.fui-dialog-header__title {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.fui-dialog-header__support-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fui-dialog-header__refresh-button,
+.fui-dialog-header__close-button {
+  margin-left: 0.5em;
 }

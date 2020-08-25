@@ -6,7 +6,7 @@ const Container = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
     <div
       ref={ref}
-      className={cn('fui-dialog-container', className)}
+      className={cn('fui-dialog-portal', className)}
       {...otherProps}
     />
   );

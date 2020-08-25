@@ -1,6 +1,6 @@
 @import '../../style/vars.scss';
 
-.fui-drawer-container--close-animation {
+.fui-drawer-portal--close-animation {
   background-color: transparent;
 }
 
@@ -15,13 +15,13 @@
   }
 }
 
-.fui-drawer-container--left {
+.fui-drawer-portal--left {
   .fui-drawer {
     left: 0;
   }
 }
 
-.fui-drawer-container--right {
+.fui-drawer-portal--right {
   .fui-drawer {
     right: 0;
   }

@@ -1,12 +1,14 @@
-@import './Container.scss';
+@import './Portal.scss';
 @import './Header.scss';
 @import './Body.scss';
 @import './Footer.scss';
 
 .fui-dialog {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-width: 30em;
+  max-height: 100vh;
   background-color: var(--bg);
-  box-shadow: var(--popup--shadow);
   border-radius: var(--border-radius);
 }
