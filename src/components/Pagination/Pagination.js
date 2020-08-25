@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import { ChevronLeft, ChevronRight } from '../icons';
+import usePrivatePagination from './usePrivatePagination';
 import usePagination from './usePagination';
 
 const loop = (start, end, cb) => {
@@ -21,7 +22,7 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
     endIndex,
     onNext,
     onPrev,
-  } = usePagination({ total, pageSize, max, activePage, onChange });
+  } = usePrivatePagination({ total, pageSize, max, activePage, onChange });
 
   const onItemClick = useCallback(value =>  onChange(value), [onChange]);
 
@@ -60,6 +61,9 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
 };
 
 Pagination.displayName = 'Pagination';
+Pagination.usePrivatePagination = usePrivatePagination;
+Pagination.usePagination = usePagination;
+
 Pagination.propTypes = {
   className: PropTypes.string,
   total: PropTypes.number,

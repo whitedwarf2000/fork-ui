@@ -1,35 +1,35 @@
 .block {
-  display: block;
+  display: block !important;
 }
 
 .inline-block {
-  display: inline-block;
+  display: inline-block !important;
 }
 
 .inline {
-  display: inline;
+  display: inline !important;
 }
 
 .table {
-  display: table;
+  display: table !important;
 }
 
 .table-row	{
-  display: table-row;
+  display: table-row !important;
 }
 
 .table-cell	{
-  display: table-cell;
+  display: table-cell !important;
 }
 
 .hidden	{
-  display: none;
+  display: none !important;
 }
 
 .flex	{
-  display: flex;
+  display: flex !important;
 }
 
 .inline-flex {
-  display: inline-flex;
+  display: inline-flex !important;
 }

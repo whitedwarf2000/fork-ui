@@ -6,7 +6,7 @@ import { Star } from '../icons';
 
 const isLighted = (currentStarHover, idx, star) => (currentStarHover >= idx + 1) || (currentStarHover === 'outside' && star >= idx + 1);
 
-const Rater = ({ className, max, starRef, icon, star, onChange, fontSize, style, ...otherProps }) => {
+const Rater = ({ className, max, starRef, icon, star, onChange, size, style, ...otherProps }) => {
   const [currentStarHover, setCurrentStarHover] = useState('outside');
 
   const stars = useMemo(() => {
@@ -33,7 +33,7 @@ const Rater = ({ className, max, starRef, icon, star, onChange, fontSize, style,
       onMouseLeave={() => setCurrentStarHover('outside')}
       style={{
         ...style,
-        fontSize,
+        fontSize: size,
       }}
       {...otherProps}
     >
@@ -51,7 +51,7 @@ Rater.propTypes = {
   starRef: PropTypes.any,
   star: PropTypes.number,
   style: PropTypes.object,
-  fontSize: PropTypes.string,
+  size: PropTypes.string,
 };
 Rater.defaultProps = {
   icon: <Star />,

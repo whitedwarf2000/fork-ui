@@ -3,6 +3,8 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Item from './Item';
+import useTabs from './useTabs';
+
 const Tabs = ({ className, children, value, onChange, underline, ...otherProps }) => {
   const tabs = useMemo(() => React.Children.map(children, tab => ({
     key: tab.key,
@@ -33,6 +35,7 @@ const Tabs = ({ className, children, value, onChange, underline, ...otherProps }
 };
 
 Tabs.Item = Item;
+Tabs.useTabs = useTabs;
 
 Tabs.displayName = 'Tabs';
 Tabs.propTypes = {
