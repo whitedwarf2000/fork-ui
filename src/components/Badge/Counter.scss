@@ -1,0 +1,10 @@
+.fui-badge-ui.fui-badge-counter {
+  background: var(--red--500);
+  border: 2px solid var(--bg);
+  color: #fff;
+  border-radius: 100rem;
+
+  > b {
+    padding: 0 0.5em;
+  }
+}

@@ -1,3 +1,8 @@
+@import './Dot.scss';
+@import './Label.scss';
+@import './Icon.scss';
+@import './Counter.scss';
+
 @keyframes badgeCountUp {
   0% {
    transform: scale(0);
@@ -16,7 +21,7 @@
   }
 }
 
-.fui-badge-count--badge-up-animation {
+.fui-badge-ui--badge-up-animation {
   animation: badgeCountUpOpacity 0.5s;
 
   > b {
@@ -29,7 +34,7 @@
   display: inline-block;
 }
 
-.fui-badge-count {
+.fui-badge-ui {
   font-size: 0.75rem;
   position: absolute;
   height: 2.25em;
@@ -37,68 +42,56 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--red--500);
-  border: 2px solid var(--bg);
-  color: #fff;
-  border-radius: 100rem;
   font-family: sans-serif;
-
-  > b {
-    padding: 0 0.5em;
-  }
 }
 
-.fui-badge-count--hidden {
-  display: none;
-}
-
-.fui-badge--top-right .fui-badge-count,
-.fui-badge--right-top .fui-badge-count {
+.fui-badge--top-right .fui-badge-ui,
+.fui-badge--right-top .fui-badge-ui {
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
 }
 
-.fui-badge--right .fui-badge-count {
+.fui-badge--right .fui-badge-ui {
   top: 50%;
   right: 0;
   transform: translate(50%, -50%);
 }
 
-.fui-badge--bottom-right .fui-badge-count,
-.fui-badge--right-bottom .fui-badge-count {
+.fui-badge--bottom-right .fui-badge-ui,
+.fui-badge--right-bottom .fui-badge-ui {
   bottom: 0;
   right: 0;
   transform: translate(50%, 50%);
 }
 
-.fui-badge--bottom .fui-badge-count {
+.fui-badge--bottom .fui-badge-ui {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
 }
 
-.fui-badge--bottom-left .fui-badge-count,
-.fui-badge--left-bottom .fui-badge-count {
+.fui-badge--bottom-left .fui-badge-ui,
+.fui-badge--left-bottom .fui-badge-ui {
   bottom: 0;
   left: 0;
   transform: translate(-50%, 50%);
 }
 
-.fui-badge--left .fui-badge-count {
+.fui-badge--left .fui-badge-ui {
   left: 0;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.fui-badge--left-top .fui-badge-count,
-.fui-badge--top-left .fui-badge-count {
+.fui-badge--left-top .fui-badge-ui,
+.fui-badge--top-left .fui-badge-ui {
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
 }
 
-.fui-badge--top .fui-badge-count {
+.fui-badge--top .fui-badge-ui {
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -107,7 +100,7 @@
 // OVERLAP SUPPORT
 .fui-badge--overlap.fui-badge--top-right,
 .fui-badge--overlap.fui-badge--right-top {
-  .fui-badge-count {
+  .fui-badge-ui {
     top: 14%;
     right: 14%;
   }
@@ -115,7 +108,7 @@
 
 .fui-badge--overlap.fui-badge--right-bottom,
 .fui-badge--overlap.fui-badge--bottom-right {
-  .fui-badge-count {
+  .fui-badge-ui {
     bottom: 14%;
     right: 14%;
   }
@@ -123,7 +116,7 @@
 
 .fui-badge--overlap.fui-badge--left-bottom,
 .fui-badge--overlap.fui-badge--bottom-left {
-  .fui-badge-count {
+  .fui-badge-ui {
     bottom: 14%;
     left: 14%;
   }
@@ -131,22 +124,8 @@
 
 .fui-badge--overlap.fui-badge--left-top,
 .fui-badge--overlap.fui-badge--top-left {
-  .fui-badge-count {
+  .fui-badge-ui {
     top: 14%;
     left: 14%;
-  }
-}
-
-// DOT SUPPORT
-.fui-badge--dot {
-  .fui-badge-count {
-    > b {
-      display: none;
-    }
-
-    height: 1.25em;
-    width: 1.25em;
-    min-width: 0;
-    padding:0;
   }
 }

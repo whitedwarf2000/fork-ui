@@ -3,6 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import { Star } from '../icons';
+import useRater from './useRater';
 
 const isLighted = (currentStarHover, idx, star) => (currentStarHover >= idx + 1) || (currentStarHover === 'outside' && star >= idx + 1);
 
@@ -43,6 +44,8 @@ const Rater = ({ className, max, starRef, icon, star, onChange, size, style, ...
 };
 
 Rater.displayName = 'Rater';
+Rater.useRater = useRater;
+
 Rater.propTypes = {
   icon: PropTypes.string,
   max: PropTypes.number,

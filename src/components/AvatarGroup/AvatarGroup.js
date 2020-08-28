@@ -5,7 +5,7 @@ import Avatar from '../Avatar';
 
 const AvatarGroup = ({ className, overflowAvatar, children, ...otherProps }) => {
   const avatarCount = useMemo(() => React.Children.count(children), [children]) ;
-  const isOverflow = useMemo(() => avatarCount > overflowAvatar, [avatarCount, overflowAvatar]);
+  const isOverflow = useMemo(() => avatarCount > overflowAvatar + 1, [avatarCount, overflowAvatar]);
 
   const enhanderChildren = useMemo(() => {
     if (isOverflow) {

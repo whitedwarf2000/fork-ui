@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Item from './Item';
 import useTabs from './useTabs';
 
-const Tabs = ({ className, children, value, onChange, underline, ...otherProps }) => {
+const Tabs = ({ className, children, value, onChange, ...otherProps }) => {
   const tabs = useMemo(() => React.Children.map(children, tab => ({
     key: tab.key,
     title: tab.props.title,
@@ -13,7 +13,7 @@ const Tabs = ({ className, children, value, onChange, underline, ...otherProps }
   })), [children]);
 
   return (
-    <div className={cn('fui-tabs', { 'fui-tabs--underline': underline }, className )} {...otherProps}>
+    <div className={cn('fui-tabs', className )} {...otherProps}>
       <div className="fui-tabs-nav">
         {tabs.map(tab => (
           <button
@@ -42,7 +42,6 @@ Tabs.propTypes = {
   className: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
-  underline: PropTypes.bool,
 };
 Tabs.defaultProps = {
   onChange: f => f,

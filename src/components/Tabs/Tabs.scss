@@ -10,7 +10,6 @@
 .fui-tabs-nav {
   display: flex;
   align-items: center;
-  border-radius: var(--border-radius);
 }
 
 .fui-tabs-nav-item {
@@ -25,18 +24,13 @@
   user-select: none;
   touch-action: manipulation;
   cursor: pointer;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.25s;
+  border-radius: var(--border-radius);
   font-weight: 600;
 
   &:disabled {
     cursor: not-allowed !important;
     color: var(--disabled-text-color) !important;
   }
-}
-
-.fui-tabs--underline > .fui-tabs-nav .fui-tabs-nav-item {
-  border-bottom-color: currentColor;
 }
 
 .fui-tabs-nav-item--active {

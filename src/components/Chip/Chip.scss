@@ -1,5 +1,5 @@
 .fui-chip {
-  height: var(--basic-height);
+  height: 2.275em;
   padding-left: 0.35em;
   padding-right: 0.35em;
   display: flex;
@@ -9,14 +9,6 @@
   cursor: pointer;
   user-select: none;
   background-color: var(--secondary-bg);
-  box-shadow: var(--secondary-flat);
-
-  .fui-avatar {
-    height: 1.65em;
-    width: 1.65em;
-    box-shadow: none;
-    background-color: rgba(0, 0, 0, 0.2);
-  }
 }
 
 .fui-chip--rounded {
@@ -24,8 +16,6 @@
 }
 
 .fui-chip--custom {
-  box-shadow: none;
-
   &:hover {
     opacity: 0.8;
   }
