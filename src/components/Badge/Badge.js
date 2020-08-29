@@ -13,7 +13,7 @@ import { makePlacements } from '../placements';
 const mPlacements = makePlacements('fui-badge');
 const lPlacements = Object.keys(mPlacements);
 
-const Badge = ({
+const BaseBadge = ({
   className,
   children,
   badge,
@@ -44,19 +44,107 @@ const Badge = ({
   );
 };
 
-Badge.displayName = 'Badge';
-Badge.Counter = Counter;
-Badge.Dot = Dot;
-Badge.Label = Label;
-Badge.Icon = Icon;
 
-Badge.propTypes = {
+
+BaseBadge.displayName = 'Badge';
+
+BaseBadge.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   overlap: PropTypes.bool,
   placement: PropTypes.string,
 };
 
-Badge.defaultProps = {};
+BaseBadge.defaultProps = {};
+const Badge = {};
+Badge.Counter = ({
+  children,
+  count,
+  overflowCount,
+  color,
+  size,
+  ...otherProps
+}) => {
+  return (
+    <BaseBadge
+      badge={(
+        <Counter
+          count={count}
+          overflowCount={overflowCount}
+          color={color}
+          size={size}
+        />
+      )}
+      {...otherProps}
+    >
+      {children}
+    </BaseBadge>
+  );
+};
+Badge.Dot = ({
+  children,
+  color,
+  size,
+  ...otherProps
+}) => {
+  return (
+    <BaseBadge
+      badge={(
+        <Dot
+          color={color}
+          size={size}
+        />
+      )}
+      {...otherProps}
+    >
+      {children}
+    </BaseBadge>
+  );
+};
+Badge.Label = ({
+  children,
+  label,
+  color,
+  size,
+  ...otherProps
+}) => {
+  return (
+    <BaseBadge
+      badge={(
+        <Label
+          color={color}
+          size={size}
+          label={label}
+        />
+      )}
+      {...otherProps}
+    >
+      {children}
+    </BaseBadge>
+  );
+};
+Badge.Icon = ({
+  children,
+  icon,
+  color,
+  size,
+  ...otherProps
+}) => {
+  return (
+    <BaseBadge
+      badge={(
+        <Icon
+          color={color}
+          size={size}
+          icon={icon}
+        />
+      )}
+      {...otherProps}
+    >
+      {children}
+    </BaseBadge>
+  );
+};
 
 export default Badge;
+export { BaseBadge };

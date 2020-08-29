@@ -6,14 +6,14 @@ import Button from '../Button';
 import { X, Refresh } from '../icons';
 import Context from './Context';
 
-const Header = ({ className, closable, children, refreshable, ...otherProps }) => {
+const Header = ({ className, closable, children, freshable, ...otherProps }) => {
   const { onClose, onRefresh } = useContext(Context);
 
   return (
     <div className={cn('fui-dialog-header', className)} {...otherProps}>
       <div className="fui-dialog-header__title">{children}</div>
       <div className="fui-dialog-header__support-button">
-        {refreshable && (
+        {freshable && (
           <Button
             icon={<Refresh />}
             transparent
@@ -40,7 +40,7 @@ Header.displayName = 'Dialog.Header';
 Header.propTypes = {};
 Header.defaultProps = {
   closable: true,
-  refreshable: false,
+  freshable: false,
 };
 
 export default Header;
