@@ -52,18 +52,18 @@ $step-avatar--size: 2.5em;
 // COMPLETED
 .fui-step--completed {
   .fui-step-rail {
-    color: var(--primary--500);
+    color: var(--green--500);
   }
 
   .fui-step-avatar {
-    background-color: var(--primary--500);
+    background-color: var(--green--500);
     color: rgb(228, 230, 235);
     box-shadow: none;
     border: none;
   }
 
   .fui-step-title {
-    color: var(--primary--500);
+    color: var(--green--500);
   }
 
   .fui-step-description {

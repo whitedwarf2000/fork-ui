@@ -25,6 +25,7 @@ const lShapes = Object.keys(mShapes);
 const Button = React.forwardRef(({
   className,
   icon,
+  dashed,
   outlined,
   textColor,
   size,
@@ -78,6 +79,7 @@ const Button = React.forwardRef(({
           'fui-button--colored': isColored,
           'fui-button--loading': loading,
           'fui-button--outlined': outlined,
+          'fui-button--dashed': dashed,
         },
         mShapes[shape],
         mColors[color],

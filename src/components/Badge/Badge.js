@@ -56,7 +56,8 @@ BaseBadge.propTypes = {
 };
 
 BaseBadge.defaultProps = {};
-const Badge = {};
+
+const Badge = f => f;
 Badge.Counter = ({
   children,
   count,
