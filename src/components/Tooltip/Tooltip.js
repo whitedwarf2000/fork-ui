@@ -40,7 +40,7 @@ Tooltip.propTypes = {
   trigger: PropTypes.string,
 };
 Tooltip.defaultProps = {
-  gap: 15,
+  gap: 10,
   trigger: 'hover',
 };
 

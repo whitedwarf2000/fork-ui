@@ -1,5 +1,8 @@
 .fui-pure-notification {
   position: relative;
   min-width: 30em;
-  box-shadow: var(--overlay--shadow);
+}
+
+.fui-pure-notification-header {
+  background-color: unset;
 }

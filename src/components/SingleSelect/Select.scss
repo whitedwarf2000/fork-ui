@@ -1,0 +1,70 @@
+.fui-select {
+  position: relative;
+  width: 100%;
+  user-select: none;
+}
+
+.fui-select-absolute {
+  width: 100%;
+}
+
+.fui-select-input {
+  outline: 0 !important;
+  border: 0;
+  height: 3em;
+  background-color: transparent;
+  flex-grow: 1;
+  padding-left: 0.75em;
+}
+
+.fui-select-input-wrapper {
+  min-height: var(--input-height);
+  width: 100%;
+  border-radius: var(--border-radius);
+  padding: 0 3em 0 0.5em;
+  background-color: var(--input--bg);
+  transition: box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.fui-select-input-values {
+  display: flex;
+  align-items: center;
+
+  > *:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}
+
+.fui-select-icon {
+  position: absolute;
+  right: 0.75em;
+  top: 0.75em;
+}
+
+.fui-select--disabled {
+  cursor: not-allowed;
+}
+
+.fui-select--is-drop {
+  .fui-select-icon {
+    transform: rotate(180deg);
+  }
+}
+
+.fui-select-input-wrapper:hover,
+.fui-select--is-drop .fui-select-input-wrapper {
+  border-color: var(--primary--500);
+  background-color: var(--bg);
+}
+
+.fui-select--rounded .fui-select-input-wrapper {
+  border-radius: 100em;
+}
+
+.fui-select-dropdown {
+  box-shadow: var(--overlay--shadow);
+}

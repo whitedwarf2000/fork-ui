@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Textbox from './Textbox';
 import Textarea from './Textarea';
-import InputNumber from './InputNumber';
-import Select from './Select';
 import Password from './Password';
 
 import useFlexibleRef from '../../hooks/useFlexibleRef';
@@ -22,8 +20,6 @@ const Form = React.forwardRef(({ className, children }, ref) => {
 
 Form.Textbox = Textbox;
 Form.Textarea = Textarea;
-Form.InputNumber = InputNumber;
-Form.Select = Select;
 Form.Password = Password;
 
 Form.displayName = 'Form';

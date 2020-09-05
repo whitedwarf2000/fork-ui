@@ -1,5 +1,17 @@
+// THANK TO https://github.com/tabler/tabler-icons
 import React from 'react';
 import enhancerIcon from './enhancerIcon';
+
+export const TwoFa = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M7 16h-4 l3.47 -4.66 a2 2 0 1 0 -3.47 -1.54" />
+  <path d="M10 16v-8h4" />
+  <line x1="10" y1="12" x2="13" y2="12" />
+  <path d="M17 16v-6a2 2 0 0 1 4 0v6" />
+  <line x1="17" y1="13" x2="21" y2="13" />
+</svg>
+));
 
 export const AB = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -16,13 +28,6 @@ export const Accessible = enhancerIcon((props) => (
   <circle cx="12" cy="12" r="9" />
   <path d="M10 16.5l2 -3l2 3m-2 -3v-2l3 -1m-6 0l3 1" />
   <circle cx="12" cy="7.5" r=".5" fill="currentColor" />
-</svg>
-));
-
-export const Activity = enhancerIcon((props) => (
-<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="21 12 17 12 14 20 10 4 7 12 3 12" />
 </svg>
 ));
 
@@ -100,11 +105,20 @@ export const AlertCircle = enhancerIcon((props) => (
 </svg>
 ));
 
+export const AlertOctagon = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M8.7 3 h 6.6 c0.3 0 .5 .1 .7 .3 l4.7 4.7 c0.2 .2 .3 .4 .3 .7 v6.6 c0 .3 -.1 .5 -.3 .7 l-4.7 4.7 c-0.2 .2 -.4 .3 -.7 .3h-6.6 c-0.3 0 -.5 -.1 -.7 -.3 l-4.7 -4.7 c-0.2 -.2 -.3 -.4 -.3 -.7 v-6.6 c0 -.3 .1 -.5 .3 -.7l4.7 -4.7 c0.2 -.2 .4 -.3 .7 -.3z" />
+  <line x1="12" y1="8" x2="12" y2="12" />
+  <line x1="12" y1="16" x2="12.01" y2="16" />
+</svg>
+));
+
 export const AlertTriangle = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M12 9v2m0 4v.01" />
-  <path d="M5.07 19H19a2 2 0 0 0 1.75 -2.75L13.75 4a2 2 0 0 0 -3.5 0L3.25 16.25a2 2 0 0 0 1.75 2.75" />
+  <path d="M5 19 h14 a2 2 0 0 0 1.84 -2.75 l-7.1 -12.25 a2 2 0 0 0 -3.5 0 l-7.1 12.25 a2 2 0 0 0 1.75 2.75" />
 </svg>
 ));
 
@@ -169,6 +183,56 @@ export const Anchor = enhancerIcon((props) => (
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M12 9v12m-8 -8a8 8 0 0 0 16 0m1 0h-2m-14 0h-2" />
   <circle cx="12" cy="6" r="3" />
+</svg>
+));
+
+export const AntennaBars1 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M6 18v-.01" />
+  <path d="M10 18v-.01" />
+  <path d="M14 18v-.01" />
+  <path d="M18 18v-.01" />
+</svg>
+));
+
+export const AntennaBars2 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M6 18v-3" />
+  <path d="M10 18v-.01" />
+  <path d="M14 18v-.01" />
+  <path d="M18 18v-.01" />
+</svg>
+));
+
+export const AntennaBars3 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M6 18v-3" />
+  <path d="M10 18v-6" />
+  <path d="M14 18v-.01" />
+  <path d="M18 18v-.01" />
+</svg>
+));
+
+export const AntennaBars4 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M6 18v-3" />
+  <path d="M10 18v-6" />
+  <path d="M14 18v-9" />
+  <path d="M18 18v-.01" />
+</svg>
+));
+
+export const AntennaBars5 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M6 18v-3" />
+  <path d="M10 18v-6" />
+  <path d="M14 18v-9" />
+  <path d="M18 18v-12" />
 </svg>
 ));
 
@@ -760,7 +824,7 @@ export const BatteryCharging = enhancerIcon((props) => (
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M16 7h1a2 2 0 0 1 2 2v.5a.5 .5 0 0 0 .5 .5a.5 .5 0 0 1 .5 .5v3a.5 .5 0 0 1 -.5 .5a.5 .5 0 0 0 -.5 .5v.5a2 2 0 0 1 -2 2h-2" />
   <path d="M8 7H6a2 2 0 0 0 -2 2v6a2 2 0 0 0 2 2h1" />
-  <polyline points="12 8 10 12 13 12 11 16" />
+  <path d="M12 8l-2 4h3l-2 4" />
 </svg>
 ));
 
@@ -794,6 +858,14 @@ export const Bike = enhancerIcon((props) => (
   <circle cx="19" cy="18" r="3" />
   <polyline points="12 19 12 15 9 12 14 8 16 11 19 11" />
   <circle cx="17" cy="5" r="1" />
+</svg>
+));
+
+export const Biohazard = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="2" />
+  <path d="M11.939 14 c0.03 0.173 0.048 0.351 0.056 0.533 l 0.005 0.217 a4.75 4.75 0 0 1 -4.533 4.745 l -0.217 0.005 m -4.75 -4.75 a4.75 4.75 0 0 1 7.737 -3.693 m 6.513 8.443 a4.75 4.75 0 0 1 -4.69 -5.503 l -0.06 0.003 m 1.764 -2.944 a4.75 4.75 0 0 1 7.731 3.477 l 0.005 0.217 m -11.195 -3.813 a4.75 4.75 0 0 1 -1.828 -7.624 l 0.164 -0.172 m 6.718 0 a4.75 4.75 0 0 1 -1.665 7.798" />
 </svg>
 ));
 
@@ -1158,6 +1230,15 @@ export const BrandFacebook = enhancerIcon((props) => (
 </svg>
 ));
 
+export const BrandFigma = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="15" cy="12" r="3" />
+  <rect x="6" y="3" width="12" height="6" rx="3" />
+  <path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15" />
+</svg>
+));
+
 export const BrandFramer = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -1308,7 +1389,14 @@ export const BrandTabler = enhancerIcon((props) => (
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M8 9l3 3l-3 3" />
   <line x1="13" y1="15" x2="16" y2="15" />
-  <rect x="3" y="4" width="18" height="16" rx="4" />
+  <rect x="4" y="4" width="16" height="16" rx="4" />
+</svg>
+));
+
+export const BrandTailwind = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.667 6 c -2.49 0 -4.044 1.222 -4.667 3.667 c 0.933 -1.223 2.023 -1.68 3.267 -1.375 c 0.71 0.174 1.217 0.68 1.778 1.24 c 0.916 0.912 1.975 1.968 4.288 1.968 c 2.49 0 4.044 -1.222 4.667 -3.667 c -0.933 1.223 -2.023 1.68 -3.267 1.375 c -0.71 -0.174 -1.217 -0.68 -1.778 -1.24 c -0.916 -0.912 -1.975 -1.968 -4.288 -1.968 z m-4 6.5 c -2.49 0 -4.044 1.222 -4.667 3.667 c 0.933 -1.223 2.023 -1.68 3.267 -1.375 c 0.71 0.174 1.217 0.68 1.778 1.24 c 0.916 0.912 1.975 1.968 4.288 1.968 c 2.49 0 4.044 -1.222 4.667 -3.667 c -0.933 1.223 -2.023 1.68 -3.267 1.375 c -0.71 -0.174 -1.217 -0.68 -1.778 -1.24 c -0.916 -0.912 -1.975 -1.968 -4.288 -1.968 z" />
 </svg>
 ));
 
@@ -2657,15 +2745,6 @@ export const Egg = enhancerIcon((props) => (
 </svg>
 ));
 
-export const ElectricScooter = enhancerIcon((props) => (
-<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="18" cy="17" r="2" />
-  <circle cx="6" cy="17" r="2" />
-  <path d="M8 17h5a6 6 0 0 1 5 -5v-5a2 2 0 0 0 -2 -2h-1" />
-</svg>
-));
-
 export const Emphasis = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -2733,6 +2812,16 @@ export const FaceId = enhancerIcon((props) => (
   <line x1="9" y1="10" x2="9.01" y2="10" />
   <line x1="15" y1="10" x2="15.01" y2="10" />
   <path d="M9.5 15a3.5 3.5 0 0 0 5 0" />
+</svg>
+));
+
+export const Fall = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 21l1-5-1-4-3-4h4l3-3" />
+  <path d="M6 16l-1-4l3-4" />
+  <circle cx="6" cy="5" r="1" />
+  <path d="M13.5 12h2.5l4 2" />
 </svg>
 ));
 
@@ -3270,6 +3359,67 @@ export const GripVertical = enhancerIcon((props) => (
 </svg>
 ));
 
+export const H1 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="3" y1="5" x2="3" y2="19" />
+  <line x1="3" y1="12" x2="12" y2="12" />
+  <line x1="12" y1="5" x2="12" y2="19" />
+  <path d="M20 19v-10l-3 3" />
+</svg>
+));
+
+export const H2 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="3" y1="5" x2="3" y2="19" />
+  <line x1="3" y1="12" x2="12" y2="12" />
+  <line x1="12" y1="5" x2="12" y2="19" />
+  <path d="M21 19h-5 l 4.47 -5.96 a2.5 2.5 0 1 0 -4.47 -1.54" />
+</svg>
+));
+
+export const H3 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="3" y1="5" x2="3" y2="19" />
+  <line x1="3" y1="12" x2="12" y2="12" />
+  <line x1="12" y1="5" x2="12" y2="19" />
+  <path d="M16 11.5a2.5 2.5 0 1 1 2.5 2.5a2.5 2.5 0 1 1 -2.5 2.5" />
+</svg>
+));
+
+export const H4 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="3" y1="5" x2="3" y2="19" />
+  <line x1="3" y1="12" x2="12" y2="12" />
+  <line x1="12" y1="5" x2="12" y2="19" />
+  <path d="M20 19v-10l-5 8h7" />
+</svg>
+));
+
+export const H5 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="3" y1="5" x2="3" y2="19" />
+  <line x1="3" y1="12" x2="12" y2="12" />
+  <line x1="12" y1="5" x2="12" y2="19" />
+  <path d="M16 18.27 a3 3 0 1 0 0 -4.537 l0 -4.733 h 5" />
+</svg>
+));
+
+export const H6 = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="3" y1="5" x2="3" y2="19" />
+  <line x1="3" y1="12" x2="12" y2="12" />
+  <line x1="12" y1="5" x2="12" y2="19" />
+  <circle cx="18.5" cy="16.5" r="2.5" />
+  <line x1="20" y1="9" x2="16.5" y2="15" />
+</svg>
+));
+
 export const HandMiddleFinger = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -3313,10 +3463,18 @@ export const Headset = enhancerIcon((props) => (
 </svg>
 ));
 
+export const HeartBroken = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M19.5 13.572 l-7.5 7.428 l-7.5 -7.428a5 5 0 1 1 7.5 -6.566 a5 5 0 1 1 7.5 6.572" />
+  <path d="M12 7l-2 4l4 3l-2 4v3" />
+</svg>
+));
+
 export const Heart = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
+  <path d="M19.5 13.572 l -7.5 7.428 l -7.5 -7.428 m 0 0 a5 5 0 1 1 7.5 -6.566 a5 5 0 1 1 7.5 6.572" />
 </svg>
 ));
 
@@ -4024,6 +4182,29 @@ export const LiveView = enhancerIcon((props) => (
 </svg>
 ));
 
+export const LoaderQuarter = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="12" y1="6" x2="12" y2="3" />
+  <line x1="6" y1="12" x2="3" y2="12" />
+  <line x1="7.75" y1="7.75" x2="5.6" y2="5.6" />
+</svg>
+));
+
+export const Loader = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="12" y1="6" x2="12" y2="3" />
+  <line x1="16.25" y1="7.75" x2="18.4" y2="5.6" />
+  <line x1="18" y1="12" x2="21" y2="12" />
+  <line x1="16.25" y1="16.25" x2="18.4" y2="18.4" />
+  <line x1="12" y1="18" x2="12" y2="21" />
+  <line x1="7.75" y1="16.25" x2="5.6" y2="18.4" />
+  <line x1="6" y1="12" x2="3" y2="12" />
+  <line x1="7.75" y1="7.75" x2="5.6" y2="5.6" />
+</svg>
+));
+
 export const Location = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -4233,6 +4414,24 @@ export const MessageDots = enhancerIcon((props) => (
 </svg>
 ));
 
+export const MessagePlus = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+  <line x1="10" y1="11" x2="14" y2="11" />
+  <line x1="12" y1="9" x2="12" y2="13" />
+</svg>
+));
+
+export const MessageReport = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+  <line x1="12" y1="8" x2="12" y2="11" />
+  <line x1="12" y1="14" x2="12" y2="14.01" />
+</svg>
+));
+
 export const Message = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -4294,6 +4493,17 @@ export const MoodConfuzed = enhancerIcon((props) => (
   <line x1="9" y1="10" x2="9.01" y2="10" />
   <line x1="15" y1="10" x2="15.01" y2="10" />
   <path d="M9.5 16a10 10 0 0 1 6 -1.5" />
+</svg>
+));
+
+export const MoodCry = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="9" y1="10" x2="9.01" y2="10" />
+  <line x1="15" y1="10" x2="15.01" y2="10" />
+  <path d="M9.5 15.25a3.5 3.5 0 0 1 5 0" />
+  <path d="M17.566 17.606 a2 2 0 1 0 2.897 0.03 l-1.463 -1.636 l-1.434 1.606z" />
+  <path d="M20.865 13.517 a8.937 8.937 0 0 0 0.135 -1.517 a9 9 0 1 0 -9 9 c0.69 0 1.36 -0.076 2.005 -0.222" />
 </svg>
 ));
 
@@ -4372,6 +4582,15 @@ export const Moon = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M16.2 4a9.03 9.03 0 1 0 3.9 12a6.5 6.5 0 1 1 -3.9 -12" />
+</svg>
+));
+
+export const Moped = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="18" cy="17" r="2" />
+  <path d="M5 16v1a2 2 0 0 0 4 0v-5h-3a3 3 0 0 0 -3 3v1h10a6 6 0 0 1 5 -4v-5a2 2 0 0 0 -2 -2h-1" />
+  <line x1="6" y1="9" x2="9" y2="9" />
 </svg>
 ));
 
@@ -4469,6 +4688,13 @@ export const Notification = enhancerIcon((props) => (
 </svg>
 ));
 
+export const Octagon = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M8.7 3 h 6.6 c0.3 0 .5 .1 .7 .3 l4.7 4.7 c0.2 .2 .3 .4 .3 .7 v6.6 c0 .3 -.1 .5 -.3 .7 l-4.7 4.7 c-0.2 .2 -.4 .3 -.7 .3h-6.6 c-0.3 0 -.5 -.1 -.7 -.3 l-4.7 -4.7 c-0.2 -.2 -.3 -.4 -.3 -.7 v-6.6 c0 -.3 .1 -.5 .3 -.7l4.7 -4.7 c0.2 -.2 .4 -.3 .7 -.3z" />
+</svg>
+));
+
 export const Omega = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -4545,6 +4771,24 @@ export const Parking = enhancerIcon((props) => (
   <path stroke="none" d="M0 0h24v24H0z"/>
   <rect x="4" y="4" width="16" height="16" rx="2" />
   <path d="M9 16v-8h4a2 2 0 0 1 0 4h-4" />
+</svg>
+));
+
+export const Pause = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="4" y="4" width="6" height="16" rx="2" />
+  <rect x="14" y="4" width="6" height="16" rx="2" />
+</svg>
+));
+
+export const Peace = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <line x1="12" y1="3" x2="12" y2="21" />
+  <line x1="12" y1="12" x2="18.3" y2="18.3" />
+  <line x1="12" y1="12" x2="5.7" y2="18.3" />
 </svg>
 ));
 
@@ -4651,6 +4895,15 @@ export const Pill = enhancerIcon((props) => (
 </svg>
 ));
 
+export const Pin = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="4" y1="20" x2="9.5" y2="14.5" />
+  <path d="M6 11l7 7l1 -1l1 -4l4 -4m-4 -4l-4 4l-4 1l-1 1" />
+  <line x1="14" y1="4" x2="20" y2="10" />
+</svg>
+));
+
 export const PlaneArrival = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -4679,6 +4932,13 @@ export const Planet = enhancerIcon((props) => (
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M17.905 13.057c2.208 1.756 3.436 3.308 3.012 4.035-.67 1.146-5.204-.204-10.129-3.016-4.924-2.812-8.374-6.022-7.705-7.168.418-.716 2.347-.458 4.936.524" />
   <circle cx="12" cy="12" r="6" />
+</svg>
+));
+
+export const Play = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M5 5 v14 a2 2 0 0 0 2.75 1.84 l12.25 -7.1 a2 2 0 0 0 0 -3.5 l-12.25 -7.1 a2 2 0 0 0 -2.75 1.75" />
 </svg>
 ));
 
@@ -4712,6 +4972,14 @@ export const Power = enhancerIcon((props) => (
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M7 6a7.75 7.75 0 1 0 10 0" />
   <line x1="12" y1="4" x2="12" y2="12" />
+</svg>
+));
+
+export const Pray = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="5" r="1" />
+  <path d="M7 20h8l-4 -4v-7l4 3l2 -2" />
 </svg>
 ));
 
@@ -4765,6 +5033,23 @@ export const Qrcode = enhancerIcon((props) => (
   <line x1="14" y1="20" x2="17" y2="20" />
   <line x1="17" y1="17" x2="20" y2="17" />
   <line x1="20" y1="17" x2="20" y2="20" />
+</svg>
+));
+
+export const QuestionMark = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M8 8 a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4" />
+  <line x1="12" y1="19" x2="12" y2="19.01" />
+</svg>
+));
+
+export const Radioactive = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M13.5 14.6 l 3 5.19 a9 9 0 0 0 4.5 -7.79 h -6 a3 3 0 0 1 -1.5 2.6" />
+  <path d="M13.5 9.4 l 3 -5.19 a9 9 0 0 0 -9 0 l 3 5.19 a3 3 0 0 1 3 0" />
+  <path d="M10.5 14.6 l -3 5.19 a9 9 0 0 1 -4.5 -7.79 h6 a3 3 0 0 0 1.5 2.6" />
 </svg>
 ));
 
@@ -4978,12 +5263,22 @@ export const Scissors = enhancerIcon((props) => (
 </svg>
 ));
 
+export const ScooterElectric = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="18" cy="17" r="2" />
+  <circle cx="6" cy="17" r="2" />
+  <path d="M8 17h5a6 6 0 0 1 5 -5v-5a2 2 0 0 0 -2 -2h-1" />
+  <path d="M10 4l-2 4h3l-2 4" />
+</svg>
+));
+
 export const Scooter = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="18" cy="17" r="2" />
-  <path d="M5 16v1a2 2 0 0 0 4 0v-5h-3a3 3 0 0 0 -3 3v1h10a6 6 0 0 1 5 -4v-5a2 2 0 0 0 -2 -2h-1" />
-  <line x1="6" y1="9" x2="9" y2="9" />
+  <circle cx="6" cy="17" r="2" />
+  <path d="M8 17h5a6 6 0 0 1 5 -5v-5a2 2 0 0 0 -2 -2h-1" />
 </svg>
 ));
 
@@ -4992,6 +5287,14 @@ export const Search = enhancerIcon((props) => (
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="10" cy="10" r="7" />
   <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+));
+
+export const Select = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <path d="M9 11l3 3l3 -3" />
 </svg>
 ));
 
@@ -5149,6 +5452,31 @@ export const Sitemap = enhancerIcon((props) => (
 </svg>
 ));
 
+export const Skateboard = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="7" cy="15" r="2" />
+  <circle cx="17" cy="15" r="2" />
+  <path d="M3 9a2 1 0 0 0 2 1h14a2 1 0 0 0 2 -1" />
+</svg>
+));
+
+export const SkipBack = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M20 18v-12a2 2 0 0 0 -2.75 -1.84l-8.25 6.1a2 2 0 0 0 0 3.5l8.25 6.1a2 2 0 0 0 2.75 -1.75" />
+  <path d="M4 20v-16" />
+</svg>
+));
+
+export const SkipForward = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M4 6v12 a2 2 0 0 0 2.75 1.84 l8.25 -6.1 a2 2 0 0 0 0 -3.5 l-8.25 -6.1 a2 2 0 0 0 -2.75 1.75" />
+  <line x1="20" y1="4" x2="20" y2="20" />
+</svg>
+));
+
 export const Slice = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -5166,6 +5494,25 @@ export const Slideshow = enhancerIcon((props) => (
   <line x1="8" y1="21" x2="8.01" y2="21" />
   <line x1="12" y1="21" x2="12.01" y2="21" />
   <line x1="16" y1="21" x2="16.01" y2="21" />
+</svg>
+));
+
+export const SmokingNo = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="13" width="18" height="4" rx="1" />
+  <line x1="8" y1="13" x2="8" y2="17" />
+  <path d="M16 5v.5a2 2 0 0 0 2 2a2 2 0 0 1 2 2v.5" />
+  <line x1="3" y1="3" x2="21" y2="21" />
+</svg>
+));
+
+export const Smoking = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="13" width="18" height="4" rx="1" />
+  <line x1="8" y1="13" x2="8" y2="17" />
+  <path d="M16 5v.5a2 2 0 0 0 2 2a2 2 0 0 1 2 2v.5" />
 </svg>
 ));
 
@@ -5279,6 +5626,29 @@ export const Stack = enhancerIcon((props) => (
 </svg>
 ));
 
+export const StairsDown = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M4 20h4v-4h4v-4h4v-4h4" />
+  <path d="M11 4l-7 7v-4m4 4h-4" />
+</svg>
+));
+
+export const StairsUp = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M4 20h4v-4h4v-4h4v-4h4" />
+  <path d="M4 11l7 -7v4m-4 -4h4" />
+</svg>
+));
+
+export const Stairs = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M4 18h4v-4h4v-4h4v-4h4" />
+</svg>
+));
+
 export const Star = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -5319,6 +5689,17 @@ export const Subscript = enhancerIcon((props) => (
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M5 7l8 10m-8 0l8 -10" />
   <path d="M21 20h-4l3.5 -4a1.73 1.73 0 0 0 -3.5 -2" />
+</svg>
+));
+
+export const Subtask = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="6" y1="9" x2="12" y2="9" />
+  <line x1="4" y1="5" x2="8" y2="5" />
+  <path d="M6 5v11a1 1 0 0 0 1 1h5" />
+  <rect x="12" y="7" width="8" height="4" rx="1" />
+  <rect x="12" y="15" width="8" height="4" rx="1" />
 </svg>
 ));
 
@@ -5565,6 +5946,15 @@ export const TestPipe = enhancerIcon((props) => (
 </svg>
 ));
 
+export const TextWrapDisabled = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="4" y1="6" x2="14" y2="6" />
+  <line x1="4" y1="18" x2="14" y2="18" />
+  <path d="M4 12h17l-3 -3m0 6l3 -3" />
+</svg>
+));
+
 export const TextWrap = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -5644,6 +6034,30 @@ export const Tools = enhancerIcon((props) => (
 </svg>
 ));
 
+export const Tournament = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M5 6h3a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-3" />
+  <path d="M5 14h3a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-3" />
+  <path d="M9 8h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4" />
+  <line x1="14" y1="12" x2="19" y2="12" />
+</svg>
+));
+
+export const TrackNext = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M13.69 4.198 l 6.56 6.25 c 1 0.798 1 2.306 0 3.105 l -6.564 6.252 c -0.67 0.48 -1.686 0.008 -1.686 -0.805 v -4 l -5.394 4.808 c -0.669 0.478 -1.606 0.003 -1.606 -0.808 v -14 c 0 -0.812 0.936 -1.285 1.602 -0.809 l 5.398 4.809 v -4 c 0 -0.816 1.02 -1.28 1.69 -0.802 z" />
+</svg>
+));
+
+export const TrackPrev = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10.31 19.802 l -6.56 -6.249 c -1 -0.799 -1 -2.307 0 -3.106 l 6.564 -6.252 c 0.67 -0.48 1.686 -0.008 1.686 0.805 v 4 l 5.394 -4.808 c 0.669 -0.478 1.606 -0.003 1.606 0.808 v 14 c 0 0.812 -0.936 1.285 -1.602 0.809 l -5.398 -4.809 v 4 c 0 0.816 -1.02 1.281 -1.69 0.802 z" />
+</svg>
+));
+
 export const Tractor = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -5714,7 +6128,15 @@ export const TrendingUp = enhancerIcon((props) => (
 export const Triangle = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M5.07 19H19a2 2 0 0 0 1.75 -2.75L13.75 4a2 2 0 0 0 -3.5 0L3.25 16.25a2 2 0 0 0 1.75 2.75" />
+  <path d="M5 19 h14 a2 2 0 0 0 1.84 -2.75 l-7.1 -12.25 a2 2 0 0 0 -3.5 0 l-7.1 12.25 a2 2 0 0 0 1.75 2.75" />
+</svg>
+));
+
+export const Trident = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M3 6l2 -2v3a7 7 0 0 0 14 0v-3l2 2" />
+  <path d="M12 21v-18l-2 2m4 0l-2 -2" />
 </svg>
 ));
 
@@ -5881,6 +6303,32 @@ export const Users = enhancerIcon((props) => (
 </svg>
 ));
 
+export const VectorTriangle = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="10" y="4" width="4" height="4" rx="1" />
+  <rect x="3" y="17" width="4" height="4" rx="1" />
+  <rect x="17" y="17" width="4" height="4" rx="1" />
+  <line x1="6.5" y1="17.1" x2="11.5" y2="8" />
+  <line x1="17.5" y1="17.1" x2="12.5" y2="8" />
+  <line x1="7" y1="19" x2="17" y2="19" />
+</svg>
+));
+
+export const Vector = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="3" width="4" height="4" rx="1" />
+  <rect x="17" y="3" width="4" height="4" rx="1" />
+  <rect x="17" y="17" width="4" height="4" rx="1" />
+  <rect x="3" y="17" width="4" height="4" rx="1" />
+  <line x1="5" y1="7" x2="5" y2="17" />
+  <line x1="19" y1="7" x2="19" y2="17" />
+  <line x1="7" y1="5" x2="17" y2="5" />
+  <line x1="7" y1="19" x2="17" y2="19" />
+</svg>
+));
+
 export const Venus = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -5990,6 +6438,34 @@ export const Wand = enhancerIcon((props) => (
 </svg>
 ));
 
+export const WaveSawTool = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M3 12 h5 l4 8 v-16 l4 8h5" />
+</svg>
+));
+
+export const WaveSine = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 12 h -2 c -0.894 0 -1.662 -0.857 -1.761 -2 c -0.296 -3.45 -0.749 -6 -2.749 -6 s -2.5 3.582 -2.5 8 s -0.5 8 -2.5 8 s -2.452 -2.547 -2.749 -6 c -0.1 -1.147 -0.867 -2 -1.763 -2 h -2" />
+</svg>
+));
+
+export const WaveSquare = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M3 12 h5 v8 h4 v-16 h4 v8 h5" />
+</svg>
+));
+
+export const WaveTriangle = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M3 12h4l3 8l4 -16l3 8h4" />
+</svg>
+));
+
 export const Wifi0 = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -6039,6 +6515,30 @@ export const Wind = enhancerIcon((props) => (
 </svg>
 ));
 
+export const WiperWash = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="20" r="1" />
+  <path d="M3 11l5.5 5.5a5 5 0 0 1 7 0l5.5 -5.5a12 12 0 0 0 -18 0" />
+  <path d="M12 20v-14" />
+  <path d="M4 6a4 4 0 0 1 .4 -1.8" />
+  <path d="M7 2.1a4 4 0 0 1 2 0" />
+  <path d="M12 6a4 4 0 0 0 -.4 -1.8" />
+  <path d="M12 6a4 4 0 0 1 .4 -1.8" />
+  <path d="M15 2.1a4 4 0 0 1 2 0" />
+  <path d="M20 6a4 4 0 0 0 -.4 -1.8" />
+</svg>
+));
+
+export const Wiper = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="18" r="1" />
+  <path d="M3 9l5.5 5.5a5 5 0 0 1 7 0l5.5 -5.5a12 12 0 0 0 -18 0" />
+  <line x1="12" y1="18" x2="9.8" y2="5.2" />
+</svg>
+));
+
 export const Woman = enhancerIcon((props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -6073,6 +6573,116 @@ export const YinYang = enhancerIcon((props) => (
   <path d="M12 3a4.5 4.5 0 0 0 0 9a4.5 4.5 0 0 1 0 9" />
   <circle cx="12" cy="7.5" r=".5" fill="currentColor" />
   <circle cx="12" cy="16.5" r=".5" fill="currentColor" />
+</svg>
+));
+
+export const ZodiacAquarius = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M3 10l3-3 3 3 3-3 3 3 3-3 3 3" />
+  <path d="M3 17l3-3 3 3 3-3 3 3 3-3 3 3" />
+</svg>
+));
+
+export const ZodiacAries = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M12 5 a5 5 0 1 0 -4 8" />
+  <path d="M16 13a5 5 0 1 0 -4 -8" />
+  <path d="M12 21 v -16" />
+</svg>
+));
+
+export const ZodiacCancer = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="6" cy="12" r="3" />
+  <circle cx="18" cy="12" r="3" />
+  <path d="M3 12a10 6.5 0 0 1 14 -6.5" />
+  <path d="M21 12a10 6.5 0 0 1 -14 6.5" />
+</svg>
+));
+
+export const ZodiacCapricorn = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M4 4a3 3 0 0 1 3 3v9" />
+  <path d="M7 7a3 3 0 0 1 6 0v11a3 3 0 0 1 -3 3" />
+  <circle cx="16" cy="17" r="3" />
+</svg>
+));
+
+export const ZodiacGemini = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M3 3a21 21 0 0 0 18 0" />
+  <path d="M3 21a21 21 0 0 1 18 0" />
+  <line x1="7" y1="4.5" x2="7" y2="19.5" />
+  <line x1="17" y1="4.5" x2="17" y2="19.5" />
+</svg>
+));
+
+export const ZodiacLeo = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M13 17a4 4 0 1 0 8 0" />
+  <circle cx="6" cy="16" r="3" />
+  <circle cx="11" cy="7" r="4" />
+  <path d="M7 7c0 3 2 5 2 9" />
+  <path d="M15 7c0 4-2 6-2 10" />
+</svg>
+));
+
+export const ZodiacLibra = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="20" x2="19" y2="20" />
+  <path d="M5 17h5v-.3a7 7 0 1 1 4 0v.3h5" />
+</svg>
+));
+
+export const ZodiacPisces = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M5 3a21 21 0 0 1 0 18" />
+  <path d="M19 3a21 21 0 0 0 0 18" />
+  <line x1="5" y1="12" x2="19" y2="12" />
+</svg>
+));
+
+export const ZodiacSagittarius = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="4" y1="20" x2="20" y2="4" />
+  <path d="M13 4h7v7" />
+  <line x1="6.5" y1="12.5" x2="11.5" y2="17.5" />
+</svg>
+));
+
+export const ZodiacScorpio = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M3 4a2 2 0 0 1 2 2v9" />
+  <path d="M5 6a2 2 0 0 1 4 0v9" />
+  <path d="M9 6a2 2 0 0 1 4 0v10a3 3 0 0 0 3 3h5l-3 -3m0 6l3 -3" />
+</svg>
+));
+
+export const ZodiacTaurus = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M6 3a6 6 0 0 0 12 0" />
+  <circle cx="12" cy="15" r="6" />
+</svg>
+));
+
+export const ZodiacVirgo = enhancerIcon((props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M3 4a2 2 0 0 1 2 2v9" />
+  <path d="M5 6a2 2 0 0 1 4 0v9" />
+  <path d="M9 6a2 2 0 0 1 4 0v10a7 5 0 0 0 7 5" />
+  <path d="M12 21a7 5 0 0 0 7 -5v-2a3 3 0 0 0 -6 0" />
 </svg>
 ));
 
