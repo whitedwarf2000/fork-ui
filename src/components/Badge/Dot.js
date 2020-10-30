@@ -14,7 +14,7 @@ const Dot = ({
         backgroundColor: color,
         fontSize: size,
       }}
-      className={cn('fui-badge-ui fui-badge-dot', className)}
+      className={cn('fbadge-ui fbadge-dot', className)}
       {...otherProps}
     />
   );

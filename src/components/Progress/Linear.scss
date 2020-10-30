@@ -1,10 +1,10 @@
-.fui-linear-progress {
+.flinear-prog {
   position: relative;
   width: 100%;
   padding: 2rem 0;
 }
 
-.fui-linear-progress-rail {
+.flinear-prog-rail {
   height: 0.175em;
   min-height: 3px;
   width: 100%;
@@ -14,7 +14,7 @@
   background-color: var(--bg);
 }
 
-.fui-linear-progress-rail-percent {
+.flinear-prog-rail-percent {
   position: absolute;
   left: 0;
   height: 100%;
@@ -23,13 +23,13 @@
   transition: width 0.25s;
 }
 
-.fui-linear-progress-droplet {
+.flinear-prog-droplet {
   position: absolute;
   top: -3.75em;
   right: -1.25em;
   transition: opacity 0.25s;
 }
 
-.fui-linear-progress-droplet--hidden {
+.flinear-prog-droplet-hidden {
   opacity: 0;
 }

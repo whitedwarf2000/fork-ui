@@ -1,19 +1,18 @@
-.fui-avatar {
+.favt {
   height: 3.5em;
   width: 3.5em;
   background-repeat: no-repeat;
   background-size: cover;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--secondary-bg);
+  background-color: var(--avatar--bg);
 }
 
-.fui-avatar--square {
+.favt-square {
   border-radius: var(--border-radius);
 }
 
-.fui-avatar--circle {
+.favt-circle {
   border-radius: 100em;
 }

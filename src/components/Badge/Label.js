@@ -15,7 +15,7 @@ const Label = ({
         backgroundColor: color,
         fontSize: size,
       }}
-      className={cn('fui-badge-ui fui-badge-label', className)}
+      className={cn('fbadge-ui fbadge-label', className)}
       {...otherProps}
     >
       <b>{label}</b>

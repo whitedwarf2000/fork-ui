@@ -8,15 +8,13 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit, isString, isNumber } from '../../utils/helpers';
 
 const mColors = Object.freeze({
-  primary: 'fui-button--primary',
-  danger: 'fui-button--danger',
-  glassed: 'fui-button--glassed',
-  transparent: 'fui-button--transparent',
+  primary: 'fbtn-primary',
+  transparent: 'fbtn-transparent',
 });
 
 const mShapes = Object.freeze({
-  circle: 'fui-button--circle',
-  rounded: 'fui-button--rounded',
+  circle: 'fbtn-circle',
+  rounded: 'fbtn-rounded',
 });
 
 const lColors = Object.keys(mColors);
@@ -25,9 +23,6 @@ const lShapes = Object.keys(mShapes);
 const Button = React.forwardRef(({
   className,
   icon,
-  dashed,
-  outlined,
-  textColor,
   size,
   style,
   children,
@@ -37,31 +32,8 @@ const Button = React.forwardRef(({
 }, ref) => {
   const shape = useSemanticProp('shape', otherProps, lShapes);
   const color = useSemanticProp('color', otherProps, lColors);
-  const isSemanticColor = useMemo(() => !!mColors[color], [color]);
-  const isColored = useMemo(() => !isSemanticColor && color, [isSemanticColor, color]);
 
-  const _style = useMemo(() => {
-    if (isColored) {
-      return outlined ? {
-        color: color,
-        backgroundColor: 'transparent',
-        borderColor: 'currentColor',
-      } : {
-        backgroundColor: color,
-        borderColor: 'transparent',
-      };
-    }
-    return {};
-  }, [outlined, isColored, color, textColor]);
-
-  const _textColor = useMemo(() => {
-    if (isColored ) {
-      return textColor || '#fff';
-    }
-
-    return textColor;
-  }, [textColor, isColored]);
-
+  // ignore semantic props
   const passedProps = useMemo(() => omit(otherProps, [
     ...lColors,
     ...lShapes,
@@ -73,13 +45,10 @@ const Button = React.forwardRef(({
     <button
       ref={ref}
       className={cn(
-        'fui-button',
+        'fbtn',
         {
-          'fui-button--icon-button': icon,
-          'fui-button--colored': isColored,
-          'fui-button--loading': loading,
-          'fui-button--outlined': outlined,
-          'fui-button--dashed': dashed,
+          'fbtn-icon': icon,
+          'fbtn-loading': loading,
         },
         mShapes[shape],
         mColors[color],
@@ -87,15 +56,13 @@ const Button = React.forwardRef(({
       )}
       style={{
         fontSize: size,
-        ..._style,
         ...style,
-        '--var-text-color': _textColor,
       }}
       disabled={loading || disabled}
       {...passedProps}
     >
       {loading && <Loader.Spinner />}
-      <span className="fui-button-children">
+      <span className="fbtn-child">
         {(() => {
           if (icon) {
             return icon;
@@ -119,21 +86,16 @@ Button.displayName = 'Button';
 Button.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
-  size: PropTypes.string,
-  circle: PropTypes.bool,
-  rounded: PropTypes.bool,
-  icon: PropTypes.any,
-  textColor: PropTypes.string,
-  glassed: PropTypes.bool,
-  style: PropTypes.object,
-  primary: PropTypes.bool,
-  outlined: PropTypes.bool,
-  transparent: PropTypes.bool,
   shape: PropTypes.string,
-  danger: PropTypes.bool,
+  size: PropTypes.string,
+  circle: PropTypes.bool, // shape="circle"
+  rounded: PropTypes.bool, // shape="rounded"
+  icon: PropTypes.any,
+  style: PropTypes.object,
+  primary: PropTypes.bool, // color="primary"
+  transparent: PropTypes.bool, // color="transparent"
   children: PropTypes.any,
   loading: PropTypes.bool,
-  disabled: PropTypes.bool,
 };
 Button.defaultProps = {};
 

@@ -1,18 +1,18 @@
 @import '../../style/vars.scss';
 
-.fui-circle-progress {
+.fcircle-prog {
   position: relative;
   border-radius: 100em;
   user-select: none;
 }
 
-svg.fui-circle-progress-svg {
+.fcircle-prog-svg {
   position: relative;
   height: 100%;
   width: 100%;
 }
 
-circle.fui-circle-progress-percent {
+.fcircle-prog-percent {
   height: 100%;
   width: 100%;
   fill: none;
@@ -22,7 +22,7 @@ circle.fui-circle-progress-percent {
   stroke: var(--primary--500);
 }
 
-.fui-circle-progress-number {
+.fcircle-prog-number {
   position: absolute;
   top: 50%;
   left: 50%;

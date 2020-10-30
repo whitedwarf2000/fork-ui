@@ -13,21 +13,21 @@ const Tabs = ({ className, children, value, onChange, ...otherProps }) => {
   })), [children]);
 
   return (
-    <div className={cn('fui-tabs', className )} {...otherProps}>
-      <div className="fui-tabs-nav">
+    <div className={cn('ftabs', className )} {...otherProps}>
+      <div className="ftabs-nav">
         {tabs.map(tab => (
           <button
             key={tab.key}
-            className={cn('fui-tabs-nav-item', { 'fui-tabs-nav-item--active': value === tab.key })}
+            className={cn('ftabs-nav-item', { 'ftabs-nav-item-active': value === tab.key })}
             disabled={tab.disabled}
             onClick={() => onChange(tab.key)}
           >
             {tab.title}
           </button>
         ))}
-        <button className="fui-tabs-nav-item fui-tabs-nav-item--rest " />
+        <button className="ftabs-nav-item ftabs-nav-item-rest " />
       </div>
-      <div className="fui-tabs-contents">
+      <div className="ftabs-contents">
         {React.Children.map(children, tab => React.cloneElement(tab, { active: !tab.props.disabled && value === tab.key }))}
       </div>
     </div>

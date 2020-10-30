@@ -8,16 +8,16 @@ const PureNotification = React.forwardRef(({ children, title, className, onConte
   return (
     <Dialog
       ref={ref}
-      className={cn('fui-pure-notification', className)}
+      className={cn('fpure-notify', className)}
       {...otherProps}
     >
       {title && (
-        <Dialog.Header className="fui-pure-notification-header">
+        <Dialog.Header className="fpure-notify-header">
           {title}
         </Dialog.Header>
       )}
       <Dialog.Body
-        className="fui-pure-notification-body"
+        className="fpure-notify-body"
         onClick={onContentClick}
       >
         {children}

@@ -10,7 +10,7 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 import { makePlacements } from '../placements';
 
-const mPlacements = makePlacements('fui-badge');
+const mPlacements = makePlacements('fbadge');
 const lPlacements = Object.keys(mPlacements);
 
 const BaseBadge = ({
@@ -29,11 +29,11 @@ const BaseBadge = ({
   return (
     <span
       className={cn(
-        'fui-badge',
+        'fbadge',
         {
-          'fui-badge--overlap': overlap,
+          'fbadge-overlap': overlap,
         },
-        mPlacements[placement] || 'fui-badge--top-right',
+        mPlacements[placement] || 'fbadge-tr',
         className
       )}
       {...passedProps}

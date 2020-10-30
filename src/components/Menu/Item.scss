@@ -1,6 +1,6 @@
 @import '../../style/vars.scss';
 
-.fui-menu-item {
+.fmenu-item {
   display: flex;
   align-items: center;
   padding: 0 var(--content-spacing);
@@ -13,17 +13,17 @@
 }
 
 // anti --icon-only
-.fui-menu-item--hidden.fui-menu-item--hidden {
+.fmenu-item-hidden.fmenu-item-hidden {
   display: none;
 }
 
-.fui-menu-item--selected,
-.fui-menu-item--selected:hover {
+.fmenu-item-selected,
+.fmenu-item-selected:hover {
   background-color: var(--primary--500);
   color: #ffffff;
 }
 
-.fui-menu-item--disabled {
+.fmenu-item-disabled {
   cursor: not-allowed;
 
   &:hover {
@@ -31,25 +31,25 @@
   }
 }
 
-.fui-menu-item--icon-only {
+.fmenu-item-icon-only {
   display: flex;
   justify-content: center;
 
-  .fui-menu-item-title-icon .fui-icon {
+  .fmenu-item-title-icon .ficon {
     margin-right: 0;
   }
 
-  .fui-menu-item-content {
+  .fmenu-item-content {
     display: none;
   }
 }
 
-.fui-menu-item--icon-only.fui-menu-item--title-only {
-  .fui-menu-item-title-icon .fui-icon {
+.fmenu-item-icon-only.fmenu-item-title-only {
+  .fmenu-item-title-icon .ficon {
     display: none;
   }
 }
 
-.fui-menu-item-title-icon .fui-icon {
+.fmenu-item-title-icon .ficon {
   margin-right: 1rem;
 }

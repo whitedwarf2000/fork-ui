@@ -9,7 +9,7 @@ const Droplet = ({ className, size, color, children, ...otherProps }) => {
         fontSize: size,
         backgroundColor: color,
       }}
-      className={cn('fui-droplet', className)}
+      className={cn('fdroplet', className)}
     >
       <span>
         {children}

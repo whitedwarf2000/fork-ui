@@ -10,29 +10,29 @@ $skeleton-loading--100: rgba(0, 0, 0, 0.2);
   }
 }
 
-.fui-skeleton {
+.fskele {
   background-color: $skeleton-loading--0;
   animation: skeleton-loading .8s linear infinite alternate;
 }
 
-.fui-skeleton--circle {
+.fskele-circle {
   height: 2.5em !important;
   width: 2.5em !important;
   border-radius: 100rem;
   margin-bottom: 0.5rem;
 }
 
-.fui-skeleton--rect,
-.fui-skeleton--paragraph {
+.fskele-rect,
+.fskele-p {
   width: 100%;
   border-radius: 0.5em;
   margin-bottom: 0.5rem;
 }
 
-.fui-skeleton--rect {
+.fskele-rect {
   height: 1.5em;
 }
 
-.fui-skeleton--paragraph {
+.fskele-p {
   height: 1.5rem !important;
 }

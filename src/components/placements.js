@@ -1,63 +1,63 @@
 const placements = {
-  top: '--top',
+  top: '-t',
 
-  topRight: '--top-right',
-  'top-right': '--top-right',
-  rightTop: '--right-top',
-  'right-top': '--right-top',
+  topRight: '-tr',
+  'top-right': '-tr',
+  rightTop: '-rt',
+  'right-top': '-rt',
 
-  right: '--right',
+  right: '-t',
 
-  bottomRight: '--bottom-right',
-  'bottom-right': '--bottom-right',
-  rightBottom: '--right-bottom',
-  'right-bottom': '--right-bottom',
+  bottomRight: '-br',
+  'bottom-right': '-br',
+  rightBottom: '-rt',
+  'right-bottom': '-rt',
 
-  bottom: '--bottom',
+  bottom: '-b',
 
-  bottomLeft: '--bottom-left',
-  'bottom-left': '--bottom-left',
-  leftBottom: '--left-bottom',
-  'left-bottom': '--left-bottom',
+  bottomLeft: '-bl',
+  'bottom-left': '-bl',
+  leftBottom: '-lb',
+  'left-bottom': '-lb',
 
-  left: '--left',
+  left: '-l',
 
-  leftTop: '--left-top',
-  'left-top': '--left-top',
-  topLeft: '--top-left',
-  'top-left': '--top-left',
+  leftTop: '-lt',
+  'left-top': '-lt',
+  topLeft: '-tl',
+  'top-left': '-tl',
 }
 
 export default placements;
 
 export const makePlacements = (prefix) => {
   return {
-    top: `${prefix}--top`,
+    top: `${prefix}-t`,
 
-    topRight: `${prefix}--top-right`,
-    'top-right': `${prefix}--top-right`,
-    rightTop: `${prefix}--right-top`,
-    'right-top': `${prefix}--right-top`,
+    topRight: `${prefix}-tr`,
+    'top-right': `${prefix}-tr`,
+    rightTop: `${prefix}-rt`,
+    'right-top': `${prefix}-rt`,
   
-    right: `${prefix}--right`,
+    right: `${prefix}-r`,
   
-    bottomRight: `${prefix}--bottom-right`,
-    'bottom-right': `${prefix}--bottom-right`,
-    rightBottom: `${prefix}--right-bottom`,
-    'right-bottom': `${prefix}--right-bottom`,
+    bottomRight: `${prefix}-br`,
+    'bottom-right': `${prefix}-br`,
+    rightBottom: `${prefix}-rb`,
+    'right-bottom': `${prefix}-rb`,
   
-    bottom: `${prefix}--bottom`,
+    bottom: `${prefix}-b`,
   
-    bottomLeft: `${prefix}--bottom-left`,
-    'bottom-left': `${prefix}--bottom-left`,
-    leftBottom: `${prefix}--left-bottom`,
-    'left-bottom': `${prefix}--left-bottom`,
+    bottomLeft: `${prefix}-bl`,
+    'bottom-left': `${prefix}-bl`,
+    leftBottom: `${prefix}-lb`,
+    'left-bottom': `${prefix}-lb`,
   
-    left: `${prefix}--left`,
+    left: `${prefix}-l`,
   
-    leftTop: `${prefix}--left-top`,
-    'left-top': `${prefix}--left-top`,
-    topLeft: `${prefix}--top-left`,
-    'top-left': `${prefix}--top-left`,
+    leftTop: `${prefix}-lt`,
+    'left-top': `${prefix}-lt`,
+    topLeft: `${prefix}-tl`,
+    'top-left': `${prefix}-tl`,
   }
 }

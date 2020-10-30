@@ -24,7 +24,7 @@ const Counter = ({
         backgroundColor: color,
         fontSize: size,
       }}
-      className={cn('fui-badge-ui fui-badge-counter', className)}
+      className={cn('fbadge-ui fbadge-counter', className)}
       {...otherProps}
     >
       <b>{displayCount}</b>

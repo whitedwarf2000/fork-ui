@@ -10,15 +10,15 @@ const Header = ({ className, closable, children, freshable, ...otherProps }) => 
   const { onClose, onRefresh } = useContext(Context);
 
   return (
-    <div className={cn('fui-dialog-header', className)} {...otherProps}>
-      <div className="fui-dialog-header__title">{children}</div>
-      <div className="fui-dialog-header__support-button">
+    <div className={cn('fdlg-header', className)} {...otherProps}>
+      <div className="fdlg-header-title">{children}</div>
+      <div className="fdlg-header-support-btn">
         {freshable && (
           <Button
             icon={<Refresh />}
             transparent
             circle
-            className="fui-dialog-header__refresh-button"
+            className="fdlg-header-refresh-btn"
             onClick={onRefresh}
           />
         )}
@@ -27,7 +27,7 @@ const Header = ({ className, closable, children, freshable, ...otherProps }) => 
             icon={<X />}
             transparent
             circle
-            className="fui-dialog-header__close-button"
+            className="fdlg-header-close-btn"
             onClick={onClose}
           />
         )}

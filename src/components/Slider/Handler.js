@@ -26,10 +26,10 @@ const Handler = React.forwardRef(({ className, value, ...otherProps }, ref) => {
   return (
     <span
       ref={_ref}
-      className={cn('fui-slider-handler', { 'fui-slider-handler--droplet': droplet }, className)}
+      className={cn('fslider-handler', { 'fslider-handler-droplet': droplet }, className)}
       {...otherProps}
     >
-      <Droplet className="fui-slider-handler-droplet">
+      <Droplet>
         {value}
       </Droplet>
     </span>

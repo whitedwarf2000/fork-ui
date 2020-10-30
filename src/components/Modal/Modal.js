@@ -27,11 +27,11 @@ const Modal = ({ className, onClose, open, canOutsideClickClose, ...otherProps }
       {delayOpen && (
         <Portal>
           <Dialog.Portal
-            className={cn('fui-modal-portal', { 'fui-modal-portal--close-animation': !open })}
+            className={cn('fmodal-portal', { 'fmodal-portal-close-animation': !open })}
             ref={wrapperRef}
           >
             <Dialog
-              className={cn('fui-modal', className)}
+              className={cn('fmodal', className)}
               ref={ref}
               onClose={onClose}
               {...otherProps}

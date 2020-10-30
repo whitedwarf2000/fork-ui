@@ -1,4 +1,4 @@
-.fui-textarea {
+.ftextarea {
   min-height: var(--input-height);
   outline: 0 !important;
   border: 0;
@@ -9,22 +9,17 @@
   background-color: var(--input--bg);
   border: 1px solid transparent;
 
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:focus {
-    cursor: not-allowed;
-    border-color: transparent;
-    background-color: var(--input--disabled-bg);
-    color: var(--input--disabled-color);
-  }
-
   &:hover,
   &:focus {
     border-color: var(--primary--500);
-    background-color: var(--bg);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    border-color: transparent;
+    color: var(--input--disabled-color);
   }
 }
 
-.fui-textarea--rounded {
+.ftextarea-rounded {
   border-radius: var(--input-height);
 }

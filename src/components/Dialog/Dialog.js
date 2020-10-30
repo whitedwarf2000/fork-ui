@@ -16,7 +16,7 @@ const Dialog = React.forwardRef(({ className, onClose, ...otherProps }, ref) => 
     <Context.Provider value={{ onClose, toggleBody, onRefresh }}>
       <div
         ref={ref}
-        className={cn('fui-dialog', className)}
+        className={cn('fdlg', className)}
         {...otherProps}
       />
     </Context.Provider>

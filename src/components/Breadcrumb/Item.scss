@@ -1,8 +1,8 @@
-.fui-breadcrumb > .fui-breadcrumb-item:last-child {
+.fbred > .fbred-item:last-child {
   color: var(--primary--500);
 }
 
-.fui-breadcrumb-item {
+.fbred-item {
   height: var(--basic-height);
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
   position: relative;
 }
 
-.fui-breadcrumb-item-title {
+.fbred-item-title {
   max-width: 10em;
   overflow: hidden;
   text-overflow: ellipsis;

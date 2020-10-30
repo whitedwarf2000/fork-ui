@@ -1,11 +1,11 @@
 @import './Item.scss';
 
-.fui-timeline {
+.ftimeline {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.fui-timeline--reverse {
+.ftimeline-reverse {
   flex-direction: column-reverse; // lastest will go up
 }

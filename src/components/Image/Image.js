@@ -14,12 +14,12 @@ import { omit } from '../../utils/helpers';
 import useSemanticProp from '../../hooks/useSemanticProp';
 
 const mObjectFit = Object.freeze({
-  cover: 'fui-image-native--cover',
-  contain: 'fui-image-native--contain',
-  fill: 'fui-image-native--fill',
-  none: 'fui-image-native--none',
-  blur: 'fui-image-native--blur',
-  scaleDown: 'fui-image-native--scale-down',
+  cover: 'fimg-native-cover',
+  contain: 'fimg-native-contain',
+  fill: 'fimg-native-fill',
+  none: 'fimg-native-none',
+  blur: 'fimg-native-blur',
+  scaleDown: 'fimg-native-scale-down',
 });
 
 const lObjectFit = Object.keys(mObjectFit);
@@ -89,7 +89,7 @@ const Image = ({ className, lazyload, w, h, src, clientElement, ...otherProps })
 
   return (
     <div
-      className={cn('fui-image', className)}
+      className={cn('fimg', className)}
       style={{
         width: w,
         height: h,
@@ -97,23 +97,23 @@ const Image = ({ className, lazyload, w, h, src, clientElement, ...otherProps })
     >
       {objectFit === 'blur' && (
         <div
-          className="fui-image-blur"
+          className="fimg-blur"
           style={{
             backgroundImage: isLoaded ? `url(${src})` : null,
           }}
         />
       )}
       {!isLoaded && (
-        <Skeleton className="fui-image-skeleton" />
+        <Skeleton className="fimg-skeleton" />
       )}
       <NativeImage
         data-src={src}
         className={cn(
-          'fui-image-native fui-image-native--main',
+          'fimg-native fimg-native-main',
           {
-            'fui-image-native--loaded': isLoaded,
+            'fimg-native-loaded': isLoaded,
           },
-          mObjectFit[objectFit] || 'fui-image-native--cover',
+          mObjectFit[objectFit] || 'fimg-native-cover',
         )}
         ref={ref}
         onCompleted={f => f}

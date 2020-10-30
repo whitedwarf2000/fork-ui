@@ -15,7 +15,7 @@ const Icon = ({
         backgroundColor: color,
         fontSize: size,
       }}
-      className={cn('fui-badge-ui fui-badge-icon', className)}
+      className={cn('fbadge-ui fbadge-icon', className)}
       {...otherProps}
     >
       {icon}

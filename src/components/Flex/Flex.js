@@ -3,7 +3,6 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import getLatestProp from '../../utils/getLatestProp';
-import { omit } from '../../utils/helpers';
 
 export const getDirection = (direction, reverse) => {
   if (!direction) {

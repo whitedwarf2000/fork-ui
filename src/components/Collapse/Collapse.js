@@ -14,7 +14,7 @@ const Collapse = ({ className, children, value, onChange, ...otherProps }) => {
   const _activePanels = useMemo(() => mapToObject(value), [value]);
 
   return (
-    <div className={cn('fui-collapse', className)} {...otherProps}>
+    <div className={cn('fcollapse', className)} {...otherProps}>
       {React.Children.map(children, panel => {
         return React.cloneElement(panel, {
           active: !panel.props.disabled && _activePanels[panel.key],

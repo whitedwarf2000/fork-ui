@@ -9,9 +9,9 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const mStatus = Object.freeze({
-  processing: 'fui-step--processing',
-  completed: 'fui-step--completed',
-  canceled: 'fui-step--canceled',
+  processing: 'fstep-processing',
+  completed: 'fstep-completed',
+  canceled: 'fstep-canceled',
 });
 
 const lStatus = Object.keys(mStatus);
@@ -29,12 +29,12 @@ const Step = ({ className, title, children, icon, stepNumber, canceledTitle, ...
       return <Check style={{ strokeWidth: 3 }} />;
     }
     if (status === 'canceled') {
-      return <X style={{ strokeWidth: 3 }} color="var(--red--500)" />;
+      return <X style={{ strokeWidth: 3 }} />;
     }
     if (status === 'processing') {
       return (
         <React.Fragment>
-          <Loader.Spinner className="fui-step-loader" size="1.35em" />
+          <Loader.Spinner className="fstep-loader" size="1.35em" />
           <span>{icon || stepNumber}</span>
         </React.Fragment>
       )
@@ -50,16 +50,16 @@ const Step = ({ className, title, children, icon, stepNumber, canceledTitle, ...
   }, [status]);
 
   return (
-    <div className={cn('fui-step', mStatus[status], className)} {...passedProps}>
-      <div className="fui-step-rail" />
+    <div className={cn('fstep', mStatus[status], className)} {...passedProps}>
+      <div className="fstep-rail" />
       <Tooltip top title={_canceledTitle}>
-        <div className="fui-step-avatar">
+        <div className="fstep-avt">
           {avatarRendered}
         </div>
       </Tooltip>
-      <div className="fui-step-content">
-        <div className="fui-step-title">{title}</div>
-        <div className="fui-step-description">{children}</div>
+      <div className="fstep-content">
+        <div className="fstep-title">{title}</div>
+        <div className="fstep-description">{children}</div>
       </div>
     </div>
   );

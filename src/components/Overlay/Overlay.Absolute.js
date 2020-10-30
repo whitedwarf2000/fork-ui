@@ -8,7 +8,7 @@ import useOverlay from './useOverlay';
 
 import withCheatTargetNode from './withCheatTargetNode';
 
-const mPlacements = makePlacements('fui-overlay');
+const mPlacements = makePlacements('foverlay');
 
 const Overlay = ({
   className,
@@ -22,16 +22,16 @@ const Overlay = ({
   const { visible, overlayStyle, overlayRef } = useOverlay(otherProps, targetNode, renderPlacement);
 
   return (
-    <div className={cn('fui-absolute-overlay-container', className)}>
+    <div className={cn('fabsolute-overlay-container', className)}>
       {children}
       <div
         ref={overlayRef}
         className={cn(
-          'fui-overlay fui-overlay-absolute',
+          'foverlay foverlay-absolute',
           mPlacements[otherProps.placement],
           {
-            'fui-overlay--hidden': !visible,
-            'fui-overlay--arrow': arrow,
+            'foverlay-hidden': !visible,
+            'foverlay-arrow': arrow,
           },
           overlayClass
         )}

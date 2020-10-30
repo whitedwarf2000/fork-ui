@@ -1,9 +1,9 @@
-.fui-box {
+.fbox {
   width: 100%;
   position: relative;
 }
 
-.fui-box-loader {
+.fbox-loader {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -15,23 +15,23 @@
   justify-content: center;
 }
 
-.fui-box--loading {
-  .fui-box-content {
+.fbox-loading {
+  .fbox-content {
     transition: opacity .3s;
     user-select: none;
     pointer-events: none;
   }
 }
 
-.fui-box--loading.fui-box--loading--dots {
-  .fui-box-content {
+.fbox-loading.fbox-loading-dots {
+  .fbox-content {
     opacity: 0.3;
     filter: blur(3px);
   }
 }
 
-.fui-box--loading.fui-box--loading--skeleton {
-  .fui-box-content {
+.fbox-loading.fbox-loading-skeleton {
+  .fbox-content {
     opacity: 0;
   }
 }

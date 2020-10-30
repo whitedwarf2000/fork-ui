@@ -6,14 +6,14 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const mTypes = Object.freeze({
-  dashed: 'fui-divider--dashed',
-  solid: 'fui-divider--solid',
-  dotted: 'fui-divider--dotted'
+  dashed: 'fdiv-dashed',
+  solid: 'fdiv-solid',
+  dotted: 'fdiv-dotted'
 });
 
 const mPlacements = Object.freeze({
-  left: 'fui-divider--left',
-  right: 'fui-divider--right',
+  left: 'fdiv-l',
+  right: 'fdiv-r',
 });
 
 const lTypes = Object.keys(mTypes);
@@ -33,10 +33,10 @@ const Divider = ({ className, title, transparent,  ...otherProps }) => {
   return (
     <div className={
       cn(
-        'fui-divider',
+        'fdiv',
         {
-          'fui-divider--transparent': transparent,
-          'fui-divider--title': title,
+          'fdiv-transparent': transparent,
+          'fdiv-title': title,
         },
         mTypes[type],
         mPlacements[placement],
@@ -44,7 +44,7 @@ const Divider = ({ className, title, transparent,  ...otherProps }) => {
       )}
       {...passedProps}
     >
-      {title && <div className="fui-divider-title">{title}</div>}
+      {title && <div className="fdiv-title">{title}</div>}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-.fui-divider {
+.fdiv {
   width: 100%;
   position: relative;
   box-sizing: border-box;
@@ -17,46 +17,46 @@
   }
 }
 
-.fui-divider--title {
+.fdiv-title {
   &:after,
   &:before {
     flex-grow: 1;
   }
 }
 
-.fui-divider--transparent {
+.fdiv-transparent {
   &:after,
   &:before {
     border-color: transparent;
   }
 }
 
-.fui-divider-title {
+.fdiv-title {
   padding: 0 0.5em;
 }
 
-.fui-divider--dashed {
+.fdiv-dashed {
   &:after,
   &:before {
     border-bottom-style: dashed;
   }
 }
 
-.fui-divider--dotted {
+.fdiv-dotted {
   &:after,
   &:before {
     border-bottom-style: dotted;
   }
 }
 
-.fui-divider--left {
+.fdiv-l {
   &:before {
     width: 1em;
     flex-grow: unset;
   }
 }
 
-.fui-divider--right {
+.fdiv-r {
   &:after {
     width: 1em;
     flex-grow: unset;

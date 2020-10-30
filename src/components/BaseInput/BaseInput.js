@@ -8,7 +8,7 @@ const BaseInput = React.forwardRef(({ className, rounded, htmlType, ...otherProp
     <input
       {...otherProps}
       ref={ref}
-      className={cn('fui-input', { 'fui-input--rounded': rounded }, className)}
+      className={cn('finput', { 'finput-rounded': rounded }, className)}
       type={htmlType}
     />
   );

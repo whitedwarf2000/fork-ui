@@ -1,19 +1,17 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { Check } from '../icons';
 
 const Checkbox = React.forwardRef(({ className, circle, ...otherProps }, ref) => {
   return (
-    <span className={cn('fui-checkbox', { 'fui-checkbox--circle': circle },className)}>
+    <span className={cn('fcbox', className)}>
       <input
         type="checkbox"
-        className="fui-checkbox-input"
+        className="fcbox-input"
         ref={ref}
         {...otherProps}
       />
-      <span className="fui-checkbox-inner" />
-      <Check className="fui-checkbox-check" size="0.8em" />
+      <span className="fcbox-mark" />
     </span>
   );
 });

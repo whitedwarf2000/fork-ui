@@ -6,7 +6,7 @@ import Item from './Item';
 
 const Timeline = ({ className, children, right, reverse, ...otherProps }) => {
   return (
-    <div className={cn('fui-timeline', { 'fui-timeline--right': right, 'fui-timeline--reverse': reverse }, className)} {...otherProps}>
+    <div className={cn('ftimeline', { 'ftimeline-r': right, 'ftimeline-reverse': reverse }, className)} {...otherProps}>
       {children}
     </div>
   );

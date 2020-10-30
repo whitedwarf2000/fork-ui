@@ -2,11 +2,11 @@
 @import './ItemGroup.scss';
 @import './Sub.scss';
 
-.fui-menu-wrapper {
+.fmenu-wrapper {
   position: relative;
 }
 
-.fui-menu {
+.fmenu {
   border-radius: var(--border-radius);
   overflow: hidden;
   user-select: none;
@@ -15,6 +15,6 @@
   box-shadow: var(--menu--shadow);
 }
 
-.fui-menu--icon-only {
+.fmenu-icon-only {
   min-width: unset;
 }

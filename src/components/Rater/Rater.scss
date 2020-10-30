@@ -1,9 +1,9 @@
-.fui-rater {
+.frater {
   display: flex;
   align-items: center;
 }
 
-.fui-rater-item {
+.frater-item {
   color: var(--text-color);
   transition: color 0.25s;
   padding: 0.25em;
@@ -14,10 +14,10 @@
   }
 }
 
-.fui-rater-item--light {
+.frater-item-light {
   color: #ffc107;
 
-  .fui-icon > path:nth-child(2) {
+  .ficon > path:nth-child(2) {
     fill: currentColor;
   }
 }

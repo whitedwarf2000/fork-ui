@@ -17,16 +17,16 @@ const Item = ({ className, title, children, active, fresh, onClick, disabled, ..
   return (
     <div
       {...otherProps}
-      className={cn('fui-panel', { 'fui-panel--active': active, 'fui-panel--inactive': !active, 'fui-panel--disabled': disabled }, className)}
+      className={cn('fpanel', { 'fpanel-active': active, 'fpanel-inactive': !active, 'fpanel-disabled': disabled }, className)}
     >
-      <div className="fui-panel-title" onClick={_onClick}>
+      <div className="fpanel-title" onClick={_onClick}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {title}
         </div>
-        <CaretDown className="fui-panel-icon" name="caret-down" />
+        <CaretDown className="fpanel-icon" name="caret-down" />
       </div>
-      <Animated.Expand isExpanded={active} className="fui-panel-content">
-        <div className="fui-panel-box">
+      <Animated.Expand isExpanded={active} className="fpanel-content">
+        <div className="fpanel-box">
           <div style={{ height: '0.75rem' }} />
           <Memo for={active} fresh={fresh}>{children}</Memo>
           <div style={{ height: '0.75rem' }} />

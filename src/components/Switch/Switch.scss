@@ -1,4 +1,4 @@
-.fui-switch {
+.fswitch {
   display: block;
   position: relative;
   box-sizing: border-box;
@@ -6,23 +6,23 @@
   width: 3.25em;
   height: 1.75em;
   border-radius: 100em;
-  background-color: var(--input--bg);
+  background-color: #2e3031;
   transition: background-color 0.25s, box-shadow 0.25s;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
-.fui-switch--checked {
+.fswitch-checked {
   background: var(--primary--500);
 
-  .fui-switch-inner {
+  .fswitch-mark {
     transform: translateX(1.5em);
     background-color: #fff;
   }
 }
 
-.fui-switch-input {
+.fswitch-input {
   position: absolute;
   top: 0;
   right: 0;
@@ -39,7 +39,7 @@
   }
 }
 
-.fui-switch-inner {
+.fswitch-mark {
   display: flex;
   justify-content: center;
   align-items: center;

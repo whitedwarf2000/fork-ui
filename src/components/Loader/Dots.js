@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import useSemanticProp from '../../hooks/useSemanticProp';
 
 const mAnimations = Object.freeze({
-  wave: 'fui-loader-dots--wave',
-  buble: 'fui-loader-dots--buble',
+  wave: 'floader-dots-wave',
+  buble: 'floader-dots-buble',
 });
 
 const lAnimations = Object.keys(mAnimations);
@@ -14,7 +14,7 @@ const Dots = ({ color, size, className, dot, ...otherProps }) => {
   const dots = useMemo(() => {
     var rs = [];
     for (let i = 0; i < dot; i++) {
-      rs.push(<div className="fui-loader-dot" key={i} />);
+      rs.push(<div className="floader-dot" key={i} />);
     }
 
     return rs;
@@ -25,7 +25,7 @@ const Dots = ({ color, size, className, dot, ...otherProps }) => {
   return (
     <div
       style={{ fontSize: size, color }}
-      className={cn('fui-loader-dots', mAnimations[animation] || 'fui-loader-dots--buble', className)}
+      className={cn('floader-dots', mAnimations[animation] || 'floader-dots-buble', className)}
       {...otherProps}
     >
       {dots}

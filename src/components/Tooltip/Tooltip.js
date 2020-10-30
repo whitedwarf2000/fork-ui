@@ -22,7 +22,7 @@ const Tooltip = ({ className, overlayClass, children, title, trigger, ...otherPr
       trigger={trigger}
       overlay={title}
       className={className}
-      overlayClass={cn('fui-tooltip', overlayClass)}
+      overlayClass={cn('ftooltip', overlayClass)}
       gap={10}
       {...passedProps}
     >

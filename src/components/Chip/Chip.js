@@ -31,10 +31,10 @@ const Chip = ({
   return (
     <div
       className={cn(
-        'fui-chip',
+        'fchip',
         {
-          'fui-chip--custom': color,
-          'fui-chip--rounded': rounded,
+          'fchip-custom': color,
+          'fchip-rounded': rounded,
         },
         className
       )}
@@ -43,9 +43,9 @@ const Chip = ({
       {...otherProps}
     >
       {icon || avatar}
-      <span className="fui-chip-label">{label}</span>
+      <span className="fchip-label">{label}</span>
       {closable && (
-        <div ref={closeRef} className="fui-chip-close" onClick={onRemove}>
+        <div ref={closeRef} className="fchip-close" onClick={onRemove}>
           <X size="0.75em" />
         </div>
       )}

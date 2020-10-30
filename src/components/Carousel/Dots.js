@@ -8,10 +8,10 @@ const Dots = ({ className }) => {
   const { value, itemCount, onChange } = useContext(Context);
 
   return (
-    <ul className={cn('fui-carousel-dots', className)}>
+    <ul className={cn('fcarousel-dots', className)}>
       {loop(itemCount, (i) => (
         <li
-          className={cn('fui-carousel-dot', { 'fui-carousel-dot--active': value === i })}
+          className={cn('fcarousel-dot', { 'fcarousel-dot-active': value === i })}
           key={i}
           onClick={() => onChange(i)}
         />

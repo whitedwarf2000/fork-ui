@@ -10,7 +10,7 @@ import withFindDOMNode from '../../HOCs/withFindDOMNode';
 
 import useOverlay from './useOverlay';
 
-const mPlacements = makePlacements('fui-overlay');
+const mPlacements = makePlacements('foverlay');
 
 const Overlay = ({
   className,
@@ -30,11 +30,11 @@ const Overlay = ({
         <div
           ref={overlayRef}
           className={cn(
-            'fui-overlay fui-overlay-portal',
+            'foverlay foverlay-portal',
             mPlacements[otherProps.placement],
             {
-              'fui-overlay--hidden': !visible,
-              'fui-overlay--arrow': arrow,
+              'foverlay-hidden': !visible,
+              'foverlay-arrow': arrow,
             },
             overlayClass
           )}

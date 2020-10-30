@@ -1,15 +1,15 @@
-.fui-modal-portal {
+.fmodal-portal {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.fui-modal-portal--close-animation {
+.fmodal-portal-close-animation {
   background-color: transparent;
   animation: zoomOut 0.25s;
 }
 
-.fui-modal {
+.fmodal {
   position: absolute;
   animation: zoomIn 0.25s;
   box-shadow: none;

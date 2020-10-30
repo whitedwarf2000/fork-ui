@@ -5,34 +5,26 @@ import { pick, omit } from '../../utils/helpers';
 
 const ButtonGroup = ({ className, fluid, size, style, children, ...otherProps }) => {
   const _parentProps = useMemo(() => pick(otherProps, [
-    'glassed',
     'primary',
-    'danger',
     'transparent',
     'disabled',
     'color',
-    'textColor',
-    'outlined'
   ]), [otherProps]);
 
   const passedProps = useMemo(() => omit(otherProps, [
-    'glassed',
     'primary',
-    'danger',
     'transparent',
     'disabled',
     'size',
     'color',
-    'textColor',
-    'outlined',
   ]), [otherProps]);
 
   return (
     <div
       className={cn(
-        'fui-button-group',
+        'fbtn-grp',
         {
-          'fui-button-group--fluid': fluid
+          'fbtn-grp-fluid': fluid
         },
         className
       )}

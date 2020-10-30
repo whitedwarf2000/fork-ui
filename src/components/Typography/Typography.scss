@@ -1,57 +1,57 @@
-h1.fui-typo,
-h2.fui-typo,
-h3.fui-typo,
-h4.fui-typo {
+h1.ftypo,
+h2.ftypo,
+h3.ftypo,
+h4.ftypo {
   font-weight: 600;
   margin-bottom: .5em;
 }
 
-h1.fui-typo {
+h1.ftypo {
   font-size: 2em;
 }
 
-h2.fui-typo {
+h2.ftypo {
   font-size: 1.5em;
 }
 
-h3.fui-typo {
+h3.ftypo {
   font-size: 1.17em;
 }
 
-h4.fui-typo {
+h4.ftypo {
   font-size: 1em;
 }
 
-h5.fui-typo {
+h5.ftypo {
   font-size: .83em;
 }
 
-h6.fui-typo {
+h6.ftypo {
   font-size: .67em;
 }
 
-.fui-typo--disabled {
+.ftypo-disabled {
   user-select: none;
   cursor: not-allowed !important;
   color: var(--disabled-text-color);
 }
 
-.fui-typo--underline {
+.ftypo-underline {
   text-decoration: underline;
 }
 
-.fui-typo--line-through {
+.ftypo-line-through {
   text-decoration: line-through;
 }
 
-.fui-typo--italic {
+.ftypo-italic {
   font-style: italic;
 }
 
-.fui-typo--oblique {
+.ftypo-oblique {
   font-style: oblique;
 }
 
-.fui-typo--strong {
+.ftypo-strong {
   font-weight: 600;
 }

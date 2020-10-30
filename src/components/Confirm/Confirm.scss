@@ -1,11 +1,11 @@
 @import '../../style/vars.scss';
 
-.fui-confirm-portal {
+.fconfirm-portal {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .fui-confirm {
+  .fconfirm {
     position: absolute;
     top: 15%;
     animation: zoomIn 0.25s;
@@ -13,7 +13,7 @@
   }
 }
 
-.fui-confirm-portal--close-animation {
+.fconfirm-portal-close-animation {
   background-color: transparent;
   animation: zoomOut 0.25s;
 }

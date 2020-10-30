@@ -2,13 +2,13 @@ import React from 'react';
 import cn from 'classnames';
 
 const enhancerIcon = (IconComponent) => {
-  const Icon = ({ className, style, color, size, ...otherProps }) => {
+  const Icon = ({ className, style, color, fontSize, ...otherProps }) => {
     return (
       <IconComponent
-        className={cn('fui-icon', className)}
+        className={cn('ficon', className)}
         style={{
           color: color || null,
-          fontSize: size || null,
+          fontSize: fontSize || null,
           ...style
         }}
         {...otherProps}

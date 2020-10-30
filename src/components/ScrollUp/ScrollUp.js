@@ -10,7 +10,7 @@ const ScrollUp = () => {
     <Button
       circle
       glassed
-      className="fui-scroll-up"
+      className="fscroll-up"
       icon={<ArrowNarrowUp />}
       onClick={scrollToTop}
     />

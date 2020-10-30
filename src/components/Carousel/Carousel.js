@@ -53,17 +53,17 @@ const Carousel = ({ className, children, auto, loop, value, onChange, onNext, on
         itemWidth: _containerShape.width,
       }}
     >
-      <div className={cn('fui-carousel', className)}>
-        <div ref={containerRef} className="fui-carousel-container" style={{ height: boxShape.height }}>
-          <div ref={boxRef} className="fui-carousel-box" style={{ left: _left }} >
+      <div className={cn('fcarousel', className)}>
+        <div ref={containerRef} className="fcarousel-container" style={{ height: boxShape.height }}>
+          <div ref={boxRef} className="fcarousel-box" style={{ left: _left }} >
             {children}
           </div>
         </div>
-        <div className="fui-carousel-handler">
+        <div className="fcarousel-handler">
           <Dots />
           <Button
             icon={<ChevronLeft />}
-            className={cn('fui-carousel-prev')}
+            className={cn('fcarousel-prev')}
             disabled={!loop && value === 0}
             circle
             onClick={_onPrev}
@@ -71,7 +71,7 @@ const Carousel = ({ className, children, auto, loop, value, onChange, onNext, on
           />
           <Button
             icon={<ChevronRight />}
-            className={cn('fui-carousel-next')}
+            className={cn('fcarousel-next')}
             disabled={!loop && value === itemCount - 1}
             circle
             onClick={_onNext}

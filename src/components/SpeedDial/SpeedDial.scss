@@ -1,27 +1,27 @@
-.fui-speed-dial.fui-overlay--top,
-.fui-speed-dial.fui-overlay--top-right,
-.fui-speed-dial.fui-overlay--right-top,
-.fui-speed-dial.fui-overlay--right,
-.fui-speed-dial.fui-overlay--right-bottom,
-.fui-speed-dial.fui-overlay--bottom-right,
-.fui-speed-dial.fui-overlay--bottom,
-.fui-speed-dial.fui-overlay--bottom-left,
-.fui-speed-dial.fui-overlay--left,
-.fui-speed-dial.fui-overlay--left-bottom,
-.fui-speed-dial.fui-overlay--left-top,
-.fui-speed-dial.fui-overlay--top-left {
-  .fui-button {
+.fspeed-dial.foverlay-t,
+.fspeed-dial.foverlay-tr,
+.fspeed-dial.foverlay-rt,
+.fspeed-dial.foverlay-r,
+.fspeed-dial.foverlay-rb,
+.fspeed-dial.foverlay-br,
+.fspeed-dial.foverlay-b,
+.fspeed-dial.foverlay-bl,
+.fspeed-dial.foverlay-l,
+.fspeed-dial.foverlay-lb,
+.fspeed-dial.foverlay-lt,
+.fspeed-dial.foverlay-tl {
+  .fbtn {
     margin: 0.25em;
   }
 
-  .fui-speed-dial-buttons {
+  .fspeed-dial-btns {
     display: flex;
   }
 
-  &.fui-speed-dial--horizontal > .fui-speed-dial-buttons {
+  &.fspeed-dial-h > .fspeed-dial-btns {
     flex-direction: column;
   }
-  &.fui-speed-dial--vertical > .fui-speed-dial-buttons {
+  &.fspeed-dial-v > .fspeed-dial-btns {
     flex-direction: row;
   }
 }
@@ -37,46 +37,46 @@
   }
 }
 
-.fui-speed-dial .fui-button {
+.fspeed-dial .fbtn {
   animation: scale ease alternate;
 }
 
-.fui-speed-dial .fui-button:nth-child(1) {
+.fspeed-dial .fbtn:nth-child(1) {
   animation-duration: 0.1s;
 }
 
-.fui-speed-dial .fui-button:nth-child(2) {
+.fspeed-dial .fbtn:nth-child(2) {
   animation-duration: 0.2s;
 }
 
-.fui-speed-dial .fui-button:nth-child(3) {
+.fspeed-dial .fbtn:nth-child(3) {
   animation-duration: 0.3s;
 }
 
-.fui-speed-dial .fui-button:nth-child(4) {
+.fspeed-dial .fbtn:nth-child(4) {
   animation-duration: 0.4s;
 }
 
-.fui-speed-dial .fui-button:nth-child(5) {
+.fspeed-dial .fbtn:nth-child(5) {
   animation-duration: 0.5s;
 }
 
-.fui-speed-dial .fui-button:nth-child(6) {
+.fspeed-dial .fbtn:nth-child(6) {
   animation-duration: 0.6s;
 }
 
-.fui-speed-dial .fui-button:nth-child(7) {
+.fspeed-dial .fbtn:nth-child(7) {
   animation-duration: 0.7s;
 }
 
-.fui-speed-dial .fui-button:nth-child(8) {
+.fspeed-dial .fbtn:nth-child(8) {
   animation-duration: 0.8s;
 }
 
-.fui-speed-dial .fui-button:nth-child(9) {
+.fspeed-dial .fbtn:nth-child(9) {
   animation-duration: 0.9s;
 }
 
-.fui-speed-dial .fui-button:nth-child(10) {
+.fspeed-dial .fbtn:nth-child(10) {
   animation-duration: 1s;
 }

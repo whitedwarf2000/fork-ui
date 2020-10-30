@@ -1,4 +1,4 @@
-.fui-chip {
+.fchip {
   height: 2.275em;
   padding-left: 0.35em;
   padding-right: 0.35em;
@@ -11,22 +11,22 @@
   background-color: var(--secondary-bg);
 }
 
-.fui-chip--rounded {
+.fchip-rounded {
   border-radius: 100em;
 }
 
-.fui-chip--custom {
+.fchip-custom {
   &:hover {
     opacity: 0.8;
   }
 }
 
-.fui-chip-label {
+.fchip-label {
   padding-left: 0.65em;
   padding-right: 0.65em;
 }
 
-.fui-chip-close {
+.fchip-close {
   height: 1.5em;
   width: 1.5em;
   display: flex;

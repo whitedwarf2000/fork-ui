@@ -5,13 +5,13 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const mFontStyles = Object.freeze({
-  italic: 'fui-typo--italic',
-  oblique: 'fui-typo--oblique',
+  italic: 'ftypo-italic',
+  oblique: 'ftypo-oblique',
 });
 
 const mTextDecoration = Object.freeze({
-  underline: 'fui-typo--underline',
-  through: 'fui-typo--line-through',
+  underline: 'ftypo-underline',
+  through: 'ftypo-line-through',
 });
 
 const lTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'p', 'span'];
@@ -39,10 +39,10 @@ const Typography = ({ children, className, disabled, color, strong, ...otherProp
         color: color,
       },
       className: cn(
-        'fui-typo',
+        'ftypo',
         {
-          'fui-typo--disabled': disabled,
-          'fui-typo--strong': strong,
+          'ftypo-disabled': disabled,
+          'ftypo-strong': strong,
         },
         mFontStyles[fontStyle],
         mTextDecoration[textDecoration],

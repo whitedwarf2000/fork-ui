@@ -1,18 +1,18 @@
 @import './Item.scss';
 
-.fui-tabs {
+.ftabs {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   width: 100%;
 }
 
-.fui-tabs-nav {
+.ftabs-nav {
   display: flex;
   align-items: center;
 }
 
-.fui-tabs-nav-item {
+.ftabs-nav-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,9 +23,8 @@
   outline-style: none;
   user-select: none;
   touch-action: manipulation;
+  border-bottom: 0.0625em solid transparent;
   cursor: pointer;
-  border-radius: var(--border-radius);
-  font-weight: 600;
 
   &:disabled {
     cursor: not-allowed !important;
@@ -33,19 +32,16 @@
   }
 }
 
-.fui-tabs-nav-item--active {
+.ftabs-nav-item-active {
   color: var(--primary--500);
-  background-color: var(--tab-title--active);
+  font-weight: 600;
+  border-bottom-color: currentColor;
 }
 
-.fui-tabs-nav-item--rest {
+.ftabs-nav-item-rest {
   flex-grow: 1;
 }
 
-.fui-tabs-contents {
+.ftabs-contents {
   margin-top: 2px;
-}
-
-.fui-tabs-contents > * {
-  animation: fadeIn 0.5s;
 }

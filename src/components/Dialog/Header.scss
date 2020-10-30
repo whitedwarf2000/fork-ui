@@ -1,26 +1,23 @@
-.fui-dialog-header {
+.fdlg-header {
   padding: 0 0.5em 0 1em;
   height: 3.5em;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
-  background-color: var(--popup--title-bg);
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
 }
-.fui-dialog-header__title {
+.fdlg-header-title {
   display: flex;
   align-items: center;
   flex-grow: 1;
 }
 
-.fui-dialog-header__support-button {
+.fdlg-header-support-btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.fui-dialog-header__refresh-button,
-.fui-dialog-header__close-button {
+.fdlg-header-refresh-btn,
+.fdlg-header-close-btn {
   margin-left: 0.5em;
 }

@@ -1,22 +1,22 @@
 @import '../../style/vars.scss';
 
-.fui-form > .fui-form-field {
+.fform > .fform-field {
   margin-bottom: 1rem;
 }
 
-.fui-form-field {
+.fform-field {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.fui-form-field-label {
+.fform-field-label {
   height: var(--basic-height);
   display: flex;
   align-items: center;
 }
 
-.fui-form-field-label--required {
+.fform-field-label-required {
   &:after {
     content: "*";
     color: var(--red--400);
@@ -25,13 +25,13 @@
   }
 }
 
-.fui-form-field-message {
+.fform-field-message {
   padding: 0.25em 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.fui-form-field-message--error {
+.fform-field-message-error {
   color: var(--red--300);
 }

@@ -27,9 +27,9 @@ const Confirm = ({ className, open, onClose, onOk, onCancel, ...otherProps }) =>
     <React.Fragment>
       {delayOpen && (
         <Portal>
-          <Dialog.Portal className={cn('fui-confirm-portal', { 'fui-confirm-portal--close-animation': !open })}>
+          <Dialog.Portal className={cn('fconfirm-portal', { 'fconfirm-portal-close-animation': !open })}>
             <PureConfirm
-              className={cn('fui-confirm', className)}
+              className={cn('fconfirm', className)}
               onOk={_onOk}
               onCancel={_onCancel}
               {...otherProps}

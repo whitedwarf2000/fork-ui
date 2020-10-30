@@ -21,7 +21,7 @@ const AvatarGroup = ({ className, overflowAvatar, children, ...otherProps }) => 
 
   return (
     <div
-      className={cn('fui-avatar-group', className)}
+      className={cn('favt-grp', className)}
       {...otherProps}
     >
       {enhanderChildren}

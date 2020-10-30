@@ -1,4 +1,4 @@
-.fui-button {
+.fbtn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,7 +7,6 @@
   border-radius: var(--border-radius);
   border: 1px solid transparent;
   background-color: var(--button-bg);
-  transition: background-color 0.25s, color 0.25s, opacity 0.25s, border-color 0.25s;
   padding-left: 1.25em;
   padding-right: 1.25em;
   outline: 0 !important;
@@ -23,7 +22,7 @@
   }
 
   &:hover {
-    color: var(--primary--500);
+    color: var(--primary--400);
   }
 
   &:disabled,
@@ -31,8 +30,7 @@
   &:disabled:focus {
     cursor: not-allowed !important;
     background-color: var(--button--disabled-bg);
-    color: #fff;
-    border-color: transparent;
+    color: var(--disabled-text-color);
 
     * {
       cursor: not-allowed !important;
@@ -40,217 +38,54 @@
   }
 }
 
-.fui-button-children {
+.fbtn-child {
   display: flex;
   justify-content: center;
   align-self: center;
 }
 
-.fui-button--circle {
+.fbtn-circle {
   padding-left: 0;
   padding-right: 0;
   border-radius: 100em;
 }
 
-.fui-button--icon-button {
+.fbtn-icon {
   padding-left: 0;
   padding-right: 0;
 }
 
-.fui-button:not(.fui-button--icon-button) .fui-icon:nth-child(1) {
+.fbtn:not(.fbtn-icon) .ficon:nth-child(1) {
   margin-right: 0.5em;
 }
 
-.fui-button:not(.fui-button--icon-button) .fui-icon:last-child {
+.fbtn:not(.fbtn-icon) .ficon:last-child {
   margin-left: 0.5em;
 }
 
-.fui-button--rounded {
+.fbtn-rounded {
   border-radius: 100em;
 }
 
-.fui-button--primary {
+.fbtn-primary {
   background-color: var(--primary--500);
   color: #fff;
-  box-shadow: none;
 
   &:hover,
   &:focus {
-    background-color: var(--primary--600);
-    border-color: transparent;
-  }
-
-  &:hover {
-    color: #ffffff;
-  }
-
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:focus {
-    background-color: var(--primary--200);
-    border-color: transparent;
-  }
-}
-
-.fui-button--colored {
-  color: var(--var-text-color);;
-  opacity: 0.8;
-  box-shadow: none;
-
-  &:hover,
-  &:focus {
-    opacity: 1;
-  }
-
-  &:hover {
-    color: #ffffff;
-  }
-
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:focus {
-    opacity: 0.8;
-  }
-}
-
-.fui-button--danger {
-  background-color: var(--red--500);
-  color: #fff;
-  box-shadow: none;
-
-  &:hover,
-  &:focus {
-    background-color: var(--red--600);
-    border-color: transparent;
-  }
-
-  &:hover {
-    color: #ffffff;
-  }
-
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:focus {
-    background-color: var(--red--200);
-    border-color: transparent;
-  }
-}
-
-.fui-button--glassed {
-  background-color: var(--button--glassed-bg);
-  color: var(--text-color);;
-  box-shadow: none;
-
-  &:hover,
-  &:focus {
-    background-color: var(--primary--500);
-  }
-
-  &:hover {
-    color: #ffffff;
-  }
-
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:focus {
-    background-color: var(--button--glassed-bg);
-  }
-}
-
-.fui-button--transparent {
-  background-color: transparent;
-  box-shadow: none;
-
-  &:hover,
-  &:focus {
-    background-color: var(--button--glassed-bg);
-    border-color: transparent;
-  }
-
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:focus {
-    background-color: transparent;
-    color: var(--text-color);
-    border-color: transparent;
-  }
-}
-
-.fui-button--colored.fui-button--outlined:not(:disabled) {
-  &:hover,
-  &:focus {
-    background-color: currentColor !important;
-
-    .fui-button-children {
-      color: var(--var-text-color);
-    }
-  }
-}
-
-.fui-button--primary.fui-button--outlined {
-  background-color: transparent;
-  color: var(--primary--500);
-  border-color: currentColor;
-
-  &:focus,
-  &:hover {
-    background-color: var(--primary--500);
-    border-color: var(--primary--500);
+    background-color: var(--primary--400);
     color: #fff;
-    border-color: transparent;
-  }
-
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:focus {
-    opacity: 0.8;
-    background-color: transparent;
-    color: var(--primary--200);
-    border-color: currentColor;
   }
 }
 
-.fui-button--danger.fui-button--outlined {
+.fbtn-transparent {
   background-color: transparent;
-  color: var(--red--500);
-  border-color: currentColor;
-
-  &:focus,
-  &:hover {
-    background-color: var(--red--500);
-    border-color: var(--red--500);
-    color: #fff;
-    border-color: transparent;
-  }
-
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:focus {
-    opacity: 0.8;
-    background-color: transparent;
-    color: var(--red--200);
-    border-color: currentColor;
-  }
 }
 
-.fui-button--loading {
-  &:disabled {
-    color: var(--text-color);
-  }
-
-  .fui-loader-spinner {
-    margin-right: 0.5em;
-  }
-}
-
-.fui-button--circle.fui-button--loading .fui-loader-spinner {
-  width: 2em;
-  height: 2em;
+.fbtn-loading .floader-spinner {
+  width: 1.85em;
+  height: 1.85em;
   margin: 0;
   z-index: 1;
   position: absolute;
-}
-
-.fui-button--dashed {
-  border-style: dashed;
 }

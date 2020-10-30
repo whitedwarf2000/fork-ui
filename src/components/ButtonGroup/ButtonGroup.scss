@@ -1,29 +1,25 @@
-.fui-button-group {
+.fbtn-grp {
   display: flex;
 
-  > .fui-button {
+  > .fbtn {
     border-radius: 0;
   }
 
-  > .fui-button:not(:last-child) {
-    margin-right: 1px;
-  }
-
-  > .fui-button:nth-child(1) {
+  > .fbtn:nth-child(1) {
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
   }
 
-  > .fui-button:last-child {
+  > .fbtn:last-child {
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
   }
 }
 
-.fui-button-group--fluid {
+.fbtn-grp-fluid {
   width: 100%;
 
-  > .fui-button {
+  > .fbtn {
     flex-grow: 1;
   }
 }

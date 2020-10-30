@@ -10,14 +10,14 @@ const PureConfirm = React.forwardRef(({ children, title, onCancel, onOk, classNa
   return (
     <Dialog
       ref={ref}
-      className={cn('fui-confirm', className)}
+      className={cn('fconfirm', className)}
+      onClose={onCancel}
       {...otherProps}
     >
       <Dialog.Header>{title}</Dialog.Header>
       <Dialog.Body>{children}</Dialog.Body>
-      <Dialog.Footer className="fui-confirm-footer">
-        <Button onClick={onCancel}>{config.lang.cancel}</Button>
-        <Button onClick={onOk} style={{ marginLeft: '0.5em' }}>{config.lang.ok}</Button>
+      <Dialog.Footer className="fconfirm-footer">
+        <Button transparent onClick={onOk} style={{ color: 'var(--primary--500)' }}>{config.lang.ok}</Button>
       </Dialog.Footer>
     </Dialog>
   );

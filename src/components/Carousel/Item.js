@@ -8,8 +8,8 @@ const Item = ({ wrapperClass, className, children }) => {
   const { itemWidth } = useContext(Context);
 
   return (
-    <div className={cn('fui-carousel-item-wrapper', wrapperClass )} style={{ width: itemWidth }}>
-      <div className={cn('fui-carousel-item', className)}>
+    <div className={cn('fcarousel-item', wrapperClass )} style={{ width: itemWidth }}>
+      <div className={cn('fcarousel-item-container', className)}>
         {children}
       </div>
     </div>

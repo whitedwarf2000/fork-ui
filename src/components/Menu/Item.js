@@ -26,21 +26,21 @@ const Item = ({ className, disabled, title, icon, titleOnly, _key, onItemClick }
   return (
     <li
       className={cn(
-        'fui-menu-item',
+        'fmenu-item',
         {
-          'fui-menu-item--selected': selected,
-          'fui-menu-item--hidden': hidden,
-          'fui-menu-item--disabled': disabled,
-          'fui-menu-item--icon-only': iconOnly,
-          'fui-menu-item--title-only': titleOnly,
+          'fmenu-item-selected': selected,
+          'fmenu-item-hidden': hidden,
+          'fmenu-item--disabled': disabled,
+          'fmenu-item-icon-only': iconOnly,
+          'fmenu-item-title-only': titleOnly,
         },
         className,
       )}
       onClick={_onClick}
     >
-      {icon && <div className="fui-menu-item-title-icon">{icon}</div>}
+      {icon && <div className="fmenu-item-title-icon">{icon}</div>}
       {((iconOnly && titleOnly) || (iconOnly && !icon)) && <span style={{ textTransform: 'uppercase '}}>{title[0]}</span>}
-      <span className="fui-menu-item-content">{title}</span>
+      <span className="fmenu-item-content">{title}</span>
     </li>
   );
 };

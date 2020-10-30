@@ -31,16 +31,16 @@ const Switch = React.forwardRef(({ onChange, className, disabled, loading, ...ot
   } ,[checked, isControlled, _ref]);
 
   return (
-    <span className={cn('fui-switch', { 'fui-switch--checked': checked }, className)}>
+    <span className={cn('fswitch', { 'fswitch-checked': checked }, className)}>
       <input
         type="checkbox"
-        className="fui-switch-input"
+        className="fswitch-input"
         ref={_ref}
         onChange={_onChange}
         disabled={disabled || loading}
         {...otherProps}
       />
-      <span className="fui-switch-inner">
+      <span className="fswitch-mark">
         {loading && <Loader.Spinner />}
       </span>
     </span>

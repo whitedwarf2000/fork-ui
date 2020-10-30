@@ -1,4 +1,4 @@
-.fui-input {
+.finput {
   height: var(--input-height);
   outline: 0 !important;
   border: 0;
@@ -26,10 +26,9 @@
   &:hover,
   &:focus {
     border-color: var(--primary--500);
-    background-color: var(--bg);
   }
 }
 
-.fui-input--rounded {
+.finput-rounded {
   border-radius: 100em;
 }

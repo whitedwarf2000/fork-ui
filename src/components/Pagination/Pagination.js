@@ -27,12 +27,13 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
   const onItemClick = useCallback(value =>  onChange(value), [onChange]);
 
   return (
-    <div className={cn('fui-pagination', className )} {...otherProps}>
+    <div className={cn('fpag', className )} {...otherProps}>
       <Button
-        className="fui-pagination-prev"
+        className="fpag-prev"
         disabled={activePage <= 1}
         onClick={onPrev}
         circle
+        transparent
         icon={<ChevronLeft />}
         style={{
           marginRight: '0.5rem',
@@ -42,7 +43,8 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
         <Button
           rounded
           key={pageNumber}
-          className={cn('fui-pagination-item', { 'fui-pagination-item--active': pageNumber === activePage })}
+          transparent
+          className={cn('fpag-item', { 'fpag-item-active': pageNumber === activePage })}
           primary={pageNumber === activePage}
           onClick={() => onItemClick(pageNumber)}
         >
@@ -50,10 +52,11 @@ const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...
         </Button>
       ))}
       <Button
-        className="fui-pagination-next"
+        className="fpag-next"
         disabled={activePage >= itemCount}
         onClick={onNext}
         circle
+        transparent
         icon={<ChevronRight />}
       />
     </div>

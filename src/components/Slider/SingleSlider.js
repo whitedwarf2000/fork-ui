@@ -10,16 +10,16 @@ const SingleSlider = React.forwardRef(({ className, max, value, handlerRef, ...o
   return (
     <div
       ref={ref}
-      className={cn('fui-slider fui-single-slider', className)}
+      className={cn('fslider fsingle-slider', className)}
       {...otherProps}
     >
-      <div className="fui-slider-rail">
+      <div className="fslider-rail">
         <div
-          className="fui-slider-rail-percent"
+          className="fslider-rail-percent"
           style={{ width: `${_width * 100}%` }}
         >
           <Handler
-            className="fui-slider-handler-main"
+            className="fslider-handler-main"
             ref={handlerRef}
             value={value}
           />

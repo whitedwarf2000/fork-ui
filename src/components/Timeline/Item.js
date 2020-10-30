@@ -6,14 +6,14 @@ import Tooltip from '../Tooltip';
 
 const Item = ({ className, children, icon, tooltipTitle, ...otherProps }) => {
   return (
-    <div className={cn('fui-timeline-item', className)} {...otherProps}>
-      <div className="fui-timeline-item-rail" />
+    <div className={cn('ftimeline-item', className)} {...otherProps}>
+      <div className="ftimeline-item-rail" />
       <Tooltip top title={tooltipTitle}>
-        <div className="fui-timeline-item-stone-icon">
+        <div className="ftimeline-item-stone-icon">
           {icon}
         </div>
       </Tooltip>
-      <div className="fui-timeline-item-content">
+      <div className="ftimeline-item-content">
         {children}
       </div>
     </div>

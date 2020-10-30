@@ -9,7 +9,7 @@ const Spinner = ({ color, size, className, ...otherProps }) => {
         color,
         fontSize: size
       }}
-      className={cn('fui-loader-spinner', className)}
+      className={cn('floader-spinner', className)}
       {...otherProps}
     />
   );

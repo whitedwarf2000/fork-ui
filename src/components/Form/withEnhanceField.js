@@ -43,7 +43,7 @@ export default () => FieldComponent => {
         return {
           status: 'error',
           text: error,
-          className: 'fui-form-field-message--error',
+          className: 'fform-field-message-error',
         };
       }
 
@@ -53,14 +53,14 @@ export default () => FieldComponent => {
     const badgeProps = useMemo(() => renderPropsBadge({ error, success }), [error, success]);
   
     return (
-      <div className={cn('fui-form-field')}>
+      <div className={cn('fform-field')}>
         {label && (
           <label
             className={cn(
-              'fui-form-field-label',
+              'fform-field-label',
               {
-                'fui-form-field-label--required': required,
-                'fui-form-field-label--hidden-label': hiddenLabel,
+                'fform-field-label-required': required,
+                'fform-field-label-hidden-label': hiddenLabel,
               })
             }
             htmlFor={name}
@@ -76,7 +76,7 @@ export default () => FieldComponent => {
           />
         </Badge>
         {message && (
-          <div className={cn('fui-form-field-message', message.className)}>
+          <div className={cn('fform-field-message', message.className)}>
             {message.text}
           </div>
         )}

@@ -9,7 +9,7 @@ const Popover = ({ className, overlayClass, children, trigger, gap, ...otherProp
    <Overlay
       arrow
       className={className}
-      overlayClass={cn('fui-popover', overlayClass)}
+      overlayClass={cn('fpopover', overlayClass)}
       trigger={trigger}
       gap={gap}
       canOutsideClickClose

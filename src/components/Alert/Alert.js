@@ -24,7 +24,7 @@ const Alert = ({ onClose, open, duration, ...otherProps }) => {
         <Portal node={rootAlert}>
           <PureAlert
             onClose={onClose}
-            className={cn('fui-alert', { 'fui-alert--close-animation': !open })}
+            className={cn('falert', { 'falert-close-animation': !open })}
             {...otherProps}
           />
         </Portal>

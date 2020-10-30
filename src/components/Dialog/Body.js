@@ -7,7 +7,7 @@ const Body = ({ className, children, ...otherProps }) => {
   const { toggleBody } = useContext(Context);
 
   return (
-    <div className={cn('fui-dialog-body', className)} {...otherProps}>
+    <div className={cn('fdlg-body', className)} {...otherProps}>
       {toggleBody ? children : null}
     </div>
   );

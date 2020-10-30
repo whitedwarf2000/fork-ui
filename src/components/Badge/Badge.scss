@@ -3,38 +3,12 @@
 @import './Icon.scss';
 @import './Counter.scss';
 
-@keyframes badgeCountUp {
-  0% {
-   transform: scale(0);
-  }
-  100% {
-    transform: scale(1.5);
-  }
-}
-
-@keyframes badgeCountUpOpacity {
-  0% {
-   opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.fui-badge-ui--badge-up-animation {
-  animation: badgeCountUpOpacity 0.5s;
-
-  > b {
-    animation: badgeCountUp 0.35s;
-  }
-}
-
-.fui-badge {
+.fbadge {
   position: relative;
   display: inline-block;
 }
 
-.fui-badge-ui {
+.fbadge-ui {
   font-size: 0.75rem;
   position: absolute;
   height: 2.25em;
@@ -45,86 +19,86 @@
   font-family: sans-serif;
 }
 
-.fui-badge--top-right .fui-badge-ui,
-.fui-badge--right-top .fui-badge-ui {
+.fbadge-tr .fbadge-ui,
+.fbadge-rt .fbadge-ui {
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
 }
 
-.fui-badge--right .fui-badge-ui {
+.fbadge-r .fbadge-ui {
   top: 50%;
   right: 0;
   transform: translate(50%, -50%);
 }
 
-.fui-badge--bottom-right .fui-badge-ui,
-.fui-badge--right-bottom .fui-badge-ui {
+.fbadge-br .fbadge-ui,
+.fbadge-rb .fbadge-ui {
   bottom: 0;
   right: 0;
   transform: translate(50%, 50%);
 }
 
-.fui-badge--bottom .fui-badge-ui {
+.fbadge-b .fbadge-ui {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
 }
 
-.fui-badge--bottom-left .fui-badge-ui,
-.fui-badge--left-bottom .fui-badge-ui {
+.fbadge-bl .fbadge-ui,
+.fbadge-lb .fbadge-ui {
   bottom: 0;
   left: 0;
   transform: translate(-50%, 50%);
 }
 
-.fui-badge--left .fui-badge-ui {
+.fbadge-l .fbadge-ui {
   left: 0;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.fui-badge--left-top .fui-badge-ui,
-.fui-badge--top-left .fui-badge-ui {
+.fbadge-lt .fbadge-ui,
+.fbadge-tl .fbadge-ui {
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
 }
 
-.fui-badge--top .fui-badge-ui {
+.fbadge-t .fbadge-ui {
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 // OVERLAP SUPPORT
-.fui-badge--overlap.fui-badge--top-right,
-.fui-badge--overlap.fui-badge--right-top {
-  .fui-badge-ui {
+.fbadge-overlap.fbadge-tr,
+.fbadge-overlap.fbadge-rt {
+  .fbadge-ui {
     top: 14%;
     right: 14%;
   }
 }
 
-.fui-badge--overlap.fui-badge--right-bottom,
-.fui-badge--overlap.fui-badge--bottom-right {
-  .fui-badge-ui {
+.fbadge-overlap.fbadge-rb,
+.fbadge-overlap.fbadge-br {
+  .fbadge-ui {
     bottom: 14%;
     right: 14%;
   }
 }
 
-.fui-badge--overlap.fui-badge--left-bottom,
-.fui-badge--overlap.fui-badge--bottom-left {
-  .fui-badge-ui {
+.fbadge-overlap.fbadge-lb,
+.fbadge-overlap.fbadge-bl {
+  .fbadge-ui {
     bottom: 14%;
     left: 14%;
   }
 }
 
-.fui-badge--overlap.fui-badge--left-top,
-.fui-badge--overlap.fui-badge--top-left {
-  .fui-badge-ui {
+.fbadge-overlap.fbadge-lt,
+.fbadge-overlap.fbadge-tl {
+  .fbadge-ui {
     top: 14%;
     left: 14%;
   }

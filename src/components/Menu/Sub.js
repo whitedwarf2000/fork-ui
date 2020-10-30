@@ -30,25 +30,25 @@ const Sub = ({ defaultExpanded, className, children, title, icon, _key }) => {
   return (
     <li
       className={cn(
-        'fui-menu-sub',
+        'fmenu-sub',
         {
-          'fui-menu-sub--expanded': isExpanded,
-          'fui-menu-sub--icon-only': iconOnly,
-          'fui-menu-sub--selected': selected,
-          'fui-menu-sub--hidden': hidden,
+          'fmenu-sub-expanded': isExpanded,
+          'fmenu-sub-icon-only': iconOnly,
+          'fmenu-sub-selected': selected,
+          'fmenu-sub-hidden': hidden,
         },
         className,
       )}
     >
-      <div className="fui-menu-sub-title" onClick={toggleExpanded}>
+      <div className="fmenu-sub-title" onClick={toggleExpanded}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          {icon && <div name={icon} className="fui-menu-sub-title-icon">{icon}</div>}
+          {icon && <div name={icon} className="fmenu-sub-title-icon">{icon}</div>}
           {(iconOnly && !icon && title) && <span style={{ textTransform: 'uppercase '}}>{title[0]}</span>}
-          <span className="fui-menu-sub-content">{title}</span>
+          <span className="fmenu-sub-content">{title}</span>
         </div>
-        <CaretDown className="fui-menu-sub-icon" />
+        <CaretDown className="fmenu-sub-icon" />
       </div>
-      <Animated.Expand className="fui-menu-sub-list" isExpanded={isExpanded}>
+      <Animated.Expand className="fmenu-sub-list" isExpanded={isExpanded}>
         <ul>
           {customChildren}
         </ul>

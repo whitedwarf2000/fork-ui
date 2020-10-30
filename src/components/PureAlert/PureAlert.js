@@ -7,10 +7,10 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const mTypes = Object.freeze({
-  info: 'fui-pure-alert--info',
-  success: 'fui-pure-alert--success',
-  error: 'fui-pure-alert--error',
-  warning: 'fui-pure-alert--warning',
+  info: 'fpure-alert-info',
+  success: 'fpure-alert-success',
+  error: 'fpure-alert-err',
+  warning: 'fpure-alert--warn',
 });
 
 const lTypes = Object.keys(mTypes);
@@ -26,7 +26,7 @@ const PureAlert = React.forwardRef(({ children, title, className, ...otherProps 
   return (
     <Dialog
       ref={ref}
-      className={cn('fui-pure-alert', mTypes[type], className)}
+      className={cn('fpure-alert', mTypes[type], className)}
       {...passedProps}
     >
       <Dialog.Header>{title}</Dialog.Header>

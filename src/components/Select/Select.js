@@ -5,7 +5,7 @@ const Select = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
     <select
       ref={ref}
-      className={cn('fui-select', className)}
+      className={cn('fselect', className)}
       {...otherProps}
     />
   );

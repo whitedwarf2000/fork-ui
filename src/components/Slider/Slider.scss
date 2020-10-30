@@ -1,6 +1,6 @@
 @import './SingleSlider.scss';
 
-.fui-slider {
+.fslider {
   position: relative;
   width: 100%;
   padding: 1.25rem 0;
@@ -8,13 +8,13 @@
   user-select: none;
 }
 
-.fui-slider-rail {
+.fslider-rail {
   background-color: var(--secondary-bg);
   box-shadow: var(--slider-rail--box-shadow);
 }
 
-.fui-slider-rail-dots,
-.fui-slider-rail {
+.fslider-rail-dots,
+.fslider-rail {
   height: 0.15em;
   min-height: 3px;
   width: 100%;
@@ -23,7 +23,7 @@
   left: 0;
 }
 
-.fui-slider-rail-dots {
+.fslider-rail-dots {
   z-index: 1;
   display: flex;
 
@@ -38,7 +38,7 @@
   }
 }
 
-.fui-slider-rail-percent {
+.fslider-rail-percent {
   position: absolute;
   left: 0;
   height: 100%;
@@ -46,19 +46,19 @@
   background-color: var(--primary--500);
 }
 
-.fui-slider-handler-main {
+.fslider-handler-main {
   right: 0;
   z-index: 2;
 }
 
-.fui-slider-handler-support {
+.fslider-handler-support {
   left: 0;
   display: none;
   z-index: 2;
 }
 
-.fui-slider--range {
-  .fui-slider-handler-support {
+.fslider-range {
+  .fslider-handler-support {
     display: block;
   }
 }

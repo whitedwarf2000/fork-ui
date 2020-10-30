@@ -1,11 +1,11 @@
-.fui-carousel-dots {
+.fcarousel-dots {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 1rem;
 }
 
-.fui-carousel-dot {
+.fcarousel-dot {
   width: 1em;
   height: 1em;
   background-color: rgba(0, 0, 0, 0.1);
@@ -15,6 +15,6 @@
   cursor: pointer;
 }
 
-.fui-carousel-dot--active {
+.fcarousel-dot-active {
   background-color: var(--primary--500);
 }
