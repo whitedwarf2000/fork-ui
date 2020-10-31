@@ -1,11 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
 
-const enhancerIcon = (IconComponent) => {
+const enhancerIcon = (originalName, IconComponent) => {
   const Icon = ({ className, style, color, fontSize, ...otherProps }) => {
     return (
       <IconComponent
-        className={cn('ficon', className)}
+        className={cn('ficon', { [`ficon-${originalName}`]: originalName }, className)}
         style={{
           color: color || null,
           fontSize: fontSize || null,
