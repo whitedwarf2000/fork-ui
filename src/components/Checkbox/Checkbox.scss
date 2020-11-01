@@ -57,9 +57,9 @@
   &:disabled,
   &:disabled:hover {
     cursor: not-allowed;
+
     + .fcbox-mark {
       color: #2e3031;
-      border-color: currentColor;
     }
   }
 
@@ -67,7 +67,6 @@
   &:checked:disabled:hover {
     + .fcbox-mark {
       color: var(--primary--disabled);
-      border-color: currentColor;
     }
   }
 }

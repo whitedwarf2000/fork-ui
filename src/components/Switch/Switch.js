@@ -4,9 +4,15 @@ import PropTypes from 'prop-types';
 
 import Loader from '../Loader';
 
-const Switch = React.forwardRef(({ className, disabled, loading, ...otherProps }, ref) => {
+const Switch = React.forwardRef(({ className, style, size, disabled, loading, ...otherProps }, ref) => {
   return (
-    <div className={cn('fswitch', className)}>
+    <div
+      className={cn('fswitch', className)}
+      style={{
+        fontSize: size,
+        ...style
+      }}
+    >
       <input
         type="checkbox"
         className="fswitch-input"
@@ -45,6 +51,8 @@ Switch.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
+  style: PropTypes.object,
+  size: PropTypes.string,
 };
 Switch.defaultProps = {};
 
