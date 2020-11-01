@@ -5,7 +5,7 @@
   outline: 0 !important;
   width: 1.4em;
   height: 1.4em;
-  color: #2e3031;
+  color: var(--primary);
 }
 
 .fcbox-mark {
@@ -13,8 +13,7 @@
   display: block;
   height: 100%;
   width: 100%;
-  
-  border: 1px solid currentColor;
+  border: 1px solid #2e3031;
   border-radius: var(--border-radius);
 
   &::before {
@@ -41,13 +40,13 @@
 
   &:hover {
     + .fcbox-mark {
-      color: var(--primary);
+      border-color: currentColor;
     }
   }
 
   &:checked {
     + .fcbox-mark {
-      color: var(--primary);
+      border-color: currentColor;
 
       &::before {
         opacity: 1;
@@ -60,6 +59,7 @@
     cursor: not-allowed;
     + .fcbox-mark {
       color: #2e3031;
+      border-color: currentColor;
     }
   }
 
@@ -67,6 +67,7 @@
   &:checked:disabled:hover {
     + .fcbox-mark {
       color: var(--primary--disabled);
+      border-color: currentColor;
     }
   }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -22,6 +22,23 @@ const Switch = React.forwardRef(({ className, disabled, loading, ...otherProps }
     </div>
   );
 });
+
+Switch.useSwitch = (defaultChecked) => {
+  const [checked, setChecked] = useState(defaultChecked);
+  const onChange = useCallback(e => setChecked(e.target.checked), [setChecked]);
+
+  return [
+    {
+      checked,
+      onChange,
+    },
+    {
+      checked,
+      setChecked,
+      onChange,
+    }
+  ]
+};
 
 Switch.displayName = 'Switch';
 Switch.propTypes = {
