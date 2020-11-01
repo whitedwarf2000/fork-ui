@@ -12,7 +12,7 @@
   }
 }
 
-.fswitch-fake {
+.fswitch-mark {
   background-color: #2e3031;
   display: block;
   position: relative;
@@ -26,7 +26,7 @@
   align-items: center;
 }
 
-.fswitch-mark {
+.fswitch-lever {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,10 +55,10 @@
   }
 
   &:checked {
-    + .fswitch-fake {
+    + .fswitch-mark {
       background-color: currentColor;
   
-      .fswitch-mark {
+      .fswitch-lever {
         transform: translateX(1.5em);
         background-color: #fff;
       }
@@ -66,7 +66,7 @@
   }
 
   &:checked:disabled {
-    + .fswitch-fake {
+    + .fswitch-mark {
       background-color: var(--primary--disabled);
     }
   }  

@@ -20,8 +20,8 @@ const Switch = React.forwardRef(({ className, style, size, disabled, loading, ..
         disabled={disabled || loading}
         {...otherProps}
       />
-      <div className="fswitch-fake">
-        <span className="fswitch-mark">
+      <div className="fswitch-mark">
+        <span className="fswitch-lever">
           {loading && <Loader.Spinner />}
         </span>
       </div>
