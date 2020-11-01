@@ -10,6 +10,8 @@ import { omit, isString, isNumber } from '../../utils/helpers';
 const mColors = Object.freeze({
   primary: 'fbtn-primary',
   transparent: 'fbtn-transparent',
+  danger: 'fbtn-danger',
+  success: 'fbtn-success',
 });
 
 const mShapes = Object.freeze({

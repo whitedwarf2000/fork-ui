@@ -6,13 +6,18 @@ import { pick, omit } from '../../utils/helpers';
 const ButtonGroup = ({ className, fluid, size, style, children, ...otherProps }) => {
   const _parentProps = useMemo(() => pick(otherProps, [
     'primary',
+    'danger',
+    'success',
     'transparent',
     'disabled',
+    'size',
     'color',
   ]), [otherProps]);
 
   const passedProps = useMemo(() => omit(otherProps, [
     'primary',
+    'danger',
+    'success',
     'transparent',
     'disabled',
     'size',

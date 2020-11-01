@@ -77,6 +77,28 @@
   }
 }
 
+.fbtn-danger {
+  background-color: var(--red);
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: var(--red--lighter);
+    color: #fff;
+  }
+}
+
+.fbtn-success {
+  background-color: var(--green);
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: var(--green--lighter);
+    color: #fff;
+  }
+}
+
 .fbtn-transparent {
   background-color: transparent;
 }
