@@ -32,6 +32,7 @@ const Switch = React.forwardRef(({ className, style, size, disabled, loading, ..
 Switch.useSwitch = (defaultChecked) => {
   const [checked, setChecked] = useState(defaultChecked);
   const onChange = useCallback(e => setChecked(e.target.checked), [setChecked]);
+  const toggle = useCallback(() => setChecked(val => !val), [setChecked]);
 
   return [
     {
@@ -42,6 +43,7 @@ Switch.useSwitch = (defaultChecked) => {
       checked,
       setChecked,
       onChange,
+      toggle,
     }
   ]
 };
