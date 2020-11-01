@@ -71,7 +71,6 @@ const Button = React.forwardRef(({
           }
 
           return React.Children.map(children, item => {
-            /* wrapper children by span tags for fix bugs css */
             if (isString(item) || isNumber(item)) {
               return <span key={item.key}>{item}</span>;
             }
@@ -95,6 +94,8 @@ Button.propTypes = {
   icon: PropTypes.any,
   style: PropTypes.object,
   primary: PropTypes.bool, // color="primary"
+  danger: PropTypes.bool, // color="danger"
+  success: PropTypes.bool, // color="success"
   transparent: PropTypes.bool, // color="transparent"
   children: PropTypes.any,
   loading: PropTypes.bool,
