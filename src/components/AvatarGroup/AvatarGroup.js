@@ -25,7 +25,7 @@ const AvatarGroup = ({ className, overflowAvatar, children, ...otherProps }) => 
       {...otherProps}
     >
       {enhanderChildren}
-      {isOverflow && <Avatar name={`+${avatarCount - overflowAvatar}`} color="var(--primary--500)" />}
+      {isOverflow && <Avatar name={`+${avatarCount - overflowAvatar}`} color="var(--primary)" />}
     </div>
   );
 };

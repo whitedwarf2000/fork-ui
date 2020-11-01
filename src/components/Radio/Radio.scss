@@ -41,13 +41,13 @@
 
   &:hover {
     + .fradio-mark {
-      color: var(--primary--500);
+      color: var(--primary);
     }
   }
 
   &:checked {
     + .fradio-mark {
-      color: var(--primary--500);
+      color: var(--primary);
 
       &::before {
         opacity: 1;
@@ -60,6 +60,13 @@
     cursor: not-allowed;
     + .fradio-mark {
       color: #2e3031;
+    }
+  }
+
+  &:checked:disabled,
+  &:checked:disabled:hover {
+    + .fradio-mark {
+      color: var(--primary--disabled);
     }
   }
 }

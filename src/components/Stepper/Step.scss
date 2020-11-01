@@ -74,11 +74,11 @@ $step-avatar--size: 2.5em;
 // PROCESSING
 .fstep-processing {
   .fstep-rail {
-    color: var(--primary--500);
+    color: var(--primary);
   }
 
   .fstep-avt {
-    color: var(--primary--500);
+    color: var(--primary);
     box-shadow: none;
   }
 
@@ -133,7 +133,7 @@ $step-avatar--size: 2.5em;
     &.fstep-completed {
       + .fstep {
         .fstep-rail {
-          color: var(--primary--500);
+          color: var(--primary);
           border-left: 1px dashed currentColor;
         }
       }

@@ -41,13 +41,13 @@
 
   &:hover {
     + .fcbox-mark {
-      color: var(--primary--500);
+      color: var(--primary);
     }
   }
 
   &:checked {
     + .fcbox-mark {
-      color: var(--primary--500);
+      color: var(--primary);
 
       &::before {
         opacity: 1;
@@ -60,6 +60,13 @@
     cursor: not-allowed;
     + .fcbox-mark {
       color: #2e3031;
+    }
+  }
+
+  &:checked:disabled,
+  &:checked:disabled:hover {
+    + .fcbox-mark {
+      color: var(--primary--disabled);
     }
   }
 }

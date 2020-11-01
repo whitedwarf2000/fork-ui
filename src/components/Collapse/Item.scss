@@ -13,7 +13,7 @@
 
 .fpanel-active {
   .fpanel-title {
-    color: var(--primary--500);
+    color: var(--primary);
     border-bottom: 0.0625em solid currentColor;
   }
 
@@ -35,7 +35,7 @@
   user-select: none;
 
   &:hover {
-    color: var(--primary--500);
+    color: var(--primary);
   }
 }
 

@@ -8,7 +8,7 @@
   cursor: pointer;
 
   &:hover {
-    color: var(--primary--500);
+    color: var(--primary);
   }
 }
 
@@ -19,7 +19,7 @@
 
 .fmenu-item-selected,
 .fmenu-item-selected:hover {
-  background-color: var(--primary--500);
+  background-color: var(--primary);
   color: #ffffff;
 }
 

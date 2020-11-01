@@ -1,42 +1,16 @@
-import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Loader from '../Loader';
 
-import useFlexibleRef from '../../hooks/useFlexibleRef';
-
-const Switch = React.forwardRef(({ onChange, className, disabled, loading, ...otherProps }, ref) => {
-  const _ref = useFlexibleRef(ref);
-  const isControlled = useMemo(() => otherProps.hasOwnProperty('checked'), [otherProps]);
-  const [checked, setChecked] = useState(isControlled ?  otherProps.checked : otherProps.defaultChecked);
-
-  const _onChange = useCallback((e) => {
-    if (isControlled) {
-      return onChange(e);
-    }
-
-    return setChecked(e.target.checked);
-  }, [isControlled, onChange, setChecked]);
-
-  useMemo(() => {
-    if (isControlled) {
-      return setChecked(otherProps.checked)
-    }
-  }, [isControlled, otherProps.checked, setChecked]);
-
-  useEffect(() => {
-    if (!isControlled) {
-      onChange({ target: _ref.current });
-    }
-  } ,[checked, isControlled, _ref]);
-
+const Switch = React.forwardRef(({ checked, className, disabled, loading, ...otherProps }, ref) => {
   return (
-    <span className={cn('fswitch', { 'fswitch-checked': checked }, className)}>
+    <span className={cn('fswitch', { 'fswitch-checked': checked, 'fswitch-disabled': disabled }, className)}>
       <input
         type="checkbox"
         className="fswitch-input"
-        ref={_ref}
-        onChange={_onChange}
+        ref={ref}
+        checked={checked}
         disabled={disabled || loading}
         {...otherProps}
       />
@@ -50,9 +24,9 @@ const Switch = React.forwardRef(({ onChange, className, disabled, loading, ...ot
 Switch.displayName = 'Switch';
 Switch.propTypes = {
   className: PropTypes.string,
-  onChange: PropTypes.func,
   checked: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 Switch.defaultProps = {
   onChange: f => f,

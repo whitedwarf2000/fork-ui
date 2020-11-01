@@ -67,12 +67,12 @@
 }
 
 .fbtn-primary {
-  background-color: var(--primary--500);
+  background-color: var(--primary);
   color: #fff;
 
   &:hover,
   &:focus {
-    background-color: var(--primary--400);
+    background-color: var(--primary--lighter);
     color: #fff;
   }
 }
