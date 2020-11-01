@@ -1,9 +1,12 @@
 h1.ftypo,
 h2.ftypo,
 h3.ftypo,
-h4.ftypo {
+h4.ftypo,
+h5.ftypo,
+h6.ftypo {
   font-weight: 600;
   margin-bottom: .5em;
+  color: var(--text-color--heading);
 }
 
 h1.ftypo {
@@ -33,7 +36,7 @@ h6.ftypo {
 .ftypo-disabled {
   user-select: none;
   cursor: not-allowed !important;
-  color: var(--disabled-text-color);
+  color: var(--text-color--disabled);
 }
 
 .ftypo-underline {

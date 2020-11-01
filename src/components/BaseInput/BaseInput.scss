@@ -14,6 +14,11 @@
     background-color: var(--input--bg) !important;
   }
 
+  &::placeholder {
+    font-style: italic;
+    color: var(--text-color--placeholder);
+  }
+
   &:disabled,
   &:disabled:hover,
   &:disabled:focus {

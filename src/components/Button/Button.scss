@@ -29,7 +29,7 @@
   &:disabled:focus {
     cursor: not-allowed !important;
     background-color: var(--button--disabled-bg);
-    color: var(--disabled-text-color);
+    color: var(--text-color--disabled);
 
     * {
       cursor: not-allowed !important;

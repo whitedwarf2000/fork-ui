@@ -28,7 +28,7 @@
 
   &:disabled {
     cursor: not-allowed !important;
-    color: var(--disabled-text-color) !important;
+    color: var(--text-color--disabled) !important;
   }
 }
 

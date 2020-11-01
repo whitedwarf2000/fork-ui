@@ -2,30 +2,32 @@
 
 .dark-mode {
   --text-color: #aaaaaa;
+  --text-color--heading: #fff;
+  --text-color--disabled: #505965;
+  --text-color--placeholder: #8f8d8d;
+
   --body-bg: #000;
   --bg: #191919;
-  --disabled-text-color: #505965;
 
-  --secondary-bg--700: #2e3031;
-  --secondary-bg--600: #2e3031;
-  --secondary-bg: #2e3031;
-  --secondary-bg--400: #2e3031;
-  --secondary-bg--300: #2e3031;
-  
   --primary: #ebb62c;
+  --primary--bg: #ebb62c;
   --primary--disabled: #80724e;
   --primary--lighter: #f9b400;
   --primary--darker: #c59c30;
 
   --red: #c00;
+  --red--bg: #c00;
   --red--disabled: #c94d4d;
   --red--lighter: #f30303;
   --red--darker: #850303;
 
   --green: #57ec0a;
+  --green--bg: #57ec0a;
   --green--disabled: #72bd4c;
   --green--lighter: #55ff00;
   --green--darker: #349405;
+
+  --secondary-bg: #2e3031;
 }
 
 .dark-mode {
@@ -40,7 +42,7 @@
   --button--hover-bg: rgba(106, 76, 12, 0.5);
   --button--hover-border-color: transparent;
   --button--disabled-bg: #2a2e35;
-  --button--disabled-color: var(--disabled-text-color);
+  --button--disabled-color: var(--text-color--disabled);
 }
 
 /* Tabs */
@@ -52,7 +54,7 @@
 .dark-mode {
   --input--bg: #4e4f50;
   --input--disabled-bg: #4e4f50;
-  --input--disabled-color: var(--disabled-text-color);
+  --input--disabled-color: var(--text-color--disabled);
 }
 
 /* Popup, Overlay */
