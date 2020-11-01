@@ -38,7 +38,7 @@
 
   &:checked {
     + .fswitch-fake {
-      background: var(--primary);
+      background-color: var(--primary);
   
       .fswitch-mark {
         transform: translateX(1.5em);
@@ -49,7 +49,7 @@
 
   &:checked:disabled {
     + .fswitch-fake {
-      background: var(--primary--disabled);
+      background-color: var(--primary--disabled);
     }
   }  
 }
