@@ -1,13 +1,16 @@
 @import '../vars.scss';
 
 .dark-mode {
-  --text-color: #aaaaaa;
+  --text-color: #fff;
+  --text-secondary: #909090;
+
   --text-color--heading: #fff;
   --text-color--disabled: #505965;
   --text-color--placeholder: #8f8d8d;
 
   --body-bg: #000;
-  --bg: #191919;
+  --bg: #181818;
+  --secondary-bg: #303030;
 
   --primary: #ebb62c;
   --primary--bg: #ebb62c;
@@ -26,8 +29,6 @@
   --green--disabled: #72bd4c;
   --green--lighter: #55ff00;
   --green--darker: #349405;
-
-  --secondary-bg: #2e3031;
 }
 
 .dark-mode {
@@ -37,7 +38,7 @@
 
 /* BUTTON */
 .dark-mode {
-  --button--bg: #4e4f50;
+  --button--bg: var(--secondary-bg);
   --button--hover-bg: rgba(106, 76, 12, 0.5);
   --button--hover-border-color: transparent;
   --button--disabled-bg: #2a2e35;
@@ -51,15 +52,15 @@
 
 /* BASE INPUT */
 .dark-mode {
-  --input--bg: #4e4f50;
+  --input--bg: var(--secondary-bg);
   --input--disabled-bg: #4e4f50;
   --input--disabled-color: var(--text-color--disabled);
 }
 
 /* Popup, Overlay */
 .dark-mode {
-  --popup--border-radius: 0.825em;
-  --popup--title-bg: var(--secondary-bg--400);
+  --popup--border-radius: 0.125em;
+  --popup--title-bg: var(--secondary-bg);
   --popup--shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
   --overlay--shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -72,8 +73,8 @@
 
 /* Menu */
 .dark-mode {
-  --menu--bg: #2e3031;
-  --sub-menu--bg: #3b3e40;
+  --menu--bg: #242424;
+  --sub-menu--bg: #353535;
   --menu--shadow: none;
 }
 

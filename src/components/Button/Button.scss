@@ -103,6 +103,18 @@
   background-color: transparent;
 }
 
+.fbtn-ghost {
+  background-color: transparent;
+
+  &:hover,
+  &:focus,
+  &:disabled:hover,
+  &:disabled:focus {
+    background-color: transparent;
+    color: var(--primary);
+  }
+}
+
 .fbtn-loading .floader-spinner {
   width: 1.85em;
   height: 1.85em;

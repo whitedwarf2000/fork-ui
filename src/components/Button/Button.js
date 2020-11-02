@@ -10,6 +10,7 @@ import { omit, isString, isNumber } from '../../utils/helpers';
 const mColors = Object.freeze({
   primary: 'fbtn-primary',
   transparent: 'fbtn-transparent',
+  ghost: 'fbtn-ghost',
   danger: 'fbtn-danger',
   success: 'fbtn-success',
 });
@@ -97,6 +98,7 @@ Button.propTypes = {
   danger: PropTypes.bool, // color="danger"
   success: PropTypes.bool, // color="success"
   transparent: PropTypes.bool, // color="transparent"
+  ghost: PropTypes.bool, // color="ghost"
   children: PropTypes.any,
   loading: PropTypes.bool,
 };

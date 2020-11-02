@@ -3,21 +3,21 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Avatar from '../Avatar';
 
-const AvatarGroup = ({ className, overflowAvatar, children, ...otherProps }) => {
+const AvatarGroup = ({ className, overflow, children, ...otherProps }) => {
   const avatarCount = useMemo(() => React.Children.count(children), [children]) ;
-  const isOverflow = useMemo(() => avatarCount > overflowAvatar + 1, [avatarCount, overflowAvatar]);
+  const isOverflow = useMemo(() => avatarCount > overflow + 1, [avatarCount, overflow]);
 
   const enhanderChildren = useMemo(() => {
     if (isOverflow) {
       return React.Children.map(children, (item, idx) => {
-        if (idx < overflowAvatar) {
+        if (idx < overflow) {
           return item;
         }
         return null;
       });
     }
     return children;
-  }, [isOverflow, overflowAvatar, children]);
+  }, [isOverflow, overflow, children]);
 
   return (
     <div
@@ -25,7 +25,11 @@ const AvatarGroup = ({ className, overflowAvatar, children, ...otherProps }) => 
       {...otherProps}
     >
       {enhanderChildren}
-      {isOverflow && <Avatar name={`+${avatarCount - overflowAvatar}`} color="var(--primary)" />}
+      {isOverflow && (
+        <Avatar color="var(--primary)">
+          <span>+</span>{avatarCount - overflow}
+        </Avatar>
+      )}
     </div>
   );
 };
@@ -33,10 +37,10 @@ const AvatarGroup = ({ className, overflowAvatar, children, ...otherProps }) => 
 AvatarGroup.displayName = 'AvatarGroup';
 AvatarGroup.propTypes = {
   className: PropTypes.string,
-  overflowAvatar: PropTypes.number,
+  overflow: PropTypes.number,
 };
 AvatarGroup.defaultProps = {
-  overflowAvatar: Infinity,
+  overflow: Infinity,
 };
 
 export default AvatarGroup;

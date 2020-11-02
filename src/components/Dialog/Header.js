@@ -16,8 +16,7 @@ const Header = ({ className, closable, children, freshable, ...otherProps }) => 
         {freshable && (
           <Button
             icon={<Refresh />}
-            transparent
-            circle
+            ghost
             className="fdlg-header-refresh-btn"
             onClick={onRefresh}
           />
@@ -25,8 +24,7 @@ const Header = ({ className, closable, children, freshable, ...otherProps }) => 
         {closable && (
           <Button
             icon={<X />}
-            transparent
-            circle
+            ghost
             className="fdlg-header-close-btn"
             onClick={onClose}
           />

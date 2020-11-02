@@ -12,7 +12,7 @@ const mShape = Object.freeze({
 
 const lShape = Object.keys(mShape);
 
-const Avatar = ({ className, src, style, name, size, color, ...otherProps }) => {
+const Avatar = ({ className, src, style, size, color, children, ...otherProps }) => {
   const shape = useSemanticProp('shape', otherProps, lShape);
 
   const passedProps = useMemo(() => omit(otherProps, [
@@ -31,7 +31,7 @@ const Avatar = ({ className, src, style, name, size, color, ...otherProps }) => 
       }}
       {...passedProps}
     >
-      {(!src && name) && <span className="favt-name">{name}</span>}
+      {!src && <span className="favt-name">{children}</span>}
     </div>
   );
 };
@@ -43,7 +43,6 @@ Avatar.propTypes = {
   shape: PropTypes.string,
   circle: PropTypes.bool,
   square: PropTypes.bool,
-  name: PropTypes.string,
   size: PropTypes.string,
   color: PropTypes.string,
 };
