@@ -17,7 +17,7 @@ const Checkbox = React.forwardRef(({ className, style, size, ...otherProps }, re
         ref={ref}
         {...otherProps}
       />
-      <span className="fcbox-mark" />
+      <div className="fcbox-mark" />
     </span>
   );
 });

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-const Group = ({ children, value, onChange, ...otherProps }) => {
+const RadioGroup = ({ children, value, onChange, ...otherProps }) => {
   return (
     <React.Fragment>
       {React.Children.map(children, elm => {
@@ -16,30 +16,21 @@ const Group = ({ children, value, onChange, ...otherProps }) => {
   );
 };
 
-Group.useRadioGroup = (defaultValue) => {
+RadioGroup.useRadioGroup = (defaultValue) => {
   const [value, setValue] = useState(defaultValue);
   const onChange = useCallback((val) => setValue(val), [setValue]);
-  return [
-    {
-      value,
-      onChange,
-    },
-    {
-      value,
-      setValue,
-      onChange,
-    },
-  ]
+
+  return [{ value, onChange }, { setValue }];
 };
 
-Group.displayName = 'Radio.Group';
-Group.propTypes = {
+RadioGroup.displayName = 'Radio.Group';
+RadioGroup.propTypes = {
   children: PropTypes.any,
   value: PropTypes.any,
   onChange: PropTypes.func,
 };
-Group.defaultProps = {
+RadioGroup.defaultProps = {
   onChange: f => f,
 }
 
-export default Group;
+export default RadioGroup;
