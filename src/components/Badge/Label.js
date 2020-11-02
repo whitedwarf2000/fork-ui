@@ -6,15 +6,11 @@ const Label = ({
   className,
   color,
   label,
-  size,
   ...otherProps
 }) => {
   return (
     <sub
-      style={{
-        backgroundColor: color,
-        fontSize: size,
-      }}
+      style={{ backgroundColor: color }}
       className={cn('fbadge-ui fbadge-label', className)}
       {...otherProps}
     >

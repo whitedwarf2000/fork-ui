@@ -5,25 +5,22 @@ import PropTypes from 'prop-types';
 const Counter = ({
   className,
   count,
-  overflowCount,
+  overflow,
   color,
-  size,
+  renderOverflow,
   ...otherProps
 }) => {
   const displayCount = useMemo(() => {
-    if (count > overflowCount) {
-      return `${overflowCount} +`;
+    if (count > overflow) {
+      return renderOverflow(overflow);
     }
 
     return count;
-  } ,[count, overflowCount]);
+  } ,[count, overflow, renderOverflow]);
 
   return (
     <sub
-      style={{
-        backgroundColor: color,
-        fontSize: size,
-      }}
+      style={{ backgroundColor: color }}
       className={cn('fbadge-ui fbadge-counter', className)}
       {...otherProps}
     >
@@ -37,11 +34,13 @@ Counter.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   count: PropTypes.number.isRequired,
-  overflowCount: PropTypes.number,
+  overflow: PropTypes.number,
+  renderOverflow: PropTypes.func,
 };
 
 Counter.defaultProps = {
-  overflowCount: Infinity,
+  overflow: Infinity,
+  renderOverflow: overflow => `${overflow}+`,
 };
 
 export default Counter;

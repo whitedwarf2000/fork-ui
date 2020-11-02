@@ -5,15 +5,11 @@ import PropTypes from 'prop-types';
 const Dot = ({
   className,
   color,
-  size,
   ...otherProps
 }) => {
   return (
     <sub
-      style={{
-        backgroundColor: color,
-        fontSize: size,
-      }}
+      style={{ backgroundColor: color }}
       className={cn('fbadge-ui fbadge-dot', className)}
       {...otherProps}
     />

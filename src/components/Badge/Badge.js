@@ -1,11 +1,10 @@
-import React, { useMemo, useRef, useLayoutEffect } from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Counter from './Counter';
 import Dot from './Dot';
 import Label from './Label';
-import Icon from './Icon';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 import { makePlacements } from '../placements';
@@ -13,7 +12,7 @@ import { makePlacements } from '../placements';
 const mPlacements = makePlacements('fbadge');
 const lPlacements = Object.keys(mPlacements);
 
-const BaseBadge = ({
+const PureBadge = ({
   className,
   children,
   badge,
@@ -44,108 +43,80 @@ const BaseBadge = ({
   );
 };
 
+PureBadge.displayName = 'Badge';
 
-
-BaseBadge.displayName = 'Badge';
-
-BaseBadge.propTypes = {
+PureBadge.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   overlap: PropTypes.bool,
   placement: PropTypes.string,
 };
 
-BaseBadge.defaultProps = {};
+PureBadge.defaultProps = {};
 
 const Badge = f => f;
+Badge.PureBadge = PureBadge;
+
 Badge.Counter = ({
   children,
   count,
-  overflowCount,
+  overflow,
   color,
-  size,
+  renderOverflow,
   ...otherProps
 }) => {
   return (
-    <BaseBadge
+    <PureBadge
       badge={(
         <Counter
           count={count}
-          overflowCount={overflowCount}
+          overflow={overflow}
+          renderOverflow={renderOverflow}
           color={color}
-          size={size}
         />
       )}
       {...otherProps}
     >
       {children}
-    </BaseBadge>
+    </PureBadge>
   );
 };
 Badge.Dot = ({
   children,
   color,
-  size,
   ...otherProps
 }) => {
   return (
-    <BaseBadge
+    <PureBadge
       badge={(
-        <Dot
-          color={color}
-          size={size}
-        />
+        <Dot color={color} />
       )}
       {...otherProps}
     >
       {children}
-    </BaseBadge>
+    </PureBadge>
   );
 };
 Badge.Label = ({
   children,
   label,
   color,
-  size,
   ...otherProps
 }) => {
   return (
-    <BaseBadge
+    <PureBadge
       badge={(
         <Label
           color={color}
-          size={size}
           label={label}
         />
       )}
       {...otherProps}
     >
       {children}
-    </BaseBadge>
-  );
-};
-Badge.Icon = ({
-  children,
-  icon,
-  color,
-  size,
-  ...otherProps
-}) => {
-  return (
-    <BaseBadge
-      badge={(
-        <Icon
-          color={color}
-          size={size}
-          icon={icon}
-        />
-      )}
-      {...otherProps}
-    >
-      {children}
-    </BaseBadge>
+    </PureBadge>
   );
 };
 
 export default Badge;
-export { BaseBadge };
+export { PureBadge };

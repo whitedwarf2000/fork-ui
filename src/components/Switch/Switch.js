@@ -34,18 +34,7 @@ Switch.useSwitch = (defaultChecked) => {
   const onChange = useCallback(e => setChecked(e.target.checked), [setChecked]);
   const toggle = useCallback(() => setChecked(val => !val), [setChecked]);
 
-  return [
-    {
-      checked,
-      onChange,
-    },
-    {
-      checked,
-      setChecked,
-      onChange,
-      toggle,
-    }
-  ]
+  return [{ checked, onChange }, { setChecked, toggle }];
 };
 
 Switch.displayName = 'Switch';

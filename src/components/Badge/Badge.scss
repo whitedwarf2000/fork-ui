@@ -1,6 +1,5 @@
 @import './Dot.scss';
 @import './Label.scss';
-@import './Icon.scss';
 @import './Counter.scss';
 
 .fbadge {
@@ -9,14 +8,10 @@
 }
 
 .fbadge-ui {
-  font-size: 0.75rem;
   position: absolute;
-  height: 2.25em;
-  min-width: 2.25em;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: sans-serif;
 }
 
 .fbadge-tr .fbadge-ui,

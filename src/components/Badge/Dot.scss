@@ -1,10 +1,7 @@
 .fbadge-ui.fbadge-dot {
-  height: 1.25em;
-  width: 1.25em;
-  min-width: 0;
-  padding: 0;
-  background: var(--red--500);
+  height: 1.65em;
+  width: 1.65em;
+  background-color: var(--red);
   border: 2px solid var(--bg);
-  color: #fff;
-  border-radius: 100rem;
+  border-radius: 999px;
 }
