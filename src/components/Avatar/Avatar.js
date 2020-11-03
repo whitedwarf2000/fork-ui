@@ -27,7 +27,7 @@ const Avatar = ({ className, src, style, size, color, children, ...otherProps })
         ...style,
         fontSize: size,
         color,
-        backgroundImage: `url(${src})`,
+        backgroundImage: src ? `url(${src})` : null,
       }}
       {...passedProps}
     >
