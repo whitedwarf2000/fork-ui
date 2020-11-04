@@ -1,6 +1,6 @@
 @import '../../style/vars.scss';
 
-@keyframes flow {
+@keyframes buble {
   from {
     opacity: 1;
     transform: scale(1.25);
@@ -34,37 +34,45 @@
   width: 1em;
   height: 1em;
   background-color: currentColor;
-  border-radius: 100rem;
+  border-radius: 999px;
 }
 
 .floader-dots-buble .floader-dot {
-  animation: flow .4s ease infinite alternate;
+  animation-name: buble;
+  animation-duration: .4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-.floader-dots-buble > .floader-dot:nth-child(1) {
+.floader-dots-buble .floader-dot-1 {
   animation-delay: 0s;
 }
 
-.floader-dots-buble > .floader-dot:nth-child(2) {
+.floader-dots-buble .floader-dot-2 {
   animation-delay: .1s;
 }
 
-.floader-dots-buble > .floader-dot:nth-child(3) {
+.floader-dots-buble .floader-dot-3 {
   animation-delay: .2s;
 }
 
 .floader-dots-wave .floader-dot {
   animation: wave 1s ease-out infinite;
+  animation-name: wave;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
 }
 
-.floader-dots-wave > .floader-dot:nth-child(1) {
+.floader-dots-wave .floader-dot-1 {
   animation-delay: 0s;
 }
 
-.floader-dots-wave > .floader-dot:nth-child(2) {
+.floader-dots-wave .floader-dot-2 {
   animation-delay: -0.8s;
 }
 
-.floader-dots-wave > .floader-dot:nth-child(3) {
+.floader-dots-wave .floader-dot-3 {
   animation-delay: -0.6s;
 }

@@ -1,12 +1,9 @@
 import Dots from './Dots';
 import Spinner from './Spinner';
 
-export {
-  Dots,
-  Spinner,
-};
+const Loader = f => f;
 
-export default {
-  Dots,
-  Spinner,
-};
+Loader.Dots = Dots;
+Loader.Spinner = Spinner;
+
+export default Loader;
