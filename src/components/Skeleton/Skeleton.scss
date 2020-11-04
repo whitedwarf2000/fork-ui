@@ -1,31 +1,31 @@
-$skeleton-loading--0: rgba(0, 0, 0, 0.1);
-$skeleton-loading--100: rgba(0, 0, 0, 0.2);
-
 @keyframes skeleton-loading {
   0% {
-    background-color: $skeleton-loading--0;
+    background-color: var(--secondary-bg);
   }
   100% {
-    background-color: $skeleton-loading--100;
+    background-color: var(--bg);
   }
 }
 
 .fskele {
-  background-color: $skeleton-loading--0;
-  animation: skeleton-loading .8s linear infinite alternate;
+  background-color: var(--secondary-bg);
+}
+
+.fskele-animated {
+  animation: skeleton-loading 2s linear infinite alternate;
 }
 
 .fskele-circle {
   height: 2.5em !important;
   width: 2.5em !important;
-  border-radius: 100rem;
+  border-radius: 999px;
   margin-bottom: 0.5rem;
 }
 
 .fskele-rect,
 .fskele-p {
   width: 100%;
-  border-radius: 0.5em;
+  border-radius: 0.25em;
   margin-bottom: 0.5rem;
 }
 

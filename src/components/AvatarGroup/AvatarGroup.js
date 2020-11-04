@@ -15,8 +15,6 @@ AvatarGroup.displayName = 'AvatarGroup';
 AvatarGroup.propTypes = {
   className: PropTypes.string,
 };
-AvatarGroup.defaultProps = {
-  overflow: Infinity,
-};
+AvatarGroup.defaultProps = {};
 
 export default AvatarGroup;

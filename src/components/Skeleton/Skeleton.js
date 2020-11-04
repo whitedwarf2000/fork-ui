@@ -12,7 +12,7 @@ const mShape = Object.freeze({
 
 const lShape = Object.keys(mShape);
 
-const Skeleton = ({ className, w, h, style, size, ...otherProps }) => {
+const Skeleton = ({ className, w, h, style, size, animated, ...otherProps }) => {
   const shape = useSemanticProp('shape', otherProps, lShape);
   const passedProps = useMemo(() => omit(otherProps, [...lShape, 'shape']), [otherProps]);
 
@@ -24,7 +24,15 @@ const Skeleton = ({ className, w, h, style, size, ...otherProps }) => {
         fontSize: size,
         ...style
       }}
-      className={cn('fskele', mShape[shape], className)}
+      className={
+        cn(
+          'fskele',
+          {
+            'fskele-animated': animated,
+          },
+          mShape[shape],
+          className,
+      )}
       {...passedProps}
     />
   );
@@ -41,7 +49,10 @@ Skeleton.propTypes = {
   h: PropTypes.string,
   size: PropTypes.string,
   style: PropTypes.object,
+  animated: PropTypes.bool,
 };
-Skeleton.defaultProps = {};
+Skeleton.defaultProps = {
+  animated: true,
+};
 
 export default Skeleton;
