@@ -1,18 +1,16 @@
 import { useState, useCallback } from 'react'
 
-const useTabs = function(defaultValue) {
-  const [value, setValue] = useState(defaultValue);
-  const onChange = useCallback(key => setValue(key), [setValue]);
+const useTabs = function(defaultProps) {
+  const [currentTab, setCurrentTab] = useState(defaultProps.currentTab);
+  const onChange = useCallback(val => setCurrentTab(val), [setCurrentTab]);
 
   return [
     {
-      value,
+      currentTab,
       onChange,
     },
     {
-      value,
-      setValue,
-      onChange,
+      setCurrentTab,
     },
   ];
 };

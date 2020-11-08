@@ -409,6 +409,42 @@ export const ArrowBarUp = enhancerIcon('arrow-bar-up', (props) => (
 </svg>
 ));
 
+export const ArrowBottomBar = enhancerIcon('arrow-bottom-bar', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="12" y1="3" x2="12" y2="21" />
+  <path d="M9 18l3 3l3 -3" />
+  <line x1="9" y1="3" x2="15" y2="3" />
+</svg>
+));
+
+export const ArrowBottomCircle = enhancerIcon('arrow-bottom-circle', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="12" y1="7" x2="12" y2="21" />
+  <path d="M9 18l3 3l3 -3" />
+  <circle cx="12" cy="5" r="2" />
+</svg>
+));
+
+export const ArrowBottomSquare = enhancerIcon('arrow-bottom-square', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="12" y1="7" x2="12" y2="21" />
+  <path d="M9 18l3 3l3 -3" />
+  <path d="M14 3v4h-4v-4z" />
+</svg>
+));
+
+export const ArrowBottomTail = enhancerIcon('arrow-bottom-tail', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="12" y1="6" x2="12" y2="21" />
+  <path d="M9 18l3 3l3 -3" />
+  <path d="M9 3l3 3l3 -3" />
+</svg>
+));
+
 export const ArrowDownCircle = enhancerIcon('arrow-down-circle', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -476,13 +512,39 @@ export const ArrowForward = enhancerIcon('arrow-forward', (props) => (
 </svg>
 ));
 
+export const ArrowLeftBar = enhancerIcon('arrow-left-bar', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="21" y1="12" x2="3" y2="12" />
+  <path d="M6 9l-3 3l3 3" />
+  <line x1="21" y1="9" x2="21" y2="15" />
+</svg>
+));
+
 export const ArrowLeftCircle = enhancerIcon('arrow-left-circle', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <circle cx="12" cy="12" r="9" />
-  <line x1="8" y1="12" x2="16" y2="12" />
-  <line x1="8" y1="12" x2="12" y2="16" />
-  <line x1="8" y1="12" x2="12" y2="8" />
+  <line x1="17" y1="12" x2="3" y2="12" />
+  <path d="M6 9l-3 3l3 3" />
+  <circle cx="19" cy="12" r="2" />
+</svg>
+));
+
+export const ArrowLeftSquare = enhancerIcon('arrow-left-square', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="17" y1="12" x2="3" y2="12" />
+  <path d="M6 9l-3 3l3 3" />
+  <path d="M21 14h-4v-4h4z" />
+</svg>
+));
+
+export const ArrowLeftTail = enhancerIcon('arrow-left-tail', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="18" y1="12" x2="3" y2="12" />
+  <path d="M6 9l-3 3l3 3" />
+  <path d="M21 9l-3 3l3 3" />
 </svg>
 ));
 
@@ -492,6 +554,22 @@ export const ArrowLeft = enhancerIcon('arrow-left', (props) => (
   <line x1="5" y1="12" x2="19" y2="12" />
   <line x1="5" y1="12" x2="11" y2="18" />
   <line x1="5" y1="12" x2="11" y2="6" />
+</svg>
+));
+
+export const ArrowLoopLeft = enhancerIcon('arrow-loop-left', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M13 21v-13a4 4 0 1 1 4 4h-13" />
+  <path d="M7 15l-3 -3l3 -3" />
+</svg>
+));
+
+export const ArrowLoopRight = enhancerIcon('arrow-loop-right', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 21v-13a4 4 0 1 0 -4 4h13" />
+  <path d="M18 15l3 -3l-3 -3" />
 </svg>
 ));
 
@@ -551,13 +629,39 @@ export const ArrowRampRight = enhancerIcon('arrow-ramp-right', (props) => (
 </svg>
 ));
 
+export const ArrowRightBar = enhancerIcon('arrow-right-bar', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M18 15l3 -3l-3 -3" />
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="9" x2="3" y2="15" />
+</svg>
+));
+
 export const ArrowRightCircle = enhancerIcon('arrow-right-circle', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <circle cx="12" cy="12" r="9" />
-  <line x1="16" y1="12" x2="8" y2="12" />
-  <line x1="16" y1="12" x2="12" y2="16" />
-  <line x1="16" y1="12" x2="12" y2="8" />
+  <path d="M18 15l3 -3l-3 -3" />
+  <circle cx="5" cy="12" r="2" />
+  <line x1="7" y1="12" x2="21" y2="12" />
+</svg>
+));
+
+export const ArrowRightSquare = enhancerIcon('arrow-right-square', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="7" y1="12" x2="21" y2="12" />
+  <path d="M18 15l3 -3l-3 -3" />
+  <path d="M3 10h4v4h-4z" />
+</svg>
+));
+
+export const ArrowRightTail = enhancerIcon('arrow-right-tail', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M18 15l3 -3l-3 -3" />
+  <path d="M3 15l3 -3l-3 -3" />
+  <line x1="6" y1="12" x2="21" y2="12" />
 </svg>
 ));
 
@@ -567,6 +671,42 @@ export const ArrowRight = enhancerIcon('arrow-right', (props) => (
   <line x1="5" y1="12" x2="19" y2="12" />
   <line x1="13" y1="18" x2="19" y2="12" />
   <line x1="13" y1="6" x2="19" y2="12" />
+</svg>
+));
+
+export const ArrowTopBar = enhancerIcon('arrow-top-bar', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="12" y1="21" x2="12" y2="3" />
+  <path d="M15 6l-3 -3l-3 3" />
+  <line x1="9" y1="21" x2="15" y2="21" />
+</svg>
+));
+
+export const ArrowTopCircle = enhancerIcon('arrow-top-circle', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="12" y1="17" x2="12" y2="3" />
+  <path d="M15 6l-3 -3l-3 3" />
+  <circle cx="12" cy="19" r="2" />
+</svg>
+));
+
+export const ArrowTopSquare = enhancerIcon('arrow-top-square', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="12" y1="17" x2="12" y2="3" />
+  <path d="M15 6l-3 -3l-3 3" />
+  <path d="M10 21v-4h4v4z" />
+</svg>
+));
+
+export const ArrowTopTail = enhancerIcon('arrow-top-tail', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="12" y1="18" x2="12" y2="3" />
+  <path d="M15 6l-3 -3l-3 3" />
+  <path d="M15 21l-3 -3l-3 3" />
 </svg>
 ));
 
@@ -623,6 +763,38 @@ export const ArrowUp = enhancerIcon('arrow-up', (props) => (
 </svg>
 ));
 
+export const ArrowWaveLeftDown = enhancerIcon('arrow-wave-left-down', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 13.998h-4v-4" />
+  <path d="M21 11.998c-.887 1.284 -2.48 2.033 -4 2c-1.52 .033 -3.113 -.716 -4 -2s-2.48 -2.033 -4 -2c-1.52 -.033 -3 1 -4 2l-2 2" />
+</svg>
+));
+
+export const ArrowWaveLeftUp = enhancerIcon('arrow-wave-left-up', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 9.996h-4v4" />
+  <path d="M21 11.996c-.887 -1.285 -2.48 -2.033 -4 -2c-1.52 -.033 -3.113 .715 -4 2c-.887 1.284 -2.48 2.033 -4 2c-1.52 .033 -3 -1 -4 -2l-2 -2" />
+</svg>
+));
+
+export const ArrowWaveRightDown = enhancerIcon('arrow-wave-right-down', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M17 13.998h4v-4" />
+  <path d="M3 11.998c.887 1.284 2.48 2.033 4 2c1.52 .033 3.113 -.716 4 -2s2.48 -2.033 4 -2c1.52 -.033 3 1 4 2l2 2" />
+</svg>
+));
+
+export const ArrowWaveRightUp = enhancerIcon('arrow-wave-right-up', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M17 10h4v4" />
+  <path d="M3 12c.887 -1.284 2.48 -2.033 4 -2c1.52 -.033 3.113 .716 4 2s2.48 2.033 4 2c1.52 .033 3 -1 4 -2l2 -2" />
+</svg>
+));
+
 export const ArrowsDiagonal2 = enhancerIcon('arrows-diagonal-2', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -643,12 +815,70 @@ export const ArrowsDiagonal = enhancerIcon('arrows-diagonal', (props) => (
 </svg>
 ));
 
+export const ArrowsDownUp = enhancerIcon('arrows-down-up', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="17" y1="3" x2="17" y2="21" />
+  <path d="M10 18l-3 3l-3 -3" />
+  <line x1="7" y1="21" x2="7" y2="3" />
+  <path d="M20 6l-3 -3l-3 3" />
+</svg>
+));
+
+export const ArrowsDown = enhancerIcon('arrows-down', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="7" y1="21" x2="7" y2="3" />
+  <path d="M20 18l-3 3l-3 -3" />
+  <path d="M4 18l3 3l3 -3" />
+  <line x1="17" y1="21" x2="17" y2="3" />
+</svg>
+));
+
 export const ArrowsHorizontal = enhancerIcon('arrows-horizontal', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <polyline points="7 8 3 12 7 16" />
   <polyline points="17 8 21 12 17 16" />
   <line x1="3" y1="12" x2="21" y2="12" />
+</svg>
+));
+
+export const ArrowsJoin2 = enhancerIcon('arrows-join-2', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 7h1.948c1.913 0 3.705 .933 4.802 2.5a5.861 5.861 0 0 0 4.802 2.5h6.448" />
+  <path d="M3 17h1.95a5.854 5.854 0 0 0 4.798 -2.5a5.854 5.854 0 0 1 4.798 -2.5h5.454" />
+  <path d="M18 15l3 -3l-3 -3" />
+</svg>
+));
+
+export const ArrowsJoin = enhancerIcon('arrows-join', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 7h5l3.5 5h9.5" />
+  <path d="M3 17h5l3.495 -5" />
+  <path d="M18 15l3 -3l-3 -3" />
+</svg>
+));
+
+export const ArrowsLeftRight = enhancerIcon('arrows-left-right', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="21" y1="17" x2="3" y2="17" />
+  <path d="M6 10l-3 -3l3 -3" />
+  <line x1="3" y1="7" x2="21" y2="7" />
+  <path d="M18 20l3 -3l-3 -3" />
+</svg>
+));
+
+export const ArrowsLeft = enhancerIcon('arrows-left', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="3" y1="7" x2="21" y2="7" />
+  <path d="M6 20l-3 -3l3 -3" />
+  <path d="M6 4l-3 3l3 3" />
+  <line x1="3" y1="17" x2="21" y2="17" />
 </svg>
 ));
 
@@ -680,11 +910,71 @@ export const ArrowsMinimize = enhancerIcon('arrows-minimize', (props) => (
 </svg>
 ));
 
+export const ArrowsRightLeft = enhancerIcon('arrows-right-left', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="21" y1="7" x2="3" y2="7" />
+  <path d="M18 10l3 -3l-3 -3" />
+  <path d="M6 20l-3 -3l3 -3" />
+  <line x1="3" y1="17" x2="21" y2="17" />
+</svg>
+));
+
+export const ArrowsRight = enhancerIcon('arrows-right', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="21" y1="17" x2="3" y2="17" />
+  <path d="M18 4l3 3l-3 3" />
+  <path d="M18 20l3 -3l-3 -3" />
+  <line x1="21" y1="7" x2="3" y2="7" />
+</svg>
+));
+
 export const ArrowsSort = enhancerIcon('arrows-sort', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M3 9l4-4l4 4m-4 -4v14" />
   <path d="M21 15l-4 4l-4-4m4 4v-14" />
+</svg>
+));
+
+export const ArrowsSplit2 = enhancerIcon('arrows-split-2', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M21 17h-5.397a5 5 0 0 1 -4.096 -2.133l-.514 -.734a5 5 0 0 0 -4.096 -2.133h-3.897" />
+  <path d="M21 7h-5.395a5 5 0 0 0 -4.098 2.135l-.51 .73a5 5 0 0 1 -4.097 2.135h-3.9" />
+  <path d="M18 10l3 -3l-3 -3" />
+  <path d="M18 20l3 -3l-3 -3" />
+</svg>
+));
+
+export const ArrowsSplit = enhancerIcon('arrows-split', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M21 17h-8l-3.5 -5h-6.5" />
+  <path d="M21 7h-8l-3.495 5" />
+  <path d="M18 10l3 -3l-3 -3" />
+  <path d="M18 20l3 -3l-3 -3" />
+</svg>
+));
+
+export const ArrowsUpDown = enhancerIcon('arrows-up-down', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="7" y1="3" x2="7" y2="21" />
+  <path d="M10 6l-3 -3l-3 3" />
+  <path d="M20 18l-3 3l-3 -3" />
+  <line x1="17" y1="21" x2="17" y2="3" />
+</svg>
+));
+
+export const ArrowsUp = enhancerIcon('arrows-up', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="17" y1="3" x2="17" y2="21" />
+  <path d="M4 6l3 -3l3 3" />
+  <path d="M20 6l-3 -3l-3 3" />
+  <line x1="7" y1="3" x2="7" y2="21" />
 </svg>
 ));
 
@@ -1023,6 +1313,13 @@ export const Bolt = enhancerIcon('bolt', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <polyline points="13 3 13 10 19 10 11 21 11 14 5 14 13 3" />
+</svg>
+));
+
+export const Bone = enhancerIcon('bone', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 3a3 3 0 0 1 3 3a3 3 0 1 1 -2.12 5.122l-4.758 4.758a3 3 0 1 1 -5.117 2.297l-.005 -.177l-.176 -.005a3 3 0 1 1 2.298 -5.115l4.758 -4.758a3 3 0 0 1 2.12 -5.122z" />
 </svg>
 ));
 
@@ -4242,16 +4539,6 @@ export const GridDots = enhancerIcon('grid-dots', (props) => (
 </svg>
 ));
 
-export const Grid = enhancerIcon('grid', (props) => (
-<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <rect x="4" y="4" width="6" height="6" rx="1" />
-  <rect x="14" y="4" width="6" height="6" rx="1" />
-  <rect x="4" y="14" width="6" height="6" rx="1" />
-  <rect x="14" y="14" width="6" height="6" rx="1" />
-</svg>
-));
-
 export const GripHorizontal = enhancerIcon('grip-horizontal', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -4774,6 +5061,26 @@ export const LayoutDistributeVertical = enhancerIcon('layout-distribute-vertical
   <line x1="4" y1="4" x2="4" y2="20" />
   <line x1="20" y1="4" x2="20" y2="20" />
   <rect x="9" y="6" width="6" height="12" rx="2" />
+</svg>
+));
+
+export const LayoutGridAdd = enhancerIcon('layout-grid-add', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="6" height="6" rx="1" />
+  <rect x="14" y="4" width="6" height="6" rx="1" />
+  <rect x="4" y="14" width="6" height="6" rx="1" />
+  <rect x="14" y="14" width="6" height="6" rx="1" />
+</svg>
+));
+
+export const LayoutGrid = enhancerIcon('layout-grid', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="6" height="6" rx="1" />
+  <rect x="14" y="4" width="6" height="6" rx="1" />
+  <rect x="4" y="14" width="6" height="6" rx="1" />
+  <rect x="14" y="14" width="6" height="6" rx="1" />
 </svg>
 ));
 
@@ -6119,6 +6426,16 @@ export const Pinned = enhancerIcon('pinned', (props) => (
 </svg>
 ));
 
+export const Pizza = enhancerIcon('pizza', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 21.5c-3.04 0 -5.952 -.714 -8.5 -1.983l8.5 -16.517l8.5 16.517a19.09 19.09 0 0 1 -8.5 1.983z" />
+  <path d="M5.2 15.772a14.939 14.939 0 0 0 6.995 1.728a14.944 14.944 0 0 0 6.638 -1.545" />
+  <line x1="13" y1="11.01" x2="13" y2="11" />
+  <line x1="11" y1="14" x2="11" y2="13.99" />
+</svg>
+));
+
 export const PlaneArrival = enhancerIcon('plane-arrival', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -6352,6 +6669,25 @@ export const Radioactive = enhancerIcon('radioactive', (props) => (
   <path d="M13.5 14.6l3 5.19a9 9 0 0 0 4.5 -7.79h-6a3 3 0 0 1 -1.5 2.6" />
   <path d="M13.5 9.4l3 -5.19a9 9 0 0 0 -9 0l3 5.19a3 3 0 0 1 3 0" />
   <path d="M10.5 14.6l-3 5.19a9 9 0 0 1 -4.5 -7.79h6a3 3 0 0 0 1.5 2.6" />
+</svg>
+));
+
+export const Rainbow = enhancerIcon('rainbow', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 17c0 -5.523 -4.477 -10 -10 -10s-10 4.477 -10 10" />
+  <path d="M18 17a6 6 0 1 0 -12 0" />
+  <path d="M14 17a2 2 0 1 0 -4 0" />
+</svg>
+));
+
+export const ReceiptTax = enhancerIcon('receipt-tax', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="14" x2="15" y2="8" />
+  <circle cx="9.5" cy="8.5" r=".5" fill="currentColor" />
+  <circle cx="14.5" cy="13.5" r=".5" fill="currentColor" />
+  <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2" />
 </svg>
 ));
 
@@ -7190,7 +7526,7 @@ export const StepOut = enhancerIcon('step-out', (props) => (
 </svg>
 ));
 
-export const Sthetoscope = enhancerIcon('sthetoscope', (props) => (
+export const Stethoscope = enhancerIcon('stethoscope', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M6 4h-1a2 2 0 0 0 -2 2v3.5h0a5.5 5.5 0 0 0 11 0v-3.5a2 2 0 0 0 -2 -2h-1" />
@@ -7305,6 +7641,26 @@ export const Swimming = enhancerIcon('swimming', (props) => (
 </svg>
 ));
 
+export const Switch2 = enhancerIcon('switch-2', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 17h5l1.67 -2.386m3.66 -5.227l1.67 -2.387h6" />
+  <path d="M18 4l3 3l-3 3" />
+  <path d="M3 7h5l7 10h6" />
+  <path d="M18 20l3 -3l-3 -3" />
+</svg>
+));
+
+export const Switch3 = enhancerIcon('switch-3', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 17h2.397a5 5 0 0 0 4.096 -2.133l.177 -.253m3.66 -5.227l.177 -.254a5 5 0 0 1 4.096 -2.133h3.397" />
+  <path d="M18 4l3 3l-3 3" />
+  <path d="M3 7h2.397a5 5 0 0 1 4.096 2.133l4.014 5.734a5 5 0 0 0 4.096 2.133h3.397" />
+  <path d="M18 20l3 -3l-3 -3" />
+</svg>
+));
+
 export const SwitchHorizontal = enhancerIcon('switch-horizontal', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -7413,16 +7769,6 @@ export const Target = enhancerIcon('target', (props) => (
   <circle cx="12" cy="12" r="1" />
   <circle cx="12" cy="12" r="5" />
   <circle cx="12" cy="12" r="9" />
-</svg>
-));
-
-export const Tax = enhancerIcon('tax', (props) => (
-<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <line x1="9" y1="14" x2="15" y2="8" />
-  <circle cx="9.5" cy="8.5" r=".5" fill="currentColor" />
-  <circle cx="14.5" cy="13.5" r=".5" fill="currentColor" />
-  <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2" />
 </svg>
 ));
 
@@ -7714,11 +8060,43 @@ export const Trees = enhancerIcon('trees', (props) => (
 </svg>
 ));
 
+export const TrendingDown2 = enhancerIcon('trending-down-2', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 6h5l7 10h6" />
+  <path d="M18 19l3 -3l-3 -3" />
+</svg>
+));
+
+export const TrendingDown3 = enhancerIcon('trending-down-3', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 6h2.397a5 5 0 0 1 4.096 2.133l4.014 5.734a5 5 0 0 0 4.096 2.133h3.397" />
+  <path d="M18 19l3 -3l-3 -3" />
+</svg>
+));
+
 export const TrendingDown = enhancerIcon('trending-down', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <polyline points="3 7 9 13 13 9 21 17" />
   <polyline points="21 10 21 17 14 17" />
+</svg>
+));
+
+export const TrendingUp2 = enhancerIcon('trending-up-2', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M18 5l3 3l-3 3" />
+  <path d="M3 18h5l7 -10h6" />
+</svg>
+));
+
+export const TrendingUp3 = enhancerIcon('trending-up-3', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M18 5l3 3l-3 3" />
+  <path d="M3 18h2.397a5 5 0 0 0 4.096 -2.133l4.014 -5.734a5 5 0 0 1 4.096 -2.133h3.397" />
 </svg>
 ));
 

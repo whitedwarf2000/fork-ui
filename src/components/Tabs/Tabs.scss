@@ -1,47 +1,7 @@
-@import './Item.scss';
+@import './Tab.scss';
 
 .ftabs {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
-  width: 100%;
-}
-
-.ftabs-nav {
-  display: flex;
-  align-items: center;
-}
-
-.ftabs-nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.5em;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
-  outline: 0 !important;
-  outline-style: none;
-  user-select: none;
-  touch-action: manipulation;
-  border-bottom: 0.0625em solid transparent;
-  cursor: pointer;
-
-  &:disabled {
-    cursor: not-allowed !important;
-    color: var(--text-color--disabled) !important;
-  }
-}
-
-.ftabs-nav-item-active {
-  color: var(--primary);
-  font-weight: 600;
-  border-bottom-color: currentColor;
-}
-
-.ftabs-nav-item-rest {
-  flex-grow: 1;
-}
-
-.ftabs-contents {
-  margin-top: 2px;
 }

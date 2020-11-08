@@ -2,13 +2,12 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Memo from '../Memo';
-
-const Item = ({ className, active, fresh, ...otherProps }) => {
+const Item = ({ className, active, ...otherProps }) => {
   return (
-    <Memo for={active} fresh={fresh}>
-      <div className={cn('ftab-content', { 'ftab-content-active': active }, className)} {...otherProps} />
-    </Memo>
+    <div
+      className={cn('ftabs-tab', { 'ftabs-tab-active': active }, className)}
+      {...otherProps}
+    />
   );
 };
 

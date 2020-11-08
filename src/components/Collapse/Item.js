@@ -28,7 +28,7 @@ const Item = ({ className, title, children, active, fresh, onClick, disabled, ..
       <Animated.Expand isExpanded={active} className="fpanel-content">
         <div className="fpanel-box">
           <div style={{ height: '0.75rem' }} />
-          <Memo for={active} fresh={fresh}>{children}</Memo>
+          <Memo watch={active} fresh={fresh}>{children}</Memo>
           <div style={{ height: '0.75rem' }} />
         </div>
       </Animated.Expand>

@@ -8,7 +8,7 @@ export default class Memo extends React.Component {
       return;
     }
 
-    if (this.props.for) {
+    if (this.props.watch) {
       this.memo = true;
       this.childrenNode = ReactDOM.findDOMNode(this);
     }
@@ -23,7 +23,7 @@ export default class Memo extends React.Component {
       return;
     }
 
-    if (this.props.for) {
+    if (this.props.watch) {
       this.memo = true;
       this.childrenNode = this.childrenNode || ReactDOM.findDOMNode(this);
 
@@ -37,13 +37,13 @@ export default class Memo extends React.Component {
     const { fresh, children } = this.props;
   
     if (fresh) {
-      if (this.props.for) {
+      if (this.props.watch) {
         return children || <div />;
       }
       return <div />;
     }
 
-    if (this.props.for || this.memo) {
+    if (this.props.watch || this.memo) {
       return children || <div />;
     }
 
@@ -53,7 +53,7 @@ export default class Memo extends React.Component {
 
 Memo.displayName = 'Memo';
 Memo.propTypes = {
-  for: PropTypes.bool,
+  watch: PropTypes.bool,
   fresh: PropTypes.bool,
 };
 Memo.defaultProps = {};
