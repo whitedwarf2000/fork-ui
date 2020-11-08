@@ -46,8 +46,6 @@ Avatar.propTypes = {
   size: PropTypes.string,
   color: PropTypes.string,
 };
-Avatar.defaultProps = {
-  name: '',
-};
+Avatar.defaultProps = {};
 
 export default Avatar;

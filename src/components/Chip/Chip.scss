@@ -1,7 +1,7 @@
 .fchip {
   height: 2.275em;
-  padding-left: 0.35em;
-  padding-right: 0.35em;
+  padding-left: 0.125em;
+  padding-right: 0.125em;
   display: flex;
   align-items: center;
   border-radius: var(--border-radius);
@@ -9,30 +9,45 @@
   cursor: pointer;
   user-select: none;
   background-color: var(--secondary-bg);
-}
 
-.fchip-rounded {
-  border-radius: 100em;
-}
-
-.fchip-custom {
   &:hover {
-    opacity: 0.8;
+    background-color: var(--secondary-bg--7);
   }
 }
 
-.fchip-label {
-  padding-left: 0.65em;
-  padding-right: 0.65em;
+.fchip-rounded {
+  border-radius: 999px;
+}
+
+.fchip-avt {
+  font-size: 0.55em;
+
+  .favt-name {
+    font-size: 1.75em;
+  }
+}
+
+.fchip-child {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-top: 0.125em;
 }
 
 .fchip-close {
-  height: 1.5em;
-  width: 1.5em;
+  width: 1.35em;
+  height: 1.35em;
+  border-radius: 999px;
+  // background-color: currentColor;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 100em;
+
+  .ficon {
+    stroke-width: 4;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }

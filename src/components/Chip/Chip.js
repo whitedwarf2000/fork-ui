@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useMemo } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -7,45 +7,34 @@ import { X } from '../icons';
 const Chip = ({
     className,
     rounded,
-    label,
-    icon,
-    avatar,
-    size,
-    textColor,
-    color,
-    style,
+    children,
     closable,
-    onRemove,
-    onClick,
+    avatar,
+    onClose,
+    size,
+    style,
     ...otherProps
   }) => {
-  const closeRef = useRef();
-
-  const _onClick = useCallback((e) => {
-    if (closeRef.current && closeRef.current.contains(e.target)) {
-      return;
-    }
-    return onClick(e);
-  }, [closeRef, closable]);
 
   return (
     <div
       className={cn(
         'fchip',
         {
-          'fchip-custom': color,
           'fchip-rounded': rounded,
         },
         className
       )}
-      style={{ ...style, backgroundColor: color, color: textColor, fontSize: size }}
-      onClick={_onClick}
+      style={{
+        fontSize: size,
+        ...style
+      }}
       {...otherProps}
     >
-      {icon || avatar}
-      <span className="fchip-label">{label}</span>
+      {avatar && <span className="fchip-avt">{avatar}</span>}
+      <span className="fchip-child">{children}</span>
       {closable && (
-        <div ref={closeRef} className="fchip-close" onClick={onRemove}>
+        <div className="fchip-close" onClick={onClose}>
           <X size="0.75em" />
         </div>
       )}
@@ -56,21 +45,17 @@ const Chip = ({
 Chip.displayName = 'Chip';
 Chip.propTypes = {
   className: PropTypes.string,
-  label: PropTypes.any,
   closable: PropTypes.bool,
-  avatar: PropTypes.any,
-  textColor: PropTypes.string,
-  color: PropTypes.string,
   size: PropTypes.string,
   style: PropTypes.object,
-  onRemove: PropTypes.func,
-  onClick: PropTypes.func,
+  onClose: PropTypes.func,
   rounded: PropTypes.bool,
+  avatar: PropTypes.any,
 };
 Chip.defaultProps = {
-  onRemove: f => f,
+  onClose: f => f,
   onClick: f => f,
-  closable: true,
+  closable: false,
 };
 
 export default Chip;
