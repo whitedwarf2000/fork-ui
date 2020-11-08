@@ -1,10 +1,9 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import { ChevronLeft, ChevronRight } from '../icons';
-import usePrivatePagination from './usePrivatePagination';
+import { ChevronRight, ChevronLeft } from '../icons';
 import usePagination from './usePagination';
 
 const loop = (start, end, cb) => {
@@ -15,71 +14,39 @@ const loop = (start, end, cb) => {
   return rs;
 };
 
-const Pagination = ({ className, total, pageSize, max, activePage, onChange, ...otherProps }) => {
-  const {
-    itemCount,
-    startIndex,
-    endIndex,
-    onNext,
-    onPrev,
-  } = usePrivatePagination({ total, pageSize, max, activePage, onChange });
-
-  const onItemClick = useCallback(value =>  onChange(value), [onChange]);
-
+const Pagination = ({ className, ...otherProps }) => {
   return (
-    <div className={cn('fpag', className )} {...otherProps}>
-      <Button
-        className="fpag-prev"
-        disabled={activePage <= 1}
-        onClick={onPrev}
-        circle
-        transparent
-        icon={<ChevronLeft />}
-        style={{
-          marginRight: '0.5rem',
-        }}
-      />
-      {loop(startIndex, endIndex, (pageNumber) => (
-        <Button
-          rounded
-          key={pageNumber}
-          transparent
-          className={cn('fpag-item', { 'fpag-item-active': pageNumber === activePage })}
-          primary={pageNumber === activePage}
-          onClick={() => onItemClick(pageNumber)}
-        >
-          {pageNumber}
-        </Button>
-      ))}
-      <Button
-        className="fpag-next"
-        disabled={activePage >= itemCount}
-        onClick={onNext}
-        circle
-        transparent
-        icon={<ChevronRight />}
-      />
-    </div>
+    <div className={cn('fpag', className )} {...otherProps} />
   );
 };
 
+const Page = ({ className, active, ...otherProps }) => {
+  return (
+    <Button
+      transparent
+      className={cn('fpag-page', { 'fpag-page-active': active }, className)}
+      primary={active}
+      {...otherProps}
+     />
+  );
+};
+
+const Next = props => <Button className="fpag-next" transparent icon={<ChevronRight />} {...props} />
+const Prev = props => <Button className="fpag-prev" transparent icon={<ChevronLeft />} {...props} />
+
+Page.displayName = 'Pagination.Page';
+Next.displayName = 'Pagination.Next';
+Prev.displayName = 'Pagination.Prev';
 Pagination.displayName = 'Pagination';
-Pagination.usePrivatePagination = usePrivatePagination;
+
+Pagination.Page = Page;
+Pagination.Next = Next;
+Pagination.Prev = Prev;
+Pagination.loop = loop;
+
 Pagination.usePagination = usePagination;
 
-Pagination.propTypes = {
-  className: PropTypes.string,
-  total: PropTypes.number,
-  pageSize: PropTypes.number,
-  max: PropTypes.number,
-  onChange: PropTypes.func,
-  activePage: PropTypes.number,
-};
-Pagination.defaultProps = {
-  total: 0,
-  pageSize: 0,
-  max: 5,
-  onChange: f => f,
-};
+Pagination.propTypes = {};
+Pagination.defaultProps = {};
 
 export default Pagination;

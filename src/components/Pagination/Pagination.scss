@@ -4,13 +4,17 @@
   align-items: center;
 }
 
-.fpag > .fpag-item {
-  margin-right: 0.5rem;
-}
-
-.fpag-item,
+.fpag-page,
 .fpag-prev,
 .fpag-next {
   padding-left: 0;
   padding-right: 0;
+}
+
+.fpag-prev {
+  margin-right: 0.15rem;
+}
+
+.fpag-next {
+  margin-left: 0.15rem;
 }
