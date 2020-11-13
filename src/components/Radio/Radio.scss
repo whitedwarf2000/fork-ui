@@ -3,8 +3,8 @@
   position: relative;
   box-sizing: border-box;
   outline: 0 !important;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   color: var(--primary);
 }
 
@@ -24,8 +24,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 999px;
     background-color: currentColor;
   }
