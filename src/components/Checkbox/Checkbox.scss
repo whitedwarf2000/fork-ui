@@ -15,16 +15,23 @@
   width: 100%;
   border: 1px solid #2e3031;
   border-radius: var(--border-radius);
+}
 
-  &::before {
-    position: absolute;
-    content: "\2713";
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    color: #fff;
-  }
+.fcbox-check {
+  display: inline-block;
+  height: 1.35em;
+  width: 1.35em;
+  stroke-width: 3;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: #fff;
 }
 
 .fcbox-input {
@@ -50,7 +57,7 @@
       border-color: currentColor;
       background-color: currentColor;
 
-      &::before {
+      .fcbox-check {
         opacity: 1;
       }
     }
