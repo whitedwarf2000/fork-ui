@@ -3,8 +3,8 @@
   position: relative;
   box-sizing: border-box;
   outline: 0 !important;
-  width: 1.4em;
-  height: 1.4em;
+  width: 20px;
+  height: 20px;
   color: var(--primary);
 }
 
@@ -23,6 +23,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
+    color: #fff;
   }
 }
 
@@ -47,6 +48,7 @@
   &:checked {
     + .fcbox-mark {
       border-color: currentColor;
+      background-color: currentColor;
 
       &::before {
         opacity: 1;

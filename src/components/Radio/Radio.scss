@@ -3,8 +3,8 @@
   position: relative;
   box-sizing: border-box;
   outline: 0 !important;
-  width: 1.4em;
-  height: 1.4em;
+  width: 20px;
+  height: 20px;
   color: var(--primary);
 }
 
@@ -19,11 +19,15 @@
 
   &::before {
     position: absolute;
-    content: "\2688";
+    content: "";
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background-color: currentColor;
   }
 }
 

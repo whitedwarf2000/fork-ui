@@ -2,15 +2,9 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const Radio = React.forwardRef(({ className, style, size, ...otherProps }, ref) => {
+const Radio = React.forwardRef(({ className, ...otherProps }, ref) => {
   return (
-    <span
-      className={cn('fradio', className)}
-      style={{
-        fontSize: size,
-        ...style
-      }}
-    >
+    <span className={cn('fradio', className)}>
       <input
         type="radio"
         className="fradio-input"
@@ -25,8 +19,6 @@ const Radio = React.forwardRef(({ className, style, size, ...otherProps }, ref) 
 Radio.displayName = 'Radio';
 Radio.propTypes = {
   className: PropTypes.string,
-  size: PropTypes.string,
-  style: PropTypes.object,
 };
 Radio.defaultProps = {};
 
