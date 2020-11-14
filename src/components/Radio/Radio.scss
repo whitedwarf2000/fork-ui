@@ -13,21 +13,22 @@
   display: block;
   height: 100%;
   width: 100%;
-  
   border: 1px solid #2e3031;
   border-radius: 999px;
+  transition: border-color 0.25s;
 
   &::before {
     position: absolute;
     content: "";
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
     opacity: 0;
     width: 10px;
     height: 10px;
     border-radius: 999px;
     background-color: currentColor;
+    transition: transform 0.25s, opacity 0.25s;
   }
 }
 
@@ -55,6 +56,7 @@
 
       &::before {
         opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
@@ -71,7 +73,7 @@
   &:checked:disabled,
   &:checked:disabled:hover {
     + .fradio-mark {
-      color: var(--primary--disabled);
+      color: #2e3031;
     }
   }
 }

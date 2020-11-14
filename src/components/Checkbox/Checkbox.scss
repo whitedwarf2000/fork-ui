@@ -14,7 +14,8 @@
   height: 100%;
   width: 100%;
   border: 1px solid #2e3031;
-  border-radius: var(--border-radius);
+  border-radius: 3px;
+  transition: border-color 0.25s;
 }
 
 .fcbox-check {
@@ -29,9 +30,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   opacity: 0;
   color: #fff;
+  transition: transform 0.25s, opacity 0.25s;
 }
 
 .fcbox-input {
@@ -59,6 +61,7 @@
 
       .fcbox-check {
         opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
@@ -75,7 +78,11 @@
   &:checked:disabled,
   &:checked:disabled:hover {
     + .fcbox-mark {
-      color: var(--primary--disabled);
+      color: #2e3031;
+
+      .fcbox-check {
+        color: var(--switch-inner--bg);
+      }
     }
   }
 }
