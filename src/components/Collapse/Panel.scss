@@ -10,8 +10,12 @@
 }
 
 .fpanel-disabled {
-  .fui-panel-title {
+  .fpanel-title {
     cursor: not-allowed !important;
+
+    > * {
+      pointer-events: none;
+    }
   }
 }
 
@@ -27,11 +31,11 @@
 .fpanel-title {
   position: relative;
   height: 3em;
+  outline: 0 !important;
   display: flex;
   align-items: center;
   padding-left: 0.75em;
   padding-right: 0.75em;
-  
   transition: color 0.25s;
   cursor: pointer;
   user-select: none;

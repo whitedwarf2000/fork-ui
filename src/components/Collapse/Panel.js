@@ -7,34 +7,27 @@ import { ChevronDown } from '../icons';
 import Animated from '../Animated';
 import Memo from '../Memo';
 
-const Item = ({ className, title, children, active, fresh, onClick, disabled, ...otherProps }) => {
-  const _onClick = useCallback((e) => {
-    if (disabled) {
-      return;
-    }
-    return onClick(e);
-  }, [disabled]);
-
+const Panel = ({ className, title, children, active, fresh, onClick, disabled, ...otherProps }) => {
   return (
     <div
       {...otherProps}
-      className={cn('fpanel', { 'fpanel-active': active, 'fpanel-inactive': !active, 'fpanel-disabled': disabled }, className)}
+      className={cn('fpanel', { 'fpanel-active': active, 'fpanel-disabled': disabled }, className)}
     >
-      <div className="fpanel-title" onClick={_onClick}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          {title}
-        </div>
+      <button className="fpanel-title" onClick={onClick} disabled={disabled}>
+        {title}
         <Button
           className="fpanel-icon"
           circle
           ghost
           icon={<ChevronDown />}
         />
-      </div>
+      </button>
       <Animated.Expand isExpanded={active} className="fpanel-content">
         <div className="fpanel-box">
           <div style={{ height: '0.75rem' }} />
-          <Memo watch={active} fresh={fresh}>{children}</Memo>
+          <Memo watch={active} fresh={fresh}>
+            {children}
+          </Memo>
           <div style={{ height: '0.75rem' }} />
         </div>
       </Animated.Expand>
@@ -42,8 +35,8 @@ const Item = ({ className, title, children, active, fresh, onClick, disabled, ..
   );
 };
 
-Item.displayName = 'Collapse.Item';
-Item.propTypes = {
+Panel.displayName = 'Collapse.Panel';
+Panel.propTypes = {
   title: PropTypes.any.isRequired,
   className: PropTypes.string,
   defaultActive: PropTypes.bool,
@@ -53,6 +46,6 @@ Item.propTypes = {
   fresh: PropTypes.bool,
   active: PropTypes.bool,
 };
-Item.defaultProps = {};
+Panel.defaultProps = {};
 
-export default Item;
+export default Panel;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Tab = ({ className, active, ...otherProps }) => {
   return (
-    <div
+    <button
       className={cn('ftabs-tab', { 'ftabs-tab-active': active }, className)}
       {...otherProps}
     />

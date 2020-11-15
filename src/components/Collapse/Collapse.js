@@ -2,31 +2,18 @@ import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Item from './Item';
+import Panel from './Panel';
 import useCollapse from './useCollapse';
 
-const mapToObject = arr => arr.reduce((rs, key) => {
-  rs[key] = true;
-  return rs;
-}, {});
-
 const Collapse = ({ className, children, value, onChange, ...otherProps }) => {
-  const _activePanels = useMemo(() => mapToObject(value), [value]);
-
   return (
     <div className={cn('fcollapse', className)} {...otherProps}>
-      {React.Children.map(children, panel => {
-        return React.cloneElement(panel, {
-          active: !panel.props.disabled && _activePanels[panel.key],
-          onClick: () => onChange(panel.key),
-          ...panel.props
-        });
-      })}
+      {children}
     </div>
   );
 };
 
-Collapse.Item = Item;
+Collapse.Panel = Panel;
 Collapse.useCollapse = useCollapse;
 
 Collapse.displayName = 'Collapse';

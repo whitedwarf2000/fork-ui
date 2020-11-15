@@ -1,8 +1,9 @@
 .ftabs-tab {
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2.5em;
+  height: 2.125em;
   padding-left: 0.75em;
   padding-right: 0.75em;
   outline: 0 !important;
@@ -14,13 +15,12 @@
 
   &:disabled {
     cursor: not-allowed !important;
-    color: var(--text-color--disabled) !important;
   }
 }
 
 .ftabs-tab-active {
-  color: var(--primary);
-  font-weight: 700;
-  border-bottom-color: currentColor;
+  color: var(--text-color);
+  font-weight: 600;
+  border-bottom-color: var(--primary);
 }
 
