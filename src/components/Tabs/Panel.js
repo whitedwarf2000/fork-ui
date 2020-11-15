@@ -3,25 +3,25 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Memo from '../Memo';
 
-const Content = ({ className, active, fresh, ...otherProps }) => {
+const Panel = ({ className, active, fresh, ...otherProps }) => {
   return (
     <Memo watch={active} fresh={fresh}>
       <div
-        className={cn('ftabs-content', { 'ftabs-content-active': active }, className)}
+        className={cn('ftabs-panel', { 'ftabs-panel-active': active }, className)}
         {...otherProps}
       />
     </Memo>
   );
 };
 
-Content.displayName = 'Tabs.Content';
-Content.propTypes = {
+Panel.displayName = 'Tabs.Panel';
+Panel.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   fresh: PropTypes.bool,
   title: PropTypes.any,
   active: PropTypes.bool,
 };
-Content.defaultProps = {};
+Panel.defaultProps = {};
 
-export default Content;
+export default Panel;

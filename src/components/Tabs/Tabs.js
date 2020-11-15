@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Tab from './Tab';
-import Content from './Content';
+import Panel from './Panel';
 import useTabs from './useTabs';
 
 const Tabs = ({ className, ...otherProps }) => {
@@ -13,7 +13,7 @@ const Tabs = ({ className, ...otherProps }) => {
 };
 
 Tabs.Tab = Tab;
-Tabs.Content = Content;
+Tabs.Panel = Panel;
 Tabs.useTabs = useTabs;
 
 Tabs.displayName = 'Tabs';

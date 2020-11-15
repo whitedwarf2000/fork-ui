@@ -13,7 +13,7 @@
   display: block;
   height: 100%;
   width: 100%;
-  border: 1px solid #2e3031;
+  border: 0.05em solid #2e3031;
   border-radius: 999px;
   transition: border-color 0.25s;
 
@@ -75,5 +75,14 @@
     + .fradio-mark {
       color: #2e3031;
     }
+  }
+}
+
+.fradio-size {
+  width: 1.5em;
+  height: 1.5em;
+
+  .fradio-mark {
+    
   }
 }

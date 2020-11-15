@@ -1,21 +1,23 @@
 .fpanel {
   display: flex;
   flex-direction: column;
-  border-bottom: 0.0625em solid transparent;
+  background-color: var(--bg);
+  transition: margin 0.25s;
+
+  + .fpanel-active {
+    margin-top: 1rem;
+  }
 }
 
 .fpanel-disabled {
   .fui-panel-title {
     cursor: not-allowed !important;
-    color: var(--text-color--disabled) !important;
   }
 }
 
 .fpanel-active {
-  .fpanel-title {
-    color: var(--primary);
-    border-bottom: 0.0625em solid currentColor;
-  }
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
 
   .fpanel-icon {
     transform: translateY(-50%) rotate(-180deg);
@@ -33,10 +35,6 @@
   transition: color 0.25s;
   cursor: pointer;
   user-select: none;
-
-  &:hover {
-    color: var(--primary);
-  }
 }
 
 .fpanel-icon {
@@ -45,6 +43,7 @@
   top: 50%;
   transform: translateY(-50%);
   margin-right: 1em;
+  transition: transform 0.25s;
 }
 
 .fpanel-content {

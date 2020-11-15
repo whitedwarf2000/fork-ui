@@ -2,7 +2,8 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { CaretDown } from '../icons';
+import Button from '../Button';
+import { ChevronDown } from '../icons';
 import Animated from '../Animated';
 import Memo from '../Memo';
 
@@ -23,7 +24,12 @@ const Item = ({ className, title, children, active, fresh, onClick, disabled, ..
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {title}
         </div>
-        <CaretDown className="fpanel-icon" name="caret-down" />
+        <Button
+          className="fpanel-icon"
+          circle
+          ghost
+          icon={<ChevronDown />}
+        />
       </div>
       <Animated.Expand isExpanded={active} className="fpanel-content">
         <div className="fpanel-box">
