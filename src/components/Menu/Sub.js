@@ -2,7 +2,7 @@ import React, { useState, useCallback, useContext, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { CaretDown } from '../icons';
+import { ChevronDown } from '../icons';
 import MenuContext from './MenuContext';
 import displayName from './displayName';
 import getMenuInfo from './getMenuInfo';
@@ -46,7 +46,7 @@ const Sub = ({ defaultExpanded, className, children, title, icon, _key }) => {
           {(iconOnly && !icon && title) && <span style={{ textTransform: 'uppercase '}}>{title[0]}</span>}
           <span className="fmenu-sub-content">{title}</span>
         </div>
-        <CaretDown className="fmenu-sub-icon" />
+        <ChevronDown className="fmenu-sub-icon" />
       </div>
       <Animated.Expand className="fmenu-sub-list" isExpanded={isExpanded}>
         <ul>

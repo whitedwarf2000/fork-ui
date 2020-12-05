@@ -1,18 +1,18 @@
 import { useState, useCallback, useMemo } from 'react';
 
-const useCollapse = function({ accordion = false, defaultValue = [] }) {
-  const [value, setValue] = useState(defaultValue);
+const useCollapse = function(defaultProps = { accordion: false, activePanels: [] }) {
+  const [activePanels, setActivePanels] = useState(defaultProps.activePanels);
 
-  const objValue = useMemo(() => {
-    return value.reduce((rs, item) => {
+  const objActivePanels = useMemo(() => {
+    return activePanels.reduce((rs, item) => {
       rs[item] = true;
       return rs;
     }, {});
-  }, [value]);
+  }, [activePanels]);
 
   const onChange = useCallback((val) => {
-    if (accordion) {
-      return setValue(prev => {
+    if (defaultProps.accordion) {
+      return setActivePanels(prev => {
         const _prev = new Set(prev);
         if (_prev.has(val)) {
           return [];
@@ -21,7 +21,7 @@ const useCollapse = function({ accordion = false, defaultValue = [] }) {
         return [val];
       });
     }
-    return setValue(prev => {
+    return setActivePanels(prev => {
       const _prev = new Set(prev);
       if (_prev.has(val)) {
         _prev.delete(val);
@@ -30,19 +30,19 @@ const useCollapse = function({ accordion = false, defaultValue = [] }) {
       }
       return [..._prev];
     });
-  }, [accordion, setValue]);
+  }, [defaultProps.accordion, setActivePanels]);
 
-  const isActive = useCallback(val => objValue[val], [objValue]);
+  const isActive = useCallback(val => objActivePanels[val], [objActivePanels]);
 
   return [
     {
-      value,
+      activePanels,
       onChange,
       isActive,
     },
     {
-      value,
-      setValue,
+      objActivePanels,
+      setActivePanels,
     }
   ];
 };
