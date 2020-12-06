@@ -52,18 +52,18 @@ $step-avatar--size: 2.5em;
 // COMPLETED
 .fstep-completed {
   .fstep-rail {
-    color: var(--green--500);
+    color: var(--primary);
   }
 
   .fstep-avt {
-    background-color: var(--green--500);
+    background-color: var(--primary);
     color: rgb(228, 230, 235);
     box-shadow: none;
     border: none;
   }
 
   .fstep-title {
-    color: var(--green--500);
+    color: var(--primary);
   }
 
   .fstep-description {

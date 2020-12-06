@@ -17,9 +17,9 @@ const Stepper = ({ className, children, vertical, activeStep, getStatus, ...othe
   }));
 
   return (
-    <div className={cn('fstepper', { 'fstepper-v': vertical }, className)} {...otherProps}>
+    <ul className={cn('fstepper', { 'fstepper-v': vertical }, className)} {...otherProps}>
       {vertical ? _customChildren.reverse() : _customChildren}
-    </div>
+    </ul>
   );
 };
 

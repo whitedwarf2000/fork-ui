@@ -50,7 +50,7 @@ const Step = ({ className, title, children, icon, stepNumber, canceledTitle, ...
   }, [status]);
 
   return (
-    <div className={cn('fstep', mStatus[status], className)} {...passedProps}>
+    <li className={cn('fstep', mStatus[status], className)} {...passedProps}>
       <div className="fstep-rail" />
       <Tooltip top title={_canceledTitle}>
         <div className="fstep-avt">
@@ -61,7 +61,7 @@ const Step = ({ className, title, children, icon, stepNumber, canceledTitle, ...
         <div className="fstep-title">{title}</div>
         <div className="fstep-description">{children}</div>
       </div>
-    </div>
+    </li>
   );
 };
 
