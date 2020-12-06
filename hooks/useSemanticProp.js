@@ -1,5 +1,5 @@
-import getLatestTruthyProp from '../utils/getLatestTruthyProp';
 import { useMemo } from 'react';
+import getLatestTruthyProp from '../utils/getLatestTruthyProp';
 
 const makeDepsTracking = (props, deps) => deps.map(name => props[name]);
 
