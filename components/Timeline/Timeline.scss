@@ -1,5 +1,3 @@
-@import './Item.scss';
-
 .ftimeline {
   width: 100%;
   display: flex;
@@ -8,4 +6,110 @@
 
 .ftimeline-reverse {
   flex-direction: column-reverse; // lastest will go up
+}
+
+.ftimeline-item {
+  display: flex;
+  min-height: 5em;
+  position: relative;
+}
+
+.ftimeline-dot {
+  height: 2.5em;
+  flex: 0;
+
+  .ficon{
+    background-color: var(--bg);
+    border-radius: 100em;
+    overflow: visible;
+    font-size: 1.75em;
+    z-index: 1;
+  }
+}
+
+.ftimeline-content {
+  flex: 1;
+  padding: 0 0.5em;
+}
+
+.ftimeline-connector {
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 3em);
+  left: 1.15em;
+  top: 2.75em;
+  box-sizing: border-box;
+  border-left: 1px dashed var(--text-color);
+}
+
+.ftimeline > .ftimeline-item {
+  &:last-child {
+    min-height: 0;
+
+    .ftimeline-dot .ficon {
+      color: var(--primary--400);
+    }
+
+    .ftimeline-connector {
+      display: none;
+    }
+  }
+}
+
+
+// RIGHT
+.ftimeline-r {
+  .ftimeline-item {
+    flex-direction: row-reverse;
+  }
+
+  .ftimeline-content {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 0;
+  }
+
+  .ftimeline-connector {
+    left: unset;
+    right: 1.15em;
+  }
+}
+
+// ALTERNATE
+.ftimeline-alternate {
+  .ftimeline-item {
+    &:before {
+      flex: 1;
+      content: "";
+      padding: 0 0.5em;
+    }
+
+    .ftimeline-connector {
+      left: 50%;
+    }
+  }
+  .ftimeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+//REVERSE
+.ftimeline-reverse {
+  flex-direction: column-reverse; // lastest will go up
+
+  & > .ftimeline-item {
+    &:nth-child(1) {
+      min-height: 0;
+
+      .ftimeline-connector {
+        display: none;
+      }
+    }
+  
+    &:last-child {
+      .ftimeline-connector {
+        display: block;
+      }
+    }
+  }
 }
