@@ -1,79 +1,119 @@
-import { useCallback, useState, useMemo } from 'react';
+import { useCallback, useState } from 'react';
 
-export default ({ maxStepIdx = 0, defaultActiveStep = 0, defaultStepInfo = {}, optional = [] }) => {
-  const _optional = useMemo(() => new Set(optional), [optional]);
+const isCancelable = function(step, cancelable) {
+  const cancelableLength = cancelable.length;
 
-  const [activeStep, setActiveStep] = useState(defaultActiveStep);
-  const [steps, setSteps] = useState(defaultStepInfo);
+  for (let i = 0; i < cancelableLength; i++) {
+    if (cancelable[i] === step) {
+      return true;
+    }
+  }
 
-  const handleReset = useCallback(() => {
+  return false;
+};
+
+const isSkipable = function(step, skipable) {
+  const skipableLength = skipable.length;
+
+  for (let i = 0; i < skipableLength; i++) {
+    if (skipable[i] === step) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
+export default (defaultProps = {}) => {
+  const [statuses, setStatuses] = useState(defaultProps.statuses || []);
+  const [activeStep, setActiveStep] = useState(defaultProps.activeStep || 0);
+  const [finishStep, setFinishStep] = useState(defaultProps.finishStep || 0);
+
+  const [skipable, setSkipable] = useState(defaultProps.skipable || []);
+  const [cancelable, setCancelable] = useState(defaultProps.cancelable || []);
+
+  const goNext = useCallback(() => {
+    if (activeStep < finishStep) {
+      setActiveStep(prev => prev + 1);
+      setStatuses(prev => {
+        const next = [...prev];
+        next[activeStep] = 'completed';
+        next[activeStep + 1] = 'processing';
+        return next;
+      });
+    }
+  }, [activeStep, setActiveStep, finishStep]);
+
+  const goBack = useCallback(() => {
+    if (activeStep > 0) {
+      setActiveStep(prev => prev - 1);
+      setStatuses(prev => {
+        const next = [...prev];
+        next[activeStep] = '';
+        next[activeStep - 1] = 'processing';
+        return next;
+      });
+    }
+  }, [activeStep, setActiveStep]);
+
+  const goReset = useCallback(() => {
+    setStatuses(['processing']);
     setActiveStep(0);
-    setSteps({});
-  }, [setActiveStep, setSteps]);
+  }, [setStatuses, setActiveStep]);
 
-  const handleNext = useCallback(() => {
-    if (activeStep === maxStepIdx) {
-      return;
+  const goSkip = useCallback(() => {
+    if (activeStep < finishStep && isSkipable(activeStep, skipable)) {
+      setActiveStep(prev => prev + 1);
+      setStatuses(prev => {
+        const next = [...prev];
+        next[activeStep] = '';
+        next[activeStep + 1] = 'processing';
+        return next;
+      });
     }
+  }, [activeStep, setActiveStep, finishStep, skipable]);
 
-    setSteps(prev => ({
-      ...prev,
-      [activeStep]: 'completed',
-    }));
-    setActiveStep(prev => prev + 1);
-  }, [activeStep, maxStepIdx, setSteps, setActiveStep]);
-
-  const handleSkip = useCallback(() => {
-    if (!_optional.has(activeStep) || activeStep === maxStepIdx) {
-      return;
+  const goCancel = useCallback(() => {
+    if (activeStep < finishStep && isCancelable(activeStep, cancelable)) {
+      setActiveStep(prev => prev + 1);
+      setStatuses(prev => {
+        const next = [...prev];
+        next[activeStep] = 'canceled';
+        next[activeStep + 1] = 'processing';
+        return next;
+      });
     }
-    setActiveStep(prev => prev + 1);
-  }, [_optional, activeStep, maxStepIdx, setActiveStep]);
+  }, [activeStep, setActiveStep, finishStep, cancelable]);
 
-  const handleFinish = useCallback(() => {
-    if (maxStepIdx !== activeStep) {
-      return;
+  const goFinish = useCallback(() => {
+    if (activeStep === finishStep) {
+      setStatuses(prev => {
+        const next = [...prev];
+        next[activeStep] = 'completed';
+        return next;
+      });
     }
-
-    setSteps(prev => ({
-      ...prev,
-      [maxStepIdx]: 'completed',
-    }));
-    setActiveStep(maxStepIdx + 1);
-  }, [maxStepIdx, activeStep, setSteps, activeStep, setActiveStep]);
-
-  const handleCancel = useCallback(() => {
-    setSteps(prev => ({
-      ...prev,
-      [activeStep]: 'canceled',
-    }));
-    handleSkip();
-  }, [setSteps, activeStep, handleSkip]);
-
-  const getStatus = useCallback((idx) => {
-    if (idx === activeStep) {
-      return steps[idx] || 'processing';
-    }
-
-    return steps[idx];
-  }, [activeStep, steps]);
+  }, [activeStep, setActiveStep, finishStep]);
 
   return [
     {
-      getStatus,
       activeStep,
+      statuses,
+      goNext,
+      goBack,
+      goReset,
+      goSkip,
+      goCancel,
+      goFinish,
     },
     {
-      activeStep,
+      setStatuses,
       setActiveStep,
-      steps,
-      setSteps,
-      getStatus,
-      handleReset,
-      handleNext,
-      handleSkip,
-      handleCancel,
-      handleFinish,
+      setFinishStep,
+      setSkipable,
+      setCancelable,
+      isCancelable,
+      isSkipable,
     }
   ];
-};
+}

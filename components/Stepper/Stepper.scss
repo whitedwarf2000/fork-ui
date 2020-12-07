@@ -1,8 +1,162 @@
 .fstepper {
   width: 100%;
   display: flex;
+
+  .fstep:first-child {
+    padding-left: 0;
+  }
+
+  .fstep:last-child {
+    flex: none;
+  
+    .fstep-title:after {
+      display: none;
+    }
+  }
 }
 
 .fstepper-v {
   flex-direction: column-reverse;
+}
+
+$step-avatar--size: 2.5em;
+
+.fstep {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  padding-left: 1em;
+}
+
+.fstep-button {
+  position: relative;
+  height: $step-avatar--size;
+  width: $step-avatar--size;
+  border-radius: 100em;
+  border: 1px solid currentColor;
+  background-color: transparent;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-right: 1em;
+
+  .fstep-button-canceled,
+  .fstep-button-completed {
+    display: none;
+  }
+}
+
+
+.fstep-loader {
+  position: absolute;
+}
+
+.fstep-content {
+  flex-grow: 1;
+  display: inline-block;
+  color: var(--text-secondary);
+}
+
+.fstep-title {
+  color: var(--text-secondary);
+  position: relative;
+  font-weight: 600;
+  padding-right: 1em;
+  display: inline-block;
+  line-height: $step-avatar--size;
+
+  &:after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 999px;
+    left: 100%;
+    top: 50%;
+    background-color: currentColor;
+  }
+}
+
+// COMPLETED
+.fstep-completed {
+  .fstep-button {
+    color: var(--primary);
+    background-color: transparent;
+
+    .fstep-button-child {
+      display: none;
+    }
+
+    .fstep-button-completed {
+      display: flex;
+    }
+  }
+
+  .fstep-title {
+    color: var(--text-color);
+
+    &:after {
+      color: var(--primary);
+    }
+  }
+}
+
+// CANCELED
+.fstep-canceled {
+  .fstep-button {
+    color: var(--red);
+    background-color: transparent;
+
+    .fstep-button-child {
+      display: none;
+    }
+
+    .fstep-button-canceled {
+      display: flex;
+    }
+  }
+  .fstep-title {
+    color: var(--text-color);
+  }
+}
+
+// PROCESSING
+.fstep-processing {
+  .fstep-button {
+    color: #fff;
+    border-color: var(--primary);
+    background-color: var(--primary);
+  }
+
+  .fstep-title,
+  .fstep-content {
+    color: var(--text-color);
+  }
+}
+
+// VERTICAL SUPPORT
+.fstepper-v {
+  > .fstep:nth-child(1) {
+    min-height: 0;
+  }
+
+  .fstep {
+    flex-direction: row;
+    min-height: 8em;
+    align-items: flex-start;
+  }
+
+  .fstep-content {
+    flex-grow: 1;
+    align-items: flex-start;
+    margin-left: 0.75em;
+    margin-top: 0;
+  }
+
+  .fstep-title {
+    margin-top: 0.5em;
+  }
 }
