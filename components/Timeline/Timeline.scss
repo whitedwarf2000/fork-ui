@@ -40,7 +40,6 @@
 
 .ftimeline-dot {
   flex: 0;
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -59,7 +58,7 @@
     content: "";
     width: 1px;
     background-color: var(--text-secondary);
-    margin-left: 1em;
+    margin-left: 50%;
   }
 }
 
