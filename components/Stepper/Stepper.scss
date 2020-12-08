@@ -1,4 +1,4 @@
-$step-avatar--size: 2.5em;
+$step-button--size: 32px;
 
 .fstepper {
   width: 100%;
@@ -28,8 +28,8 @@ $step-avatar--size: 2.5em;
 
 .fstep-button {
   position: relative;
-  height: $step-avatar--size;
-  width: $step-avatar--size;
+  height: $step-button--size;
+  width: $step-button--size;
   border-radius: 999px;
   border: 1px solid currentColor;
   background-color: transparent;;
@@ -58,7 +58,7 @@ $step-avatar--size: 2.5em;
   font-weight: 600;
   padding-right: 1em;
   display: inline-block;
-  line-height: $step-avatar--size;
+  line-height: $step-button--size;
 
   &:after {
     position: absolute;
@@ -166,13 +166,16 @@ $step-avatar--size: 2.5em;
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
 
     &:after {
-      flex: 1;
+      position: absolute;
       content: "";
       width: 1px;
       background-color: currentColor;
       margin-left: 50%;
+      height: calc(100% - 48px);
+      top: 40px;
     }
   }
 
@@ -188,6 +191,67 @@ $step-avatar--size: 2.5em;
 // ALTERNATE SUPPORT
 .fstepper-alternate {
   .fstep {
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    padding-left: 0;
+  }
 
+  .fstep:last-child {
+    flex: 1;
+
+    .fstep-dot {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .fstep-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5em;
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+
+  .fstep-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fstep-title {
+    padding-right: 0;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .fstep-dot {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: calc(50% + 30px);
+      content: "";
+      height: 1px;
+      width: calc(100% - 60px);
+      background-color: currentColor;
+    }
+  }
+
+  .fstep-completed {
+    .fstep-dot {
+      &:after {
+        color: var(--primary);
+      }
+    }
   }
 }
