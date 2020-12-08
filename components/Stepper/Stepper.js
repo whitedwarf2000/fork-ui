@@ -11,7 +11,6 @@ const mStatus = Object.freeze({
   canceled: 'fstep-canceled',
 });
 
-const Connector = ({ className, ...otherProps }) => <div className={cn('fstep-connector', className)} {...otherProps} />;
 const Button = ({ className, children, ...otherProps }) => {
   return (
     <div className={cn('fstep-button', className)} {...otherProps}>
@@ -90,7 +89,6 @@ const Stepper = ({ className, children, vertical, activeStep, getStatus, ...othe
 };
 
 Stepper.Step = Step;
-Stepper.Connector = Connector;
 Stepper.Button = Button;
 Stepper.Dot = Dot;
 Stepper.Content = Content;

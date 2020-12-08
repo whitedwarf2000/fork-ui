@@ -6,7 +6,6 @@ import { Clock } from '../icons';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
-const Connector = ({ className, ...otherProps}) => <div className={cn('ftimeline-connector', className)} {...otherProps} />;
 const Content = ({ className, ...otherProps}) => <div className={cn('ftimeline-content', className)} {...otherProps} />;
 const Dot = ({ className, ...otherProps}) => <div className={cn('ftimeline-dot', className)} {...otherProps} />;
 const Item = ({ className, ...otherProps }) => <li className={cn('ftimeline-item', className)} {...otherProps} />;
@@ -44,14 +43,10 @@ const Timeline = ({ className, reverse, ...otherProps }) => {
 }
 
 Timeline.displayName = 'Timeline';
-Connector.displayName = 'Timeline.Connector';
 Content.displayName = 'Timeline.Content';
 Dot.displayName = 'Timeline.Dot';
 Item.displayName = 'Timeline.Item';
 
-Connector.defaultProps = {
-  className: PropTypes.string,
-};
 Content.defaultProps = {
   className: PropTypes.string,
 };
@@ -64,7 +59,6 @@ Item.defaultProps = {
 };
 
 Timeline.Item = Item;
-Timeline.Connector = Connector;
 Timeline.Content = Content;
 Timeline.Dot = Dot;
 

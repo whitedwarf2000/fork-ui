@@ -1,6 +1,6 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useMemo } from 'react';
 
-const isCancelable = function(step, cancelable) {
+const checkCancelable = function(step, cancelable) {
   const cancelableLength = cancelable.length;
 
   for (let i = 0; i < cancelableLength; i++) {
@@ -12,7 +12,7 @@ const isCancelable = function(step, cancelable) {
   return false;
 };
 
-const isSkipable = function(step, skipable) {
+const checkSkipable = function(step, skipable) {
   const skipableLength = skipable.length;
 
   for (let i = 0; i < skipableLength; i++) {
@@ -31,6 +31,9 @@ export default (defaultProps = {}) => {
 
   const [skipable, setSkipable] = useState(defaultProps.skipable || []);
   const [cancelable, setCancelable] = useState(defaultProps.cancelable || []);
+  const isFinished = useMemo(() => activeStep === finishStep && statuses[activeStep] === 'completed', [activeStep, finishStep, statuses]);
+  const isSkipable = useMemo(() => checkSkipable(activeStep, skipable), [activeStep, skipable]);
+  const isCancelable = useMemo(() => checkSkipable(activeStep, skipable), [activeStep, cancelable]);
 
   const goNext = useCallback(() => {
     if (activeStep < finishStep) {
@@ -62,7 +65,7 @@ export default (defaultProps = {}) => {
   }, [setStatuses, setActiveStep]);
 
   const goSkip = useCallback(() => {
-    if (activeStep < finishStep && isSkipable(activeStep, skipable)) {
+    if (activeStep < finishStep && checkSkipable(activeStep, skipable)) {
       setActiveStep(prev => prev + 1);
       setStatuses(prev => {
         const next = [...prev];
@@ -74,7 +77,7 @@ export default (defaultProps = {}) => {
   }, [activeStep, setActiveStep, finishStep, skipable]);
 
   const goCancel = useCallback(() => {
-    if (activeStep < finishStep && isCancelable(activeStep, cancelable)) {
+    if (activeStep < finishStep && checkCancelable(activeStep, cancelable)) {
       setActiveStep(prev => prev + 1);
       setStatuses(prev => {
         const next = [...prev];
@@ -105,6 +108,9 @@ export default (defaultProps = {}) => {
       goSkip,
       goCancel,
       goFinish,
+      isFinished,
+      isSkipable,
+      isCancelable,
     },
     {
       setStatuses,
@@ -112,8 +118,8 @@ export default (defaultProps = {}) => {
       setFinishStep,
       setSkipable,
       setCancelable,
-      isCancelable,
-      isSkipable,
+      checkCancelable,
+      checkSkipable,
     }
   ];
 }
