@@ -33,7 +33,7 @@ export default (defaultProps = {}) => {
   const [cancelable, setCancelable] = useState(defaultProps.cancelable || []);
   const isFinished = useMemo(() => activeStep === finishStep && statuses[activeStep] === 'completed', [activeStep, finishStep, statuses]);
   const isSkipable = useMemo(() => checkSkipable(activeStep, skipable), [activeStep, skipable]);
-  const isCancelable = useMemo(() => checkSkipable(activeStep, skipable), [activeStep, cancelable]);
+  const isCancelable = useMemo(() => checkSkipable(activeStep, cancelable), [activeStep, cancelable]);
 
   const goNext = useCallback(() => {
     if (activeStep < finishStep) {
@@ -101,6 +101,7 @@ export default (defaultProps = {}) => {
   return [
     {
       activeStep,
+      finishStep,
       statuses,
       goNext,
       goBack,

@@ -14,10 +14,13 @@ const ButtonGroup = ({ className, fluid, children, ...otherProps }) => {
       )}
     >
       {React.Children.map(children, elm => {
-        return React.cloneElement(elm, {
-          ...otherProps,
-          ...elm.props
-        });
+        if (React.isValidElement(elm)) {
+          return React.cloneElement(elm, {
+            ...otherProps,
+            ...elm.props
+          });
+        }
+        return elm;
       })}
     </div>
   );
