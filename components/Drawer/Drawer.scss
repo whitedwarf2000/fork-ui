@@ -15,6 +15,12 @@
   }
 }
 
+.fdrawer.animated {
+  * {
+    animation-delay: 3s !important;
+  }
+}
+
 .fdrawer-portal-l {
   .fdrawer {
     left: 0;

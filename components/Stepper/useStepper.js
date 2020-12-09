@@ -1,17 +1,5 @@
 import { useCallback, useState, useMemo } from 'react';
 
-const checkCancelable = function(step, cancelable) {
-  const cancelableLength = cancelable.length;
-
-  for (let i = 0; i < cancelableLength; i++) {
-    if (cancelable[i] === step) {
-      return true;
-    }
-  }
-
-  return false;
-};
-
 const checkSkipable = function(step, skipable) {
   const skipableLength = skipable.length;
 
@@ -25,15 +13,13 @@ const checkSkipable = function(step, skipable) {
 };
 
 export default (defaultProps = {}) => {
-  const [statuses, setStatuses] = useState(defaultProps.statuses || []);
-  const [activeStep, setActiveStep] = useState(defaultProps.activeStep || 0);
-  const [finishStep, setFinishStep] = useState(defaultProps.finishStep || 0);
+  const [statuses, setStatuses] = useState(defaultProps.statuses || []); // LIST CURRENT STEP STATUS
+  const [activeStep, setActiveStep] = useState(defaultProps.activeStep || 0); // CURRENT STEP
+  const [finishStep, setFinishStep] = useState(defaultProps.finishStep || 0); // LAST STEP
 
-  const [skipable, setSkipable] = useState(defaultProps.skipable || []);
-  const [cancelable, setCancelable] = useState(defaultProps.cancelable || []);
-  const isFinished = useMemo(() => activeStep === finishStep && statuses[activeStep] === 'completed', [activeStep, finishStep, statuses]);
-  const isSkipable = useMemo(() => checkSkipable(activeStep, skipable), [activeStep, skipable]);
-  const isCancelable = useMemo(() => checkSkipable(activeStep, cancelable), [activeStep, cancelable]);
+  const [skipable, setSkipable] = useState(defaultProps.skipable || []); // LIST STEP YOU CAN SKIP TO GO NEXT STEP
+  const isFinished = useMemo(() => activeStep === finishStep && statuses[activeStep] === 'completed', [activeStep, finishStep, statuses]); // STEPS FINISHED
+  const isSkipable = useMemo(() => checkSkipable(activeStep, skipable), [activeStep, skipable]); // CURRENT STEP CAN BE SKIP
 
   const goNext = useCallback(() => {
     if (activeStep < finishStep) {
@@ -45,7 +31,7 @@ export default (defaultProps = {}) => {
         return next;
       });
     }
-  }, [activeStep, setActiveStep, finishStep]);
+  }, [activeStep, setActiveStep, finishStep, setStatuses]);
 
   const goBack = useCallback(() => {
     if (activeStep > 0) {
@@ -57,7 +43,7 @@ export default (defaultProps = {}) => {
         return next;
       });
     }
-  }, [activeStep, setActiveStep]);
+  }, [activeStep, setActiveStep, setStatuses]);
 
   const goReset = useCallback(() => {
     setStatuses(['processing']);
@@ -74,19 +60,15 @@ export default (defaultProps = {}) => {
         return next;
       });
     }
-  }, [activeStep, setActiveStep, finishStep, skipable]);
+  }, [activeStep, setActiveStep, finishStep, skipable, setStatuses]);
 
   const goCancel = useCallback(() => {
-    if (activeStep < finishStep && checkCancelable(activeStep, cancelable)) {
-      setActiveStep(prev => prev + 1);
-      setStatuses(prev => {
-        const next = [...prev];
-        next[activeStep] = 'canceled';
-        next[activeStep + 1] = 'processing';
-        return next;
-      });
-    }
-  }, [activeStep, setActiveStep, finishStep, cancelable]);
+    setStatuses(prev => {
+      const next = [...prev];
+      next[activeStep] = 'canceled';
+      return next;
+    });
+  }, [setStatuses, activeStep]);
 
   const goFinish = useCallback(() => {
     if (activeStep === finishStep) {
@@ -96,7 +78,16 @@ export default (defaultProps = {}) => {
         return next;
       });
     }
-  }, [activeStep, setActiveStep, finishStep]);
+  }, [activeStep, finishStep, setStatuses]);
+
+  const goError = useCallback(() => {
+    setStatuses(prev => {
+      const next = [...prev];
+      next[activeStep] = 'error';
+
+      return next;
+    })
+  }, [activeStep, setStatuses]);
 
   return [
     {
@@ -109,17 +100,15 @@ export default (defaultProps = {}) => {
       goSkip,
       goCancel,
       goFinish,
+      goError,
       isFinished,
       isSkipable,
-      isCancelable,
     },
     {
       setStatuses,
       setActiveStep,
       setFinishStep,
       setSkipable,
-      setCancelable,
-      checkCancelable,
       checkSkipable,
     }
   ];

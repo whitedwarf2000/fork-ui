@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import { Check, X } from '../icons';
+import { Check, X, Ban } from '../icons';
 import useStepper from './useStepper';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
@@ -11,6 +11,7 @@ const mStatus = Object.freeze({
   processing: 'fstep-processing',
   completed: 'fstep-completed',
   canceled: 'fstep-canceled',
+  error: 'fstep-error'
 });
 
 const Button = ({ className, children, ...otherProps }) => {
@@ -20,8 +21,11 @@ const Button = ({ className, children, ...otherProps }) => {
         <span className="fstep-button-child">
           {children}
         </span>
-        <span className="fstep-button-canceled">
+        <span className="fstep-button-error">
           <X style={{ strokeWidth: 3 }} />
+        </span>
+        <span className="fstep-button-canceled">
+          <Ban style={{ strokeWidth: 3 }} />
         </span>
         <span className="fstep-button-completed">
           <Check style={{ strokeWidth: 3 }} />
