@@ -4,7 +4,7 @@
   flex-direction: column;
 
   .ftimeline-item:last-child {
-    .ftimeline-dot {
+    .ftimeline-btn {
       &:after {
         display: none;
       }
@@ -16,7 +16,7 @@
   flex-direction: column-reverse; // lastest will go up
 
   .ftimeline-item:first-child {
-    .ftimeline-dot {
+    .ftimeline-btn {
       &:after {
         display: none;
       }
@@ -24,7 +24,7 @@
   }
 
   .ftimeline-item:last-child {
-    .ftimeline-dot {
+    .ftimeline-btn {
       &:after {
         display: block;
       }
@@ -38,7 +38,7 @@
   position: relative;
 }
 
-.ftimeline-dot {
+.ftimeline-btn {
   flex: 0;
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@
   &:last-child {
     min-height: 0;
 
-    .ftimeline-dot .ficon {
+    .ftimeline-btn .ficon {
       color: var(--primary--400);
     }
   }

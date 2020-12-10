@@ -16,18 +16,18 @@ const mStatus = Object.freeze({
 
 const Button = ({ className, children, ...otherProps }) => {
   return (
-    <div className="fstep-dot">
-      <div className={cn('fstep-button', className)} {...otherProps}>
-        <span className="fstep-button-child">
+    <div className="fstep-btn-wrapper">
+      <div className={cn('fstep-btn', className)} {...otherProps}>
+        <span className="fstep-btn-child">
           {children}
         </span>
-        <span className="fstep-button-error">
+        <span className="fstep-btn-error">
           <X style={{ strokeWidth: 3 }} />
         </span>
-        <span className="fstep-button-canceled">
+        <span className="fstep-btn-canceled">
           <Ban style={{ strokeWidth: 3 }} />
         </span>
-        <span className="fstep-button-completed">
+        <span className="fstep-btn-completed">
           <Check style={{ strokeWidth: 3 }} />
         </span>
       </div>

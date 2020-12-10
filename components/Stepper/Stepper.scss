@@ -1,4 +1,4 @@
-$step-button--size: 32px;
+$step-btn--size: 32px;
 
 .fstepper {
   width: 100%;
@@ -26,10 +26,10 @@ $step-button--size: 32px;
   padding-left: 1em;
 }
 
-.fstep-button {
+.fstep-btn {
   position: relative;
-  height: $step-button--size;
-  width: $step-button--size;
+  height: $step-btn--size;
+  width: $step-btn--size;
   border-radius: 999px;
   border: 1px solid currentColor;
   background-color: transparent;;
@@ -39,9 +39,9 @@ $step-button--size: 32px;
   z-index: 1;
 }
 
-.fstep-button-canceled,
-.fstep-button-error,
-.fstep-button-completed {
+.fstep-btn-canceled,
+.fstep-btn-error,
+.fstep-btn-completed {
   display: none;
 }
 
@@ -59,7 +59,7 @@ $step-button--size: 32px;
   font-weight: 600;
   padding-right: 1em;
   display: inline-block;
-  line-height: $step-button--size;
+  line-height: $step-btn--size;
 
   &:after {
     position: absolute;
@@ -75,16 +75,16 @@ $step-button--size: 32px;
 
 // COMPLETED
 .fstep-completed {
-  .fstep-button {
+  .fstep-btn {
     color: var(--primary);
     background-color: transparent;
   }
 
-  .fstep-button-child {
+  .fstep-btn-child {
     display: none;
   }
 
-  .fstep-button-completed {
+  .fstep-btn-completed {
     display: flex;
   }
 
@@ -99,16 +99,16 @@ $step-button--size: 32px;
 
 // ERROR
 .fstep-error {
-  .fstep-button {
+  .fstep-btn {
     color: var(--red);
     background-color: transparent;
   }
 
-  .fstep-button-child {
+  .fstep-btn-child {
     display: none;
   }
 
-  .fstep-button-error {
+  .fstep-btn-error {
     display: flex;
   }
 
@@ -119,16 +119,16 @@ $step-button--size: 32px;
 
 // CANCELED
 .fstep-canceled {
-  .fstep-button {
+  .fstep-btn {
     color: var(--text-secondary);
     background-color: transparent;
   }
 
-  .fstep-button-child {
+  .fstep-btn-child {
     display: none;
   }
 
-  .fstep-button-canceled {
+  .fstep-btn-canceled {
     display: flex;
   }
 
@@ -139,7 +139,7 @@ $step-button--size: 32px;
 
 // PROCESSING
 .fstep-processing {
-  .fstep-button {
+  .fstep-btn {
     color: #fff;
     border-color: var(--primary);
     background-color: var(--primary);
@@ -163,7 +163,7 @@ $step-button--size: 32px;
   }
 
   .fstep-completed {
-    .fstep-dot {
+    .fstep-btn-wrapper {
       &:after {
         color: var(--primary);
       }
@@ -183,7 +183,7 @@ $step-button--size: 32px;
     }
   }
 
-  .fstep-dot {
+  .fstep-btn-wrapper {
     flex: 0;
     display: flex;
     flex-direction: column;
@@ -202,7 +202,7 @@ $step-button--size: 32px;
   }
 
   .fstep:last-child {
-    .fstep-dot {
+    .fstep-btn-wrapper {
       &:after {
         display: none;
       }
@@ -222,7 +222,7 @@ $step-button--size: 32px;
   .fstep:last-child {
     flex: 1;
 
-    .fstep-dot {
+    .fstep-btn-wrapper {
       &:after {
         display: none;
       }
@@ -252,7 +252,7 @@ $step-button--size: 32px;
     }
   }
 
-  .fstep-dot {
+  .fstep-btn-wrapper {
     width: 100%;
     position: relative;
     display: flex;
@@ -270,7 +270,7 @@ $step-button--size: 32px;
   }
 
   .fstep-completed {
-    .fstep-dot {
+    .fstep-btn-wrapper {
       &:after {
         color: var(--primary);
       }

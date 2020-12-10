@@ -7,7 +7,7 @@ import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';
 
 const Content = ({ className, ...otherProps}) => <div className={cn('ftimeline-content', className)} {...otherProps} />;
-const Dot = ({ className, ...otherProps}) => <div className={cn('ftimeline-dot', className)} {...otherProps} />;
+const Button = ({ className, ...otherProps}) => <div className={cn('ftimeline-btn', className)} {...otherProps} />;
 const Item = ({ className, ...otherProps }) => <li className={cn('ftimeline-item', className)} {...otherProps} />;
 
 const mAlign = Object.freeze({
@@ -44,13 +44,13 @@ const Timeline = ({ className, reverse, ...otherProps }) => {
 
 Timeline.displayName = 'Timeline';
 Content.displayName = 'Timeline.Content';
-Dot.displayName = 'Timeline.Dot';
+Button.displayName = 'Timeline.Button';
 Item.displayName = 'Timeline.Item';
 
 Content.defaultProps = {
   className: PropTypes.string,
 };
-Dot.defaultProps = {
+Button.defaultProps = {
   children: <Clock />,
   className: PropTypes.string,
 };
@@ -60,7 +60,7 @@ Item.defaultProps = {
 
 Timeline.Item = Item;
 Timeline.Content = Content;
-Timeline.Dot = Dot;
+Timeline.Button = Button;
 
 Timeline.propTypes = {
   className: PropTypes.string,
