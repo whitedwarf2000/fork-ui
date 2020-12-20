@@ -1,5 +1,5 @@
 .ftabs-tab {
-  color: var(--text-secondary);
+  color: var(--txt-color-low-emphasis);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@
 }
 
 .ftabs-tab-active {
-  color: var(--text-color);
+  color: var(--txt-color);
   font-weight: 600;
   border-bottom-color: var(--primary);
 }

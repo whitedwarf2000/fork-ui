@@ -1,10 +1,14 @@
-@import '../vars.scss';
+.light-mode {
+  --txt-color: #000;
+  --txt-color-low-emphasis: #65676b;
+}
 
 .light-mode {
-  --text-color: rgba(0, 0, 0, 0.9);
-  --text-secondary: rgba(0, 0, 0, 0.6);
+  background-color: var(--body-bg);
+  color: #000;
+}
 
-  --text-color--heading: #000;
+.light-mode {
   --text-color--disabled: #505965;
   --text-color--placeholder: #8f8d8d;
 
@@ -42,10 +46,6 @@
   --green--lighter: #55ff00;
   --green--darker: #349405;
 
-
-  background-color: var(--body-bg);
-  color: var(--text-color);
-
   --button--bg: #f2f2f2;
   --button--hover-bg: #f2f2f2;
   --button--hover-border-color: transparent;
@@ -79,9 +79,4 @@
   --slider-rail--box-shadow: var(--pressed);
 
   --switch-inner--bg: #3b3e40;
-}
-
-.light-mode {
-  background-color: var(--body-bg);
-  color: var(--text-color);
 }

@@ -1,10 +1,12 @@
-@import '../vars.scss';
-
 .dark-mode {
-  --text-color: #fff;
-  --text-secondary: rgb(146, 154, 165);
-
-  --text-color--heading: #fff;
+  --txt-color: #fff;
+  --txt-color-low-emphasis: #929aa5;
+}
+.dark-mode {
+  background-color: var(--body-bg);
+  color: #fff;
+}
+.dark-mode {
   --text-color--disabled: #505965;
   --text-color--placeholder: #8f8d8d;
 
@@ -42,11 +44,6 @@
   --green--disabled: #72bd4c;
   --green--lighter: #55ff00;
   --green--darker: #349405;
-
-
-  background-color: var(--body-bg);
-  color: var(--text-color);
-
   --button--bg: var(--secondary-bg);
   --button--hover-bg: rgba(106, 76, 12, 0.5);
   --button--hover-border-color: transparent;
@@ -64,7 +61,6 @@
   --popup--title-bg: var(--secondary-bg);
   --popup--shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
   --overlay--shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
-
 
   --panel--bg: var(--secondary-bg);
   --panel-title--active: rgba(0, 0, 0, 0.2);
