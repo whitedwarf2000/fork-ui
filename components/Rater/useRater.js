@@ -1,28 +1,28 @@
 import { useState, useCallback, useMemo } from 'react';
 
-const _loop = function(maxValue, cb) {
+const _loop = function(maxIndex, cb) {
   const rs = [];
-  for (let i = 0; i <= maxValue; i++) {
+  for (let i = 0; i <= maxIndex; i++) {
     rs.push(cb(i));
   }
 
   return rs;
 };
 
-const checkLight = (hoverValue, idx, value) => (hoverValue >= idx) || (hoverValue === -1 && value >= idx);
+const checkLight = (hoverIndex, i, index) => (hoverIndex >= i) || (hoverIndex === -1 && index >= i);
 
 const useRater = function(defaultProps) {
-  const [maxValue, setMaxValue] = useState(defaultProps.maxValue || 4);
-  const [value, setValue] = useState(defaultProps.value || -1);
+  const [maxIndex, setMaxIndex] = useState(defaultProps.maxIndex || 4);
+  const [index, setIndex] = useState(defaultProps.index || -1);
 
-  const [hoverValue, setHoverValue] = useState(-1);
-  const isLight = useMemo(() => _loop(maxValue, idx => checkLight(hoverValue, idx, value)), [maxValue, hoverValue, value]);
+  const [hoverIndex, setHoverIndex] = useState(-1);
+  const isLight = useMemo(() => _loop(maxIndex, i => checkLight(hoverIndex, i, index)), [maxIndex, hoverIndex, index]);
 
-  const onMouseLeave = useCallback(() => setHoverValue(-1), [setHoverValue]);
-  const onMouseEnter = useMemo(() => _loop(maxValue, idx => () => setHoverValue(idx)), [maxValue, setHoverValue]);
-  const onClick = useMemo(() => _loop(maxValue, idx => () => setValue(idx)), [maxValue, setValue]);
+  const onMouseLeave = useCallback(() => setHoverIndex(-1), [setHoverIndex]);
+  const onMouseEnter = useMemo(() => _loop(maxIndex, i => () => setHoverIndex(i)), [maxIndex, setHoverIndex]);
+  const onClick = useMemo(() => _loop(maxIndex, i => () => setIndex(i)), [maxIndex, setIndex]);
 
-  const loop = useCallback(cb => _loop(maxValue, cb), [maxValue]);
+  const loop = useCallback(cb => _loop(maxIndex, cb), [maxIndex]);
 
   return [
     {
@@ -34,13 +34,13 @@ const useRater = function(defaultProps) {
       onClick,
     },
     {
-      value,
-      hoverValue,
-      maxValue,
+      index,
+      hoverIndex,
+      maxIndex,
       loop,
-      setMaxValue,
-      setValue,
-      setHoverValue,
+      setMaxIndex,
+      setIndex,
+      setHoverIndex,
     }
   ];
 };
