@@ -4314,7 +4314,7 @@ export const CreditCardOff = enhancerIcon('credit-card-off', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <line x1="3" y1="3" x2="21" y2="21" />
-  <path d="" />
+  <path d="M9 5h9a3 3 0 0 1 3 3v8a3 3 0 0 1 -.128 .87" />
   <path d="M18.87 18.872a3 3 0 0 1 -.87 .128h-12a3 3 0 0 1 -3 -3v-8c0 -1.352 .894 -2.495 2.124 -2.87" />
   <line x1="3" y1="11" x2="11" y2="11" />
   <line x1="15" y1="11" x2="21" y2="11" />
@@ -5155,6 +5155,18 @@ export const FileImport = enhancerIcon('file-import', (props) => (
 FileImport.displayName = 'FileImport';
 all['file-import'] = FileImport;
 
+export const FileInfo = enhancerIcon('file-info', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <path d="M11 14h1v4h1" />
+  <path d="M12 11h.01" />
+</svg>
+));
+FileInfo.displayName = 'FileInfo';
+all['file-info'] = FileInfo;
+
 export const FileInvoice = enhancerIcon('file-invoice', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -5235,6 +5247,18 @@ export const FilePlus = enhancerIcon('file-plus', (props) => (
 ));
 FilePlus.displayName = 'FilePlus';
 all['file-plus'] = FilePlus;
+
+export const FileReport = enhancerIcon('file-report', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="17" cy="17" r="4" />
+  <path d="M17 13v4h4" />
+  <path d="M12 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M11.5 21h-6.5a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v2m0 3v4" />
+</svg>
+));
+FileReport.displayName = 'FileReport';
+all['file-report'] = FileReport;
 
 export const FileSearch = enhancerIcon('file-search', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -5336,6 +5360,29 @@ export const File = enhancerIcon('file', (props) => (
 ));
 File.displayName = 'File';
 all['file'] = File;
+
+export const FilesOff = enhancerIcon('files-off', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 17h-6a2 2 0 0 1 -2 -2v-6m0 -4a2 2 0 0 1 2 -2h4l5 5v7c0 .294 -.063 .572 -.177 .823" />
+  <path d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2" />
+  <line x1="3" y1="3" x2="21" y2="21" />
+</svg>
+));
+FilesOff.displayName = 'FilesOff';
+all['files-off'] = FilesOff;
+
+export const Files = enhancerIcon('files', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2z" />
+  <path d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+</svg>
+));
+Files.displayName = 'Files';
+all['files'] = Files;
 
 export const FilterOff = enhancerIcon('filter-off', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -6517,7 +6564,8 @@ export const LayoutGridAdd = enhancerIcon('layout-grid-add', (props) => (
   <rect x="4" y="4" width="6" height="6" rx="1" />
   <rect x="14" y="4" width="6" height="6" rx="1" />
   <rect x="4" y="14" width="6" height="6" rx="1" />
-  <rect x="14" y="14" width="6" height="6" rx="1" />
+  <path d="M14 17h6" />
+  <path d="M17 14v6" />
 </svg>
 ));
 LayoutGridAdd.displayName = 'LayoutGridAdd';
@@ -7787,6 +7835,101 @@ export const Notification = enhancerIcon('notification', (props) => (
 Notification.displayName = 'Notification';
 all['notification'] = Notification;
 
+export const Number0 = enhancerIcon('number-0', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M16 16v-8" />
+  <path d="M12 20a4 4 0 0 0 4 -4v-8a4 4 0 1 0 -8 0v8a4 4 0 0 0 4 4z" />
+</svg>
+));
+Number0.displayName = 'Number0';
+all['number-0'] = Number0;
+
+export const Number1 = enhancerIcon('number-1', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M13 20v-16l-5 5" />
+</svg>
+));
+Number1.displayName = 'Number1';
+all['number-1'] = Number1;
+
+export const Number2 = enhancerIcon('number-2', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8 8a4 4 0 1 1 8 0c0 1.098 -.564 2.025 -1.159 2.815l-6.841 9.185h8" />
+</svg>
+));
+Number2.displayName = 'Number2';
+all['number-2'] = Number2;
+
+export const Number3 = enhancerIcon('number-3', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 12a4 4 0 1 0 -4 -4" />
+  <path d="M8 16a4 4 0 1 0 4 -4" />
+</svg>
+));
+Number3.displayName = 'Number3';
+all['number-3'] = Number3;
+
+export const Number4 = enhancerIcon('number-4', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 20v-15l-8 11h10" />
+</svg>
+));
+Number4.displayName = 'Number4';
+all['number-4'] = Number4;
+
+export const Number5 = enhancerIcon('number-5', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8 20h4a4 4 0 1 0 0 -8h-4v-8h8" />
+</svg>
+));
+Number5.displayName = 'Number5';
+all['number-5'] = Number5;
+
+export const Number6 = enhancerIcon('number-6', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8 16a4 4 0 1 0 8 0v-1a4 4 0 1 0 -8 0" />
+  <path d="M16 8a4 4 0 1 0 -8 0v8" />
+</svg>
+));
+Number6.displayName = 'Number6';
+all['number-6'] = Number6;
+
+export const Number7 = enhancerIcon('number-7', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8 4h8l-4 16" />
+</svg>
+));
+Number7.displayName = 'Number7';
+all['number-7'] = Number7;
+
+export const Number8 = enhancerIcon('number-8', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="12" cy="8" r="4" />
+  <circle cx="12" cy="16" r="4" />
+</svg>
+));
+Number8.displayName = 'Number8';
+all['number-8'] = Number8;
+
+export const Number9 = enhancerIcon('number-9', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M16 8a4 4 0 1 0 -8 0v1a4 4 0 1 0 8 0" />
+  <path d="M8 16a4 4 0 1 0 8 0v-8" />
+</svg>
+));
+Number9.displayName = 'Number9';
+all['number-9'] = Number9;
+
 export const Octagon = enhancerIcon('octagon', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -8488,6 +8631,40 @@ export const Rainbow = enhancerIcon('rainbow', (props) => (
 Rainbow.displayName = 'Rainbow';
 all['rainbow'] = Rainbow;
 
+export const Receipt2 = enhancerIcon('receipt-2', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2" />
+  <path d="M14 8h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5m2 0v1.5m0 -9v1.5" />
+</svg>
+));
+Receipt2.displayName = 'Receipt2';
+all['receipt-2'] = Receipt2;
+
+export const ReceiptOff = enhancerIcon('receipt-off', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 21v-16m2 -2h10a2 2 0 0 1 2 2v10m0 4.01v1.99l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2" />
+  <line x1="11" y1="7" x2="15" y2="7" />
+  <line x1="9" y1="11" x2="11" y2="11" />
+  <line x1="13" y1="15" x2="15" y2="15" />
+  <line x1="15" y1="11" x2="15" y2="11.01" />
+  <line x1="3" y1="3" x2="21" y2="21" />
+</svg>
+));
+ReceiptOff.displayName = 'ReceiptOff';
+all['receipt-off'] = ReceiptOff;
+
+export const ReceiptRefund = enhancerIcon('receipt-refund', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2" />
+  <path d="M15 14v-2a2 2 0 0 0 -2 -2h-4l2 -2m0 4l-2 -2" />
+</svg>
+));
+ReceiptRefund.displayName = 'ReceiptRefund';
+all['receipt-refund'] = ReceiptRefund;
+
 export const ReceiptTax = enhancerIcon('receipt-tax', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -8499,6 +8676,15 @@ export const ReceiptTax = enhancerIcon('receipt-tax', (props) => (
 ));
 ReceiptTax.displayName = 'ReceiptTax';
 all['receipt-tax'] = ReceiptTax;
+
+export const Receipt = enhancerIcon('receipt', (props) => (
+<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2m4 -14h6m-6 4h6m-2 4h2" />
+</svg>
+));
+Receipt.displayName = 'Receipt';
+all['receipt'] = Receipt;
 
 export const RecordMail = enhancerIcon('record-mail', (props) => (
 <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
