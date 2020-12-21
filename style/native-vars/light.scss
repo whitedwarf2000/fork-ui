@@ -1,6 +1,25 @@
 .light-mode {
+  --body-bg: #f0f2f5;
+  --bg: #fff;
+  --bg-disabled: #eceef3;
+
   --txt-color: #000;
   --txt-color-low-emphasis: #65676b;
+  --txt-color-disabled: #bcc0c4;
+
+  --primary: #1877f2;
+  --primary-hover: #1467d2;
+
+  --red: #c00;
+  --red-hover: #c00;
+
+  --green: #57ec0a;
+  --green-hover: #57ec0a;
+
+  // BUTTON
+  --btn-bg: #e4e6eb;
+  --btn-hover-bg: #c5c7cc;
+  --btn-hover-border-color: transparent;
 }
 
 .light-mode {
@@ -9,49 +28,6 @@
 }
 
 .light-mode {
-  --text-color--disabled: #505965;
-  --text-color--placeholder: #8f8d8d;
-
-  --body-bg: #f3f2ef;
-  --bg: #fff;
-
-  --secondary-bg: #fff;
-  --secondary-bg--1: #fff;
-  --secondary-bg--3: #fff;
-  --secondary-bg--5: #fff;
-  --secondary-bg--7: #fff;
-  --secondary-bg--9: #fff;
-
-  --primary: #1877f2;
-  --primary--1: #1877f2;
-  --primary--3: #1877f2;
-  --primary--5: #1877f2;
-  --primary--7: #1877f2;
-  --primary--9: #1877f2;
-
-  --primary--bg: #1877f2;
-  --primary--disabled: #1877f2;
-  --primary--lighter: #1877f2;
-  --primary--darker: #1877f2;
-
-  --red: #c00;
-  --red--bg: #c00;
-  --red--disabled: #c94d4d;
-  --red--lighter: #f30303;
-  --red--darker: #850303;
-
-  --green: #57ec0a;
-  --green--bg: #57ec0a;
-  --green--disabled: #72bd4c;
-  --green--lighter: #55ff00;
-  --green--darker: #349405;
-
-  --button--bg: #f2f2f2;
-  --button--hover-bg: #f2f2f2;
-  --button--hover-border-color: transparent;
-  --button--disabled-bg: #f2f2f2;
-  --button--disabled-color: var(--text-color--disabled);
-
 
   --tab-title--active: rgba(0, 0, 0, 0.2);
 

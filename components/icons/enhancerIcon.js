@@ -1,7 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
+import PropTypes from 'prop-types';
 
-const enhancerIcon = (originalName, IconComponent) => {
+const enhancerIcon = (originalName, displayName, IconComponent) => {
   const Icon = ({ className, style, color, size, stroke, ...otherProps }) => {
     return (
       <IconComponent
@@ -16,6 +17,16 @@ const enhancerIcon = (originalName, IconComponent) => {
       />
     );
   };
+
+  Icon.displayName = displayName;
+  Icon.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    color: PropTypes.string,
+    size: PropTypes.string,
+    stroke: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  };
+  Icon.defaultProps = {};
 
   return Icon;
 };

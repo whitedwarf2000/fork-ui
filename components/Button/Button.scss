@@ -6,7 +6,7 @@
   min-width: var(--basic-height);
   border-radius: var(--border-radius);
   border: 1px solid transparent;
-  background-color: var(--button--bg);
+  background-color: var(--btn-bg);
   padding-left: 1.25em;
   padding-right: 1.25em;
   outline: 0 !important;
@@ -17,22 +17,18 @@
 
   &:hover,
   &:focus {
-    background-color: var(--button--hover-bg);
-  }
-
-  &:hover {
-    color: var(--primary);
+    background-color: var(--btn-hover-bg);
   }
 
   &:disabled,
   &:disabled:hover,
   &:disabled:focus {
     cursor: not-allowed !important;
-    background-color: var(--button--disabled-bg);
-    color: var(--text-color--disabled);
+    background-color: var(--bg-disabled);
+    color: var(--txt-color-disabled);
 
     * {
-      cursor: not-allowed !important;
+      pointer-events: none !important;
     }
   }
 }
@@ -46,7 +42,11 @@
 .fbtn-circle {
   padding-left: 0;
   padding-right: 0;
-  border-radius: 100em;
+  border-radius: 999px;
+}
+
+.fbtn-rounded {
+  border-radius: 999px;
 }
 
 .fbtn-icon {
@@ -62,8 +62,12 @@
   margin-left: 0.5em;
 }
 
-.fbtn-rounded {
-  border-radius: 100em;
+.fbtn-loading .floader-spinner {
+  width: 1.85em;
+  height: 1.85em;
+  margin: 0;
+  z-index: 1;
+  position: absolute;
 }
 
 .fbtn-primary {
@@ -72,7 +76,7 @@
 
   &:hover,
   &:focus {
-    background-color: var(--primary--lighter);
+    background-color: var(--primary-hover);
     color: #fff;
   }
 }
@@ -83,42 +87,11 @@
 
   &:hover,
   &:focus {
-    background-color: var(--red--lighter);
-    color: #fff;
-  }
-}
-
-.fbtn-success {
-  background-color: var(--green);
-  color: #fff;
-
-  &:hover,
-  &:focus {
-    background-color: var(--green--lighter);
+    background-color: var(--red-hover);
     color: #fff;
   }
 }
 
 .fbtn-transparent {
   background-color: transparent;
-}
-
-.fbtn-ghost {
-  background-color: transparent;
-
-  &:hover,
-  &:focus,
-  &:disabled:hover,
-  &:disabled:focus {
-    background-color: transparent;
-    color: var(--primary);
-  }
-}
-
-.fbtn-loading .floader-spinner {
-  width: 1.85em;
-  height: 1.85em;
-  margin: 0;
-  z-index: 1;
-  position: absolute;
 }
