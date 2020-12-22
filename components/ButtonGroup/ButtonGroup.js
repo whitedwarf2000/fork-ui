@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const ButtonGroup = ({ className, fluid, children, ...otherProps }) => {
+const ButtonGroup = ({ className, fluid, ...otherProps }) => {
   return (
     <div
       className={cn(
@@ -12,17 +12,8 @@ const ButtonGroup = ({ className, fluid, children, ...otherProps }) => {
         },
         className
       )}
-    >
-      {React.Children.map(children, elm => {
-        if (React.isValidElement(elm)) {
-          return React.cloneElement(elm, {
-            ...otherProps,
-            ...elm.props
-          });
-        }
-        return elm;
-      })}
-    </div>
+      {...otherProps}
+    />
   );
 };
 
@@ -30,8 +21,6 @@ ButtonGroup.displayName = 'ButtonGroup';
 ButtonGroup.propTypes = {
   className: PropTypes.string,
   fluid: PropTypes.bool,
-  style: PropTypes.object,
-  size: PropTypes.string,
 };
 ButtonGroup.defaultProps = {};
 

@@ -1,31 +1,30 @@
 .fbtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--basic-height);
-  min-width: var(--basic-height);
-  border-radius: var(--border-radius);
-  border: 1px solid transparent;
   background-color: var(--btn-bg);
-  padding-left: 1.25em;
-  padding-right: 1.25em;
+  border: 1px solid var(--btn-bg);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  min-height: var(--basic-height);
+  min-width: var(--basic-height);
   outline: 0 !important;
   outline-style: none;
-  user-select: none;
+  padding: 0.45em 1.25em;
+  position: relative;
   touch-action: manipulation;
-  cursor: pointer;
+  user-select: none;
 
   &:hover,
   &:focus {
     background-color: var(--btn-hover-bg);
+    border-color: var(--btn-hover-bg);
   }
 
   &:disabled,
   &:disabled:hover,
   &:disabled:focus {
-    cursor: not-allowed !important;
     background-color: var(--bg-disabled);
+    border-color: var(--bg-disabled);
     color: var(--txt-color-disabled);
+    cursor: not-allowed !important;
 
     * {
       pointer-events: none !important;
@@ -33,20 +32,40 @@
   }
 }
 
-.fbtn-child {
-  display: flex;
-  justify-content: center;
-  align-self: center;
+.fbtn-spinner {
+  font-size: 1.35em;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fbtn-solid {
+  background-color: transparent;
+  border-color: currentColor;
+  border-style: solid;
+}
+
+.fbtn-dashed {
+  background-color: transparent;
+  border-color: currentColor;
+  border-style: dashed;
 }
 
 .fbtn-circle {
+  border-radius: 999px;
   padding-left: 0;
   padding-right: 0;
-  border-radius: 999px;
 }
 
 .fbtn-rounded {
   border-radius: 999px;
+}
+
+.fbtn-child {
+  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 
 .fbtn-icon {
@@ -62,36 +81,45 @@
   margin-left: 0.5em;
 }
 
-.fbtn-loading .floader-spinner {
-  width: 1.85em;
-  height: 1.85em;
-  margin: 0;
-  z-index: 1;
-  position: absolute;
-}
-
 .fbtn-primary {
   background-color: var(--primary);
+  border-color: var(--primary);
   color: #fff;
+
+  &.fbtn-solid,
+  &.fbtn-dashed {
+    background-color: transparent;
+    color: var(--primary);
+  }
 
   &:hover,
   &:focus {
     background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
     color: #fff;
   }
 }
 
 .fbtn-danger {
   background-color: var(--red);
+  border-color: var(--red);
   color: #fff;
+
+  &.fbtn-solid,
+  &.fbtn-dashed {
+    background-color: transparent;
+    color: var(--red);
+  }
 
   &:hover,
   &:focus {
     background-color: var(--red-hover);
+    border-color: var(--red-hover);
     color: #fff;
   }
 }
 
 .fbtn-transparent {
   background-color: transparent;
+  border-color: transparent;
 }

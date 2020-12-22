@@ -10,7 +10,6 @@ import { omit, isString, isNumber } from '../../utils/helpers';
 const mColors = Object.freeze({
   primary: 'fbtn-primary',
   transparent: 'fbtn-transparent',
-  ghost: 'fbtn-ghost',
   danger: 'fbtn-danger',
 });
 
@@ -20,8 +19,8 @@ const mShapes = Object.freeze({
 });
 
 const mBorders = Object.freeze({
-  solid: 'fbtn-border-solid',
-  rounded: 'fbtn-border-dashed',
+  solid: 'fbtn-solid',
+  dashed: 'fbtn-dashed',
 });
 
 const lColors = Object.keys(mColors);
@@ -61,7 +60,7 @@ const Button = React.forwardRef(({
       disabled={loading || disabled}
       {...otherProps}
     >
-      {loading && <Loader.Spinner />}
+      {loading && <Loader.Spinner className="fbtn-spinner" />}
       <span className="fbtn-child">
         {(() => {
           if (icon) {
@@ -92,6 +91,7 @@ Button.propTypes = {
   children: PropTypes.any,
   loading: PropTypes.bool,
   border: PropTypes.oneOf(['solid', 'dashed']),
+  disabled: PropTypes.bool,
 };
 Button.defaultProps = {};
 
@@ -109,7 +109,11 @@ const withSemantic = (Component) => {
     ]), [props]);
 
     return (
-      <Component shape={shape} color={color} {...passedProps} />
+      <Component
+        shape={shape}
+        color={color}
+        {...passedProps}
+      />
     );
   };
 

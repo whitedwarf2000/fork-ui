@@ -10,6 +10,12 @@
 }
 
 .floader-spinner {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.floader-spinner-spin {
   display: inline-block;
   color: var(--primary);
   border-radius: 999px;
