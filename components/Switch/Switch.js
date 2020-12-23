@@ -1,16 +1,18 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Loader from '../Loader';
+import useSwitch from './useSwitch';
 
-const Switch = React.forwardRef(({ className, style, size, disabled, loading, ...otherProps }, ref) => {
+const Switch = React.forwardRef(({ className, style, size, color, disabled, loading, ...otherProps }, ref) => {
   return (
     <div
       className={cn('fswitch', className)}
       style={{
-        fontSize: size,
-        ...style
+        ...style,
+        color: color,
+        '--size': size,
       }}
     >
       <input
@@ -22,29 +24,23 @@ const Switch = React.forwardRef(({ className, style, size, disabled, loading, ..
       />
       <div className="fswitch-mark">
         <span className="fswitch-lever">
-          {loading && <Loader.Spinner />}
+          {loading && <Loader.Spinner className="fswitch-spinner" />}
         </span>
       </div>
     </div>
   );
 });
 
-Switch.useSwitch = (defaultChecked) => {
-  const [checked, setChecked] = useState(defaultChecked);
-  const onChange = useCallback(e => setChecked(e.target.checked), [setChecked]);
-  const toggle = useCallback(() => setChecked(val => !val), [setChecked]);
-
-  return [{ checked, onChange }, { setChecked, toggle }];
-};
-
 Switch.displayName = 'Switch';
 Switch.propTypes = {
-  className: PropTypes.string,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
+  className: PropTypes.string,
   style: PropTypes.object,
-  size: PropTypes.string,
+  color: PropTypes.string,
+  size: PropTypes.string, // only accept px
 };
 Switch.defaultProps = {};
+Switch.useSwitch = useSwitch;
 
 export default Switch;

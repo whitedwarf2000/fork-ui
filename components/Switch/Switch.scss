@@ -1,77 +1,83 @@
 .fswitch {
-  position: relative;
-  width: 38px;
-  height: 22px;
-  outline: 0 !important;
+  --size: 22px;
+  align-items: center;
   color: var(--primary);
   display: flex;
-  align-items: center;
-
-  .floader-spinner {
-    color: currentColor;
-  }
-}
-
-.fswitch-mark {
-  background-color: #2e3031;
-  display: block;
-  position: relative;
-  box-sizing: border-box;
+  height: var(--size);
   outline: 0 !important;
-  width: 100%;
-  height: 100%;
-  border-radius: 999px;
-  transition: background-color 0.25s;
-  display: flex;
-  align-items: center;
-}
-
-.fswitch-lever {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--switch-inner--bg);
-  min-height: 20px;
-  min-width: 20px;
-  margin: 0 1px;
-  border-radius: 999px;
-  transition: background-color 0.25s, transform 0.25s;
+  position: relative;
+  width: calc(var(--size) * 2 - (var(--size) / 3));
 }
 
 .fswitch-input {
-  position: absolute;
-  top: 0;
-  right: 0;
   bottom: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
   cursor: pointer;
+  height: 100%;
+  left: 0;
   opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
 
-  &:disabled {
-    cursor: not-allowed;
-  }
+.fswitch-mark {
+  align-items: center;
+  background-color: var(--bg-disabled);
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  display: flex;
+  height: 100%;
+  outline: 0 !important;
+  position: relative;
+  transition: background-color 0.25s;
+  width: 100%;
+}
 
+.fswitch-lever {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 999px;
+  display: flex;
+  height: calc(var(--size) - 2px);
+  justify-content: center;
+  transform: translateX(1px);
+  transition: background-color 0.25s, transform 0.25s;
+  width: calc(var(--size) - 2px);
+}
+
+.fswitch-spinner {
+  color: var(--bg-disabled);
+  font-size: calc(var(--size) / 2);
+}
+
+.fswitch-input {
   &:checked {
     + .fswitch-mark {
       background-color: currentColor;
-  
+
       .fswitch-lever {
-        transform: translateX(16px);
         background-color: #fff;
+        transform: translateX(calc((var(--size) * 2 - (var(--size) / 3) - var(--size) + 1px)));
       }
     }
   }
 
-  &:checked:disabled {
+  &:disabled,
+  &:disabled:hover,
+  &:checked:disabled,
+  &:checked:disabled:hover {
+    cursor: not-allowed;
+
     + .fswitch-mark {
-      background-color: #2e3031;
+      background-color: var(--bg-disabled);
+      cursor: not-allowed;
 
       .fswitch-lever {
-        background-color: var(--switch-inner--bg);
+        background-color: var(--switch-lever-color-disabled);
       }
     }
-  }  
+  }
 }

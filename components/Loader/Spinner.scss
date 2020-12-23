@@ -13,16 +13,14 @@
   align-items: center;
   display: flex;
   justify-content: center;
+  color: var(--primary);
 }
 
 .floader-spinner-spin {
   display: inline-block;
-  color: var(--primary);
   border-radius: 999px;
   width: 1.5em;
   height: 1.5em;
-  min-width: 20px;
-  min-height: 20px;
   border-width: 0.125em;
   border-style: solid;
   border-color: transparent;
