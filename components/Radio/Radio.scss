@@ -1,49 +1,52 @@
 .fradio {
-  display: block;
-  position: relative;
+  --size: 18px;
   box-sizing: border-box;
-  outline: 0 !important;
-  width: 18px;
-  height: 18px;
   color: var(--primary);
-}
-
-.fradio-mark {
-  position: relative;
   display: block;
-  height: 100%;
-  width: 100%;
-  border: 0.05em solid #2e3031;
-  border-radius: 999px;
-  transition: border-color 0.25s;
-
-  &::before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
-    background-color: currentColor;
-    transition: transform 0.25s, opacity 0.25s;
-  }
+  height: var(--size);
+  outline: 0 !important;
+  position: relative;
+  width: var(--size);
 }
 
 .fradio-input {
-  position: absolute;
-  top: 0;
-  right: 0;
   bottom: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
   cursor: pointer;
+  height: 100%;
+  left: 0;
   opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
 
+.fradio-mark {
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  display: block;
+  height: 100%;
+  position: relative;
+  transition: border-color 0.25s;
+  width: 100%;
+}
+
+.fradio-mark::before {
+  background-color: currentColor;
+  border-radius: 999px;
+  content: '';
+  height: calc(var(--size) / 1.8);
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.25s, opacity 0.25s;
+  width: calc(var(--size) / 1.8);
+}
+
+.fradio-input {
   &:hover {
     + .fradio-mark {
       border-color: currentColor;
@@ -62,27 +65,26 @@
   }
 
   &:disabled,
-  &:disabled:hover {
+  &:disabled:hover,
+  &:checked:disabled,
+  &:checked:disabled:hover {
     cursor: not-allowed;
+  }
 
+  &:disabled,
+  &:disabled:hover {
     + .fradio-mark {
-      color: #2e3031;
+      border-color: var(--bg-disabled);
+      color: var(--bg-disabled);
     }
   }
 
   &:checked:disabled,
   &:checked:disabled:hover {
     + .fradio-mark {
-      color: #2e3031;
+      &::before {
+        color: var(--bg-disabled);
+      }
     }
-  }
-}
-
-.fradio-size {
-  width: 1.5em;
-  height: 1.5em;
-
-  .fradio-mark {
-    
   }
 }
