@@ -83,7 +83,7 @@
   &:checked:disabled:hover {
     + .fradio-mark {
       &::before {
-        color: var(--bg-disabled);
+        color: var(--txt-color-disabled);
       }
     }
   }
