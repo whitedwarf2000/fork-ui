@@ -23,7 +23,7 @@
 }
 
 .fcbox-mark {
-  border: 1px solid currentColor;
+  border: 1px solid var(--txt-color-low-emphasis);
   border-radius: calc(var(--size) / 5);
   display: block;
   height: 100%;
