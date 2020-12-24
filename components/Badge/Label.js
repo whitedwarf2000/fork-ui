@@ -14,12 +14,12 @@ const Label = ({
       className={cn('fbadge-ui fbadge-label', className)}
       {...otherProps}
     >
-      <b>{label}</b>
+      <b className="fbadge-label-display">{label}</b>
     </sub>
   );
 };
 
-Label.displayName = 'Badge.Label';
+Label.displayName = 'Label';
 Label.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,

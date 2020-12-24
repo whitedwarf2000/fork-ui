@@ -16,14 +16,12 @@ const Dot = ({
   );
 };
 
-Dot.displayName = 'Badge.Dot';
+Dot.displayName = 'Dot';
 Dot.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
 };
 
-Dot.defaultProps = {
-  overflowCount: Infinity,
-};
+Dot.defaultProps = {};
 
 export default Dot;

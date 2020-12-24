@@ -24,12 +24,12 @@ const Counter = ({
       className={cn('fbadge-ui fbadge-counter', className)}
       {...otherProps}
     >
-      <b>{displayCount}</b>
+      <b className="fbadge-display-count">{displayCount}</b>
     </sub>
   );
 };
 
-Counter.displayName = 'Badge.Counter';
+Counter.displayName = 'Counter';
 Counter.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,

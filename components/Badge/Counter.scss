@@ -1,15 +1,15 @@
-.fbadge-ui.fbadge-counter {
-  height: 2.25em;
-  min-width: 2.25em;
+.fbadge-counter {
   background-color: var(--red);
   border: 2px solid var(--bg);
-  color: #fff;
-  font-weight: 600;
-  font-family: sans-serif;
   border-radius: 999px;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 600;
+  height: 2.25em;
+  min-width: 2.25em;
+}
 
-  > b {
-    padding: 0 0.5em;
-    white-space: nowrap;
-  }
+.fbadge-display-count {
+  padding: 0 0.5em;
+  white-space: nowrap;
 }

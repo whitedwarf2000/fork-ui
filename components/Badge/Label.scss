@@ -1,14 +1,14 @@
-.fbadge-ui.fbadge-label {
-  height: 2.25em;
-  min-width: 2.25em;
+.fbadge-label {
   background-color: var(--red);
   border: 2px solid var(--bg);
-  color: #fff;
   border-radius: 999px;
+  color: #fff;
   font-family: sans-serif;
+  height: 2.25em;
+  min-width: 2.25em;
+}
 
-  > b {
-    padding: 0 0.5em;
-    white-space: nowrap;
-  }
+.fbadge-label-display {
+  padding: 0 0.5em;
+  white-space: nowrap;
 }
