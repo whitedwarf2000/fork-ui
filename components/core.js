@@ -61,5 +61,6 @@ export { default as Form } from './Form';
 export { default as Loader } from './Loader';
 export { default as Skeleton } from './Skeleton';
 export { default as Upload } from './Upload';
-
 export { default as QueryBuilder } from './QueryBuilder';
+
+export { default as useSwitch } from './Switch/useSwitch';
