@@ -2,6 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
+import useRadioGroup from './useRadioGroup';
+
 const Radio = React.forwardRef(({ className, style, size, color, ...otherProps }, ref) => {
   return (
     <span
@@ -23,6 +25,7 @@ const Radio = React.forwardRef(({ className, style, size, color, ...otherProps }
   );
 });
 
+Radio.useRadioGroup = useRadioGroup;
 Radio.displayName = 'Radio';
 Radio.propTypes = {
   className: PropTypes.string,

@@ -41,7 +41,6 @@ export { default as Select } from './Select';
 export { default as Stepper } from './Stepper';
 export { default as SpeedDial } from './SpeedDial';
 export { default as Radio } from './Radio';
-export { default as RadioGroup } from './RadioGroup';
 export { default as Rater } from './Rater';
 export { default as Switch } from './Switch';
 export { default as Slider } from './Slider';
@@ -64,3 +63,4 @@ export { default as Upload } from './Upload';
 export { default as QueryBuilder } from './QueryBuilder';
 
 export { default as useSwitch } from './Switch/useSwitch';
+export { default as useRadioGroup } from './Radio/useRadioGroup';
