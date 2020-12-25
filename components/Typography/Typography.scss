@@ -1,3 +1,4 @@
+/* stylelint-disable selector-no-qualifying-type */
 h1.ftypo,
 h2.ftypo,
 h3.ftypo,
@@ -5,7 +6,7 @@ h4.ftypo,
 h5.ftypo,
 h6.ftypo {
   font-weight: 600;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 h1.ftypo {
@@ -25,17 +26,17 @@ h4.ftypo {
 }
 
 h5.ftypo {
-  font-size: .83em;
+  font-size: 0.83em;
 }
 
 h6.ftypo {
-  font-size: .67em;
+  font-size: 0.67em;
 }
 
 .ftypo-disabled {
-  user-select: none;
+  color: var(--txt-color-disabled);
   cursor: not-allowed !important;
-  color: var(--text-color--disabled);
+  user-select: none;
 }
 
 .ftypo-underline {

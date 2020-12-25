@@ -8,7 +8,6 @@ const mFontStyles = Object.freeze({
   i: 'ftypo-italic',
   oblique: 'ftypo-oblique',
 });
-
 const mTextDecoration = Object.freeze({
   u: 'ftypo-underline',
   through: 'ftypo-line-through',
@@ -18,20 +17,17 @@ const lTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'p', 'span'];
 const lFontStyles = Object.keys(mFontStyles);
 const lTextDecoration = Object.keys(mTextDecoration);
 
-const Typography = ({ children, className, disabled, color, b, ...otherProps }) => {
-  const tag = useSemanticProp('tag', otherProps, lTags) || 'p';
-  const fontStyle = useSemanticProp('fontStyle', otherProps, lFontStyles);
-  const textDecoration = useSemanticProp('decoration', otherProps, lTextDecoration);
-
-  const passedProps = useMemo(() => omit(otherProps, [
-    ...lTags,
-    ...lFontStyles,
-    ...lTextDecoration,
-    'decoration',
-    'tag',
-    'fontStyle',
-  ]), [otherProps]);
-
+const Typography = ({
+  children,
+  className,
+  disabled,
+  color,
+  b,
+  tag,
+  fontStyle,
+  textDecoration,
+  ...otherProps
+}) => {
   return React.createElement(
     tag,
     {
@@ -48,9 +44,9 @@ const Typography = ({ children, className, disabled, color, b, ...otherProps }) 
         mTextDecoration[textDecoration],
         className
       ),
-      ...passedProps
+      ...otherProps
     },
-    children
+    children,
   );
 };
 
@@ -60,24 +56,62 @@ Typography.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   decoration: PropTypes.string,
-  u: PropTypes.bool,
-  through: PropTypes.bool,
   b: PropTypes.bool,
   fontStyle: PropTypes.string,
-  i: PropTypes.bool,
-  p: PropTypes.bool,
   tag: PropTypes.string,
-  div: PropTypes.bool,
-  h1: PropTypes.bool,
-  h2: PropTypes.bool,
-  h3: PropTypes.bool,
-  h4: PropTypes.bool,
-  h5: PropTypes.bool,
-  h6: PropTypes.bool,
-  span: PropTypes.bool,
-  oblique: PropTypes.bool,
   color: PropTypes.string,
+  textDecoration: PropTypes.string,
 };
-Typography.defaultProps = {};
+Typography.defaultProps = {
+  tag: 'p',
+};
 
-export default Typography;
+const withSemantic = (Component) => {
+  const SemanticTypography = (props) => {
+    const tag = useSemanticProp('tag', props, lTags);
+    const fontStyle = useSemanticProp('fontStyle', props, lFontStyles);
+    const textDecoration = useSemanticProp('decoration', props, lTextDecoration);
+  
+    const passedProps = useMemo(() => omit(props, [
+      ...lTags,
+      ...lFontStyles,
+      ...lTextDecoration,
+      'decoration',
+      'tag',
+      'fontStyle',
+    ]), [props]);
+
+    return (
+      <Component
+        tag={tag}
+        textDecoration={textDecoration}
+        fontStyle={fontStyle}
+        {...passedProps}
+      />
+    );
+  };
+
+  SemanticTypography.displayName = 'SemanticTypography';
+  SemanticTypography.propTypes = {
+    tag: PropTypes.string,
+    decoration: PropTypes.string,
+    u: PropTypes.bool,
+    through: PropTypes.bool,
+    i: PropTypes.bool,
+    p: PropTypes.bool,
+    div: PropTypes.bool,
+    h1: PropTypes.bool,
+    h2: PropTypes.bool,
+    h3: PropTypes.bool,
+    h4: PropTypes.bool,
+    h5: PropTypes.bool,
+    h6: PropTypes.bool,
+    span: PropTypes.bool,
+    oblique: PropTypes.bool,
+  };
+  SemanticTypography.defaultProps = {};
+
+  return SemanticTypography;
+};
+
+export default withSemantic(Typography);
