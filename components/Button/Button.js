@@ -12,12 +12,10 @@ const mColors = Object.freeze({
   transparent: 'fbtn-transparent',
   danger: 'fbtn-danger',
 });
-
 const mShapes = Object.freeze({
   circle: 'fbtn-circle',
   rounded: 'fbtn-rounded',
 });
-
 const mBorders = Object.freeze({
   solid: 'fbtn-solid',
   dashed: 'fbtn-dashed',

@@ -9,14 +9,12 @@ import { isArray, isObject } from './helpers';
  */
 
 export default (props = {}, deps = []) => {
-  const fallBack = '';
-
   if (!isObject(props) || !isArray(deps)) {
-    return fallBack;
+    return undefined;
   }
 
   if (deps.length === 0) {
-    return fallBack;
+    return undefined;
   }
 
   const propsKey = Object.keys(props);
@@ -26,5 +24,5 @@ export default (props = {}, deps = []) => {
     }
   }
 
-  return fallBack;
+  return undefined;
 };

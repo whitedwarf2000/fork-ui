@@ -12,24 +12,26 @@ const mShape = Object.freeze({
 
 const lShape = Object.keys(mShape);
 
-const Avatar = ({ className, src, style, size, color, children, ...otherProps }) => {
-  const shape = useSemanticProp('shape', otherProps, lShape);
-
-  const passedProps = useMemo(() => omit(otherProps, [
-    ...lShape,
-    'shape',
-  ]), [otherProps]);
-
+const Avatar = ({
+  className,
+  src,
+  style,
+  size,
+  color,
+  shape,
+  children,
+  ...otherProps
+}) => {
   return (
     <div
-      className={cn('favt', mShape[shape] || 'favt-circle', className)}
+      className={cn('favt', mShape[shape], className)}
       style={{
         ...style,
         fontSize: size,
         color,
-        backgroundImage: src ? `url(${src})` : null,
+        backgroundImage: src ? `url(${src})` : undefined,
       }}
-      {...passedProps}
+      {...otherProps}
     >
       {!src && <span className="favt-name">{children}</span>}
     </div>
@@ -45,7 +47,36 @@ Avatar.propTypes = {
   square: PropTypes.bool,
   size: PropTypes.string,
   color: PropTypes.string,
+  style: PropTypes.object,
+  children: PropTypes.any,
 };
-Avatar.defaultProps = {};
+Avatar.defaultProps = {
+  shape: 'circle',
+};
 
-export default Avatar;
+const withSemantic = (Component) => {
+  const SematicAvatar = (props) => {
+    const shape = useSemanticProp('shape', props, lShape);
+
+    const passedProps = useMemo(() => omit(props, [
+      ...lShape,
+      'shape',
+    ]), [props]);
+
+    return (
+      <Component shape={shape} {...passedProps} />
+    );
+  };
+
+  SematicAvatar.propTypes = {
+    shape: PropTypes.string,
+    square: PropTypes.bool, // shape="square"
+    circle: PropTypes.bool, // shape="circle"
+  };
+  SematicAvatar.defaultProps = {};
+  SematicAvatar.displayName = 'SematicAvatar';
+
+  return SematicAvatar;
+};
+
+export default withSemantic(Avatar);

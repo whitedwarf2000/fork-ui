@@ -24,6 +24,9 @@
 
   // SWITCH
   --switch-lever-color-disabled: #424242;
+
+  // AVATAR
+  --avatar-bg: #2e3031;
 }
 
 .dark-mode {
@@ -49,8 +52,6 @@
   --menu--bg: #242424;
   --sub-menu--bg: #353535;
   --menu--shadow: none;
-
-  --avatar--bg: #2e3031;
 
   --slider-handler--shadow: none;
   --slider-rail--box-shadow: var(--pressed);
