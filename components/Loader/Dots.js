@@ -31,8 +31,24 @@ Dots.propTypes = {
   color: PropTypes.string,
   size: PropTypes.string,
   className: PropTypes.string,
-  wave: PropTypes.bool,
+  animation: PropTypes.oneOf(lAnimations)
 };
-Dots.defaultProps = {};
+Dots.defaultProps = {
+  animation: 'wave'
+};
 
-export default Dots;
+const withSemantic = (Component) => {
+  const SemanticDots = (props) => {
+    return (
+      <Component {...props} />
+    );
+  };
+
+  SemanticDots.displayName = 'SemanticDots';
+  SemanticDots.propTypes = {};
+  SemanticDots.defaultProps = {};
+
+  return SemanticDots;
+};
+
+export default withSemantic(Dots);

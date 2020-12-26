@@ -1,9 +1,8 @@
-@import '../../style/vars.scss';
-
 @keyframes spin {
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -11,19 +10,19 @@
 
 .floader-spinner {
   align-items: center;
+  color: var(--primary);
   display: flex;
   justify-content: center;
-  color: var(--primary);
 }
 
 .floader-spinner-spin {
-  display: inline-block;
-  border-radius: 999px;
-  width: 1.5em;
-  height: 1.5em;
-  border-width: 0.125em;
-  border-style: solid;
+  animation: spin 0.5s linear infinite;
   border-color: transparent;
   border-left-color: currentColor;
-  animation: spin .5s linear infinite;
+  border-radius: 999px;
+  border-style: solid;
+  border-width: 0.125em;
+  display: inline-block;
+  height: 1.5em;
+  width: 1.5em;
 }

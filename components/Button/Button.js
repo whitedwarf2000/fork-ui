@@ -23,6 +23,7 @@ const mBorders = Object.freeze({
 
 const lColors = Object.keys(mColors);
 const lShapes = Object.keys(mShapes);
+const lBorders = Object.keys(mBorders);
 
 const Button = React.forwardRef(({
   className,
@@ -81,14 +82,14 @@ const Button = React.forwardRef(({
 Button.displayName = 'Button';
 Button.propTypes = {
   className: PropTypes.string,
-  color: PropTypes.string,
-  shape: PropTypes.string,
+  color: PropTypes.oneOf(lColors),
+  shape: PropTypes.oneOf(lShapes),
   size: PropTypes.string,
   icon: PropTypes.any,
   style: PropTypes.object,
   children: PropTypes.any,
   loading: PropTypes.bool,
-  border: PropTypes.oneOf(['solid', 'dashed']),
+  border: PropTypes.oneOf(lBorders),
   disabled: PropTypes.bool,
 };
 Button.defaultProps = {};

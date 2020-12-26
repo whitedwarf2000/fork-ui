@@ -42,7 +42,7 @@ Avatar.displayName = 'Avatar';
 Avatar.propTypes = {
   className: PropTypes.string,
   src: PropTypes.string,
-  shape: PropTypes.string,
+  shape: PropTypes.oneOf(lShape),
   circle: PropTypes.bool,
   square: PropTypes.bool,
   size: PropTypes.string,
@@ -69,7 +69,7 @@ const withSemantic = (Component) => {
   };
 
   SematicAvatar.propTypes = {
-    shape: PropTypes.string,
+    shape: PropTypes.oneOf(lShape),
     square: PropTypes.bool, // shape="square"
     circle: PropTypes.bool, // shape="circle"
   };

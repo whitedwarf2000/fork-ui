@@ -45,7 +45,7 @@ PureBadge.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   overlap: PropTypes.bool,
-  placement: PropTypes.string,
+  placement: placementPropType,
   badge: PropTypes.any,
 };
 PureBadge.defaultProps = {};

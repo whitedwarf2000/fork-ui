@@ -1,18 +1,18 @@
-@import '../../style/vars.scss';
-
 @keyframes buble {
   from {
     opacity: 1;
     transform: scale(1.25);
   }
+
   to {
-    opacity: .20;
-    transform: scale(.75);
+    opacity: 0.2;
+    transform: scale(0.75);
   }
 }
 
 @keyframes wave {
-  0%, 100% {
+  0%,
+  100% {
     transform: initial;
   }
 
@@ -22,29 +22,28 @@
 }
 
 .floader-dots {
-  display: flex;
+  --size: 13px;
   align-items: center;
   color: var(--primary);
+  display: flex;
   position: relative;
 }
 
 .floader-dot {
-  display: inline-block;
-  margin: 0 0.2em;
-  width: 1em;
-  height: 1em;
-  min-width: 13px;
-  min-height: 13px;
   background-color: currentColor;
   border-radius: 999px;
+  display: inline-block;
+  height: var(--size);
+  margin: 0 calc(var(--size) / 4);
+  width: var(--size);
 }
 
 .floader-dots-buble .floader-dot {
-  animation-name: buble;
-  animation-duration: .4s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
   animation-direction: alternate;
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+  animation-name: buble;
+  animation-timing-function: ease;
 }
 
 .floader-dots-buble .floader-dot-1 {
@@ -52,18 +51,18 @@
 }
 
 .floader-dots-buble .floader-dot-2 {
-  animation-delay: .1s;
+  animation-delay: 0.1s;
 }
 
 .floader-dots-buble .floader-dot-3 {
-  animation-delay: .2s;
+  animation-delay: 0.2s;
 }
 
 .floader-dots-wave .floader-dot {
-  animation-name: wave;
   animation-duration: 1s;
-  animation-timing-function: ease-out;
   animation-iteration-count: infinite;
+  animation-name: wave;
+  animation-timing-function: ease-out;
 }
 
 .floader-dots-wave .floader-dot-1 {

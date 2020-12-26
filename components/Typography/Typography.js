@@ -52,15 +52,14 @@ const Typography = ({
 
 Typography.displayName = 'Typo';
 Typography.propTypes = {
+  tag: PropTypes.oneOf(lTags),
+  textDecoration: PropTypes.oneOf(lTextDecoration),
+  fontStyle: PropTypes.oneOf(lFontStyles),
   children: PropTypes.any,
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  decoration: PropTypes.string,
   b: PropTypes.bool,
-  fontStyle: PropTypes.string,
-  tag: PropTypes.string,
   color: PropTypes.string,
-  textDecoration: PropTypes.string,
 };
 Typography.defaultProps = {
   tag: 'p',
@@ -70,13 +69,13 @@ const withSemantic = (Component) => {
   const SemanticTypography = (props) => {
     const tag = useSemanticProp('tag', props, lTags);
     const fontStyle = useSemanticProp('fontStyle', props, lFontStyles);
-    const textDecoration = useSemanticProp('decoration', props, lTextDecoration);
+    const textDecoration = useSemanticProp('textDecoration', props, lTextDecoration);
   
     const passedProps = useMemo(() => omit(props, [
       ...lTags,
       ...lFontStyles,
       ...lTextDecoration,
-      'decoration',
+      'textDecoration',
       'tag',
       'fontStyle',
     ]), [props]);
@@ -93,21 +92,22 @@ const withSemantic = (Component) => {
 
   SemanticTypography.displayName = 'SemanticTypography';
   SemanticTypography.propTypes = {
-    tag: PropTypes.string,
-    decoration: PropTypes.string,
-    u: PropTypes.bool,
-    through: PropTypes.bool,
-    i: PropTypes.bool,
-    p: PropTypes.bool,
-    div: PropTypes.bool,
-    h1: PropTypes.bool,
-    h2: PropTypes.bool,
-    h3: PropTypes.bool,
-    h4: PropTypes.bool,
-    h5: PropTypes.bool,
-    h6: PropTypes.bool,
-    span: PropTypes.bool,
-    oblique: PropTypes.bool,
+    tag: PropTypes.oneOf(lTags),
+    textDecoration: PropTypes.oneOf(lTextDecoration),
+    fontStyle: PropTypes.oneOf(lFontStyles),
+    u: PropTypes.bool, // textDecoration="u"
+    through: PropTypes.bool, // textDecoration="through"
+    i: PropTypes.bool, // fontStyle="i"
+    oblique: PropTypes.bool, // fontStyle="oblique"
+    p: PropTypes.bool, // tag="p"
+    div: PropTypes.bool, // tag="div"
+    h1: PropTypes.bool, // tag="h1"
+    h2: PropTypes.bool, // tag="h2"
+    h3: PropTypes.bool, // tag="h3"
+    h4: PropTypes.bool, // tag="h4"
+    h5: PropTypes.bool, // tag="h5"
+    h6: PropTypes.bool, // tag="h6"
+    span: PropTypes.bool, // tag="span"
   };
   SemanticTypography.defaultProps = {};
 

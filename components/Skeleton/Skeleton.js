@@ -47,7 +47,7 @@ const Skeleton = ({
 Skeleton.displayName = 'Skeleton';
 Skeleton.propTypes = {
   className: PropTypes.string,
-  shape: PropTypes.string,
+  shape: PropTypes.oneOf(lShape),
   w: PropTypes.string,
   h: PropTypes.string,
   size: PropTypes.string,
@@ -73,7 +73,7 @@ const withSemantic = (Component) => {
 
   SemanticSkeleton.displayName = 'SemanticSkeleton';
   SemanticSkeleton.propTypes = {
-    shape: PropTypes.string,
+    shape: PropTypes.oneOf(lShape),
     circle: PropTypes.bool,
     rect: PropTypes.bool,
     p: PropTypes.bool,
