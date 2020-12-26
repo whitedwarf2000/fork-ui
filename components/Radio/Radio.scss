@@ -23,7 +23,7 @@
 }
 
 .fradio-mark {
-  border: 1px solid var(--txt-color-low-emphasis);
+  border: 1px solid var(--color-low-emphasis);
   border-radius: 999px;
   display: block;
   height: 100%;
@@ -83,7 +83,7 @@
   &:checked:disabled:hover {
     + .fradio-mark {
       &::before {
-        color: var(--txt-color-disabled);
+        color: var(--color-disabled);
       }
     }
   }

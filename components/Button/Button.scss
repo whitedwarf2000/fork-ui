@@ -23,7 +23,7 @@
   &:disabled:focus {
     background-color: var(--bg-disabled);
     border-color: var(--bg-disabled);
-    color: var(--txt-color-disabled);
+    color: var(--color-disabled);
     cursor: not-allowed !important;
 
     * {

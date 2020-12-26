@@ -12,10 +12,16 @@ const mShape = Object.freeze({
 
 const lShape = Object.keys(mShape);
 
-const Skeleton = ({ className, w, h, style, size, animated, ...otherProps }) => {
-  const shape = useSemanticProp('shape', otherProps, lShape);
-  const passedProps = useMemo(() => omit(otherProps, [...lShape, 'shape']), [otherProps]);
-
+const Skeleton = ({
+  className,
+  w,
+  h,
+  style,
+  size,
+  shape,
+  animated,
+  ...otherProps
+}) => {
   return (
     <div
       style={{
@@ -33,7 +39,7 @@ const Skeleton = ({ className, w, h, style, size, animated, ...otherProps }) => 
           mShape[shape],
           className,
       )}
-      {...passedProps}
+      {...otherProps}
     />
   );
 };
@@ -42,9 +48,6 @@ Skeleton.displayName = 'Skeleton';
 Skeleton.propTypes = {
   className: PropTypes.string,
   shape: PropTypes.string,
-  circle: PropTypes.bool,
-  rect: PropTypes.bool,
-  p: PropTypes.bool,
   w: PropTypes.string,
   h: PropTypes.string,
   size: PropTypes.string,
@@ -55,4 +58,29 @@ Skeleton.defaultProps = {
   animated: true,
 };
 
-export default Skeleton;
+const withSemantic = (Component) => {
+  const SemanticSkeleton = (props) => {
+    const shape = useSemanticProp('shape', props, lShape);
+    const passedProps = useMemo(() => omit(props, [...lShape, 'shape']), [props]);
+
+    return (
+      <Component
+        shape={shape}
+        {...passedProps}
+      />
+    );
+  };
+
+  SemanticSkeleton.displayName = 'SemanticSkeleton';
+  SemanticSkeleton.propTypes = {
+    shape: PropTypes.string,
+    circle: PropTypes.bool,
+    rect: PropTypes.bool,
+    p: PropTypes.bool,
+  };
+  SemanticSkeleton.defaultProps = {};
+
+  return SemanticSkeleton;
+};
+
+export default withSemantic(Skeleton);

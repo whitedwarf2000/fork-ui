@@ -23,7 +23,7 @@
 }
 
 .fcbox-mark {
-  border: 1px solid var(--txt-color-low-emphasis);
+  border: 1px solid var(--color-low-emphasis);
   border-radius: calc(var(--size) / 5);
   display: block;
   height: 100%;
@@ -85,7 +85,7 @@
   &:checked:disabled:hover {
     + .fcbox-mark {
       .fcbox-check {
-        color: var(--txt-color-disabled);
+        color: var(--color-disabled);
       }
     }
   }

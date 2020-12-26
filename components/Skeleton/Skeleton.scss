@@ -2,6 +2,7 @@
   0% {
     background-color: var(--secondary-bg);
   }
+
   100% {
     background-color: var(--bg);
   }
@@ -16,17 +17,17 @@
 }
 
 .fskele-circle {
-  height: 2.5em !important;
-  width: 2.5em !important;
   border-radius: 999px;
+  height: 2.5em !important;
   margin-bottom: 0.5rem;
+  width: 2.5em !important;
 }
 
 .fskele-rect,
 .fskele-p {
-  width: 100%;
   border-radius: 0.25em;
   margin-bottom: 0.5rem;
+  width: 100%;
 }
 
 .fskele-rect {

@@ -48,13 +48,13 @@ $step-btn--size: 32px;
 .fstep-content {
   flex-grow: 1;
   display: inline-block;
-  color: var(--txt-color-low-emphasis);
+  color: var(--color-low-emphasis);
   padding-left: 1em;
   padding-bottom: 1em;
 }
 
 .fstep-title {
-  color: var(--txt-color-low-emphasis);
+  color: var(--color-low-emphasis);
   position: relative;
   font-weight: 600;
   padding-right: 1em;
@@ -89,7 +89,7 @@ $step-btn--size: 32px;
   }
 
   .fstep-title {
-    color: var(--txt-color);
+    color: var(--color);
 
     &:after {
       color: var(--primary);
@@ -113,14 +113,14 @@ $step-btn--size: 32px;
   }
 
   .fstep-title {
-    color: var(--txt-color);
+    color: var(--color);
   }
 }
 
 // CANCELED
 .fstep-canceled {
   .fstep-btn {
-    color: var(--txt-color-low-emphasis);
+    color: var(--color-low-emphasis);
     background-color: transparent;
   }
 
@@ -133,7 +133,7 @@ $step-btn--size: 32px;
   }
 
   .fstep-title {
-    color: var(--txt-color-low-emphasis);
+    color: var(--color-low-emphasis);
   }
 }
 
@@ -147,7 +147,7 @@ $step-btn--size: 32px;
 
   .fstep-title,
   .fstep-content {
-    color: var(--txt-color);
+    color: var(--color);
   }
 }
 
