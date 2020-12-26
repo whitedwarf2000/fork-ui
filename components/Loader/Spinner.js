@@ -7,7 +7,7 @@ const Spinner = ({ color, size, className, ...otherProps }) => {
     <div
       style={{
         color,
-        '--size': size
+        '--spinner-size': size
       }}
       className={cn('floader-spinner', className)}
     >

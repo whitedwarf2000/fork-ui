@@ -1,10 +1,11 @@
 .fbtn {
+  --btn-size: var(--basic-height);
   background-color: var(--btn-bg);
   border: 1px solid var(--btn-bg);
   border-radius: var(--border-radius);
   cursor: pointer;
-  min-height: var(--basic-height);
-  min-width: var(--basic-height);
+  min-height: var(--btn-size);
+  min-width: var(--btn-size);
   outline: 0 !important;
   outline-style: none;
   padding: 0.45em 1.25em;

@@ -9,7 +9,7 @@
 }
 
 .floader-spinner {
-  --size: 24px;
+  --spinner-size: 24px;
   align-items: center;
   color: var(--primary);
   display: flex;
@@ -22,8 +22,8 @@
   border-left-color: currentColor;
   border-radius: 999px;
   border-style: solid;
-  border-width: calc(var(--size) / 12);
+  border-width: calc(var(--spinner-size) / 12);
   display: inline-block;
-  height: var(--size);
-  width: var(--size);
+  height: var(--spinner-size);
+  width: var(--spinner-size);
 }

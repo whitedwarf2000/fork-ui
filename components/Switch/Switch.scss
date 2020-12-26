@@ -49,7 +49,7 @@
 }
 
 .fswitch-spinner {
-  --size: calc(var(--switch-size) / 1.5);
+  --spinner-size: calc(var(--switch-size) / 1.5);
   color: var(--bg-disabled);
 }
 
