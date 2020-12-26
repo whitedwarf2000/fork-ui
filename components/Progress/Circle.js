@@ -26,7 +26,7 @@ const useCalcStyle = ({ size, strokeWidth, percent }) => {
       calcSize,
       strokeDasharray,
     };
-  }, [size]);
+  }, [size, strokeWidth]);
 
   const strokeDashoffset = useMemo(() => {
     if (percent < 0) {
