@@ -55,7 +55,7 @@ Skeleton.propTypes = {
   animated: PropTypes.bool,
 };
 Skeleton.defaultProps = {
-  animated: true,
+  animated: false,
 };
 
 const withSemantic = (Component) => {

@@ -1,6 +1,33 @@
+.fskele {
+  background-color: var(--color-low-emphasis);
+}
+
+.fskele-circle {
+  --size: 2.5em;
+  border-radius: 999px;
+  height: var(--size);
+  margin-bottom: 0.5rem;
+  width: var(--size);
+}
+
+.fskele-rect,
+.fskele-p {
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.fskele-rect {
+  min-height: 1.5rem;
+}
+
+.fskele-p {
+  height: 1.5rem !important;
+}
+
 @keyframes skeleton-loading {
   0% {
-    background-color: var(--secondary-bg);
+    background-color: var(--color-low-emphasis);
   }
 
   100% {
@@ -8,32 +35,6 @@
   }
 }
 
-.fskele {
-  background-color: var(--secondary-bg);
-}
-
 .fskele-animated {
   animation: skeleton-loading 2s linear infinite alternate;
-}
-
-.fskele-circle {
-  border-radius: 999px;
-  height: 2.5em !important;
-  margin-bottom: 0.5rem;
-  width: 2.5em !important;
-}
-
-.fskele-rect,
-.fskele-p {
-  border-radius: 0.25em;
-  margin-bottom: 0.5rem;
-  width: 100%;
-}
-
-.fskele-rect {
-  height: 1.5em;
-}
-
-.fskele-p {
-  height: 1.5rem !important;
 }
