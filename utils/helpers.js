@@ -59,4 +59,7 @@ export const debounce = (func, wait, immediate) => {
   	}, wait);
   	if (immediate && !timeout) func.apply(context, args);
   };
-}
+};
+
+export const uniqueId = (prefix = 'uniqueId') => `${prefix}_` + Math.random().toString(36).substr(2, 9);
+

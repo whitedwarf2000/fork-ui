@@ -1,50 +1,127 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useRef, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const useSupportAnimation = time => {
-  const [waiting, setWaiting] = useState(true);
+import { uniqueId } from '../../utils/helpers';
 
-  useEffect(() => {
-    const timer = setTimeout(() => setWaiting(false), time);
-    return () => clearTimeout(timer);
-  }, []);
+const useCalcStyle = ({ size, percent }) => {
+  const {
+    cx,
+    cy,
+    radius,
+    calcSize,
+    strokeWidth,
+    strokeDasharray,
+  } = useMemo(() => {
+    const strokeWidth = size / 33;
+    const calcSize = size + 2 * strokeWidth;
+    const cx = calcSize / 2;
+    const cy = calcSize / 2;
+    const radius = size / 2;
 
-  return waiting;
+    const strokeDasharray = 2 * Math.PI * radius;
+
+    return {
+      cx,
+      cy,
+      radius,
+      calcSize,
+      strokeWidth,
+      strokeDasharray,
+    };
+  }, [size]);
+
+  const strokeDashoffset = useMemo(() => {
+    if (percent < 0) {
+      return (2 * Math.PI * radius);
+    }
+
+    if (percent > 100) {
+      return 4 * Math.PI * radius;
+    }
+
+    const radius = size / 2;
+    return (2 * Math.PI * radius) * (1 + percent / 100);
+  }, [size, percent]);
+
+  return {
+    cx,
+    cy,
+    radius,
+    size,
+    percent,
+    calcSize,
+    strokeWidth,
+    strokeDasharray,
+    strokeDashoffset,
+  };
 };
 
-const CircleProgress = ({ className, percent, r }) => {
-  const strokeDasharray = useMemo(() => Math.PI * 4 * r, [r]);
-  const maxStrokeDashoffset = useMemo(() => 2 * strokeDasharray, [strokeDasharray]);
-  const strokeDashoffset = useMemo(() => {
-    const newStrokeDashoffset = strokeDasharray + (strokeDasharray * percent);
-    return newStrokeDashoffset > maxStrokeDashoffset ? maxStrokeDashoffset : newStrokeDashoffset;
-  }, [strokeDasharray, percent, maxStrokeDashoffset]);
+const CircleProgress = ({
+  className,
+  percent,
+  style,
+  size,
+  children,
+  ...otherProps
+}) => {
+  const {
+    strokeWidth,
+    strokeDasharray,
+    strokeDashoffset,
+    calcSize,
+    cx,
+    cy,
+    radius,
+  } = useCalcStyle({ size, percent });
 
-  const delayAnimation = useSupportAnimation(300);
+  const linearGradientId = useRef(uniqueId('circle-progress'));
 
   return (
     <div
       className={cn('fcircle-prog', className)}
-      style={{ width: `${4 * r + 10}px`, height: `${4 * r + 10}px`}}
+      style={{
+        ...style,
+        width: calcSize,
+        height: calcSize,
+      }}
+      {...otherProps}
     >
-      <svg className="fcircle-prog-svg">
+      <svg
+        className="fcircle-prog-svg"
+        width={calcSize}
+        height={calcSize}
+        viewBox={`0 0 ${calcSize} ${calcSize}`}
+      >
+        <linearGradient
+          className="fcircle-prog-linear-gradient"
+          id={linearGradientId.current}
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="0%"
+        >
+          <stop offset="0%" stopColor="var(--circle-progress-0)" />
+          <stop offset="100%" stopColor="var(--circle-progress-100)" />
+        </linearGradient>
         <circle
-          cx={2 * r - 5}
-          cy={2 * r - 5}
-          r={2 * r - 5}
-          className="fcircle-prog-percent"
+          cx={cx}
+          cy={cy}
+          r={radius}
+          strokeWidth={strokeWidth}
+          stroke={`url(#${linearGradientId.current})`}
+          className="fcircle-prog-circle"
           style={{
-            strokeWidth: `${6 * ((2 * r) / 100)}px`,
-            strokeDasharray,
-            strokeDashoffset: delayAnimation ? strokeDasharray : strokeDashoffset,
+            strokeDasharray: strokeDasharray,
+            strokeDashoffset: strokeDashoffset,
           }}
         />
       </svg>
-      <label className="fcircle-prog-number" style={{ fontSize: `${r * 0.8}px`}}>
-        {Math.floor((percent + Number.EPSILON) * 100 )}
-        <span>%</span>
-      </label>
+      {children && (
+        <div className="fcircle-prog-children">
+          {children}
+        </div>
+      )}
     </div>
   );
 };
@@ -53,11 +130,13 @@ CircleProgress.displayName = 'Progress.Circle';
 CircleProgress.propTypes = {
   className: PropTypes.string,
   percent: PropTypes.number,
-  r: PropTypes.number, // rank from 40 to 60
+  size: PropTypes.number,
+  style: PropTypes.object,
+  children: PropTypes.any,
 };
 CircleProgress.defaultProps = {
   percent: 0,
-  r: 40,
+  size: 120,
 };
 
 export default CircleProgress;

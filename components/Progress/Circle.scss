@@ -1,33 +1,28 @@
-@import '../../style/vars.scss';
-
 .fcircle-prog {
+  --circle-progress-0: var(--primary);
+  --circle-progress-100: var(--primary);
+  border-radius: 999px;
   position: relative;
-  border-radius: 100em;
   user-select: none;
 }
 
 .fcircle-prog-svg {
   position: relative;
-  height: 100%;
-  width: 100%;
+  transform: rotate(-90deg);
 }
 
-.fcircle-prog-percent {
-  height: 100%;
-  width: 100%;
+.fcircle-prog-circle {
   fill: none;
-  transition: stroke-dashoffset 0.5s;
-  transform: translate(10px, 10px);
   stroke-linecap: round;
-  stroke: var(--primary);
+  transition: stroke-dashoffset 0.5s;
 }
 
-.fcircle-prog-number {
+.fcircle-prog-children {
+  align-items: center;
+  display: flex;
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
   vertical-align: middle;
 }

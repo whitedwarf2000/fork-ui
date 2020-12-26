@@ -1,12 +1,13 @@
 import Circle from './Circle';
 import Linear from './Linear';
 
-export default {
-  Circle,
-  Linear,
-};
+const Progress = f => f;
 
-export {
-  Circle,
-  Linear,
-}
+Progress.Circle = Circle;
+Circle.Linear = Linear;
+
+Progress.displayName = 'Progress';
+Progress.propTypes = {};
+Progress.defaultProps = {};
+
+export default Progress;
