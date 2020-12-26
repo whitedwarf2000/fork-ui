@@ -12,7 +12,7 @@ const Switch = React.forwardRef(({ className, style, size, color, disabled, load
       style={{
         ...style,
         color: color,
-        '--size': size,
+        '--switch-size': size,
       }}
     >
       <input

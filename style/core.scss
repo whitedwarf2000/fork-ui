@@ -8,6 +8,8 @@
 @import './utilities/width.scss';
 @import './utilities/cursor.scss';
 
+@import '../components/Loader/Loader';
+
 @import '../components/Affix/Affix.scss';
 @import '../components/Animated/Animated.scss';
 @import '../components/Alert/Alert.scss';
@@ -38,7 +40,6 @@
 @import '../components/icons/Icon.scss';
 @import '../components/Number/Number.scss';
 @import '../components/Image/Image.scss';
-@import '../components/Loader/Loader.scss';
 @import '../components/Menu/Menu.scss';
 @import '../components/Modal/Modal.scss';
 @import '../components/Notification/Notification.scss';

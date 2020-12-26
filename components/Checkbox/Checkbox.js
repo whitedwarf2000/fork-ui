@@ -9,7 +9,7 @@ const Checkbox = React.forwardRef(({ className, style, size, color, ...otherProp
       style={{
         ...style,
         color: color,
-        '--size': size,
+        '--checkbox-size': size,
       }}
     >
       <input

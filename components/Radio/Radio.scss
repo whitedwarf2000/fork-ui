@@ -1,12 +1,12 @@
 .fradio {
-  --size: 18px;
+  --radio-size: 18px;
   box-sizing: border-box;
   color: var(--primary);
   display: block;
-  height: var(--size);
+  height: var(--radio-size);
   outline: 0 !important;
   position: relative;
-  width: var(--size);
+  width: var(--radio-size);
 }
 
 .fradio-input {
@@ -36,14 +36,14 @@
   background-color: currentColor;
   border-radius: 999px;
   content: '';
-  height: calc(var(--size) / 1.8);
+  height: calc(var(--radio-size) / 1.5);
   left: 50%;
   opacity: 0;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.25s, opacity 0.25s;
-  width: calc(var(--size) / 1.8);
+  width: calc(var(--radio-size) / 1.5);
 }
 
 .fradio-input {

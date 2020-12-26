@@ -11,7 +11,7 @@ const Radio = React.forwardRef(({ className, style, size, color, ...otherProps }
       style={{
         ...style,
         color: color,
-        '--size': size,
+        '--radio-size': size,
       }}
     >
       <input

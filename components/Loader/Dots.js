@@ -15,7 +15,7 @@ const Dots = ({ color, size, className, ...otherProps }) => {
 
   return (
     <div
-      style={{ fontSize: size, color }}
+      style={{ '--size': size, color }}
       className={cn('floader-dots', mAnimations[animation] || 'floader-dots-buble', className)}
       {...otherProps}
     >
