@@ -4,16 +4,14 @@ import PropTypes from 'prop-types';
 
 import { uniqueId } from '../../utils/helpers';
 
-const useCalcStyle = ({ size, percent }) => {
+const useCalcStyle = ({ size, strokeWidth, percent }) => {
   const {
     cx,
     cy,
     radius,
     calcSize,
-    strokeWidth,
     strokeDasharray,
   } = useMemo(() => {
-    const strokeWidth = size / 33;
     const calcSize = size + 2 * strokeWidth;
     const cx = calcSize / 2;
     const cy = calcSize / 2;
@@ -26,7 +24,6 @@ const useCalcStyle = ({ size, percent }) => {
       cy,
       radius,
       calcSize,
-      strokeWidth,
       strokeDasharray,
     };
   }, [size]);
@@ -62,18 +59,18 @@ const CircleProgress = ({
   percent,
   style,
   size,
+  strokeWidth,
   children,
   ...otherProps
 }) => {
   const {
-    strokeWidth,
     strokeDasharray,
     strokeDashoffset,
     calcSize,
     cx,
     cy,
     radius,
-  } = useCalcStyle({ size, percent });
+  } = useCalcStyle({ size, strokeWidth, percent });
 
   const linearGradientId = useRef(uniqueId('circle-progress'));
 
@@ -133,10 +130,12 @@ CircleProgress.propTypes = {
   size: PropTypes.number,
   style: PropTypes.object,
   children: PropTypes.any,
+  strokeWidth: PropTypes.number,
 };
 CircleProgress.defaultProps = {
   percent: 0,
   size: 120,
+  strokeWidth: 120 / 30,
 };
 
 export default CircleProgress;
