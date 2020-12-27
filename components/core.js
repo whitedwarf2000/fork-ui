@@ -68,3 +68,4 @@ export { default as useUniqueId } from '../hooks/useUniqueId';
 export { default as useMeasure } from '../hooks/useMeasure';
 export { default as useSemanticProp } from '../hooks/useSemanticProp';
 export { default as useOnClickOutside } from '../hooks/useOnClickOutside';
+export { default as useSimulateProgress } from './Progress/useSimulateProgress';
