@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+
+const useCalcPercent = (percent) => {
+  return useMemo(() => {
+    if (percent < 0) {
+      return 0;
+    }
+
+    if (percent > 100) {
+      return 100;
+    }
+
+    return percent;
+  }, [percent]);
+};
 
 const LinearProgress = ({
   className,
@@ -10,17 +24,25 @@ const LinearProgress = ({
   color,
   railColor,
   size,
+  animated,
   ...otherProps
 }) => {
+  const value = useCalcPercent(percent);
+
   return (
-    <div className={cn('flinear-prog', className)} {...otherProps}>
+    <div
+      className={cn('flinear-prog', { 'flinear-prog-animated' : animated}, className)}
+      style={{
+        ...style,
+        '--linear-progress-size': size ? `${size}px` : undefined,
+        '--linear-progress-color': color,
+        '--linear-progress-rail-color': railColor,
+        '--linear-progress-value': `${value}%`,
+      }}
+      {...otherProps}
+    >
       <div className="flinear-prog-rail">
-        <div
-          className="flinear-prog-value"
-          style={{
-            width: `${percent}%`
-          }}
-        >
+        <div className="flinear-prog-value">
           {children}
         </div>
       </div>
@@ -32,17 +54,15 @@ LinearProgress.displayName = 'Progress.Linear';
 LinearProgress.propTypes = {
   className: PropTypes.string,
   percent: PropTypes.number,
-  size: PropTypes.string,
+  size: PropTypes.number,
   color: PropTypes.string,
-  railColor: PropTypes.oneOfType(PropTypes.string, PropTypes.bool),
-  backgroundColor: PropTypes.string,
+  railColor: PropTypes.string,
   style: PropTypes.object,
   children: PropTypes.any,
+  animated: PropTypes.bool,
 };
 LinearProgress.defaultProps = {
   percent: 0,
-  color: 'var(--primary)',
-  railColor: 'var(--rail-color)'
 };
 
 export default LinearProgress;

@@ -63,7 +63,7 @@ CircleProgress.propTypes = {
   percent: PropTypes.number,
   size: PropTypes.number,
   color: PropTypes.string,
-  railColor: PropTypes.oneOfType(PropTypes.string, PropTypes.bool),
+  railColor: PropTypes.string,
   backgroundColor: PropTypes.string,
   style: PropTypes.object,
   children: PropTypes.any,
