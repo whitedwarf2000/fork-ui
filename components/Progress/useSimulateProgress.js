@@ -10,7 +10,7 @@ const useSimulateProgress = ({
   useEffect(() => {
     let timer;
     const frame = () => setPercent(val => {
-      const nextVal = val + 4;
+      const nextVal = val + Math.random() * 20;
       if (nextVal >= maxPercentWhenWaiting) {
         return maxPercentWhenWaiting;
       }
@@ -19,7 +19,7 @@ const useSimulateProgress = ({
 
     // WHENEVER AJAX STILL NOT COMPLETE ET
     if (isLoading && !isLoaded) {
-      timer = setInterval(frame, duration / 25);
+      timer = setInterval(frame, duration / 10);
     }
     // WHENEVER AJAX COMPLETE
     if (!isLoading && isLoaded) {
