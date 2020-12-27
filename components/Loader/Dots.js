@@ -12,10 +12,14 @@ const mAnimations = Object.freeze({
 
 const lAnimations = Object.keys(mAnimations);
 
-const Dots = ({ color, size, animation, className, ...otherProps }) => {
+const Dots = ({ style, color, size, animation, className, ...otherProps }) => {
   return (
     <div
-      style={{ '--dot-size': size, color }}
+      style={{
+        ...style,
+        color,
+        '--dot-size': size ? `${size}px` : undefined,
+      }}
       className={cn('floader-dots', mAnimations[animation] || 'floader-dots-buble', className)}
       {...otherProps}
     >
@@ -28,6 +32,7 @@ const Dots = ({ color, size, animation, className, ...otherProps }) => {
 
 Dots.displayName = 'Loader.Dots';
 Dots.propTypes = {
+  style: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.string,
   className: PropTypes.string,

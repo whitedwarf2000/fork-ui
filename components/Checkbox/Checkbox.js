@@ -9,7 +9,7 @@ const Checkbox = React.forwardRef(({ className, style, size, color, ...otherProp
       style={{
         ...style,
         color: color,
-        '--checkbox-size': size,
+        '--checkbox-size': size ? `${size}px` : undefined,
       }}
     >
       <input
@@ -33,7 +33,7 @@ Checkbox.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   color: PropTypes.string,
-  size: PropTypes.string,
+  size: PropTypes.number,
 };
 Checkbox.defaultProps = {};
 

@@ -11,7 +11,7 @@ const Radio = React.forwardRef(({ className, style, size, color, ...otherProps }
       style={{
         ...style,
         color: color,
-        '--radio-size': size,
+        '--radio-size': size ? `${size}px` : undefined,
       }}
     >
       <input
@@ -31,7 +31,7 @@ Radio.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   color: PropTypes.string,
-  size: PropTypes.string,
+  size: PropTypes.number,
 };
 Radio.defaultProps = {};
 

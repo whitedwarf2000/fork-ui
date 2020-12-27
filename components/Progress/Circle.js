@@ -2,33 +2,9 @@ import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const useCalcStyle = ({ size, strokeWidth, percent }) => {
-  const {
-    cx,
-    cy,
-    radius,
-    calcSize,
-    calcStrokeWidth,
-    strokeDasharray,
-  } = useMemo(() => {
-    const calcStrokeWidth = strokeWidth || size / 30;
-    const calcSize = size + 2 * calcStrokeWidth;
-    const cx = calcSize / 2;
-    const cy = calcSize / 2;
-    const radius = size / 2;
+const defaultSize = 120; // sync to css
 
-    const strokeDasharray = 2 * Math.PI * radius;
-
-    return {
-      cx,
-      cy,
-      radius,
-      calcSize,
-      calcStrokeWidth,
-      strokeDasharray,
-    };
-  }, [size, strokeWidth]);
-
+const useCalcStrokeDashoffset = ({ size, percent }) => {
   const strokeDashoffset = useMemo(() => {
     const radius = size / 2;
     if (percent < 0) {
@@ -42,18 +18,7 @@ const useCalcStyle = ({ size, strokeWidth, percent }) => {
     return (2 * Math.PI * radius) * (1 + percent / 100);
   }, [size, percent]);
 
-  return {
-    cx,
-    cy,
-    radius,
-    size,
-    percent,
-    calcSize,
-    calcStrokeWidth,
-    strokeWidth,
-    strokeDasharray,
-    strokeDashoffset,
-  };
+  return strokeDashoffset;
 };
 
 const CircleProgress = ({
@@ -69,69 +34,35 @@ const CircleProgress = ({
   children,
   ...otherProps
 }) => {
-  const {
-    strokeDasharray,
-    strokeDashoffset,
-    calcSize,
-    calcStrokeWidth,
-    cx,
-    cy,
-    radius,
-  } = useCalcStyle({ size, strokeWidth, percent });
+  const strokeDashoffset = useCalcStrokeDashoffset({
+    percent,
+    size: size || defaultSize,
+  });
 
   return (
     <div
       className={cn('fcircle-prog', className)}
       style={{
         ...style,
-        width: calcSize,
-        height: calcSize,
-        '--circle-progress-size': `${size}px`,
+        '--circle-progress-size': size ? `${size}px` : undefined,
+        '--circle-progress-stroke-width': strokeWidth ? `${strokeWidth}px` : undefined,
         '--circle-progress-color': color,
+        '--circle-progress-bg-color': backgroundColor,
+        '--circle-progress-rail-color': railColor,
       }}
       {...otherProps}
     >
-      <svg
-        className="fcircle-prog-svg"
-        width={calcSize}
-        height={calcSize}
-        viewBox={`0 0 ${calcSize} ${calcSize}`}
-      >
+      <svg className="fcircle-prog-svg">
         {linearGradient}
-        {railColor && (
-          <circle
-            cx={cx}
-            cy={cy}
-            r={radius}
-            strokeWidth={calcStrokeWidth}
-            stroke={railColor}
-            fill="none"
-            className="fcircle-prog-circle-rail"
-          />
-        )}
+        <circle className="fcircle-prog-rail" />
         <circle
-          cx={cx}
-          cy={cy}
-          r={radius}
-          strokeWidth={calcStrokeWidth}
-          stroke={color}
-          strokeLinecap="round"
-          fill="none"
-          className="fcircle-prog-circle"
+          className="fcircle-prog-value"
           style={{
-            strokeDasharray: strokeDasharray,
             strokeDashoffset: strokeDashoffset,
           }}
         />
       </svg>
-      <div
-        className="fcircle-prog-children"
-        style={{
-          width: size,
-          height: size,
-          backgroundColor: backgroundColor,
-        }}
-      >
+      <div className="fcircle-prog-children">
         {children}
       </div>
     </div>
@@ -153,9 +84,6 @@ CircleProgress.propTypes = {
 };
 CircleProgress.defaultProps = {
   percent: 0,
-  size: 120,
-  color: 'var(--primary)',
-  railColor: 'var(--rail-color)'
 };
 
 export default CircleProgress;

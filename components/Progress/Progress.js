@@ -4,7 +4,7 @@ import Linear from './Linear';
 const Progress = f => f;
 
 Progress.Circle = Circle;
-Circle.Linear = Linear;
+Progress.Linear = Linear;
 
 Progress.displayName = 'Progress';
 Progress.propTypes = {};

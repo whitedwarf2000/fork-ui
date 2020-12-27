@@ -12,7 +12,7 @@ const Switch = React.forwardRef(({ className, style, size, color, disabled, load
       style={{
         ...style,
         color: color,
-        '--switch-size': size,
+        '--switch-size': size ? `${size}px` : undefined,
       }}
     >
       <input
@@ -38,7 +38,7 @@ Switch.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   color: PropTypes.string,
-  size: PropTypes.string, // only accept px
+  size: PropTypes.number,
 };
 Switch.defaultProps = {};
 Switch.useSwitch = useSwitch;

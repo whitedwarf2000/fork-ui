@@ -1,35 +1,24 @@
 .flinear-prog {
-  padding: 2rem 0;
+  --linear-progress-size: 3px;
+  --linear-progress-color: var(--primary);
+  height: var(--linear-progress-size);
   position: relative;
   width: 100%;
 }
 
 .flinear-prog-rail {
-  background-color: var(--bg);
-  border-radius: 100em;
-  box-shadow: var(--pressed);
-  height: 0.175em;
-  min-height: 3px;
+  background-color: var(--rail-color);
+  border-radius: 999px;
+  height: var(--linear-progress-size);
   position: absolute;
   width: 100%;
 }
 
-.flinear-prog-rail-percent {
-  background-color: var(--primary);
-  border-radius: 100em;
+.flinear-prog-value {
+  background-color: var(--linear-progress-color);
+  border-radius: 999px;
   height: 100%;
   left: 0;
   position: absolute;
   transition: width 0.25s;
-}
-
-.flinear-prog-droplet {
-  position: absolute;
-  right: -1.25em;
-  top: -3.75em;
-  transition: opacity 0.25s;
-}
-
-.flinear-prog-droplet-hidden {
-  opacity: 0;
 }
