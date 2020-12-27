@@ -3,13 +3,14 @@ import { useState, useEffect } from 'react';
 const useSimulateProgress = ({
   pending,
   completed,
+  maxIncreasePercent = 25,
   maxPercentWhenWaiting = 98,
 }) => {
   const [percent, setPercent] = useState(0);
   useEffect(() => {
     let timer;
     const frame = () => setPercent(val => {
-      const nextVal = val + Math.floor(Math.random() * 50);
+      const nextVal = val + Math.floor(Math.random() * maxIncreasePercent);
       if (nextVal >= maxPercentWhenWaiting) {
         return maxPercentWhenWaiting;
       }
@@ -27,7 +28,7 @@ const useSimulateProgress = ({
     }
 
     return () => clearInterval(timer);
-  }, [completed, pending, setPercent]);
+  }, [completed, pending, setPercent, maxPercentWhenWaiting, maxIncreasePercent]);
 
   return [percent, setPercent];
 };
