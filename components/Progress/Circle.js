@@ -2,23 +2,18 @@ import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const defaultSize = 120; // sync to css
-
-const useCalcStrokeDashoffset = ({ size, percent }) => {
-  const strokeDashoffset = useMemo(() => {
-    const radius = size / 2;
+const useCalcPercent = (percent) => {
+  return useMemo(() => {
     if (percent < 0) {
-      return (2 * Math.PI * radius);
+      return 0;
     }
 
     if (percent > 100) {
-      return 4 * Math.PI * radius;
+      return 100;
     }
 
-    return (2 * Math.PI * radius) * (1 + percent / 100);
-  }, [size, percent]);
-
-  return strokeDashoffset;
+    return percent;
+  }, [percent]);
 };
 
 const CircleProgress = ({
@@ -34,10 +29,7 @@ const CircleProgress = ({
   children,
   ...otherProps
 }) => {
-  const strokeDashoffset = useCalcStrokeDashoffset({
-    percent,
-    size: size || defaultSize,
-  });
+  const value = useCalcPercent(percent);
 
   return (
     <div
@@ -49,18 +41,14 @@ const CircleProgress = ({
         '--circle-progress-color': color,
         '--circle-progress-bg-color': backgroundColor,
         '--circle-progress-rail-color': railColor,
+        '--circle-progress-value': value,
       }}
       {...otherProps}
     >
       <svg className="fcircle-prog-svg">
         {linearGradient}
         <circle className="fcircle-prog-rail" />
-        <circle
-          className="fcircle-prog-value"
-          style={{
-            strokeDashoffset: strokeDashoffset,
-          }}
-        />
+        <circle className="fcircle-prog-value" />
       </svg>
       <div className="fcircle-prog-children">
         {children}

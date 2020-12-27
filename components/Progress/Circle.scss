@@ -1,4 +1,5 @@
 .fcircle-prog {
+  --circle-progress-value: 0;
   --circle-progress-size: 120px;
   --circle-progress-stroke-width: calc(var(--circle-progress-size) / 30);
   --circle-progress-color: var(--primary);
@@ -27,6 +28,7 @@
 
 .fcircle-prog-value {
   stroke: var(--circle-progress-color);
+  stroke-dashoffset: calc((2 * 3.141592653589793 * (var(--circle-progress-size) / 2)) * (1 + var(--circle-progress-value) / 100));
   transition: stroke-dashoffset 0.5s;
 }
 
