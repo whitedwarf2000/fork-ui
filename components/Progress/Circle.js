@@ -1,8 +1,6 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-
-import { uniqueId } from '../../utils/helpers';
 
 const useCalcStyle = ({ size, strokeWidth, percent }) => {
   const {
@@ -10,9 +8,11 @@ const useCalcStyle = ({ size, strokeWidth, percent }) => {
     cy,
     radius,
     calcSize,
+    calcStrokeWidth,
     strokeDasharray,
   } = useMemo(() => {
-    const calcSize = size + 2 * strokeWidth;
+    const calcStrokeWidth = strokeWidth || size / 30;
+    const calcSize = size + 2 * calcStrokeWidth;
     const cx = calcSize / 2;
     const cy = calcSize / 2;
     const radius = size / 2;
@@ -24,11 +24,13 @@ const useCalcStyle = ({ size, strokeWidth, percent }) => {
       cy,
       radius,
       calcSize,
+      calcStrokeWidth,
       strokeDasharray,
     };
   }, [size, strokeWidth]);
 
   const strokeDashoffset = useMemo(() => {
+    const radius = size / 2;
     if (percent < 0) {
       return (2 * Math.PI * radius);
     }
@@ -37,7 +39,6 @@ const useCalcStyle = ({ size, strokeWidth, percent }) => {
       return 4 * Math.PI * radius;
     }
 
-    const radius = size / 2;
     return (2 * Math.PI * radius) * (1 + percent / 100);
   }, [size, percent]);
 
@@ -48,6 +49,7 @@ const useCalcStyle = ({ size, strokeWidth, percent }) => {
     size,
     percent,
     calcSize,
+    calcStrokeWidth,
     strokeWidth,
     strokeDasharray,
     strokeDashoffset,
@@ -58,8 +60,12 @@ const CircleProgress = ({
   className,
   percent,
   style,
+  color,
+  railColor,
+  backgroundColor,
   size,
   strokeWidth,
+  linearGradient,
   children,
   ...otherProps
 }) => {
@@ -67,12 +73,11 @@ const CircleProgress = ({
     strokeDasharray,
     strokeDashoffset,
     calcSize,
+    calcStrokeWidth,
     cx,
     cy,
     radius,
   } = useCalcStyle({ size, strokeWidth, percent });
-
-  const linearGradientId = useRef(uniqueId('circle-progress'));
 
   return (
     <div
@@ -81,6 +86,8 @@ const CircleProgress = ({
         ...style,
         width: calcSize,
         height: calcSize,
+        '--circle-progress-size': `${size}px`,
+        '--circle-progress-color': color,
       }}
       {...otherProps}
     >
@@ -90,23 +97,26 @@ const CircleProgress = ({
         height={calcSize}
         viewBox={`0 0 ${calcSize} ${calcSize}`}
       >
-        <linearGradient
-          className="fcircle-prog-linear-gradient"
-          id={linearGradientId.current}
-          x1="0%"
-          y1="0%"
-          x2="100%"
-          y2="0%"
-        >
-          <stop offset="0%" stopColor="var(--circle-progress-0)" />
-          <stop offset="100%" stopColor="var(--circle-progress-100)" />
-        </linearGradient>
+        {linearGradient}
+        {railColor && (
+          <circle
+            cx={cx}
+            cy={cy}
+            r={radius}
+            strokeWidth={calcStrokeWidth}
+            stroke={railColor}
+            fill="none"
+            className="fcircle-prog-circle-rail"
+          />
+        )}
         <circle
           cx={cx}
           cy={cy}
           r={radius}
-          strokeWidth={strokeWidth}
-          stroke={`url(#${linearGradientId.current})`}
+          strokeWidth={calcStrokeWidth}
+          stroke={color}
+          strokeLinecap="round"
+          fill="none"
           className="fcircle-prog-circle"
           style={{
             strokeDasharray: strokeDasharray,
@@ -114,11 +124,16 @@ const CircleProgress = ({
           }}
         />
       </svg>
-      {children && (
-        <div className="fcircle-prog-children">
-          {children}
-        </div>
-      )}
+      <div
+        className="fcircle-prog-children"
+        style={{
+          width: size,
+          height: size,
+          backgroundColor: backgroundColor,
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 };
@@ -128,14 +143,19 @@ CircleProgress.propTypes = {
   className: PropTypes.string,
   percent: PropTypes.number,
   size: PropTypes.number,
+  color: PropTypes.string,
+  railColor: PropTypes.oneOfType(PropTypes.string, PropTypes.bool),
+  backgroundColor: PropTypes.string,
   style: PropTypes.object,
   children: PropTypes.any,
   strokeWidth: PropTypes.number,
+  linearGradient: PropTypes.any,
 };
 CircleProgress.defaultProps = {
   percent: 0,
   size: 120,
-  strokeWidth: 120 / 30,
+  color: 'var(--primary)',
+  railColor: 'var(--rail-color)'
 };
 
 export default CircleProgress;

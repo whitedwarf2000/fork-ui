@@ -1,6 +1,4 @@
 .fcircle-prog {
-  --circle-progress-0: var(--primary);
-  --circle-progress-100: var(--primary);
   border-radius: 999px;
   position: relative;
   user-select: none;
@@ -12,14 +10,14 @@
 }
 
 .fcircle-prog-circle {
-  fill: none;
-  stroke-linecap: round;
   transition: stroke-dashoffset 0.5s;
 }
 
 .fcircle-prog-children {
   align-items: center;
+  border-radius: 999px;
   display: flex;
+  justify-content: center;
   left: 50%;
   position: absolute;
   top: 50%;
