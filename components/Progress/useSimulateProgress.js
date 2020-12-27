@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 
 const useSimulateProgress = ({
-  duration = 3000,
-  isLoading,
-  isLoaded,
+  pending,
+  completed,
   maxPercentWhenWaiting = 98,
 }) => {
   const [percent, setPercent] = useState(0);
   useEffect(() => {
     let timer;
     const frame = () => setPercent(val => {
-      const nextVal = val + Math.random() * 20;
+      const nextVal = val + Math.floor(Math.random() * 50);
       if (nextVal >= maxPercentWhenWaiting) {
         return maxPercentWhenWaiting;
       }
@@ -18,17 +17,17 @@ const useSimulateProgress = ({
     });
 
     // WHENEVER AJAX STILL NOT COMPLETE ET
-    if (isLoading && !isLoaded) {
-      timer = setInterval(frame, duration / 10);
+    if (pending && !completed) {
+      timer = setInterval(frame, 300);
     }
     // WHENEVER AJAX COMPLETE
-    if (!isLoading && isLoaded) {
+    if (!pending && completed) {
       clearInterval(timer);
       setPercent(100);
     }
 
     return () => clearInterval(timer);
-  }, [isLoaded, isLoading, setPercent, duration]);
+  }, [completed, pending, setPercent]);
 
   return [percent, setPercent];
 };
