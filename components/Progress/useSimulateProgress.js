@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useSimulateProgress = ({
-  pending,
-  completed,
+  status,
   maxIncreasePercent = 25,
   maxPercentWhenWaiting = 98,
 }) => {
@@ -18,17 +17,17 @@ const useSimulateProgress = ({
     });
 
     // WHENEVER AJAX STILL NOT COMPLETE ET
-    if (pending && !completed) {
+    if (status === 'loading') {
       timer = setInterval(frame, 300);
     }
     // WHENEVER AJAX COMPLETE
-    if (!pending && completed) {
+    if (status === 'completed') {
       clearInterval(timer);
       setPercent(100);
     }
 
     return () => clearInterval(timer);
-  }, [completed, pending, setPercent, maxPercentWhenWaiting, maxIncreasePercent]);
+  }, [status, setPercent, maxPercentWhenWaiting, maxIncreasePercent]);
 
   return [percent, setPercent];
 };
