@@ -27,9 +27,9 @@ const Avatar = ({
       className={cn('favt', mShape[shape], className)}
       style={{
         ...style,
-        fontSize: size,
         color,
         backgroundImage: src ? `url(${src})` : undefined,
+        '--avatar-size': size ? `${size}px` : undefined,
       }}
       {...otherProps}
     >
@@ -45,7 +45,7 @@ Avatar.propTypes = {
   shape: PropTypes.oneOf(lShape),
   circle: PropTypes.bool,
   square: PropTypes.bool,
-  size: PropTypes.string,
+  size: PropTypes.number,
   color: PropTypes.string,
   style: PropTypes.object,
   children: PropTypes.any,

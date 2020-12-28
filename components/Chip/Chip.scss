@@ -1,4 +1,5 @@
 .fchip {
+  --chip-close-size: 18px;
   height: 2.275em;
   padding-left: 0.125em;
   padding-right: 0.125em;
@@ -8,15 +9,11 @@
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
-  background-color: var(--secondary-bg);
+  background-color: var(--btn-bg);
 
   &:hover {
-    background-color: var(--secondary-bg--7);
+    background-color: var(--btn-hover-bg);
   }
-}
-
-.fchip-rounded {
-  border-radius: 999px;
 }
 
 .fchip-avt {
@@ -34,20 +31,20 @@
 }
 
 .fchip-close {
-  width: 1.35em;
-  height: 1.35em;
+  width: var(--chip-close-size);
+  height: var(--chip-close-size);
+  margin-right: 0.2em;
   border-radius: 999px;
-  // background-color: currentColor;
+  // background-color: rgba(0, 0, 0, 0.26);
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 
   .ficon {
-    stroke-width: 4;
-
-    &:hover {
-      transform: scale(1.1);
-    }
+    stroke-width: 2;
   }
+}
+
+.fchip-rounded {
+  border-radius: 999px;
 }

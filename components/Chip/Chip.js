@@ -9,7 +9,6 @@ const Chip = ({
     rounded,
     children,
     closable,
-    avatar,
     onClose,
     size,
     style,
@@ -31,11 +30,10 @@ const Chip = ({
       }}
       {...otherProps}
     >
-      {avatar && <span className="fchip-avt">{avatar}</span>}
       <span className="fchip-child">{children}</span>
       {closable && (
         <div className="fchip-close" onClick={onClose}>
-          <X size="0.75em" />
+          <X />
         </div>
       )}
     </div>

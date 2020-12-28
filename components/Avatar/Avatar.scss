@@ -1,13 +1,14 @@
 .favt {
+  --avatar-size: 42px;
   align-items: center;
   background-color: var(--avatar-bg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   font-weight: 600;
-  height: 3.4em;
+  height: var(--avatar-size);
   justify-content: center;
-  width: 3.4em;
+  width: var(--avatar-size);
 }
 
 .favt-square {
