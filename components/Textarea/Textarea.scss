@@ -1,27 +1,28 @@
 .ftextarea {
+  background-color: var(--input--bg);
+  border: 0;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
   min-height: var(--input-height);
   outline: 0 !important;
-  border: 0;
-  width: 100%;
-  border-radius: var(--border-radius);
   padding: var(--input-spacing);
   transition: box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
-  background-color: var(--input--bg);
-  border: 1px solid transparent;
+  width: 100%;
 
   &::placeholder {
-    font-style: italic;
     color: var(--text-color--placeholder);
+    font-style: italic;
   }
 
   &:hover,
   &:focus {
     border-color: var(--primary);
   }
+
   &:disabled {
-    cursor: not-allowed;
     border-color: transparent;
     color: var(--input--disabled-color);
+    cursor: not-allowed;
   }
 }
 

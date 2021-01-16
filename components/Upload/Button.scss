@@ -1,13 +1,14 @@
 .fui-upload-button {
   position: relative;
 }
+
 .fui-upload-input {
-  position: absolute;
-  width: 100%;
+  cursor: pointer;
   height: 100%;
   // display: none;
   opacity: 0;
+  position: absolute;
+  width: 100%;
   z-index: 1;
-  cursor: pointer;
   // pointer-events: none;
 }

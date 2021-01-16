@@ -25,13 +25,13 @@
 }
 
 .fmenu-sub-title {
-  padding: 0 var(--content-spacing);
-  height: 3em;
+  align-items: center;
+  background-color: var(--menu--bg);
   cursor: pointer;
   display: flex;
-  align-items: center;
+  height: 3em;
   justify-content: space-between;
-  background-color: var(--menu--bg);
+  padding: 0 var(--content-spacing);
 
   &:hover {
     color: var(--primary);

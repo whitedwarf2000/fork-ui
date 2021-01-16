@@ -2,27 +2,27 @@
 @import './Overlay.Absolute.scss';
 
 .foverlay {
-  position: absolute;
-  z-index: var(--zindex-overlay);
-  white-space: nowrap;
   border-radius: var(--border-radius);
+  position: absolute;
+  white-space: nowrap;
+  z-index: var(--zindex-overlay);
 
-  &:after {
-    content: " ";
-    width: 1em;
-    height: 1em;
-    box-sizing: border-box;
-    overflow: hidden;
+  &::after {
     border: 0.5em solid transparent;
-    position: absolute;
+    box-sizing: border-box;
+    content: ' ';
     display: none;
+    height: 1em;
+    overflow: hidden;
+    position: absolute;
+    width: 1em;
   }
 }
 
 .foverlay-arrow {
-  &:after {
-    display: block;
+  &::after {
     border-color: var(--bg);
+    display: block;
   }
 }
 
@@ -31,133 +31,133 @@
 }
 
 .foverlay-arrow.foverlay-t {
-  &:after {
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 100%);
+  &::after {
     border-bottom-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
   }
 }
 
 .foverlay-arrow.foverlay-tr {
-  &:after {
-    bottom: 0;
-    right: 0;
-    transform: translate(-100%, 100%);
+  &::after {
     border-bottom-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
+    bottom: 0;
+    right: 0;
+    transform: translate(-100%, 100%);
   }
 }
 
 .foverlay-arrow.foverlay-rt {
-  &:after {
-    top: 0;
-    left: 0;
-    transform: translate(-100%, 100%);
-    border-top-color: transparent;
+  &::after {
     border-bottom-color: transparent;
     border-left-color: transparent;
+    border-top-color: transparent;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 100%);
   }
 }
 
 .foverlay-arrow.foverlay-br {
-  &:after {
-    top: 0;
-    right: 0;
-    transform: translate(-100%, -100%);
-    border-top-color: transparent;
+  &::after {
     border-left-color: transparent;
     border-right-color: transparent;
+    border-top-color: transparent;
+    right: 0;
+    top: 0;
+    transform: translate(-100%, -100%);
   }
 }
 
 .foverlay-arrow.foverlay-b {
-  &:after {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    border-top-color: transparent;
+  &::after {
     border-left-color: transparent;
     border-right-color: transparent;
+    border-top-color: transparent;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -100%);
   }
 }
 
 .foverlay-arrow.foverlay-bl {
-  &:after {
-    top: 0;
-    left: 0;
-    transform: translate(100%, -100%);
-    border-top-color: transparent;
+  &::after {
     border-left-color: transparent;
     border-right-color: transparent;
+    border-top-color: transparent;
+    left: 0;
+    top: 0;
+    transform: translate(100%, -100%);
   }
 }
 
 .foverlay-arrow.foverlay-lb {
-  &:after {
+  &::after {
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
     bottom: 0;
     right: 0;
     transform: translate(100%, -100%);
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
   }
 }
 
 .foverlay-arrow.foverlay-l {
-  &:after {
-    top: 50%;
-    right: 0;
-    transform: translate(100%, -50%);
-    border-top-color: transparent;
+  &::after {
     border-bottom-color: transparent;
     border-right-color: transparent;
+    border-top-color: transparent;
+    right: 0;
+    top: 50%;
+    transform: translate(100%, -50%);
   }
 }
 
 .foverlay-arrow.foverlay-lt {
-  &:after {
-    top: 0;
-    right: 0;
-    transform: translate(100%, 100%);
-    border-top-color: transparent;
+  &::after {
     border-bottom-color: transparent;
     border-right-color: transparent;
+    border-top-color: transparent;
+    right: 0;
+    top: 0;
+    transform: translate(100%, 100%);
   }
 }
 
 .foverlay-arrow.foverlay-tl {
-  &:after {
-    bottom: 0;
-    left: 0;
-    transform: translate(100%, 100%);
+  &::after {
     border-bottom-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
+    bottom: 0;
+    left: 0;
+    transform: translate(100%, 100%);
   }
 }
 
 .foverlay-arrow.foverlay-r {
-  &:after {
-    top: 50%;
-    left: 0;
-    transform: translate(-100%, -50%);
-    border-top-color: transparent;
+  &::after {
     border-bottom-color: transparent;
     border-left-color: transparent;
+    border-top-color: transparent;
+    left: 0;
+    top: 50%;
+    transform: translate(-100%, -50%);
   }
 }
 
 .foverlay-arrow.foverlay-rb {
-  &:after {
+  &::after {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-top-color: transparent;
     bottom: 0;
     left: 0;
     transform: translate(-100%, -100%);
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
   }
 }

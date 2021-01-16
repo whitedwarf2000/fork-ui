@@ -12,14 +12,14 @@
 }
 
 .fmenu-item-grp-title {
-  width: 100%;
-  display: flex;
   align-items: center;
+  display: flex;
   height: 3em;
   text-transform: uppercase;
+  width: 100%;
 
   > span {
-    padding-right: 0.5em;
     padding-left: 1em;
+    padding-right: 0.5em;
   }
 }

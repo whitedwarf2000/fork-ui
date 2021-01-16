@@ -7,12 +7,12 @@
 }
 
 .fmenu {
+  background-color: var(--menu--bg);
   border-radius: var(--border-radius);
+  box-shadow: var(--menu--shadow);
+  min-width: 12em;
   overflow: hidden;
   user-select: none;
-  min-width: 12em;
-  background-color: var(--menu--bg);
-  box-shadow: var(--menu--shadow);
 }
 
 .fmenu-icon-only {

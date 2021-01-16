@@ -1,18 +1,18 @@
 .fcarousel-dots {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
   margin: 0 1rem;
 }
 
 .fcarousel-dot {
-  width: 1em;
-  height: 1em;
   background-color: rgba(0, 0, 0, 0.1);
-  transition: width 0.25s, height 0.25s;
-  margin: 0 0.15rem;
   border-radius: 100rem;
   cursor: pointer;
+  height: 1em;
+  margin: 0 0.15rem;
+  transition: width 0.25s, height 0.25s;
+  width: 1em;
 }
 
 .fcarousel-dot-active {

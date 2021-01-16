@@ -1,16 +1,16 @@
 .fmodal-portal {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
 .fmodal-portal-close-animation {
-  background-color: transparent;
   animation: zoomOut 0.25s;
+  background-color: transparent;
 }
 
 .fmodal {
-  position: absolute;
   animation: zoomIn 0.25s;
   box-shadow: none;
+  position: absolute;
 }

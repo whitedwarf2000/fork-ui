@@ -3,11 +3,11 @@
 @import './DateCell.scss';
 
 .fui-calendar {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  background-color: var(--btn-bg);
   border-radius: 0.75em;
   box-shadow: var(--popup--shadow);
+  display: flex;
+  flex-direction: column;
   padding: 0.8em;
-  background-color: var(--btn-bg);
+  position: relative;
 }

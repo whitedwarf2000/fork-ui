@@ -1,13 +1,13 @@
 .frater {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .frater-item {
   color: var(--color-low-emphasis);
-  transition: color 0.25s;
-  padding: 0.25em;
   cursor: pointer;
+  padding: 0.25em;
+  transition: color 0.25s;
 
   &:hover {
     transform: scale(1.15);

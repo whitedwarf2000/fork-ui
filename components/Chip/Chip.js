@@ -2,7 +2,13 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { X } from '../icons';
+const X = ({ className, ...otherProps }) => (
+  <svg className={cn('ficon', className)} {...otherProps} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
 
 const Chip = ({
     className,
@@ -12,6 +18,7 @@ const Chip = ({
     onClose,
     size,
     style,
+    clickable,
     ...otherProps
   }) => {
 
@@ -21,6 +28,7 @@ const Chip = ({
         'fchip',
         {
           'fchip-rounded': rounded,
+          'fchip-clickable': clickable,
         },
         className
       )}
@@ -48,7 +56,7 @@ Chip.propTypes = {
   style: PropTypes.object,
   onClose: PropTypes.func,
   rounded: PropTypes.bool,
-  avatar: PropTypes.any,
+  clickable: PropTypes.bool,
 };
 Chip.defaultProps = {
   onClose: f => f,

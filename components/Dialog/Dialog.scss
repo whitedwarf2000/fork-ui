@@ -4,11 +4,11 @@
 @import './Footer.scss';
 
 .fdlg {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 30em;
-  max-height: 100vh;
   background-color: var(--bg);
   border-radius: var(--popup--border-radius);
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  min-width: 30em;
+  position: relative;
 }

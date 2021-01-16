@@ -5,31 +5,31 @@
 }
 
 .fform-field {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .fform-field-label {
-  height: var(--basic-height);
-  display: flex;
   align-items: center;
+  display: flex;
+  height: var(--basic-height);
 }
 
 .fform-field-label-required {
-  &:after {
-    content: "*";
+  &::after {
     color: var(--red--400);
+    content: '*';
     font-size: 1.25em;
     margin: 0 0.125em;
   }
 }
 
 .fform-field-message {
-  padding: 0.25em 0;
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: flex-end;
+  padding: 0.25em 0;
 }
 
 .fform-field-message-error {

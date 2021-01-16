@@ -1,37 +1,37 @@
 .fimg {
   display: block;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .fimg-blur {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   filter: blur(20px);
+  height: 100%;
   overflow: hidden;
+  position: absolute;
   transform: scale(1.2);
+  width: 100%;
 }
 
 .fimg-skeleton {
-  width: 100%;
   height: 100%;
   position: absolute;
+  width: 100%;
   z-index: 1;
 }
 
 .fimg-native-main {
-  width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.5s;
-  z-index: 2;
   position: absolute;
+  transition: opacity 0.5s;
+  width: 100%;
+  z-index: 2;
 }
 
 .fimg-native-main.fimg-native-loaded {

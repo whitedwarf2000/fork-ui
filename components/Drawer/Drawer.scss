@@ -5,10 +5,10 @@
 }
 
 .fdrawer {
-  position: absolute;
   height: 100vh;
   max-width: 100vw;
   overflow: scroll;
+  position: absolute;
 
   &::-webkit-scrollbar {
     display: none;

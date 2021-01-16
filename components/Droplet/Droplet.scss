@@ -1,22 +1,22 @@
 .fdroplet {
-  background-color: var(--primary--600);
-  display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  background-color: var(--primary--600);
   border-radius: 100rem;
   color: #fff;
-  width: 2.5rem;
+  display: flex;
   height: 2.5rem;
+  justify-content: center;
+  position: relative;
+  width: 2.5rem;
 
-  &:before {
-    content: " ";
-    width: 100%;
+  &::before {
+    background-color: inherit;
+    border-radius: 50% 50% 50% 0;
+    content: ' ';
     height: 100%;
     position: absolute;
-    background-color: inherit;
     transform: rotate(-45deg);
-    border-radius: 50% 50% 50% 0;
+    width: 100%;
   }
 }
 

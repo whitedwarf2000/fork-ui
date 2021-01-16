@@ -1,19 +1,19 @@
 @import '../../style/vars.scss';
 
 .fconfirm-portal {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 
   .fconfirm {
-    position: absolute;
-    top: 15%;
     animation: zoomIn 0.25s;
     box-shadow: none;
+    position: absolute;
+    top: 15%;
   }
 }
 
 .fconfirm-portal-close-animation {
-  background-color: transparent;
   animation: zoomOut 0.25s;
+  background-color: transparent;
 }

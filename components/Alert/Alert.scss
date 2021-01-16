@@ -9,19 +9,19 @@
 
 
 #root-alert {
-  position: fixed;
   bottom: 0;
-  right: 0;
   display: flex;
   flex-direction: column-reverse;
+  position: fixed;
+  right: 0;
   z-index: var(--zindex-alert);
 }
 
 #root-alert {
   .falert {
+    box-shadow: none;
     margin-bottom: 0.5em;
     margin-right: 0.5em;
-    box-shadow: none;
     width: 35rem;
   }
 }

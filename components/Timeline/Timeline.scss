@@ -1,11 +1,11 @@
 .ftimeline {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   .ftimeline-item:last-child {
     .ftimeline-btn {
-      &:after {
+      &::after {
         display: none;
       }
     }
@@ -17,7 +17,7 @@
 
   .ftimeline-item:first-child {
     .ftimeline-btn {
-      &:after {
+      &::after {
         display: none;
       }
     }
@@ -25,7 +25,7 @@
 
   .ftimeline-item:last-child {
     .ftimeline-btn {
-      &:after {
+      &::after {
         display: block;
       }
     }
@@ -39,26 +39,26 @@
 }
 
 .ftimeline-btn {
-  flex: 0;
   display: flex;
+  flex: 0;
   flex-direction: column;
   height: 100%;
 
-  .ficon{
+  .ficon {
     background-color: var(--bg);
     border-radius: 100em;
-    overflow: visible;
-    font-size: 1.5em;
-    z-index: 1;
     display: block;
+    font-size: 1.5em;
+    overflow: visible;
+    z-index: 1;
   }
 
-  &:after {
-    flex: 1;
-    content: "";
-    width: 1px;
+  &::after {
     background-color: var(--color-low-emphasis);
+    content: '';
+    flex: 1;
     margin-left: 50%;
+    width: 1px;
   }
 }
 
@@ -93,12 +93,13 @@
 // ALTERNATE
 .ftimeline-alternate {
   .ftimeline-item {
-    &:before {
+    &::before {
+      content: '';
       flex: 1;
-      content: "";
       padding: 0 0.5em;
     }
   }
+
   .ftimeline-item:nth-child(even) {
     flex-direction: row-reverse;
   }

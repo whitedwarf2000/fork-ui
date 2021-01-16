@@ -1,50 +1,44 @@
 .fchip {
-  --chip-close-size: 18px;
-  height: 2.275em;
-  padding-left: 0.125em;
-  padding-right: 0.125em;
-  display: flex;
   align-items: center;
+  background-color: var(--chip-bg);
   border-radius: var(--border-radius);
-  white-space: nowrap;
-  cursor: pointer;
+  display: flex;
+  height: 2em;
   user-select: none;
-  background-color: var(--btn-bg);
+  white-space: nowrap;
 
   &:hover {
-    background-color: var(--btn-hover-bg);
-  }
-}
-
-.fchip-avt {
-  font-size: 0.57em;
-
-  .favt-name {
-    font-size: 1.75em;
+    background-color: var(--chip-hover-bg);
   }
 }
 
 .fchip-child {
+  margin-top: 0.125em;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  margin-top: 0.125em;
 }
 
 .fchip-close {
-  width: var(--chip-close-size);
-  height: var(--chip-close-size);
-  margin-right: 0.2em;
+  align-items: center;
+  background-color: var(--chip-close-bg);
   border-radius: 999px;
-  // background-color: rgba(0, 0, 0, 0.26);
+  color: #fff;
+  cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-right: 0.3em;
+  padding: 0.15em;
 
   .ficon {
+    font-size: 0.8em;
     stroke-width: 2;
   }
 }
 
 .fchip-rounded {
   border-radius: 999px;
+}
+
+.fchip-clickable {
+  cursor: pointer;
 }

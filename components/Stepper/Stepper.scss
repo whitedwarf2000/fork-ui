@@ -1,8 +1,8 @@
 $step-btn--size: 32px;
 
 .fstepper {
-  width: 100%;
   display: flex;
+  width: 100%;
 
   .fstep:first-child {
     padding-left: 0;
@@ -11,31 +11,31 @@ $step-btn--size: 32px;
   .fstep:last-child {
     flex: none;
   
-    .fstep-title:after {
+    .fstep-title::after {
       display: none;
     }
   }
 }
 
 .fstep {
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: row;
-  position: relative;
   overflow: hidden;
   padding-left: 1em;
+  position: relative;
 }
 
 .fstep-btn {
-  position: relative;
-  height: $step-btn--size;
-  width: $step-btn--size;
-  border-radius: 999px;
-  border: 1px solid currentColor;
-  background-color: transparent;;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  background-color: transparent;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  display: flex;
+  height: $step-btn--size;
+  justify-content: center;
+  position: relative;
+  width: $step-btn--size;
   z-index: 1;
 }
 
@@ -46,38 +46,38 @@ $step-btn--size: 32px;
 }
 
 .fstep-content {
-  flex-grow: 1;
-  display: inline-block;
   color: var(--color-low-emphasis);
-  padding-left: 1em;
+  display: inline-block;
+  flex-grow: 1;
   padding-bottom: 1em;
+  padding-left: 1em;
 }
 
 .fstep-title {
   color: var(--color-low-emphasis);
-  position: relative;
-  font-weight: 600;
-  padding-right: 1em;
   display: inline-block;
+  font-weight: 600;
   line-height: $step-btn--size;
+  padding-right: 1em;
+  position: relative;
 
-  &:after {
-    position: absolute;
-    content: "";
+  &::after {
+    background-color: currentColor;
+    content: '';
     display: block;
     height: 1px;
-    width: 999px;
     left: 100%;
+    position: absolute;
     top: 50%;
-    background-color: currentColor;
+    width: 999px;
   }
 }
 
 // COMPLETED
 .fstep-completed {
   .fstep-btn {
-    color: var(--primary);
     background-color: transparent;
+    color: var(--primary);
   }
 
   .fstep-btn-child {
@@ -91,7 +91,7 @@ $step-btn--size: 32px;
   .fstep-title {
     color: var(--color);
 
-    &:after {
+    &::after {
       color: var(--primary);
     }
   }
@@ -100,8 +100,8 @@ $step-btn--size: 32px;
 // ERROR
 .fstep-error {
   .fstep-btn {
-    color: var(--red);
     background-color: transparent;
+    color: var(--red);
   }
 
   .fstep-btn-child {
@@ -120,8 +120,8 @@ $step-btn--size: 32px;
 // CANCELED
 .fstep-canceled {
   .fstep-btn {
-    color: var(--color-low-emphasis);
     background-color: transparent;
+    color: var(--color-low-emphasis);
   }
 
   .fstep-btn-child {
@@ -140,9 +140,9 @@ $step-btn--size: 32px;
 // PROCESSING
 .fstep-processing {
   .fstep-btn {
-    color: #fff;
-    border-color: var(--primary);
     background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
   }
 
   .fstep-title,
@@ -156,54 +156,54 @@ $step-btn--size: 32px;
   flex-direction: column;
 
   .fstep {
-    flex-direction: row;
     align-items: flex-start;
-    padding-left: 0;
+    flex-direction: row;
     overflow: visible;
+    padding-left: 0;
   }
 
   .fstep-completed {
     .fstep-btn-wrapper {
-      &:after {
+      &::after {
         color: var(--primary);
       }
     }
   }
 
   .fstep-content {
-    flex-grow: 1;
     align-items: flex-start;
+    flex-grow: 1;
   }
 
   .fstep-title {
     padding-right: 0;
 
-    &:after {
+    &::after {
       display: none;
     }
   }
 
   .fstep-btn-wrapper {
-    flex: 0;
     display: flex;
+    flex: 0;
     flex-direction: column;
     height: 100%;
     position: relative;
 
-    &:after {
-      position: absolute;
-      content: "";
-      width: 1px;
+    &::after {
       background-color: currentColor;
-      margin-left: 50%;
+      content: '';
       height: calc(100% - 48px);
+      margin-left: 50%;
+      position: absolute;
       top: 40px;
+      width: 1px;
     }
   }
 
   .fstep:last-child {
     .fstep-btn-wrapper {
-      &:after {
+      &::after {
         display: none;
       }
     }
@@ -213,8 +213,8 @@ $step-btn--size: 32px;
 // ALTERNATE SUPPORT
 .fstepper-alternate {
   .fstep {
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     overflow: visible;
     padding-left: 0;
   }
@@ -223,55 +223,55 @@ $step-btn--size: 32px;
     flex: 1;
 
     .fstep-btn-wrapper {
-      &:after {
+      &::after {
         display: none;
       }
     }
   }
 
   .fstep-content {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 0.5em;
-    padding-left: 0;
     padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 0.5em;
   }
 
   .fstep-description {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   .fstep-title {
     padding-right: 0;
 
-    &:after {
+    &::after {
       display: none;
     }
   }
 
   .fstep-btn-wrapper {
-    width: 100%;
-    position: relative;
     display: flex;
     justify-content: center;
+    position: relative;
+    width: 100%;
 
-    &:after {
+    &::after {
+      background-color: currentColor;
+      content: '';
+      height: 1px;
+      left: calc(50% + 22px);
       position: absolute;
       top: 50%;
-      left: calc(50% + 22px);
-      content: "";
-      height: 1px;
       width: calc(100% - 44px);
-      background-color: currentColor;
     }
   }
 
   .fstep-completed {
     .fstep-btn-wrapper {
-      &:after {
+      &::after {
         color: var(--primary);
       }
     }

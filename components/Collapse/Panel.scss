@@ -1,7 +1,7 @@
 .fpanel {
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
-  background-color: var(--bg);
   transition: margin 0.25s;
 
   + .fpanel-active {
@@ -20,8 +20,8 @@
 }
 
 .fpanel-active {
-  margin-bottom: 1rem;
   border-radius: var(--border-radius);
+  margin-bottom: 1rem;
 
   .fpanel-icon {
     transform: translateY(-50%) rotate(-180deg);
@@ -29,24 +29,24 @@
 }
 
 .fpanel-title {
-  position: relative;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
   height: 3em;
   outline: 0 !important;
-  display: flex;
-  align-items: center;
   padding-left: 0.75em;
   padding-right: 0.75em;
+  position: relative;
   transition: color 0.25s;
-  cursor: pointer;
   user-select: none;
 }
 
 .fpanel-icon {
+  margin-right: 1em;
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  margin-right: 1em;
   transition: transform 0.25s;
 }
 

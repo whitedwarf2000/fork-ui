@@ -1,15 +1,15 @@
 .ftooltip {
-  min-width: 5em;
-  max-width: 20em;
-  min-height: 2.5em;
-  padding: 0.5em var(--content-spacing);
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
+  display: flex;
+  justify-content: center;
+  max-width: 20em;
+  min-height: 2.5em;
+  min-width: 5em;
+  padding: 0.5em var(--content-spacing);
 
-  &:after{
+  &::after {
     border-color: rgba(0, 0, 0, 0.9);
   }
 }

@@ -1,11 +1,11 @@
 @import '../../style/vars.scss';
 
 .fmenu-item {
-  display: flex;
   align-items: center;
-  padding: 0 var(--content-spacing);
-  height: 3em;
   cursor: pointer;
+  display: flex;
+  height: 3em;
+  padding: 0 var(--content-spacing);
 
   &:hover {
     color: var(--primary);
@@ -20,7 +20,7 @@
 .fmenu-item-selected,
 .fmenu-item-selected:hover {
   background-color: var(--primary);
-  color: #ffffff;
+  color: #fff;
 }
 
 .fmenu-item-disabled {

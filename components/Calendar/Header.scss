@@ -1,15 +1,15 @@
 .fui-calendar-header {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 1em 0.7em;
   position: relative;
   width: 100%;
-  padding: 1em 0.7em;
 }
 
 .fui-calendar-header-month {
-  text-transform: uppercase;
   margin-right: 1em;
+  text-transform: uppercase;
 }
 
 .fui-calendar-header-right {

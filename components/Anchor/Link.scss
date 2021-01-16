@@ -1,16 +1,16 @@
 .fui-anchor-link {
-  height: 2em;
-  padding: 0 1rem;
-  display: flex;
   align-items: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: pointer;
   border-left: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+  height: 2em;
+  overflow: hidden;
+  padding: 0 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .fui-anchor-link--active {
-  color: var(--primary);
   border-left-color: var(--primary);
+  color: var(--primary);
 }

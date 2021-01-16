@@ -1,32 +1,32 @@
 .fbox {
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 
 .fbox-loader {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  display: flex;
   align-items: center;
+  display: flex;
+  height: 100%;
   justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .fbox-loading {
   .fbox-content {
-    transition: opacity .3s;
-    user-select: none;
     pointer-events: none;
+    transition: opacity 0.3s;
+    user-select: none;
   }
 }
 
 .fbox-loading.fbox-loading-dots {
   .fbox-content {
-    opacity: 0.3;
     filter: blur(3px);
+    opacity: 0.3;
   }
 }
 

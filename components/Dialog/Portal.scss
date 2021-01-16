@@ -1,10 +1,10 @@
 .fdlg-portal {
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  left: 0;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100vw;
-  height: 100vh;
   z-index: var(--zindex-drawer);
-  background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(2px);
 }

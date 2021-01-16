@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  font-size: calc(var(--avatar-size) / 3);
   font-weight: 600;
   height: var(--avatar-size);
   justify-content: center;

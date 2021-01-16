@@ -1,11 +1,11 @@
 @import '../../style/vars.scss';
 
 .fpure-alert {
-  position: relative;
-  min-width: 30rem;
-  width: 100%;
   box-shadow: none;
+  min-width: 30rem;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .fpure-alert-info {

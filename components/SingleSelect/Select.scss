@@ -1,7 +1,7 @@
 .fui-select {
   position: relative;
-  width: 100%;
   user-select: none;
+  width: 100%;
 }
 
 .fui-select-absolute {
@@ -9,30 +9,30 @@
 }
 
 .fui-select-input {
-  outline: 0 !important;
-  border: 0;
-  height: 3em;
   background-color: transparent;
+  border: 0;
   flex-grow: 1;
+  height: 3em;
+  outline: 0 !important;
   padding-left: 0.75em;
 }
 
 .fui-select-input-wrapper {
-  min-height: var(--input-height);
-  width: 100%;
-  border-radius: var(--border-radius);
-  padding: 0 3em 0 0.5em;
+  align-items: center;
   background-color: var(--input--bg);
-  transition: box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
   border: 1px solid transparent;
+  border-radius: var(--border-radius);
   cursor: pointer;
   display: flex;
-  align-items: center;
+  min-height: var(--input-height);
+  padding: 0 3em 0 0.5em;
+  transition: box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
+  width: 100%;
 }
 
 .fui-select-input-values {
-  display: flex;
   align-items: center;
+  display: flex;
 
   > *:not(:last-child) {
     margin-right: 0.5rem;
@@ -57,8 +57,8 @@
 
 .fui-select-input-wrapper:hover,
 .fui-select--is-drop .fui-select-input-wrapper {
-  border-color: var(--primary);
   background-color: var(--bg);
+  border-color: var(--primary);
 }
 
 .fui-select--rounded .fui-select-input-wrapper {
