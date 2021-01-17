@@ -29,7 +29,7 @@ const PureBadge = ({
         {
           'fbadge-overlap': overlap,
         },
-        mPlacements[placement] || 'fbadge-tr',
+        mPlacements[placement],
         className
       )}
       {...otherProps}
@@ -48,7 +48,9 @@ PureBadge.propTypes = {
   placement: placementPropType,
   badge: PropTypes.any,
 };
-PureBadge.defaultProps = {};
+PureBadge.defaultProps = {
+  placement: 'top-end',
+};
 
 const withSemantic = (Component) => {
   const SemanticPureBadge = (props) => {

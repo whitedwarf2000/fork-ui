@@ -2,8 +2,6 @@ import React, { useMemo, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Tippy from '@tippyjs/react';
-import { sticky as stickyPlugin } from 'tippy.js';
-import withCheatTargetNode from './withCheatTargetNode';
 
 import {
   placementSemanticPropTypes,
@@ -29,6 +27,7 @@ const Overlay = ({
   popperOptions,
   plugins,
   arrow,
+  reference,
   ...otherProps
 }) => {
   const _popperOptions = useMemo(() => ({
@@ -90,7 +89,7 @@ Overlay.propTypes = {
   followCursor: PropTypes.bool,
 };
 Overlay.defaultProps = {
-  animation: 'shift-away',
+  animation: 'fade',
   interactive: true,
   strategy: 'fixed',
   placement: 'top',

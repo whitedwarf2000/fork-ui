@@ -2,18 +2,18 @@ import PropTypes from 'prop-types';
 
 export const makePlacements = (prefix) => {
   return {
-    top: `${prefix}-t`,
-    topEnd: `${prefix}-te`,
-    topStart: `${prefix}-ts`,
-    right: `${prefix}-r`,
-    rightEnd: `${prefix}-re`,
-    rightStart: `${prefix}-rt`,
-    bottom: `${prefix}-b`,
-    bottomEnd: `${prefix}-be`,
-    bottomStart: `${prefix}-bs`,
-    left: `${prefix}-l`,
-    leftEnd: `${prefix}-le`,
-    leftStart: `${prefix}-ls`,
+    'top': `${prefix}-t`,
+    'top-end': `${prefix}-te`,
+    'top-start': `${prefix}-ts`,
+    'right': `${prefix}-r`,
+    'right-end': `${prefix}-re`,
+    'right-start': `${prefix}-rs`,
+    'bottom': `${prefix}-b`,
+    'bottom-end': `${prefix}-be`,
+    'bottom-start': `${prefix}-bs`,
+    'left': `${prefix}-l`,
+    'left-end': `${prefix}-le`,
+    'left-start': `${prefix}-ls`,
   }
 }
 
