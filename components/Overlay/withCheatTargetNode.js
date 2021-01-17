@@ -6,12 +6,12 @@ const withCheatTargetNode = (WrappedComponent) => {
     constructor(props) {
       super(props);
 
-      this.targetNode = null;
+      this.refNode = null;
       this.findDOMNode = this.findDOMNode.bind(this);
     }
 
     findDOMNode() {
-      this.targetNode = this.targetNode || ReactDOM.findDOMNode(this).firstElementChild;
+      this.refNode = this.refNode || ReactDOM.findDOMNode(this).firstElementChild;
     }
 
     componentDidMount() {
@@ -27,7 +27,7 @@ const withCheatTargetNode = (WrappedComponent) => {
       return (
         <WrappedComponent
           {...this.props}
-          targetNode={this.targetNode}
+          refNode={this.refNode}
           findDOMNode={this.findDOMNode}
         />
       );

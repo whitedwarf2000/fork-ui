@@ -1,6 +1,5 @@
-$step-btn--size: 32px;
-
 .fstepper {
+  --step-btn--size: 32px;
   display: flex;
   width: 100%;
 
@@ -32,10 +31,10 @@ $step-btn--size: 32px;
   border: 1px solid currentColor;
   border-radius: 999px;
   display: flex;
-  height: $step-btn--size;
+  height: var(--step-btn--size);
   justify-content: center;
   position: relative;
-  width: $step-btn--size;
+  width: var(--step-btn--size);
   z-index: 1;
 }
 
@@ -57,7 +56,7 @@ $step-btn--size: 32px;
   color: var(--color-low-emphasis);
   display: inline-block;
   font-weight: 600;
-  line-height: $step-btn--size;
+  line-height: var(--step-btn--size);
   padding-right: 1em;
   position: relative;
 
@@ -160,13 +159,22 @@ $step-btn--size: 32px;
     flex-direction: row;
     overflow: visible;
     padding-left: 0;
+    position: relative;
+
+    &::after {
+      background-color: currentColor;
+      content: '';
+      height: calc(100% - 48px);
+      margin-left: calc(var(--step-btn--size) / 2);
+      position: absolute;
+      top: 40px;
+      width: 1px;
+    }
   }
 
   .fstep-completed {
-    .fstep-btn-wrapper {
-      &::after {
-        color: var(--primary);
-      }
+    &::after {
+      color: var(--primary);
     }
   }
 
@@ -189,23 +197,11 @@ $step-btn--size: 32px;
     flex-direction: column;
     height: 100%;
     position: relative;
-
-    &::after {
-      background-color: currentColor;
-      content: '';
-      height: calc(100% - 48px);
-      margin-left: 50%;
-      position: absolute;
-      top: 40px;
-      width: 1px;
-    }
   }
 
   .fstep:last-child {
-    .fstep-btn-wrapper {
-      &::after {
-        display: none;
-      }
+    &::after {
+      display: none;
     }
   }
 }

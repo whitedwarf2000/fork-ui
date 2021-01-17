@@ -94,40 +94,38 @@ Button.propTypes = {
 };
 Button.defaultProps = {};
 
-const withSemantic = (Component) => {
-  const SemanticButton = (props) => {
-    const shape = useSemanticProp('shape', props, lShapes);
-    const color = useSemanticProp('color', props, lColors);
-  
-    // ignore semantic props
-    const passedProps = useMemo(() => omit(props, [
-      ...lColors,
-      ...lShapes,
-      'color',
-      'shape',
-    ]), [props]);
+const SemanticButton = React.forwardRef((props, ref) => {
+  const shape = useSemanticProp('shape', props, lShapes);
+  const color = useSemanticProp('color', props, lColors);
 
-    return (
-      <Component
-        shape={shape}
-        color={color}
-        {...passedProps}
-      />
-    );
-  };
+  // ignore semantic props
+  const passedProps = useMemo(() => omit(props, [
+    ...lColors,
+    ...lShapes,
+    'color',
+    'shape',
+  ]), [props]);
 
-  SemanticButton.propTypes = {
-    color: PropTypes.string,
-    shape: PropTypes.string,
-    primary: PropTypes.bool, // color="primary"
-    danger: PropTypes.bool, // color="danger"
-    transparent: PropTypes.bool, // color="transparent"
-    circle: PropTypes.bool, // shape="circle"
-    rounded: PropTypes.bool, // shape="rounded"
-  };
-  SemanticButton.defaultProps = {};
-  SemanticButton.displayName = 'SemanticButton';
+  return (
+    <Button
+      ref={ref}
+      shape={shape}
+      color={color}
+      {...passedProps}
+    />
+  );
+});
 
-  return SemanticButton;
-}
-export default withSemantic(Button);
+SemanticButton.propTypes = {
+  color: PropTypes.string,
+  shape: PropTypes.string,
+  primary: PropTypes.bool, // color="primary"
+  danger: PropTypes.bool, // color="danger"
+  transparent: PropTypes.bool, // color="transparent"
+  circle: PropTypes.bool, // shape="circle"
+  rounded: PropTypes.bool, // shape="rounded"
+};
+SemanticButton.defaultProps = {};
+SemanticButton.displayName = 'SemanticButton';
+
+export default SemanticButton;
