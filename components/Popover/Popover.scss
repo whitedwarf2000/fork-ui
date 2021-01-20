@@ -4,26 +4,26 @@
   background-color: var(--bg);
 }
 
-.tippy-box.fpopover[data-placement^=top]>.tippy-arrow:before {
+.tippy-box.fpopover[data-placement^=top] > .tippy-arrow:before {
   border-top-color: var(--bg);
 }
 
-.tippy-box.fpopover[data-placement^=bottom]>.tippy-arrow:before {
+.tippy-box.fpopover[data-placement^=bottom] > .tippy-arrow:before {
   border-bottom-color: var(--bg);
 }
 
-.tippy-box.fpopover[data-placement^=left]>.tippy-arrow:before {
+.tippy-box.fpopover[data-placement^=left] > .tippy-arrow:before {
   border-left-color: var(--bg);
 }
 
-.tippy-box.fpopover[data-placement^=right]>.tippy-arrow:before {
+.tippy-box.fpopover[data-placement^=right] > .tippy-arrow:before {
   border-right-color: var(--bg);
 }
 
-.tippy-box.fpopover>.tippy-backdrop {
+.tippy-box.fpopover > .tippy-backdrop {
   background-color: var(--bg);
 }
 
-.tippy-box.fpopover>.tippy-svg-arrow {
+.tippy-box.fpopover > .tippy-svg-arrow {
   fill: var(--bg);
 }

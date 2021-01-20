@@ -1,64 +1,45 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Portal from '../Portal';
 import Dialog from '../Dialog';
-
-import useDebounce from '../../hooks/useDebounce';
-import useClickOutsideOverlay from '../../hooks/useClickOutsideOverlay';
+import Memo from '../Memo';
+import useModal from './useModal';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 
-const Modal = ({ className, onClose, open, canOutsideClickClose, ...otherProps }) => {
-  const ref = useRef();
-  const delayOpen = useDebounce(open, 100);
-
-  const handleClickOutside = useCallback(() => {
-    if (canOutsideClickClose) {
-      onClose();
-    }
-  }, []);
-
-  useLockBodyScroll(delayOpen);
-  const wrapperRef = useClickOutsideOverlay({ overlayRef: ref, open: delayOpen, handleClickOutside });
+const Modal = ({ className, open, fresh, ...otherProps }) => {
+  useLockBodyScroll(open);
 
   return (
-    <React.Fragment>
-      {delayOpen && (
-        <Portal>
-          <Dialog.Portal
-            className={cn('fmodal-portal', { 'fmodal-portal-close-animation': !open })}
-            ref={wrapperRef}
-          >
-            <Dialog
-              className={cn('fmodal', className)}
-              ref={ref}
-              onClose={onClose}
-              {...otherProps}
-            />
-          </Dialog.Portal>
-        </Portal>
-      )}
-    </React.Fragment>
+    <Memo watch={open} fresh={fresh}>
+      <Portal>
+        <Dialog.Portal className="fmodal-portal">
+          <Dialog
+            className={cn('fmodal', className)}
+            {...otherProps}
+          />
+        </Dialog.Portal>
+      </Portal>
+    </Memo>
   );
 };
 
+Modal.useModal = useModal;
 Modal.Header = Dialog.Header;
 Modal.Body = Dialog.Body;
 Modal.Footer = Dialog.Footer;
+Modal.Divider = Dialog.Divider;
+Modal.HeaderTitle = Dialog.HeaderTitle;
+Modal.HeaderSupportButtons = Dialog.HeaderSupportButtons;
 
 Modal.displayName = 'Modal';
 Modal.propTypes = {
   className: PropTypes.string,
-  onClose: PropTypes.func,
   open: PropTypes.bool,
-  children: PropTypes.any,
-  title: PropTypes.any,
-  canOutsideClickClose: PropTypes.bool,
-  closable: PropTypes.bool,
 };
 Modal.defaultProps = {
-  onClose: f => f,
+  fresh: true,
 };
 
 export default Modal;

@@ -5,10 +5,11 @@
 
 .fdlg {
   background-color: var(--bg);
-  border-radius: var(--popup--border-radius);
+  border-radius: var(--border-radius-medium);
   display: flex;
   flex-direction: column;
   max-height: 100vh;
-  min-width: 30em;
+  min-width: 300px;
   position: relative;
 }
+

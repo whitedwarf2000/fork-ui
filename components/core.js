@@ -69,3 +69,4 @@ export { default as useMeasure } from '../hooks/useMeasure';
 export { default as useSemanticProp } from '../hooks/useSemanticProp';
 export { default as useOnClickOutside } from '../hooks/useOnClickOutside';
 export { default as useSimulateProgress } from './Progress/useSimulateProgress';
+export { default as useModal } from './Modal/useModal';

@@ -6,11 +6,9 @@ import Portal from '../Portal';
 import PureConfirm from '../PureConfirm';
 import Dialog from '../Dialog';
 
-import useDebounce from '../../hooks/useDebounce';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 
 const Confirm = ({ className, open, onClose, onOk, onCancel, ...otherProps }) => {
-  const delayOpen = useDebounce(open, 100);
   const _onOk = useCallback(() => {
     onClose();
     onOk();
@@ -21,13 +19,13 @@ const Confirm = ({ className, open, onClose, onOk, onCancel, ...otherProps }) =>
     onCancel();
   }, []);
 
-  useLockBodyScroll(delayOpen);
+  useLockBodyScroll(open);
 
   return (
     <React.Fragment>
-      {delayOpen && (
+      {open && (
         <Portal>
-          <Dialog.Portal className={cn('fconfirm-portal', { 'fconfirm-portal-close-animation': !open })}>
+          <Dialog.Portal className={cn('fconfirm-portal')}>
             <PureConfirm
               className={cn('fconfirm', className)}
               onOk={_onOk}

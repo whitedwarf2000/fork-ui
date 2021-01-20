@@ -19,30 +19,19 @@ const mPlacements = Object.freeze({
 const lTypes = Object.keys(mTypes);
 const lPlacements = Object.keys(mPlacements);
 
-const Divider = ({ className, title, transparent,  ...otherProps }) => {
-  const type = useSemanticProp('type', otherProps, lTypes);
-  const placement = useSemanticProp('placement', otherProps, lPlacements);
-
-  const passedProps = useMemo(() => omit(otherProps, [
-    ...lTypes,
-    ...lPlacements,
-    'type',
-    'placement',
-  ]), [otherProps]);
-
+const Divider = ({ className, title, type, placement, ...otherProps }) => {
   return (
     <div className={
       cn(
         'fdiv',
         {
-          'fdiv-transparent': transparent,
           'fdiv-title': title,
         },
         mTypes[type],
         mPlacements[placement],
         className
       )}
-      {...passedProps}
+      {...otherProps}
     >
       {title && <div className="fdiv-title">{title}</div>}
     </div>
@@ -60,6 +49,28 @@ Divider.propTypes = {
   transparent: PropTypes.bool,
   placement: PropTypes.string,
 };
-Divider.defaultProps = {};
+Divider.defaultProps = {
+  type: 'solid',
+};
 
-export default Divider;
+const SemanticDivider = (props) => {
+  const type = useSemanticProp('type', props, lTypes);
+  const placement = useSemanticProp('placement', props, lPlacements);
+
+  const passedProps = useMemo(() => omit(props, [
+    ...lTypes,
+    ...lPlacements,
+    'type',
+    'placement',
+  ]), [props]);
+
+  return (
+    <Divider
+      type={type}
+      placement={placement}
+      {...passedProps}
+    />
+  );
+};
+
+export default SemanticDivider;

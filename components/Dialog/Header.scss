@@ -1,9 +1,8 @@
 .fdlg-header {
   display: flex;
-  font-weight: 500;
-  height: 3.5em;
+  font-weight: 600;
   justify-content: space-between;
-  padding: 0 0.5em 0 1em;
+  padding: 1em;
 }
 
 .fdlg-header-title {
@@ -13,12 +12,6 @@
 }
 
 .fdlg-header-support-btn {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
-  justify-content: center;
-}
-
-.fdlg-header-refresh-btn,
-.fdlg-header-close-btn {
-  margin-left: 0.5em;
 }

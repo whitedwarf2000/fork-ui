@@ -1,0 +1,1 @@
+Just copy and paste into your components

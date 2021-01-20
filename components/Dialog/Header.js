@@ -1,44 +1,35 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Button from '../Button';
-import { X, Refresh } from '../icons';
-import Context from './Context';
-
-const Header = ({ className, closable, children, freshable, ...otherProps }) => {
-  const { onClose, onRefresh } = useContext(Context);
-
+const Header = ({ className, ...otherProps }) => {
   return (
-    <div className={cn('fdlg-header', className)} {...otherProps}>
-      <div className="fdlg-header-title">{children}</div>
-      <div className="fdlg-header-support-btn">
-        {freshable && (
-          <Button
-            icon={<Refresh />}
-            ghost
-            className="fdlg-header-refresh-btn"
-            onClick={onRefresh}
-          />
-        )}
-        {closable && (
-          <Button
-            icon={<X />}
-            ghost
-            className="fdlg-header-close-btn"
-            onClick={onClose}
-          />
-        )}
-      </div>
-    </div>
+    <div className={cn('fdlg-header', className)} {...otherProps} />
   );
 };
 
 Header.displayName = 'Dialog.Header';
 Header.propTypes = {};
-Header.defaultProps = {
-  closable: true,
-  freshable: false,
+Header.defaultProps = {};
+
+export const HeaderTitle = ({ className, ...otherProps }) => {
+  return (
+    <h4 className={cn('fdlg-header-title', className)} {...otherProps} />
+  );
 };
+
+HeaderTitle.displayName = 'Dialog.HeaderTitle';
+HeaderTitle.propTypes = {};
+HeaderTitle.defaultProps = {};
+
+export const HeaderSupportButtons = ({ className, ...otherProps }) => {
+  return (
+    <div className={cn('fdlg-header-support-btn', className)} {...otherProps} />
+  );
+};
+
+HeaderSupportButtons.displayName = 'Dialog.HeaderSupportButtons';
+HeaderSupportButtons.propTypes = {};
+HeaderSupportButtons.defaultProps = {};
 
 export default Header;
