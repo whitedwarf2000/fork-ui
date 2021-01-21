@@ -1,41 +1,51 @@
-import React, { useRef, useEffect, useCallback } from 'react';
-import cn from 'classnames';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import Portal from '../Portal';
-import PureConfirm from '../PureConfirm';
-import Dialog from '../Dialog';
+import Modal from '../Modal';
+import Button from '../Button';
+import { X } from '../icons';
 
-import useLockBodyScroll from '../../hooks/useLockBodyScroll';
-
-const Confirm = ({ className, open, onClose, onOk, onCancel, ...otherProps }) => {
-  const _onOk = useCallback(() => {
-    onClose();
-    onOk();
-  }, []);
-
-  const _onCancel = useCallback(() => {
-    onClose();
-    onCancel();
-  }, []);
-
-  useLockBodyScroll(open);
-
+const Confirm = ({
+  className,
+  title,
+  open,
+  onClose,
+  onOk,
+  onCancel,
+  children,
+  ...otherProps
+}) => {
   return (
-    <React.Fragment>
-      {open && (
-        <Portal>
-          <Dialog.Portal className={cn('fconfirm-portal')}>
-            <PureConfirm
-              className={cn('fconfirm', className)}
-              onOk={_onOk}
-              onCancel={_onCancel}
-              {...otherProps}
-            />
-          </Dialog.Portal>
-        </Portal>
-      )}
-    </React.Fragment>
+    <Modal open={open} {...otherProps}>
+      <Modal.Header>
+        <Modal.HeaderTitle>
+          {title}
+        </Modal.HeaderTitle>
+        <Modal.HeaderSupportButtons>
+          <Button
+            circle
+            transparent
+            icon={<X />}
+            onClick={onClose}
+          />
+        </Modal.HeaderSupportButtons>
+      </Modal.Header>
+      <Modal.Body>
+        {children}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button
+          primary
+          onClick={onOk}
+          className="mr-2"
+        >
+          OK
+        </Button>
+        <Button onClick={onCancel}>
+          Cancel
+        </Button>
+      </Modal.Footer>
+    </Modal>
   );
 };
 
@@ -46,13 +56,13 @@ Confirm.propTypes = {
   onClose: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
   onOk: PropTypes.func,
-  confirmRef: PropTypes.any,
   children: PropTypes.any,
   title: PropTypes.any,
 };
 Confirm.defaultProps = {
   onCancel: f => f,
   onOk: f => f,
+  onClose: f => f,
 };
 
 export default Confirm;

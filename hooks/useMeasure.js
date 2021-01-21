@@ -11,7 +11,7 @@ export default function useMeasure() {
       ro.observe(ref.current);
     }
 
-    return () => ro.disconnect()
+    return () => ro.disconnect();
   }, []);
 
   return [{ ref }, bounds];
