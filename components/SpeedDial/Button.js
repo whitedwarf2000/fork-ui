@@ -1,23 +1,14 @@
-import React, { useContext, useCallback } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import SpeedDialContext from './SpeedDialContext';
 
-const EnhanceButton = ({ className, onClick, ...otherProps }) => {
-  const { onClose } = useContext(SpeedDialContext);
-
-  const _onClick = useCallback(() => {
-    onClose();
-    onClick();
-  }, []);
-
+const EnhanceButton = ({ className, ...otherProps }) => {
   return (
     <Button
       circle
       className={cn('fspeed-dial-btn', className)}
-      onClick={_onClick}
       {...otherProps}
     />
   );

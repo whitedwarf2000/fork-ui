@@ -18,21 +18,10 @@ const mPlacements = Object.freeze({
 
 const lPlacements = Object.keys(mPlacements);
 
-const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps }) => {
-  const placement = useSemanticProp('placement', otherProps, lPlacements)  || 'right';
-
-  const ref = useRef();
+const Drawer = ({ className, open, ...otherProps }) => {
   const delayOpen = useDebounce(open, 100);
-
-  const handleClickOutside = useCallback(() => {
-    if (canOutsideClickClose) {
-      onClose();
-    }
-  }, []);
-
   useLockBodyScroll(delayOpen);
-  const wrapperRef = useClickOutsideOverlay({ overlayRef: ref, open: delayOpen, handleClickOutside });
-
+  const placement = useSemanticProp('placement', otherProps, lPlacements)  || 'right';
   const passedProps = useMemo(() => omit(otherProps, [
     ...lPlacements,
     'placement',
@@ -59,12 +48,9 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps 
               'fdrawer-portal',
               mPlacements[placement],
             )}
-              ref={wrapperRef}
-            >
+          >
             <Dialog
               className={cn('fdrawer', animationClass, className)}
-              ref={ref}
-              onClose={onClose}
               {...passedProps}
             />
           </Dialog.Portal>
@@ -77,20 +63,16 @@ const Drawer = ({ className, onClose, open, canOutsideClickClose, ...otherProps 
 Drawer.Header = Dialog.Header;
 Drawer.Body = Dialog.Body;
 Drawer.Footer = Dialog.Footer;
+Drawer.HeaderTitle = Dialog.HeaderTitle;
+Drawer.HeaderButtons = Dialog.HeaderButtons;
 
 Drawer.displayName = 'Drawer';
 Drawer.propTypes = {
   className: PropTypes.string,
-  onClose: PropTypes.func,
   open: PropTypes.bool,
-  canOutsideClickClose: PropTypes.bool,
   placement: PropTypes.string,
   children: PropTypes.any,
-  title: PropTypes.any,
-  closable: PropTypes.bool,
 };
-Drawer.defaultProps = {
-  onClose: f => f,
-};
+Drawer.defaultProps = {};
 
 export default Drawer;

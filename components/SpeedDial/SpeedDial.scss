@@ -1,18 +1,8 @@
-.fspeed-dial.foverlay-t,
-.fspeed-dial.foverlay-tr,
-.fspeed-dial.foverlay-rt,
-.fspeed-dial.foverlay-r,
-.fspeed-dial.foverlay-rb,
-.fspeed-dial.foverlay-br,
-.fspeed-dial.foverlay-b,
-.fspeed-dial.foverlay-bl,
-.fspeed-dial.foverlay-l,
-.fspeed-dial.foverlay-lb,
-.fspeed-dial.foverlay-lt,
-.fspeed-dial.foverlay-tl {
-  .fbtn {
-    margin: 0.25em;
-  }
+.fspeed-dial {
+  background: transparent;
+  // .fbtn {
+  //   margin: 0.25em;
+  // }
 
   .fspeed-dial-btns {
     display: flex;

@@ -22,14 +22,14 @@ HeaderTitle.displayName = 'Dialog.HeaderTitle';
 HeaderTitle.propTypes = {};
 HeaderTitle.defaultProps = {};
 
-export const HeaderSupportButtons = ({ className, ...otherProps }) => {
+export const HeaderButtons = ({ className, ...otherProps }) => {
   return (
-    <div className={cn('fdlg-header-support-btn', className)} {...otherProps} />
+    <div className={cn('fdlg-header-btns', className)} {...otherProps} />
   );
 };
 
-HeaderSupportButtons.displayName = 'Dialog.HeaderSupportButtons';
-HeaderSupportButtons.propTypes = {};
-HeaderSupportButtons.defaultProps = {};
+HeaderButtons.displayName = 'Dialog.HeaderButtons';
+HeaderButtons.propTypes = {};
+HeaderButtons.defaultProps = {};
 
 export default Header;

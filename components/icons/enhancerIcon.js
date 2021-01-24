@@ -8,8 +8,8 @@ const enhancerIcon = (originalName, displayName, IconComponent) => {
       <IconComponent
         className={cn('ficon', { [`ficon-${originalName}`]: originalName }, className)}
         style={{
+          '--icon-size': size,
           color: color,
-          fontSize: size,
           strokeWidth: stroke,
           ...style
         }}

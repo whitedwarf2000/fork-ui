@@ -21,14 +21,14 @@ const Confirm = ({
         <Modal.HeaderTitle>
           {title}
         </Modal.HeaderTitle>
-        <Modal.HeaderSupportButtons>
+        <Modal.HeaderButtons>
           <Button
             circle
             transparent
             icon={<X />}
             onClick={onClose}
           />
-        </Modal.HeaderSupportButtons>
+        </Modal.HeaderButtons>
       </Modal.Header>
       <Modal.Body>
         {children}

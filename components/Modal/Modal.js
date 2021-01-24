@@ -46,9 +46,8 @@ Modal.useModal = useModal;
 Modal.Header = Dialog.Header;
 Modal.Body = Dialog.Body;
 Modal.Footer = Dialog.Footer;
-Modal.Divider = Dialog.Divider;
 Modal.HeaderTitle = Dialog.HeaderTitle;
-Modal.HeaderSupportButtons = Dialog.HeaderSupportButtons;
+Modal.HeaderButtons = Dialog.HeaderButtons;
 
 Modal.displayName = 'Modal';
 Modal.propTypes = {

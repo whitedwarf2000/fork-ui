@@ -1,6 +1,14 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 
+const ajax = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ a: 100 })
+    }, 10000);
+  });
+}
+
 export default function useModalMeansure(open, style = {}, { centered, margin }) {
   const modalRef = useRef();
   const portalRef = useRef();
@@ -8,21 +16,21 @@ export default function useModalMeansure(open, style = {}, { centered, margin })
   const [modalBounds, setModalBounds] = useState({ left: 0, top: 0, width: 0, height: 0 });
   const [portalBounds, setPortalBounds] = useState({ left: 0, top: 0, width: 0, height: 0 });
 
-  const [roModal] = useState(() => new ResizeObserver(([entry]) => setModalBounds(entry.contentRect)));
-  const [roPortal] = useState(() => new ResizeObserver(([entry]) => setPortalBounds(entry.contentRect)));
+  const roModal = useRef(new ResizeObserver(([entry]) => setModalBounds(entry.contentRect)));
+  const roPortal = useRef(new ResizeObserver(([entry]) => setPortalBounds(entry.contentRect)));
 
   useEffect(() => {
     if (modalRef.current) {
-      roModal.observe(modalRef.current);
+      roModal.current.observe(modalRef.current);
     }
 
     if (portalRef.current) {
-      roPortal.observe(portalRef.current);
+      roPortal.current.observe(portalRef.current);
     }
 
     return () => {
-      roModal.disconnect();
-      roPortal.disconnect();
+      roModal.current.disconnect();
+      roPortal.current.disconnect();
     }
   }, [open]);
 
