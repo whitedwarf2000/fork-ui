@@ -1,51 +1,64 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import PureConfirm from '../PureConfirm';
-import Popover from '../Popover';
+import Button from '../Button';
+import Memo from '../Memo';
+import Overlay from '../Overlay';
+import Dialog from '../Dialog';
+import useOverlay from '../Overlay/useOverlay';
 
 const Popconfirm = ({
   className,
   onOk,
   onCancel,
   children,
-  title,
-  defaultVisible,
+  content,
   ...otherProps
 }) => {
-  const [visible, setVisible] = useState(!!defaultVisible);
+  const [{ ref, visible, hide, show }] = useOverlay(false);
 
-  const close = () => setVisible(false);
-
-  const handleOk = useCallback(() => {
-    close();
+  const onLocalOk = useCallback(() => {
+    hide();
     onOk();
-  }, []);
-
-  const handleCancel = useCallback(() => {
-    close();
+  }, [onOk, hide]);
+  const onLocalCancel = useCallback(() => {
+    hide();
     onCancel();
-  }, []);
-
-  const onVisibleChange = useCallback(_visible => setVisible(_visible), []);
+  }, [onCancel, hide]);
 
   return (
-    <Popover
+    <Overlay
       visible={visible}
-      onVisibleChange={onVisibleChange}
-      overlayClass="fpopconfirm"
-      className={className}
+      className="fpopconfirm"
+      arrow
+      trigger='manual'
+      onClickOutside={hide}
+      content={(
+        <Dialog>
+          <Dialog.Body>
+            {content}
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button
+              primary
+              className="mr-2"
+              onClick={onLocalOk}
+            >
+              OK
+            </Button>
+            <Button onClick={onLocalCancel}>
+              Cancel
+            </Button>
+          </Dialog.Footer>
+        </Dialog>
+      )}
+      role="popconfirm"
       {...otherProps}
-      overlay={
-        <PureConfirm
-          onOk={handleOk}
-          onCancel={handleCancel}
-          title={title}
-        />
-      }
     >
-      {children}
-    </Popover>
+      <span ref={ref} onClick={show}>
+        {children}
+      </span>
+    </Overlay>
   );
 };
 
@@ -55,8 +68,6 @@ Popconfirm.propTypes = {
   onOk: PropTypes.func,
   onCancel: PropTypes.func,
   children: PropTypes.any,
-  title: PropTypes.string,
-  defaultVisible: PropTypes.bool,
 };
 Popconfirm.defaultProps = {
   onCancel: f => f,

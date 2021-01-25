@@ -1,0 +1,29 @@
+.fpopconfirm {
+  color: var(--text-color);
+  box-shadow: var(--popover-box-shadow);
+  background-color: var(--bg);
+}
+
+.fpopconfirm[data-placement^=top] > .tippy-arrow:before {
+  border-top-color: var(--bg);
+}
+
+.fpopconfirm[data-placement^=bottom] > .tippy-arrow:before {
+  border-bottom-color: var(--bg);
+}
+
+.fpopconfirm[data-placement^=left] > .tippy-arrow:before {
+  border-left-color: var(--bg);
+}
+
+.fpopconfirm[data-placement^=right] > .tippy-arrow:before {
+  border-right-color: var(--bg);
+}
+
+.fpopconfirm > .tippy-backdrop {
+  background-color: var(--bg);
+}
+
+.fpopconfirm > .tippy-svg-arrow {
+  fill: var(--bg);
+}

@@ -1,14 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 
-const ajax = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({ a: 100 })
-    }, 10000);
-  });
-}
-
 export default function useModalMeansure(open, style = {}, { centered, margin }) {
   const modalRef = useRef();
   const portalRef = useRef();
