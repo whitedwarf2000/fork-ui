@@ -15,7 +15,7 @@ const Popconfirm = ({
   content,
   ...otherProps
 }) => {
-  const [{ ref, visible, hide, show }] = useOverlay(false);
+  const [{ visible, hide, show }] = useOverlay(false);
 
   const onLocalOk = useCallback(() => {
     hide();
@@ -55,7 +55,7 @@ const Popconfirm = ({
       role="popconfirm"
       {...otherProps}
     >
-      <span ref={ref} onClick={show}>
+      <span onClick={show}>
         {children}
       </span>
     </Overlay>
