@@ -53,7 +53,6 @@ export { default as Popover } from './Popover';
 export { default as Progress } from './Progress';
 export { default as Password } from './Password';
 export { default as PureAlert } from './PureAlert';
-export { default as PureConfirm } from './PureConfirm';
 export { default as PureNotification } from './PureNotification';
 export { default as Notification } from './Notification';
 export { default as Form } from './Form';

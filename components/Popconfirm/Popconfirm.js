@@ -27,11 +27,10 @@ const Popconfirm = ({
   }, [onCancel, hide]);
 
   return (
-    <Overlay
+  <Overlay
       visible={visible}
       className="fpopconfirm"
       arrow
-      trigger='manual'
       onClickOutside={hide}
       content={(
         <Dialog>
