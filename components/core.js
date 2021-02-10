@@ -60,6 +60,7 @@ export { default as Loader } from './Loader';
 export { default as Skeleton } from './Skeleton';
 export { default as Upload } from './Upload';
 export { default as QueryBuilder } from './QueryBuilder';
+export { default as MultiSelect } from './MultiSelect';
 
 export { default as useSwitch } from './Switch/useSwitch';
 export { default as useRadioGroup } from './Radio/useRadioGroup';
@@ -69,3 +70,4 @@ export { default as useSemanticProp } from '../hooks/useSemanticProp';
 export { default as useOnClickOutside } from '../hooks/useOnClickOutside';
 export { default as useSimulateProgress } from './Progress/useSimulateProgress';
 export { default as useModal } from './Modal/useModal';
+export { default as useMultiSelect } from './MultiSelect/useMultiSelect';

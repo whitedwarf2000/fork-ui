@@ -1,0 +1,52 @@
+@import './SelectOption.scss';
+
+.fmultiselect {
+  outline: 0 !important;
+  border-radius: var(--border-radius);
+  padding: 0 0 4px 5px;
+  background-color: var(--input-hover-bg);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+
+  > *:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  > * {
+    margin-top: 4px;
+  }
+
+  &.fmultiselect--is-focus,
+  &:hover,
+  &:focus {
+    background-color: var(--input-hover-bg);
+  }
+}
+
+.fmultiselect-input {
+  outline: 0 !important;
+  border: 0;
+  background-color: transparent;
+  height: 2.25em;
+  flex: 1;
+  min-width: 4px;
+}
+
+.fmultiselect-overlay.fmultiselect-overlay {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--popover-box-shadow);
+  color: var(--text-color);
+
+  .tippy-content {
+    padding: 0;
+  }
+}
+
+.fmultiselect-overlay-content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+}

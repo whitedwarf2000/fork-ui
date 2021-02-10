@@ -18,7 +18,7 @@ const Panel = ({ className, title, children, active, fresh, onClick, disabled, .
         <Button
           className="fpanel-icon"
           circle
-          ghost
+          transparent
           icon={<ChevronDown />}
         />
       </button>
