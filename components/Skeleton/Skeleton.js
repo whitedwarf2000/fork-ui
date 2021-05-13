@@ -1,8 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import useSemanticProp from '../../hooks/useSemanticProp';
-import { omit } from '../../utils/helpers';
 
 const mShape = Object.freeze({
   circle: 'fskele-circle',
@@ -19,7 +17,6 @@ const Skeleton = ({
   style,
   size,
   shape,
-  animated,
   ...otherProps
 }) => {
   return (
@@ -33,9 +30,6 @@ const Skeleton = ({
       className={
         cn(
           'fskele',
-          {
-            'fskele-animated': animated,
-          },
           mShape[shape],
           className,
       )}
@@ -52,35 +46,7 @@ Skeleton.propTypes = {
   h: PropTypes.string,
   size: PropTypes.string,
   style: PropTypes.object,
-  animated: PropTypes.bool,
 };
-Skeleton.defaultProps = {
-  animated: false,
-};
+Skeleton.defaultProps = {};
 
-const withSemantic = (Component) => {
-  const SemanticSkeleton = (props) => {
-    const shape = useSemanticProp('shape', props, lShape);
-    const passedProps = useMemo(() => omit(props, [...lShape, 'shape']), [props]);
-
-    return (
-      <Component
-        shape={shape}
-        {...passedProps}
-      />
-    );
-  };
-
-  SemanticSkeleton.displayName = 'SemanticSkeleton';
-  SemanticSkeleton.propTypes = {
-    shape: PropTypes.oneOf(lShape),
-    circle: PropTypes.bool,
-    rect: PropTypes.bool,
-    p: PropTypes.bool,
-  };
-  SemanticSkeleton.defaultProps = {};
-
-  return SemanticSkeleton;
-};
-
-export default withSemantic(Skeleton);
+export default Skeleton;

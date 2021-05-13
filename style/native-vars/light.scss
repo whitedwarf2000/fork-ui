@@ -42,6 +42,12 @@
 
   // DIVIDER
   --divider-color: #dcdcdc;
+
+  // SKELETON
+  --skeleton-color: #ced4da;
+  --skeleton-animation-bg-1: rgba(255, 255, 255, 0);
+  --skeleton-animation-bg-2: rgba(255, 255, 255, 0.35);
+  --skeleton-animation-bg-3: rgba(255, 255, 255, 0);
 }
 
 .light-mode {

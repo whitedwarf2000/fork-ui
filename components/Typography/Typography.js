@@ -1,15 +1,12 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import useSemanticProp from '../../hooks/useSemanticProp';
-import { omit } from '../../utils/helpers';
-
 const mFontStyles = Object.freeze({
-  i: 'ftypo-italic',
+  italic: 'ftypo-italic',
   oblique: 'ftypo-oblique',
 });
 const mTextDecoration = Object.freeze({
-  u: 'ftypo-underline',
+  underline: 'ftypo-underline',
   through: 'ftypo-line-through',
 });
 
@@ -22,7 +19,7 @@ const Typography = ({
   className,
   disabled,
   color,
-  b,
+  bold,
   tag,
   fontStyle,
   textDecoration,
@@ -38,7 +35,7 @@ const Typography = ({
         'ftypo',
         {
           'ftypo-disabled': disabled,
-          'ftypo-strong': b,
+          'ftypo-strong': bold,
         },
         mFontStyles[fontStyle],
         mTextDecoration[textDecoration],
@@ -58,60 +55,11 @@ Typography.propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  b: PropTypes.bool,
+  bold: PropTypes.bool,
   color: PropTypes.string,
 };
 Typography.defaultProps = {
   tag: 'p',
 };
 
-const withSemantic = (Component) => {
-  const SemanticTypography = (props) => {
-    const tag = useSemanticProp('tag', props, lTags);
-    const fontStyle = useSemanticProp('fontStyle', props, lFontStyles);
-    const textDecoration = useSemanticProp('textDecoration', props, lTextDecoration);
-  
-    const passedProps = useMemo(() => omit(props, [
-      ...lTags,
-      ...lFontStyles,
-      ...lTextDecoration,
-      'textDecoration',
-      'tag',
-      'fontStyle',
-    ]), [props]);
-
-    return (
-      <Component
-        tag={tag}
-        textDecoration={textDecoration}
-        fontStyle={fontStyle}
-        {...passedProps}
-      />
-    );
-  };
-
-  SemanticTypography.displayName = 'SemanticTypography';
-  SemanticTypography.propTypes = {
-    tag: PropTypes.oneOf(lTags),
-    textDecoration: PropTypes.oneOf(lTextDecoration),
-    fontStyle: PropTypes.oneOf(lFontStyles),
-    u: PropTypes.bool, // textDecoration="u"
-    through: PropTypes.bool, // textDecoration="through"
-    i: PropTypes.bool, // fontStyle="i"
-    oblique: PropTypes.bool, // fontStyle="oblique"
-    p: PropTypes.bool, // tag="p"
-    div: PropTypes.bool, // tag="div"
-    h1: PropTypes.bool, // tag="h1"
-    h2: PropTypes.bool, // tag="h2"
-    h3: PropTypes.bool, // tag="h3"
-    h4: PropTypes.bool, // tag="h4"
-    h5: PropTypes.bool, // tag="h5"
-    h6: PropTypes.bool, // tag="h6"
-    span: PropTypes.bool, // tag="span"
-  };
-  SemanticTypography.defaultProps = {};
-
-  return SemanticTypography;
-};
-
-export default withSemantic(Typography);
+export default Typography;
