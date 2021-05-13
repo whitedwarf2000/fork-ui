@@ -1,9 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-
-import useSemanticProp from '../../hooks/useSemanticProp';
-import { omit } from '../../utils/helpers';
 
 const mShape = Object.freeze({
   square: 'favt-square',
@@ -54,29 +51,4 @@ Avatar.defaultProps = {
   shape: 'circle',
 };
 
-const withSemantic = (Component) => {
-  const SematicAvatar = (props) => {
-    const shape = useSemanticProp('shape', props, lShape);
-
-    const passedProps = useMemo(() => omit(props, [
-      ...lShape,
-      'shape',
-    ]), [props]);
-
-    return (
-      <Component shape={shape} {...passedProps} />
-    );
-  };
-
-  SematicAvatar.propTypes = {
-    shape: PropTypes.oneOf(lShape),
-    square: PropTypes.bool, // shape="square"
-    circle: PropTypes.bool, // shape="circle"
-  };
-  SematicAvatar.defaultProps = {};
-  SematicAvatar.displayName = 'SematicAvatar';
-
-  return SematicAvatar;
-};
-
-export default withSemantic(Avatar);
+export default Avatar;
