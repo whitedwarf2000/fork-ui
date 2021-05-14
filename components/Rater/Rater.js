@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { Star } from '../icons';
+import Star from '../icons/all/Star';
 import useRater from './useRater';
 
 const Rater = ({ className, size, style, ...otherProps }) => {

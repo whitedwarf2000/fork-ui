@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Modal from '../Modal';
 import Button from '../Button';
-import { X } from '../icons';
+import X from '../icons/all/X';
 
 const Confirm = ({
   className,

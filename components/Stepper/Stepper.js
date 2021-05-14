@@ -2,7 +2,9 @@ import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import { Check, X, Ban } from '../icons';
+import Check from '../icons/all/Check';
+import X from '../icons/all/X';
+import Ban from '../icons/all/Ban';
 import useStepper from './useStepper';
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';

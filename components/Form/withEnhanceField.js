@@ -3,7 +3,8 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Badge from '../Badge';
-import { X, Check } from '../icons';
+import X from '../icons/all/X';
+import Check from '../icons/all/Check';
 import { pick } from '../../utils/helpers';
 
 const renderPropsBadge = ({

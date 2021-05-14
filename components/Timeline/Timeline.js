@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { Clock } from '../icons';
+import Clock from '../icons/all/Clock';
 
 import useSemanticProp from '../../hooks/useSemanticProp';
 import { omit } from '../../utils/helpers';

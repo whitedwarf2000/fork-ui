@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import { ChevronDown } from '../icons';
+import ChevronDown from '../icons/all/ChevronDown';
 import Animated from '../Animated';
 import Memo from '../Memo';
 

@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect, useRef, useCallback, useMemo } from '
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { CaretDown } from '../icons';
+import CaretDown from '../icons/all/CaretDown';
 import Menu from '../Menu';
 import Overlay from '../Overlay';
 import Chip from '../Chip';

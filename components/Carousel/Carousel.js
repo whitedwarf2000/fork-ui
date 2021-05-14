@@ -3,7 +3,8 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import { ChevronLeft, ChevronRight } from '../icons';
+import ChevronLeft from '../icons/all/ChevronRight';
+import ChevronRight from '../icons/all/ChevronRight';
 import Item from './Item';
 import Dots from './Dots';
 import Context from './Context';

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 
 import Button from '../Button';
-import { ArrowNarrowUp } from '../icons';
+import ArrowNarrowUp from '../icons/all/ArrowNarrowUp';
 
 const ScrollUp = () => {
   const scrollToTop = useCallback(() => window.scrollTo({ top: 0, behavior: 'smooth'}), []);

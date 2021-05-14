@@ -2,7 +2,9 @@ import React, { useMemo } from 'react';
 import cn from 'classnames';
 
 import { config } from '../ConfigProvider';
-import { ChevronLeft, ChevronRight, Refresh } from '../icons';
+import ChevronLeft from '../icons/all/ChevronLeft';
+import ChevronRight from '../icons/all/ChevronRight';
+import Refresh from '../icons/all/Refresh';
 import { mMonth } from './map';
 
 import Button from '../Button';

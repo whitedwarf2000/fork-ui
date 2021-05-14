@@ -3,7 +3,8 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import { ChevronRight, ChevronLeft } from '../icons';
+import ChevronRight from '../icons/all/ChevronRight';
+import ChevronLeft from '../icons/all/ChevronLeft';
 import usePagination from './usePagination';
 
 const loop = (start, end, cb) => {
