@@ -24,7 +24,12 @@ const Switch = React.forwardRef(({ className, style, size, color, disabled, load
       />
       <div className="fswitch-mark">
         <span className="fswitch-lever">
-          {loading && <Loader.Spinner className="fswitch-spinner" />}
+          {loading && (
+            <Loader.Spinner
+              className="fswitch-spinner"
+              size="calc(var(--switch-size) / 1.5)"
+            />
+          )}
         </span>
       </div>
     </div>

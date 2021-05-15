@@ -1,5 +1,4 @@
 .floader-dots {
-  --dot-size: 13px;
   align-items: center;
   color: var(--primary);
   display: flex;
@@ -55,7 +54,7 @@
   }
 
   45% {
-    transform: translateY(-20px);
+    transform: translateY(-75%);
   }
 }
 

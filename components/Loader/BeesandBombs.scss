@@ -1,0 +1,119 @@
+
+.floader-beesand-bombs {
+  animation-name: beesandbombs;
+  animation-duration: 4s;
+  width: 40px;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
+}
+.floader-beesand-bomb {
+  position: relative;
+  background: var(--primary);
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  margin: 5px;
+  float: right;
+  animation-name: beesandbombscircle;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
+}
+.floader-beesand-bomb:before {
+  content: "";
+  position: absolute;
+  background: #2980b9;
+  width: 20px;
+  height: 20px;
+  animation-name: beesandbombscirclebox;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
+}
+.floader-beesand-bomb:nth-child(1)::before {
+  left: 0;
+  bottom: 0;
+  border-bottom-left-radius: 40px;
+}
+.floader-beesand-bomb:nth-child(2)::before {
+  right: 0;
+  bottom: 0;
+  border-bottom-right-radius: 40px;
+}
+.floader-beesand-bomb:nth-child(3)::before {
+  top: 0;
+  left: 0;
+  border-top-left-radius: 40px;
+}
+.floader-beesand-bomb:nth-child(4)::before {
+  top: 0;
+  right: 0;
+  border-top-right-radius: 40px;
+}
+.floader-beesand-bombs:before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  animation-name: beesandbombsrev;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
+}
+
+@keyframes beesandbombs {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+@keyframes beesandbombsrev {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  52% {
+    visibility: hidden;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    visibility: hidden;
+  }
+}
+@keyframes beesandbombscircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes beesandbombscirclebox {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  51% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}

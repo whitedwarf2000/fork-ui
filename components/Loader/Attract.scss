@@ -1,0 +1,42 @@
+
+.floader-attract {
+  --gap: calc(var(--attract-size) / 4);
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  width: calc(var(--attract-size) * 2 + calc(var(--gap) * 2));
+}
+
+.floader-attract-left,
+.floader-attract-right {
+  height: var(--attract-size);
+  width: var(--attract-size);
+  border-radius: 1000px;
+}
+
+.floader-attract-left {
+  background-color: var(--attract-left-color);
+  margin-right: var(--gap);
+  animation: attract-left 700ms cubic-bezier(0.3, 0.5, 0.4, 1) infinite alternate-reverse;
+}
+
+.floader-attract-right {
+  background-color: var(--attract-right-color);
+  margin-left: var(--gap);
+  animation: attract-right 700ms cubic-bezier(0.3, 0.5, 0.4, 1) infinite alternate-reverse;
+}
+
+@keyframes attract-left {
+  to {
+    transform: translateX(calc(var(--attract-size) + calc(var(--gap) / 4)));
+    background-color: var(--attract-right-color);
+  }
+}
+
+@keyframes attract-right {
+  to {
+    transform: translateX(calc(var(--attract-size) * -1 - calc(var(--gap) / 4)));
+    background-color: var(--attract-left-color);
+  }
+}

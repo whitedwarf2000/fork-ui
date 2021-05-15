@@ -8,7 +8,7 @@ const Spinner = ({ style, color, size, className, ...otherProps }) => {
       style={{
         ...style,
         color,
-        '--spinner-size': size ? `${size}px` : undefined,
+        '--spinner-size': size
       }}
       className={cn('floader-spinner', className)}
     >
@@ -24,7 +24,9 @@ Spinner.propTypes = {
   size: PropTypes.string,
   className: PropTypes.string,
 };
-Spinner.defaultProps = {};
+Spinner.defaultProps = {
+  size: '24px',
+};
 
 export default Spinner;
 

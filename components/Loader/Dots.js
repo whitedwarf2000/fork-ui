@@ -1,9 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-
-import useSemanticProp from '../../hooks/useSemanticProp';
-import { omit } from '../../utils/helpers';
 
 const mAnimations = Object.freeze({
   wave: 'floader-dots-wave',
@@ -18,7 +15,7 @@ const Dots = ({ style, color, size, animation, className, ...otherProps }) => {
       style={{
         ...style,
         color,
-        '--dot-size': size ? `${size}px` : undefined,
+        '--dot-size': size,
       }}
       className={cn('floader-dots', mAnimations[animation] || 'floader-dots-buble', className)}
       {...otherProps}
@@ -40,27 +37,7 @@ Dots.propTypes = {
 };
 Dots.defaultProps = {
   animation: 'buble',
+  size: '13px',
 };
 
-const withSemantic = (Component) => {
-  const SemanticDots = (props) => {
-    const animation = useSemanticProp('animation', props, lAnimations);
-    const passedProps = useMemo(() => omit(props, [...lAnimations, 'animation']), [props]);
-
-    return (
-      <Component animation={animation} {...passedProps} />
-    );
-  };
-
-  SemanticDots.displayName = 'SemanticDots';
-  SemanticDots.propTypes = {
-    animation: PropTypes.oneOf(lAnimations),
-    wave: PropTypes.bool,
-    buble: PropTypes.bool,
-  };
-  SemanticDots.defaultProps = {};
-
-  return SemanticDots;
-};
-
-export default withSemantic(Dots);
+export default Dots;
