@@ -1,0 +1,30 @@
+.fvs-facet {
+  display: flex;
+  align-items: center;
+}
+
+.fvs-facet-content {
+  height: 100%;
+  padding: 0 4px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.fvs-facet-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4px;
+  height: 100%;
+  cursor: pointer;
+  margin-left: 1px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.fvs-facet-primary {
+  .fvs-facet-content,
+  .fvs-facet-close {
+    background-color: var(--skeleton-color);
+  }
+}

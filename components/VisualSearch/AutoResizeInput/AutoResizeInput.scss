@@ -1,0 +1,15 @@
+.fvs-auto-resize-input-wrapper {
+  position: relative;
+}
+.fvs-auto-resize-input {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+.fvs-auto-resize-input-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  visibility: hidden !important;
+}
