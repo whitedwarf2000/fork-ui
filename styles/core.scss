@@ -1,0 +1,23 @@
+@import './reset';
+@import './utils';
+@import './animation/index';
+@import './common';
+
+@import './utilities/flexbox/index';
+@import './utilities/spacing';
+@import './utilities/width';
+@import './utilities/cursor';
+@import './utilities/font-weight.scss';
+@import './utilities/font-family.scss';
+
+.ficon {
+  --icon-size: 1.35em;
+  display: inline-block;
+  fill: none;
+  height: var(--icon-size);
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1;
+  width: var(--icon-size);
+}
