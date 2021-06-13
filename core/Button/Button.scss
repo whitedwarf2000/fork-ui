@@ -1,0 +1,118 @@
+.fbtn {
+  background-color: var(--btn-bg);
+  border: 1px solid var(--btn-bg);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  min-height: 32px;
+  min-width: 32px;
+  outline: 0 !important;
+  outline-style: none;
+  padding: 0.45em 1.25em;
+  position: relative;
+  touch-action: manipulation;
+  user-select: none;
+
+  &:hover,
+  &:focus {
+    background-color: var(--btn-hover-bg);
+    border-color: var(--btn-hover-bg);
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    background-color: var(--bg-disabled);
+    border-color: var(--bg-disabled);
+    color: var(--color-disabled);
+    cursor: not-allowed !important;
+
+    * {
+      pointer-events: none !important;
+    }
+  }
+}
+
+.fbtn-solid {
+  background-color: transparent;
+  border-color: currentColor;
+  border-style: solid;
+}
+
+.fbtn-dashed {
+  background-color: transparent;
+  border-color: currentColor;
+  border-style: dashed;
+}
+
+.fbtn-circle {
+  border-radius: 999px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.fbtn-rounded {
+  border-radius: 999px;
+}
+
+.fbtn-child {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+
+.fbtn-icon {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.fbtn:not(.fbtn-icon) .ficon:nth-child(1) {
+  margin-right: 0.5em;
+}
+
+.fbtn:not(.fbtn-icon) .ficon:last-child {
+  margin-left: 0.5em;
+}
+
+.fbtn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+
+  &.fbtn-solid,
+  &.fbtn-dashed {
+    background-color: transparent;
+    color: var(--primary);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: #fff;
+  }
+}
+
+.fbtn-danger {
+  background-color: var(--red);
+  border-color: var(--red);
+  color: #fff;
+
+  &.fbtn-solid,
+  &.fbtn-dashed {
+    background-color: transparent;
+    color: var(--red);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--red-hover);
+    border-color: var(--red-hover);
+    color: #fff;
+  }
+}
+
+.fbtn-transparent {
+  background-color: transparent;
+  border-color: transparent;
+}

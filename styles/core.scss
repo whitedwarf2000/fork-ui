@@ -2,22 +2,7 @@
 @import './utils';
 @import './animation/index';
 @import './common';
+@import './utilities/index';
 
-@import './utilities/flexbox/index';
-@import './utilities/spacing';
-@import './utilities/width';
-@import './utilities/cursor';
-@import './utilities/font-weight';
-@import './utilities/font-family';
-
-.ficon {
-  --icon-size: 1.35em;
-  display: inline-block;
-  fill: none;
-  height: var(--icon-size);
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1;
-  width: var(--icon-size);
-}
+@import './Icon';
+@import '../core/Button/Button';

@@ -1,0 +1,11 @@
+.ficon {
+  --icon-size: 1.35em;
+  display: inline-block;
+  fill: none;
+  height: var(--icon-size);
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1;
+  width: var(--icon-size);
+}
