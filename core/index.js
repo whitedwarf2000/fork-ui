@@ -5,4 +5,5 @@ export { default as Flex } from './Flex';
 export { default as Memo } from './Memo';
 export { default as Portal } from './Portal';
 export { default as Radio } from './Radio';
+export { default as Skeleton } from './Skeleton';
 export { default as Switch } from './Switch';

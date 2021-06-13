@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+
+import Loader from '../Loader';
 import { isString, isNumber } from 'lodash';
 
 const mColors = Object.freeze({
@@ -27,6 +29,7 @@ const Button = React.forwardRef(({
   size,
   style,
   children,
+  loading,
   disabled,
   shape,
   color,
@@ -55,6 +58,7 @@ const Button = React.forwardRef(({
         'fbtn',
         {
           'fbtn-icon': icon,
+          'fbtn-loading': loading,
         },
         mShapes[shape],
         mColors[color],
@@ -65,9 +69,10 @@ const Button = React.forwardRef(({
         fontSize: size,
         ...style,
       }}
-      disabled={disabled}
+      disabled={loading || disabled}
       {...otherProps}
     >
+      {loading && <Loader.Spinner className="fbtn-spinner" />}
       <span className="fbtn-child">
         {child}
       </span>
@@ -84,6 +89,7 @@ Button.propTypes = {
   icon: PropTypes.any,
   style: PropTypes.object,
   children: PropTypes.any,
+  loading: PropTypes.bool,
   border: PropTypes.oneOf(lBorders),
   disabled: PropTypes.bool,
 };

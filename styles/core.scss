@@ -1,8 +1,9 @@
-@import './reset';
-@import './utils';
-@import './animation/index';
-@import './common';
-@import './utilities/index';
-
-@import './Icon';
+@import '../core/Loader/Loader';
 @import '../core/Button/Button';
+@import '../core/ButtonGroup/ButtonGroup';
+@import '../core/Checkbox/Checkbox';
+@import '../core/Flex/Flex';
+@import '../core/Portal/Portal';
+@import '../core/Radio/Radio';
+@import '../core/Skeleton/Skeleton';
+@import '../core/Switch/Switch';

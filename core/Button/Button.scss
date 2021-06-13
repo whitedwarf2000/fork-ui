@@ -33,6 +33,13 @@
   }
 }
 
+.fbtn-spinner {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .fbtn-solid {
   background-color: transparent;
   border-color: currentColor;
