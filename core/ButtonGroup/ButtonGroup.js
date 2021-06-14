@@ -6,9 +6,9 @@ const ButtonGroup = ({ className, fluid, ...otherProps }) => {
   return (
     <div
       className={cn(
-        'fbtn-grp',
+        'fgroup-btn',
         {
-          'fbtn-grp-fluid': fluid
+          'fgroup-btn-fluid': fluid
         },
         className
       )}

@@ -69,19 +69,7 @@ export const selfs = Object.freeze({
   stretch: 'self-stretch',
 });
 
-export const margins = Object.freeze({
-  0: 'm-0',
-  1: 'm-1',
-  2: 'm-2',
-  3: 'm-3',
-  4: 'm-4',
-  5: 'm-5',
-  6: 'm-6',
-  7: 'm-7',
-  8: 'm-8',
-});
-
-export const spans = Object.freeze({
+export const widths = Object.freeze({
   '1/2': 'w-1/2',
   '6/12': 'w-6/12',
   '1/3': 'w-1/3',
@@ -127,7 +115,7 @@ export const getResponsive = (
     shrink,
     noShrink,
     flex,
-    span,
+    w,
     style,
     ...otherParams
   },
@@ -143,7 +131,7 @@ export const getResponsive = (
     contents[content] ? `${query}${contents[content]}` : null,
     selfs[self] ? `${query}${selfs[self]}` : null,
     flexs[flex] ? `${query}${flexs[flex]}` : null,
-    spans[span] ? `${query}${spans[span]}` : null,
+    widths[w] ? `${query}${widths[w]}` : null,
     {
       [wraps.true]: wrap === true ? `${query}${wraps.true}` : null,
       [wraps.false]: nowrap === true ? `${query}${wraps.false}` : null,
@@ -176,11 +164,10 @@ const Flex = ({
   nowrap,
   grow,
   noGrow,
-  margin,
   shrink,
   noShrink,
   flex,
-  span,
+  w,
   sm,
   md,
   lg,
@@ -206,8 +193,7 @@ const Flex = ({
         shrinks[shrink],
         contents[content],
         selfs[self],
-        margins[margin],
-        spans[span],
+        widths[w],
         getResponsiveAll({ sm, md, lg, xl }),
         {
           [wraps.true]: wrap === true,
@@ -239,7 +225,7 @@ const responsivePropTypes = Object.freeze({
   flex: PropTypes.oneOf(['initial', 'auto', 'none', '1', 1]),
   justify: PropTypes.oneOf(Object.keys(justifies)),
   items: PropTypes.oneOf(Object.keys(listItems)),
-  span: PropTypes.oneOf(Object.keys(spans)),
+  w: PropTypes.oneOf(Object.keys(widths)),
   style: PropTypes.object,
 });
 
@@ -248,25 +234,6 @@ Flex.propTypes = {
   ...responsivePropTypes,
   className: PropTypes.string,
   children: PropTypes.node,
-  margin: PropTypes.oneOf([
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8'
-  ]),
   sm: PropTypes.shape(responsivePropTypes),
   md: PropTypes.shape(responsivePropTypes),
   lg: PropTypes.shape(responsivePropTypes),

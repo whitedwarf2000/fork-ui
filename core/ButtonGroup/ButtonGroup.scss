@@ -1,5 +1,5 @@
-.fbtn-grp {
-  display: flex;
+.fgroup-btn {
+  display: inline-flex;
 
   > .fbtn {
     border-radius: 0;
@@ -16,7 +16,7 @@
   }
 }
 
-.fbtn-grp-fluid {
+.fgroup-btn-fluid {
   width: 100%;
 
   > .fbtn {

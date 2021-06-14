@@ -9,7 +9,7 @@ const withIconEnhancer = (displayName, originalName, InputComponent) => {
       <InputComponent
         className={cn('ficon', { [`ficon-${originalName}`]: originalName }, className)}
         style={{
-          '--icon-size': size,
+          fontSize: size,
           color: color,
           strokeWidth: stroke,
           ...style
