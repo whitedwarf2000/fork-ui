@@ -1,11 +1,11 @@
 .ftextarea {
   background-color: var(--input--bg);
   border: 0;
-  border: 1px solid transparent;
+  border: 1px solid var(--skeleton-color);
   border-radius: var(--border-radius);
   min-height: var(--input-height);
   outline: 0 !important;
-  padding: 0 var(--input-spacing);
+  padding: var(--input-spacing);
   transition: box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
   width: 100%;
 

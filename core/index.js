@@ -13,6 +13,7 @@ export { default as Memo } from './Memo';
 export { default as Overlay } from './Overlay';
 export { default as Pagination } from './Pagination';
 export { default as Password } from './Password';
+export { default as Popover } from './Popover';
 export { default as Portal } from './Portal';
 export { default as Progress } from './Progress';
 export { default as Radio } from './Radio';
