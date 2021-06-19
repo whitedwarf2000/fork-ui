@@ -7,6 +7,7 @@ export { default as ButtonGroup } from './ButtonGroup';
 export { default as Checkbox } from './Checkbox';
 export { default as Collapse } from './Collapse';
 export { default as Dialog } from './Dialog';
+export { default as Drawer } from './Drawer';
 export { default as Flex } from './Flex';
 export { default as Loader } from './Loader';
 export { default as Memo } from './Memo';
