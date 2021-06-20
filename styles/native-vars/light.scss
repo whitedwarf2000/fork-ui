@@ -1,30 +1,21 @@
 .light-mode {
   --body-bg: #fafafa;
-
   --bg: #fff;
   --bg-disabled: #eceef3;
-  --rail-color: #eceef3;
-
-  --color: #000;
-  --color-low-emphasis: #65676b;
+  --color: var(--black);
   --color-disabled: #bcc0c4;
 
-  --primary: #1877f2;
-  --primary-hover: #1467d2;
-  --primary-low-emphasis: #eaf1f9;
+  --danger: var(--red-6);
+  --danger-hover: var(--red-5);
+  --danger-disabled: var(--red-2);
 
-  --red: #c00;
-  --red-hover: #b10303;
-  --red-low-emphasis: #fdcfcf;
-
-  --green: #57ec0a;
-  --green-hover: #57ec0a;
-  --green-low-emphasis: #d6f7c5;
+  --primary: var(--blue-6);
+  --primary-hover: var(--blue-5);
+  --primary-disabled: var(--blue-2);
 
   // BUTTON
   --btn-bg: #eceef3;
-  --btn-hover-bg: #e4e6eb;
-  --btn-hover-border-color: transparent;
+  --btn-bg-hover: #e4e6eb;
 
   // SWITCH
   --switch-lever-color-disabled: #bdbdbd;

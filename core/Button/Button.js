@@ -6,21 +6,18 @@ import Loader from '../Loader';
 import { isString, isNumber } from 'lodash';
 
 const mColors = Object.freeze({
+  default: 'fbtn-default',
   primary: 'fbtn-primary',
   transparent: 'fbtn-transparent',
   danger: 'fbtn-danger',
 });
-const mShapes = Object.freeze({
-  circle: 'fbtn-circle',
-  rounded: 'fbtn-rounded',
-});
+
 const mBorders = Object.freeze({
   solid: 'fbtn-solid',
   dashed: 'fbtn-dashed',
 });
 
 const lColors = Object.keys(mColors);
-const lShapes = Object.keys(mShapes);
 const lBorders = Object.keys(mBorders);
 
 const Button = React.forwardRef(({
@@ -31,7 +28,7 @@ const Button = React.forwardRef(({
   children,
   loading,
   disabled,
-  shape,
+  rounded,
   color,
   border,
   ...otherProps
@@ -59,8 +56,8 @@ const Button = React.forwardRef(({
         {
           'fbtn-icon': icon,
           'fbtn-loading': loading,
+          'fbtn-rounded': rounded,
         },
-        mShapes[shape],
         mColors[color],
         mBorders[border],
         className,
@@ -84,7 +81,7 @@ Button.displayName = 'Button';
 Button.propTypes = {
   className: PropTypes.string,
   color: PropTypes.oneOf(lColors),
-  shape: PropTypes.oneOf(lShapes),
+  rounded: PropTypes.bool,
   size: PropTypes.string,
   icon: PropTypes.any,
   style: PropTypes.object,
@@ -93,6 +90,8 @@ Button.propTypes = {
   border: PropTypes.oneOf(lBorders),
   disabled: PropTypes.bool,
 };
-Button.defaultProps = {};
+Button.defaultProps = {
+  color: 'default',
+};
 
 export default Button;

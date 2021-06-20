@@ -14,8 +14,8 @@
 
   &:hover,
   &:focus {
-    background-color: var(--btn-hover-bg);
-    border-color: var(--btn-hover-bg);
+    background-color: var(--btn-bg-hover);
+    border-color: var(--btn-bg-hover);
   }
 
   &:disabled,
@@ -30,95 +30,124 @@
       pointer-events: none !important;
     }
   }
-}
 
+}
 .fbtn-spinner {
   left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.fbtn-child {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+.fbtn-icon {
+  padding-left: 0;
+  padding-right: 0;
+}
+.fbtn:not(.fbtn-icon) .ficon:nth-child(1) {
+  margin-right: 0.5em;
+}
+.fbtn:not(.fbtn-icon) .ficon:last-child {
+  margin-left: 0.5em;
+}
 
+// border
 .fbtn-solid {
   background-color: transparent;
   border-color: currentColor;
   border-style: solid;
 }
-
 .fbtn-dashed {
   background-color: transparent;
   border-color: currentColor;
   border-style: dashed;
 }
 
-.fbtn-circle {
-  border-radius: 999px;
-  padding-left: 0;
-  padding-right: 0;
+.fbtn-solid,
+.fbtn-dashed {
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    background-color: transparent;
+  }
 }
 
+// shape
 .fbtn-rounded {
   border-radius: 999px;
 }
 
-.fbtn-child {
-  align-self: center;
-  display: flex;
-  justify-content: center;
+// colors
+.fbtn-transparent {
+  background-color: transparent;
+  border-color: transparent;
 }
-
-.fbtn-icon {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.fbtn:not(.fbtn-icon) .ficon:nth-child(1) {
-  margin-right: 0.5em;
-}
-
-.fbtn:not(.fbtn-icon) .ficon:last-child {
-  margin-left: 0.5em;
-}
-
 .fbtn-primary {
   background-color: var(--primary);
   border-color: var(--primary);
-  color: #fff;
-
-  &.fbtn-solid,
-  &.fbtn-dashed {
-    background-color: transparent;
-    color: var(--primary);
-  }
+  color: var(--white);
 
   &:hover,
   &:focus {
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);
-    color: #fff;
+    color: var(--white);
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    background-color: var(--primary-disabled);
+    border-color: var(--primary-disabled);
+    color: var(--white);
   }
 }
+.fbtn-primary.fbtn-solid,
+.fbtn-primary.fbtn-dashed {
+  background-color: transparent;
+  color: var(--primary);
 
-.fbtn-danger {
-  background-color: var(--red);
-  border-color: var(--red);
-  color: #fff;
-
-  &.fbtn-solid,
-  &.fbtn-dashed {
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
     background-color: transparent;
-    color: var(--red);
+    border-color: var(--primary-disabled);
+    color: var(--primary-disabled);
   }
+}
+.fbtn-danger {
+  background-color: var(--danger);
+  border-color: var(--danger);
+  color: var(--white);
 
   &:hover,
   &:focus {
-    background-color: var(--red-hover);
-    border-color: var(--red-hover);
-    color: #fff;
+    background-color: var(--danger-hover);
+    border-color: var(--danger-hover);
+    color: var(--white);
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    background-color: var(--danger-disabled);
+    border-color: var(--danger-disabled);
+    color: var(--white);
   }
 }
-
-.fbtn-transparent {
+.fbtn-danger.fbtn-solid,
+.fbtn-danger.fbtn-dashed {
   background-color: transparent;
-  border-color: transparent;
+  color: var(--danger);
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    background-color: transparent;
+    border-color: var(--danger-disabled);
+    color: var(--danger-disabled);
+  }
 }
