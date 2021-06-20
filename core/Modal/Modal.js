@@ -1,0 +1,63 @@
+import React from 'react';
+import cn from 'classnames';
+import PropTypes from 'prop-types';
+
+import Portal from '../Portal';
+import Dialog from '../Dialog';
+import useModal from './useModal';
+import useDebounce from '../../hooks/useDebounce';
+import useLockBodyScroll from '../../hooks/useLockBodyScroll';
+import useModalMeansure from './useModalMeansure';
+
+const Modal = ({
+  className,
+  isOpen,
+  style,
+  centered,
+  margin,
+  ...otherProps
+}) => {
+  const delayOpen = useDebounce(isOpen, 100);
+  useLockBodyScroll(isOpen);
+  const {
+    modalRef,
+    portalRef,
+    modalStyle,
+  } = useModalMeansure(isOpen, style, { centered: centered, margin: margin });
+
+  return (
+    <React.Fragment>
+      {delayOpen && (
+        <Portal>
+          <Dialog.Backdrop className="fmodal-backdrop" ref={portalRef}>
+            <Dialog
+              className={cn('fmodal', className)}
+              style={modalStyle}
+              ref={modalRef}
+              {...otherProps}
+            />
+          </Dialog.Backdrop>
+        </Portal>
+      )}
+    </React.Fragment>
+  );
+};
+
+Modal.useModal = useModal;
+Modal.Header = Dialog.Header;
+Modal.Body = Dialog.Body;
+Modal.Footer = Dialog.Footer;
+Modal.Header = Dialog.Header;
+Modal.Closer = Dialog.Closer;
+
+Modal.displayName = 'Modal';
+Modal.propTypes = {
+  className: PropTypes.string,
+  isOpen: PropTypes.bool,
+};
+Modal.defaultProps = {
+  margin: 10,
+  style: {},
+};
+
+export default Modal;

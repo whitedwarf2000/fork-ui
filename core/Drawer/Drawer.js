@@ -7,6 +7,7 @@ import Dialog from '../Dialog';
 
 import useDebounce from '../../hooks/useDebounce';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
+import useDrawer from './useDrawer';
 
 const mPlacements = Object.freeze({
   left: 'fdrawer-backdrop-left',
@@ -50,6 +51,7 @@ const Drawer = ({ className, isOpen, placement, ...otherProps }) => {
   );
 };
 
+Drawer.useDrawer = useDrawer;
 Drawer.Header = Dialog.Header;
 Drawer.Body = Dialog.Body;
 Drawer.Footer = Dialog.Footer;
