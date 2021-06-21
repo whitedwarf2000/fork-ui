@@ -66,6 +66,13 @@
   border-style: dashed;
 }
 
+.fbtn-default {
+  .fbtn-solid,
+  .fbtn-dashed {
+    border-color: var(--color-low-emphasis);
+  }
+}
+
 .fbtn-solid,
 .fbtn-dashed {
   &:disabled,
