@@ -1,34 +1,52 @@
 import React, { useEffect, useRef } from 'react';
 import cn from 'classnames';
+import ResizeObserver from 'resize-observer-polyfill';
 import useUniqueId from '../../hooks/useUniqueId';
 import StickyJS from '../../libs/sticky';
 
-const Sticky = ({
+const Sticky = React.forwardRef(({
   className,
   stickyClass,
   stickyContainer,
   marginTop,
   marginBottom,
   children,
-}) => {
+}, ref) => {
   const id = useUniqueId();
-  const ref = useRef();
+  const localRef = useRef(null);
+  const stickyRef = useRef(null);
+  const ro = useRef(new ResizeObserver(() => localRef.current.update()));
 
   useEffect(() => {
-    ref.current = new StickyJS(`#${id}`, {
+    localRef.current = new StickyJS(`#${id}`, {
       stickyClass,
       stickyContainer,
       marginTop,
       marginBottom,
     });
-    return () => ref.current.sticky.destroy();
-  }, []);
+    if (ref) {
+      ref.current = localRef.current;
+    }
+
+    return () => localRef.current.destroy();
+  }, [
+    ref,
+    stickyClass,
+    stickyContainer,
+    marginTop,
+    marginBottom,
+  ]);
+
+  useEffect(() => {
+    ro.current.observe(stickyRef.current.parentNode);
+    return () => ro.current.disconnect();
+  }, [])
 
   return (
-    <div className={cn('fsticky', className)} id={id}>
+    <div className={cn('fsticky', className)} id={id} ref={stickyRef}>
       {children}
     </div>
   );
-};
+});
 
 export default Sticky;

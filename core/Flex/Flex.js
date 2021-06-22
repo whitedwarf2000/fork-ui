@@ -152,7 +152,7 @@ export const getResponsiveAll = ({ sm, md, lg, xl }) =>
     getResponsive(xl, 'xl:'),
   );
 
-const Flex = ({
+const Flex = React.forwardRef(({
   className,
   children,
   reverse,
@@ -174,7 +174,7 @@ const Flex = ({
   xl,
   space,
   ...otherProps
-}) => {
+}, ref) => {
   const direction = useMemo(
     () => mDirections[getLatestProp(otherProps, ['row', 'col'])],
     [otherProps.row, otherProps.col]
@@ -182,6 +182,7 @@ const Flex = ({
 
   return (
     <div
+      ref={ref}
       className={cn(
         'flex',
         getDirection(direction, reverse),
@@ -211,7 +212,7 @@ const Flex = ({
       {children}
     </div>
   );
-};
+});
 
 const responsivePropTypes = Object.freeze({
   row: PropTypes.bool,
