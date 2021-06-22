@@ -22,6 +22,7 @@ export { default as PureAlert } from './PureAlert';
 export { default as Radio } from './Radio';
 export { default as Skeleton } from './Skeleton';
 export { default as Stepper } from './Stepper';
+export { default as Sticky } from './Sticky';
 export { default as Switch } from './Switch';
 export { default as Tabs } from './Tabs';
 export { default as Textarea } from './Textarea';
