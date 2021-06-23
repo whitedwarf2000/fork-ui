@@ -14,6 +14,10 @@
     border-bottom-right-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
   }
+
+  > .fbtn:not(:last-child) {
+    border-right-color: var(--bg);
+  }
 }
 
 .fgroup-btn-fluid {
