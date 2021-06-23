@@ -67,9 +67,16 @@
 }
 
 .fbtn-default {
-  .fbtn-solid,
-  .fbtn-dashed {
+  &.fbtn-solid,
+  &.fbtn-dashed {
     border-color: var(--color-low-emphasis);
+
+    &:hover,
+    &:focus {
+      background-color: var(--btn-bg);
+      color: var(--color);
+      border-color: var(--btn-bg);
+    }
   }
 }
 
@@ -117,6 +124,13 @@
   background-color: transparent;
   color: var(--primary);
 
+  &:hover,
+  &:focus {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+  }
+
   &:disabled,
   &:disabled:hover,
   &:disabled:focus {
@@ -149,6 +163,13 @@
 .fbtn-danger.fbtn-dashed {
   background-color: transparent;
   color: var(--danger);
+
+  &:hover,
+  &:focus {
+    background-color: var(--danger);
+    color: var(--white);
+    border-color: var(--danger);
+  }
 
   &:disabled,
   &:disabled:hover,

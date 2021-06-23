@@ -17,10 +17,14 @@ body {
 }
 .common-scrollbar {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
+
+  &:hover {
+    overflow-y: overlay;
+  }
 }
 .common-scrollbar::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
 }
 
 .common-scrollbar::-webkit-scrollbar-thumb {
