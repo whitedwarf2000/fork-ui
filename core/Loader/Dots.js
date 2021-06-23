@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 const mAnimations = Object.freeze({
   wave: 'floader-dots-wave',
   buble: 'floader-dots-buble',
-  move: 'floader-dots-move'
 });
 
 const lAnimations = Object.keys(mAnimations);

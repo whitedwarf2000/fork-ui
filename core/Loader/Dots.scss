@@ -76,36 +76,3 @@
 .floader-dots-wave .floader-dot-3 {
   animation-delay: -0.6s;
 }
-
-@keyframes dots-move-1 {
-  0%   { z-index: 3; transform: translateX(0); }
-  25%  { z-index: 3; transform: translateX(60%); }
-  50%  { z-index: 3; transform: translateX(0); }
-  
-  50.1%{ z-index: 1; transform: translateX(0); }
-  75%  { z-index: 1; transform: translateX(60%); }
-  100% { z-index: 1; transform: translateX(0); }
-}
-
-@keyframes dots-move-3 {
-  0%   { z-index: 1; transform: translateX(0); }
-  25%  { z-index: 1; transform: translateX(-60%); }
-  50%  { z-index: 1; transform: translateX(0); }
-  
-  50.1%{ z-index: 3; transform: translateX(0); }
-  75%  { z-index: 3; transform: translateX(-60%); }
-  100% { z-index: 3; transform: translateX(0); }
-}
-
-.floader-dots-move .floader-dot {
-  margin: 0;
-  z-index: 2;
-}
-
-.floader-dots-move .floader-dot-1 {
-  animation: dots-move-1 2s infinite;
-}
-
-.floader-dots-move .floader-dot-3 {
-  animation: dots-move-3 2s infinite;
-}
