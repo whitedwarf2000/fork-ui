@@ -10,6 +10,7 @@
   outline: 0 !important;
   padding: 0 var(--input-spacing);
   transition: box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
+  box-sizing: border-box;
   width: 100%;
 
   &:-internal-autofill-selected {
