@@ -40,12 +40,12 @@ const Sticky = React.forwardRef(({
   useEffect(() => {
     ro.current.observe(stickyRef.current.parentNode);
     return () => ro.current.disconnect();
-  }, [])
+  }, [stickyRef]);
 
   return (
-    <div className={cn('fsticky', className)} id={id} ref={stickyRef}>
+    <span className={cn('fsticky', className)} id={id} ref={stickyRef}>
       {children}
-    </div>
+    </span>
   );
 });
 
