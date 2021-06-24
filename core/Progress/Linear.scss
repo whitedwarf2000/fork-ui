@@ -2,7 +2,7 @@
   --linear-progress-value: 0;
   --linear-progress-size: 3px;
   --linear-progress-color: var(--primary);
-  --linear-progress-rail-color: var(--rail-color);
+  --linear-progress-rail-color: var(--progress-rail);
   height: var(--linear-progress-size);
   position: relative;
   width: 100%;

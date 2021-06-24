@@ -48,7 +48,7 @@ const Autocomplete = ({ children, className, options, ...otherProps }) => {
       maxWidth="none"
       offset={offset}
       content={(
-        <div className="fautocomplete-content" style={{ width: bounds.width }}>
+        <div className="fautocomplete-content" style={{ minWidth: bounds.width }}>
           {matchedOptions.map((option) => (
             <div
               className="fautocomplete-option"

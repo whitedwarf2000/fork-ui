@@ -8,8 +8,6 @@ const withMeansure = (InputComponent) => {
       super(props);
       this.state = {
         meansure: {
-          left: 0,
-          top: 0,
           width: 0,
           height: 0,
         },
@@ -18,7 +16,10 @@ const withMeansure = (InputComponent) => {
 
     componentDidMount() {
       this.node = ReactDOM.findDOMNode(this).firstElementChild;
-      this.ro =  new ResizeObserver(([entry]) => this.setState({ meansure: entry.contentRect }));
+      this.ro =  new ResizeObserver(([entry]) => this.setState({ meansure: {
+        width: entry.borderBoxSize[0].inlineSize,
+        height: entry.borderBoxSize[0].blockSize,
+      } }));
   
       if (this.node) {
         this.ro.observe(this.node);
