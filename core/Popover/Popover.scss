@@ -1,7 +1,10 @@
 .fpopover {
-  color: var(--color);
-  box-shadow: var(--popover-box-shadow);
-  background-color: var(--bg);
+  .tippy-content {
+    padding: 5px 15px;
+    border-radius: 3px;
+    color: var(--color);
+    box-shadow: var(--popover-box-shadow);
+  }
 }
 
 .fpopover[data-placement^=top] > .tippy-arrow:before {

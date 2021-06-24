@@ -21,11 +21,6 @@
 
 .tippy-box {
   position: relative;
-  background-color: #333;
-  color: #fff;
-  border-radius: 5px;
-  font-size: 1rem;
-  line-height: 1.4;
   outline: 0;
   transition-property: transform, visibility, opacity;
 }
@@ -83,7 +78,7 @@
 .tippy-arrow {
   width: 16px;
   height: 16px;
-  color: #333
+  color: var(--bg);
 }
 
 .tippy-arrow:before {
@@ -95,6 +90,5 @@
 
 .tippy-content {
   position: relative;
-  padding: 5px 9px;
   z-index: 1
 }

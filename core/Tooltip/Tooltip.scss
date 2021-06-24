@@ -1,8 +1,12 @@
 .ftooltip {
-  background-color: #000;
-  color: #fff;
-
   .tippy-arrow {
-    color: #000;
+    color: #333;
+  }
+
+  .tippy-content {
+    padding: 5px 15px;
+    border-radius: 3px;
+    background-color: #333;
+    color: #fff;
   }
 }
