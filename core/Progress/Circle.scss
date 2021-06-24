@@ -4,7 +4,7 @@
   --circle-progress-stroke-width: calc(var(--circle-progress-size) / 30);
   --circle-progress-color: var(--primary);
   --circle-progress-bg-color: transparent;
-  --circle-progress-rail-color: var(--rail-color);
+  --circle-progress-rail-color: var(--progress-rail);
   border-radius: 999px;
   position: relative;
   user-select: none;

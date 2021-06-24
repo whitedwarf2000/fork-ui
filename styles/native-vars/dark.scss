@@ -1,6 +1,7 @@
 .dark-mode {
   --body-bg: #181818;
   --bg: #242526;
+  --bg-secondary: #242526;
   --bg-disabled: #4f5151;
   --color: var(--white);
   --color-disabled: #848585;
@@ -25,54 +26,15 @@
   // AVATAR
   --avatar-bg: #2e3031;
 
-  // CHIP
-  --chip-bg: #4b4c4f;
-  --chip-hover-bg: #696a6b;
-  --chip-close-bg: #818286;
-
   // POPOVER
   --popover-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
-
-  // DIVIDER
-  --divider-color: #2f3031;
-
-  // INPUT
-  --input-bg: #3a3b3c;
-  --input-hover-bg: #181919;
 
   // SKELETON
   --skeleton-color: #343638;
   --skeleton-animation-bg-1: rgba(36, 37, 38, 0.35);
   --skeleton-animation-bg-2: rgba(36, 37, 38, 0);
   --skeleton-animation-bg-3: rgba(36, 37, 38, 0.35);
-}
 
-.dark-mode {
-  background-color: var(--body-bg);
-  color: #fff;
-}
-.dark-mode {
-  --tab-title--active: rgba(0, 0, 0, 0.2);
-
-  --input--bg: var(--secondary-bg);
-  --input--disabled-bg: #4e4f50;
-  --input--disabled-color: var(--text-color--disabled);
-
-  --popup--border-radius: 0.125em;
-  --popup--title-bg: var(--secondary-bg);
-  --popup--shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
-  --overlay--shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
-
-  --panel--bg: var(--secondary-bg);
-  --panel-title--active: rgba(0, 0, 0, 0.2);
-
-
-  --menu--bg: #242424;
-  --sub-menu--bg: #353535;
-  --menu--shadow: none;
-
-  --slider-handler--shadow: none;
-  --slider-rail--box-shadow: var(--pressed);
-
-  --switch-inner--bg: #3b3e40;
+  // PROGRESS
+  --progress-rail: #181818;
 }

@@ -1,32 +1,13 @@
 .fpopover {
+  .tippy-arrow {
+    color: var(--bg);
+  }
+
   .tippy-content {
-    padding: 5px 15px;
+    padding: 7px;
     border-radius: 3px;
     color: var(--color);
+    background-color: var(--bg);
     box-shadow: var(--popover-box-shadow);
   }
-}
-
-.fpopover[data-placement^=top] > .tippy-arrow:before {
-  border-top-color: var(--bg);
-}
-
-.fpopover[data-placement^=bottom] > .tippy-arrow:before {
-  border-bottom-color: var(--bg);
-}
-
-.fpopover[data-placement^=left] > .tippy-arrow:before {
-  border-left-color: var(--bg);
-}
-
-.fpopover[data-placement^=right] > .tippy-arrow:before {
-  border-right-color: var(--bg);
-}
-
-.fpopover > .tippy-backdrop {
-  background-color: var(--bg);
-}
-
-.fpopover > .tippy-svg-arrow {
-  fill: var(--bg);
 }

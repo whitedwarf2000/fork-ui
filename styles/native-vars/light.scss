@@ -1,6 +1,7 @@
 .light-mode {
   --body-bg: #f4f8f9;
   --bg: #fff;
+  --bg-secondary: #f8f8f8;
   --bg-disabled: #eceef3;
   --color: #333;
   --color-disabled: #bcc0c4;
@@ -25,54 +26,15 @@
   // AVATAR
   --avatar-bg: #e4e6eb;
 
-  // CHIP
-  --chip-bg: #eceef3;
-  --chip-hover-bg: #e4e6eb;
-  --chip-close-bg: #d3d5d8;
-
   // POPOVER
-  --popover-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-
-  // DIVIDER
-  --divider-color: #dcdcdc;
+  --popover-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   // SKELETON
   --skeleton-color: #ced4da;
   --skeleton-animation-bg-1: rgba(255, 255, 255, 0);
   --skeleton-animation-bg-2: rgba(255, 255, 255, 0.35);
   --skeleton-animation-bg-3: rgba(255, 255, 255, 0);
-}
 
-.light-mode {
-  background-color: var(--body-bg);
-  color: #000;
-}
-
-.light-mode {
-
-  --tab-title--active: rgba(0, 0, 0, 0.2);
-
-  --input--bg: var(--secondary-bg);
-  --input--disabled-bg: #4e4f50;
-  --input--disabled-color: var(--text-color--disabled);
-
-  --popup--border-radius: 0.125em;
-  --popup--title-bg: var(--secondary-bg);
-  --popup--shadow: 0 0 20px 4px rgba(154, 161, 177, .15), 0 4px 80px -8px rgba(36, 40, 47, .25), 0 4px 4px -2px rgba(91, 94, 105, .15);
-  --overlay--shadow: 0 0 20px 4px rgba(154, 161, 177, .15), 0 4px 80px -8px rgba(36, 40, 47, .25), 0 4px 4px -2px rgba(91, 94, 105, .15);
-
-  --panel--bg: var(--secondary-bg);
-  --panel-title--active: rgba(0, 0, 0, 0.2);
-
-
-  --menu--bg: #242424;
-  --sub-menu--bg: #353535;
-  --menu--shadow: none;
-
-  --avatar--bg: #2e3031;
-
-  --slider-handler--shadow: none;
-  --slider-rail--box-shadow: var(--pressed);
-
-  --switch-inner--bg: #3b3e40;
+  // PROGRESS
+  --progress-rail: #f4f8f9;
 }

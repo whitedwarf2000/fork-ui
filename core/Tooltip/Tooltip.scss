@@ -4,9 +4,10 @@
   }
 
   .tippy-content {
-    padding: 5px 15px;
+    padding: 7px;
     border-radius: 3px;
     background-color: #333;
     color: #fff;
+    box-shadow: var(--popover-box-shadow);
   }
 }
