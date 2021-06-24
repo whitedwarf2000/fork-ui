@@ -1,10 +1,12 @@
 import React from 'react';
+import cn from 'classnames';
+
 import Overlay from '../Overlay';
 
-const Tooltip = ({ title, ...otherProps }) => {
+const Tooltip = ({ title, className, ...otherProps }) => {
   return (
     <Overlay
-      className="ftooltip"
+      className={cn('ftooltip', className)}
       content={title}
       role="tooltip"
       {...otherProps}

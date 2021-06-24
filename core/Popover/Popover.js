@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import Overlay from '../Overlay';
 
-const Popover = ({ overlay, ...otherProps }) => {
+const Popover = ({ overlay, className, ...otherProps }) => {
   return (
    <Overlay
-      className="fpopover"
+      className={cn('fpopover', className)}
       content={overlay}
       role="popover"
       {...otherProps}
