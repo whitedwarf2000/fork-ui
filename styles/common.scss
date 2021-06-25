@@ -15,23 +15,23 @@ body {
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;
+  display: none !important;
 }
 .common-scrollbar {
-  overflow-x: hidden;
-  overflow-y: overlay;
+  overflow-x: hidden !important;
+  overflow-y: overlay !important;
 }
 
 .common-scrollbar--hover {
-  overflow-y: hidden;
+  overflow-y: hidden !important;
 
   &:hover {
-    overflow-y: overlay;
+    overflow-y: overlay !important;
   }
 }
 
 .common-scrollbar::-webkit-scrollbar {
-  width: 8px;
+  width: 8px !important;
 }
 
 .common-scrollbar::-webkit-scrollbar-thumb {
