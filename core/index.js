@@ -21,6 +21,7 @@ export { default as Portal } from './Portal';
 export { default as Progress } from './Progress';
 export { default as PureAlert } from './PureAlert';
 export { default as PureConfirm } from './PureConfirm';
+export { default as Popconfirm } from './Popconfirm';
 export { default as Radio } from './Radio';
 export { default as Skeleton } from './Skeleton';
 export { default as Stepper } from './Stepper';

@@ -6,28 +6,29 @@ import Button from '../Button';
 
 const PureConfirm = ({
   children,
-  header,
   className,
-  onClose,
   onNo,
   onYes,
+  noText,
+  yesText,
   ...otherProps
 }) => {
   return (
     <Dialog className={cn('fpureconfirm', className)} {...otherProps}>
-      <Dialog.Header>
-        {header}
-        <Dialog.Closer rounded onClick={onClose} />
-      </Dialog.Header>
       <Dialog.Body>
         {children}
       </Dialog.Body>
       <Dialog.Footer>
-        <Button onClick={onNo}>No</Button>
-        <Button color="primary" onClick={onYes}>Yes</Button>
+        <Button onClick={onNo}>{noText}</Button>
+        <Button color="primary" onClick={onYes}>{yesText}</Button>
       </Dialog.Footer>
     </Dialog>
   );
+};
+
+PureConfirm.defaultProps = {
+  noText: 'No',
+  yesText: 'Yes',
 };
 
 export default PureConfirm;
