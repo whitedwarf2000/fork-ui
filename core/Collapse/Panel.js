@@ -17,7 +17,7 @@ const Panel = ({ className, title, children, active, fresh, onClick, disabled, .
         {title}
         <Button
           className="fpanel-icon"
-          shape="circle"
+          rounded
           color="transparent"
           icon={<ChevronDown />}
         />

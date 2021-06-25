@@ -39,6 +39,10 @@
   position: relative;
   transition: color 0.25s;
   user-select: none;
+
+  &:hover {
+    background-color: var(--body-bg);
+  }
 }
 
 .fpanel-icon {
